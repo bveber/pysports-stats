@@ -7,7 +7,8 @@ from .league_ids import LEAGUE_IDS
 from pyquery import PyQuery as pq
 from sportsipy.utils import (_get_stats_table,
                              _parse_field,
-                             _remove_html_comment_tags)
+                             _remove_html_comment_tags,
+                             _rate_limit_pq)
 from urllib.error import HTTPError
 
 
@@ -1642,7 +1643,7 @@ class Roster:
         """
         if not doc:
             try:
-                doc = pq(SQUAD_URL % self._squad_id)
+                doc = _rate_limit_pq(SQUAD_URL % self._squad_id)
                 doc = pq(_remove_html_comment_tags(doc))
             except HTTPError:
                 return None

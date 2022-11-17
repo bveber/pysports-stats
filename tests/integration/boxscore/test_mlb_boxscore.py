@@ -183,9 +183,9 @@ class TestMLBBoxscore:
     def test_mlb_boxscore_string_representation(self):
         expected = ('Boxscore for San Francisco Giants at '
                     'Los Angeles Angels (Monday, August 17, 2020)')
-
+        print('expected: ', expected)
         boxscore = Boxscore(BOXSCORE)
-
+        print('repr: ', boxscore.__repr__())
         assert boxscore.__repr__() == expected
 
 

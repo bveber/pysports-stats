@@ -468,8 +468,10 @@ class Boxscore:
         """
         url = BOXSCORE_URL % uri
         try:
-            url_data = pq(url)
-        except HTTPError:
+            url_data = utils._rate_limit_pq(url)
+        except HTTPError as e:
+            print('HTTP Error')
+            print(e)
             return None
         return pq(utils._remove_html_comment_tags(url_data))
 
@@ -1732,7 +1734,7 @@ class Boxscores:
             A PyQuery object containing the HTML contents of the requested
             page.
         """
-        return pq(url)
+        return utils._rate_limit_pq(url)
 
     def _get_boxscore_uri(self, url):
         """

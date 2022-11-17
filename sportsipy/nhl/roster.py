@@ -209,7 +209,7 @@ class Player(AbstractPlayer):
         """
         url = self._build_url()
         try:
-            url_data = pq(url)
+            url_data = utils._rate_limit_pq(url)
         except HTTPError:
             return None
         return pq(utils._remove_html_comment_tags(url_data))
