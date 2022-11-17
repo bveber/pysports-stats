@@ -3,6 +3,7 @@ import requests
 from datetime import datetime
 from lxml.etree import ParserError, XMLSyntaxError
 from pyquery import PyQuery as pq
+import time
 
 
 # {
@@ -22,6 +23,11 @@ SEASON_START_MONTH = {
     'nfl': {'start': 9, 'wrap': False},
     'nhl': {'start': 10, 'wrap': True}
 }
+
+def _rate_limit_pq(pq_input, sleep=3.5):
+    ret = pq(pq_input)
+    time.sleep(sleep)
+    return ret
 
 
 def _todays_date():
@@ -158,12 +164,10 @@ def _parse_field(parsing_scheme, html_data, field, index=0, strip=False,
                  secondary_index=None):
     """
     Parse an HTML table to find the requested field's value.
-
     All of the values are passed in an HTML table row instead of as individual
     items. The values need to be parsed by matching the requested attribute
     with a parsing scheme that sports-reference uses to differentiate stats.
     This function returns a single value for the given attribute.
-
     Parameters
     ----------
     parsing_scheme : dict
@@ -195,7 +199,6 @@ def _parse_field(parsing_scheme, html_data, field, index=0, strip=False,
         doesn't have all of the intended information, and the requested index
         isn't valid, causing the value to be None. Instead, a secondary index
         could be checked prior to returning None.
-
     Returns
     -------
     string
@@ -317,7 +320,7 @@ def _pull_page(url=None, local_file=None):
         with open(local_file, 'r', encoding='utf8') as filehandle:
             return pq(filehandle.read())
     if url:
-        return pq(url)
+        return _rate_limit_pq(url)
     raise ValueError('Expected either a URL or a local data file!')
 
 
