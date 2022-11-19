@@ -141,8 +141,8 @@ ELEMENT_INDEX = {
 
 BOXSCORE_SCHEME = {
     'game_info': 'div[class="scorebox_meta"]',
-    'away_name': 'a[itemprop="name"]:first',
-    'home_name': 'a[itemprop="name"]:last',
+    'away_name': 'div[class="linescore_wrap"] table tbody tr:first td:nth-child(2)',
+    'home_name': 'div[class="linescore_wrap"] table tbody tr:last td:nth-child(2)',
     'winner': 'td[data-stat=""]',
     'summary': 'table[class="linescore nohover stats_table no_freeze"]',
     'winning_name': 'td[data-stat=""]',

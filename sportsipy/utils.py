@@ -24,7 +24,7 @@ SEASON_START_MONTH = {
     'nhl': {'start': 10, 'wrap': True}
 }
 
-def _rate_limit_pq(pq_input, sleep=3.5):
+def _rate_limit_pq(pq_input, sleep=3.1):
     ret = pq(pq_input)
     time.sleep(sleep)
     return ret
