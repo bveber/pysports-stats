@@ -4,6 +4,7 @@ from datetime import datetime
 from lxml.etree import ParserError, XMLSyntaxError
 from pyquery import PyQuery as pq
 import time
+from .constants import REQUESTS_PER_MINUTE
 
 
 # {
@@ -24,9 +25,9 @@ SEASON_START_MONTH = {
     'nhl': {'start': 10, 'wrap': True}
 }
 
-def _rate_limit_pq(pq_input, sleep=3.1):
+def _rate_limit_pq(pq_input, requests_per_minute=REQUESTS_PER_MINUTE):
     ret = pq(pq_input)
-    time.sleep(sleep)
+    time.sleep(60/requests_per_minute)
     return ret
 
 

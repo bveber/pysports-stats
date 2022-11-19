@@ -211,7 +211,6 @@ Orlando Magic (ORL)
 Cleveland Cavaliers (CLE)"""
 
         teams = Teams()
-
         assert teams.__repr__() == expected
 
 

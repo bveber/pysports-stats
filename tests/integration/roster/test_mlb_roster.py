@@ -1253,4 +1253,4 @@ José Altuve (mortoch02)"""
         assert roster.__repr__() == expected
 
     def test_coach(self):
-        assert "AJ Hinch" == Roster('HOU', year=YEAR).coach
+        assert "A.J. Hinch" == Roster('HOU', year=YEAR).coach
