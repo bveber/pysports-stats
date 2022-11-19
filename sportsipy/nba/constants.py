@@ -67,8 +67,8 @@ SCHEDULE_SCHEME = {
 BOXSCORE_SCHEME = {
     'date': 'div[class="scorebox_meta"]',
     'location': 'div[class="scorebox_meta"]',
-    'away_name': 'a[itemprop="name"]:first',
-    'home_name': 'a[itemprop="name"]:last',
+    'away_name': 'div[class="scorebox"] div:nth-child(1) div strong a',
+    'home_name': 'div[class="scorebox"] div:nth-child(2) div strong a',
     'winning_name': '',
     'winning_abbr': '',
     'losing_name': '',

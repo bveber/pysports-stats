@@ -63,8 +63,8 @@ SCHEDULE_SCHEME = {
 
 BOXSCORE_SCHEME = {
     'game_info': 'div[class="scorebox_meta"]',
-    'away_name': 'a[itemprop="name"]:first',
-    'home_name': 'a[itemprop="name"]:last',
+    'away_name': 'div[class="scorebox"] div:nth-child(1) div strong a',
+    'home_name': 'div[class="scorebox"] div:nth-child(2) div strong a',
     'away_skaters': 'table[class="sortable stats_table"]:first tbody tr',
     'away_goalies': 'table[class="sortable stats_table"]',
     'away_goals': 'tfoot td[data-stat="goals"]',
