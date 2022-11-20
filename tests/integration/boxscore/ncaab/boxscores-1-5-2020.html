@@ -1,112 +1,283 @@
 
-
 <!DOCTYPE html>
-<html data-version="klecko-" data-root="/home/cbb/deploy/www" itemscope itemtype="https://schema.org/WebSite" lang="en" class="no-js" >
+<html data-version="klecko-" data-root="/home/cbb/deploy/www" lang="en" class="no-js" >
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0" />
-    <link rel="dns-prefetch" href="https://d2p3bygnnzw9w3.cloudfront.net/req/202007101" />
+    <link rel="dns-prefetch" href="https://cdn.ssref.net/req/202211031" />
+    <!-- Quantcast Choice. Consent Manager Tag v2.0 (for TCF 2.0) -->
+<script type="text/javascript" async=true>
+    (function() {
+	var host = window.location.hostname;
+	var element = document.createElement('script');
+	var firstScript = document.getElementsByTagName('script')[0];
+	var url = 'https://cmp.quantcast.com'
+	    .concat('/choice/', 'XwNYEpNeFfhfr', '/', host, 
+		    '/choice.js?tag_version=V2');
+	var uspTries = 0;
+	var uspTriesLimit = 3;
+	element.async = true;
+	element.type = 'text/javascript';
+	element.src = url;
+	
+	firstScript.parentNode.insertBefore(element, firstScript);
+	
+	function makeStub() {
+	    var TCF_LOCATOR_NAME = '__tcfapiLocator';
+	    var queue = [];
+	    var win = window;
+	    var cmpFrame;
+	    
+	    function addFrame() {
+		var doc = win.document;
+		var otherCMP = !!(win.frames[TCF_LOCATOR_NAME]);
+		
+		if (!otherCMP) {
+		    if (doc.body) {
+			var iframe = doc.createElement('iframe');
+			
+			iframe.style.cssText = 'display:none';
+			iframe.name = TCF_LOCATOR_NAME;
+			doc.body.appendChild(iframe);
+		    } else {
+			setTimeout(addFrame, 5);
+		    }
+		}
+		return !otherCMP;
+	    }
+	    
+	    function tcfAPIHandler() {
+		var gdprApplies;
+		var args = arguments;
+		
+		if (!args.length) {
+		    return queue;
+		} else if (args[0] === 'setGdprApplies') {
+		    if (
+			args.length > 3 &&
+			    args[2] === 2 &&
+			    typeof args[3] === 'boolean'
+		    ) {
+			gdprApplies = args[3];
+			if (typeof args[2] === 'function') {
+			    args[2]('set', true);
+			}
+		    }
+		} else if (args[0] === 'ping') {
+		    var retr = {
+			gdprApplies: gdprApplies,
+			cmpLoaded: false,
+			cmpStatus: 'stub'
+		    };
+		    
+		    if (typeof args[2] === 'function') {
+			args[2](retr);
+		    }
+		} else {
+		    if(args[0] === 'init' && typeof args[3] === 'object') {
+			args[3] = Object.assign(args[3], { tag_version: 'V2' });
+		    }
+		    queue.push(args);
+		}
+	    }
+	    
+	    function postMessageEventHandler(event) {
+		var msgIsString = typeof event.data === 'string';
+		var json = {};
+		
+		try {
+		    if (msgIsString) {
+			json = JSON.parse(event.data);
+		    } else {
+			json = event.data;
+		    }
+		} catch (ignore) {}
+		
+		var payload = json.__tcfapiCall;
+		
+		if (payload) {
+		    window.__tcfapi(
+			payload.command,
+			payload.version,
+			function(retValue, success) {
+			    var returnMsg = {
+				__tcfapiReturn: {
+				    returnValue: retValue,
+				    success: success,
+				    callId: payload.callId
+				}
+			    };
+			    if (msgIsString) {
+				returnMsg = JSON.stringify(returnMsg);
+			    }
+			    if (event && event.source && event.source.postMessage) {
+				event.source.postMessage(returnMsg, '*');
+			    }
+			},
+			payload.parameter
+		    );
+		}
+	    }
+	    
+	    while (win) {
+		try {
+		    if (win.frames[TCF_LOCATOR_NAME]) {
+			cmpFrame = win;
+			break;
+		    }
+		} catch (ignore) {}
+		
+		if (win === window.top) {
+		    break;
+		}
+		win = win.parent;
+	    }
+	    if (!cmpFrame) {
+		addFrame();
+		win.__tcfapi = tcfAPIHandler;
+		win.addEventListener('message', postMessageEventHandler, false);
+	    }
+	};
+	
+	makeStub();
+	
+	var uspStubFunction = function() {
+	    var arg = arguments;
+	    if (typeof window.__uspapi !== uspStubFunction) {
+		setTimeout(function() {
+		    if (typeof window.__uspapi !== 'undefined') {
+			window.__uspapi.apply(window.__uspapi, arg);
+		    }
+		}, 500);
+	    }
+	};
+	
+	var checkIfUspIsReady = function() {
+	    uspTries++;
+	    if (window.__uspapi === uspStubFunction && uspTries < uspTriesLimit) {
+		console.warn('USP is not accessible');
+	    } else {
+		clearInterval(uspInterval);
+	    }
+	};
+	
+	if (typeof window.__uspapi === 'undefined') {
+	    window.__uspapi = uspStubFunction;
+	    var uspInterval = setInterval(checkIfUspIsReady, 6000);
+	}
+    })();
+</script>
+<!-- End Quantcast Choice. Consent Manager Tag v2.0 (for TCF 2.0) -->
 
+
+    <title>College Basketball Scores on Sunday, January 5, 2020 | College Basketball at Sports-Reference.com</title>
+
+    
+    
+    <meta name="Description" content="College Basketball Scores on Sunday, January 5, 2020">
+    <link rel="canonical" href="https://www.sports-reference.com/cbb/boxscores/" />
+
+
+<!-- include:start  ="/cbb/inc/klecko_header_full_cbb.html_f" -->
 <!-- yes:cookie regular load the cached css -->
 <script>function gup(n) {n = n.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]'); var r = new RegExp('[\\?&]'+n+'=([^&#]*)'); var re = r.exec(location.search);   return re === null?'':decodeURIComponent(re[1].replace(/\+/g,' '));}; document.srdev = gup('srdev')</script>
-<link rel="preconnect" href="https://d2p3bygnnzw9w3.cloudfront.net" crossorigin>
+<link rel="preconnect" href="https://cdn.ssref.net" crossorigin>
 <link rel="preconnect" href="https://www.google-analytics.com"  crossorigin>
 <link rel="preconnect" href="https://www.googletagservices.com" crossorigin>
-<link rel="preload"    href="https://d2p3bygnnzw9w3.cloudfront.net/req/202010021/js/cbb/sr-min.js" as="script" crossorigin>
-<link rel="preload"    href="https://d2p3bygnnzw9w3.cloudfront.net/req/202010021/icons/sr_icons-min.svg?cbb" as="fetch" crossorigin>
+<link rel="preload"    href="https://cdn.ssref.net/req/202211181/js/cbb/sr-min.js" as="script" crossorigin>
+<link rel="preload"    href="https://cdn.ssref.net/req/202211181/icons/sr_icons-min.svg?cbb" as="fetch" crossorigin>
 <link rel="preload"    href="https://www.sports-reference.com/short/cbb/inc/main_nav_menu.json" as="fetch" crossorigin>
-<link rel="preload"    href="https://d2p3bygnnzw9w3.cloudfront.net/req/201604190/images/chosen-sprite.png" as="image" crossorigin>
-<link rel="preload"    href="https://d2p3bygnnzw9w3.cloudfront.net/req/202010021/css/cbb/sr-min.css" as="style"    crossorigin>
+<link rel="preload"    href="https://cdn.ssref.net/req/201604190/images/chosen-sprite.png" as="image" crossorigin>
+<link rel="preload"    href="https://cdn.ssref.net/req/202211181/css/cbb/sr-min.css" as="style"    crossorigin>
 
 <!-- CSS start -->
-<link rel="stylesheet" href="https://d2p3bygnnzw9w3.cloudfront.net/req/202010021/css/cbb/sr-min.css" type="text/css"
-      onload="if (document.srdev) { this.href = 'https://d2p3bygnnzw9w3.cloudfront.net/nocdn/dev/'.concat(document.srdev.substr(0,2),'/css/cbb/sr.css'); }" />
+<link rel="stylesheet" href="https://cdn.ssref.net/req/202211181/css/cbb/sr-min.css" type="text/css"
+      onload="if (document.srdev) { this.href = 'https://cdn.ssref.net/nocdn/dev/'.concat(document.srdev.substr(0,2),'/css/cbb/sr.css'); }" />
 <!-- CSS END -->
 
 <!-- JS START -->
 <script class="allowed">var sr_is_production = true;
-function vjs_getUrlParameter(e){e=e.replace(/[\[]/,"\\[").replace(/[\]]/,"\\]");var t=new RegExp("[\\?&]"+e+"=([^&#]*)").exec(location.search);return null===t?"":decodeURIComponent(t[1].replace(/\+/g," "))}document.lang="","/es/"===window.location.pathname.substr(0,4)?document.lang="es":"/pt/"===window.location.pathname.substr(0,4)?document.lang="pt":"/fr/"===window.location.pathname.substr(0,4)?document.lang="fr":"/it/"===window.location.pathname.substr(0,4)?document.lang="it":"/de/"===window.location.pathname.substr(0,4)?document.lang="de":(window.location.pathname.substr(0,4),document.lang="en"),vjs_getUrlParameter("lang")&&(document.lang=vjs_getUrlParameter("lang")),document.srdev=null,vjs_getUrlParameter("srdev")&&(document.srdev=vjs_getUrlParameter("srdev"));var log_performance=!0,is_new_jscss_version=!1,sr_detect_operaMini=-1<navigator.userAgent.indexOf("Opera Mini");sr_detect_operaMini&&((el=document.querySelector("html")).className=el.className.concat(" operamini"));var sr_detect_firefox=-1<navigator.userAgent.indexOf("Firefox");sr_detect_firefox&&((el=document.querySelector("html")).className=el.className.concat(" firefox"));var sr_detect_firefoxMobile=-1<navigator.userAgent.indexOf("Firefox")&&(-1<navigator.userAgent.indexOf("Mobile")||-1<navigator.userAgent.indexOf("Tablet"));sr_detect_firefoxMobile&&((el=document.querySelector("html")).className=el.className.concat(" firefox-mobile"));var el,sr_detect_ie=function(){var e=window.navigator.userAgent;if(0<e.indexOf("Trident/7.0"))return 11;if(0<e.indexOf("Trident/6.0"))return 10;if(0<e.indexOf("Trident/5.0"))return 9;for(var t=3,n=document.createElement("div"),r=n.getElementsByTagName("i");n.innerHTML="\x3c!--[if gt IE "+ ++t+"]><i></i><![endif]--\x3e",r[0];);return 4<t&&t}(),sr_detect_edge=!sr_detect_ie&&!!window.StyleMedia,sr_detect_safari=/Safari/.test(navigator.userAgent)&&/Apple Computer/.test(navigator.vendor),className="no-js";(el=document.querySelector("html")).classList?el.classList.remove(className):el.className=el.className.replace(new RegExp("(^|\\b)"+className.split(" ").join("|")+"(\\b|)","gi")," "),el.className=el.className.concat(" js"),function(a,u,f){function m(e,t){return typeof e===t}function p(e){return"function"!=typeof u.createElement?u.createElement(e):y?u.createElementNS.call(u,"http://www.w3.org/2000/svg",e):u.createElement.apply(u,arguments)}function o(e,t,n,r){var o,i,a,s,l="modernizr",c=p("div"),d=function(){var e=u.body;return e||((e=p(y?"svg":"body")).fake=!0),e}();if(parseInt(n,10))for(;n--;)(a=p("div")).id=r?r[n]:l+(n+1),c.appendChild(a);return(o=p("style")).type="text/css",o.id="s"+l,(d.fake?d:c).appendChild(o),d.appendChild(c),o.styleSheet?o.styleSheet.cssText=e:o.appendChild(u.createTextNode(e)),c.id=l,d.fake&&(d.style.background="",d.style.overflow="hidden",s=_.style.overflow,_.style.overflow="hidden",_.appendChild(d)),i=t(c,e),d.fake?(d.parentNode.removeChild(d),_.style.overflow=s,_.offsetHeight):c.parentNode.removeChild(c),!!i}function h(e){return e.replace(/([a-z])-([a-z])/g,function(e,t,n){return t+n.toUpperCase()}).replace(/^-/,"")}function s(e,t){return function(){return e.apply(t,arguments)}}function i(e){return e.replace(/([A-Z])/g,function(e,t){return"-"+t.toLowerCase()}).replace(/^ms-/,"-ms-")}function v(e,t){var n=e.length;if("CSS"in a&&"supports"in a.CSS){for(;n--;)if(a.CSS.supports(i(e[n]),t))return!0;return!1}if("CSSSupportsRule"in a){for(var r=[];n--;)r.push("("+i(e[n])+":"+t+")");return o("@supports ("+(r=r.join(" or "))+") { #modernizr { position: absolute; } }",function(e){return"absolute"==function(e,t,n){var r;if("getComputedStyle"in a){r=getComputedStyle.call(a,e,t);var o=a.console;if(null!==r)n&&(r=r.getPropertyValue(n));else if(o){o[o.error?"error":"log"].call(o,"getComputedStyle returning null, its possible modernizr test results are inaccurate")}}else r=!t&&e.currentStyle&&e.currentStyle[n];return r}(e,null,"position")})}return f}function r(e,t,n,r,o){var i=e.charAt(0).toUpperCase()+e.slice(1),a=(e+" "+z.join(i+" ")+i).split(" ");return m(t,"string")||m(t,"undefined")?function(e,t,n,r){function o(){a&&(delete T.style,delete T.modElem)}if(r=!m(r,"undefined")&&r,!m(n,"undefined")){var i=v(e,n);if(!m(i,"undefined"))return i}for(var a,s,l,c,d,u=["modernizr","tspan","samp"];!T.style&&u.length;)a=!0,T.modElem=p(u.shift()),T.style=T.modElem.style;for(l=e.length,s=0;s<l;s++)if(c=e[s],d=T.style[c],!~(""+c).indexOf("-")||(c=h(c)),T.style[c]!==f){if(r||m(n,"undefined"))return o(),"pfx"!=t||c;try{T.style[c]=n}catch(e){}if(T.style[c]!=d)return o(),"pfx"!=t||c}return o(),!1}(a,t,r,o):function(e,t,n){var r;for(var o in e)if(e[o]in t)return!1===n?e[o]:m(r=t[e[o]],"function")?s(r,n||t):r;return!1}(a=(e+" "+M.join(i+" ")+i).split(" "),t,n)}function e(e,t,n){return r(e,f,f,t,n)}var l=[],c=[],t={_version:"3.6.0",_config:{classPrefix:"",enableClasses:!0,enableJSClass:!0,usePrefixes:!0},_q:[],on:function(e,t){var n=this;setTimeout(function(){t(n[e])},0)},addTest:function(e,t,n){c.push({name:e,fn:t,options:n})},addAsyncTest:function(e){c.push({name:null,fn:e})}},d=function(){};d.prototype=t,(d=new d).addTest("cookies",function(){try{u.cookie="cookietest=1";var e=-1!=u.cookie.indexOf("cookietest=");return u.cookie="cookietest=1; expires=Thu, 01-Jan-1970 00:00:01 GMT",e}catch(e){return!1}}),d.addTest("localstorage",function(){var e="modernizr";try{return localStorage.setItem(e,e),localStorage.removeItem(e),!0}catch(e){return!1}}),d.addTest("sessionstorage",function(){var e="modernizr";try{return sessionStorage.setItem(e,e),sessionStorage.removeItem(e),!0}catch(e){return!1}}),d.addTest("cors","XMLHttpRequest"in a&&"withCredentials"in new XMLHttpRequest),d.addTest("history",function(){var e=navigator.userAgent;return(-1===e.indexOf("Android 2.")&&-1===e.indexOf("Android 4.0")||-1===e.indexOf("Mobile Safari")||-1!==e.indexOf("Chrome")||-1!==e.indexOf("Windows Phone")||"file:"===location.protocol)&&(a.history&&"pushState"in a.history)});var g=t._config.usePrefixes?" -webkit- -moz- -o- -ms- ".split(" "):["",""];t._prefixes=g;var _=u.documentElement,y="svg"===_.nodeName.toLowerCase();y||function(e,a){function u(e,t){var n=e.createElement("p"),r=e.getElementsByTagName("head")[0]||e.documentElement;return n.innerHTML="x<style>"+t+"</style>",r.insertBefore(n.lastChild,r.firstChild)}function f(){var e=g.elements;return"string"==typeof e?e.split(" "):e}function m(e){var t=v[e[d]];return t||(t={},h++,e[d]=h,v[h]=t),t}function r(e,t,n){return t=t||a,s?t.createElement(e):!(r=(n=n||m(t)).cache[e]?n.cache[e].cloneNode():c.test(e)?(n.cache[e]=n.createElem(e)).cloneNode():n.createElem(e)).canHaveChildren||l.test(e)||r.tagUrn?r:n.frag.appendChild(r);var r}function o(e){var t=m(e=e||a);return!g.shivCSS||n||t.hasCSS||(t.hasCSS=!!u(e,"article,aside,dialog,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}mark{background:#FF0;color:#000}template{display:none}")),s||function(t,n){n.cache||(n.cache={},n.createElem=t.createElement,n.createFrag=t.createDocumentFragment,n.frag=n.createFrag()),t.createElement=function(e){return g.shivMethods?r(e,t,n):n.createElem(e)},t.createDocumentFragment=Function("h,f","return function(){var n=f.cloneNode(),c=n.createElement;h.shivMethods&&("+f().join().replace(/[\w\-:]+/g,function(e){return n.createElem(e),n.frag.createElement(e),'c("'+e+'")'})+");return n}")(g,n.frag)}(e,t),e}function p(e){for(var t,n=e.attributes,r=n.length,o=e.ownerDocument.createElement(w+":"+e.nodeName);r--;)(t=n[r]).specified&&o.setAttribute(t.nodeName,t.nodeValue);return o.style.cssText=e.style.cssText,o}function t(s){function l(){clearTimeout(e._removeSheetTimer),c&&c.removeNode(!0),c=null}var c,d,e=m(s),t=s.namespaces,n=s.parentWindow;return!x||s.printShived||(void 0===t[w]&&t.add(w),n.attachEvent("onbeforeprint",function(){l();for(var e,t,n,r=s.styleSheets,o=[],i=r.length,a=Array(i);i--;)a[i]=r[i];for(;n=a.pop();)if(!n.disabled&&y.test(n.media)){try{t=(e=n.imports).length}catch(e){t=0}for(i=0;i<t;i++)a.push(e[i]);try{o.push(n.cssText)}catch(e){}}o=function(e){for(var t,n=e.split("{"),r=n.length,o=RegExp("(^|[\\s,>+~])("+f().join("|")+")(?=[[\\s,>+~#.:]|)","gi"),i="1"+w+"\\:2";r--;)(t=n[r]=n[r].split("}"))[t.length-1]=t[t.length-1].replace(o,i),n[r]=t.join("}");return n.join("{")}(o.reverse().join("")),d=function(e){for(var t,n=e.getElementsByTagName("*"),r=n.length,o=RegExp("^(?:"+f().join("|")+")","i"),i=[];r--;)t=n[r],o.test(t.nodeName)&&i.push(t.applyElement(p(t)));return i}(s),c=u(s,o)}),n.attachEvent("onafterprint",function(){(function(e){for(var t=e.length;t--;)e[t].removeNode()})(d),clearTimeout(e._removeSheetTimer),e._removeSheetTimer=setTimeout(l,500)}),s.printShived=!0),s}var n,s,i=e.html5||{},l=/^<|^(?:button|map|select|textarea|object|iframe|option|optgroup)/i,c=/^(?:a|b|code|div|fieldset|h1|h2|h3|h4|h5|h6|i|label|li|ol|p|q|span|strong|style|table|tbody|td|th|tr|ul)/i,d="_html5shiv",h=0,v={};!function(){try{var e=a.createElement("a");e.innerHTML="<xyz></xyz>",n="hidden"in e,s=1==e.childNodes.length||function(){a.createElement("a");var e=a.createDocumentFragment();return void 0===e.cloneNode||void 0===e.createDocumentFragment||void 0===e.createElement}()}catch(e){s=n=!0}}();var g={elements:i.elements||"abbr article aside audio bdi canvas data datalist details dialog figcaption figure footer header hgroup main mark meter nav output picture progress section summary template time video",version:"3.7.3",shivCSS:!1!==i.shivCSS,supportsUnknownElements:s,shivMethods:!1!==i.shivMethods,type:"default",shivDocument:o,createElement:r,createDocumentFragment:function(e,t){if(e=e||a,s)return e.createDocumentFragment();for(var n=(t=t||m(e)).frag.cloneNode(),r=0,o=f(),i=o.length;r<i;r++)n.createElement(o[r]);return n},addElements:function(e,t){var n=g.elements;"string"!=typeof n&&(n=n.join(" ")),"string"!=typeof e&&(e=e.join(" ")),g.elements=n+" "+e,o(t)}};e.html5=g,o(a);var _,y=/^|\b(?:all|print)\b/,w="html5shiv",x=!(s||(_=a.documentElement,void 0===a.namespaces||void 0===a.parentWindow||void 0===_.applyElement||void 0===_.removeNode||void 0===e.attachEvent));g.type+=" print",(g.shivPrint=t)(a),"object"==typeof module&&module.exports&&(module.exports=g)}(void 0!==a?a:this,u),d.addTest("csspositionsticky",function(){var e="position:",t=p("a").style;return t.cssText=e+g.join("sticky;"+e).slice(0,-e.length),-1!==t.position.indexOf("sticky")});var w,n=(w=!("onblur"in u.documentElement),function(e,t){var n;return!!e&&(t&&"string"!=typeof t||(t=p(t||"div")),!(n=(e="on"+e)in t)&&w&&(t.setAttribute||(t=p("div")),t.setAttribute(e,""),n="function"==typeof t[e],t[e]!==f&&(t[e]=f),t.removeAttribute(e)),n)});t.hasEvent=n;var x=t.testStyles=o;d.addTest("touchevents",function(){var t;if("ontouchstart"in a||a.DocumentTouch&&u instanceof DocumentTouch)t=!0;else{var e=["@media (",g.join("touch-enabled),("),"heartz",")","{#modernizr{top:9px;position:absolute}}"].join("");x(e,function(e){t=9===e.offsetTop})}return t});var b="Moz O ms Webkit",M=t._config.usePrefixes?b.toLowerCase().split(" "):[];t._domPrefixes=M,d.addTest("pointerevents",function(){var e=!1,t=M.length;for(e=d.hasEvent("pointerdown");t--&&!e;)n(M[t]+"pointerdown")&&(e=!0);return e});var z=t._config.usePrefixes?b.split(" "):[];t._cssomPrefixes=z;function S(e){var t,n=g.length,r=a.CSSRule;if(void 0===r)return f;if(!e)return!1;if((t=(e=e.replace(/^@/,"")).replace(/-/g,"_").toUpperCase()+"_RULE")in r)return"@"+e;for(var o=0;o<n;o++){var i=g[o];if(i.toUpperCase()+"_"+t in r)return"@-"+i.toLowerCase()+"-"+e}return!1}t.atRule=S;var E={elem:p("modernizr")};d._q.push(function(){delete E.elem});var T={style:E.elem.style};d._q.unshift(function(){delete T.style}),t.testAllProps=r;var C=t.prefixed=function(e,t,n){return 0===e.indexOf("@")?S(e):(-1!=e.indexOf("-")&&(e=h(e)),t?r(e,t,n):r(e,"pfx"))};d.addTest("matchmedia",!!C("matchMedia",a)),t.testAllProps=e,d.addTest("flexwrap",e("flexWrap","wrap",!0)),function(){var e,t,n,r,o,i;for(var a in c)if(c.hasOwnProperty(a)){if(e=[],(t=c[a]).name&&(e.push(t.name.toLowerCase()),t.options&&t.options.aliases&&t.options.aliases.length))for(n=0;n<t.options.aliases.length;n++)e.push(t.options.aliases[n].toLowerCase());for(r=m(t.fn,"function")?t.fn():t.fn,o=0;o<e.length;o++)1===(i=e[o].split(".")).length?d[i[0]]=r:(!d[i[0]]||d[i[0]]instanceof Boolean||(d[i[0]]=new Boolean(d[i[0]])),d[i[0]][i[1]]=r),l.push((r?"":"no-")+i.join("-"))}}(),function(e){var t=_.className,n=d._config.classPrefix||"";if(y&&(t=t.baseVal),d._config.enableJSClass){var r=new RegExp("(^|\\s)"+n+"no-js(\\s|)");t=t.replace(r,"1"+n+"js2")}d._config.enableClasses&&(t+=" "+n+e.join(" "+n),y?_.className.baseVal=t:_.className=t)}(l),delete t.addTest,delete t.addAsyncTest;for(var N=0;N<d._q.length;N++)d._q[N]();a.Modernizr=d}(window,document),Modernizr.viewport_width=Math.max(document.documentElement.clientWidth,window.innerWidth||0),Modernizr.viewport_height=Math.max(document.documentElement.clientHeight,window.innerHeight||0),Modernizr.narrow=Modernizr.viewport_width<=704,Modernizr.constrained=Modernizr.viewport_width<=1200,Modernizr.site_menu=Modernizr.viewport_width<=1020?"button":"nav_bar",Modernizr.touch=Modernizr.touchevents||Modernizr.pointerevents&&(0<navigator.MaxTouchPoints||0<navigator.msMaxTouchPoints),Modernizr.phone=Modernizr.narrow&&Modernizr.touch,Modernizr.tablet=Modernizr.viewport_width<1075&&Modernizr.touch,Modernizr.desktop=!Modernizr.constrained&&!Modernizr.touch,Modernizr.laptop=!(Modernizr.desktop||Modernizr.tablet||Modernizr.phone);var patt=new RegExp("hideallads");Modernizr.adfree=patt.test(window.location.href);var sr_html=document.querySelector("html"),cn=sr_html.className;Modernizr.phone?sr_html.className=cn.concat(" phone"):Modernizr.tablet?sr_html.className=cn.concat(" tablet"):(Modernizr.desktop||Modernizr.laptop)&&(sr_html.className=cn.concat(" desktop"));var sr_host_parts=window.location.hostname.split(".");cn=sr_html.className;Modernizr.is_build=Modernizr.is_live=Modernizr.is_dev=!1,"www"===sr_host_parts[0]||"fbref"===sr_host_parts[0]?(Modernizr.is_live=!0,sr_html.className=cn.concat(" is_live")):sr_host_parts[0].startsWith("b")?(Modernizr.is_build=!0,sr_html.className=cn.concat(" is_build")):(sr_host_parts[0].startsWith("d")||sr_host_parts[0].startsWith("r"))&&(Modernizr.is_dev=!0,sr_html.className=cn.concat(" is_dev")),Modernizr.is_stathead=!1,("stathead"===sr_host_parts[1]&&"srdevel"===sr_host_parts[2]||"stathead"===sr_host_parts[0]||"www"===sr_host_parts[0]&&"stathead"===sr_host_parts[1])&&(cn=sr_html.className,sr_html.className=cn.concat(" is_stathead"),Modernizr.is_stathead=!0);var sr_logger=function(){var e=null,t={enableLogger:function(){null!=e&&(window.console.log=e)},disableLogger:function(){e=console.log,window.console.log=function(){}}};return t}();!document.srdev&&sr_is_production&&sr_logger.disableLogger(),Modernizr.is_modern=1,Modernizr.lang=document.lang||"",Modernizr.srdev=document.srdev;var sr_utilities_js_loader=[];function vjs_readCookie(e){for(var t=e+"=",n=document.cookie.split(";"),r=0;r<n.length;r++){for(var o=n[r];" "===o.charAt(0);)o=o.substring(1,o.length);if(0===o.indexOf(t))return decodeURIComponent(o.substring(t.length,o.length))}return null}function vjs_createCookie(e,t,n){var r="";if(n){var o=new Date;o.setTime(o.getTime()+24*n*60*60*1e3),r="; expires="+o.toGMTString()}else r="";var i=encodeURIComponent(e)+"="+encodeURIComponent(t)+r+"; path=/";document.cookie=i}!function(o){function e(e,t){"use strict";var n=o.document.getElementsByTagName("script")[0],r=o.document.createElement("script");return r.src=e,r.async=!0,n.parentNode.insertBefore(r,n),t&&"function"==typeof t&&(r.onload=t),r}"undefined"!=typeof module?module.exports=e:o.loadJS=e}("undefined"!=typeof global?global:this),String.prototype.vjs_isMatch=function(e){return null!==this.match(e)};var sr_time_begin=new Date,sr_perf_startTime=new Date,sr_perf_log="<strong>Performance:</strong>",sr_perf_lastTime=new Date;function vjs_ready(e){"loading"!=document.readyState?e():document.addEventListener("DOMContentLoaded",e)}
+function vjs_getUrlParameter(e){e=e.replace(/[\[]/,"\\[").replace(/[\]]/,"\\]");e=new RegExp("[\\?&]"+e+"=([^&#]*)").exec(location.search);return null===e?"":decodeURIComponent(e[1].replace(/\+/g," "))}document.lang="","/es/"===window.location.pathname.substr(0,4)?document.lang="es":"/pt/"===window.location.pathname.substr(0,4)?document.lang="pt":"/fr/"===window.location.pathname.substr(0,4)?document.lang="fr":"/it/"===window.location.pathname.substr(0,4)?document.lang="it":"/de/"===window.location.pathname.substr(0,4)?document.lang="de":(window.location.pathname.substr(0,4),document.lang="en"),vjs_getUrlParameter("lang")&&(document.lang=vjs_getUrlParameter("lang")),document.srdev=null,vjs_getUrlParameter("srdev")&&(document.srdev=vjs_getUrlParameter("srdev"));var el,log_performance=!0,is_new_jscss_version=!1,sr_detect_operaMini=-1<navigator.userAgent.indexOf("Opera Mini"),sr_detect_firefox=(sr_detect_operaMini&&((el=document.querySelector("html")).className=el.className.concat(" operamini")),-1<navigator.userAgent.indexOf("Firefox")),sr_detect_firefoxMobile=(sr_detect_firefox&&((el=document.querySelector("html")).className=el.className.concat(" firefox")),-1<navigator.userAgent.indexOf("Firefox")&&(-1<navigator.userAgent.indexOf("Mobile")||-1<navigator.userAgent.indexOf("Tablet"))),sr_detect_ie=(sr_detect_firefoxMobile&&((el=document.querySelector("html")).className=el.className.concat(" firefox-mobile")),function(){var e=window.navigator.userAgent;if(0<e.indexOf("Trident/7.0"))return 11;if(0<e.indexOf("Trident/6.0"))return 10;if(0<e.indexOf("Trident/5.0"))return 9;for(var t=3,n=document.createElement("div"),r=n.getElementsByTagName("i");n.innerHTML="\x3c!--[if gt IE "+ ++t+"]><i></i><![endif]--\x3e",r[0];);return 4<t&&t}()),sr_detect_edge=!sr_detect_ie&&!!window.StyleMedia,sr_detect_safari=/Safari/.test(navigator.userAgent)&&/Apple Computer/.test(navigator.vendor),className="no-js",patt=((el=document.querySelector("html")).classList?el.classList.remove(className):el.className=el.className.replace(new RegExp("(^|\\b)"+className.split(" ").join("|")+"(\\b|$)","gi")," "),el.className=el.className.concat(" js"),!function(a,d,S){function E(e,t){return typeof e===t}function T(e){return"function"!=typeof d.createElement?d.createElement(e):m?d.createElementNS.call(d,"http://www.w3.org/2000/svg",e):d.createElement.apply(d,arguments)}function R(e,t,n,r){var o,i,a,s,l="modernizr",c=T("div");(s=d.body)||((s=T(m?"svg":"body")).fake=!0);if(parseInt(n,10))for(;n--;)(i=T("div")).id=r?r[n]:l+(n+1),c.appendChild(i);return(o=T("style")).type="text/css",o.id="s"+l,(s.fake?s:c).appendChild(o),s.appendChild(c),o.styleSheet?o.styleSheet.cssText=e:o.appendChild(d.createTextNode(e)),c.id=l,s.fake&&(s.style.background="",s.style.overflow="hidden",a=u.style.overflow,u.style.overflow="hidden",u.appendChild(s)),o=t(c,e),s.fake?(s.parentNode.removeChild(s),u.style.overflow=a,u.offsetHeight):c.parentNode.removeChild(c),!!o}function U(e){return e.replace(/([a-z])-([a-z])/g,function(e,t,n){return t+n.toUpperCase()}).replace(/^-/,"")}function D(e){return e.replace(/([A-Z])/g,function(e,t){return"-"+t.toLowerCase()}).replace(/^ms-/,"-ms-")}function q(e,t){var n=e.length;if("CSS"in a&&"supports"in a.CSS){for(;n--;)if(a.CSS.supports(D(e[n]),t))return!0;return!1}if("CSSSupportsRule"in a){for(var r=[];n--;)r.push("("+D(e[n])+":"+t+")");return R("@supports ("+(r=r.join(" or "))+") { #modernizr { position: absolute; } }",function(e){return"absolute"==(e=e,t=null,n="position","getComputedStyle"in a?(r=getComputedStyle.call(a,e,t),o=a.console,null!==r?n&&(r=r.getPropertyValue(n)):o&&o[o.error?"error":"log"].call(o,"getComputedStyle returning null, its possible modernizr test results are inaccurate")):r=!t&&e.currentStyle&&e.currentStyle[n],r);var t,n,r,o})}return S}function r(e,t,n,r,o){var i,a,s=e.charAt(0).toUpperCase()+e.slice(1),l=(e+" "+re.join(s+" ")+s).split(" ");if(E(t,"string")||void 0===t){var c=l,d=t,u=r,m=o;function f(){p&&(delete L.style,delete L.modElem)}if(m=void 0!==m&&m,void 0!==u){r=q(c,u);if(void 0!==r)return r}for(var p,h,g,v,_,y=["modernizr","tspan","samp"];!L.style&&y.length;)p=!0,L.modElem=T(y.shift()),L.style=L.modElem.style;for(g=c.length,h=0;h<g;h++)if(v=c[h],_=L.style[v],~(""+v).indexOf("-")&&(v=U(v)),L.style[v]!==S){if(m||void 0===u)return f(),"pfx"!=d||v;try{L.style[v]=u}catch(e){}if(L.style[v]!=_)return f(),"pfx"!=d||v}return f(),!1}var w=l=(e+" "+P.join(s+" ")+s).split(" "),b=t,x=n;for(a in w)if(w[a]in b)if(!1===x)return w[a];else{i=b[w[a]];if(E(i,"function")){var M=i;var z=x||b;return function(){return M.apply(z,arguments)};return}else return i}return!1}function F(e,t,n){return r(e,S,S,t,n)}var $=[],o=[],e={_version:"3.6.0",_config:{classPrefix:"",enableClasses:!0,enableJSClass:!0,usePrefixes:!0},_q:[],on:function(e,t){var n=this;setTimeout(function(){t(n[e])},0)},addTest:function(e,t,n){o.push({name:e,fn:t,options:n})},addAsyncTest:function(e){o.push({name:null,fn:e})}},n=function(){},s=(n.prototype=e,(n=new n).addTest("cookies",function(){try{d.cookie="cookietest=1";var e=-1!=d.cookie.indexOf("cookietest=");return d.cookie="cookietest=1; expires=Thu, 01-Jan-1970 00:00:01 GMT",e}catch(e){return!1}}),n.addTest("localstorage",function(){var e="modernizr";try{return localStorage.setItem(e,e),localStorage.removeItem(e),!0}catch(e){return!1}}),n.addTest("sessionstorage",function(){var e="modernizr";try{return sessionStorage.setItem(e,e),sessionStorage.removeItem(e),!0}catch(e){return!1}}),n.addTest("cors","XMLHttpRequest"in a&&"withCredentials"in new XMLHttpRequest),n.addTest("history",function(){var e=navigator.userAgent;return(-1===e.indexOf("Android 2.")&&-1===e.indexOf("Android 4.0")||-1===e.indexOf("Mobile Safari")||-1!==e.indexOf("Chrome")||-1!==e.indexOf("Windows Phone")||"file:"===location.protocol)&&(a.history&&"pushState"in a.history)}),e._config.usePrefixes?" -webkit- -moz- -o- -ms- ".split(" "):["",""]),u=(e._prefixes=s,d.documentElement),m="svg"===u.nodeName.toLowerCase();if(!m){var t=void 0!==a?a:this,l=d;function I(e,t){var n=e.createElement("p"),e=e.getElementsByTagName("head")[0]||e.documentElement;return n.innerHTML="x<style>"+t+"</style>",e.insertBefore(n.lastChild,e.firstChild)}function f(){var e=y.elements;return"string"==typeof e?e.split(" "):e}function p(e){var t=X[e[G]];return t||(t={},v++,e[G]=v,X[v]=t),t}function W(e,t,n){return t=t||l,h?t.createElement(e):!(t=(n=n||p(t)).cache[e]?n.cache[e].cloneNode():V.test(e)?(n.cache[e]=n.createElem(e)).cloneNode():n.createElem(e)).canHaveChildren||J.test(e)||t.tagUrn?t:n.frag.appendChild(t)}function i(e){var t,n,r=p(e=e||l);return!y.shivCSS||c||r.hasCSS||(r.hasCSS=!!I(e,"article,aside,dialog,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}mark{background:#FF0;color:#000}template{display:none}")),h||(t=e,(n=r).cache||(n.cache={},n.createElem=t.createElement,n.createFrag=t.createDocumentFragment,n.frag=n.createFrag()),t.createElement=function(e){return y.shivMethods?W(e,t,n):n.createElem(e)},t.createDocumentFragment=Function("h,f","return function(){var n=f.cloneNode(),c=n.createElement;h.shivMethods&&("+f().join().replace(/[\w\-:]+/g,function(e){return n.createElem(e),n.frag.createElement(e),'c("'+e+'")'})+");return n}")(y,n.frag)),e}function H(e){for(var t,n=e.getElementsByTagName("*"),r=n.length,o=RegExp("^(?:"+f().join("|")+")$","i"),i=[];r--;)t=n[r],o.test(t.nodeName)&&i.push(t.applyElement(function(e){for(var t,n=e.attributes,r=n.length,o=e.ownerDocument.createElement(w+":"+e.nodeName);r--;)(t=n[r]).specified&&o.setAttribute(t.nodeName,t.nodeValue);return o.style.cssText=e.style.cssText,o}(t)));return i}function B(s){function l(){clearTimeout(n._removeSheetTimer),c&&c.removeNode(!0),c=null}var c,d,n=p(s),e=s.namespaces,t=s.parentWindow;return!K||s.printShived||(void 0===e[w]&&e.add(w),t.attachEvent("onbeforeprint",function(){l();for(var e,t,n,r=s.styleSheets,o=[],i=r.length,a=Array(i);i--;)a[i]=r[i];for(;n=a.pop();)if(!n.disabled&&Z.test(n.media)){try{t=(e=n.imports).length}catch(e){t=0}for(i=0;i<t;i++)a.push(e[i]);try{o.push(n.cssText)}catch(e){}}o=function(e){for(var t,n=e.split("{"),r=n.length,o=RegExp("(^|[\\s,>+~])("+f().join("|")+")(?=[[\\s,>+~#.:]|$)","gi"),i="$1"+w+"\\:$2";r--;)(t=n[r]=n[r].split("}"))[t.length-1]=t[t.length-1].replace(o,i),n[r]=t.join("}");return n.join("{")}(o.reverse().join("")),d=H(s),c=I(s,o)}),t.attachEvent("onafterprint",function(){for(var e=d,t=e.length;t--;)e[t].removeNode();clearTimeout(n._removeSheetTimer),n._removeSheetTimer=setTimeout(l,500)}),s.printShived=!0),s}var c,h,g=t.html5||{},J=/^<|^(?:button|map|select|textarea|object|iframe|option|optgroup)$/i,V=/^(?:a|b|code|div|fieldset|h1|h2|h3|h4|h5|h6|i|label|li|ol|p|q|span|strong|style|table|tbody|td|th|tr|ul)$/i,G="_html5shiv",v=0,X={};try{var _=l.createElement("a");_.innerHTML="<xyz></xyz>",c="hidden"in _,h=1==_.childNodes.length||(l.createElement("a"),void 0===(O=l.createDocumentFragment()).cloneNode||void 0===O.createDocumentFragment||void 0===O.createElement)}catch(e){h=c=!0}var y={elements:g.elements||"abbr article aside audio bdi canvas data datalist details dialog figcaption figure footer header hgroup main mark meter nav output picture progress section summary template time video",version:"3.7.3",shivCSS:!1!==g.shivCSS,supportsUnknownElements:h,shivMethods:!1!==g.shivMethods,type:"default",shivDocument:i,createElement:W,createDocumentFragment:function(e,t){if(e=e||l,h)return e.createDocumentFragment();for(var n=(t=t||p(e)).frag.cloneNode(),r=0,o=f(),i=o.length;r<i;r++)n.createElement(o[r]);return n},addElements:function(e,t){var n=y.elements;"string"!=typeof n&&(n=n.join(" ")),"string"!=typeof e&&(e=e.join(" ")),y.elements=n+" "+e,i(t)}},Z=(t.html5=y,i(l),/^$|\b(?:all|print)\b/),w="html5shiv",K=!(h||(_=l.documentElement,void 0===l.namespaces||void 0===l.parentWindow||void 0===_.applyElement||void 0===_.removeNode||void 0===t.attachEvent));y.type+=" print",(y.shivPrint=B)(l),"object"==typeof module&&module.exports&&(module.exports=y)}n.addTest("csspositionsticky",function(){var e="position:",t=T("a").style;return t.cssText=e+s.join("sticky;"+e).slice(0,-e.length),-1!==t.position.indexOf("sticky")});function Q(e){var t,n=s.length,r=a.CSSRule;if(void 0===r)return S;if(!e)return!1;if((t=(e=e.replace(/^@/,"")).replace(/-/g,"_").toUpperCase()+"_RULE")in r)return"@"+e;for(var o=0;o<n;o++){var i=s[o];if(i.toUpperCase()+"_"+t in r)return"@-"+i.toLowerCase()+"-"+e}return!1}Y=!("onblur"in d.documentElement);var Y,b,x,M,z,C,N,j,ee,k,A,te=function(e,t){var n;return!!e&&(!(n=(e="on"+e)in(t=t&&"string"!=typeof t?t:T(t||"div")))&&Y&&((t=t.setAttribute?t:T("div")).setAttribute(e,""),n="function"==typeof t[e],t[e]!==S&&(t[e]=S),t.removeAttribute(e)),n)},ne=(e.hasEvent=te,e.testStyles=R),O=(n.addTest("touchevents",function(){var t,e;return"ontouchstart"in a||a.DocumentTouch&&d instanceof DocumentTouch?t=!0:(e=["@media (",s.join("touch-enabled),("),"heartz",")","{#modernizr{top:9px;position:absolute}}"].join(""),ne(e,function(e){t=9===e.offsetTop})),t}),"Moz O ms Webkit"),P=e._config.usePrefixes?O.toLowerCase().split(" "):[],re=(e._domPrefixes=P,n.addTest("pointerevents",function(){for(var e=!1,t=P.length,e=n.hasEvent("pointerdown");t--&&!e;)te(P[t]+"pointerdown")&&(e=!0);return e}),e._config.usePrefixes?O.split(" "):[]),oe=(e._cssomPrefixes=re,e.atRule=Q,{elem:T("modernizr")}),L=(n._q.push(function(){delete oe.elem}),{style:oe.elem.style}),g=(n._q.unshift(function(){delete L.style}),e.testAllProps=r,e.prefixed=function(e,t,n){return 0===e.indexOf("@")?Q(e):(-1!=e.indexOf("-")&&(e=U(e)),t?r(e,t,n):r(e,"pfx"))});for(j in n.addTest("matchmedia",!!g("matchMedia",a)),e.testAllProps=F,n.addTest("flexwrap",F("flexWrap","wrap",!0)),o)if(o.hasOwnProperty(j)){if(b=[],(x=o[j]).name&&(b.push(x.name.toLowerCase()),x.options&&x.options.aliases&&x.options.aliases.length))for(M=0;M<x.options.aliases.length;M++)b.push(x.options.aliases[M].toLowerCase());for(z=E(x.fn,"function")?x.fn():x.fn,C=0;C<b.length;C++)1===(N=b[C].split(".")).length?n[N[0]]=z:(!n[N[0]]||n[N[0]]instanceof Boolean||(n[N[0]]=new Boolean(n[N[0]])),n[N[0]][N[1]]=z),$.push((z?"":"no-")+N.join("-"))}t=$,k=u.className,A=n._config.classPrefix||"",m&&(k=k.baseVal),n._config.enableJSClass&&(ee=new RegExp("(^|\\s)"+A+"no-js(\\s|$)"),k=k.replace(ee,"$1"+A+"js$2")),n._config.enableClasses&&(k+=" "+A+t.join(" "+A),m?u.className.baseVal=k:u.className=k),delete e.addTest,delete e.addAsyncTest;for(var ie=0;ie<n._q.length;ie++)n._q[ie]();a.Modernizr=n}(window,document),Modernizr.viewport_width=Math.max(document.documentElement.clientWidth,window.innerWidth||0),Modernizr.viewport_height=Math.max(document.documentElement.clientHeight,window.innerHeight||0),Modernizr.narrow=Modernizr.viewport_width<=704,Modernizr.constrained=Modernizr.viewport_width<=1200,Modernizr.site_menu=Modernizr.viewport_width<=1020?"button":"nav_bar",Modernizr.touch=Modernizr.touchevents||Modernizr.pointerevents&&(0<navigator.MaxTouchPoints||0<navigator.msMaxTouchPoints),Modernizr.phone=Modernizr.narrow&&Modernizr.touch,Modernizr.tablet=Modernizr.viewport_width<1075&&Modernizr.touch,Modernizr.desktop=!Modernizr.constrained&&!Modernizr.touch,Modernizr.laptop=!(Modernizr.desktop||Modernizr.tablet||Modernizr.phone),new RegExp("hideallads")),sr_html=(Modernizr.adfree=patt.test(window.location.href),document.querySelector("html")),cn=sr_html.className,sr_host_parts=(Modernizr.phone?sr_html.className=cn.concat(" phone"):Modernizr.tablet?sr_html.className=cn.concat(" tablet"):(Modernizr.desktop||Modernizr.laptop)&&(sr_html.className=cn.concat(" desktop")),window.location.hostname.split(".")),cn=sr_html.className,sr_logger=(Modernizr.is_build=Modernizr.is_live=Modernizr.is_dev=!1,"www"===sr_host_parts[0]||"fbref"===sr_host_parts[0]?(Modernizr.is_live=!0,sr_html.className=cn.concat(" is_live")):sr_host_parts[0].startsWith("b")?(Modernizr.is_build=!0,sr_html.className=cn.concat(" is_build")):(sr_host_parts[0].startsWith("d")||sr_host_parts[0].startsWith("r"))&&(Modernizr.is_dev=!0,sr_html.className=cn.concat(" is_dev")),Modernizr.is_stathead=!1,("stathead"===sr_host_parts[1]&&"srdevel"===sr_host_parts[2]||"stathead"===sr_host_parts[0]||"www"===sr_host_parts[0]&&"stathead"===sr_host_parts[1])&&(cn=sr_html.className,sr_html.className=cn.concat(" is_stathead"),Modernizr.is_stathead=!0),function(){var e=null,t={enableLogger:function(){null!=e&&(window.console.log=e)},disableLogger:function(){e=console.log,window.console.log=function(){}}};return t}()),sr_utilities_js_loader=(!document.srdev&&sr_is_production&&sr_logger.disableLogger(),Modernizr.is_modern=1,Modernizr.lang=document.lang||"",Modernizr.srdev=document.srdev,[]);function vjs_readCookie(e){for(var t=e+"=",n=document.cookie.split(";"),r=0;r<n.length;r++){for(var o=n[r];" "===o.charAt(0);)o=o.substring(1,o.length);if(0===o.indexOf(t))return decodeURIComponent(o.substring(t.length,o.length))}return null}function vjs_createCookie(e,t,n){var r,o="",o=n?((r=new Date).setTime(r.getTime()+24*n*60*60*1e3),"; expires="+r.toGMTString()):"",n=encodeURIComponent(e)+"="+encodeURIComponent(t)+o+"; path=/";document.cookie=n}!function(o){function e(e,t){"use strict";var n=o.document.getElementsByTagName("script")[0],r=o.document.createElement("script");return r.src=e,r.async=!0,n.parentNode.insertBefore(r,n),t&&"function"==typeof t&&(r.onload=t),r}"undefined"!=typeof module?module.exports=e:o.loadJS=e}("undefined"!=typeof global?global:this),String.prototype.vjs_isMatch=function(e){return null!==this.match(e)};var sr_time_begin=new Date,sr_perf_startTime=new Date,sr_perf_log="<strong>Performance:</strong>",sr_perf_lastTime=new Date;function vjs_ready(e){"loading"!=document.readyState?e():document.addEventListener("DOMContentLoaded",e)}
 </script>
 <script>
-var _sr_modern_url = ''.concat(document.srdev?'https://d2p3bygnnzw9w3.cloudfront.net/nocdn/dev/'.concat(document.srdev.substring(0, 2)):"https://d2p3bygnnzw9w3.cloudfront.net/req/202010021",
+var _sr_modern_url = ''.concat(document.srdev?'https://cdn.ssref.net/nocdn/dev/'.concat(document.srdev.substring(0, 2)):"https://cdn.ssref.net/req/202211181",
                                "/js/cbb", "/sr",document.srdev?"":"-min",   			       ".js");
 loadJS( _sr_modern_url, function() { vjs_ready(sr_fire_js); });
 </script>
 <!-- JS END -->
 
 
-<!-- include  ="/cbb/inc/klecko_header_full_cbb.html_f" -->
+<!-- include:end  ="/cbb/inc/klecko_header_full_cbb.html_f" -->
 
 
-    <title>College Basketball Scores on Sunday, January 5, 2020 | College Basketball at Sports-Reference.com</title>
-    <meta name="revised" content="09:31:57 03-Oct-2020" />
+
+    <meta name="revised" content="22:37:05 19-Nov-2022" />
     <meta name="HandheldFriendly" content="True" />
     <meta name="HandheldFriendly" content="True" />
     <meta name="generated-by"     content="/home/sr/deploy/www/cbb/boxscores/index.cgi" />
+
     <meta name="format-detection" content="telephone=no" />
     <meta name="apple-mobile-web-app-capable" content="no" />
+    <meta name="mobile-web-app-capable" content="yes">
     <meta name="theme-color" content="4d383b" />
     <meta name="msapplication-navbutton-color" content="4d383b" />
     <meta name="apple-mobile-web-app-status-bar-style" content="4d383b" />
-        
+    
 
-<meta name="keywords" content="box scores, Sunday, January 5, 2020">
-    <link rel="canonical" href="https://www.sports-reference.com/cbb/boxscores/" /><meta itemprop="url"           content="https://www.sports-reference.com/cbb">
-    <meta itemprop="name"          content="CBB at Sports Reference">
+
+
+    <!-- HeaderSeoSocial -->
+    <meta name="keywords" content="box scores, Sunday, January 5, 2020">
+    <meta itemprop="url"           content="https://www.sports-reference.com/cbb">
+    <meta itemprop="name"          content="College Basketball Reference">
     <meta itemprop="alternateName" content="CbbRef">
-    <meta name="Description" content="College Basketball Scores on Sunday, January 5, 2020">
-<meta property="fb:app_id"     content="">
+    <meta property="fb:app_id"     content="">
     <meta property="og:url"          content="https://www.sports-reference.com/cbb/boxscores/">
     <meta property="og:title"        content="College Basketball Scores on Sunday, January 5, 2020 | College Basketball at Sports-Reference.com">
     <meta property="og:site_name"    content="College Basketball at Sports-Reference.com">
     <meta property="og:type"         content="    article" />
     <meta property="og:description"  content="College Basketball Scores on Sunday, January 5, 2020">
-    <meta property="og:image"        content="https://d2p3bygnnzw9w3.cloudfront.net/req/202007101/favicons/cbb/apple-touch-icon-228x228-precomposed.png">
-<meta name="twitter:card"         content="summary">
+    <meta property="og:image"        content="https://cdn.ssref.net/req/202211031/favicons/cbb/apple-touch-icon-228x228-precomposed.png">
+    <meta name="twitter:card"         content="summary">
     <meta name="twitter:site"         content="@collegebb_ref">
     <meta name="twitter:creator"      content="@collegebb_ref">
-    <meta property="twitter:image"    content="https://d2p3bygnnzw9w3.cloudfront.net/req/202007101/favicons/cbb/apple-touch-icon-228x228-precomposed.png">
+    <meta property="twitter:image"    content="https://cdn.ssref.net/req/202211031/favicons/cbb/apple-touch-icon-228x228-precomposed.png">
     <meta name="twitter:domain"       content="College Basketball at Sports-Reference.com">
     <meta name="referrer" content="unsafe-url">
+    <!-- HeaderSeoSocial:END -->
 
-    
     <!-- tiles, touch, favicons -->
-    <link rel="icon"                         sizes="48x48"   href="https://d2p3bygnnzw9w3.cloudfront.net/req/202007101/favicons/cbb/favicon-48.png">
-    <link rel="apple-touch-icon"             sizes="228x228" href="https://d2p3bygnnzw9w3.cloudfront.net/req/202007101/favicons/cbb/apple-touch-icon-228x228-precomposed.png">
-    <link rel="apple-touch-icon"             sizes="195x195" href="https://d2p3bygnnzw9w3.cloudfront.net/req/202007101/favicons/cbb/apple-touch-icon-195x195-precomposed.png">
-    <link rel="apple-touch-icon"             sizes="180x180" href="https://d2p3bygnnzw9w3.cloudfront.net/req/202007101/favicons/cbb/apple-touch-icon-180x180-precomposed.png">
-    <link rel="apple-touch-icon"             sizes="152x152" href="https://d2p3bygnnzw9w3.cloudfront.net/req/202007101/favicons/cbb/apple-touch-icon-152x152-precomposed.png">
-    <link rel="apple-touch-icon"             sizes="144x144" href="https://d2p3bygnnzw9w3.cloudfront.net/req/202007101/favicons/cbb/apple-touch-icon-144x144-precomposed.png">
-    <link rel="apple-touch-icon"             sizes="128x128" href="https://d2p3bygnnzw9w3.cloudfront.net/req/202007101/favicons/cbb/apple-touch-icon-128x128-precomposed.png">
-    <link rel="apple-touch-icon"             sizes="120x120" href="https://d2p3bygnnzw9w3.cloudfront.net/req/202007101/favicons/cbb/apple-touch-icon-120x120-precomposed.png">
-    <link rel="apple-touch-icon"             sizes="114x114" href="https://d2p3bygnnzw9w3.cloudfront.net/req/202007101/favicons/cbb/apple-touch-icon-114x114-precomposed.png">
-    <link rel="apple-touch-icon"             sizes="76x76"   href="https://d2p3bygnnzw9w3.cloudfront.net/req/202007101/favicons/cbb/apple-touch-icon-76x76-precomposed.png">
-    <link rel="apple-touch-icon"             sizes="72x72"   href="https://d2p3bygnnzw9w3.cloudfront.net/req/202007101/favicons/cbb/apple-touch-icon-72x72-precomposed.png">
-    <link rel="apple-touch-icon"             sizes="57x57"   href="https://d2p3bygnnzw9w3.cloudfront.net/req/202007101/favicons/cbb/apple-touch-icon-57x57-precomposed.png">
-    <link rel="icon"                         sizes="32x32"   href="https://d2p3bygnnzw9w3.cloudfront.net/req/202007101/favicons/cbb/favicon-32.png">
+    <link rel="apple-touch-icon-precomposed" sizes="180x180" href="https://cdn.ssref.net/req/202211031/favicons/cbb/apple-touch-icon-180x180-precomposed.png">
+    <link rel="icon"                         sizes="48x48"   href="https://cdn.ssref.net/req/202211031/favicons/cbb/favicon-48.png">
+    <link rel="shortcut icon"                sizes="228x228" href="https://cdn.ssref.net/req/202211031/favicons/cbb/apple-touch-icon-228x228-precomposed.png">
+    <link rel="apple-touch-icon"             sizes="228x228" href="https://cdn.ssref.net/req/202211031/favicons/cbb/apple-touch-icon-228x228-precomposed.png">
+    <link rel="apple-touch-icon"             sizes="195x195" href="https://cdn.ssref.net/req/202211031/favicons/cbb/apple-touch-icon-195x195-precomposed.png">
+    <link rel="apple-touch-icon"             sizes="180x180" href="https://cdn.ssref.net/req/202211031/favicons/cbb/apple-touch-icon-180x180-precomposed.png">
+    <link rel="apple-touch-icon"             sizes="152x152" href="https://cdn.ssref.net/req/202211031/favicons/cbb/apple-touch-icon-152x152-precomposed.png">
+    <link rel="apple-touch-icon"             sizes="144x144" href="https://cdn.ssref.net/req/202211031/favicons/cbb/apple-touch-icon-144x144-precomposed.png">
+    <link rel="apple-touch-icon"             sizes="128x128" href="https://cdn.ssref.net/req/202211031/favicons/cbb/apple-touch-icon-128x128-precomposed.png">
+    <link rel="apple-touch-icon"             sizes="120x120" href="https://cdn.ssref.net/req/202211031/favicons/cbb/apple-touch-icon-120x120-precomposed.png">
+    <link rel="apple-touch-icon"             sizes="114x114" href="https://cdn.ssref.net/req/202211031/favicons/cbb/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon"             sizes="76x76"   href="https://cdn.ssref.net/req/202211031/favicons/cbb/apple-touch-icon-76x76-precomposed.png">
+    <link rel="apple-touch-icon"             sizes="72x72"   href="https://cdn.ssref.net/req/202211031/favicons/cbb/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon"             sizes="57x57"   href="https://cdn.ssref.net/req/202211031/favicons/cbb/apple-touch-icon-57x57-precomposed.png">
+    <link rel="icon"                         sizes="32x32"   href="https://cdn.ssref.net/req/202211031/favicons/cbb/favicon-32.png">
     <!--[if IE]>
-    <link rel="shortcut icon"                                href="https://d2p3bygnnzw9w3.cloudfront.net/req/202007101/favicons/cbb/favicon.ico"><![endif]-->
+    <link rel="shortcut icon"                                href="https://cdn.ssref.net/req/202211031/favicons/cbb/favicon.ico"><![endif]-->
     <meta name="msapplication-TileColor" content="#04376c" />
-    <meta name="msapplication-TileImage" content="https://d2p3bygnnzw9w3.cloudfront.net/req/202007101/favicons/cbb/ms-tile-144.png" />
-    <link rel=search        type="application/opensearchdescription+xml" href="https://d2p3bygnnzw9w3.cloudfront.net/req/202007101/opensearch/opensearch-cbb.xml" title=" Player and Team Search">    
+    <meta name="msapplication-TileImage" content="https://cdn.ssref.net/req/202211031/favicons/cbb/ms-tile-144.png" />
+    <link rel=search        type="application/opensearchdescription+xml" href="https://cdn.ssref.net/req/202211031/opensearch/opensearch-cbb.xml" title=" Player and Team Search">
+    <!-- tiles, touch, favicons:end -->
+
+<!-- ad code: begin -->
 
 
-
-
-
-
-
-
-
-
-
-
-
+<script data-ad-client="ca-pub-5319453360923253" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script>
     var freestar = freestar || {};
     freestar.config = freestar.config || {};
-    freestar.config.enabled_slots = [ "div-gpt-ad-728x90-GeneralHeader","div-gpt-ad-728x90-Footer" ];
+    freestar.config.enabled_slots = [ "div-gpt-ad-728x90-ATF","div-gpt-ad-728x90-Footer" ];
     if (sr_detect_ie || sr_detect_edge || Modernizr.adfree || document.getElementById('sr_suppress_ads') || Modernizr.viewport_width < 1810) {
     // do not include the rails
     }
@@ -140,6 +311,8 @@ loadJS( _sr_modern_url, function() { vjs_ready(sr_fire_js); });
 </script>
 
 
+<!-- ad code:end -->
+
 
 </head>
 <body class="cbb">
@@ -147,16 +320,21 @@ loadJS( _sr_modern_url, function() { vjs_ready(sr_fire_js); });
   
   <div id="header" role="banner">
   <ul id="subnav" class="notranslate">
-	<li><a href="https://www.sports-reference.com/"><svg height="15px" width="20px"><use xlink:href="#ic-sr-pennant"></use></svg> Sports Reference</a></li>
+	<li><a href="https://www.sports-reference.com/"><svg height="15px" width="20px"><use xlink:href="#ic-sr-pennant"></use></svg> Sports&nbsp;Reference&#8239;&reg;</a></li>
 	<li><a href="https://www.baseball-reference.com/">Baseball</a></li>
 	<li><a href="https://www.pro-football-reference.com/">Football</a> <a href="https://www.sports-reference.com/cfb/">(college)</a></li>
 	<li class="current"><a href="https://www.basketball-reference.com/">Basketball</a> <a href="https://www.sports-reference.com/cbb/">(college)</a></li>
 	<li><a href="https://www.hockey-reference.com/">Hockey</a></li>
-	<li><a href="https://fbref.com/">Soccer</a></li>
+
+
+	
+	
+	
+	<li><a href="https://fbref.com/de/">Fußball</a></li>
+
 	<li><a href="https://www.sports-reference.com/blog/">Blog</a></li>
 
-    <li><a href="https://stathead.com/?utm_source=web&amp;utm_medium=cbb&amp;utm_campaign=sr-nav-bar-top-link">Stathead</a></li>
-    <li><a href="https://widgets.sports-reference.com/">Widgets</a></li>
+    <li><a href="https://stathead.com/?utm_source=web&amp;utm_medium=cbb&amp;utm_campaign=sr-nav-bar-top-link">Stathead&#8239;&reg;</a></li>
 
 	<li><a href="https://www.sports-reference.com/feedback/">Questions or Comments?</a></li>
 	<li class="user logged_in">Welcome <span class="username"></span>&nbsp;&#183;&nbsp;<a href="https://stathead.com/profile/?utm_source=web&amp;utm_medium=cbb&amp;utm_campaign=sr-nav-bar-top-account">Your Account</a></li>
@@ -166,7 +344,7 @@ loadJS( _sr_modern_url, function() { vjs_ready(sr_fire_js); });
 
 </ul>
 
-  <a href="/cbb/"><img src="https://d2p3bygnnzw9w3.cloudfront.net/req/202007101/logos/cbb-logo.svg" onerror="this.src='https://d2p3bygnnzw9w3.cloudfront.net/req/202007101/logos/cbb-logo.png'; this.onerror = null;" alt="College Basketball at Sports-Reference.com Logo &amp; Link to home page" /></a>
+  <a href="/cbb/"><img src="https://cdn.ssref.net/req/202211031/logos/cbb-logo.svg" onerror="this.src='https://cdn.ssref.net/req/202211031/logos/cbb-logo.png'; this.onerror = null;" alt="College Basketball at Sports-Reference.com Logo &amp; Link to home page" /></a>
 <div id="nav_trigger" role="button"><a href="#site_menu_link">MENU</a></div>
 <div id="nav" role="navigation" aria-label="College Basketball at Sports-Reference.com sections">
 	<ul id="main_nav" class="hoversmooth nohover"><li id="header_players" >
@@ -197,7 +375,7 @@ loadJS( _sr_modern_url, function() { vjs_ready(sr_fire_js); });
   <a href="/cbb/play-index/">Play Index</a>
 </li>
 
-<li><a href="https://stathead.com/newsletter.cgi?site_sub=cbb">Newsletter</a></li>
+<li><a href="https://www.sports-reference.com/cbb/email/">Newsletter</a></li>
 
 <li>
   <a data-scroll href="#site_menu_link" class="opener">Full Site Menu Below</a>
@@ -216,7 +394,7 @@ function sr_menus_setupMainNav_button_inline () {
 	return false;
     }
     var nav_trigger = document.getElementById('nav_trigger');
-    if(!nav_trigger || !Modernizr.is_modern || nav_trigger.triggered) {
+    if(!nav_trigger || nav_trigger.triggered) {
 	return false;
     }
     nav_trigger.triggered = true;
@@ -244,7 +422,7 @@ sr_menus_setupMainNav_button_inline();
 </script><div class="search" role="search" aria-label="Site Search for players, teams and sections">
 <form method="get" name="f_big"  action="/cbb/search/search.fcgi">
 <div class="ac-outline">
-  <div class="ac-wrapper"><input type="search" tabindex="-1" class="ac-hint" name="hint" placeholder="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" dir="auto">
+  <div class="ac-wrapper"><input type="search" tabindex="-1" class="ac-hint" name="hint" placeholder="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" dir="auto" aria-label="Search suggestions based on user search input">
 
 <input tabindex="1" type="search" class="ac-input completely" name="search" placeholder="Enter Person, Team, Section, etc" aria-label="Enter a player, team or section name" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" dir="auto" />
     <div class="ac-dropdown"></div>
@@ -260,23 +438,44 @@ sr_menus_setupMainNav_button_inline();
 
 </div><!-- div#header -->
 
+  <style>
+  .site_announcement {
+    background-color: #fffea6;
+    text-align: center;
+    padding: .4em 0;
+    width: 100%;
+  }
+  .site_announcement div {
+    margin: 0 .3em;
+  }
+  .site_announcement span {
+    white-space: nowrap;
+  }
+  @media only screen and (max-width: 1000px) {
+    .site_annoucement_extra {
+      display: none;
+    }
+  }
+  </style>
+
+
 
 <div id="srcom">
 
-<!-- fs_general_header -->
+<!-- fs_728_atf_second -->
 <div class="adblock">
-<!-- div#fs_fs_general_header  -->
-<div align="center" id="div-gpt-ad-728x90-GeneralHeader">
+<!-- div#fs_fs_728_atf_second  -->
+<div align="center" id="div-gpt-ad-728x90-ATF">
     <script data-cfasync="false" type='text/javascript'>
     if (sr_detect_ie || sr_detect_edge || Modernizr.adfree) {
     }
     else {
-        console.log('push ad:div-gpt-ad-728x90-GeneralHeader');
-        freestar.queue.push(function() { googletag.display('div-gpt-ad-728x90-GeneralHeader'); });
+        console.log('push ad:div-gpt-ad-728x90-ATF');
+        freestar.queue.push(function() { googletag.display('div-gpt-ad-728x90-ATF'); });
     }
     </script>
 </div>
-<!-- /div.#fs_fs_general_header -->
+<!-- /div.#fs_fs_728_atf_second -->
 
 
 </div>
@@ -287,6 +486,8 @@ sr_menus_setupMainNav_button_inline();
 <div id="content" role="main" class="index">
 	<h1>College Basketball Scores on Sunday, January 5, 2020</h1>
         
+
+
           
       
       
@@ -297,13 +498,14 @@ sr_menus_setupMainNav_button_inline();
             <p class='note'>Box scores available back to 2010-11 season</p>
             
             
+            
          
       
          
-            <div class="prevnext"><a href="/cbb/boxscores/index.cgi?month=1&day=4&year=2020" 
+            <div class="prevnext"><a href="/cbb/boxscores/index.cgi?month=01&day=4&year=2020" 
    class="button2 
    prev">January 4, 2020</a>
-<div class="button2 current"><strong>January 5, 2020</strong></div><a href="/cbb/boxscores/index.cgi?month=1&day=6&year=2020" 
+<div class="button2 current"><strong>January 5, 2020</strong></div><a href="/cbb/boxscores/index.cgi?month=01&day=6&year=2020" 
    class="button2 next">January 6, 2020</a>
 </div>
 <form action='index.cgi' method='get' class='srbasic'>
@@ -372,6 +574,9 @@ sr_menus_setupMainNav_button_inline();
 <option value="2018" >2018
 <option value="2019" >2019
 <option value="2020" selected>2020
+<option value="2021" >2021
+<option value="2022" >2022
+<option value="2023" >2023
 </select>
 </div>
 <div class='formfield'>
@@ -382,12 +587,13 @@ sr_menus_setupMainNav_button_inline();
 
             
             
+            
          
       
          
             <div>
   <p>
-    <a href='/cbb/friv/dailyleaders.cgi?month=1&day=5&year=2020'>
+    <a href='/cbb/friv/dailyleaders.cgi?month=01&day=5&year=2020'>
       <strong>
         &raquo;&nbsp;Daily Leaders for January 5, 2020
       </strong>
@@ -397,11 +603,12 @@ sr_menus_setupMainNav_button_inline();
 
             
             
+            
          
       
          
             <div class="section_wrapper" id="all_other_scores">
-<div class="section_heading">
+<div class="section_heading assoc_other_scores" id="other_scores_sh">
   <span class="section_anchor" id="other_scores_link" data-label="All Games This Date"></span><h2></h2>		
 </div>    <div class="section_content" id="div_other_scores">
 	    <div class="game_summaries">
@@ -414,7 +621,7 @@ sr_menus_setupMainNav_button_inline();
 			<td><a href="/cbb/schools/michigan/2020.html">Michigan</a><span class='pollrank'>&nbsp;(12)&nbsp;</span></td>
 			<td class="right">69</td>
 			<td class="right gamelink">
-				<a href="/cbb/boxscores/2020-01-05-13-michigan-state.html">Final</a>
+				<a href="/cbb/boxscores/2020-01-05-13-michigan-state.html">F<span class="no_mobile">inal</span></a>
 				
 			</td>
 		</tr>
@@ -437,7 +644,7 @@ sr_menus_setupMainNav_button_inline();
 			<td><a href="/cbb/schools/dayton/2020.html">Dayton</a><span class='pollrank'>&nbsp;(20)&nbsp;</span></td>
 			<td class="right">80</td>
 			<td class="right gamelink">
-				<a href="/cbb/boxscores/2020-01-05-13-saint-josephs.html">Final</a>
+				<a href="/cbb/boxscores/2020-01-05-13-saint-josephs.html">F<span class="no_mobile">inal</span></a>
 				
 			</td>
 		</tr>
@@ -456,86 +663,132 @@ sr_menus_setupMainNav_button_inline();
       <div class="game_summary nohover">
 	<table class="teams">
 		<tbody>       
+		<tr class="winner">
+			<td><a href="/cbb/schools/virginia-commonwealth/2020.html">VCU</a></td>
+			<td class="right">72</td>
+			<td class="right gamelink">
+				<a href="/cbb/boxscores/2020-01-05-12-george-mason.html">F<span class="no_mobile">inal</span></a>
+				
+			</td>
+		</tr>
 		<tr class="loser">
-			<td><a href="/cbb/schools/boston-university/2020.html">Boston University</a></td>
+			<td><a href="/cbb/schools/george-mason/2020.html">George Mason</a></td>
+			<td class="right">59</td>
+			<td class="right">&nbsp;
+			</td>
+		</tr>
+		</tbody>
+	</table>
+	
+
+</div>
+
+      <div class="game_summary nohover">
+	<table class="teams">
+		<tbody>       
+		<tr class="loser">
+			<td><a href="/cbb/schools/navy/2020.html">Navy</a></td>
+			<td class="right">61</td>
+			<td class="right gamelink">
+				<a href="/cbb/boxscores/2020-01-05-12-holy-cross.html">F<span class="no_mobile">inal</span></a>
+				
+			</td>
+		</tr>
+		<tr class="winner">
+			<td><a href="/cbb/schools/holy-cross/2020.html">Holy Cross</a></td>
 			<td class="right">63</td>
+			<td class="right">&nbsp;
+			</td>
+		</tr>
+		</tbody>
+	</table>
+	
+
+</div>
+
+      <div class="game_summary nohover">
+	<table class="teams">
+		<tbody>       
+		<tr class="winner">
+			<td><a href="/cbb/schools/richmond/2020.html">Richmond</a></td>
+			<td class="right">69</td>
 			<td class="right gamelink">
-				<a href="/cbb/boxscores/2020-01-05-15-american.html">Final</a>
+				<a href="/cbb/boxscores/2020-01-05-12-rhode-island.html">F<span class="no_mobile">inal</span></a>
 				
 			</td>
 		</tr>
+		<tr class="loser">
+			<td><a href="/cbb/schools/rhode-island/2020.html">Rhode Island</a></td>
+			<td class="right">61</td>
+			<td class="right">&nbsp;
+			</td>
+		</tr>
+		</tbody>
+	</table>
+	
+
+</div>
+
+      <div class="game_summary nohover">
+	<table class="teams">
+		<tbody>       
 		<tr class="winner">
-			<td><a href="/cbb/schools/american/2020.html">American</a></td>
+			<td><a href="/cbb/schools/wright-state/2020.html">Wright State</a></td>
+			<td class="right">70</td>
+			<td class="right gamelink">
+				<a href="/cbb/boxscores/2020-01-05-13-detroit-mercy.html">F<span class="no_mobile">inal</span></a>
+				
+			</td>
+		</tr>
+		<tr class="loser">
+			<td><a href="/cbb/schools/detroit-mercy/2020.html">Detroit</a></td>
+			<td class="right">69</td>
+			<td class="right">&nbsp;
+			</td>
+		</tr>
+		</tbody>
+	</table>
+	
+
+</div>
+
+      <div class="game_summary nohover">
+	<table class="teams">
+		<tbody>       
+		<tr class="winner">
+			<td><a href="/cbb/schools/stony-brook/2020.html">Stony Brook</a></td>
+			<td class="right">73</td>
+			<td class="right gamelink">
+				<a href="/cbb/boxscores/2020-01-05-13-maine.html">F<span class="no_mobile">inal</span></a>
+				
+			</td>
+		</tr>
+		<tr class="loser">
+			<td><a href="/cbb/schools/maine/2020.html">Maine</a></td>
+			<td class="right">52</td>
+			<td class="right">&nbsp;
+			</td>
+		</tr>
+		</tbody>
+	</table>
+	
+
+</div>
+
+      <div class="game_summary nohover">
+	<table class="teams">
+		<tbody>       
+		<tr class="winner">
+			<td><a href="/cbb/schools/manhattan/2020.html">Manhattan</a></td>
 			<td class="right">67</td>
-			<td class="right">&nbsp;
-			</td>
-		</tr>
-		</tbody>
-	</table>
-	
-
-</div>
-
-      <div class="game_summary nohover">
-	<table class="teams">
-		<tbody>       
-		<tr class="winner">
-			<td><a href="/cbb/schools/bucknell/2020.html">Bucknell</a></td>
-			<td class="right">78</td>
 			<td class="right gamelink">
-				<a href="/cbb/boxscores/2020-01-05-14-lafayette.html">Final</a>
+				<a href="/cbb/boxscores/2020-01-05-13-niagara.html">F<span class="no_mobile">inal</span></a>
 				
 			</td>
 		</tr>
 		<tr class="loser">
-			<td><a href="/cbb/schools/lafayette/2020.html">Lafayette</a></td>
-			<td class="right">66</td>
-			<td class="right">&nbsp;
-			</td>
-		</tr>
-		</tbody>
-	</table>
-	
-
-</div>
-
-      <div class="game_summary nohover">
-	<table class="teams">
-		<tbody>       
-		<tr class="loser">
-			<td><a href="/cbb/schools/davidson/2020.html">Davidson</a></td>
-			<td class="right">64</td>
-			<td class="right gamelink">
-				<a href="/cbb/boxscores/2020-01-05-14-duquesne.html">Final</a>
-				
-			</td>
-		</tr>
-		<tr class="winner">
-			<td><a href="/cbb/schools/duquesne/2020.html">Duquesne</a></td>
-			<td class="right">71</td>
-			<td class="right">&nbsp;
-			</td>
-		</tr>
-		</tbody>
-	</table>
-	
-
-</div>
-
-      <div class="game_summary nohover">
-	<table class="teams">
-		<tbody>       
-		<tr class="loser">
-			<td><a href="/cbb/schools/denver/2020.html">Denver</a></td>
-			<td class="right">78</td>
-			<td class="right gamelink">
-				<a href="/cbb/boxscores/2020-01-05-16-south-dakota.html">Final</a>
-				
-			</td>
-		</tr>
-		<tr class="winner">
-			<td><a href="/cbb/schools/south-dakota/2020.html">South Dakota</a></td>
-			<td class="right">80</td>
+			<td><a href="/cbb/schools/niagara/2020.html">Niagara</a></td>
+			<td class="right">62</td>
 			<td class="right">&nbsp;
 			</td>
 		</tr>
@@ -552,7 +805,7 @@ sr_menus_setupMainNav_button_inline();
 			<td><a href="/cbb/schools/fairfield/2020.html">Fairfield</a></td>
 			<td class="right">46</td>
 			<td class="right gamelink">
-				<a href="/cbb/boxscores/2020-01-05-14-canisius.html">Final</a>
+				<a href="/cbb/boxscores/2020-01-05-14-canisius.html">F<span class="no_mobile">inal</span></a>
 				
 			</td>
 		</tr>
@@ -572,16 +825,108 @@ sr_menus_setupMainNav_button_inline();
 	<table class="teams">
 		<tbody>       
 		<tr class="loser">
-			<td><a href="/cbb/schools/houston-baptist/2020.html">Houston Baptist</a></td>
-			<td class="right">79</td>
+			<td><a href="/cbb/schools/davidson/2020.html">Davidson</a></td>
+			<td class="right">64</td>
 			<td class="right gamelink">
-				<a href="/cbb/boxscores/2020-01-05-17-northwestern-state.html">Final</a>
+				<a href="/cbb/boxscores/2020-01-05-14-duquesne.html">F<span class="no_mobile">inal</span></a>
 				
 			</td>
 		</tr>
 		<tr class="winner">
-			<td><a href="/cbb/schools/northwestern-state/2020.html">Northwestern State</a></td>
-			<td class="right">106</td>
+			<td><a href="/cbb/schools/duquesne/2020.html">Duquesne</a></td>
+			<td class="right">71</td>
+			<td class="right">&nbsp;
+			</td>
+		</tr>
+		</tbody>
+	</table>
+	
+
+</div>
+
+      <div class="game_summary nohover">
+	<table class="teams">
+		<tbody>       
+		<tr class="winner">
+			<td><a href="/cbb/schools/la-salle/2020.html">La Salle</a></td>
+			<td class="right">66</td>
+			<td class="right gamelink">
+				<a href="/cbb/boxscores/2020-01-05-14-fordham.html">F<span class="no_mobile">inal</span></a>
+				
+			</td>
+		</tr>
+		<tr class="loser">
+			<td><a href="/cbb/schools/fordham/2020.html">Fordham</a></td>
+			<td class="right">60</td>
+			<td class="right">&nbsp;
+			</td>
+		</tr>
+		</tbody>
+	</table>
+	
+
+</div>
+
+      <div class="game_summary nohover">
+	<table class="teams">
+		<tbody>       
+		<tr class="winner">
+			<td><a href="/cbb/schools/iupui/2020.html">IUPUI</a></td>
+			<td class="right">93</td>
+			<td class="right gamelink">
+				<a href="/cbb/boxscores/2020-01-05-14-green-bay.html">F<span class="no_mobile">inal</span></a>
+				
+			</td>
+		</tr>
+		<tr class="loser">
+			<td><a href="/cbb/schools/green-bay/2020.html">Green Bay</a></td>
+			<td class="right">78</td>
+			<td class="right">&nbsp;
+			</td>
+		</tr>
+		</tbody>
+	</table>
+	
+
+</div>
+
+      <div class="game_summary nohover">
+	<table class="teams">
+		<tbody>       
+		<tr class="winner">
+			<td><a href="/cbb/schools/bucknell/2020.html">Bucknell</a></td>
+			<td class="right">78</td>
+			<td class="right gamelink">
+				<a href="/cbb/boxscores/2020-01-05-14-lafayette.html">F<span class="no_mobile">inal</span></a>
+				
+			</td>
+		</tr>
+		<tr class="loser">
+			<td><a href="/cbb/schools/lafayette/2020.html">Lafayette</a></td>
+			<td class="right">66</td>
+			<td class="right">&nbsp;
+			</td>
+		</tr>
+		</tbody>
+	</table>
+	
+
+</div>
+
+      <div class="game_summary nohover">
+	<table class="teams">
+		<tbody>       
+		<tr class="loser">
+			<td><a href="/cbb/schools/loyola-md/2020.html">Loyola (MD)</a></td>
+			<td class="right">71</td>
+			<td class="right gamelink">
+				<a href="/cbb/boxscores/2020-01-05-14-lehigh.html">F<span class="no_mobile">inal</span></a>
+				
+			</td>
+		</tr>
+		<tr class="winner">
+			<td><a href="/cbb/schools/lehigh/2020.html">Lehigh</a></td>
+			<td class="right">78</td>
 			<td class="right">&nbsp;
 			</td>
 		</tr>
@@ -598,7 +943,7 @@ sr_menus_setupMainNav_button_inline();
 			<td><a href="/cbb/schools/illinois-chicago/2020.html">UIC</a></td>
 			<td class="right">62</td>
 			<td class="right gamelink">
-				<a href="/cbb/boxscores/2020-01-05-14-milwaukee.html">Final</a>
+				<a href="/cbb/boxscores/2020-01-05-14-milwaukee.html">F<span class="no_mobile">inal</span></a>
 				
 			</td>
 		</tr>
@@ -621,7 +966,7 @@ sr_menus_setupMainNav_button_inline();
 			<td><a href="/cbb/schools/iona/2020.html">Iona</a></td>
 			<td class="right">61</td>
 			<td class="right gamelink">
-				<a href="/cbb/boxscores/2020-01-05-14-monmouth.html">Final</a>
+				<a href="/cbb/boxscores/2020-01-05-14-monmouth.html">F<span class="no_mobile">inal</span></a>
 				
 			</td>
 		</tr>
@@ -641,332 +986,10 @@ sr_menus_setupMainNav_button_inline();
 	<table class="teams">
 		<tbody>       
 		<tr class="loser">
-			<td><a href="/cbb/schools/ipfw/2020.html">Purdue-Fort Wayne</a></td>
-			<td class="right">69</td>
-			<td class="right gamelink">
-				<a href="/cbb/boxscores/2020-01-05-17-north-dakota.html">Final</a>
-				
-			</td>
-		</tr>
-		<tr class="winner">
-			<td><a href="/cbb/schools/north-dakota/2020.html">North Dakota</a></td>
-			<td class="right">83</td>
-			<td class="right">&nbsp;
-			</td>
-		</tr>
-		</tbody>
-	</table>
-	
-
-</div>
-
-      <div class="game_summary nohover">
-	<table class="teams">
-		<tbody>       
-		<tr class="winner">
-			<td><a href="/cbb/schools/iupui/2020.html">IUPUI</a></td>
-			<td class="right">93</td>
-			<td class="right gamelink">
-				<a href="/cbb/boxscores/2020-01-05-14-green-bay.html">Final</a>
-				
-			</td>
-		</tr>
-		<tr class="loser">
-			<td><a href="/cbb/schools/green-bay/2020.html">Green Bay</a></td>
-			<td class="right">78</td>
-			<td class="right">&nbsp;
-			</td>
-		</tr>
-		</tbody>
-	</table>
-	
-
-</div>
-
-      <div class="game_summary nohover">
-	<table class="teams">
-		<tbody>       
-		<tr class="winner">
-			<td><a href="/cbb/schools/la-salle/2020.html">La Salle</a></td>
-			<td class="right">66</td>
-			<td class="right gamelink">
-				<a href="/cbb/boxscores/2020-01-05-14-fordham.html">Final</a>
-				
-			</td>
-		</tr>
-		<tr class="loser">
-			<td><a href="/cbb/schools/fordham/2020.html">Fordham</a></td>
-			<td class="right">60</td>
-			<td class="right">&nbsp;
-			</td>
-		</tr>
-		</tbody>
-	</table>
-	
-
-</div>
-
-      <div class="game_summary nohover">
-	<table class="teams">
-		<tbody>       
-		<tr class="loser">
-			<td><a href="/cbb/schools/loyola-md/2020.html">Loyola (MD)</a></td>
-			<td class="right">71</td>
-			<td class="right gamelink">
-				<a href="/cbb/boxscores/2020-01-05-14-lehigh.html">Final</a>
-				
-			</td>
-		</tr>
-		<tr class="winner">
-			<td><a href="/cbb/schools/lehigh/2020.html">Lehigh</a></td>
-			<td class="right">78</td>
-			<td class="right">&nbsp;
-			</td>
-		</tr>
-		</tbody>
-	</table>
-	
-
-</div>
-
-      <div class="game_summary nohover">
-	<table class="teams">
-		<tbody>       
-		<tr class="winner">
-			<td><a href="/cbb/schools/manhattan/2020.html">Manhattan</a></td>
-			<td class="right">67</td>
-			<td class="right gamelink">
-				<a href="/cbb/boxscores/2020-01-05-13-niagara.html">Final</a>
-				
-			</td>
-		</tr>
-		<tr class="loser">
-			<td><a href="/cbb/schools/niagara/2020.html">Niagara</a></td>
-			<td class="right">62</td>
-			<td class="right">&nbsp;
-			</td>
-		</tr>
-		</tbody>
-	</table>
-	
-
-</div>
-
-      <div class="game_summary nohover">
-	<table class="teams">
-		<tbody>       
-		<tr class="loser">
-			<td><a href="/cbb/schools/marist/2020.html">Marist</a></td>
-			<td class="right">40</td>
-			<td class="right gamelink">
-				<a href="/cbb/boxscores/2020-01-05-14-saint-peters.html">Final</a>
-				
-			</td>
-		</tr>
-		<tr class="winner">
-			<td><a href="/cbb/schools/saint-peters/2020.html">St. Peter's</a></td>
-			<td class="right">66</td>
-			<td class="right">&nbsp;
-			</td>
-		</tr>
-		</tbody>
-	</table>
-	
-
-</div>
-
-      <div class="game_summary nohover">
-	<table class="teams">
-		<tbody>       
-		<tr class="loser">
-			<td><a href="/cbb/schools/massachusetts/2020.html">UMass</a></td>
-			<td class="right">80</td>
-			<td class="right gamelink">
-				<a href="/cbb/boxscores/2020-01-05-16-saint-louis.html">Final</a>
-				
-			</td>
-		</tr>
-		<tr class="winner">
-			<td><a href="/cbb/schools/saint-louis/2020.html">Saint Louis</a></td>
-			<td class="right">83</td>
-			<td class="right">OT
-			</td>
-		</tr>
-		</tbody>
-	</table>
-	
-
-</div>
-
-      <div class="game_summary nohover">
-	<table class="teams">
-		<tbody>       
-		<tr class="loser">
-			<td><a href="/cbb/schools/navy/2020.html">Navy</a></td>
-			<td class="right">61</td>
-			<td class="right gamelink">
-				<a href="/cbb/boxscores/2020-01-05-12-holy-cross.html">Final</a>
-				
-			</td>
-		</tr>
-		<tr class="winner">
-			<td><a href="/cbb/schools/holy-cross/2020.html">Holy Cross</a></td>
-			<td class="right">63</td>
-			<td class="right">&nbsp;
-			</td>
-		</tr>
-		</tbody>
-	</table>
-	
-
-</div>
-
-      <div class="game_summary nohover">
-	<table class="teams">
-		<tbody>       
-		<tr class="winner">
-			<td><a href="/cbb/schools/northern-kentucky/2020.html">Northern Kentucky</a></td>
-			<td class="right">75</td>
-			<td class="right gamelink">
-				<a href="/cbb/boxscores/2020-01-05-15-oakland.html">Final</a>
-				
-			</td>
-		</tr>
-		<tr class="loser">
-			<td><a href="/cbb/schools/oakland/2020.html">Oakland</a></td>
-			<td class="right">64</td>
-			<td class="right">&nbsp;
-			</td>
-		</tr>
-		</tbody>
-	</table>
-	
-
-</div>
-
-      <div class="game_summary nohover">
-	<table class="teams">
-		<tbody>       
-		<tr class="loser">
-			<td><a>Northland</a></td>
-			<td class="right">43</td>
-			<td class="right gamelink">
-				<a href="/cbb/boxscores/2020-01-05-15-north-dakota-state.html">Final</a>
-				
-			</td>
-		</tr>
-		<tr class="winner">
-			<td><a href="/cbb/schools/north-dakota-state/2020.html">North Dakota State</a></td>
-			<td class="right">97</td>
-			<td class="right">&nbsp;
-			</td>
-		</tr>
-		</tbody>
-	</table>
-	
-
-</div>
-
-      <div class="game_summary nohover">
-	<table class="teams">
-		<tbody>       
-		<tr class="loser">
-			<td><a href="/cbb/schools/northwestern/2020.html">Northwestern</a></td>
-			<td class="right">68</td>
-			<td class="right gamelink">
-				<a href="/cbb/boxscores/2020-01-05-19-minnesota.html">Final</a>
-				
-			</td>
-		</tr>
-		<tr class="winner">
-			<td><a href="/cbb/schools/minnesota/2020.html">Minnesota</a></td>
-			<td class="right">77</td>
-			<td class="right">&nbsp;
-			</td>
-		</tr>
-		</tbody>
-	</table>
-	
-
-</div>
-
-      <div class="game_summary nohover">
-	<table class="teams">
-		<tbody>       
-		<tr class="winner">
-			<td><a href="/cbb/schools/oregon-state/2020.html">Oregon State</a></td>
-			<td class="right">76</td>
-			<td class="right gamelink">
-				<a href="/cbb/boxscores/2020-01-05-18-colorado.html">Final</a>
-				
-			</td>
-		</tr>
-		<tr class="loser">
-			<td><a href="/cbb/schools/colorado/2020.html">Colorado</a></td>
-			<td class="right">68</td>
-			<td class="right">&nbsp;
-			</td>
-		</tr>
-		</tbody>
-	</table>
-	
-
-</div>
-
-      <div class="game_summary nohover">
-	<table class="teams">
-		<tbody>       
-		<tr class="loser">
-			<td><a href="/cbb/schools/purdue/2020.html">Purdue</a></td>
-			<td class="right">37</td>
-			<td class="right gamelink">
-				<a href="/cbb/boxscores/2020-01-05-20-illinois.html">Final</a>
-				
-			</td>
-		</tr>
-		<tr class="winner">
-			<td><a href="/cbb/schools/illinois/2020.html">Illinois</a></td>
-			<td class="right">63</td>
-			<td class="right">&nbsp;
-			</td>
-		</tr>
-		</tbody>
-	</table>
-	
-
-</div>
-
-      <div class="game_summary nohover">
-	<table class="teams">
-		<tbody>       
-		<tr class="winner">
-			<td><a href="/cbb/schools/richmond/2020.html">Richmond</a></td>
-			<td class="right">69</td>
-			<td class="right gamelink">
-				<a href="/cbb/boxscores/2020-01-05-12-rhode-island.html">Final</a>
-				
-			</td>
-		</tr>
-		<tr class="loser">
-			<td><a href="/cbb/schools/rhode-island/2020.html">Rhode Island</a></td>
-			<td class="right">61</td>
-			<td class="right">&nbsp;
-			</td>
-		</tr>
-		</tbody>
-	</table>
-	
-
-</div>
-
-      <div class="game_summary nohover">
-	<table class="teams">
-		<tbody>       
-		<tr class="loser">
 			<td><a href="/cbb/schools/siena/2020.html">Siena</a></td>
 			<td class="right">77</td>
 			<td class="right gamelink">
-				<a href="/cbb/boxscores/2020-01-05-14-rider.html">Final</a>
+				<a href="/cbb/boxscores/2020-01-05-14-rider.html">F<span class="no_mobile">inal</span></a>
 				
 			</td>
 		</tr>
@@ -986,16 +1009,85 @@ sr_menus_setupMainNav_button_inline();
 	<table class="teams">
 		<tbody>       
 		<tr class="loser">
-			<td><a href="/cbb/schools/southern-california/2020.html">USC</a></td>
+			<td><a href="/cbb/schools/marist/2020.html">Marist</a></td>
 			<td class="right">40</td>
 			<td class="right gamelink">
-				<a href="/cbb/boxscores/2020-01-05-22-washington.html">Final</a>
+				<a href="/cbb/boxscores/2020-01-05-14-saint-peters.html">F<span class="no_mobile">inal</span></a>
 				
 			</td>
 		</tr>
 		<tr class="winner">
-			<td><a href="/cbb/schools/washington/2020.html">Washington</a></td>
-			<td class="right">72</td>
+			<td><a href="/cbb/schools/saint-peters/2020.html">St. Peter's</a></td>
+			<td class="right">66</td>
+			<td class="right">&nbsp;
+			</td>
+		</tr>
+		</tbody>
+	</table>
+	
+
+</div>
+
+      <div class="game_summary nohover">
+	<table class="teams">
+		<tbody>       
+		<tr class="loser">
+			<td><a href="/cbb/schools/boston-university/2020.html">Boston University</a></td>
+			<td class="right">63</td>
+			<td class="right gamelink">
+				<a href="/cbb/boxscores/2020-01-05-15-american.html">F<span class="no_mobile">inal</span></a>
+				
+			</td>
+		</tr>
+		<tr class="winner">
+			<td><a href="/cbb/schools/american/2020.html">American</a></td>
+			<td class="right">67</td>
+			<td class="right">&nbsp;
+			</td>
+		</tr>
+		</tbody>
+	</table>
+	
+
+</div>
+
+      <div class="game_summary nohover">
+	<table class="teams">
+		<tbody>       
+		<tr class="loser">
+			<td><a>Northland</a></td>
+			<td class="right">43</td>
+			<td class="right gamelink">
+				<a href="/cbb/boxscores/2020-01-05-15-north-dakota-state.html">F<span class="no_mobile">inal</span></a>
+				
+			</td>
+		</tr>
+		<tr class="winner">
+			<td><a href="/cbb/schools/north-dakota-state/2020.html">North Dakota State</a></td>
+			<td class="right">97</td>
+			<td class="right">&nbsp;
+			</td>
+		</tr>
+		</tbody>
+	</table>
+	
+
+</div>
+
+      <div class="game_summary nohover">
+	<table class="teams">
+		<tbody>       
+		<tr class="winner">
+			<td><a href="/cbb/schools/northern-kentucky/2020.html">Northern Kentucky</a></td>
+			<td class="right">75</td>
+			<td class="right gamelink">
+				<a href="/cbb/boxscores/2020-01-05-15-oakland.html">F<span class="no_mobile">inal</span></a>
+				
+			</td>
+		</tr>
+		<tr class="loser">
+			<td><a href="/cbb/schools/oakland/2020.html">Oakland</a></td>
+			<td class="right">64</td>
 			<td class="right">&nbsp;
 			</td>
 		</tr>
@@ -1012,7 +1104,7 @@ sr_menus_setupMainNav_button_inline();
 			<td><a href="/cbb/schools/st-bonaventure/2020.html">St. Bonaventure</a></td>
 			<td class="right">71</td>
 			<td class="right gamelink">
-				<a href="/cbb/boxscores/2020-01-05-16-george-washington.html">Final</a>
+				<a href="/cbb/boxscores/2020-01-05-16-george-washington.html">F<span class="no_mobile">inal</span></a>
 				
 			</td>
 		</tr>
@@ -1032,10 +1124,56 @@ sr_menus_setupMainNav_button_inline();
 	<table class="teams">
 		<tbody>       
 		<tr class="loser">
+			<td><a href="/cbb/schools/massachusetts/2020.html">UMass</a></td>
+			<td class="right">80</td>
+			<td class="right gamelink">
+				<a href="/cbb/boxscores/2020-01-05-16-saint-louis.html">F<span class="no_mobile">inal</span></a>
+				
+			</td>
+		</tr>
+		<tr class="winner">
+			<td><a href="/cbb/schools/saint-louis/2020.html">Saint Louis</a></td>
+			<td class="right">83</td>
+			<td class="right">OT
+			</td>
+		</tr>
+		</tbody>
+	</table>
+	
+
+</div>
+
+      <div class="game_summary nohover">
+	<table class="teams">
+		<tbody>       
+		<tr class="loser">
+			<td><a href="/cbb/schools/denver/2020.html">Denver</a></td>
+			<td class="right">78</td>
+			<td class="right gamelink">
+				<a href="/cbb/boxscores/2020-01-05-16-south-dakota.html">F<span class="no_mobile">inal</span></a>
+				
+			</td>
+		</tr>
+		<tr class="winner">
+			<td><a href="/cbb/schools/south-dakota/2020.html">South Dakota</a></td>
+			<td class="right">80</td>
+			<td class="right">&nbsp;
+			</td>
+		</tr>
+		</tbody>
+	</table>
+	
+
+</div>
+
+      <div class="game_summary nohover">
+	<table class="teams">
+		<tbody>       
+		<tr class="loser">
 			<td><a href="/cbb/schools/st-johns-ny/2020.html">St. John's (NY)</a></td>
 			<td class="right">67</td>
 			<td class="right gamelink">
-				<a href="/cbb/boxscores/2020-01-05-16-xavier.html">Final</a>
+				<a href="/cbb/boxscores/2020-01-05-16-xavier.html">F<span class="no_mobile">inal</span></a>
 				
 			</td>
 		</tr>
@@ -1054,63 +1192,132 @@ sr_menus_setupMainNav_button_inline();
       <div class="game_summary nohover">
 	<table class="teams">
 		<tbody>       
-		<tr class="winner">
-			<td><a href="/cbb/schools/stony-brook/2020.html">Stony Brook</a></td>
-			<td class="right">73</td>
-			<td class="right gamelink">
-				<a href="/cbb/boxscores/2020-01-05-13-maine.html">Final</a>
-				
-			</td>
-		</tr>
 		<tr class="loser">
-			<td><a href="/cbb/schools/maine/2020.html">Maine</a></td>
-			<td class="right">52</td>
-			<td class="right">&nbsp;
-			</td>
-		</tr>
-		</tbody>
-	</table>
-	
-
-</div>
-
-      <div class="game_summary nohover">
-	<table class="teams">
-		<tbody>       
-		<tr class="winner">
-			<td><a href="/cbb/schools/virginia-commonwealth/2020.html">VCU</a></td>
-			<td class="right">72</td>
-			<td class="right gamelink">
-				<a href="/cbb/boxscores/2020-01-05-12-george-mason.html">Final</a>
-				
-			</td>
-		</tr>
-		<tr class="loser">
-			<td><a href="/cbb/schools/george-mason/2020.html">George Mason</a></td>
-			<td class="right">59</td>
-			<td class="right">&nbsp;
-			</td>
-		</tr>
-		</tbody>
-	</table>
-	
-
-</div>
-
-      <div class="game_summary nohover">
-	<table class="teams">
-		<tbody>       
-		<tr class="winner">
-			<td><a href="/cbb/schools/wright-state/2020.html">Wright State</a></td>
-			<td class="right">70</td>
-			<td class="right gamelink">
-				<a href="/cbb/boxscores/2020-01-05-13-detroit-mercy.html">Final</a>
-				
-			</td>
-		</tr>
-		<tr class="loser">
-			<td><a href="/cbb/schools/detroit-mercy/2020.html">Detroit</a></td>
+			<td><a href="/cbb/schools/ipfw/2020.html">Purdue-Fort Wayne</a></td>
 			<td class="right">69</td>
+			<td class="right gamelink">
+				<a href="/cbb/boxscores/2020-01-05-17-north-dakota.html">F<span class="no_mobile">inal</span></a>
+				
+			</td>
+		</tr>
+		<tr class="winner">
+			<td><a href="/cbb/schools/north-dakota/2020.html">North Dakota</a></td>
+			<td class="right">83</td>
+			<td class="right">&nbsp;
+			</td>
+		</tr>
+		</tbody>
+	</table>
+	
+
+</div>
+
+      <div class="game_summary nohover">
+	<table class="teams">
+		<tbody>       
+		<tr class="loser">
+			<td><a href="/cbb/schools/houston-baptist/2020.html">Houston Christian</a></td>
+			<td class="right">79</td>
+			<td class="right gamelink">
+				<a href="/cbb/boxscores/2020-01-05-17-northwestern-state.html">F<span class="no_mobile">inal</span></a>
+				
+			</td>
+		</tr>
+		<tr class="winner">
+			<td><a href="/cbb/schools/northwestern-state/2020.html">Northwestern State</a></td>
+			<td class="right">106</td>
+			<td class="right">&nbsp;
+			</td>
+		</tr>
+		</tbody>
+	</table>
+	
+
+</div>
+
+      <div class="game_summary nohover">
+	<table class="teams">
+		<tbody>       
+		<tr class="winner">
+			<td><a href="/cbb/schools/oregon-state/2020.html">Oregon State</a></td>
+			<td class="right">76</td>
+			<td class="right gamelink">
+				<a href="/cbb/boxscores/2020-01-05-18-colorado.html">F<span class="no_mobile">inal</span></a>
+				
+			</td>
+		</tr>
+		<tr class="loser">
+			<td><a href="/cbb/schools/colorado/2020.html">Colorado</a></td>
+			<td class="right">68</td>
+			<td class="right">&nbsp;
+			</td>
+		</tr>
+		</tbody>
+	</table>
+	
+
+</div>
+
+      <div class="game_summary nohover">
+	<table class="teams">
+		<tbody>       
+		<tr class="loser">
+			<td><a href="/cbb/schools/northwestern/2020.html">Northwestern</a></td>
+			<td class="right">68</td>
+			<td class="right gamelink">
+				<a href="/cbb/boxscores/2020-01-05-19-minnesota.html">F<span class="no_mobile">inal</span></a>
+				
+			</td>
+		</tr>
+		<tr class="winner">
+			<td><a href="/cbb/schools/minnesota/2020.html">Minnesota</a></td>
+			<td class="right">77</td>
+			<td class="right">&nbsp;
+			</td>
+		</tr>
+		</tbody>
+	</table>
+	
+
+</div>
+
+      <div class="game_summary nohover">
+	<table class="teams">
+		<tbody>       
+		<tr class="loser">
+			<td><a href="/cbb/schools/purdue/2020.html">Purdue</a></td>
+			<td class="right">37</td>
+			<td class="right gamelink">
+				<a href="/cbb/boxscores/2020-01-05-20-illinois.html">F<span class="no_mobile">inal</span></a>
+				
+			</td>
+		</tr>
+		<tr class="winner">
+			<td><a href="/cbb/schools/illinois/2020.html">Illinois</a></td>
+			<td class="right">63</td>
+			<td class="right">&nbsp;
+			</td>
+		</tr>
+		</tbody>
+	</table>
+	
+
+</div>
+
+      <div class="game_summary nohover">
+	<table class="teams">
+		<tbody>       
+		<tr class="loser">
+			<td><a href="/cbb/schools/southern-california/2020.html">USC</a></td>
+			<td class="right">40</td>
+			<td class="right gamelink">
+				<a href="/cbb/boxscores/2020-01-05-22-washington.html">F<span class="no_mobile">inal</span></a>
+				
+			</td>
+		</tr>
+		<tr class="winner">
+			<td><a href="/cbb/schools/washington/2020.html">Washington</a></td>
+			<td class="right">72</td>
 			<td class="right">&nbsp;
 			</td>
 		</tr>
@@ -1128,6 +1335,7 @@ sr_menus_setupMainNav_button_inline();
 
 </div>
 
+            
             
             
          
@@ -1168,16 +1376,16 @@ sr_menus_setupMainNav_button_inline();
 <li class="user not_logged_in"><a class="login" onclick="if(!this.href.match('redirect_uri')){this.href += '&redirect_uri='+escape(document.location.href)}" href="https://stathead.com/users/login.cgi?token=1">Login</a></li>
 <li class="user not_logged_in"><a href="https://stathead.com/users/signup.cgi">Create Account</a></li>
 </ul>
-		 <div class="breadcrumbs" itemscope itemtype="https://schema.org/Other">You are here: <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="/cbb/"><span itemprop="name">CBB Home Page</span></a> <meta itemprop="position" content="1" /></span> &gt; <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="/cbb/boxscores/"><span itemprop="name">Box Scores</span></a> <meta itemprop="position" content="2" /></span> &gt; <strong>College Basketball Scores on Sunday, January 5, 2020</strong></div>
+		 <div class="breadcrumbs">You are here: <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="/cbb/"><span itemprop="name">CBB Home Page</span></a> <meta itemprop="position" content="1" /></span> &gt; <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="/cbb/boxscores/"><span itemprop="name">Box Scores</span></a> <meta itemprop="position" content="2" /></span> &gt; <strong>College Basketball Scores on Sunday, January 5, 2020</strong></div>
 	</div><!-- div#footer_header -->
 
 	<div id="footer_general">
 		<div id="site_menu" role="navigation" aria-label="complete site index">
 			
 			
-<div class="section_heading">
+<div class="section_heading assoc_site_menu" id="site_menu_sh">
   <span class="section_anchor" id="site_menu_link" data-label="Full Site Menu"></span><h2>Full Site Menu</h2>    <div class="section_heading_text">
-      <ul> <li><a data-scroll href="#header">Return to Top</a></li>
+      <ul><li><a data-scroll href="#header">Return to Top</a></li>
       </ul>
     </div>
     		
@@ -1334,32 +1542,34 @@ sr_menus_setupMainNav_button_inline();
 
 
 			
-		</div><!-- div#site_menu -->
+
+	        </div><!-- div#site_menu -->
 		<div>
 			<div id="social" class="icon_group noload">
 	
-<div class="section_heading">
+<div class="section_heading assoc_" id="_sh">
   <span class="section_anchor" id="_link" data-label="We're Social...for Statheads" data-no-inpage="1"></span><h2>We're Social...for Statheads</h2>		
 </div>
-	<a href="tel://888-512-8907" data-tip="Call us on Telephone" data-label="Telephone" class="poptip"><svg class="icon phone"><use xlink:href="#ic-phone"></use></svg></a>
-	<a href="//www.sports-reference.com/blog/" data-tip="The Sports Reference Blog" data-label="Our Blog" class="poptip"><svg class="icon wordpress"><use xlink:href="#ic-wordpress"></use></svg></a>
-	<a href="https://www.sports-reference.com/blog/feed/" data-tip="Our Blog's RSS Feed" data-label="RSS Feed" class="poptip"><svg class="icon rss"><use xlink:href="#ic-rss"></use></svg></a>
+	<a href="tel://888-512-8907" data-tip="Call us on Telephone" data-label="Telephone" aria-label="Telephone" class="poptip"><svg class="icon phone"><use xlink:href="#ic-phone"></use></svg></a>
+	<a href="//www.sports-reference.com/blog/" data-tip="The Sports Reference Blog" data-label="Our Blog" aria-label="Our Blog" class="poptip"><svg class="icon wordpress"><use xlink:href="#ic-wordpress"></use></svg></a>
+	<a href="https://www.sports-reference.com/blog/feed/" data-tip="Our Blog's RSS Feed" data-label="RSS Feed" aria-label="RSS Feed" class="poptip"><svg class="icon rss"><use xlink:href="#ic-rss"></use></svg></a>
 	
-		<a href="https://twitter.com/collegebb_ref" data-tip="College Basketball at Sports-Reference.com at Twitter" data-label="Twitter" class="poptip"><svg class="icon twitter"><use xlink:href="#ic-twitter"></use></svg></a>
+		<a href="https://twitter.com/collegebb_ref" data-tip="College Basketball at Sports-Reference.com at Twitter" data-label="Twitter" aria-label="Twitter" class="poptip"><svg class="icon twitter"><use xlink:href="#ic-twitter"></use></svg></a>
 	
-	<a href="https://reddit.com/r/SportsReference" data-tip="Reddit/r/SportsReference" data-label="Reddit/r/SR" class="poptip"><svg class="icon reddit"><use xlink:href="#ic-reddit"></use></svg></a>
-	<a href="https://www.youtube.com/user/sportsreference" data-tip="YouTube/SportsReference" data-label="YouTube" class="poptip"><svg class="icon youtube"><use xlink:href="#ic-youtube"></use></svg></a>
-	<a href="https://www.linkedin.com/company/sports-reference-llc" data-tip="Follow SR on LinkedIn" data-label="LinkedIn" class="poptip"><svg class="icon linkedin"><use xlink:href="#ic-linkedin"></use></svg></a>
-	<a href="https://www.paypal.me/sportsref" data-tip="Send us money via PayPal" data-label="PayPal" class="poptip"><svg class="icon paypal"><use xlink:href="#ic-paypal"></use></svg></a>
+		<a href="https://www.tiktok.com/@collegebb_ref" data-tip="College Basketball at Sports-Reference.com at TikTok" data-label="TikTok" aria-label="TikTok" class="poptip"><svg class="icon tiktok"><use xlink:href="#ic-tiktok"></use></svg></a>
+	<a href="https://reddit.com/r/SportsReference" data-tip="Reddit/r/SportsReference" data-label="Reddit/r/SR" aria-label="Reddit/r/SR" class="poptip"><svg class="icon reddit"><use xlink:href="#ic-reddit"></use></svg></a>
+	<a href="https://www.youtube.com/user/sportsreference" data-tip="YouTube/SportsReference" data-label="YouTube" aria-label="YouTube" class="poptip"><svg class="icon youtube"><use xlink:href="#ic-youtube"></use></svg></a>
+	<a href="https://www.linkedin.com/company/sports-reference-llc" data-tip="Follow SR on LinkedIn" data-label="LinkedIn" aria-label="LinkedIn" class="poptip"><svg class="icon linkedin"><use xlink:href="#ic-linkedin"></use></svg></a>
+	<a href="https://www.paypal.me/sportsref" data-tip="Send us money via PayPal" data-label="PayPal" aria-label="PayPal" class="poptip"><svg class="icon paypal"><use xlink:href="#ic-paypal"></use></svg></a>
 
 <p>Every <a href="https://www.sports-reference.com/blog/sports-reference-social-media/">Sports Reference Social Media Account</a></p>
-<p><strong>Site Last Updated:</strong> Monday, June 29,  4:48PM
+<p><strong>Site Last Updated:</strong> Saturday, November 19,  5:18AM
 </p>
-<p><a href="https://www.sports-reference.com/feedback/" class="button alt">Question, Comment, Feedback, or Correction?</a></p>
+<p><a href="https://www.sports-reference.com/feedback/" class="button" style="display: block">Question, Comment, Feedback, or Correction?</a></p>
 
-<p><a style="background-color:#8e4496; color: #fff;" href="https://stathead.com/?&utm_medium=sr&utm_source=cbb&utm_campaign=site-footer" class="button alt">Are you a Stathead, too? Subscribe to our Free Newsletter</a></p>
+<p><a style="display: block" href="https://www.sports-reference.com/cbb/email" class="button">Subscribe to our Free Email Newsletter</a></p>
 
-<p><a style="background-color:#155ca9; color: #fff;" href="https://www.sports-reference.com/this-week.html?&utm_medium=sr&utm_source=cbb&utm_campaign=site-footer-twisr" class="button alt">This Week in Sports Reference<br><em>Find out when we add a feature or make a change</em></a></p>
+<p><a style="background-color:#155ca9; color: #fff;" href="https://www.sports-reference.com/this-month.html?&utm_medium=sr&utm_source=cbb&utm_campaign=site-footer-twisr" class="button alt">This Month in Sports Reference<br><em>Find out when we add a feature or make a change</em></a></p>
 
 <p><a href="https://www.sports-reference.com/blog/ways-sports-reference-can-help-your-website/?utm_medium=sr&utm_source=cbb&utm_campaign=site-footer-ways-help">Do you have a sports website? Or write about sports? We have tools and resources that can help you use sports data.  Find out more.</a></p>
 
@@ -1368,7 +1578,7 @@ sr_menus_setupMainNav_button_inline();
 
 			<div id="tips_tricks">
    
-<div class="section_heading">
+<div class="section_heading assoc_tips" id="tips_sh">
   <span class="section_anchor" id="tips_link" data-label="FAQs, Tip &amp; Tricks" data-no-inpage="1"></span><h2>FAQs, Tip &amp; Tricks</h2>		
 </div>
    <ul>
@@ -1376,7 +1586,7 @@ sr_menus_setupMainNav_button_inline();
            <li><a href="//www.sports-reference.com/blog/category/tips-and-tricks/">Tips and Tricks from our Blog.</a></li>
            <li><a href="/cbb/linker/">Do you have a blog? Join our linker program.</a></li>
 	   <li><a href="https://www.sports-reference.com/blog/category/stathead-tutorial-series/">Watch our How-To Videos to Become a Stathead</a></li>
-	   <li><a href="//stathead.com/">Subscribe to Stathead and get access to more data than you can imagine</a></li>
+	   <li><a href="//stathead.com/?ref=cbb">Subscribe to Stathead and get access to more data than you can imagine</a></li>
    </ul>
 </div><!-- div#tips_tricks -->
 
@@ -1389,32 +1599,52 @@ sr_menus_setupMainNav_button_inline();
 				</p>
 				
 <div class="notice">Primary NCAA Data Provided By
-	<a href="http://www.gracenote.com/sports/sports-data/" rel="nofollow"><img alt="Gracenote Sports" border=0 width=275 src="https://d2p3bygnnzw9w3.cloudfront.net/req/202007101/images/klecko/gracenote-2.png"></a>
+	<a href="http://www.gracenote.com/sports/sports-data/" rel="nofollow"><img alt="Gracenote Sports" border=0 width=275 src="https://cdn.ssref.net/req/202211031/images/klecko/gracenote-2.png"></a>
 </div>
 
-     <p>Copyright &copy; 2000-2020 <a href="//www.sports-reference.com/">Sports Reference LLC</a>. All rights reserved.</p>
+     <p>Copyright &copy; 2000-2022 <a href="//www.sports-reference.com/">Sports Reference LLC</a>. All rights reserved.</p>
 
+     <p>The SPORTS REFERENCE and STATHEAD trademarks are owned exclusively by Sports Reference LLC. Use without license or authorization is expressly prohibited.
 
 			</div><!-- div#credits -->
 		</div>
 	</div>
 
 	<ul id="site_dirs" class="notranslate bullets-inline">
-	<li><a href="https://www.sports-reference.com/"><svg height="15px" width="20px"><use xlink:href="#ic-sr-pennant"></use></svg> Sports Reference</a></li>
+	<li><a href="https://www.sports-reference.com/"><svg height="15px" width="20px"><use xlink:href="#ic-sr-pennant"></use></svg> Sports&nbsp;Reference&#8239;&reg;</a></li>
 	<li><a href="https://www.baseball-reference.com/">Baseball</a></li>
 	<li><a href="https://www.pro-football-reference.com/">Football</a> <a href="https://www.sports-reference.com/cfb/">(college)</a></li>
 	<li class="current"><a href="https://www.basketball-reference.com/">Basketball</a> <a href="https://www.sports-reference.com/cbb/">(college)</a></li>
 	<li><a href="https://www.hockey-reference.com/">Hockey</a></li>
-	<li><a href="https://fbref.com/">Soccer</a></li>
+
+
+	
+	
+	
+	<li><a href="https://fbref.com/fr/">Football</a></li>
+
 	<li><a href="https://www.sports-reference.com/blog/">Blog</a></li>
 
-    <li><a href="https://stathead.com/?utm_source=web&amp;utm_medium=cbb&amp;utm_campaign=sr-nav-bar-top-link">Stathead</a></li>
-    <li><a href="https://widgets.sports-reference.com/">Widgets</a></li>
+    <li><a href="https://stathead.com/?utm_source=web&amp;utm_medium=cbb&amp;utm_campaign=sr-nav-bar-top-link">Stathead&#8239;&reg;</a></li>
 
 
 </ul>
 
-	<div id="about"><a href="//www.sports-reference.com/about.html">About</a> &bull; <a href="//www.sports-reference.com/privacy.html">Privacy Statement</a> &bull; <a href="//www.sports-reference.com/termsofuse.html">Conditions &amp; Terms of Service</a> &bull; <a href="//www.sports-reference.com/advertise.html">Advertise With Us</a> &bull; <a href="//www.sports-reference.com/data_use.html">Use of Data</a></div><!-- div#about -->
+	<div id="about">
+  <a href="//www.sports-reference.com/about.html">About</a> &bull;
+  <a href="//www.sports-reference.com/termsofuse.html">Conditions &amp; Terms of Service</a> &bull;
+  <a href="//www.sports-reference.com/advertise.html">Advertise With Us</a>
+ &bull;
+  <a href="//www.sports-reference.com/jobs.html">Jobs at SR</a>
+  <br><br>
+Sports Reference Purpose: We will be the trusted source of information and tools that inspire and empower users to enjoy, understand, and share the sports they love.
+  <br><br>
+  <a href="//www.sports-reference.com/privacy.html">Privacy Policy</a> &bull;
+  <a href="//www.sports-reference.com/gambling-revenue-policy.html">Gambling Revenue Policy</a> &bull;
+  <a href="//www.sports-reference.com/accessibility-policy.html">Accessibility Policy</a> &bull;
+  <a href="//www.sports-reference.com/data_use.html">Use of Data</a>
+  </div>
+  <!-- div#about -->
 </div><!-- div#footer -->
 
 </div><!-- div#wrap -->
@@ -1454,10 +1684,17 @@ sr_menus_setupMainNav_button_inline();
 </div>
 
 
-<!-- Google Analytics --><script> var sr_cookie = vjs_readCookie('stathead_user') || ''; var sr_cookie_split = sr_cookie.split("::"); var sr_session_key = (sr_cookie_split.length > 1)?sr_cookie_split[2]:''; var sr_ad_free_key = "7"; var sr_site_id = "cbb"; var sr_is_subscriber = (sr_ad_free_key && sr_session_key.vjs_isMatch(new RegExp(sr_ad_free_key + "$"))) || sr_session_key.vjs_isMatch(/1$/) || (sr_site_id === 'stathead' && sr_session_key.vjs_isMatch(/[0-7]$/)); var sr_is_user = sr_cookie !== null && sr_cookie !== ''; var sr_seen_modal = vjs_readCookie('modal_ad') !== null; var sr_device = 'unk'; if (Modernizr.phone) { sr_device = 'phone'; } else if (Modernizr.tablet) { sr_device = 'tablet'; } else if (Modernizr.laptop) { sr_device = 'laptop'; } else if (Modernizr.desktop) { sr_device = 'desktop'; } var sr_stathead_site = vjs_readCookie('stathead_site') || ''; var sr_stathead_type = vjs_readCookie('stathead_type') || ''; (function(i,s,o,g,r,a,m){ i['GoogleAnalyticsObject']=r; i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date(); a=s.createElement(o),m=s.getElementsByTagName(o)[0]; a.async=1; a.src=g; m.parentNode.insertBefore(a,m) })(window,document,'script','https://www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-1890630-8', 'auto'); ga('require', 'linkid', 'linkid.js'); ga('require', 'ecommerce', 'ecommerce.js'); ga('require', 'displayfeatures'); ga('set', 'dimension1', sr_is_subscriber); ga('set', 'dimension2', sr_is_user); /* no longer collecting is_modern */ ga('set', 'dimension3', 'null'); ga('set', 'dimension4', sr_stathead_type); ga('set', 'dimension5', sr_stathead_site); ga('set', 'metric1', Modernizr.viewport_width); ga('send', 'pageview'); /* all sr-sites together */ ga('create', 'UA-1890630-9', 'auto', {'name': 'sr_tracker', 'allowLinker': true }); ga('sr_tracker.require', 'displayfeatures'); ga('sr_tracker.set', 'dimension1',sr_site_id); ga('sr_tracker.set', 'dimension2',sr_is_subscriber); ga('sr_tracker.set', 'dimension3',sr_is_user); ga('sr_tracker.set', 'dimension4',sr_seen_modal); ga('sr_tracker.set', 'dimension5',sr_device); /* no longer collecting is_modern */ ga('sr_tracker.set', 'dimension6','null'); ga('sr_tracker.set', 'metric1',Modernizr.viewport_width); /* note that this requires the Assets/AdBlockTest.tt2 to be included above. ga('sr_tracker.set', 'dimension8',(typeof sr_test == 'undefined')?'no-test':( sr_test ? 'non-blocking':'blocking')); */ ga('sr_tracker.send', 'pageview'); /* cribbed from: http://www.axllent.org/docs/view/track-outbound-links-with-analytics-js/ */ function _gaLt(event) { if (!ga.hasOwnProperty("loaded") || ga.loaded != true) { return; } var el = event.srcElement || event.target; /* if a link has been clicked */ if (el && el.href) { var link = el.href; /* Only if it is an external link */ if (link.indexOf(location.host) == -1 && !link.match(/^javascript\:/i)) { /* Is target set and not _(self|parent|top)? */ var target = (el.target && !el.target.match(/^_(self|parent|top)/i)) ? el.target : false; /* If target opens a new window then just track */ if (el.target && !el.target.match(/^_(self|parent|top)/i)) { ga("send", "event", "Outgoing Links", link, document.location.pathname + document.location.search); } }; } } window.addEventListener ? window.addEventListener("load", function() { document.body.addEventListener("click", _gaLt, !1)}, !1) : window.attachEvent && window.attachEvent("onload", function() { document.body.attachEvent("onclick", _gaLt) }); </script><!-- End Google Analytics -->
+<!-- sr_gender is used in Templates/Assets/GoogleAnalytics.tt2 -->
+<script>var sr_gender = "";</script>
+<!-- Google Analytics --> <!-- new extra script, apparently we only use one of these, regardless of the number of products... https://developers.google.com/tag-platform/gtagjs/install#google-analytics --> <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1890630-8"></script> <script> var sr_cookie = vjs_readCookie('stathead_user') || ''; var sr_cookie_split = sr_cookie.split("::"); var sr_session_key = (sr_cookie_split.length > 1)?sr_cookie_split[2]:''; var sr_ad_free_key = "7"; var sr_site_id = "cbb"; var sr_is_subscriber = (sr_ad_free_key && sr_session_key.vjs_isMatch(new RegExp(sr_ad_free_key + "$"))) || sr_session_key.vjs_isMatch(/1$/) || (sr_site_id === 'stathead' && sr_session_key.vjs_isMatch(/[0-7]$/)); var sr_is_user = sr_cookie !== null && sr_cookie !== ''; var sr_seen_modal = vjs_readCookie('modal_ad') !== null; var sr_device = 'unk'; if (Modernizr.phone) { sr_device = 'phone'; } else if (Modernizr.tablet) { sr_device = 'tablet'; } else if (Modernizr.laptop) { sr_device = 'laptop'; } else if (Modernizr.desktop) { sr_device = 'desktop'; } var sr_stathead_site = vjs_readCookie('stathead_site') || ''; var sr_stathead_type = vjs_readCookie('stathead_type') || ''; /* new gtag theres an extra script tag we need to add that I'm not sure how that work for multiple ID's for GA, docs say to ignore it??? https://developers.google.com/tag-platform/gtagjs/install here they have 3 but just use the last one? */ window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); /* OLD, could not find require within reference docs https://developers.google.com/tag-platform/gtagjs/reference ga('require', 'linkid', 'linkid.js'); ga('require', 'ecommerce', 'ecommerce.js'); ga('require', 'displayfeatures'); */ /* new, creates+sends+sets */ /* for fbref we want to allow for tracking of 'men' and 'women' pages for leagues, clubs and players, so we can track the most popular women players easily. In Footer.tt2 there is a place to set sr_gender. */ gtag('config', 'UA-1890630-8', { 'dimension1': sr_is_subscriber, 'dimension2': sr_is_user, 'dimension3': typeof(sr_gender) === 'string'? sr_gender: null, 'dimension4': sr_stathead_type, 'dimension5': sr_stathead_site, 'metric1': Modernizr.viewport_width }); /* all sr-sites together */ /* new, I believe linker works as a parameter here, although there didn\'t seem to be a simple "true" value to set besides this one https://developers.google.com/analytics/devguides/collection/gtagjs/cross-domain */ gtag('config', 'UA-1890630-9', { 'linker': { 'domains' : ['stathead.com'] }, 'dimension1': sr_site_id, 'dimension2': sr_is_subscriber, 'dimension3': sr_is_user, 'dimension4': sr_seen_modal, 'dimension5': sr_device, 'dimension6': 'null', 'metric1': Modernizr.viewport_width, 'dimension8': (typeof sr_test == 'undefined')?'no-test':( sr_test ? 'non-blocking':'blocking') }); /* new, cribbed from: https://www.axllent.org/docs/track-outbound-links-with-gtag-js/ */ function _gaLt(event) { /* if GA is blocked or not loaded, or not main|middle|touch click then don\'t track */ if (typeof gtag == "undefined" || (event.which != 1 && event.which != 2)) { return; } var el = event.srcElement || event.target; /* loop up the DOM tree through parent elements if clicked element is not a link (eg: an image inside a link) */ while ( el && (typeof el.tagName == "undefined" || el.tagName.toLowerCase() != "a" || !el.href) ) { el = el.parentNode; } /* if a link with valid href has been clicked */ if (el && el.href) { var link = el.href; /* only if it is an external link */ if (link.indexOf(location.host) == -1 && !link.match(/^javascript\:/i)) { /* is target set and _(self|parent|top) */ var target = el.target && !el.target.match(/^_(self|parent|top)/i) ? el.target : false; /* assume a target if (ctrl|shift|meta)-click */ if ( event.ctrlKey || event.shiftKey || event.metaKey || event.which == 2 ) { target = "_blank"; } /* tracker has not yet run */ var hbrun = false; /* hitBack to open link in same window after tracker */ var hitBack = function () { /* run once only */ if (hbrun) return; hbrun = true; window.location.href = link; }; if (target) { /* if target opens a new window then just track */ gtag("event", link, { event_category: "Outgoing Links", event_label: document.location.pathname + document.location.search, }); } else { /* Prevent standard click, track then open */ if (event.type == "mousedown") { var blockClick = function (event) { event.preventDefault(); /* remove click event after click */ el.removeEventListener("click", boundClick); }; /* bind the click event */ var boundClick = blockClick.bind(event); /* prevent the click */ el.addEventListener("click", boundClick); } event.preventDefault ? event.preventDefault() : (event.returnValue = !1); /* send event with callback */ gtag("event", link, { event_category: "Outgoing Links", event_label: document.location.pathname + document.location.search, event_callback: hitBack, }); /* Run hitBack again if GA takes longer than 1 second */ setTimeout(hitBack, 1000); } } } } var _w = window; /* Use "click" if touchscreen device, else "mousedown" */ var _gaLtEvt = "ontouchstart" in _w ? "click" : "mousedown"; /* Attach the event to all clicks in the document after page has loaded */ _w.addEventListener( "load", function () { document.body.addEventListener(_gaLtEvt, _gaLt, !1); }, !1 ); </script><!-- End Google Analytics -->
 
 
-</body><!-- SR -->
+<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/20503178.js"></script>
+<!-- End of HubSpot Embed Code -->
+
+</body>
+<!-- SR -->
 </html>
 
 

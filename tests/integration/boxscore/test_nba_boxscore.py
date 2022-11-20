@@ -4,35 +4,26 @@ import pandas as pd
 from datetime import datetime
 from flexmock import flexmock
 from sportsipy import utils
-from sportsipy.constants import AWAY
+from sportsipy.constants import AWAY, HOME
 from sportsipy.nba.constants import BOXSCORE_URL, BOXSCORES_URL
 from sportsipy.nba.boxscore import Boxscore, Boxscores
+from pyquery import PyQuery as pq
+from ..utils import read_file
 
 
 MONTH = 10
 YEAR = 2020
 
-BOXSCORE = '202002220UTA'
-
-
-def read_file(filename):
-    filepath = os.path.join(os.path.dirname(__file__), 'nba', filename)
-    return open('%s' % filepath, 'r', encoding='utf8').read()
+BOXSCORE = '202002220MIL'
 
 
 def mock_pyquery(url):
-    class MockPQ:
-        def __init__(self, html_contents):
-            self.status_code = 200
-            self.html_contents = html_contents
-            self.text = html_contents
-
     if url == BOXSCORES_URL % (2, 22, YEAR):
-        return MockPQ(read_file('boxscores-2-22-2020.html'))
+        return read_file('boxscores-2-22-2020.html', 'nba', 'boxscore')
     if url == BOXSCORES_URL % (2, 23, YEAR):
-        return MockPQ(read_file('boxscores-2-23-2020.html'))
-    boxscore = read_file('%s.html' % BOXSCORE)
-    return MockPQ(boxscore)
+        return read_file('boxscores-2-23-2020.html', 'nba', 'boxscore')
+    boxscore = read_file('%s.html' % BOXSCORE, 'nba', 'boxscore')
+    return boxscore
 
 
 class MockDateTime:
@@ -42,91 +33,91 @@ class MockDateTime:
 
 
 class TestNBABoxscore:
-    @mock.patch('requests.get', side_effect=mock_pyquery)
+    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
     def setup_method(self, *args, **kwargs):
         self.results = {
-            'date': '9:00 PM, February 22, 2020',
-            'location': 'Vivint Smart Home Arena, Salt Lake City, Utah',
-            'winner': AWAY,
-            'winning_name': 'Houston Rockets',
-            'winning_abbr': 'HOU',
-            'losing_name': 'Utah Jazz',
-            'losing_abbr': 'UTA',
-            'pace': 103.2,
-            'away_wins': 36,
-            'away_losses': 20,
+            'date': '8:30 PM, February 22, 2020',
+            'location': 'Fiserv Forum, Milwaukee, Wisconsin',
+            'winner': HOME,
+            'winning_name': 'Milwaukee Bucks',
+            'winning_abbr': 'MIL',
+            'losing_name': 'Philadelphia 76ers',
+            'losing_abbr': 'PHI',
+            'pace': 103.8,
+            'away_wins': 35,
+            'away_losses': 22,
             'away_minutes_played': 240,
-            'away_field_goals': 45,
-            'away_field_goal_attempts': 92,
-            'away_field_goal_percentage': .489,
-            'away_two_point_field_goals': 25,
-            'away_two_point_field_goal_attempts': 44,
-            'away_two_point_field_goal_percentage': .568,
-            'away_three_point_field_goals': 20,
-            'away_three_point_field_goal_attempts': 48,
-            'away_three_point_field_goal_percentage': .417,
-            'away_free_throws': 10,
-            'away_free_throw_attempts': 14,
-            'away_free_throw_percentage': .714,
-            'away_offensive_rebounds': 6,
-            'away_defensive_rebounds': 36,
-            'away_total_rebounds': 42,
-            'away_assists': 20,
-            'away_steals': 9,
-            'away_blocks': 5,
+            'away_field_goals': 35,
+            'away_field_goal_attempts': 99,
+            'away_field_goal_percentage': .354,
+            'away_two_point_field_goals': 22,
+            'away_two_point_field_goal_attempts': 61,
+            'away_two_point_field_goal_percentage': .361,
+            'away_three_point_field_goals': 13,
+            'away_three_point_field_goal_attempts': 38,
+            'away_three_point_field_goal_percentage': .342,
+            'away_free_throws': 15,
+            'away_free_throw_attempts': 18,
+            'away_free_throw_percentage': .833,
+            'away_offensive_rebounds': 11,
+            'away_defensive_rebounds': 32,
+            'away_total_rebounds': 43,
+            'away_assists': 17,
+            'away_steals': 10,
+            'away_blocks': 4,
             'away_turnovers': 10,
-            'away_personal_fouls': 25,
-            'away_points': 120,
-            'away_true_shooting_percentage': .611,
-            'away_effective_field_goal_percentage': .598,
-            'away_three_point_attempt_rate': .522,
-            'away_free_throw_attempt_rate': .152,
-            'away_offensive_rebound_percentage': 13.0,
-            'away_defensive_rebound_percentage': 85.7,
-            'away_total_rebound_percentage': 47.7,
-            'away_assist_percentage': 44.4,
-            'away_steal_percentage': 8.7,
-            'away_block_percentage': 8.5,
-            'away_turnover_percentage': 9.2,
-            'away_offensive_rating': 116.3,
-            'away_defensive_rating': 106.6,
-            'home_wins': 0,
-            'home_losses': 0,
+            'away_personal_fouls': 17,
+            'away_points': 98,
+            'away_true_shooting_percentage': .458,
+            'away_effective_field_goal_percentage': .419,
+            'away_three_point_attempt_rate': .384,
+            'away_free_throw_attempt_rate': .182,
+            'away_offensive_rebound_percentage': 18.3,
+            'away_defensive_rebound_percentage': 80.0,
+            'away_total_rebound_percentage': 43.0,
+            'away_assist_percentage': 48.6,
+            'away_steal_percentage': 9.6,
+            'away_block_percentage': 8.0,
+            'away_turnover_percentage': 8.6,
+            'away_offensive_rating': 94.4,
+            'away_defensive_rating': 114.6,
+            'home_wins': 48,
+            'home_losses': 8,
             'home_minutes_played': 240,
-            'home_field_goals': 42,
-            'home_field_goal_attempts': 90,
-            'home_field_goal_percentage': .467,
-            'home_two_point_field_goals': 35,
-            'home_two_point_field_goal_attempts': 59,
-            'home_two_point_field_goal_percentage': .593,
-            'home_three_point_field_goals': 7,
-            'home_three_point_field_goal_attempts': 31,
-            'home_three_point_field_goal_percentage': .226,
-            'home_free_throws': 19,
-            'home_free_throw_attempts': 24,
-            'home_free_throw_percentage': .792,
-            'home_offensive_rebounds': 6,
-            'home_defensive_rebounds': 40,
-            'home_total_rebounds': 46,
-            'home_assists': 18,
-            'home_steals': 1,
-            'home_blocks': 2,
-            'home_turnovers': 13,
-            'home_personal_fouls': 14,
-            'home_points': 110,
-            'home_true_shooting_percentage': .547,
-            'home_effective_field_goal_percentage': .506,
-            'home_three_point_attempt_rate': .344,
-            'home_free_throw_attempt_rate': .267,
-            'home_offensive_rebound_percentage': 14.3,
-            'home_defensive_rebound_percentage': 87.0,
-            'home_total_rebound_percentage': 52.3,
-            'home_assist_percentage': 42.9,
-            'home_steal_percentage': 1.0,
-            'home_block_percentage': 4.5,
-            'home_turnover_percentage': 11.4,
-            'home_offensive_rating': 106.6,
-            'home_defensive_rating': 116.3
+            'home_field_goals': 48,
+            'home_field_goal_attempts': 91,
+            'home_field_goal_percentage': .527,
+            'home_two_point_field_goals': 34,
+            'home_two_point_field_goal_attempts': 50,
+            'home_two_point_field_goal_percentage': .680,
+            'home_three_point_field_goals': 14,
+            'home_three_point_field_goal_attempts': 41,
+            'home_three_point_field_goal_percentage': .341,
+            'home_free_throws': 9,
+            'home_free_throw_attempts': 13,
+            'home_free_throw_percentage': .692,
+            'home_offensive_rebounds': 8,
+            'home_defensive_rebounds': 49,
+            'home_total_rebounds': 57,
+            'home_assists': 35,
+            'home_steals': 2,
+            'home_blocks': 6,
+            'home_turnovers': 17,
+            'home_personal_fouls': 16,
+            'home_points': 119,
+            'home_true_shooting_percentage': .615,
+            'home_effective_field_goal_percentage': .604,
+            'home_three_point_attempt_rate': .451,
+            'home_free_throw_attempt_rate': .143,
+            'home_offensive_rebound_percentage': 20.0,
+            'home_defensive_rebound_percentage': 81.7,
+            'home_total_rebound_percentage': 57.0,
+            'home_assist_percentage': 72.9,
+            'home_steal_percentage': 1.9,
+            'home_block_percentage': 9.8,
+            'home_turnover_percentage': 14.9,
+            'home_offensive_rating': 114.6,
+            'home_defensive_rating': 94.4
         }
         flexmock(utils) \
             .should_receive('_todays_date') \
@@ -138,8 +129,8 @@ class TestNBABoxscore:
         for attribute, value in self.results.items():
             assert getattr(self.boxscore, attribute) == value
         assert getattr(self.boxscore, 'summary') == {
-            'away': [38, 24, 38, 20],
-            'home': [36, 30, 19, 25]
+            'away': [21, 29, 23, 25],
+            'home': [31, 25, 37, 26]
         }
 
     def test_invalid_url_yields_empty_class(self):
@@ -178,18 +169,16 @@ class TestNBABoxscore:
             assert not player.dataframe.empty
 
     def test_nba_boxscore_string_representation(self):
-        expected = ('Boxscore for Houston Rockets at Utah Jazz '
-                    '(9:00 PM, February 22, 2020)')
+        expected = ('Boxscore for Philadelphia 76ers at Milwaukee Bucks '
+                    '(8:30 PM, February 22, 2020)')
 
-        boxscore = Boxscore(BOXSCORE)
-
-        assert boxscore.__repr__() == expected
+        assert self.boxscore.__repr__() == expected
 
     def test_nba_boxscore_home_win_and_losses(self):
-        self.boxscore._home_record = '36-20'
+        self.boxscore._home_record = '48-8'
 
-        assert self.boxscore.home_wins == 36
-        assert self.boxscore.home_losses == 20
+        assert self.boxscore.home_wins == 48
+        assert self.boxscore.home_losses == 8
 
 
 class TestNBABoxscores:
@@ -276,19 +265,19 @@ class TestNBABoxscores:
             ]
         }
 
-    @mock.patch('requests.get', side_effect=mock_pyquery)
+    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_boxscores_search(self, *args, **kwargs):
         result = Boxscores(datetime(2020, 2, 22)).games
 
         assert result == self.expected
 
-    @mock.patch('requests.get', side_effect=mock_pyquery)
+    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_boxscores_search_invalid_end(self, *args, **kwargs):
         result = Boxscores(datetime(2020, 2, 22), datetime(2020, 2, 21)).games
 
         assert result == self.expected
 
-    @mock.patch('requests.get', side_effect=mock_pyquery)
+    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_boxscores_search_multiple_days(self, *args, **kwargs):
         expected = {
             '2-22-2020': [
@@ -454,7 +443,7 @@ class TestNBABoxscores:
 
         assert result == expected
 
-    @mock.patch('requests.get', side_effect=mock_pyquery)
+    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_boxscores_search_string_representation(self, *args, **kwargs):
         result = Boxscores(datetime(2020, 2, 22))
 

@@ -26,8 +26,11 @@ def float_property_decorator(func):
     def wrapper(*args):
         value = func(*args)
         try:
-            return float(value)
-        except (TypeError, ValueError):
+            if type(value) == str:
+                return float(value.replace('%', ''))
+            else:
+                return float(value)
+        except (TypeError, ValueError) as e:
             # If there is no value, default to None. None is statistically
             # different from 0 as a player/team who played an entire game and
             # contributed nothing is different from one who didn't play at all.

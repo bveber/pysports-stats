@@ -7,6 +7,7 @@ from sportsipy import utils
 from sportsipy.constants import AWAY
 from sportsipy.nhl.constants import BOXSCORE_URL, BOXSCORES_URL
 from sportsipy.nhl.boxscore import Boxscore, Boxscores
+from ..utils import read_file
 
 
 MONTH = 10
@@ -15,24 +16,13 @@ YEAR = 2020
 BOXSCORE = '202003040VAN'
 
 
-def read_file(filename):
-    filepath = os.path.join(os.path.dirname(__file__), 'nhl', filename)
-    return open('%s' % filepath, 'r', encoding='utf8').read()
-
-
 def mock_pyquery(url):
-    class MockPQ:
-        def __init__(self, html_contents):
-            self.status_code = 200
-            self.html_contents = html_contents
-            self.text = html_contents
-
     if url == BOXSCORES_URL % (3, 4, YEAR):
-        return MockPQ(read_file('boxscores-3-4-2020.html'))
+        return read_file('boxscores-3-4-2020.html', 'nhl', 'boxscore')
     if url == BOXSCORES_URL % (3, 5, YEAR):
-        return MockPQ(read_file('boxscores-3-5-2020.html'))
-    boxscore = read_file('%s.html' % BOXSCORE)
-    return MockPQ(boxscore)
+        return read_file('boxscores-3-5-2020.html', 'nhl', 'boxscore')
+    boxscore = read_file('%s.html' % BOXSCORE, 'nhl', 'boxscore')
+    return boxscore
 
 
 class MockDateTime:
@@ -42,7 +32,7 @@ class MockDateTime:
 
 
 class TestNHLBoxscore:
-    @mock.patch('requests.get', side_effect=mock_pyquery)
+    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
     def setup_method(self, *args, **kwargs):
         self.results = {
             'date': 'March 4, 2020',
@@ -126,7 +116,7 @@ class TestNHLBoxscore:
         assert df1.empty
 
     def test_nhl_boxscore_player(self):
-        boxscore = Boxscore(BOXSCORE)
+        boxscore = self.boxscore
 
         assert len(boxscore.home_players) == 19
         assert len(boxscore.away_players) == 19
@@ -140,9 +130,7 @@ class TestNHLBoxscore:
         expected = ('Boxscore for Arizona Coyotes at Vancouver Canucks '
                     '(March 4, 2020)')
 
-        boxscore = Boxscore(BOXSCORE)
-
-        assert boxscore.__repr__() == expected
+        assert self.boxscore.__repr__() == expected
 
 
 class TestNHLBoxscores:
@@ -196,19 +184,20 @@ class TestNHLBoxscores:
             ]
         }
 
-    @mock.patch('requests.get', side_effect=mock_pyquery)
+    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_boxscores_search(self, *args, **kwargs):
         result = Boxscores(datetime(2020, 3, 4)).games
-
+        from pprint import pprint
+        pprint(result)
         assert result == self.expected
 
-    @mock.patch('requests.get', side_effect=mock_pyquery)
+    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_boxscores_search_invalid_end(self, *args, **kwargs):
         result = Boxscores(datetime(2020, 3, 4), datetime(2020, 3, 3)).games
 
         assert result == self.expected
 
-    @mock.patch('requests.get', side_effect=mock_pyquery)
+    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_boxscores_search_multiple_days(self, *args, **kwargs):
         expected = {
             '3-4-2020': [
@@ -371,10 +360,11 @@ class TestNHLBoxscores:
             ]
         }
         result = Boxscores(datetime(2020, 3, 4), datetime(2020, 3, 5)).games
-
+        from pprint import pprint
+        pprint(result)
         assert result == expected
 
-    @mock.patch('requests.get', side_effect=mock_pyquery)
+    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_boxscores_search_string_representation(self, *args, **kwargs):
         result = Boxscores(datetime(2020, 3, 4))
 
