@@ -187,8 +187,7 @@ class TestNHLBoxscores:
     @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_boxscores_search(self, *args, **kwargs):
         result = Boxscores(datetime(2020, 3, 4)).games
-        from pprint import pprint
-        pprint(result)
+
         assert result == self.expected
 
     @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
@@ -360,8 +359,7 @@ class TestNHLBoxscores:
             ]
         }
         result = Boxscores(datetime(2020, 3, 4), datetime(2020, 3, 5)).games
-        from pprint import pprint
-        pprint(result)
+
         assert result == expected
 
     @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
