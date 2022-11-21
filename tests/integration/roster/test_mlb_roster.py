@@ -17,10 +17,10 @@ def mock_pyquery(url):
     if 'BAD' in url:
         return None
     if 'HOU' in url:
-        return read_file('HOU2022', 'mlb', 'roster')
+        return read_file('HOU2022.html', 'mlb', 'roster')
     if 'verlaju01' in url:
-        return read_file('verlaju01', 'mlb', 'roster')
-    return read_file('altuvjo01', 'mlb', 'roster')
+        return read_file('verlaju01.html', 'mlb', 'roster')
+    return read_file('altuvjo01.html', 'mlb', 'roster')
 
 
 def mock_request(url):
@@ -1240,5 +1240,6 @@ José Altuve (mortoch02)"""
 
         assert roster.__repr__() == expected
 
+    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_coach(self):
         assert "A.J. Hinch" == Roster('HOU', year=YEAR).coach

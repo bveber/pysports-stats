@@ -1062,8 +1062,6 @@ class TestNCAAFBoxscores:
             ]
         }
         result = Boxscores(datetime(2020, 9, 12), datetime(2020, 9, 13)).games
-        from pprint import pprint
-        pprint(result)
         assert result == expected
 
     @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)

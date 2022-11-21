@@ -9,6 +9,7 @@ from sportsipy.constants import AWAY, REGULAR_SEASON, WIN
 from sportsipy.nfl.boxscore import Boxscore
 from sportsipy.nfl.constants import SCHEDULE_URL
 from sportsipy.nfl.schedule import Schedule
+from ..utils import read_file
 
 
 MONTH = 9
@@ -17,25 +18,20 @@ YEAR = 2017
 NUM_GAMES_IN_SCHEDULE = 19
 
 
-def read_file(filename):
-    filepath = os.path.join(os.path.dirname(__file__), 'nfl', filename)
-    return open('%s' % filepath, 'r', encoding='utf8').read()
-
-
 def mock_pyquery(url):
-    class MockPQ:
-        def __init__(self, html_contents):
-            self.status_code = 200
-            self.html_contents = html_contents
-            self.text = html_contents
+    # class MockPQ:
+    #     def __init__(self, html_contents):
+    #         self.status_code = 200
+    #         self.html_contents = html_contents
+    #         self.text = html_contents
 
-        def __call__(self, div):
-            if 'playoff' in div.lower():
-                return read_file('playoff_table.html')
-            return read_file('table.html')
+    #     def __call__(self, div):
+    #         if 'playoff' in div.lower():
+    #             return read_file('playoff_table.html')
+    #         return read_file('table.html')
 
-    schedule = read_file('gamelog')
-    return MockPQ(schedule)
+    # schedule = read_file('nwe_gamelog.html', 'nfl', 'schedule')
+    return read_file('nwe_gamelog.html', 'nfl', 'schedule')
 
 
 def mock_request(url):
@@ -58,7 +54,7 @@ class MockDateTime:
 
 
 class TestNFLSchedule:
-    @mock.patch('requests.get', side_effect=mock_pyquery)
+    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
     def setup_method(self, *args, **kwargs):
         self.results = {
             'week': 2,
@@ -81,7 +77,7 @@ class TestNFLSchedule:
             'interceptions': 0,
             'times_sacked': 2,
             'yards_lost_from_sacks': 11,
-            'pass_yards_per_attempt': 11.2,
+            'pass_yards_per_attempt': 11.5,
             'pass_completion_rate': 76.9,
             'quarterback_rating': 138.4,
             'rush_attempts': 31,
@@ -119,6 +115,7 @@ class TestNFLSchedule:
         match_two = self.schedule[1]
 
         for attribute, value in self.results.items():
+            print(attribute, getattr(match_two, attribute), value)
             assert getattr(match_two, attribute) == value
 
     def test_nfl_schedule_returns_requested_match_from_date(self):
@@ -209,7 +206,7 @@ February 4 - PHI"""
 
 
 class TestNFLScheduleInvalidYear:
-    @mock.patch('requests.get', side_effect=mock_pyquery)
+    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
     @mock.patch('requests.head', side_effect=mock_request)
     def test_invalid_default_year_reverts_to_previous_year(self,
                                                            *args,
@@ -235,7 +232,7 @@ class TestNFLScheduleInvalidYear:
             'interceptions': 0,
             'times_sacked': 2,
             'yards_lost_from_sacks': 11,
-            'pass_yards_per_attempt': 11.2,
+            'pass_yards_per_attempt': 11.5,
             'pass_completion_rate': 76.9,
             'quarterback_rating': 138.4,
             'rush_attempts': 31,
