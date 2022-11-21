@@ -14,29 +14,14 @@ from pyquery import PyQuery as pq
 MONTH = 9
 YEAR = 2017
 
+SEASON_PAGE = 'tests/integration/teams/nfl/2017.html'
 
 def mock_pyquery(url):
-    # class MockPQ:
-    #     def __init__(self, html_contents):
-    #         self.status_code = 200
-    #         self.html_contents = html_contents
-    #         self.text = html_contents
-
-    #     def __call__(self, div):
-    #         if div == 'div#all_team_stats':
-    #             return read_file('%s_all_team_stats.html' % YEAR)
-    #         elif div == 'table#AFC':
-    #             return read_file('%s_afc.html' % YEAR)
-    #         else:
-    #             return read_file('%s_nfc.html' % YEAR)
-
-    # html_contents = read_file('%s.html' % YEAR)
-    print(url)
     if 'years/2017/' in url:
         return read_file('2017.html', 'nfl', 'teams')
     if 'kan' in url:
         return read_file('kan-2017.html', 'nfl', 'teams')
-    return read_file('2017.html', 'nfl', 'teams')
+    return read_file('kan-2017.html', 'nfl', 'teams')
 
 
 def mock_request(url):
@@ -122,12 +107,13 @@ class TestNFLIntegration:
             .should_receive('_todays_date') \
             .and_return(MockDateTime(YEAR, MONTH))
 
-        self.teams = Teams()
+        self.teams = Teams(season_page = SEASON_PAGE)
 
     def test_nfl_integration_returns_correct_number_of_teams(self):
         assert len(self.teams) == len(self.abbreviations)
 
-    def test_nfl_integration_returns_correct_attributes_for_team(self):
+    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    def test_nfl_integration_returns_correct_attributes_for_team(self, *args, **kwargs):
         kansas = self.teams('KAN')
 
         for attribute, value in self.results.items():
@@ -137,7 +123,8 @@ class TestNFLIntegration:
         for team in self.teams:
             assert team.abbreviation in self.abbreviations
 
-    def test_nfl_integration_dataframe_returns_dataframe(self):
+    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    def test_nfl_integration_dataframe_returns_dataframe(self, *args, **kwargs):
         df = pd.DataFrame([self.results], index=['KAN'])
 
         kansas = self.teams('KAN')
@@ -152,6 +139,7 @@ class TestNFLIntegration:
 
         assert df1.empty
 
+    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_nfl_integration_all_teams_dataframe_returns_dataframe(self, *args, **kwargs):
         result = self.teams.dataframes.drop_duplicates(keep=False)
 
@@ -162,7 +150,8 @@ class TestNFLIntegration:
         with pytest.raises(ValueError):
             self.teams('INVALID_NAME')
 
-    def test_nfl_empty_page_returns_no_teams(self):
+    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    def test_nfl_empty_page_returns_no_teams(self, *args, **kwargs):
         flexmock(utils) \
             .should_receive('_no_data_found') \
             .once()
@@ -243,7 +232,7 @@ class TestNFLIntegrationInvalidYear:
             .should_receive('_find_year_for_season') \
             .and_return(2018)
 
-        teams = Teams()
+        teams = Teams(season_page=SEASON_PAGE)
 
         for team in teams:
             assert team._year == '2017'
