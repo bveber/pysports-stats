@@ -734,7 +734,10 @@ class Player(AbstractPlayer):
         """
         Returns a ``string`` of the player's primary position.
         """
-        return self._position[self._index]
+        index = self._index
+        if index == len(self._position) - 1:
+            index -= 1
+        return self._position[index]
 
     @property
     def height(self):

@@ -280,7 +280,7 @@ def _get_stats_table(html_page, div, footer=False):
     stats_html = html_page(div)
     try:
         stats_table = pq(_remove_html_comment_tags(stats_html))
-    except (ParserError, XMLSyntaxError):
+    except (ParserError, XMLSyntaxError) as e:
         return None
     if footer:
         teams_list = stats_table('tfoot tr').items()

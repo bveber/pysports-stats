@@ -7,33 +7,20 @@ from flexmock import flexmock
 from sportsipy import utils
 from sportsipy.mlb.roster import Player, Roster
 from sportsipy.mlb.teams import Team
+from ..utils import read_file
 
 
-YEAR = 2017
-
-
-def read_file(filename):
-    filepath = os.path.join(os.path.dirname(__file__), 'mlb', filename)
-    return open('%s.shtml' % filepath, 'r', encoding='utf8').read()
+YEAR = 2022
 
 
 def mock_pyquery(url):
-    class MockPQ:
-        def __init__(self, html_contents, status=200):
-            self.url = url
-            self.reason = 'Bad URL'  # Used when throwing HTTPErrors
-            self.headers = {}  # Used when throwing HTTPErrors
-            self.status_code = status
-            self.html_contents = html_contents
-            self.text = html_contents
-
     if 'BAD' in url:
-        return MockPQ(None, 404)
+        return None
     if 'HOU' in url:
-        return MockPQ(read_file('2017'))
+        return read_file('HOU2022', 'mlb', 'roster')
     if 'verlaju01' in url:
-        return MockPQ(read_file('verlaju01'))
-    return MockPQ(read_file('altuvjo01'))
+        return read_file('verlaju01', 'mlb', 'roster')
+    return read_file('altuvjo01', 'mlb', 'roster')
 
 
 def mock_request(url):
@@ -50,7 +37,7 @@ def mock_request(url):
 
 
 class TestMLBPlayer:
-    @mock.patch('requests.get', side_effect=mock_pyquery)
+    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
     def setup_method(self, *args, **kwargs):
         self.results_career = {
             'assists': 2763,
@@ -121,7 +108,7 @@ class TestMLBPlayer:
             'weight': 165
         }
 
-        self.results_2017 = {
+        self.results_year = {
             'assists': 351,
             'at_bats': 590,
             'bases_on_balls': 58,
@@ -218,6 +205,7 @@ class TestMLBPlayer:
         }
 
         self.player = Player('altuvjo01')
+        self.player.dataframe()
 
     def test_mlb_player_returns_requested_career_stats(self):
         # Request the career stats
@@ -228,9 +216,9 @@ class TestMLBPlayer:
 
     def test_mlb_player_returns_requested_player_season_stats(self):
         # Request the 2017 stats
-        player = self.player('2017')
+        player = self.player(YEAR)
 
-        for attribute, value in self.results_2017.items():
+        for attribute, value in self.results_year.items():
             assert getattr(player, attribute) == value
 
     def test_dataframe_returns_dataframe(self):
@@ -583,7 +571,7 @@ class TestMLBPlayer:
 
 
 class TestMLBPitcher:
-    @mock.patch('requests.get', side_effect=mock_pyquery)
+    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
     def setup_method(self, *args, **kwargs):
         self.results_career = {
             'assists': 278,
@@ -680,7 +668,7 @@ class TestMLBPitcher:
             'wins': 204
         }
 
-        self.results_2017 = {
+        self.results_2022 = {
             'assists': 13,
             'at_bats': 6,
             'bases_on_balls': 0,
@@ -786,9 +774,9 @@ class TestMLBPitcher:
 
     def test_mlb_player_returns_requested_player_season_stats(self):
         # Request the 2017 stats
-        player = self.player('2017')
+        player = self.player('2022')
 
-        for attribute, value in self.results_2017.items():
+        for attribute, value in self.results_2022.items():
             assert getattr(player, attribute) == value
 
     def test_dataframe_returns_dataframe(self):
@@ -1174,7 +1162,7 @@ class TestMLBPitcher:
 
 
 class TestMLBRoster:
-    @mock.patch('requests.get', side_effect=mock_pyquery)
+    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_roster_class_pulls_all_player_stats(self, *args, **kwargs):
         flexmock(utils) \
             .should_receive('_find_year_for_season') \
@@ -1187,12 +1175,12 @@ class TestMLBRoster:
             assert player.name in [u'José Altuve', 'Justin Verlander',
                                    'Charlie Morton']
 
-    @mock.patch('requests.get', side_effect=mock_pyquery)
+    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_bad_url_raises_value_error(self, *args, **kwargs):
         with pytest.raises(ValueError):
             roster = Roster('bad')
 
-    @mock.patch('requests.get', side_effect=mock_pyquery)
+    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_roster_from_team_class(self, *args, **kwargs):
         flexmock(Team) \
             .should_receive('_parse_team_data') \
@@ -1208,7 +1196,7 @@ class TestMLBRoster:
                                    'Charlie Morton']
         type(team)._abbreviation = None
 
-    @mock.patch('requests.get', side_effect=mock_pyquery)
+    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_roster_class_with_slim_parameter(self, *args, **kwargs):
         flexmock(utils) \
             .should_receive('_find_year_for_season') \
@@ -1223,7 +1211,7 @@ class TestMLBRoster:
         }
 
     @mock.patch('requests.head', side_effect=mock_request)
-    @mock.patch('requests.get', side_effect=mock_pyquery)
+    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_mlb_invalid_default_year_reverts_to_previous_year(self,
                                                                *args,
                                                                **kwargs):
@@ -1239,7 +1227,7 @@ class TestMLBRoster:
             assert player.name in [u'José Altuve', 'Justin Verlander',
                                    'Charlie Morton']
 
-    @mock.patch('requests.get', side_effect=mock_pyquery)
+    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_roster_class_string_representation(self, *args, **kwargs):
         expected = """José Altuve (altuvjo01)
 Justin Verlander (verlaju01)

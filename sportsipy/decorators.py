@@ -7,7 +7,13 @@ def int_property_decorator(func):
     def wrapper(*args):
         value = func(*args)
         try:
-            return int(value)
+            if type(value) == str:
+                # fbref started providing ages in the format %y-%d
+                # if "-" in string grab just the first number to get
+                # age in years
+                return int(value.replace('+', '').split('-')[0])
+            else:
+                return int(value)
         except (TypeError, ValueError):
             # If there is no value, default to None. None is statistically
             # different from 0 as a player/team who played an entire game and

@@ -56,8 +56,8 @@ class Rankings:
         try:
             # The AP poll is commented out in the HTML. I think there is a javascript action to enable
             # the AP table after scrolling, but it is inaccessible with unaltered html.
-            page = utils._rate_limit_pq(RANKINGS_URL % year)
-            return pq(str(page).replace('<!--', '').replace('-->', ''))
+            doc = utils._rate_limit_pq(RANKINGS_URL % year)
+            return pq(utils._remove_html_comment_tags(doc))
         except HTTPError:
             return None
 

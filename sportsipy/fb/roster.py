@@ -5,6 +5,7 @@ from ..decorators import float_property_decorator, int_property_decorator
 from .fb_utils import _lookup_team
 from .league_ids import LEAGUE_IDS
 from pyquery import PyQuery as pq
+from sportsipy import utils
 from sportsipy.utils import (_get_stats_table,
                              _parse_field,
                              _remove_html_comment_tags,
@@ -1643,7 +1644,7 @@ class Roster:
         """
         if not doc:
             try:
-                doc = _rate_limit_pq(SQUAD_URL % self._squad_id)
+                doc = utils._rate_limit_pq(SQUAD_URL % self._squad_id)
                 doc = pq(_remove_html_comment_tags(doc))
             except HTTPError:
                 return None
@@ -1659,9 +1660,12 @@ class Roster:
                          'table#stats_keeper_adv_',
                          'table#stats_shooting_',
                          'table#stats_passing_',
+                         'table#stats_passing_types_',
                          'table#stats_playing_time_',
+                         'table#stats_possession_',
+                         'table#stats_defense_',
                          'table#stats_misc_']:
-            table = _get_stats_table(doc, table_id + 'ks_combined')
+            table = _get_stats_table(doc, table_id + '9')
             if not table:
                 table = _get_stats_table(doc, table_id + postfix)
                 if not table:
