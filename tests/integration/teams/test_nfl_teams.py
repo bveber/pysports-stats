@@ -7,34 +7,36 @@ from sportsipy import utils
 from sportsipy.constants import LOSS
 from sportsipy.nfl.constants import LOST_WILD_CARD, SEASON_PAGE_URL
 from sportsipy.nfl.teams import Team, Teams
+from ..utils import read_file
+from pyquery import PyQuery as pq
 
 
 MONTH = 9
 YEAR = 2017
 
 
-def read_file(filename):
-    filepath = os.path.join(os.path.dirname(__file__), 'nfl_stats', filename)
-    return open('%s' % filepath, 'r', encoding='utf8').read()
-
-
 def mock_pyquery(url):
-    class MockPQ:
-        def __init__(self, html_contents):
-            self.status_code = 200
-            self.html_contents = html_contents
-            self.text = html_contents
+    # class MockPQ:
+    #     def __init__(self, html_contents):
+    #         self.status_code = 200
+    #         self.html_contents = html_contents
+    #         self.text = html_contents
 
-        def __call__(self, div):
-            if div == 'div#all_team_stats':
-                return read_file('%s_all_team_stats.html' % YEAR)
-            elif div == 'table#AFC':
-                return read_file('%s_afc.html' % YEAR)
-            else:
-                return read_file('%s_nfc.html' % YEAR)
+    #     def __call__(self, div):
+    #         if div == 'div#all_team_stats':
+    #             return read_file('%s_all_team_stats.html' % YEAR)
+    #         elif div == 'table#AFC':
+    #             return read_file('%s_afc.html' % YEAR)
+    #         else:
+    #             return read_file('%s_nfc.html' % YEAR)
 
-    html_contents = read_file('%s.html' % YEAR)
-    return MockPQ(html_contents)
+    # html_contents = read_file('%s.html' % YEAR)
+    print(url)
+    if 'years/2017/' in url:
+        return read_file('2017.html', 'nfl', 'teams')
+    if 'kan' in url:
+        return read_file('kan-2017.html', 'nfl', 'teams')
+    return read_file('2017.html', 'nfl', 'teams')
 
 
 def mock_request(url):
@@ -66,7 +68,7 @@ class MockSchedule:
 
 
 class TestNFLIntegration:
-    @mock.patch('requests.get', side_effect=mock_pyquery)
+    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
     def setup_method(self, *args, **kwargs):
         self.results = {
             'rank': 6,
@@ -108,7 +110,7 @@ class TestNFLIntegration:
             'first_downs_from_penalties': 29,
             'percent_drives_with_points': 44.9,
             'percent_drives_with_turnovers': 6.3,
-            'points_contributed_by_offense': 115.88
+            'points_contributed_by_offense': -22.58
         }
         self.abbreviations = [
             'RAM', 'NWE', 'PHI', 'NOR', 'JAX', 'KAN', 'DET', 'PIT', 'RAV',
@@ -150,7 +152,7 @@ class TestNFLIntegration:
 
         assert df1.empty
 
-    def test_nfl_integration_all_teams_dataframe_returns_dataframe(self):
+    def test_nfl_integration_all_teams_dataframe_returns_dataframe(self, *args, **kwargs):
         result = self.teams.dataframes.drop_duplicates(keep=False)
 
         assert len(result) == len(self.abbreviations)
@@ -172,7 +174,7 @@ class TestNFLIntegration:
 
         assert len(teams) == 0
 
-    @mock.patch('requests.get', side_effect=mock_pyquery)
+    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_pulling_team_directly(self, *args, **kwargs):
         schedule = MockSchedule(None, None)
 
@@ -185,13 +187,13 @@ class TestNFLIntegration:
         for attribute, value in self.results.items():
             assert getattr(kansas, attribute) == value
 
-    @mock.patch('requests.get', side_effect=mock_pyquery)
+    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_team_string_representation(self, *args, **kwargs):
         kansas = Team('KAN')
 
         assert kansas.__repr__() == 'Kansas City Chiefs (KAN) - 2017'
 
-    @mock.patch('requests.get', side_effect=mock_pyquery)
+    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_teams_string_representation(self, *args, **kwargs):
         expected = """Los Angeles Rams (RAM)
 New England Patriots (NWE)
@@ -232,7 +234,7 @@ Cleveland Browns (CLE)"""
 
 
 class TestNFLIntegrationInvalidYear:
-    @mock.patch('requests.get', side_effect=mock_pyquery)
+    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
     @mock.patch('requests.head', side_effect=mock_request)
     def test_invalid_default_year_reverts_to_previous_year(self,
                                                            *args,
