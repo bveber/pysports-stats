@@ -19,18 +19,6 @@ NUM_GAMES_IN_SCHEDULE = 19
 
 
 def mock_pyquery(url):
-    # class MockPQ:
-    #     def __init__(self, html_contents):
-    #         self.status_code = 200
-    #         self.html_contents = html_contents
-    #         self.text = html_contents
-
-    #     def __call__(self, div):
-    #         if 'playoff' in div.lower():
-    #             return read_file('playoff_table.html')
-    #         return read_file('table.html')
-
-    # schedule = read_file('nwe_gamelog.html', 'nfl', 'schedule')
     return read_file('nwe_gamelog.html', 'nfl', 'schedule')
 
 

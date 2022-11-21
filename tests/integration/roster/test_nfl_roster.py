@@ -8,6 +8,7 @@ from sportsipy.utils import _rate_limit_pq
 from sportsipy.nfl.roster import Player, Roster
 from sportsipy.nfl.teams import Team
 from ..utils import read_file
+from pyquery import PyQuery as pq
 
 
 YEAR = 2018
@@ -28,7 +29,7 @@ def mock_pyquery(url):
         return read_file('MorsTh00.html', 'nfl', 'roster')
     if 'Hatf' in url:
         return read_file('HatfDo00.html', 'nfl', 'roster')
-    if '2018_roster' in url:
+    if 'nor' in url:
         return read_file('2018_roster.htm', 'nfl', 'roster')
     if 'Bree' in url:
         return read_file('BreeDr00.html', 'nfl', 'roster')
@@ -1424,7 +1425,6 @@ class TestNFLRoster:
 
     @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_roster_from_team_class(self, *args, **kwargs):
-    # TODO: Figure out and fix _rate_limit_pq in Team class not being mocked
         flexmock(Team) \
             .should_receive('_parse_team_data') \
             .and_return(None)
@@ -1434,10 +1434,11 @@ class TestNFLRoster:
 
         assert len(team.roster.players) == 64
 
+        roster_names = [player.name for player in team.roster.players]
         for player in ['Drew Brees', 'Demario Davis',
                                    'Tommylee Lewis', 'Wil Lutz',
                                    'Thomas Morstead']:
-            assert player in [player.name for player in team.roster.players]
+            assert player in roster_names
         type(team)._abbreviation = None
 
     @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
