@@ -385,8 +385,12 @@ class Player(AbstractPlayer):
             'adjusted_yards_per_attempt': self.adjusted_yards_per_attempt,
             'assists_on_tackles': self.assists_on_tackles,
             'completed_passes': self.completed_passes,
+            'extra_points_attempted': self.extra_points_attempted,
             'extra_points_made': self.extra_points_made,
+            'extra_point_percentage': self.extra_point_percentage,
+            'field_goals_attempted': self.field_goals_attempted,
             'field_goals_made': self.field_goals_made,
+            'field_goal_percentage': self.field_goal_percentage,
             'fumbles_forced': self.fumbles_forced,
             'fumbles_recovered': self.fumbles_recovered,
             'fumbles_recovered_for_touchdown':
@@ -922,7 +926,11 @@ class Roster:
             Returns a PyQuery object of the team's HTML page.
         """
         try:
-            return pq(utils._remove_html_comment_tags(pq(url)))
+            doc = utils._rate_limit_pq(url)
+            if doc:
+                return pq(utils._remove_html_comment_tags(doc))
+            else:
+                return None
         except HTTPError:
             return None
 
