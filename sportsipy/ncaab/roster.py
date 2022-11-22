@@ -668,8 +668,11 @@ class Roster:
         """
         Return the string representation of the class.
         """
-        players = [f'{player.name} ({player.player_id})'.strip()
-                   for player in self._players]
+        if self._slim:
+            players = [name for id, name in self._players.items()]
+        else:
+            players = [f'{player.name} ({player.player_id})'.strip()
+                    for player in self._players]
         return '\n'.join(players)
 
     def __repr__(self):
