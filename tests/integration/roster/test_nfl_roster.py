@@ -1412,11 +1412,11 @@ class TestNFLRoster:
 
         assert len(roster.players) == 64
 
-        
+        roster_players = [player.name for player in roster.players]
         for player in ['Drew Brees', 'Demario Davis',
                                    'Tommylee Lewis', 'Wil Lutz',
                                    'Thomas Morstead']:
-            assert player in [player.name for player in roster.players]
+            assert player in roster_players
 
     @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_bad_url_raises_value_error(self, *args, **kwargs):
@@ -1434,11 +1434,11 @@ class TestNFLRoster:
 
         assert len(team.roster.players) == 64
 
-        roster_names = [player.name for player in team.roster.players]
+        roster_players = [player.name for player in team.roster.players]
         for player in ['Drew Brees', 'Demario Davis',
                                    'Tommylee Lewis', 'Wil Lutz',
                                    'Thomas Morstead']:
-            assert player in roster_names
+            assert player in roster_players
         type(team)._abbreviation = None
 
     @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
@@ -1465,10 +1465,11 @@ class TestNFLRoster:
         roster = Roster('NOR')
 
         assert len(roster.players) == 64
+        roster_players = [player.name for player in roster.players]
         for player in ['Drew Brees', 'Demario Davis',
                                    'Tommylee Lewis', 'Wil Lutz',
                                    'Thomas Morstead']:
-            assert player in [player.name for player in roster.players]
+            assert player in roster_players
 
     @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_roster_class_string_representation(self, *args, **kwargs):

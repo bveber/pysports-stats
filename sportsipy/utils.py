@@ -26,6 +26,26 @@ SEASON_START_MONTH = {
 }
 
 def _rate_limit_pq(pq_input, requests_per_minute=REQUESTS_PER_MINUTE):
+    """
+    Get a pyquery object
+
+    Creates a pyquery object then waits a specified amount of time before
+    returning. This is done to accomodate the new rate limits sports-reference
+    now enforces (https://www.sports-reference.com/bot-traffic.html)
+
+    Parameters
+    ----------
+    pq_input: string
+        A string that contains a URL used to create a pyquery object. This
+        can also be a path to a document (if needed offline integration testing).
+
+    Returns
+    -------
+    PyQuery object
+        A queryable PyQuery object
+
+    """
+    print('_rate_limit_pq: ', pq_input)
     ret = pq(pq_input)
     time.sleep(60/requests_per_minute)
     return ret
