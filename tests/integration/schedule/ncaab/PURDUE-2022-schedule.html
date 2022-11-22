@@ -1,0 +1,1317 @@
+
+<!DOCTYPE html>
+<html data-version="klecko-" data-root="/home/cbb/build" lang="en" class="no-js" >
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0" />
+    <link rel="dns-prefetch" href="https://cdn.ssref.net/req/202211031" />
+    <!-- Quantcast Choice. Consent Manager Tag v2.0 (for TCF 2.0) -->
+<script type="text/javascript" async=true>
+    (function() {
+	var host = window.location.hostname;
+	var element = document.createElement('script');
+	var firstScript = document.getElementsByTagName('script')[0];
+	var url = 'https://cmp.quantcast.com'
+	    .concat('/choice/', 'XwNYEpNeFfhfr', '/', host, 
+		    '/choice.js?tag_version=V2');
+	var uspTries = 0;
+	var uspTriesLimit = 3;
+	element.async = true;
+	element.type = 'text/javascript';
+	element.src = url;
+	
+	firstScript.parentNode.insertBefore(element, firstScript);
+	
+	function makeStub() {
+	    var TCF_LOCATOR_NAME = '__tcfapiLocator';
+	    var queue = [];
+	    var win = window;
+	    var cmpFrame;
+	    
+	    function addFrame() {
+		var doc = win.document;
+		var otherCMP = !!(win.frames[TCF_LOCATOR_NAME]);
+		
+		if (!otherCMP) {
+		    if (doc.body) {
+			var iframe = doc.createElement('iframe');
+			
+			iframe.style.cssText = 'display:none';
+			iframe.name = TCF_LOCATOR_NAME;
+			doc.body.appendChild(iframe);
+		    } else {
+			setTimeout(addFrame, 5);
+		    }
+		}
+		return !otherCMP;
+	    }
+	    
+	    function tcfAPIHandler() {
+		var gdprApplies;
+		var args = arguments;
+		
+		if (!args.length) {
+		    return queue;
+		} else if (args[0] === 'setGdprApplies') {
+		    if (
+			args.length > 3 &&
+			    args[2] === 2 &&
+			    typeof args[3] === 'boolean'
+		    ) {
+			gdprApplies = args[3];
+			if (typeof args[2] === 'function') {
+			    args[2]('set', true);
+			}
+		    }
+		} else if (args[0] === 'ping') {
+		    var retr = {
+			gdprApplies: gdprApplies,
+			cmpLoaded: false,
+			cmpStatus: 'stub'
+		    };
+		    
+		    if (typeof args[2] === 'function') {
+			args[2](retr);
+		    }
+		} else {
+		    if(args[0] === 'init' && typeof args[3] === 'object') {
+			args[3] = Object.assign(args[3], { tag_version: 'V2' });
+		    }
+		    queue.push(args);
+		}
+	    }
+	    
+	    function postMessageEventHandler(event) {
+		var msgIsString = typeof event.data === 'string';
+		var json = {};
+		
+		try {
+		    if (msgIsString) {
+			json = JSON.parse(event.data);
+		    } else {
+			json = event.data;
+		    }
+		} catch (ignore) {}
+		
+		var payload = json.__tcfapiCall;
+		
+		if (payload) {
+		    window.__tcfapi(
+			payload.command,
+			payload.version,
+			function(retValue, success) {
+			    var returnMsg = {
+				__tcfapiReturn: {
+				    returnValue: retValue,
+				    success: success,
+				    callId: payload.callId
+				}
+			    };
+			    if (msgIsString) {
+				returnMsg = JSON.stringify(returnMsg);
+			    }
+			    if (event && event.source && event.source.postMessage) {
+				event.source.postMessage(returnMsg, '*');
+			    }
+			},
+			payload.parameter
+		    );
+		}
+	    }
+	    
+	    while (win) {
+		try {
+		    if (win.frames[TCF_LOCATOR_NAME]) {
+			cmpFrame = win;
+			break;
+		    }
+		} catch (ignore) {}
+		
+		if (win === window.top) {
+		    break;
+		}
+		win = win.parent;
+	    }
+	    if (!cmpFrame) {
+		addFrame();
+		win.__tcfapi = tcfAPIHandler;
+		win.addEventListener('message', postMessageEventHandler, false);
+	    }
+	};
+	
+	makeStub();
+	
+	var uspStubFunction = function() {
+	    var arg = arguments;
+	    if (typeof window.__uspapi !== uspStubFunction) {
+		setTimeout(function() {
+		    if (typeof window.__uspapi !== 'undefined') {
+			window.__uspapi.apply(window.__uspapi, arg);
+		    }
+		}, 500);
+	    }
+	};
+	
+	var checkIfUspIsReady = function() {
+	    uspTries++;
+	    if (window.__uspapi === uspStubFunction && uspTries < uspTriesLimit) {
+		console.warn('USP is not accessible');
+	    } else {
+		clearInterval(uspInterval);
+	    }
+	};
+	
+	if (typeof window.__uspapi === 'undefined') {
+	    window.__uspapi = uspStubFunction;
+	    var uspInterval = setInterval(checkIfUspIsReady, 6000);
+	}
+    })();
+</script>
+<!-- End Quantcast Choice. Consent Manager Tag v2.0 (for TCF 2.0) -->
+
+
+    <title>2021-22 Purdue Boilermakers Schedule and Results | College Basketball at Sports-Reference.com</title>
+
+    
+    
+    <meta name="Description" content="2021-22 Purdue Boilermakers Schedule and Results">
+    <link rel="canonical" href="https://www.sports-reference.com/cbb/schools/purdue/2022-schedule.html" />
+
+
+<!-- include:start  ="/cbb/inc/klecko_header_full_cbb.html_f" -->
+<!-- yes:cookie regular load the cached css -->
+<script>function gup(n) {n = n.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]'); var r = new RegExp('[\\?&]'+n+'=([^&#]*)'); var re = r.exec(location.search);   return re === null?'':decodeURIComponent(re[1].replace(/\+/g,' '));}; document.srdev = gup('srdev')</script>
+<link rel="preconnect" href="https://cdn.ssref.net" crossorigin>
+<link rel="preconnect" href="https://www.google-analytics.com"  crossorigin>
+<link rel="preconnect" href="https://www.googletagservices.com" crossorigin>
+<link rel="preload"    href="https://cdn.ssref.net/req/202211181/js/cbb/sr-min.js" as="script" crossorigin>
+<link rel="preload"    href="https://cdn.ssref.net/req/202211181/icons/sr_icons-min.svg?cbb" as="fetch" crossorigin>
+<link rel="preload"    href="https://www.sports-reference.com/short/cbb/inc/main_nav_menu.json" as="fetch" crossorigin>
+<link rel="preload"    href="https://cdn.ssref.net/req/201604190/images/chosen-sprite.png" as="image" crossorigin>
+<link rel="preload"    href="https://cdn.ssref.net/req/202211181/css/cbb/sr-min.css" as="style"    crossorigin>
+
+<!-- CSS start -->
+<link rel="stylesheet" href="https://cdn.ssref.net/req/202211181/css/cbb/sr-min.css" type="text/css"
+      onload="if (document.srdev) { this.href = 'https://cdn.ssref.net/nocdn/dev/'.concat(document.srdev.substr(0,2),'/css/cbb/sr.css'); }" />
+<!-- CSS END -->
+
+<!-- JS START -->
+<script class="allowed">var sr_is_production = true;
+function vjs_getUrlParameter(e){e=e.replace(/[\[]/,"\\[").replace(/[\]]/,"\\]");e=new RegExp("[\\?&]"+e+"=([^&#]*)").exec(location.search);return null===e?"":decodeURIComponent(e[1].replace(/\+/g," "))}document.lang="","/es/"===window.location.pathname.substr(0,4)?document.lang="es":"/pt/"===window.location.pathname.substr(0,4)?document.lang="pt":"/fr/"===window.location.pathname.substr(0,4)?document.lang="fr":"/it/"===window.location.pathname.substr(0,4)?document.lang="it":"/de/"===window.location.pathname.substr(0,4)?document.lang="de":(window.location.pathname.substr(0,4),document.lang="en"),vjs_getUrlParameter("lang")&&(document.lang=vjs_getUrlParameter("lang")),document.srdev=null,vjs_getUrlParameter("srdev")&&(document.srdev=vjs_getUrlParameter("srdev"));var el,log_performance=!0,is_new_jscss_version=!1,sr_detect_operaMini=-1<navigator.userAgent.indexOf("Opera Mini"),sr_detect_firefox=(sr_detect_operaMini&&((el=document.querySelector("html")).className=el.className.concat(" operamini")),-1<navigator.userAgent.indexOf("Firefox")),sr_detect_firefoxMobile=(sr_detect_firefox&&((el=document.querySelector("html")).className=el.className.concat(" firefox")),-1<navigator.userAgent.indexOf("Firefox")&&(-1<navigator.userAgent.indexOf("Mobile")||-1<navigator.userAgent.indexOf("Tablet"))),sr_detect_ie=(sr_detect_firefoxMobile&&((el=document.querySelector("html")).className=el.className.concat(" firefox-mobile")),function(){var e=window.navigator.userAgent;if(0<e.indexOf("Trident/7.0"))return 11;if(0<e.indexOf("Trident/6.0"))return 10;if(0<e.indexOf("Trident/5.0"))return 9;for(var t=3,n=document.createElement("div"),r=n.getElementsByTagName("i");n.innerHTML="\x3c!--[if gt IE "+ ++t+"]><i></i><![endif]--\x3e",r[0];);return 4<t&&t}()),sr_detect_edge=!sr_detect_ie&&!!window.StyleMedia,sr_detect_safari=/Safari/.test(navigator.userAgent)&&/Apple Computer/.test(navigator.vendor),className="no-js",patt=((el=document.querySelector("html")).classList?el.classList.remove(className):el.className=el.className.replace(new RegExp("(^|\\b)"+className.split(" ").join("|")+"(\\b|$)","gi")," "),el.className=el.className.concat(" js"),!function(a,d,S){function E(e,t){return typeof e===t}function T(e){return"function"!=typeof d.createElement?d.createElement(e):m?d.createElementNS.call(d,"http://www.w3.org/2000/svg",e):d.createElement.apply(d,arguments)}function R(e,t,n,r){var o,i,a,s,l="modernizr",c=T("div");(s=d.body)||((s=T(m?"svg":"body")).fake=!0);if(parseInt(n,10))for(;n--;)(i=T("div")).id=r?r[n]:l+(n+1),c.appendChild(i);return(o=T("style")).type="text/css",o.id="s"+l,(s.fake?s:c).appendChild(o),s.appendChild(c),o.styleSheet?o.styleSheet.cssText=e:o.appendChild(d.createTextNode(e)),c.id=l,s.fake&&(s.style.background="",s.style.overflow="hidden",a=u.style.overflow,u.style.overflow="hidden",u.appendChild(s)),o=t(c,e),s.fake?(s.parentNode.removeChild(s),u.style.overflow=a,u.offsetHeight):c.parentNode.removeChild(c),!!o}function U(e){return e.replace(/([a-z])-([a-z])/g,function(e,t,n){return t+n.toUpperCase()}).replace(/^-/,"")}function D(e){return e.replace(/([A-Z])/g,function(e,t){return"-"+t.toLowerCase()}).replace(/^ms-/,"-ms-")}function q(e,t){var n=e.length;if("CSS"in a&&"supports"in a.CSS){for(;n--;)if(a.CSS.supports(D(e[n]),t))return!0;return!1}if("CSSSupportsRule"in a){for(var r=[];n--;)r.push("("+D(e[n])+":"+t+")");return R("@supports ("+(r=r.join(" or "))+") { #modernizr { position: absolute; } }",function(e){return"absolute"==(e=e,t=null,n="position","getComputedStyle"in a?(r=getComputedStyle.call(a,e,t),o=a.console,null!==r?n&&(r=r.getPropertyValue(n)):o&&o[o.error?"error":"log"].call(o,"getComputedStyle returning null, its possible modernizr test results are inaccurate")):r=!t&&e.currentStyle&&e.currentStyle[n],r);var t,n,r,o})}return S}function r(e,t,n,r,o){var i,a,s=e.charAt(0).toUpperCase()+e.slice(1),l=(e+" "+re.join(s+" ")+s).split(" ");if(E(t,"string")||void 0===t){var c=l,d=t,u=r,m=o;function f(){p&&(delete L.style,delete L.modElem)}if(m=void 0!==m&&m,void 0!==u){r=q(c,u);if(void 0!==r)return r}for(var p,h,g,v,_,y=["modernizr","tspan","samp"];!L.style&&y.length;)p=!0,L.modElem=T(y.shift()),L.style=L.modElem.style;for(g=c.length,h=0;h<g;h++)if(v=c[h],_=L.style[v],~(""+v).indexOf("-")&&(v=U(v)),L.style[v]!==S){if(m||void 0===u)return f(),"pfx"!=d||v;try{L.style[v]=u}catch(e){}if(L.style[v]!=_)return f(),"pfx"!=d||v}return f(),!1}var w=l=(e+" "+P.join(s+" ")+s).split(" "),b=t,x=n;for(a in w)if(w[a]in b)if(!1===x)return w[a];else{i=b[w[a]];if(E(i,"function")){var M=i;var z=x||b;return function(){return M.apply(z,arguments)};return}else return i}return!1}function F(e,t,n){return r(e,S,S,t,n)}var $=[],o=[],e={_version:"3.6.0",_config:{classPrefix:"",enableClasses:!0,enableJSClass:!0,usePrefixes:!0},_q:[],on:function(e,t){var n=this;setTimeout(function(){t(n[e])},0)},addTest:function(e,t,n){o.push({name:e,fn:t,options:n})},addAsyncTest:function(e){o.push({name:null,fn:e})}},n=function(){},s=(n.prototype=e,(n=new n).addTest("cookies",function(){try{d.cookie="cookietest=1";var e=-1!=d.cookie.indexOf("cookietest=");return d.cookie="cookietest=1; expires=Thu, 01-Jan-1970 00:00:01 GMT",e}catch(e){return!1}}),n.addTest("localstorage",function(){var e="modernizr";try{return localStorage.setItem(e,e),localStorage.removeItem(e),!0}catch(e){return!1}}),n.addTest("sessionstorage",function(){var e="modernizr";try{return sessionStorage.setItem(e,e),sessionStorage.removeItem(e),!0}catch(e){return!1}}),n.addTest("cors","XMLHttpRequest"in a&&"withCredentials"in new XMLHttpRequest),n.addTest("history",function(){var e=navigator.userAgent;return(-1===e.indexOf("Android 2.")&&-1===e.indexOf("Android 4.0")||-1===e.indexOf("Mobile Safari")||-1!==e.indexOf("Chrome")||-1!==e.indexOf("Windows Phone")||"file:"===location.protocol)&&(a.history&&"pushState"in a.history)}),e._config.usePrefixes?" -webkit- -moz- -o- -ms- ".split(" "):["",""]),u=(e._prefixes=s,d.documentElement),m="svg"===u.nodeName.toLowerCase();if(!m){var t=void 0!==a?a:this,l=d;function I(e,t){var n=e.createElement("p"),e=e.getElementsByTagName("head")[0]||e.documentElement;return n.innerHTML="x<style>"+t+"</style>",e.insertBefore(n.lastChild,e.firstChild)}function f(){var e=y.elements;return"string"==typeof e?e.split(" "):e}function p(e){var t=X[e[G]];return t||(t={},v++,e[G]=v,X[v]=t),t}function W(e,t,n){return t=t||l,h?t.createElement(e):!(t=(n=n||p(t)).cache[e]?n.cache[e].cloneNode():V.test(e)?(n.cache[e]=n.createElem(e)).cloneNode():n.createElem(e)).canHaveChildren||J.test(e)||t.tagUrn?t:n.frag.appendChild(t)}function i(e){var t,n,r=p(e=e||l);return!y.shivCSS||c||r.hasCSS||(r.hasCSS=!!I(e,"article,aside,dialog,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}mark{background:#FF0;color:#000}template{display:none}")),h||(t=e,(n=r).cache||(n.cache={},n.createElem=t.createElement,n.createFrag=t.createDocumentFragment,n.frag=n.createFrag()),t.createElement=function(e){return y.shivMethods?W(e,t,n):n.createElem(e)},t.createDocumentFragment=Function("h,f","return function(){var n=f.cloneNode(),c=n.createElement;h.shivMethods&&("+f().join().replace(/[\w\-:]+/g,function(e){return n.createElem(e),n.frag.createElement(e),'c("'+e+'")'})+");return n}")(y,n.frag)),e}function H(e){for(var t,n=e.getElementsByTagName("*"),r=n.length,o=RegExp("^(?:"+f().join("|")+")$","i"),i=[];r--;)t=n[r],o.test(t.nodeName)&&i.push(t.applyElement(function(e){for(var t,n=e.attributes,r=n.length,o=e.ownerDocument.createElement(w+":"+e.nodeName);r--;)(t=n[r]).specified&&o.setAttribute(t.nodeName,t.nodeValue);return o.style.cssText=e.style.cssText,o}(t)));return i}function B(s){function l(){clearTimeout(n._removeSheetTimer),c&&c.removeNode(!0),c=null}var c,d,n=p(s),e=s.namespaces,t=s.parentWindow;return!K||s.printShived||(void 0===e[w]&&e.add(w),t.attachEvent("onbeforeprint",function(){l();for(var e,t,n,r=s.styleSheets,o=[],i=r.length,a=Array(i);i--;)a[i]=r[i];for(;n=a.pop();)if(!n.disabled&&Z.test(n.media)){try{t=(e=n.imports).length}catch(e){t=0}for(i=0;i<t;i++)a.push(e[i]);try{o.push(n.cssText)}catch(e){}}o=function(e){for(var t,n=e.split("{"),r=n.length,o=RegExp("(^|[\\s,>+~])("+f().join("|")+")(?=[[\\s,>+~#.:]|$)","gi"),i="$1"+w+"\\:$2";r--;)(t=n[r]=n[r].split("}"))[t.length-1]=t[t.length-1].replace(o,i),n[r]=t.join("}");return n.join("{")}(o.reverse().join("")),d=H(s),c=I(s,o)}),t.attachEvent("onafterprint",function(){for(var e=d,t=e.length;t--;)e[t].removeNode();clearTimeout(n._removeSheetTimer),n._removeSheetTimer=setTimeout(l,500)}),s.printShived=!0),s}var c,h,g=t.html5||{},J=/^<|^(?:button|map|select|textarea|object|iframe|option|optgroup)$/i,V=/^(?:a|b|code|div|fieldset|h1|h2|h3|h4|h5|h6|i|label|li|ol|p|q|span|strong|style|table|tbody|td|th|tr|ul)$/i,G="_html5shiv",v=0,X={};try{var _=l.createElement("a");_.innerHTML="<xyz></xyz>",c="hidden"in _,h=1==_.childNodes.length||(l.createElement("a"),void 0===(O=l.createDocumentFragment()).cloneNode||void 0===O.createDocumentFragment||void 0===O.createElement)}catch(e){h=c=!0}var y={elements:g.elements||"abbr article aside audio bdi canvas data datalist details dialog figcaption figure footer header hgroup main mark meter nav output picture progress section summary template time video",version:"3.7.3",shivCSS:!1!==g.shivCSS,supportsUnknownElements:h,shivMethods:!1!==g.shivMethods,type:"default",shivDocument:i,createElement:W,createDocumentFragment:function(e,t){if(e=e||l,h)return e.createDocumentFragment();for(var n=(t=t||p(e)).frag.cloneNode(),r=0,o=f(),i=o.length;r<i;r++)n.createElement(o[r]);return n},addElements:function(e,t){var n=y.elements;"string"!=typeof n&&(n=n.join(" ")),"string"!=typeof e&&(e=e.join(" ")),y.elements=n+" "+e,i(t)}},Z=(t.html5=y,i(l),/^$|\b(?:all|print)\b/),w="html5shiv",K=!(h||(_=l.documentElement,void 0===l.namespaces||void 0===l.parentWindow||void 0===_.applyElement||void 0===_.removeNode||void 0===t.attachEvent));y.type+=" print",(y.shivPrint=B)(l),"object"==typeof module&&module.exports&&(module.exports=y)}n.addTest("csspositionsticky",function(){var e="position:",t=T("a").style;return t.cssText=e+s.join("sticky;"+e).slice(0,-e.length),-1!==t.position.indexOf("sticky")});function Q(e){var t,n=s.length,r=a.CSSRule;if(void 0===r)return S;if(!e)return!1;if((t=(e=e.replace(/^@/,"")).replace(/-/g,"_").toUpperCase()+"_RULE")in r)return"@"+e;for(var o=0;o<n;o++){var i=s[o];if(i.toUpperCase()+"_"+t in r)return"@-"+i.toLowerCase()+"-"+e}return!1}Y=!("onblur"in d.documentElement);var Y,b,x,M,z,C,N,j,ee,k,A,te=function(e,t){var n;return!!e&&(!(n=(e="on"+e)in(t=t&&"string"!=typeof t?t:T(t||"div")))&&Y&&((t=t.setAttribute?t:T("div")).setAttribute(e,""),n="function"==typeof t[e],t[e]!==S&&(t[e]=S),t.removeAttribute(e)),n)},ne=(e.hasEvent=te,e.testStyles=R),O=(n.addTest("touchevents",function(){var t,e;return"ontouchstart"in a||a.DocumentTouch&&d instanceof DocumentTouch?t=!0:(e=["@media (",s.join("touch-enabled),("),"heartz",")","{#modernizr{top:9px;position:absolute}}"].join(""),ne(e,function(e){t=9===e.offsetTop})),t}),"Moz O ms Webkit"),P=e._config.usePrefixes?O.toLowerCase().split(" "):[],re=(e._domPrefixes=P,n.addTest("pointerevents",function(){for(var e=!1,t=P.length,e=n.hasEvent("pointerdown");t--&&!e;)te(P[t]+"pointerdown")&&(e=!0);return e}),e._config.usePrefixes?O.split(" "):[]),oe=(e._cssomPrefixes=re,e.atRule=Q,{elem:T("modernizr")}),L=(n._q.push(function(){delete oe.elem}),{style:oe.elem.style}),g=(n._q.unshift(function(){delete L.style}),e.testAllProps=r,e.prefixed=function(e,t,n){return 0===e.indexOf("@")?Q(e):(-1!=e.indexOf("-")&&(e=U(e)),t?r(e,t,n):r(e,"pfx"))});for(j in n.addTest("matchmedia",!!g("matchMedia",a)),e.testAllProps=F,n.addTest("flexwrap",F("flexWrap","wrap",!0)),o)if(o.hasOwnProperty(j)){if(b=[],(x=o[j]).name&&(b.push(x.name.toLowerCase()),x.options&&x.options.aliases&&x.options.aliases.length))for(M=0;M<x.options.aliases.length;M++)b.push(x.options.aliases[M].toLowerCase());for(z=E(x.fn,"function")?x.fn():x.fn,C=0;C<b.length;C++)1===(N=b[C].split(".")).length?n[N[0]]=z:(!n[N[0]]||n[N[0]]instanceof Boolean||(n[N[0]]=new Boolean(n[N[0]])),n[N[0]][N[1]]=z),$.push((z?"":"no-")+N.join("-"))}t=$,k=u.className,A=n._config.classPrefix||"",m&&(k=k.baseVal),n._config.enableJSClass&&(ee=new RegExp("(^|\\s)"+A+"no-js(\\s|$)"),k=k.replace(ee,"$1"+A+"js$2")),n._config.enableClasses&&(k+=" "+A+t.join(" "+A),m?u.className.baseVal=k:u.className=k),delete e.addTest,delete e.addAsyncTest;for(var ie=0;ie<n._q.length;ie++)n._q[ie]();a.Modernizr=n}(window,document),Modernizr.viewport_width=Math.max(document.documentElement.clientWidth,window.innerWidth||0),Modernizr.viewport_height=Math.max(document.documentElement.clientHeight,window.innerHeight||0),Modernizr.narrow=Modernizr.viewport_width<=704,Modernizr.constrained=Modernizr.viewport_width<=1200,Modernizr.site_menu=Modernizr.viewport_width<=1020?"button":"nav_bar",Modernizr.touch=Modernizr.touchevents||Modernizr.pointerevents&&(0<navigator.MaxTouchPoints||0<navigator.msMaxTouchPoints),Modernizr.phone=Modernizr.narrow&&Modernizr.touch,Modernizr.tablet=Modernizr.viewport_width<1075&&Modernizr.touch,Modernizr.desktop=!Modernizr.constrained&&!Modernizr.touch,Modernizr.laptop=!(Modernizr.desktop||Modernizr.tablet||Modernizr.phone),new RegExp("hideallads")),sr_html=(Modernizr.adfree=patt.test(window.location.href),document.querySelector("html")),cn=sr_html.className,sr_host_parts=(Modernizr.phone?sr_html.className=cn.concat(" phone"):Modernizr.tablet?sr_html.className=cn.concat(" tablet"):(Modernizr.desktop||Modernizr.laptop)&&(sr_html.className=cn.concat(" desktop")),window.location.hostname.split(".")),cn=sr_html.className,sr_logger=(Modernizr.is_build=Modernizr.is_live=Modernizr.is_dev=!1,"www"===sr_host_parts[0]||"fbref"===sr_host_parts[0]?(Modernizr.is_live=!0,sr_html.className=cn.concat(" is_live")):sr_host_parts[0].startsWith("b")?(Modernizr.is_build=!0,sr_html.className=cn.concat(" is_build")):(sr_host_parts[0].startsWith("d")||sr_host_parts[0].startsWith("r"))&&(Modernizr.is_dev=!0,sr_html.className=cn.concat(" is_dev")),Modernizr.is_stathead=!1,("stathead"===sr_host_parts[1]&&"srdevel"===sr_host_parts[2]||"stathead"===sr_host_parts[0]||"www"===sr_host_parts[0]&&"stathead"===sr_host_parts[1])&&(cn=sr_html.className,sr_html.className=cn.concat(" is_stathead"),Modernizr.is_stathead=!0),function(){var e=null,t={enableLogger:function(){null!=e&&(window.console.log=e)},disableLogger:function(){e=console.log,window.console.log=function(){}}};return t}()),sr_utilities_js_loader=(!document.srdev&&sr_is_production&&sr_logger.disableLogger(),Modernizr.is_modern=1,Modernizr.lang=document.lang||"",Modernizr.srdev=document.srdev,[]);function vjs_readCookie(e){for(var t=e+"=",n=document.cookie.split(";"),r=0;r<n.length;r++){for(var o=n[r];" "===o.charAt(0);)o=o.substring(1,o.length);if(0===o.indexOf(t))return decodeURIComponent(o.substring(t.length,o.length))}return null}function vjs_createCookie(e,t,n){var r,o="",o=n?((r=new Date).setTime(r.getTime()+24*n*60*60*1e3),"; expires="+r.toGMTString()):"",n=encodeURIComponent(e)+"="+encodeURIComponent(t)+o+"; path=/";document.cookie=n}!function(o){function e(e,t){"use strict";var n=o.document.getElementsByTagName("script")[0],r=o.document.createElement("script");return r.src=e,r.async=!0,n.parentNode.insertBefore(r,n),t&&"function"==typeof t&&(r.onload=t),r}"undefined"!=typeof module?module.exports=e:o.loadJS=e}("undefined"!=typeof global?global:this),String.prototype.vjs_isMatch=function(e){return null!==this.match(e)};var sr_time_begin=new Date,sr_perf_startTime=new Date,sr_perf_log="<strong>Performance:</strong>",sr_perf_lastTime=new Date;function vjs_ready(e){"loading"!=document.readyState?e():document.addEventListener("DOMContentLoaded",e)}
+</script>
+<script>
+var _sr_modern_url = ''.concat(document.srdev?'https://cdn.ssref.net/nocdn/dev/'.concat(document.srdev.substring(0, 2)):"https://cdn.ssref.net/req/202211181",
+                               "/js/cbb", "/sr",document.srdev?"":"-min",   			       ".js");
+loadJS( _sr_modern_url, function() { vjs_ready(sr_fire_js); });
+</script>
+<!-- JS END -->
+
+
+<!-- include:end  ="/cbb/inc/klecko_header_full_cbb.html_f" -->
+
+
+
+    <meta name="revised" content="12:37:45 14-Nov-2022" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="generated-by"     content="schools/build_school_season_pages.pl" />
+
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="no" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="4d383b" />
+    <meta name="msapplication-navbutton-color" content="4d383b" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="4d383b" />
+    
+
+
+
+    <!-- HeaderSeoSocial -->
+    <meta name="keywords" content="schools, Purdue, schedule, 2021-22">
+    <meta itemprop="url"           content="https://www.sports-reference.com/cbb">
+    <meta itemprop="name"          content="College Basketball Reference">
+    <meta itemprop="alternateName" content="CbbRef">
+    <meta property="fb:app_id"     content="">
+    <meta property="og:url"          content="https://www.sports-reference.com/cbb/schools/purdue/2022-schedule.html">
+    <meta property="og:title"        content="2021-22 Purdue Boilermakers Schedule and Results | College Basketball at Sports-Reference.com">
+    <meta property="og:site_name"    content="College Basketball at Sports-Reference.com">
+    <meta property="og:type"         content="    article" />
+    <meta property="og:description"  content="2021-22 Purdue Boilermakers Schedule and Results">
+    <meta property="og:image"        content="http://cdn.ssref.net/scripts/image_resize.cgi?min=200&url=http://cdn.ssref.net/nocdn/tlogo/ncaa/purdue.png">
+    <meta name="twitter:card"         content="summary">
+    <meta name="twitter:site"         content="@collegebb_ref">
+    <meta name="twitter:creator"      content="@collegebb_ref">
+    <meta property="twitter:image"    content="http://cdn.ssref.net/scripts/image_resize.cgi?min=200&url=http://cdn.ssref.net/nocdn/tlogo/ncaa/purdue.png">
+    <meta name="twitter:domain"       content="College Basketball at Sports-Reference.com">
+    <meta name="referrer" content="unsafe-url">
+    <!-- HeaderSeoSocial:END -->
+
+    <!-- tiles, touch, favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="180x180" href="https://cdn.ssref.net/req/202211031/favicons/cbb/apple-touch-icon-180x180-precomposed.png">
+    <link rel="icon"                         sizes="48x48"   href="https://cdn.ssref.net/req/202211031/favicons/cbb/favicon-48.png">
+    <link rel="shortcut icon"                sizes="228x228" href="https://cdn.ssref.net/req/202211031/favicons/cbb/apple-touch-icon-228x228-precomposed.png">
+    <link rel="apple-touch-icon"             sizes="228x228" href="https://cdn.ssref.net/req/202211031/favicons/cbb/apple-touch-icon-228x228-precomposed.png">
+    <link rel="apple-touch-icon"             sizes="195x195" href="https://cdn.ssref.net/req/202211031/favicons/cbb/apple-touch-icon-195x195-precomposed.png">
+    <link rel="apple-touch-icon"             sizes="180x180" href="https://cdn.ssref.net/req/202211031/favicons/cbb/apple-touch-icon-180x180-precomposed.png">
+    <link rel="apple-touch-icon"             sizes="152x152" href="https://cdn.ssref.net/req/202211031/favicons/cbb/apple-touch-icon-152x152-precomposed.png">
+    <link rel="apple-touch-icon"             sizes="144x144" href="https://cdn.ssref.net/req/202211031/favicons/cbb/apple-touch-icon-144x144-precomposed.png">
+    <link rel="apple-touch-icon"             sizes="128x128" href="https://cdn.ssref.net/req/202211031/favicons/cbb/apple-touch-icon-128x128-precomposed.png">
+    <link rel="apple-touch-icon"             sizes="120x120" href="https://cdn.ssref.net/req/202211031/favicons/cbb/apple-touch-icon-120x120-precomposed.png">
+    <link rel="apple-touch-icon"             sizes="114x114" href="https://cdn.ssref.net/req/202211031/favicons/cbb/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon"             sizes="76x76"   href="https://cdn.ssref.net/req/202211031/favicons/cbb/apple-touch-icon-76x76-precomposed.png">
+    <link rel="apple-touch-icon"             sizes="72x72"   href="https://cdn.ssref.net/req/202211031/favicons/cbb/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon"             sizes="57x57"   href="https://cdn.ssref.net/req/202211031/favicons/cbb/apple-touch-icon-57x57-precomposed.png">
+    <link rel="icon"                         sizes="32x32"   href="https://cdn.ssref.net/req/202211031/favicons/cbb/favicon-32.png">
+    <!--[if IE]>
+    <link rel="shortcut icon"                                href="https://cdn.ssref.net/req/202211031/favicons/cbb/favicon.ico"><![endif]-->
+    <meta name="msapplication-TileColor" content="#04376c" />
+    <meta name="msapplication-TileImage" content="https://cdn.ssref.net/req/202211031/favicons/cbb/ms-tile-144.png" />
+    <link rel=search        type="application/opensearchdescription+xml" href="https://cdn.ssref.net/req/202211031/opensearch/opensearch-cbb.xml" title=" Player and Team Search">
+    <!-- tiles, touch, favicons:end -->
+
+<!-- ad code: begin -->
+
+
+<script data-ad-client="ca-pub-5319453360923253" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+    var freestar = freestar || {};
+    freestar.config = freestar.config || {};
+    freestar.config.enabled_slots = [ "div-gpt-ad-300x250-ATF","div-gpt-ad-728x90-ATF","div-gpt-ad-728x90-GeneralHeader","div-gpt-ad-728x90-Footer" ];
+    if (sr_detect_ie || sr_detect_edge || Modernizr.adfree || document.getElementById('sr_suppress_ads') || Modernizr.viewport_width < 1810) {
+    // do not include the rails
+    }
+    else {
+         freestar.config.enabled_slots.push('div-gpt-ad-160x600-1');
+         freestar.config.enabled_slots.push('div-gpt-ad-160x600-2');
+    } 
+
+</script>
+<script data-cfasync="false" type="text/javascript">
+    var fs_debug = window.location.search.indexOf('fsdebug') == -1 ? false : true;
+    freestar.hitTime = Date.now();
+    freestar.queue = freestar.queue || [];
+    freestar.config = freestar.config || {};
+    freestar.queue.push(function() {
+      // Include the line reflecting the area/section of the site you are on
+      googletag.pubads().setTargeting('sr_site_id', 'cbb');
+    });
+!function(a,b){
+    if (sr_detect_ie || sr_detect_edge || Modernizr.adfree) {
+        return;
+    }  
+    var c=b.getElementsByTagName("script")[0],
+    d=b.createElement("script"),
+    e="https://a.pub.network/sports-reference";
+    e+=fs_debug?"/qa/pubfig.min.js":"/pubfig.min.js",
+    d.async=!0,
+    d.src=e,
+    c.parentNode.insertBefore(d,c)
+}(window,document);
+</script>
+
+
+<!-- ad code:end -->
+
+
+</head>
+<body class="cbb">
+<div id="wrap">
+  
+  <div id="header" role="banner">
+  <ul id="subnav" class="notranslate">
+	<li><a href="https://www.sports-reference.com/"><svg height="15px" width="20px"><use xlink:href="#ic-sr-pennant"></use></svg> Sports&nbsp;Reference&#8239;&reg;</a></li>
+	<li><a href="https://www.baseball-reference.com/">Baseball</a></li>
+	<li><a href="https://www.pro-football-reference.com/">Football</a> <a href="https://www.sports-reference.com/cfb/">(college)</a></li>
+	<li class="current"><a href="https://www.basketball-reference.com/">Basketball</a> <a href="https://www.sports-reference.com/cbb/">(college)</a></li>
+	<li><a href="https://www.hockey-reference.com/">Hockey</a></li>
+
+
+	
+	
+	
+	<li><a href="https://fbref.com/de/">Fußball</a></li>
+
+	<li><a href="https://www.sports-reference.com/blog/">Blog</a></li>
+
+    <li><a href="https://stathead.com/?utm_source=web&amp;utm_medium=cbb&amp;utm_campaign=sr-nav-bar-top-link">Stathead&#8239;&reg;</a></li>
+
+	<li><a href="https://www.sports-reference.com/feedback/">Questions or Comments?</a></li>
+	<li class="user logged_in">Welcome <span class="username"></span>&nbsp;&#183;&nbsp;<a href="https://stathead.com/profile/?utm_source=web&amp;utm_medium=cbb&amp;utm_campaign=sr-nav-bar-top-account">Your Account</a></li>
+<li class="user logged_in"><a class="logout" onclick="sr_auth_logout_page_elements();if(!this.href.match('redirect_uri')){this.href += '&redirect_uri='+escape(document.location.href)}" href="https://stathead.com/profile/?do=logout">Logout</a></li>
+<li class="user not_logged_in"><a class="login" onclick="if(!this.href.match('redirect_uri')){this.href += '&redirect_uri='+escape(document.location.href)}" href="https://stathead.com/users/login.cgi?token=1">Login</a></li>
+<li class="user not_logged_in"><a href="https://stathead.com/users/signup.cgi">Create Account</a></li>
+
+</ul>
+
+  <a href="/cbb/"><img src="https://cdn.ssref.net/req/202211031/logos/cbb-logo.svg" onerror="this.src='https://cdn.ssref.net/req/202211031/logos/cbb-logo.png'; this.onerror = null;" alt="College Basketball at Sports-Reference.com Logo &amp; Link to home page" /></a>
+<div id="nav_trigger" role="button"><a href="#site_menu_link">MENU</a></div>
+<div id="nav" role="navigation" aria-label="College Basketball at Sports-Reference.com sections">
+	<ul id="main_nav" class="hoversmooth nohover"><li id="header_players" >
+  <a href="/cbb/players">Players</a>
+</li>
+
+<li id="header_schools" class="current">
+  <a href="/cbb/schools/">Schools</a>
+</li>
+
+<li id="header_seasons" >
+  <a href="/cbb/seasons/">Seasons</a>
+</li>
+
+<li id="header_leaders" >
+  <a href="/cbb/leaders/">Leaders</a>
+</li>
+
+<li id="header_scores" >
+  <a href="/cbb/boxscores/">Scores</a>
+</li>
+
+<li id="header_postseason" class="">
+  <a href="/cbb/postseason/">NCAA Tournaments</a>
+</li>	
+
+<li id="header_playindex" class="">
+  <a href="/cbb/play-index/">Play Index</a>
+</li>
+
+<li><a href="https://www.sports-reference.com/cbb/email/">Newsletter</a></li>
+
+<li>
+  <a data-scroll href="#site_menu_link" class="opener">Full Site Menu Below</a>
+</li>
+	</ul>
+	<div class="breadcrumbs">You are here: <div itemscope itemtype="https://schema.org/BreadcrumbList" class="crumbs"><span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="/cbb/"><span itemprop="name">CBB Home Page</span></a> <meta itemprop="position" content="1" /></span> &gt; <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="/cbb/schools/"><span itemprop="name">Schools</span></a> <meta itemprop="position" content="2" /></span> &gt; <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="/cbb/schools/purdue/"><span itemprop="name">Purdue Boilermakers</span></a> <meta itemprop="position" content="3" /></span> &gt; <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="/cbb/schools/purdue/2022.html"><span itemprop="name">2021-22</span></a> <meta itemprop="position" content="4" /></span> &gt; <strong>Schedule and Results</strong></div></div>
+	<ul class="usertools bullets-inline"><li class="user logged_in">Welcome <span class="username"></span>&nbsp;&#183;&nbsp;<a href="https://stathead.com/profile/?utm_source=web&amp;utm_medium=cbb&amp;utm_campaign=sr-nav-bar-top-account">Your Account</a></li>
+<li class="user logged_in"><a class="logout" onclick="sr_auth_logout_page_elements();if(!this.href.match('redirect_uri')){this.href += '&redirect_uri='+escape(document.location.href)}" href="https://stathead.com/profile/?do=logout">Logout</a></li>
+<li class="user not_logged_in"><a class="login" onclick="if(!this.href.match('redirect_uri')){this.href += '&redirect_uri='+escape(document.location.href)}" href="https://stathead.com/users/login.cgi?token=1">Login</a></li>
+<li class="user not_logged_in"><a href="https://stathead.com/users/signup.cgi">Create Account</a></li>
+	</ul><!-- ul.user -->
+</div><!-- div#nav -->
+<script>
+function sr_menus_setupMainNav_button_inline () {
+    if (sr_detect_operaMini || !("classList" in document.createElement("_"))) {
+	return false;
+    }
+    var nav_trigger = document.getElementById('nav_trigger');
+    if(!nav_trigger || nav_trigger.triggered) {
+	return false;
+    }
+    nav_trigger.triggered = true;
+    var nav = document.getElementById('nav');
+    var nav_trigger_a = nav_trigger.querySelector('a');
+    if (nav_trigger_a) {
+	nav_trigger_a.setAttribute('href','javascript:void(0)');
+	nav_trigger.onclick = function (event) {
+	    nav.classList.toggle('open');
+	    var is_open = nav.classList.contains('open');
+	    if (is_open) {
+		nav_trigger.classList.add('open');
+	    }
+	    else {
+		nav_trigger.classList.remove('open');
+	    }
+	    event.preventDefault();
+	    try { sr_record_analytics_event('MainNavButtonClick_inline',sr_record_directory(),sr_record_page());}
+	    catch(err) {}
+	};
+    }
+    return true;
+}
+sr_menus_setupMainNav_button_inline();
+</script><div class="search" role="search" aria-label="Site Search for players, teams and sections">
+<form method="get" name="f_big"  action="/cbb/search/search.fcgi">
+<div class="ac-outline">
+  <div class="ac-wrapper"><input type="search" tabindex="-1" class="ac-hint" name="hint" placeholder="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" dir="auto" aria-label="Search suggestions based on user search input">
+
+<input tabindex="1" type="search" class="ac-input completely" name="search" placeholder="Enter Person, Team, Section, etc" aria-label="Enter a player, team or section name" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" dir="auto" />
+    <div class="ac-dropdown"></div>
+  </div>
+</div>
+
+<input type="submit" value="Search" tabindex="2" />
+<input type="hidden" name="pid" value="" data-search-id>
+<input type="hidden" name="idx" value="" data-search-idx>
+
+</form>
+</div><!-- div.search -->
+
+</div><!-- div#header -->
+
+  <style>
+  .site_announcement {
+    background-color: #fffea6;
+    text-align: center;
+    padding: .4em 0;
+    width: 100%;
+  }
+  .site_announcement div {
+    margin: 0 .3em;
+  }
+  .site_announcement span {
+    white-space: nowrap;
+  }
+  @media only screen and (max-width: 1000px) {
+    .site_annoucement_extra {
+      display: none;
+    }
+  }
+  </style>
+
+
+
+
+<div id="info" class="schools">
+	
+	  <div id="meta">
+	
+
+
+
+	<div class="media-item logo loader">
+		<img class="teamlogo"			src="https://cdn.ssref.net/req/202211031/tlogo/ncaa/purdue.png"
+			alt="Purdue Boilermakers Logo">
+		
+			<p><a href="http://www.sportslogos.net/">via Sports Logos.net</a></p>
+			<p><a href="https://www.sports-reference.com/blog/2016/06/redesign-team-and-league-logos-courtesy-sportslogos-net/">About logos</a></p>
+		 
+	</div>
+
+
+
+<div data-template="Partials/Teams/Summary">
+  <h1>
+    
+      <span>2021-22</span>
+      <span>Purdue Boilermakers</span>
+          
+    <span class="header_end">Schedule and Results</span>
+  </h1>
+  
+<div class="prevnext">
+    
+    <a class='button2 prev' href="/cbb/schools/purdue/2021-schedule.html">
+      Previous Season
+    </a>
+    
+    
+    <a class='button2 next' href="/cbb/schools/purdue/2023-schedule.html">
+      Next Season
+    </a>
+    
+</div>
+
+
+
+<p>
+  <strong>Record:</strong> 29-8&nbsp;(14-6, 3rd in <a href='/cbb/conferences/big-ten/2022.html'>Big Ten</a>)
+  
+</p>
+
+
+
+<p><strong>Rank:</strong> 10th in the <a href='/cbb/seasons/2022-polls.html'>Final AP Poll</a></p>
+
+
+
+<p><strong>Coach:</strong> <a href="/cbb/coaches/matt-painter-1.html">Matt Painter</a></p>
+
+
+
+<p><strong>PS/G:</strong> 79.4 (15th of 358)</p>
+
+
+
+<p><strong>PA/G:</strong> 68.4 (154th of 358)</p>
+
+
+
+<p><strong><a href='/cbb/about/glossary.html#srs'>SRS</a>:</strong> 19.14 (13th of 358)</p>
+
+
+
+<p><strong><a href='/cbb/about/glossary.html#sos'>SOS</a>:</strong> 8.23 (36th of 358)</p>
+
+
+
+<p><strong>ORtg:</strong> 117.8 (3rd of 358)</p>
+
+
+
+<p><strong>DRtg:</strong> 101.6 (208th of 358)</p>
+
+
+
+<p>
+  <strong>Preseason Odds:</strong>
+    <a href='/cbb/seasons/2022-preseason_odds.html'>Championship +1400</a>
+</p>
+
+
+
+<p>
+<strong>NCAA Tournament:</strong>
+(#3 seed in East)<br>Won East First Round (<a href="/cbb/boxscores/2022-03-18-14-purdue.html">78-56</a>) versus #14 <a href="/cbb/schools/yale/2022.html">Yale</a>
+<br>Won East Second Round (<a href="/cbb/boxscores/2022-03-20-20-purdue.html">81-71</a>) versus #6 <a href="/cbb/schools/texas/2022.html">Texas</a>
+<br>Lost East Regional Semifinal (<a href="/cbb/boxscores/2022-03-25-19-purdue.html">67-64</a>) versus #15 <a href="/cbb/schools/saint-peters/2022.html">Saint Peter's</a>
+</p>
+
+</p>
+
+
+<button id="meta_more_button" class="opener" data-type="hide_after" data-class="open" data-id="info">More School Info</button>
+<script>
+// see sr.menus.js:sr_menus_checkInfoCookie to explain
+function sr_menus_checkInfoCookie_inline(browserType) {
+    var el_info = document.getElementById('info');
+    var el_button = document.getElementById('meta_more_button');
+    var bling_len = 0;    
+    if (!el_button || !el_info || !el_info.classList) { console.log('no meta_button'); return; }
+    var el = el_button;
+    var siblingsHidden = 0;
+    while (el = el.previousSibling) { if ((el.nodeType === 1) && (el.offsetWidth <= 0 || el.offsetHeight <= 0)) { siblingsHidden++; } }
+    var button_cookie = false;
+    if (browserType === 'desktop') {  button_cookie = vjs_readCookie('meta_more_button');   }
+    // We allow up to four of bling lines or additional player bio data entries in mobile.
+    if (el_info && el_button && (button_cookie || (siblingsHidden + bling_len <= 4))) {el_button.parentNode.removeChild(el_button);	el_info.classList.add('open');  }
+    else { el_button.classList.add('show');  }
+}
+if (Modernizr.desktop || Modernizr.laptop) { sr_menus_checkInfoCookie_inline('desktop'); } else { sr_menus_checkInfoCookie_inline('mobile'); }
+var sr_menus_checkInfoCookie_run_inline = true;
+</script>
+
+
+</div>
+</div><!-- div#meta -->
+
+
+	
+		
+	
+<div class="adblock ad300">
+
+<!-- div#fs_fs_300_atf  -->
+<div align="center" id="div-gpt-ad-300x250-ATF">
+    <script data-cfasync="false" type='text/javascript'>
+    if (sr_detect_ie || sr_detect_edge || Modernizr.adfree) {
+    }
+    else {
+        console.log('push ad:div-gpt-ad-300x250-ATF');
+        freestar.queue.push(function() { googletag.display('div-gpt-ad-300x250-ATF'); });
+    }
+    </script>
+</div>
+<!-- /div.#fs_fs_300_atf -->
+
+
+</div>
+
+
+</div>
+<div id="srcom">
+<div class="adblock ad728">
+
+<!-- div#fs_fs_728_atf  -->
+<!-- sf:blank by design for send to news ad -->
+<!-- /div.#fs_fs_728_atf -->
+
+
+</div>
+
+
+
+
+</div><!-- div#srcom -->
+
+<div id="inner_nav" role="navigation" aria-label="Sections on this page and/or other pages related to this page" class=" inactive">
+	<ul class="hoversmooth">
+		<li			class="index "><a href="/cbb/schools/purdue/"><u>Purdue School History</u></a>		</li>
+		<li			class="full "><a href="/cbb/schools/purdue/2022.html"><u>Roster & Stats</u></a>		</li>
+		<li			class="full current "><a href="/cbb/schools/purdue/2022-schedule.html"><u>Polls, Schedule & Results</u></a>		</li>
+		<li			class="full "><a href="/cbb/schools/purdue/2022-gamelogs.html"><u>Game Log</u></a>		</li>
+		<li			class="full "><a href="/cbb/schools/purdue/2022-starters.html"><u>Starters</u></a>		</li>
+		<li data-fade-selector="#inpage_nav"			class="condensed hasmore "><span>More 2021-22 Purdue Pages</span>
+			<div>
+<p class="listhead"><strong>2021-22 Purdue Season</strong></p>
+					<ul class=" in_list">
+						<li><a href="/cbb/schools/purdue/2022.html" >Roster &amp; Stats</a></li>
+						<li><a href="/cbb/schools/purdue/2022-schedule.html" >Polls, Schedule &amp; Results</a></li>
+						<li><a href="/cbb/schools/purdue/2022-gamelogs.html" >Game Log</a></li>
+						<li><a href="/cbb/schools/purdue/2022-starters.html" >Starters</a></li>
+					</ul>
+
+			</div>		</li>
+	</ul>
+	    
+    
+        
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                
+                
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        
+    
+        
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                
+                
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        
+    
+    
+    
+    
+    
+    
+    
+</div><!-- div#inner_nav -->
+
+<div id="content" role="main">
+
+
+
+          
+      
+      
+      
+      
+
+<!-- fs_general_header -->
+<div class="adblock">
+
+
+<!-- div#fs_fs_general_header  -->
+<style>
+    #srcom .adblock.stn,
+    #content .adblock.stn { max-width: 728px; height: auto; margin: auto; }
+.fb #content .adblock.stn { max-width: 400px; }
+</style>
+<script>
+function apiFunction(ApiHandshake)  {
+    const playerDiv = document.querySelector('[data-stn-api="apiFunction"]');
+    const api = ApiHandshake(playerDiv);
+    new IntersectionObserver ( moes => { const bcr = moes.pop().boundingClientRect; api.float = bcr.y <= 0; },
+                                       { threshold: [0.9] }).observe(document.querySelector('[data-stn-api="apiFunction"]'));
+ }
+</script>
+<div class="adblock stn">
+  <div class='s2nPlayer k-D2USjgES' data-type='float' data-stn-api="apiFunction"></div>
+  <script type='text/javascript' src='//embed.sendtonews.com/player3/embedcode.js?fk=D2USjgES&cid=13693&offsetx=0&offsety=0&floatwidth=400&floatposition=bottom-right' data-type='s2nScript'></script>
+</div>
+<!-- /div.#fs_fs_general_header -->
+
+
+</div>
+
+
+      
+         
+            
+<div id="all_polls" class="table_wrapper setup_long long">
+
+<div class="section_heading assoc_polls" id="polls_sh">
+  <span class="section_anchor" id="polls_link" data-label="AP Poll Summary"></span><h2>AP Poll Summary</h2>    <div class="section_heading_text">
+      <ul><li><a href='/cbb/seasons/2022-polls.html'>2021-22 Season AP Poll summary</a></li>
+      </ul>
+    </div>
+    		
+</div>
+<div class="table_container" id="div_polls">
+    
+    <table class="sortable stats_table" id="polls" data-cols-to-freeze=",1">
+    <caption>AP Poll Summary Table</caption>
+    
+
+   <colgroup><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col></colgroup>
+   <thead>      
+      <tr>
+         <th aria-label="school" data-stat="school" scope="col" class=" poptip center" >School</th>
+         <th aria-label="Pre" data-stat="2021-10-18" scope="col" class=" poptip center" >Pre</th>
+         <th aria-label="11/15" data-stat="2021-11-15" scope="col" class=" poptip center" >11/15</th>
+         <th aria-label="11/22" data-stat="2021-11-22" scope="col" class=" poptip center" >11/22</th>
+         <th aria-label="11/29" data-stat="2021-11-29" scope="col" class=" poptip center" >11/29</th>
+         <th aria-label="12/6" data-stat="2021-12-06" scope="col" class=" poptip center" >12/6</th>
+         <th aria-label="12/13" data-stat="2021-12-13" scope="col" class=" poptip center" >12/13</th>
+         <th aria-label="12/20" data-stat="2021-12-20" scope="col" class=" poptip center" >12/20</th>
+         <th aria-label="12/27" data-stat="2021-12-27" scope="col" class=" poptip center" >12/27</th>
+         <th aria-label="1/3" data-stat="2022-01-03" scope="col" class=" poptip center" >1/3</th>
+         <th aria-label="1/10" data-stat="2022-01-10" scope="col" class=" poptip center" >1/10</th>
+         <th aria-label="1/17" data-stat="2022-01-17" scope="col" class=" poptip center" >1/17</th>
+         <th aria-label="1/24" data-stat="2022-01-24" scope="col" class=" poptip center" >1/24</th>
+         <th aria-label="1/31" data-stat="2022-01-31" scope="col" class=" poptip center" >1/31</th>
+         <th aria-label="2/7" data-stat="2022-02-07" scope="col" class=" poptip center" >2/7</th>
+         <th aria-label="2/14" data-stat="2022-02-14" scope="col" class=" poptip center" >2/14</th>
+         <th aria-label="2/21" data-stat="2022-02-21" scope="col" class=" poptip center" >2/21</th>
+         <th aria-label="2/28" data-stat="2022-02-28" scope="col" class=" poptip center" >2/28</th>
+         <th aria-label="3/7" data-stat="2022-03-07" scope="col" class=" poptip center" >3/7</th>
+         <th aria-label="Final" data-stat="2022-03-14" scope="col" class=" poptip center" >Final</th>
+      </tr>
+      </thead>
+<tbody><tr ><th scope="row" class="left " data-stat="school" ><a href='/cbb/schools/purdue/2022.html'>Purdue</a></th><td class="center " data-stat="2021-10-18" >7</td><td class="center " data-stat="2021-11-15" >6</td><td class="center " data-stat="2021-11-22" >3</td><td class="center " data-stat="2021-11-29" >2</td><td class="center " data-stat="2021-12-06" ><strong>1</strong></td><td class="center " data-stat="2021-12-13" >3</td><td class="center " data-stat="2021-12-20" >3</td><td class="center " data-stat="2021-12-27" >3</td><td class="center " data-stat="2022-01-03" >3</td><td class="center " data-stat="2022-01-10" >7</td><td class="center " data-stat="2022-01-17" >4</td><td class="center " data-stat="2022-01-24" >6</td><td class="center " data-stat="2022-01-31" >4</td><td class="center " data-stat="2022-02-07" >3</td><td class="center " data-stat="2022-02-14" >5</td><td class="center " data-stat="2022-02-21" >4</td><td class="center " data-stat="2022-02-28" >8</td><td class="center " data-stat="2022-03-07" >9</td><td class="center " data-stat="2022-03-14" >10</td></tr>
+
+</table>
+
+
+</div>
+
+<div class="placeholder"></div>
+
+</div>
+
+            
+            
+            
+         
+      
+         
+            
+<div id="all_schedule" class="table_wrapper">
+
+<div class="section_heading assoc_schedule" id="schedule_sh">
+  <span class="section_anchor" id="schedule_link" data-label="Schedule and Results"></span><h2>Schedule and Results</h2>    <div class="section_heading_text">
+      <ul>
+      </ul>
+    </div>
+    		
+</div>
+<div class="table_container" id="div_schedule">
+    
+    <table class="sortable stats_table" id="schedule" data-cols-to-freeze=",2">
+    <caption>Schedule and Results Table</caption>
+    
+
+   <colgroup><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col></colgroup>
+   <thead>      
+      <tr>
+         <th aria-label="Games" data-stat="g" scope="col" class=" poptip center" data-tip="Games" >G</th>
+         <th aria-label="Date" data-stat="date_game" scope="col" class=" poptip sort_default_asc center" >Date</th>
+         <th aria-label="Time" data-stat="time_game" scope="col" class=" poptip sort_default_asc center" data-tip="Time zone = ET" >Time</th>
+         <th aria-label="Type" data-stat="game_type" scope="col" class=" poptip sort_default_asc center" data-tip="REG = Regular Season<br>CTOURN = Conference Tournament<br>NCAA = NCAA Tournament<br>NIT = National Invitation Tournament<br>CBI = College Basketball Invitational<br>CIT = CollegeInsider.com Tournament" >Type</th>
+         <th aria-label="&nbsp;" data-stat="game_location" scope="col" class=" poptip center" >&nbsp;</th>
+         <th aria-label="Opponent" data-stat="opp_name" scope="col" class=" poptip sort_default_asc center" data-tip="Ranking (#) indicates the opponent's AP ranking on the date of the game. " >Opponent</th>
+         <th aria-label="Conf" data-stat="conf_abbr" scope="col" class=" poptip sort_default_asc center" data-tip="Conference" >Conf</th>
+         <th aria-label="SRS" data-stat="srs" scope="col" class=" poptip right" data-tip="<strong>Simple Rating System</strong><br>A rating that takes into account average point differential and strength of schedule. The rating is denominated in points above/below average, where zero is average. Non-Division I games are excluded from the ratings." >SRS</th>
+         <th aria-label="&nbsp;" data-stat="game_result" scope="col" class=" poptip center" >&nbsp;</th>
+         <th aria-label="Points" data-stat="pts" scope="col" class=" poptip center" data-tip="Points" >Tm</th>
+         <th aria-label="Opponent Points" data-stat="opp_pts" scope="col" class=" poptip center" data-tip="Opponent Points" >Opp</th>
+         <th aria-label="OT" data-stat="overtimes" scope="col" class=" poptip center" >OT</th>
+         <th aria-label="Wins" data-stat="wins" scope="col" class=" poptip center" data-tip="Wins" >W</th>
+         <th aria-label="Losses" data-stat="losses" scope="col" class=" poptip center" data-tip="Losses" >L</th>
+         <th aria-label="Streak" data-stat="game_streak" scope="col" class=" poptip center" >Streak</th>
+         <th aria-label="Arena" data-stat="arena" scope="col" class=" poptip sort_default_asc center" >Arena</th>
+      </tr>
+      </thead>
+<tbody><tr ><th scope="row" class="right " data-stat="g" >1</th><td class="left " data-stat="date_game" csk="2021-11-09" ><a href="/cbb/boxscores/2021-11-09-19-purdue.html">Tue, Nov 9, 2021</a></td><td class="left " data-stat="time_game" >7:00p</td><td class="left " data-stat="game_type" >REG</td><td class="left iz" data-stat="game_location" ></td><td class="left " data-stat="opp_name" ><a href='/cbb/schools/bellarmine/2022.html'>Bellarmine</a></td><td class="left " data-stat="conf_abbr" ><a href="/cbb/conferences/atlantic-sun/2022.html" title="Atlantic Sun Conference">A-Sun</a></td><td class="right " data-stat="srs" >-3.77</td><td class="left " data-stat="game_result" >W</td><td class="right " data-stat="pts" >96</td><td class="right " data-stat="opp_pts" >67</td><td class="center iz" data-stat="overtimes" ></td><td class="right " data-stat="wins" >1</td><td class="right iz" data-stat="losses" >0</td><td class="left " data-stat="game_streak" csk="1" >W 1</td><td class="left iz" data-stat="arena" ></td></tr>
+<tr ><th scope="row" class="right " data-stat="g" >2</th><td class="left " data-stat="date_game" csk="2021-11-12" ><a href="/cbb/boxscores/2021-11-12-20-purdue.html">Fri, Nov 12, 2021</a></td><td class="left " data-stat="time_game" >8:30p</td><td class="left " data-stat="game_type" >REG</td><td class="left iz" data-stat="game_location" ></td><td class="left " data-stat="opp_name" ><a href='/cbb/schools/indiana-state/2022.html'>Indiana State</a></td><td class="left " data-stat="conf_abbr" ><a href="/cbb/conferences/mvc/2022.html" title="Missouri Valley Conference">MVC</a></td><td class="right " data-stat="srs" >-3.49</td><td class="left " data-stat="game_result" >W</td><td class="right " data-stat="pts" >92</td><td class="right " data-stat="opp_pts" >67</td><td class="center iz" data-stat="overtimes" ></td><td class="right " data-stat="wins" >2</td><td class="right iz" data-stat="losses" >0</td><td class="left " data-stat="game_streak" csk="2" >W 2</td><td class="left iz" data-stat="arena" ></td></tr>
+<tr ><th scope="row" class="right " data-stat="g" >3</th><td class="left " data-stat="date_game" csk="2021-11-16" ><a href="/cbb/boxscores/2021-11-16-19-purdue.html">Tue, Nov 16, 2021</a></td><td class="left " data-stat="time_game" >7:00p</td><td class="left " data-stat="game_type" >REG</td><td class="left iz" data-stat="game_location" ></td><td class="left " data-stat="opp_name" ><a href='/cbb/schools/wright-state/2022.html'>Wright State</a></td><td class="left " data-stat="conf_abbr" ><a href="/cbb/conferences/horizon/2022.html" title="Horizon League">Horizon</a></td><td class="right " data-stat="srs" >-1.94</td><td class="left " data-stat="game_result" >W</td><td class="right " data-stat="pts" >96</td><td class="right " data-stat="opp_pts" >52</td><td class="center iz" data-stat="overtimes" ></td><td class="right " data-stat="wins" >3</td><td class="right iz" data-stat="losses" >0</td><td class="left " data-stat="game_streak" csk="3" >W 3</td><td class="left iz" data-stat="arena" ></td></tr>
+<tr ><th scope="row" class="right " data-stat="g" >4</th><td class="left " data-stat="date_game" csk="2021-11-20" ><a href="/cbb/boxscores/2021-11-20-16-north-carolina.html">Sat, Nov 20, 2021</a></td><td class="left " data-stat="time_game" >4:00p</td><td class="left " data-stat="game_type" >REG</td><td class="left " data-stat="game_location" >N</td><td class="left " data-stat="opp_name" ><a href='/cbb/schools/north-carolina/2022.html'>North Carolina</a>&nbsp;<span class='note'>(18)</span></td><td class="left " data-stat="conf_abbr" ><a href="/cbb/conferences/acc/2022.html" title="Atlantic Coast Conference">ACC</a></td><td class="right " data-stat="srs" >15.50</td><td class="left " data-stat="game_result" >W</td><td class="right " data-stat="pts" >93</td><td class="right " data-stat="opp_pts" >84</td><td class="center iz" data-stat="overtimes" ></td><td class="right " data-stat="wins" >4</td><td class="right iz" data-stat="losses" >0</td><td class="left " data-stat="game_streak" csk="4" >W 4</td><td class="left iz" data-stat="arena" ></td></tr>
+<tr ><th scope="row" class="right " data-stat="g" >5</th><td class="left " data-stat="date_game" csk="2021-11-21" ><a href="/cbb/boxscores/2021-11-21-13-purdue.html">Sun, Nov 21, 2021</a></td><td class="left " data-stat="time_game" >1:00p</td><td class="left " data-stat="game_type" >REG</td><td class="left " data-stat="game_location" >N</td><td class="left " data-stat="opp_name" ><a href='/cbb/schools/villanova/2022.html'>Villanova</a>&nbsp;<span class='note'>(5)</span></td><td class="left " data-stat="conf_abbr" ><a href="/cbb/conferences/big-east/2022.html" title="Big East Conference">Big East</a></td><td class="right " data-stat="srs" >19.31</td><td class="left " data-stat="game_result" >W</td><td class="right " data-stat="pts" >80</td><td class="right " data-stat="opp_pts" >74</td><td class="center iz" data-stat="overtimes" ></td><td class="right " data-stat="wins" >5</td><td class="right iz" data-stat="losses" >0</td><td class="left " data-stat="game_streak" csk="5" >W 5</td><td class="left iz" data-stat="arena" ></td></tr>
+<tr ><th scope="row" class="right " data-stat="g" >6</th><td class="left " data-stat="date_game" csk="2021-11-26" ><a href="/cbb/boxscores/2021-11-26-14-purdue.html">Fri, Nov 26, 2021</a></td><td class="left " data-stat="time_game" >2:00p</td><td class="left " data-stat="game_type" >REG</td><td class="left iz" data-stat="game_location" ></td><td class="left " data-stat="opp_name" ><a href='/cbb/schools/nebraska-omaha/2022.html'>Omaha</a></td><td class="left " data-stat="conf_abbr" ><a href="/cbb/conferences/summit/2022.html" title="Summit League">Summit</a></td><td class="right " data-stat="srs" >-16.99</td><td class="left " data-stat="game_result" >W</td><td class="right " data-stat="pts" >97</td><td class="right " data-stat="opp_pts" >40</td><td class="center iz" data-stat="overtimes" ></td><td class="right " data-stat="wins" >6</td><td class="right iz" data-stat="losses" >0</td><td class="left " data-stat="game_streak" csk="6" >W 6</td><td class="left iz" data-stat="arena" ></td></tr>
+<tr ><th scope="row" class="right " data-stat="g" >7</th><td class="left " data-stat="date_game" csk="2021-11-30" ><a href="/cbb/boxscores/2021-11-30-19-purdue.html">Tue, Nov 30, 2021</a></td><td class="left " data-stat="time_game" >7:30p</td><td class="left " data-stat="game_type" >REG</td><td class="left iz" data-stat="game_location" ></td><td class="left " data-stat="opp_name" ><a href='/cbb/schools/florida-state/2022.html'>Florida State</a></td><td class="left " data-stat="conf_abbr" ><a href="/cbb/conferences/acc/2022.html" title="Atlantic Coast Conference">ACC</a></td><td class="right " data-stat="srs" >6.39</td><td class="left " data-stat="game_result" >W</td><td class="right " data-stat="pts" >93</td><td class="right " data-stat="opp_pts" >65</td><td class="center iz" data-stat="overtimes" ></td><td class="right " data-stat="wins" >7</td><td class="right iz" data-stat="losses" >0</td><td class="left " data-stat="game_streak" csk="7" >W 7</td><td class="left iz" data-stat="arena" ></td></tr>
+<tr ><th scope="row" class="right " data-stat="g" >8</th><td class="left " data-stat="date_game" csk="2021-12-03" ><a href="/cbb/boxscores/2021-12-03-21-purdue.html">Fri, Dec 3, 2021</a></td><td class="left " data-stat="time_game" >9:00p</td><td class="left " data-stat="game_type" >REG</td><td class="left iz" data-stat="game_location" ></td><td class="left " data-stat="opp_name" ><a href='/cbb/schools/iowa/2022.html'>Iowa</a></td><td class="left " data-stat="conf_abbr" ><a href="/cbb/conferences/big-ten/2022.html" title="Big Ten Conference">Big Ten</a></td><td class="right " data-stat="srs" >18.90</td><td class="left " data-stat="game_result" >W</td><td class="right " data-stat="pts" >77</td><td class="right " data-stat="opp_pts" >70</td><td class="center iz" data-stat="overtimes" ></td><td class="right " data-stat="wins" >8</td><td class="right iz" data-stat="losses" >0</td><td class="left " data-stat="game_streak" csk="8" >W 8</td><td class="left iz" data-stat="arena" ></td></tr>
+<tr ><th scope="row" class="right " data-stat="g" >9</th><td class="left " data-stat="date_game" csk="2021-12-09" ><a href="/cbb/boxscores/2021-12-09-19-rutgers.html">Thu, Dec 9, 2021</a></td><td class="left " data-stat="time_game" >7:00p</td><td class="left " data-stat="game_type" >REG</td><td class="left " data-stat="game_location" >@</td><td class="left " data-stat="opp_name" ><a href='/cbb/schools/rutgers/2022.html'>Rutgers</a></td><td class="left " data-stat="conf_abbr" ><a href="/cbb/conferences/big-ten/2022.html" title="Big Ten Conference">Big Ten</a></td><td class="right " data-stat="srs" >8.78</td><td class="left " data-stat="game_result" >L</td><td class="right " data-stat="pts" >68</td><td class="right " data-stat="opp_pts" >70</td><td class="center iz" data-stat="overtimes" ></td><td class="right " data-stat="wins" >8</td><td class="right " data-stat="losses" >1</td><td class="left " data-stat="game_streak" csk="-1" >L 1</td><td class="left iz" data-stat="arena" ></td></tr>
+<tr ><th scope="row" class="right " data-stat="g" >10</th><td class="left " data-stat="date_game" csk="2021-12-12" ><a href="/cbb/boxscores/2021-12-12-14-north-carolina-state.html">Sun, Dec 12, 2021</a></td><td class="left " data-stat="time_game" >2:00p</td><td class="left " data-stat="game_type" >REG</td><td class="left " data-stat="game_location" >N</td><td class="left " data-stat="opp_name" ><a href='/cbb/schools/north-carolina-state/2022.html'>NC State</a></td><td class="left " data-stat="conf_abbr" ><a href="/cbb/conferences/acc/2022.html" title="Atlantic Coast Conference">ACC</a></td><td class="right " data-stat="srs" >3.77</td><td class="left " data-stat="game_result" >W</td><td class="right " data-stat="pts" >82</td><td class="right " data-stat="opp_pts" >72</td><td class="center " data-stat="overtimes" >OT</td><td class="right " data-stat="wins" >9</td><td class="right " data-stat="losses" >1</td><td class="left " data-stat="game_streak" csk="1" >W 1</td><td class="left iz" data-stat="arena" ></td></tr>
+<tr ><th scope="row" class="right " data-stat="g" >11</th><td class="left " data-stat="date_game" csk="2021-12-18" ><a href="/cbb/boxscores/2021-12-18-12-purdue.html">Sat, Dec 18, 2021</a></td><td class="left " data-stat="time_game" >12:00p</td><td class="left " data-stat="game_type" >REG</td><td class="left " data-stat="game_location" >N</td><td class="left " data-stat="opp_name" ><a href='/cbb/schools/butler/2022.html'>Butler</a></td><td class="left " data-stat="conf_abbr" ><a href="/cbb/conferences/big-east/2022.html" title="Big East Conference">Big East</a></td><td class="right " data-stat="srs" >4.45</td><td class="left " data-stat="game_result" >W</td><td class="right " data-stat="pts" >77</td><td class="right " data-stat="opp_pts" >48</td><td class="center iz" data-stat="overtimes" ></td><td class="right " data-stat="wins" >10</td><td class="right " data-stat="losses" >1</td><td class="left " data-stat="game_streak" csk="2" >W 2</td><td class="left iz" data-stat="arena" ></td></tr>
+<tr ><th scope="row" class="right " data-stat="g" >12</th><td class="left " data-stat="date_game" csk="2021-12-20" ><a href="/cbb/boxscores/2021-12-20-19-purdue.html">Mon, Dec 20, 2021</a></td><td class="left " data-stat="time_game" >7:00p</td><td class="left " data-stat="game_type" >REG</td><td class="left iz" data-stat="game_location" ></td><td class="left " data-stat="opp_name" ><a href='/cbb/schools/incarnate-word/2022.html'>Incarnate Word</a></td><td class="left " data-stat="conf_abbr" ><a href="/cbb/conferences/southland/2022.html" title="Southland Conference">Southland</a></td><td class="right " data-stat="srs" >-17.03</td><td class="left " data-stat="game_result" >W</td><td class="right " data-stat="pts" >79</td><td class="right " data-stat="opp_pts" >59</td><td class="center iz" data-stat="overtimes" ></td><td class="right " data-stat="wins" >11</td><td class="right " data-stat="losses" >1</td><td class="left " data-stat="game_streak" csk="3" >W 3</td><td class="left iz" data-stat="arena" ></td></tr>
+<tr ><th scope="row" class="right " data-stat="g" >13</th><td class="left " data-stat="date_game" csk="2021-12-29" ><a href="/cbb/boxscores/2021-12-29-17-purdue.html">Wed, Dec 29, 2021</a></td><td class="left " data-stat="time_game" >5:00p</td><td class="left " data-stat="game_type" >REG</td><td class="left iz" data-stat="game_location" ></td><td class="left " data-stat="opp_name" ><a href='/cbb/schools/nicholls-state/2022.html'>Nicholls State</a></td><td class="left " data-stat="conf_abbr" ><a href="/cbb/conferences/southland/2022.html" title="Southland Conference">Southland</a></td><td class="right " data-stat="srs" >-3.62</td><td class="left " data-stat="game_result" >W</td><td class="right " data-stat="pts" >104</td><td class="right " data-stat="opp_pts" >90</td><td class="center iz" data-stat="overtimes" ></td><td class="right " data-stat="wins" >12</td><td class="right " data-stat="losses" >1</td><td class="left " data-stat="game_streak" csk="4" >W 4</td><td class="left iz" data-stat="arena" ></td></tr>
+<tr ><th scope="row" class="right " data-stat="g" >14</th><td class="left " data-stat="date_game" csk="2022-01-03" ><a href="/cbb/boxscores/2022-01-03-19-purdue.html">Mon, Jan 3, 2022</a></td><td class="left " data-stat="time_game" >7:00p</td><td class="left " data-stat="game_type" >REG</td><td class="left iz" data-stat="game_location" ></td><td class="left " data-stat="opp_name" ><a href='/cbb/schools/wisconsin/2022.html'>Wisconsin</a>&nbsp;<span class='note'>(23)</span></td><td class="left " data-stat="conf_abbr" ><a href="/cbb/conferences/big-ten/2022.html" title="Big Ten Conference">Big Ten</a></td><td class="right " data-stat="srs" >13.13</td><td class="left " data-stat="game_result" >L</td><td class="right " data-stat="pts" >69</td><td class="right " data-stat="opp_pts" >74</td><td class="center iz" data-stat="overtimes" ></td><td class="right " data-stat="wins" >12</td><td class="right " data-stat="losses" >2</td><td class="left " data-stat="game_streak" csk="-1" >L 1</td><td class="left iz" data-stat="arena" ></td></tr>
+<tr ><th scope="row" class="right " data-stat="g" >15</th><td class="left " data-stat="date_game" csk="2022-01-08" ><a href="/cbb/boxscores/2022-01-08-12-penn-state.html">Sat, Jan 8, 2022</a></td><td class="left " data-stat="time_game" >12:00p</td><td class="left " data-stat="game_type" >REG</td><td class="left " data-stat="game_location" >@</td><td class="left " data-stat="opp_name" ><a href='/cbb/schools/penn-state/2022.html'>Penn State</a></td><td class="left " data-stat="conf_abbr" ><a href="/cbb/conferences/big-ten/2022.html" title="Big Ten Conference">Big Ten</a></td><td class="right " data-stat="srs" >8.72</td><td class="left " data-stat="game_result" >W</td><td class="right " data-stat="pts" >74</td><td class="right " data-stat="opp_pts" >67</td><td class="center iz" data-stat="overtimes" ></td><td class="right " data-stat="wins" >13</td><td class="right " data-stat="losses" >2</td><td class="left " data-stat="game_streak" csk="1" >W 1</td><td class="left iz" data-stat="arena" ></td></tr>
+<tr ><th scope="row" class="right " data-stat="g" >16</th><td class="left " data-stat="date_game" csk="2022-01-14" ><a href="/cbb/boxscores/2022-01-14-18-purdue.html">Fri, Jan 14, 2022</a></td><td class="left " data-stat="time_game" >6:30p</td><td class="left " data-stat="game_type" >REG</td><td class="left iz" data-stat="game_location" ></td><td class="left " data-stat="opp_name" ><a href='/cbb/schools/nebraska/2022.html'>Nebraska</a></td><td class="left " data-stat="conf_abbr" ><a href="/cbb/conferences/big-ten/2022.html" title="Big Ten Conference">Big Ten</a></td><td class="right " data-stat="srs" >3.00</td><td class="left " data-stat="game_result" >W</td><td class="right " data-stat="pts" >92</td><td class="right " data-stat="opp_pts" >65</td><td class="center iz" data-stat="overtimes" ></td><td class="right " data-stat="wins" >14</td><td class="right " data-stat="losses" >2</td><td class="left " data-stat="game_streak" csk="2" >W 2</td><td class="left iz" data-stat="arena" ></td></tr>
+<tr ><th scope="row" class="right " data-stat="g" >17</th><td class="left " data-stat="date_game" csk="2022-01-17" ><a href="/cbb/boxscores/2022-01-17-12-illinois.html">Mon, Jan 17, 2022</a></td><td class="left " data-stat="time_game" >12:00p</td><td class="left " data-stat="game_type" >REG</td><td class="left " data-stat="game_location" >@</td><td class="left " data-stat="opp_name" ><a href='/cbb/schools/illinois/2022.html'>Illinois</a>&nbsp;<span class='note'>(17)</span></td><td class="left " data-stat="conf_abbr" ><a href="/cbb/conferences/big-ten/2022.html" title="Big Ten Conference">Big Ten</a></td><td class="right " data-stat="srs" >16.69</td><td class="left " data-stat="game_result" >W</td><td class="right " data-stat="pts" >96</td><td class="right " data-stat="opp_pts" >88</td><td class="center " data-stat="overtimes" >2OT</td><td class="right " data-stat="wins" >15</td><td class="right " data-stat="losses" >2</td><td class="left " data-stat="game_streak" csk="3" >W 3</td><td class="left iz" data-stat="arena" ></td></tr>
+<tr ><th scope="row" class="right " data-stat="g" >18</th><td class="left " data-stat="date_game" csk="2022-01-20" ><a href="/cbb/boxscores/2022-01-20-19-indiana.html">Thu, Jan 20, 2022</a></td><td class="left " data-stat="time_game" >7:00p</td><td class="left " data-stat="game_type" >REG</td><td class="left " data-stat="game_location" >@</td><td class="left " data-stat="opp_name" ><a href='/cbb/schools/indiana/2022.html'>Indiana</a></td><td class="left " data-stat="conf_abbr" ><a href="/cbb/conferences/big-ten/2022.html" title="Big Ten Conference">Big Ten</a></td><td class="right " data-stat="srs" >12.71</td><td class="left " data-stat="game_result" >L</td><td class="right " data-stat="pts" >65</td><td class="right " data-stat="opp_pts" >68</td><td class="center iz" data-stat="overtimes" ></td><td class="right " data-stat="wins" >15</td><td class="right " data-stat="losses" >3</td><td class="left " data-stat="game_streak" csk="-1" >L 1</td><td class="left iz" data-stat="arena" ></td></tr>
+<tr ><th scope="row" class="right " data-stat="g" >19</th><td class="left " data-stat="date_game" csk="2022-01-23" ><a href="/cbb/boxscores/2022-01-23-13-purdue.html">Sun, Jan 23, 2022</a></td><td class="left " data-stat="time_game" >1:00p</td><td class="left " data-stat="game_type" >REG</td><td class="left iz" data-stat="game_location" ></td><td class="left " data-stat="opp_name" ><a href='/cbb/schools/northwestern/2022.html'>Northwestern</a></td><td class="left " data-stat="conf_abbr" ><a href="/cbb/conferences/big-ten/2022.html" title="Big Ten Conference">Big Ten</a></td><td class="right " data-stat="srs" >8.91</td><td class="left " data-stat="game_result" >W</td><td class="right " data-stat="pts" >80</td><td class="right " data-stat="opp_pts" >60</td><td class="center iz" data-stat="overtimes" ></td><td class="right " data-stat="wins" >16</td><td class="right " data-stat="losses" >3</td><td class="left " data-stat="game_streak" csk="1" >W 1</td><td class="left iz" data-stat="arena" ></td></tr>
+<tr ><th scope="row" class="right " data-stat="g" >20</th><td class="left " data-stat="date_game" csk="2022-01-27" ><a href="/cbb/boxscores/2022-01-27-21-iowa.html">Thu, Jan 27, 2022</a></td><td class="left " data-stat="time_game" >9:00p</td><td class="left " data-stat="game_type" >REG</td><td class="left " data-stat="game_location" >@</td><td class="left " data-stat="opp_name" ><a href='/cbb/schools/iowa/2022.html'>Iowa</a></td><td class="left " data-stat="conf_abbr" ><a href="/cbb/conferences/big-ten/2022.html" title="Big Ten Conference">Big Ten</a></td><td class="right " data-stat="srs" >18.90</td><td class="left " data-stat="game_result" >W</td><td class="right " data-stat="pts" >83</td><td class="right " data-stat="opp_pts" >73</td><td class="center iz" data-stat="overtimes" ></td><td class="right " data-stat="wins" >17</td><td class="right " data-stat="losses" >3</td><td class="left " data-stat="game_streak" csk="2" >W 2</td><td class="left iz" data-stat="arena" ></td></tr>
+<tr ><th scope="row" class="right " data-stat="g" >21</th><td class="left " data-stat="date_game" csk="2022-01-30" ><a href="/cbb/boxscores/2022-01-30-12-purdue.html">Sun, Jan 30, 2022</a></td><td class="left " data-stat="time_game" >12:00p</td><td class="left " data-stat="game_type" >REG</td><td class="left iz" data-stat="game_location" ></td><td class="left " data-stat="opp_name" ><a href='/cbb/schools/ohio-state/2022.html'>Ohio State</a>&nbsp;<span class='note'>(16)</span></td><td class="left " data-stat="conf_abbr" ><a href="/cbb/conferences/big-ten/2022.html" title="Big Ten Conference">Big Ten</a></td><td class="right " data-stat="srs" >14.17</td><td class="left " data-stat="game_result" >W</td><td class="right " data-stat="pts" >81</td><td class="right " data-stat="opp_pts" >78</td><td class="center iz" data-stat="overtimes" ></td><td class="right " data-stat="wins" >18</td><td class="right " data-stat="losses" >3</td><td class="left " data-stat="game_streak" csk="3" >W 3</td><td class="left iz" data-stat="arena" ></td></tr>
+<tr ><th scope="row" class="right " data-stat="g" >22</th><td class="left " data-stat="date_game" csk="2022-02-02" ><a href="/cbb/boxscores/2022-02-02-19-minnesota.html">Wed, Feb 2, 2022</a></td><td class="left " data-stat="time_game" >7:00p</td><td class="left " data-stat="game_type" >REG</td><td class="left " data-stat="game_location" >@</td><td class="left " data-stat="opp_name" ><a href='/cbb/schools/minnesota/2022.html'>Minnesota</a></td><td class="left " data-stat="conf_abbr" ><a href="/cbb/conferences/big-ten/2022.html" title="Big Ten Conference">Big Ten</a></td><td class="right " data-stat="srs" >5.93</td><td class="left " data-stat="game_result" >W</td><td class="right " data-stat="pts" >88</td><td class="right " data-stat="opp_pts" >73</td><td class="center iz" data-stat="overtimes" ></td><td class="right " data-stat="wins" >19</td><td class="right " data-stat="losses" >3</td><td class="left " data-stat="game_streak" csk="4" >W 4</td><td class="left iz" data-stat="arena" ></td></tr>
+<tr ><th scope="row" class="right " data-stat="g" >23</th><td class="left " data-stat="date_game" csk="2022-02-05" ><a href="/cbb/boxscores/2022-02-05-14-purdue.html">Sat, Feb 5, 2022</a></td><td class="left " data-stat="time_game" >2:30p</td><td class="left " data-stat="game_type" >REG</td><td class="left iz" data-stat="game_location" ></td><td class="left " data-stat="opp_name" ><a href='/cbb/schools/michigan/2022.html'>Michigan</a></td><td class="left " data-stat="conf_abbr" ><a href="/cbb/conferences/big-ten/2022.html" title="Big Ten Conference">Big Ten</a></td><td class="right " data-stat="srs" >14.26</td><td class="left " data-stat="game_result" >W</td><td class="right " data-stat="pts" >82</td><td class="right " data-stat="opp_pts" >76</td><td class="center iz" data-stat="overtimes" ></td><td class="right " data-stat="wins" >20</td><td class="right " data-stat="losses" >3</td><td class="left " data-stat="game_streak" csk="5" >W 5</td><td class="left iz" data-stat="arena" ></td></tr>
+<tr ><th scope="row" class="right " data-stat="g" >24</th><td class="left " data-stat="date_game" csk="2022-02-08" ><a href="/cbb/boxscores/2022-02-08-21-purdue.html">Tue, Feb 8, 2022</a></td><td class="left " data-stat="time_game" >9:00p</td><td class="left " data-stat="game_type" >REG</td><td class="left iz" data-stat="game_location" ></td><td class="left " data-stat="opp_name" ><a href='/cbb/schools/illinois/2022.html'>Illinois</a>&nbsp;<span class='note'>(13)</span></td><td class="left " data-stat="conf_abbr" ><a href="/cbb/conferences/big-ten/2022.html" title="Big Ten Conference">Big Ten</a></td><td class="right " data-stat="srs" >16.69</td><td class="left " data-stat="game_result" >W</td><td class="right " data-stat="pts" >84</td><td class="right " data-stat="opp_pts" >68</td><td class="center iz" data-stat="overtimes" ></td><td class="right " data-stat="wins" >21</td><td class="right " data-stat="losses" >3</td><td class="left " data-stat="game_streak" csk="6" >W 6</td><td class="left iz" data-stat="arena" ></td></tr>
+<tr ><th scope="row" class="right " data-stat="g" >25</th><td class="left " data-stat="date_game" csk="2022-02-10" ><a href="/cbb/boxscores/2022-02-10-21-michigan.html">Thu, Feb 10, 2022</a></td><td class="left " data-stat="time_game" >9:00p</td><td class="left " data-stat="game_type" >REG</td><td class="left " data-stat="game_location" >@</td><td class="left " data-stat="opp_name" ><a href='/cbb/schools/michigan/2022.html'>Michigan</a></td><td class="left " data-stat="conf_abbr" ><a href="/cbb/conferences/big-ten/2022.html" title="Big Ten Conference">Big Ten</a></td><td class="right " data-stat="srs" >14.26</td><td class="left " data-stat="game_result" >L</td><td class="right " data-stat="pts" >58</td><td class="right " data-stat="opp_pts" >82</td><td class="center iz" data-stat="overtimes" ></td><td class="right " data-stat="wins" >21</td><td class="right " data-stat="losses" >4</td><td class="left " data-stat="game_streak" csk="-1" >L 1</td><td class="left iz" data-stat="arena" ></td></tr>
+<tr ><th scope="row" class="right " data-stat="g" >26</th><td class="left " data-stat="date_game" csk="2022-02-13" ><a href="/cbb/boxscores/2022-02-13-13-purdue.html">Sun, Feb 13, 2022</a></td><td class="left " data-stat="time_game" >1:00p</td><td class="left " data-stat="game_type" >REG</td><td class="left iz" data-stat="game_location" ></td><td class="left " data-stat="opp_name" ><a href='/cbb/schools/maryland/2022.html'>Maryland</a></td><td class="left " data-stat="conf_abbr" ><a href="/cbb/conferences/big-ten/2022.html" title="Big Ten Conference">Big Ten</a></td><td class="right " data-stat="srs" >9.34</td><td class="left " data-stat="game_result" >W</td><td class="right " data-stat="pts" >62</td><td class="right " data-stat="opp_pts" >61</td><td class="center iz" data-stat="overtimes" ></td><td class="right " data-stat="wins" >22</td><td class="right " data-stat="losses" >4</td><td class="left " data-stat="game_streak" csk="1" >W 1</td><td class="left iz" data-stat="arena" ></td></tr>
+<tr ><th scope="row" class="right " data-stat="g" >27</th><td class="left " data-stat="date_game" csk="2022-02-16" ><a href="/cbb/boxscores/2022-02-16-21-northwestern.html">Wed, Feb 16, 2022</a></td><td class="left " data-stat="time_game" >9:00p</td><td class="left " data-stat="game_type" >REG</td><td class="left " data-stat="game_location" >@</td><td class="left " data-stat="opp_name" ><a href='/cbb/schools/northwestern/2022.html'>Northwestern</a></td><td class="left " data-stat="conf_abbr" ><a href="/cbb/conferences/big-ten/2022.html" title="Big Ten Conference">Big Ten</a></td><td class="right " data-stat="srs" >8.91</td><td class="left " data-stat="game_result" >W</td><td class="right " data-stat="pts" >70</td><td class="right " data-stat="opp_pts" >64</td><td class="center iz" data-stat="overtimes" ></td><td class="right " data-stat="wins" >23</td><td class="right " data-stat="losses" >4</td><td class="left " data-stat="game_streak" csk="2" >W 2</td><td class="left iz" data-stat="arena" ></td></tr>
+<tr ><th scope="row" class="right " data-stat="g" >28</th><td class="left " data-stat="date_game" csk="2022-02-20" ><a href="/cbb/boxscores/2022-02-20-17-purdue.html">Sun, Feb 20, 2022</a></td><td class="left " data-stat="time_game" >5:30p</td><td class="left " data-stat="game_type" >REG</td><td class="left iz" data-stat="game_location" ></td><td class="left " data-stat="opp_name" ><a href='/cbb/schools/rutgers/2022.html'>Rutgers</a></td><td class="left " data-stat="conf_abbr" ><a href="/cbb/conferences/big-ten/2022.html" title="Big Ten Conference">Big Ten</a></td><td class="right " data-stat="srs" >8.78</td><td class="left " data-stat="game_result" >W</td><td class="right " data-stat="pts" >84</td><td class="right " data-stat="opp_pts" >72</td><td class="center iz" data-stat="overtimes" ></td><td class="right " data-stat="wins" >24</td><td class="right " data-stat="losses" >4</td><td class="left " data-stat="game_streak" csk="3" >W 3</td><td class="left iz" data-stat="arena" ></td></tr>
+<tr ><th scope="row" class="right " data-stat="g" >29</th><td class="left " data-stat="date_game" csk="2022-02-26" ><a href="/cbb/boxscores/2022-02-26-12-michigan-state.html">Sat, Feb 26, 2022</a></td><td class="left " data-stat="time_game" >12:00p</td><td class="left " data-stat="game_type" >REG</td><td class="left " data-stat="game_location" >@</td><td class="left " data-stat="opp_name" ><a href='/cbb/schools/michigan-state/2022.html'>Michigan State</a></td><td class="left " data-stat="conf_abbr" ><a href="/cbb/conferences/big-ten/2022.html" title="Big Ten Conference">Big Ten</a></td><td class="right " data-stat="srs" >13.18</td><td class="left " data-stat="game_result" >L</td><td class="right " data-stat="pts" >65</td><td class="right " data-stat="opp_pts" >68</td><td class="center iz" data-stat="overtimes" ></td><td class="right " data-stat="wins" >24</td><td class="right " data-stat="losses" >5</td><td class="left " data-stat="game_streak" csk="-1" >L 1</td><td class="left iz" data-stat="arena" ></td></tr>
+<tr ><th scope="row" class="right " data-stat="g" >30</th><td class="left " data-stat="date_game" csk="2022-03-01" ><a href="/cbb/boxscores/2022-03-01-21-wisconsin.html">Tue, Mar 1, 2022</a></td><td class="left " data-stat="time_game" >9:00p</td><td class="left " data-stat="game_type" >REG</td><td class="left " data-stat="game_location" >@</td><td class="left " data-stat="opp_name" ><a href='/cbb/schools/wisconsin/2022.html'>Wisconsin</a>&nbsp;<span class='note'>(10)</span></td><td class="left " data-stat="conf_abbr" ><a href="/cbb/conferences/big-ten/2022.html" title="Big Ten Conference">Big Ten</a></td><td class="right " data-stat="srs" >13.13</td><td class="left " data-stat="game_result" >L</td><td class="right " data-stat="pts" >67</td><td class="right " data-stat="opp_pts" >70</td><td class="center iz" data-stat="overtimes" ></td><td class="right " data-stat="wins" >24</td><td class="right " data-stat="losses" >6</td><td class="left " data-stat="game_streak" csk="-2" >L 2</td><td class="left iz" data-stat="arena" ></td></tr>
+<tr ><th scope="row" class="right " data-stat="g" >31</th><td class="left " data-stat="date_game" csk="2022-03-05" ><a href="/cbb/boxscores/2022-03-05-14-purdue.html">Sat, Mar 5, 2022</a></td><td class="left " data-stat="time_game" >2:00p</td><td class="left " data-stat="game_type" >REG</td><td class="left iz" data-stat="game_location" ></td><td class="left " data-stat="opp_name" ><a href='/cbb/schools/indiana/2022.html'>Indiana</a></td><td class="left " data-stat="conf_abbr" ><a href="/cbb/conferences/big-ten/2022.html" title="Big Ten Conference">Big Ten</a></td><td class="right " data-stat="srs" >12.71</td><td class="left " data-stat="game_result" >W</td><td class="right " data-stat="pts" >69</td><td class="right " data-stat="opp_pts" >67</td><td class="center iz" data-stat="overtimes" ></td><td class="right " data-stat="wins" >25</td><td class="right " data-stat="losses" >6</td><td class="left " data-stat="game_streak" csk="1" >W 1</td><td class="left iz" data-stat="arena" ></td></tr>
+
+      
+      <tr class="thead">
+         <th aria-label="Games" data-stat="g" class=" center" data-tip="Games" >G</th>
+         <th aria-label="Date" data-stat="date_game" class=" sort_default_asc center" >Date</th>
+         <th aria-label="Time" data-stat="time_game" class=" sort_default_asc center" data-tip="Time zone = ET" >Time</th>
+         <th aria-label="Type" data-stat="game_type" class=" sort_default_asc center" data-tip="REG = Regular Season<br>CTOURN = Conference Tournament<br>NCAA = NCAA Tournament<br>NIT = National Invitation Tournament<br>CBI = College Basketball Invitational<br>CIT = CollegeInsider.com Tournament" >Type</th>
+         <th aria-label="&nbsp;" data-stat="game_location" class=" center" >&nbsp;</th>
+         <th aria-label="Opponent" data-stat="opp_name" class=" sort_default_asc center" data-tip="Ranking (#) indicates the opponent's AP ranking on the date of the game. " >Opponent</th>
+         <th aria-label="Conf" data-stat="conf_abbr" class=" sort_default_asc center" data-tip="Conference" >Conf</th>
+         <th aria-label="SRS" data-stat="srs" class=" right" data-tip="<strong>Simple Rating System</strong><br>A rating that takes into account average point differential and strength of schedule. The rating is denominated in points above/below average, where zero is average. Non-Division I games are excluded from the ratings." >SRS</th>
+         <th aria-label="&nbsp;" data-stat="game_result" class=" center" >&nbsp;</th>
+         <th aria-label="Points" data-stat="pts" class=" center" data-tip="Points" >Tm</th>
+         <th aria-label="Opponent Points" data-stat="opp_pts" class=" center" data-tip="Opponent Points" >Opp</th>
+         <th aria-label="OT" data-stat="overtimes" class=" center" >OT</th>
+         <th aria-label="Wins" data-stat="wins" class=" center" data-tip="Wins" >W</th>
+         <th aria-label="Losses" data-stat="losses" class=" center" data-tip="Losses" >L</th>
+         <th aria-label="Streak" data-stat="game_streak" class=" center" >Streak</th>
+         <th aria-label="Arena" data-stat="arena" class=" sort_default_asc center" >Arena</th>
+      </tr>
+      <tr ><th scope="row" class="right " data-stat="g" >32</th><td class="left " data-stat="date_game" csk="2022-03-11" ><a href="/cbb/boxscores/2022-03-11-21-purdue.html">Fri, Mar 11, 2022</a></td><td class="left " data-stat="time_game" >9:00p</td><td class="left " data-stat="game_type" >CTOURN</td><td class="left " data-stat="game_location" >N</td><td class="left " data-stat="opp_name" ><a href='/cbb/schools/penn-state/2022.html'>Penn State</a></td><td class="left " data-stat="conf_abbr" ><a href="/cbb/conferences/big-ten/2022.html" title="Big Ten Conference">Big Ten</a></td><td class="right " data-stat="srs" >8.72</td><td class="left " data-stat="game_result" >W</td><td class="right " data-stat="pts" >69</td><td class="right " data-stat="opp_pts" >61</td><td class="center iz" data-stat="overtimes" ></td><td class="right " data-stat="wins" >26</td><td class="right " data-stat="losses" >6</td><td class="left " data-stat="game_streak" csk="2" >W 2</td><td class="left iz" data-stat="arena" ></td></tr>
+<tr ><th scope="row" class="right " data-stat="g" >33</th><td class="left " data-stat="date_game" csk="2022-03-12" ><a href="/cbb/boxscores/2022-03-12-15-purdue.html">Sat, Mar 12, 2022</a></td><td class="left " data-stat="time_game" >3:30p</td><td class="left " data-stat="game_type" >CTOURN</td><td class="left " data-stat="game_location" >N</td><td class="left " data-stat="opp_name" ><a href='/cbb/schools/michigan-state/2022.html'>Michigan State</a></td><td class="left " data-stat="conf_abbr" ><a href="/cbb/conferences/big-ten/2022.html" title="Big Ten Conference">Big Ten</a></td><td class="right " data-stat="srs" >13.18</td><td class="left " data-stat="game_result" >W</td><td class="right " data-stat="pts" >75</td><td class="right " data-stat="opp_pts" >70</td><td class="center iz" data-stat="overtimes" ></td><td class="right " data-stat="wins" >27</td><td class="right " data-stat="losses" >6</td><td class="left " data-stat="game_streak" csk="3" >W 3</td><td class="left iz" data-stat="arena" ></td></tr>
+<tr ><th scope="row" class="right " data-stat="g" >34</th><td class="left " data-stat="date_game" csk="2022-03-13" ><a href="/cbb/boxscores/2022-03-13-15-purdue.html">Sun, Mar 13, 2022</a></td><td class="left " data-stat="time_game" >3:30p</td><td class="left " data-stat="game_type" >CTOURN</td><td class="left " data-stat="game_location" >N</td><td class="left " data-stat="opp_name" ><a href='/cbb/schools/iowa/2022.html'>Iowa</a>&nbsp;<span class='note'>(24)</span></td><td class="left " data-stat="conf_abbr" ><a href="/cbb/conferences/big-ten/2022.html" title="Big Ten Conference">Big Ten</a></td><td class="right " data-stat="srs" >18.90</td><td class="left " data-stat="game_result" >L</td><td class="right " data-stat="pts" >66</td><td class="right " data-stat="opp_pts" >75</td><td class="center iz" data-stat="overtimes" ></td><td class="right " data-stat="wins" >27</td><td class="right " data-stat="losses" >7</td><td class="left " data-stat="game_streak" csk="-1" >L 1</td><td class="left iz" data-stat="arena" ></td></tr>
+
+      
+      <tr class="thead">
+         <th aria-label="Games" data-stat="g" class=" center" data-tip="Games" >G</th>
+         <th aria-label="Date" data-stat="date_game" class=" sort_default_asc center" >Date</th>
+         <th aria-label="Time" data-stat="time_game" class=" sort_default_asc center" data-tip="Time zone = ET" >Time</th>
+         <th aria-label="Type" data-stat="game_type" class=" sort_default_asc center" data-tip="REG = Regular Season<br>CTOURN = Conference Tournament<br>NCAA = NCAA Tournament<br>NIT = National Invitation Tournament<br>CBI = College Basketball Invitational<br>CIT = CollegeInsider.com Tournament" >Type</th>
+         <th aria-label="&nbsp;" data-stat="game_location" class=" center" >&nbsp;</th>
+         <th aria-label="Opponent" data-stat="opp_name" class=" sort_default_asc center" data-tip="Ranking (#) indicates the opponent's AP ranking on the date of the game. " >Opponent</th>
+         <th aria-label="Conf" data-stat="conf_abbr" class=" sort_default_asc center" data-tip="Conference" >Conf</th>
+         <th aria-label="SRS" data-stat="srs" class=" right" data-tip="<strong>Simple Rating System</strong><br>A rating that takes into account average point differential and strength of schedule. The rating is denominated in points above/below average, where zero is average. Non-Division I games are excluded from the ratings." >SRS</th>
+         <th aria-label="&nbsp;" data-stat="game_result" class=" center" >&nbsp;</th>
+         <th aria-label="Points" data-stat="pts" class=" center" data-tip="Points" >Tm</th>
+         <th aria-label="Opponent Points" data-stat="opp_pts" class=" center" data-tip="Opponent Points" >Opp</th>
+         <th aria-label="OT" data-stat="overtimes" class=" center" >OT</th>
+         <th aria-label="Wins" data-stat="wins" class=" center" data-tip="Wins" >W</th>
+         <th aria-label="Losses" data-stat="losses" class=" center" data-tip="Losses" >L</th>
+         <th aria-label="Streak" data-stat="game_streak" class=" center" >Streak</th>
+         <th aria-label="Arena" data-stat="arena" class=" sort_default_asc center" >Arena</th>
+      </tr>
+      <tr ><th scope="row" class="right " data-stat="g" >35</th><td class="left " data-stat="date_game" csk="2022-03-18" ><a href="/cbb/boxscores/2022-03-18-14-purdue.html">Fri, Mar 18, 2022</a></td><td class="left " data-stat="time_game" >2:00p</td><td class="left " data-stat="game_type" >NCAA</td><td class="left " data-stat="game_location" >N</td><td class="left " data-stat="opp_name" ><a href='/cbb/schools/yale/2022.html'>Yale</a></td><td class="left " data-stat="conf_abbr" ><a href="/cbb/conferences/ivy/2022.html" title="Ivy League">Ivy</a></td><td class="right " data-stat="srs" >-0.10</td><td class="left " data-stat="game_result" >W</td><td class="right " data-stat="pts" >78</td><td class="right " data-stat="opp_pts" >56</td><td class="center iz" data-stat="overtimes" ></td><td class="right " data-stat="wins" >28</td><td class="right " data-stat="losses" >7</td><td class="left " data-stat="game_streak" csk="1" >W 1</td><td class="left iz" data-stat="arena" ></td></tr>
+<tr ><th scope="row" class="right " data-stat="g" >36</th><td class="left " data-stat="date_game" csk="2022-03-20" ><a href="/cbb/boxscores/2022-03-20-20-purdue.html">Sun, Mar 20, 2022</a></td><td class="left " data-stat="time_game" >8:40p</td><td class="left " data-stat="game_type" >NCAA</td><td class="left " data-stat="game_location" >N</td><td class="left " data-stat="opp_name" ><a href='/cbb/schools/texas/2022.html'>Texas</a>&nbsp;<span class='note'>(25)</span></td><td class="left " data-stat="conf_abbr" ><a href="/cbb/conferences/big-12/2022.html" title="Big 12 Conference">Big 12</a></td><td class="right " data-stat="srs" >17.01</td><td class="left " data-stat="game_result" >W</td><td class="right " data-stat="pts" >81</td><td class="right " data-stat="opp_pts" >71</td><td class="center iz" data-stat="overtimes" ></td><td class="right " data-stat="wins" >29</td><td class="right " data-stat="losses" >7</td><td class="left " data-stat="game_streak" csk="2" >W 2</td><td class="left iz" data-stat="arena" ></td></tr>
+<tr ><th scope="row" class="right " data-stat="g" >37</th><td class="left " data-stat="date_game" csk="2022-03-25" ><a href="/cbb/boxscores/2022-03-25-19-purdue.html">Fri, Mar 25, 2022</a></td><td class="left " data-stat="time_game" >7:09p</td><td class="left " data-stat="game_type" >NCAA</td><td class="left " data-stat="game_location" >N</td><td class="left " data-stat="opp_name" ><a href='/cbb/schools/saint-peters/2022.html'>Saint Peter's</a></td><td class="left " data-stat="conf_abbr" ><a href="/cbb/conferences/maac/2022.html" title="Metro Atlantic Athletic Conference">MAAC</a></td><td class="right " data-stat="srs" >2.96</td><td class="left " data-stat="game_result" >L</td><td class="right " data-stat="pts" >64</td><td class="right " data-stat="opp_pts" >67</td><td class="center iz" data-stat="overtimes" ></td><td class="right " data-stat="wins" >29</td><td class="right " data-stat="losses" >8</td><td class="left " data-stat="game_streak" csk="-1" >L 1</td><td class="left iz" data-stat="arena" ></td></tr>
+
+</table>
+
+
+</div>
+
+
+
+</div>
+
+            
+            
+            
+         
+      
+
+<!-- global.nonempty_tables_num: 2, table_count: 2 -->
+   <!-- no Local/Partials/NoteBottom.tt2 -->
+<div id="bottom_nav" class="section_wrapper">
+<div class="section_heading"><span data-no-inpage="1" class="section_anchor" id="inner_nav_bottom_link" data-label="More 2021-22 Purdue Pages"></span><h2>More 2021-22 Purdue Pages</h2></div>
+<div class="section_content" id="bottom_nav_container">
+
+  <p><a href="/cbb/schools/purdue/"><u>Purdue School History</u></a></p>
+  <p class="listhead"><strong>2021-22 Purdue Season</strong></p>
+        <ul class="">
+          <li><a href="/cbb/schools/purdue/2022.html">Roster &amp; Stats</a></li>
+          <li><a href="/cbb/schools/purdue/2022-schedule.html">Polls, Schedule &amp; Results</a></li>
+          <li><a href="/cbb/schools/purdue/2022-gamelogs.html">Game Log</a></li>
+          <li><a href="/cbb/schools/purdue/2022-starters.html">Starters</a></li>
+        </ul></div></div>
+
+   
+
+
+<!-- fs_footer -->
+<div class="adblock">
+<!-- div#fs_fs_footer  -->
+<div align="center" id="div-gpt-ad-728x90-Footer">
+    <script data-cfasync="false" type='text/javascript'>
+    if (sr_detect_ie || sr_detect_edge || Modernizr.adfree) {
+    }
+    else {
+        console.log('push ad:div-gpt-ad-728x90-Footer');
+        freestar.queue.push(function() { googletag.display('div-gpt-ad-728x90-Footer'); });
+    }
+    </script>
+</div>
+<!-- /div.#fs_fs_footer -->
+
+</div>
+
+
+
+
+</div><!-- div#content -->
+
+
+<div id="footer" role="contentinfo">
+	<div id="footer_header">
+		 <ul class="bullets-inline"><li class="user logged_in">Welcome <span class="username"></span>&nbsp;&#183;&nbsp;<a href="https://stathead.com/profile/?utm_source=web&amp;utm_medium=cbb&amp;utm_campaign=sr-nav-bar-top-account">Your Account</a></li>
+<li class="user logged_in"><a class="logout" onclick="sr_auth_logout_page_elements();if(!this.href.match('redirect_uri')){this.href += '&redirect_uri='+escape(document.location.href)}" href="https://stathead.com/profile/?do=logout">Logout</a></li>
+<li class="user not_logged_in"><a class="login" onclick="if(!this.href.match('redirect_uri')){this.href += '&redirect_uri='+escape(document.location.href)}" href="https://stathead.com/users/login.cgi?token=1">Login</a></li>
+<li class="user not_logged_in"><a href="https://stathead.com/users/signup.cgi">Create Account</a></li>
+</ul>
+		 <div class="breadcrumbs">You are here: <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="/cbb/"><span itemprop="name">CBB Home Page</span></a> <meta itemprop="position" content="1" /></span> &gt; <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="/cbb/schools/"><span itemprop="name">Schools</span></a> <meta itemprop="position" content="2" /></span> &gt; <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="/cbb/schools/purdue/"><span itemprop="name">Purdue Boilermakers</span></a> <meta itemprop="position" content="3" /></span> &gt; <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="/cbb/schools/purdue/2022.html"><span itemprop="name">2021-22</span></a> <meta itemprop="position" content="4" /></span> &gt; <strong>Schedule and Results</strong></div>
+	</div><!-- div#footer_header -->
+
+	<div id="footer_general">
+		<div id="site_menu" role="navigation" aria-label="complete site index">
+			
+			
+<div class="section_heading assoc_site_menu" id="site_menu_sh">
+  <span class="section_anchor" id="site_menu_link" data-label="Full Site Menu"></span><h2>Full Site Menu</h2>    <div class="section_heading_text">
+      <ul><li><a data-scroll href="#header">Return to Top</a></li>
+      </ul>
+    </div>
+    		
+</div>
+			
+				<ul>
+  <li>
+    <a href='/cbb/players/'>Players</a>
+    <div>
+      <a href='/cbb/players/danny-vranes-1.html'>Danny Vranes</a>, 
+      <a href='/cbb/players/marvin-barnes-1.html'>Marvin Barnes</a>, 
+      <a href='/cbb/players/bobby-hurley-1.html'>Bobby Hurley</a>, 
+      <a href='/cbb/players/james-worthy-1.html'>James Worthy</a>, 
+      <a href='/cbb/players/tayshaun-prince-1.html'>Tayshaun Prince</a>
+    </div>
+  </li>
+
+  <li>
+    <a href='/cbb/schools/'>Schools</a>
+    <div>
+      <a href='/cbb/schools/boston-university/'>Boston University</a>, 
+      <a href='/cbb/schools/montana/'>Montana</a>, 
+      <a href='/cbb/schools/houston/'>Houston</a>, 
+      <a href='/cbb/schools/texas/'>Texas</a>, 
+      <a href='/cbb/schools/northwestern/'>Northwestern</a>, 
+      <a href='/cbb/schools/duke/2001.html'>Stats</a>, 
+      <a href='/cbb/schools/kansas/2008-schedule.html'>Schedules</a>
+    </div>
+  </li>
+
+  <li>
+    <a href='/cbb/seasons/'>Seasons</a>
+    <div>
+      <a href='/cbb/seasons/1971.html'>1970-71</a>, 
+      <a href='/cbb/seasons/1959.html'>1958-59</a>, 
+      <a href='/cbb/seasons/1953.html'>1952-53</a>, 
+      <a href='/cbb/seasons/1976.html'>1975-76</a>, 
+      <a href='/cbb/seasons/1962.html'>1961-62</a>, 
+      <a href='/cbb/seasons/1992-polls.html'>Polls</a>, 
+      <a href='/cbb/seasons/2002-leaders.html'>Leaders</a>
+    </div>
+  </li>
+
+  <li>
+    <a href="/cbb/leaders/">Leaders and Records</a>
+    <div>
+      <a href='/cbb/leaders/pts-player-season.html'>Season Points</a>, 
+      <a href='/cbb/leaders/trb-player-career.html'>Career Rebounds</a>, 
+      <a href='/cbb/leaders/ast-player-yearly.html'>Yearly Assists</a>, 
+      <a href='/cbb/leaders/wins-coach-season.html'>Season Wins</a>, 
+      <a href='/cbb/leaders/win-loss-pct-coach-career.html'>Career W-L%</a>
+    </div>
+  </li>
+
+  <li>
+    <a href="/cbb/boxscores/">College Basketball Scores</a>
+    <div>
+      <a href='/cbb/boxscores/1991-03-30-duke.html'>UNLV 77, Duke 79</a>, 
+      <a href='/cbb/boxscores/1992-03-28-duke.html'>Kentucky 103, Duke 104</a>, 
+      <a href='/cbb/boxscores/1957-03-23-kansas.html'>UNC 54, Kansas 53</a>, 
+      <a href='/cbb/boxscores/1983-04-04-houston.html'>NC State 54, Houston 52</a>
+    </div>
+  </li>
+
+  <li>
+    <a href="/cbb/postseason/">NCAA Tournament</a>
+    <div>
+      <a href='/cbb/postseason/1988-ncaa.html'>1988 NCAA</a>, 
+      <a href='/cbb/postseason/1976-ncaa.html'>1976 NCAA</a>, 
+      <a href="/cbb/postseason/1940-ncaa.html">1940 NCAA</a>, 
+      <a href="/cbb/postseason/1950-ncaa.html">1950 NCAA</a>, 
+      <a href="/cbb/postseason/1981-ncaa.html">1981 NCAA</a>
+    </div>
+  </li>
+
+  <li>
+    <a href='/cbb/play-index/'>Play Index</a>
+    <div>
+      <a href='/cbb/play-index/psl_finder.cgi'>Player Season Finder</a>,
+      <a href='/cbb/play-index/pgl_finder.cgi'>Player Game Finder</a>,
+      <a href='/cbb/play-index/tourney_pgl_finder.cgi'>NCAA Tournament Player Game Finder</a>,
+      <a href='/cbb/play-index/matchup_finder.cgi'>Matchup Finder</a>,
+      <a href='/cbb/play-index/tourney.cgi'>NCAA Tournament Matchup Finder</a>
+    </div>
+  </li>
+
+  <li>
+    <a href='/cbb/awards/'>Awards and Honors</a>
+    <div>
+      <a href='/cbb/awards/all-america-2010-2019.html'>All-America Teams</a>, 
+      <a href='/cbb/awards/wooden.html'>Wooden Award</a>, 
+      <a href='/cbb/awards/ncaa-mop.html'>NCAA Tournament MOP</a>
+    </div>
+  </li>
+
+  <li>
+    <a href='/cbb/coaches/'>Coaches</a>
+    <div>
+      <a href='/cbb/coaches/leonard-hamilton-1.html'>Leonard Hamilton</a>, 
+      <a href='/cbb/coaches/jay-wright-1.html'>Jay Wright</a>, 
+      <a href='/cbb/coaches/johnny-orr-1.html'>Johnny Orr</a>, 
+      <a href='/cbb/coaches/danny-nee-1.html'>Danny Nee</a>, 
+      <a href='/cbb/coaches/fran-dunphy-1.html'>Fran Dunphy</a>
+    </div>
+  </li>
+
+  <li>
+    <a href='/cbb/conferences/'>Conferences</a>
+    <div>
+      <a href='/cbb/conferences/mvc/'>Missouri Valley</a>, 
+      <a href='/cbb/conferences/big-west/'>Big West</a>, 
+      <a href='/cbb/conferences/big-sky/'>Big Sky</a>, 
+      <a href='/cbb/conferences/summit/'>Summit</a>, 
+      <a href='/cbb/conferences/big-east/'>Big East</a>, 
+      <a href='/cbb/conferences/big-ten/2007.html'>Standings</a>, 
+      <a href='/cbb/conferences/acc/2009-schedule.html'>Schedules</a>, 
+      <a href='/cbb/conferences/big-12/2008-leaders.html'>Leaders</a>
+    </div>
+  </li>
+
+
+  <li>
+    <a href='/cbb/friv/'>Frivolities</a>
+    <div>
+      <a href='/cbb/friv/dailyleaders.cgi'>Daily Leaders</a>, 
+      <a href='/cbb/friv/forfeits.cgi'>Forfeits and Vacated Games</a>, 
+      <a href='/cbb/friv/ap1_losses.html'>Historical AP #1 Losses</a>, 
+      <a href='/cbb/friv/player_milestones.cgi'>Player Milestone Watch</a>
+    </div>
+  </li>
+
+  <li>
+    <a href='/cbb/about/'>About</a>
+    <div>
+      <a href='/cbb/about/contact.html'>Contact and Media Information</a>, 
+      <a href='/cbb/about/sources.html'>Contributors and Sources</a>, 
+      <a href='/cbb/about/glossary.html'>Glossary</a>, 
+      <a href='/cbb/about/ws.html'>Calculating Win Shares</a>
+    </div>
+  </li>
+
+  <li>
+    <div>Other: 
+      <a href='/blog/'>Blog</a>, 
+      <a href='/cbb/feedback/'>Feedback</a>, 
+      <a href='/cbb/friv/forfeits.cgi'>Forfeits and Vacated Games</a>, 
+      <a href='/cbb/about/glossary.html'>Glossary</a>, 
+      <a href='/cbb/rand.fcgi'>Random Page</a>, 
+      <a href='/cbb/linker/'>Linker Tool</a>
+    </div>
+  </li>
+
+</ul>   
+
+
+			
+   		        
+
+      <ul>
+       <li></li>      
+       <li><a href="https://www.sports-reference.com/cbb/cbb-blog/">College Basketball at Sports-Reference.com Blog and Articles</a></li>
+
+	        </div><!-- div#site_menu -->
+		<div>
+			<div id="social" class="icon_group noload">
+	
+<div class="section_heading assoc_" id="_sh">
+  <span class="section_anchor" id="_link" data-label="We're Social...for Statheads" data-no-inpage="1"></span><h2>We're Social...for Statheads</h2>		
+</div>
+	<a href="tel://888-512-8907" data-tip="Call us on Telephone" data-label="Telephone" aria-label="Telephone" class="poptip"><svg class="icon phone"><use xlink:href="#ic-phone"></use></svg></a>
+	<a href="//www.sports-reference.com/blog/" data-tip="The Sports Reference Blog" data-label="Our Blog" aria-label="Our Blog" class="poptip"><svg class="icon wordpress"><use xlink:href="#ic-wordpress"></use></svg></a>
+	<a href="https://www.sports-reference.com/blog/feed/" data-tip="Our Blog's RSS Feed" data-label="RSS Feed" aria-label="RSS Feed" class="poptip"><svg class="icon rss"><use xlink:href="#ic-rss"></use></svg></a>
+	
+		<a href="https://twitter.com/collegebb_ref" data-tip="College Basketball at Sports-Reference.com at Twitter" data-label="Twitter" aria-label="Twitter" class="poptip"><svg class="icon twitter"><use xlink:href="#ic-twitter"></use></svg></a>
+	
+		<a href="https://www.tiktok.com/@collegebb_ref" data-tip="College Basketball at Sports-Reference.com at TikTok" data-label="TikTok" aria-label="TikTok" class="poptip"><svg class="icon tiktok"><use xlink:href="#ic-tiktok"></use></svg></a>
+	<a href="https://reddit.com/r/SportsReference" data-tip="Reddit/r/SportsReference" data-label="Reddit/r/SR" aria-label="Reddit/r/SR" class="poptip"><svg class="icon reddit"><use xlink:href="#ic-reddit"></use></svg></a>
+	<a href="https://www.youtube.com/user/sportsreference" data-tip="YouTube/SportsReference" data-label="YouTube" aria-label="YouTube" class="poptip"><svg class="icon youtube"><use xlink:href="#ic-youtube"></use></svg></a>
+	<a href="https://www.linkedin.com/company/sports-reference-llc" data-tip="Follow SR on LinkedIn" data-label="LinkedIn" aria-label="LinkedIn" class="poptip"><svg class="icon linkedin"><use xlink:href="#ic-linkedin"></use></svg></a>
+	<a href="https://www.paypal.me/sportsref" data-tip="Send us money via PayPal" data-label="PayPal" aria-label="PayPal" class="poptip"><svg class="icon paypal"><use xlink:href="#ic-paypal"></use></svg></a>
+
+<p>Every <a href="https://www.sports-reference.com/blog/sports-reference-social-media/">Sports Reference Social Media Account</a></p>
+<p><strong>Site Last Updated:</strong> Monday, November 21,  7:47AM
+</p>
+<p><a href="https://www.sports-reference.com/feedback/" class="button" style="display: block">Question, Comment, Feedback, or Correction?</a></p>
+
+<p><a style="display: block" href="https://www.sports-reference.com/cbb/email" class="button">Subscribe to our Free Email Newsletter</a></p>
+
+<p><a style="background-color:#155ca9; color: #fff;" href="https://www.sports-reference.com/this-month.html?&utm_medium=sr&utm_source=cbb&utm_campaign=site-footer-twisr" class="button alt">This Month in Sports Reference<br><em>Find out when we add a feature or make a change</em></a></p>
+
+<p><a href="https://www.sports-reference.com/blog/ways-sports-reference-can-help-your-website/?utm_medium=sr&utm_source=cbb&utm_campaign=site-footer-ways-help">Do you have a sports website? Or write about sports? We have tools and resources that can help you use sports data.  Find out more.</a></p>
+
+
+</div><!-- div#social -->
+
+			<div id="tips_tricks">
+   
+<div class="section_heading assoc_tips" id="tips_sh">
+  <span class="section_anchor" id="tips_link" data-label="FAQs, Tip &amp; Tricks" data-no-inpage="1"></span><h2>FAQs, Tip &amp; Tricks</h2>		
+</div>
+   <ul>
+<!-- no Local/FooterTipsTricks.tt2 -->
+           <li><a href="//www.sports-reference.com/blog/category/tips-and-tricks/">Tips and Tricks from our Blog.</a></li>
+           <li><a href="/cbb/linker/">Do you have a blog? Join our linker program.</a></li>
+	   <li><a href="https://www.sports-reference.com/blog/category/stathead-tutorial-series/">Watch our How-To Videos to Become a Stathead</a></li>
+	   <li><a href="//stathead.com/?ref=cbb">Subscribe to Stathead and get access to more data than you can imagine</a></li>
+   </ul>
+</div><!-- div#tips_tricks -->
+
+			<div id="credits">
+				<p>All logos are the trademark &amp; property of their owners and not Sports Reference LLC.  We present them here for purely educational purposes.
+				<a href="https://www.sports-reference.com/blog/2016/06/redesign-team-and-league-logos-courtesy-sportslogos-net/">Our reasoning for presenting offensive logos.</a></p>
+				<p>
+					
+					Logos were compiled by the amazing <a href="http://sportslogos.net/">SportsLogos.net.</a>
+				</p>
+				
+<div class="notice">Primary NCAA Data Provided By
+	<a href="http://www.gracenote.com/sports/sports-data/" rel="nofollow"><img alt="Gracenote Sports" border=0 width=275 src="https://cdn.ssref.net/req/202211031/images/klecko/gracenote-2.png"></a>
+</div>
+
+     <p>Copyright &copy; 2000-2022 <a href="//www.sports-reference.com/">Sports Reference LLC</a>. All rights reserved.</p>
+
+     <p>The SPORTS REFERENCE and STATHEAD trademarks are owned exclusively by Sports Reference LLC. Use without license or authorization is expressly prohibited.
+
+			</div><!-- div#credits -->
+		</div>
+	</div>
+
+	<ul id="site_dirs" class="notranslate bullets-inline">
+	<li><a href="https://www.sports-reference.com/"><svg height="15px" width="20px"><use xlink:href="#ic-sr-pennant"></use></svg> Sports&nbsp;Reference&#8239;&reg;</a></li>
+	<li><a href="https://www.baseball-reference.com/">Baseball</a></li>
+	<li><a href="https://www.pro-football-reference.com/">Football</a> <a href="https://www.sports-reference.com/cfb/">(college)</a></li>
+	<li class="current"><a href="https://www.basketball-reference.com/">Basketball</a> <a href="https://www.sports-reference.com/cbb/">(college)</a></li>
+	<li><a href="https://www.hockey-reference.com/">Hockey</a></li>
+
+
+	
+	
+	
+	<li><a href="https://fbref.com/fr/">Football</a></li>
+
+	<li><a href="https://www.sports-reference.com/blog/">Blog</a></li>
+
+    <li><a href="https://stathead.com/?utm_source=web&amp;utm_medium=cbb&amp;utm_campaign=sr-nav-bar-top-link">Stathead&#8239;&reg;</a></li>
+
+
+</ul>
+
+	<div id="about">
+  <a href="//www.sports-reference.com/about.html">About</a> &bull;
+  <a href="//www.sports-reference.com/termsofuse.html">Conditions &amp; Terms of Service</a> &bull;
+  <a href="//www.sports-reference.com/advertise.html">Advertise With Us</a>
+ &bull;
+  <a href="//www.sports-reference.com/jobs.html">Jobs at SR</a>
+  <br><br>
+Sports Reference Purpose: We will be the trusted source of information and tools that inspire and empower users to enjoy, understand, and share the sports they love.
+  <br><br>
+  <a href="//www.sports-reference.com/privacy.html">Privacy Policy</a> &bull;
+  <a href="//www.sports-reference.com/gambling-revenue-policy.html">Gambling Revenue Policy</a> &bull;
+  <a href="//www.sports-reference.com/accessibility-policy.html">Accessibility Policy</a> &bull;
+  <a href="//www.sports-reference.com/data_use.html">Use of Data</a>
+  </div>
+  <!-- div#about -->
+</div><!-- div#footer -->
+
+</div><!-- div#wrap -->
+<!-- yes sticky url:  https://www.sports-reference.com/cbb/schools/purdue/2022-schedule.html -->
+<div id="fs-select-footer"></div>
+      
+
+
+
+<!-- rails -->
+
+<div class="adblock rails  left"><!-- div#fs_fs_rails_left  -->
+<div align="center" id="div-gpt-ad-160x600-1">
+    <script data-cfasync="false" type='text/javascript'>
+    if (sr_detect_ie || sr_detect_edge || Modernizr.adfree) {
+    }
+    else {
+        console.log('push ad:div-gpt-ad-160x600-1');
+        freestar.queue.push(function() { googletag.display('div-gpt-ad-160x600-1'); });
+    }
+    </script>
+</div>
+<!-- /div.#fs_fs_rails_left -->
+</div>
+<div class="adblock rails right"><!-- div#fs_fs_rails_right  -->
+<div align="center" id="div-gpt-ad-160x600-2">
+    <script data-cfasync="false" type='text/javascript'>
+    if (sr_detect_ie || sr_detect_edge || Modernizr.adfree) {
+    }
+    else {
+        console.log('push ad:div-gpt-ad-160x600-2');
+        freestar.queue.push(function() { googletag.display('div-gpt-ad-160x600-2'); });
+    }
+    </script>
+</div>
+<!-- /div.#fs_fs_rails_right -->
+</div>
+
+
+<!-- sr_gender is used in Templates/Assets/GoogleAnalytics.tt2 -->
+<script>var sr_gender = "";</script>
+<!-- Google Analytics --> <!-- new extra script, apparently we only use one of these, regardless of the number of products... https://developers.google.com/tag-platform/gtagjs/install#google-analytics --> <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1890630-8"></script> <script> var sr_cookie = vjs_readCookie('stathead_user') || ''; var sr_cookie_split = sr_cookie.split("::"); var sr_session_key = (sr_cookie_split.length > 1)?sr_cookie_split[2]:''; var sr_ad_free_key = "7"; var sr_site_id = "cbb"; var sr_is_subscriber = (sr_ad_free_key && sr_session_key.vjs_isMatch(new RegExp(sr_ad_free_key + "$"))) || sr_session_key.vjs_isMatch(/1$/) || (sr_site_id === 'stathead' && sr_session_key.vjs_isMatch(/[0-7]$/)); var sr_is_user = sr_cookie !== null && sr_cookie !== ''; var sr_seen_modal = vjs_readCookie('modal_ad') !== null; var sr_device = 'unk'; if (Modernizr.phone) { sr_device = 'phone'; } else if (Modernizr.tablet) { sr_device = 'tablet'; } else if (Modernizr.laptop) { sr_device = 'laptop'; } else if (Modernizr.desktop) { sr_device = 'desktop'; } var sr_stathead_site = vjs_readCookie('stathead_site') || ''; var sr_stathead_type = vjs_readCookie('stathead_type') || ''; /* new gtag theres an extra script tag we need to add that I'm not sure how that work for multiple ID's for GA, docs say to ignore it??? https://developers.google.com/tag-platform/gtagjs/install here they have 3 but just use the last one? */ window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); /* OLD, could not find require within reference docs https://developers.google.com/tag-platform/gtagjs/reference ga('require', 'linkid', 'linkid.js'); ga('require', 'ecommerce', 'ecommerce.js'); ga('require', 'displayfeatures'); */ /* new, creates+sends+sets */ /* for fbref we want to allow for tracking of 'men' and 'women' pages for leagues, clubs and players, so we can track the most popular women players easily. In Footer.tt2 there is a place to set sr_gender. */ gtag('config', 'UA-1890630-8', { 'dimension1': sr_is_subscriber, 'dimension2': sr_is_user, 'dimension3': typeof(sr_gender) === 'string'? sr_gender: null, 'dimension4': sr_stathead_type, 'dimension5': sr_stathead_site, 'metric1': Modernizr.viewport_width }); /* all sr-sites together */ /* new, I believe linker works as a parameter here, although there didn\'t seem to be a simple "true" value to set besides this one https://developers.google.com/analytics/devguides/collection/gtagjs/cross-domain */ gtag('config', 'UA-1890630-9', { 'linker': { 'domains' : ['stathead.com'] }, 'dimension1': sr_site_id, 'dimension2': sr_is_subscriber, 'dimension3': sr_is_user, 'dimension4': sr_seen_modal, 'dimension5': sr_device, 'dimension6': 'null', 'metric1': Modernizr.viewport_width, 'dimension8': (typeof sr_test == 'undefined')?'no-test':( sr_test ? 'non-blocking':'blocking') }); /* new, cribbed from: https://www.axllent.org/docs/track-outbound-links-with-gtag-js/ */ function _gaLt(event) { /* if GA is blocked or not loaded, or not main|middle|touch click then don\'t track */ if (typeof gtag == "undefined" || (event.which != 1 && event.which != 2)) { return; } var el = event.srcElement || event.target; /* loop up the DOM tree through parent elements if clicked element is not a link (eg: an image inside a link) */ while ( el && (typeof el.tagName == "undefined" || el.tagName.toLowerCase() != "a" || !el.href) ) { el = el.parentNode; } /* if a link with valid href has been clicked */ if (el && el.href) { var link = el.href; /* only if it is an external link */ if (link.indexOf(location.host) == -1 && !link.match(/^javascript\:/i)) { /* is target set and _(self|parent|top) */ var target = el.target && !el.target.match(/^_(self|parent|top)/i) ? el.target : false; /* assume a target if (ctrl|shift|meta)-click */ if ( event.ctrlKey || event.shiftKey || event.metaKey || event.which == 2 ) { target = "_blank"; } /* tracker has not yet run */ var hbrun = false; /* hitBack to open link in same window after tracker */ var hitBack = function () { /* run once only */ if (hbrun) return; hbrun = true; window.location.href = link; }; if (target) { /* if target opens a new window then just track */ gtag("event", link, { event_category: "Outgoing Links", event_label: document.location.pathname + document.location.search, }); } else { /* Prevent standard click, track then open */ if (event.type == "mousedown") { var blockClick = function (event) { event.preventDefault(); /* remove click event after click */ el.removeEventListener("click", boundClick); }; /* bind the click event */ var boundClick = blockClick.bind(event); /* prevent the click */ el.addEventListener("click", boundClick); } event.preventDefault ? event.preventDefault() : (event.returnValue = !1); /* send event with callback */ gtag("event", link, { event_category: "Outgoing Links", event_label: document.location.pathname + document.location.search, event_callback: hitBack, }); /* Run hitBack again if GA takes longer than 1 second */ setTimeout(hitBack, 1000); } } } } var _w = window; /* Use "click" if touchscreen device, else "mousedown" */ var _gaLtEvt = "ontouchstart" in _w ? "click" : "mousedown"; /* Attach the event to all clicks in the document after page has loaded */ _w.addEventListener( "load", function () { document.body.addEventListener(_gaLtEvt, _gaLt, !1); }, !1 ); </script><!-- End Google Analytics -->
+
+
+<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/20503178.js"></script>
+<!-- End of HubSpot Embed Code -->
+
+</body>
+<!-- SR -->
+</html>
+
+
