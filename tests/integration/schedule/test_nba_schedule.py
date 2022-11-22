@@ -9,41 +9,20 @@ from sportsipy.constants import AWAY, WIN
 from sportsipy.nba.boxscore import Boxscore
 from sportsipy.nba.constants import SCHEDULE_URL
 from sportsipy.nba.schedule import Schedule
+from ..utils import read_file
 
 
 MONTH = 1
-YEAR = 2017
+YEAR = 2022
 
-NUM_GAMES_IN_SCHEDULE = 99
-
-
-def read_file(filename):
-    filepath = os.path.join(os.path.dirname(__file__), 'nba', filename)
-    return open('%s' % filepath, 'r', encoding='utf8').read()
+NUM_GAMES_IN_SCHEDULE = 87
 
 
 def mock_pyquery(url):
-    class MockPQ:
-        def __init__(self, html_contents, status_code=200):
-            self.status_code = status_code
-            self.html_contents = html_contents
-            self.text = html_contents
-            self.url = url
-            self.reason = 'Invalid'
-            self.headers = {}
-
-        def __call__(self, div):
-            if 'playoff' in div:
-                return read_file('playoff.html')
-            return read_file('table.html')
-
-    schedule = read_file('%s_games.html' % YEAR)
-    if '2021' in url:
-        return MockPQ(schedule, status_code=404)
-    if '2020' in url:
-        return MockPQ(schedule)
+    if '2022' in url:
+        return read_file('%s_games.html' % YEAR, 'nba', 'schedule')
     else:
-        return MockPQ(schedule)
+        return None
 
 
 def mock_request(url):
@@ -66,24 +45,24 @@ class MockDateTime:
 
 
 class TestNBASchedule:
-    @mock.patch('requests.get', side_effect=mock_pyquery)
+    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
     def setup_method(self, *args, **kwargs):
         self.results = {
+            'boxscore_index': '202110220DEN',
+            'date': 'Fri, Oct 22, 2021',
+            'datetime': datetime(2021, 10, 22, 0, 0),
             'game': 2,
-            'boxscore_index': '201610280NOP',
-            'date': 'Fri, Oct 28, 2016',
-            'time': '9:30p',
-            'datetime': datetime(2016, 10, 28),
-            'location': AWAY,
-            'opponent_abbr': 'NOP',
-            'opponent_name': 'New Orleans Pelicans',
-            'result': WIN,
+            'location': 'Home',
+            'losses': 0,
+            'opponent_abbr': 'SAS',
+            'opponent_name': 'San Antonio Spurs',
             'playoffs': False,
-            'points_scored': 122,
-            'points_allowed': 114,
-            'wins': 1,
-            'losses': 1,
-            'streak': 'W 1'
+            'points_allowed': 96,
+            'points_scored': 102,
+            'result': 'Win',
+            'streak': 'W 2',
+            'time': '9:00p',
+            'wins': 2
         }
         flexmock(Boxscore) \
             .should_receive('_parse_game_data') \
@@ -95,7 +74,7 @@ class TestNBASchedule:
             .should_receive('_todays_date') \
             .and_return(MockDateTime(YEAR, MONTH))
 
-        self.schedule = Schedule('GSW')
+        self.schedule = Schedule('DEN')
 
     def test_nba_schedule_returns_correct_number_of_games(self):
         assert len(self.schedule) == NUM_GAMES_IN_SCHEDULE
@@ -107,7 +86,7 @@ class TestNBASchedule:
             assert getattr(match_two, attribute) == value
 
     def test_nba_schedule_returns_requested_match_from_date(self):
-        match_two = self.schedule(datetime(2016, 10, 28))
+        match_two = self.schedule(datetime(2021, 10, 22))
 
         for attribute, value in self.results.items():
             assert getattr(match_two, attribute) == value
@@ -152,7 +131,8 @@ class TestNBASchedule:
         with pytest.raises(ValueError):
             self.schedule(datetime.now())
 
-    def test_empty_page_return_no_games(self):
+    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    def test_empty_page_return_no_games(self, *args, **kwargs):
         flexmock(utils) \
             .should_receive('_no_data_found') \
             .once()
@@ -160,140 +140,129 @@ class TestNBASchedule:
             .should_receive('_get_stats_table') \
             .and_return(None)
 
-        schedule = Schedule('GSW')
+        schedule = Schedule('DEN')
 
         assert len(schedule) == 0
 
     def test_game_string_representation(self):
         game = self.schedule[0]
 
-        assert game.__repr__() == 'Tue, Oct 25, 2016 - SAS'
+        assert game.__repr__() == 'Wed, Oct 20, 2021 - PHO'
 
     def test_schedule_string_representation(self):
-        expected = """Tue, Oct 25, 2016 - SAS
-Fri, Oct 28, 2016 - NOP
-Sun, Oct 30, 2016 - PHO
-Tue, Nov 1, 2016 - POR
-Thu, Nov 3, 2016 - OKC
-Fri, Nov 4, 2016 - LAL
-Mon, Nov 7, 2016 - NOP
-Wed, Nov 9, 2016 - DAL
-Thu, Nov 10, 2016 - DEN
-Sun, Nov 13, 2016 - PHO
-Wed, Nov 16, 2016 - TOR
-Fri, Nov 18, 2016 - BOS
-Sat, Nov 19, 2016 - MIL
-Mon, Nov 21, 2016 - IND
-Wed, Nov 23, 2016 - LAL
-Fri, Nov 25, 2016 - LAL
-Sat, Nov 26, 2016 - MIN
-Mon, Nov 28, 2016 - ATL
-Thu, Dec 1, 2016 - HOU
-Sat, Dec 3, 2016 - PHO
-Mon, Dec 5, 2016 - IND
-Wed, Dec 7, 2016 - LAC
-Thu, Dec 8, 2016 - UTA
-Sat, Dec 10, 2016 - MEM
-Sun, Dec 11, 2016 - MIN
-Tue, Dec 13, 2016 - NOP
-Thu, Dec 15, 2016 - NYK
-Sat, Dec 17, 2016 - POR
-Tue, Dec 20, 2016 - UTA
-Thu, Dec 22, 2016 - BRK
-Fri, Dec 23, 2016 - DET
-Sun, Dec 25, 2016 - CLE
-Wed, Dec 28, 2016 - TOR
-Fri, Dec 30, 2016 - DAL
-Mon, Jan 2, 2017 - DEN
-Wed, Jan 4, 2017 - POR
-Fri, Jan 6, 2017 - MEM
-Sun, Jan 8, 2017 - SAC
-Tue, Jan 10, 2017 - MIA
-Thu, Jan 12, 2017 - DET
-Mon, Jan 16, 2017 - CLE
-Wed, Jan 18, 2017 - OKC
-Fri, Jan 20, 2017 - HOU
-Sun, Jan 22, 2017 - ORL
-Mon, Jan 23, 2017 - MIA
-Wed, Jan 25, 2017 - CHO
-Sat, Jan 28, 2017 - LAC
-Sun, Jan 29, 2017 - POR
-Wed, Feb 1, 2017 - CHO
-Thu, Feb 2, 2017 - LAC
-Sat, Feb 4, 2017 - SAC
-Wed, Feb 8, 2017 - CHI
-Fri, Feb 10, 2017 - MEM
-Sat, Feb 11, 2017 - OKC
-Mon, Feb 13, 2017 - DEN
-Wed, Feb 15, 2017 - SAC
-Thu, Feb 23, 2017 - LAC
-Sat, Feb 25, 2017 - BRK
-Mon, Feb 27, 2017 - PHI
-Tue, Feb 28, 2017 - WAS
-Thu, Mar 2, 2017 - CHI
-Sun, Mar 5, 2017 - NYK
-Mon, Mar 6, 2017 - ATL
-Wed, Mar 8, 2017 - BOS
-Fri, Mar 10, 2017 - MIN
-Sat, Mar 11, 2017 - SAS
-Tue, Mar 14, 2017 - PHI
-Thu, Mar 16, 2017 - ORL
-Sat, Mar 18, 2017 - MIL
-Mon, Mar 20, 2017 - OKC
-Tue, Mar 21, 2017 - DAL
-Fri, Mar 24, 2017 - SAC
-Sun, Mar 26, 2017 - MEM
-Tue, Mar 28, 2017 - HOU
-Wed, Mar 29, 2017 - SAS
-Fri, Mar 31, 2017 - HOU
-Sun, Apr 2, 2017 - WAS
-Tue, Apr 4, 2017 - MIN
-Wed, Apr 5, 2017 - PHO
-Sat, Apr 8, 2017 - NOP
-Mon, Apr 10, 2017 - UTA
-Wed, Apr 12, 2017 - LAL
-Sun, Apr 16, 2017 - POR
-Wed, Apr 19, 2017 - POR
-Sat, Apr 22, 2017 - POR
-Mon, Apr 24, 2017 - POR
-Tue, May 2, 2017 - UTA
-Thu, May 4, 2017 - UTA
-Sat, May 6, 2017 - UTA
-Mon, May 8, 2017 - UTA
-Sun, May 14, 2017 - SAS
-Tue, May 16, 2017 - SAS
-Sat, May 20, 2017 - SAS
-Mon, May 22, 2017 - SAS
-Thu, Jun 1, 2017 - CLE
-Sun, Jun 4, 2017 - CLE
-Wed, Jun 7, 2017 - CLE
-Fri, Jun 9, 2017 - CLE
-Mon, Jun 12, 2017 - CLE"""
+        expected = """Wed, Oct 20, 2021 - PHO
+Fri, Oct 22, 2021 - SAS
+Mon, Oct 25, 2021 - CLE
+Tue, Oct 26, 2021 - UTA
+Fri, Oct 29, 2021 - DAL
+Sat, Oct 30, 2021 - MIN
+Mon, Nov 1, 2021 - MEM
+Wed, Nov 3, 2021 - MEM
+Sat, Nov 6, 2021 - HOU
+Mon, Nov 8, 2021 - MIA
+Wed, Nov 10, 2021 - IND
+Fri, Nov 12, 2021 - ATL
+Sun, Nov 14, 2021 - POR
+Mon, Nov 15, 2021 - DAL
+Thu, Nov 18, 2021 - PHI
+Fri, Nov 19, 2021 - CHI
+Sun, Nov 21, 2021 - PHO
+Tue, Nov 23, 2021 - POR
+Fri, Nov 26, 2021 - MIL
+Mon, Nov 29, 2021 - MIA
+Wed, Dec 1, 2021 - ORL
+Sat, Dec 4, 2021 - NYK
+Mon, Dec 6, 2021 - CHI
+Wed, Dec 8, 2021 - NOP
+Thu, Dec 9, 2021 - SAS
+Sat, Dec 11, 2021 - SAS
+Mon, Dec 13, 2021 - WAS
+Wed, Dec 15, 2021 - MIN
+Fri, Dec 17, 2021 - ATL
+Wed, Dec 22, 2021 - OKC
+Thu, Dec 23, 2021 - CHO
+Sun, Dec 26, 2021 - LAC
+Tue, Dec 28, 2021 - GSW
+Sat, Jan 1, 2022 - HOU
+Mon, Jan 3, 2022 - DAL
+Wed, Jan 5, 2022 - UTA
+Fri, Jan 7, 2022 - SAC
+Sun, Jan 9, 2022 - OKC
+Tue, Jan 11, 2022 - LAC
+Thu, Jan 13, 2022 - POR
+Sat, Jan 15, 2022 - LAL
+Sun, Jan 16, 2022 - UTA
+Wed, Jan 19, 2022 - LAC
+Fri, Jan 21, 2022 - MEM
+Sun, Jan 23, 2022 - DET
+Tue, Jan 25, 2022 - DET
+Wed, Jan 26, 2022 - BRK
+Fri, Jan 28, 2022 - NOP
+Sun, Jan 30, 2022 - MIL
+Tue, Feb 1, 2022 - MIN
+Wed, Feb 2, 2022 - UTA
+Fri, Feb 4, 2022 - NOP
+Sun, Feb 6, 2022 - BRK
+Tue, Feb 8, 2022 - NYK
+Fri, Feb 11, 2022 - BOS
+Sat, Feb 12, 2022 - TOR
+Mon, Feb 14, 2022 - ORL
+Wed, Feb 16, 2022 - GSW
+Thu, Feb 24, 2022 - SAC
+Sat, Feb 26, 2022 - SAC
+Sun, Feb 27, 2022 - POR
+Wed, Mar 2, 2022 - OKC
+Fri, Mar 4, 2022 - HOU
+Sun, Mar 6, 2022 - NOP
+Mon, Mar 7, 2022 - GSW
+Wed, Mar 9, 2022 - SAC
+Thu, Mar 10, 2022 - GSW
+Sat, Mar 12, 2022 - TOR
+Mon, Mar 14, 2022 - PHI
+Wed, Mar 16, 2022 - WAS
+Fri, Mar 18, 2022 - CLE
+Sun, Mar 20, 2022 - BOS
+Tue, Mar 22, 2022 - LAC
+Thu, Mar 24, 2022 - PHO
+Sat, Mar 26, 2022 - OKC
+Mon, Mar 28, 2022 - CHO
+Wed, Mar 30, 2022 - IND
+Fri, Apr 1, 2022 - MIN
+Sun, Apr 3, 2022 - LAL
+Tue, Apr 5, 2022 - SAS
+Thu, Apr 7, 2022 - MEM
+Sun, Apr 10, 2022 - LAL
+Sat, Apr 16, 2022 - GSW
+Mon, Apr 18, 2022 - GSW
+Thu, Apr 21, 2022 - GSW
+Sun, Apr 24, 2022 - GSW
+Wed, Apr 27, 2022 - GSW"""
 
         assert self.schedule.__repr__() == expected
 
 
 class TestNBAScheduleInvalidError:
-    @mock.patch('requests.get', side_effect=mock_pyquery)
+    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
     @mock.patch('requests.head', side_effect=mock_request)
     def test_invalid_default_year_reverts_to_previous_year(self,
                                                            *args,
                                                            **kwargs):
         results = {
+            'boxscore_index': '202110220DEN',
+            'date': 'Fri, Oct 22, 2021',
+            'datetime': datetime(2021, 10, 22, 0, 0),
             'game': 2,
-            'boxscore_index': '201610280NOP',
-            'date': 'Fri, Oct 28, 2016',
-            'time': '9:30p',
-            'datetime': datetime(2016, 10, 28),
-            'location': AWAY,
-            'opponent_abbr': 'NOP',
-            'opponent_name': 'New Orleans Pelicans',
-            'result': WIN,
-            'points_scored': 122,
-            'points_allowed': 114,
-            'wins': 1,
-            'losses': 1,
-            'streak': 'W 1'
+            'location': 'Home',
+            'losses': 0,
+            'opponent_abbr': 'SAS',
+            'opponent_name': 'San Antonio Spurs',
+            'playoffs': False,
+            'points_allowed': 96,
+            'points_scored': 102,
+            'result': 'Win',
+            'streak': 'W 2',
+            'time': '9:00p',
+            'wins': 2
         }
         flexmock(Boxscore) \
             .should_receive('_parse_game_data') \
@@ -303,22 +272,9 @@ class TestNBAScheduleInvalidError:
             .and_return(pd.DataFrame([{'key': 'value'}]))
         flexmock(utils) \
             .should_receive('_find_year_for_season') \
-            .and_return(2018)
+            .and_return(YEAR)
 
-        schedule = Schedule('GSW')
+        schedule = Schedule('DEN')
 
         for attribute, value in results.items():
             assert getattr(schedule[1], attribute) == value
-
-    @mock.patch('requests.get', side_effect=mock_pyquery)
-    @mock.patch('requests.head', side_effect=mock_request)
-    def test_invalid_2020_default_reverts_to_previous_year(self,
-                                                           *args,
-                                                           **kwargs):
-        flexmock(utils) \
-            .should_receive('_find_year_for_season') \
-            .and_return(2021)
-
-        schedule = Schedule('2017')
-
-        assert 'Tue, Oct 25, 2016' in str(schedule)
