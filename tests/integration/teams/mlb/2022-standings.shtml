@@ -1,0 +1,1962 @@
+
+<!DOCTYPE html>
+<html data-version="klecko-" data-root="/home/br/build" lang="en" class="no-js" >
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0" />
+    <link rel="dns-prefetch" href="https://cdn.ssref.net/req/202211181" />
+    <!-- Quantcast Choice. Consent Manager Tag v2.0 (for TCF 2.0) -->
+<script type="text/javascript" async=true>
+    (function() {
+	var host = window.location.hostname;
+	var element = document.createElement('script');
+	var firstScript = document.getElementsByTagName('script')[0];
+	var url = 'https://cmp.quantcast.com'
+	    .concat('/choice/', 'XwNYEpNeFfhfr', '/', host, 
+		    '/choice.js?tag_version=V2');
+	var uspTries = 0;
+	var uspTriesLimit = 3;
+	element.async = true;
+	element.type = 'text/javascript';
+	element.src = url;
+	
+	firstScript.parentNode.insertBefore(element, firstScript);
+	
+	function makeStub() {
+	    var TCF_LOCATOR_NAME = '__tcfapiLocator';
+	    var queue = [];
+	    var win = window;
+	    var cmpFrame;
+	    
+	    function addFrame() {
+		var doc = win.document;
+		var otherCMP = !!(win.frames[TCF_LOCATOR_NAME]);
+		
+		if (!otherCMP) {
+		    if (doc.body) {
+			var iframe = doc.createElement('iframe');
+			
+			iframe.style.cssText = 'display:none';
+			iframe.name = TCF_LOCATOR_NAME;
+			doc.body.appendChild(iframe);
+		    } else {
+			setTimeout(addFrame, 5);
+		    }
+		}
+		return !otherCMP;
+	    }
+	    
+	    function tcfAPIHandler() {
+		var gdprApplies;
+		var args = arguments;
+		
+		if (!args.length) {
+		    return queue;
+		} else if (args[0] === 'setGdprApplies') {
+		    if (
+			args.length > 3 &&
+			    args[2] === 2 &&
+			    typeof args[3] === 'boolean'
+		    ) {
+			gdprApplies = args[3];
+			if (typeof args[2] === 'function') {
+			    args[2]('set', true);
+			}
+		    }
+		} else if (args[0] === 'ping') {
+		    var retr = {
+			gdprApplies: gdprApplies,
+			cmpLoaded: false,
+			cmpStatus: 'stub'
+		    };
+		    
+		    if (typeof args[2] === 'function') {
+			args[2](retr);
+		    }
+		} else {
+		    if(args[0] === 'init' && typeof args[3] === 'object') {
+			args[3] = Object.assign(args[3], { tag_version: 'V2' });
+		    }
+		    queue.push(args);
+		}
+	    }
+	    
+	    function postMessageEventHandler(event) {
+		var msgIsString = typeof event.data === 'string';
+		var json = {};
+		
+		try {
+		    if (msgIsString) {
+			json = JSON.parse(event.data);
+		    } else {
+			json = event.data;
+		    }
+		} catch (ignore) {}
+		
+		var payload = json.__tcfapiCall;
+		
+		if (payload) {
+		    window.__tcfapi(
+			payload.command,
+			payload.version,
+			function(retValue, success) {
+			    var returnMsg = {
+				__tcfapiReturn: {
+				    returnValue: retValue,
+				    success: success,
+				    callId: payload.callId
+				}
+			    };
+			    if (msgIsString) {
+				returnMsg = JSON.stringify(returnMsg);
+			    }
+			    if (event && event.source && event.source.postMessage) {
+				event.source.postMessage(returnMsg, '*');
+			    }
+			},
+			payload.parameter
+		    );
+		}
+	    }
+	    
+	    while (win) {
+		try {
+		    if (win.frames[TCF_LOCATOR_NAME]) {
+			cmpFrame = win;
+			break;
+		    }
+		} catch (ignore) {}
+		
+		if (win === window.top) {
+		    break;
+		}
+		win = win.parent;
+	    }
+	    if (!cmpFrame) {
+		addFrame();
+		win.__tcfapi = tcfAPIHandler;
+		win.addEventListener('message', postMessageEventHandler, false);
+	    }
+	};
+	
+	makeStub();
+	
+	var uspStubFunction = function() {
+	    var arg = arguments;
+	    if (typeof window.__uspapi !== uspStubFunction) {
+		setTimeout(function() {
+		    if (typeof window.__uspapi !== 'undefined') {
+			window.__uspapi.apply(window.__uspapi, arg);
+		    }
+		}, 500);
+	    }
+	};
+	
+	var checkIfUspIsReady = function() {
+	    uspTries++;
+	    if (window.__uspapi === uspStubFunction && uspTries < uspTriesLimit) {
+		console.warn('USP is not accessible');
+	    } else {
+		clearInterval(uspInterval);
+	    }
+	};
+	
+	if (typeof window.__uspapi === 'undefined') {
+	    window.__uspapi = uspStubFunction;
+	    var uspInterval = setInterval(checkIfUspIsReady, 6000);
+	}
+    })();
+</script>
+<!-- End Quantcast Choice. Consent Manager Tag v2.0 (for TCF 2.0) -->
+
+
+    <title>2022 Major League Baseball  Standings &amp; Expanded Standings  | Baseball-Reference.com</title>
+
+    
+    
+    <meta name="Description" content="Check out the Major League Baseball Detailed Standings including East, Central and West Division Stats on Baseball-Reference.com">
+    <link rel="canonical" href="https://www.baseball-reference.com/leagues/MLB-standings.shtml" />
+
+
+<!-- include:start  ="/inc/klecko_header_full_br.html_f" -->
+<!-- yes:cookie regular load the cached css -->
+<script>function gup(n) {n = n.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]'); var r = new RegExp('[\\?&]'+n+'=([^&#]*)'); var re = r.exec(location.search);   return re === null?'':decodeURIComponent(re[1].replace(/\+/g,' '));}; document.srdev = gup('srdev')</script>
+<link rel="preconnect" href="https://cdn.ssref.net" crossorigin>
+<link rel="preconnect" href="https://www.google-analytics.com"  crossorigin>
+<link rel="preconnect" href="https://www.googletagservices.com" crossorigin>
+<link rel="preload"    href="https://cdn.ssref.net/req/202211181/js/br/sr-min.js" as="script" crossorigin>
+<link rel="preload"    href="https://cdn.ssref.net/req/202211181/icons/sr_icons-min.svg?br" as="fetch" crossorigin>
+<link rel="preload"    href="https://www.baseball-reference.com/short/inc/main_nav_menu.json" as="fetch" crossorigin>
+<link rel="preload"    href="https://cdn.ssref.net/req/201604190/images/chosen-sprite.png" as="image" crossorigin>
+<link rel="preload"    href="https://cdn.ssref.net/req/202211181/css/br/sr-min.css" as="style"    crossorigin>
+
+<!-- CSS start -->
+<link rel="stylesheet" href="https://cdn.ssref.net/req/202211181/css/br/sr-min.css" type="text/css"
+      onload="if (document.srdev) { this.href = 'https://cdn.ssref.net/nocdn/dev/'.concat(document.srdev.substr(0,2),'/css/br/sr.css'); }" />
+<!-- CSS END -->
+
+<!-- JS START -->
+<script class="allowed">var sr_is_production = true;
+function vjs_getUrlParameter(e){e=e.replace(/[\[]/,"\\[").replace(/[\]]/,"\\]");e=new RegExp("[\\?&]"+e+"=([^&#]*)").exec(location.search);return null===e?"":decodeURIComponent(e[1].replace(/\+/g," "))}document.lang="","/es/"===window.location.pathname.substr(0,4)?document.lang="es":"/pt/"===window.location.pathname.substr(0,4)?document.lang="pt":"/fr/"===window.location.pathname.substr(0,4)?document.lang="fr":"/it/"===window.location.pathname.substr(0,4)?document.lang="it":"/de/"===window.location.pathname.substr(0,4)?document.lang="de":(window.location.pathname.substr(0,4),document.lang="en"),vjs_getUrlParameter("lang")&&(document.lang=vjs_getUrlParameter("lang")),document.srdev=null,vjs_getUrlParameter("srdev")&&(document.srdev=vjs_getUrlParameter("srdev"));var el,log_performance=!0,is_new_jscss_version=!1,sr_detect_operaMini=-1<navigator.userAgent.indexOf("Opera Mini"),sr_detect_firefox=(sr_detect_operaMini&&((el=document.querySelector("html")).className=el.className.concat(" operamini")),-1<navigator.userAgent.indexOf("Firefox")),sr_detect_firefoxMobile=(sr_detect_firefox&&((el=document.querySelector("html")).className=el.className.concat(" firefox")),-1<navigator.userAgent.indexOf("Firefox")&&(-1<navigator.userAgent.indexOf("Mobile")||-1<navigator.userAgent.indexOf("Tablet"))),sr_detect_ie=(sr_detect_firefoxMobile&&((el=document.querySelector("html")).className=el.className.concat(" firefox-mobile")),function(){var e=window.navigator.userAgent;if(0<e.indexOf("Trident/7.0"))return 11;if(0<e.indexOf("Trident/6.0"))return 10;if(0<e.indexOf("Trident/5.0"))return 9;for(var t=3,n=document.createElement("div"),r=n.getElementsByTagName("i");n.innerHTML="\x3c!--[if gt IE "+ ++t+"]><i></i><![endif]--\x3e",r[0];);return 4<t&&t}()),sr_detect_edge=!sr_detect_ie&&!!window.StyleMedia,sr_detect_safari=/Safari/.test(navigator.userAgent)&&/Apple Computer/.test(navigator.vendor),className="no-js",patt=((el=document.querySelector("html")).classList?el.classList.remove(className):el.className=el.className.replace(new RegExp("(^|\\b)"+className.split(" ").join("|")+"(\\b|$)","gi")," "),el.className=el.className.concat(" js"),!function(a,d,S){function E(e,t){return typeof e===t}function T(e){return"function"!=typeof d.createElement?d.createElement(e):m?d.createElementNS.call(d,"http://www.w3.org/2000/svg",e):d.createElement.apply(d,arguments)}function R(e,t,n,r){var o,i,a,s,l="modernizr",c=T("div");(s=d.body)||((s=T(m?"svg":"body")).fake=!0);if(parseInt(n,10))for(;n--;)(i=T("div")).id=r?r[n]:l+(n+1),c.appendChild(i);return(o=T("style")).type="text/css",o.id="s"+l,(s.fake?s:c).appendChild(o),s.appendChild(c),o.styleSheet?o.styleSheet.cssText=e:o.appendChild(d.createTextNode(e)),c.id=l,s.fake&&(s.style.background="",s.style.overflow="hidden",a=u.style.overflow,u.style.overflow="hidden",u.appendChild(s)),o=t(c,e),s.fake?(s.parentNode.removeChild(s),u.style.overflow=a,u.offsetHeight):c.parentNode.removeChild(c),!!o}function U(e){return e.replace(/([a-z])-([a-z])/g,function(e,t,n){return t+n.toUpperCase()}).replace(/^-/,"")}function D(e){return e.replace(/([A-Z])/g,function(e,t){return"-"+t.toLowerCase()}).replace(/^ms-/,"-ms-")}function q(e,t){var n=e.length;if("CSS"in a&&"supports"in a.CSS){for(;n--;)if(a.CSS.supports(D(e[n]),t))return!0;return!1}if("CSSSupportsRule"in a){for(var r=[];n--;)r.push("("+D(e[n])+":"+t+")");return R("@supports ("+(r=r.join(" or "))+") { #modernizr { position: absolute; } }",function(e){return"absolute"==(e=e,t=null,n="position","getComputedStyle"in a?(r=getComputedStyle.call(a,e,t),o=a.console,null!==r?n&&(r=r.getPropertyValue(n)):o&&o[o.error?"error":"log"].call(o,"getComputedStyle returning null, its possible modernizr test results are inaccurate")):r=!t&&e.currentStyle&&e.currentStyle[n],r);var t,n,r,o})}return S}function r(e,t,n,r,o){var i,a,s=e.charAt(0).toUpperCase()+e.slice(1),l=(e+" "+re.join(s+" ")+s).split(" ");if(E(t,"string")||void 0===t){var c=l,d=t,u=r,m=o;function f(){p&&(delete L.style,delete L.modElem)}if(m=void 0!==m&&m,void 0!==u){r=q(c,u);if(void 0!==r)return r}for(var p,h,g,v,_,y=["modernizr","tspan","samp"];!L.style&&y.length;)p=!0,L.modElem=T(y.shift()),L.style=L.modElem.style;for(g=c.length,h=0;h<g;h++)if(v=c[h],_=L.style[v],~(""+v).indexOf("-")&&(v=U(v)),L.style[v]!==S){if(m||void 0===u)return f(),"pfx"!=d||v;try{L.style[v]=u}catch(e){}if(L.style[v]!=_)return f(),"pfx"!=d||v}return f(),!1}var w=l=(e+" "+P.join(s+" ")+s).split(" "),b=t,x=n;for(a in w)if(w[a]in b)if(!1===x)return w[a];else{i=b[w[a]];if(E(i,"function")){var M=i;var z=x||b;return function(){return M.apply(z,arguments)};return}else return i}return!1}function F(e,t,n){return r(e,S,S,t,n)}var $=[],o=[],e={_version:"3.6.0",_config:{classPrefix:"",enableClasses:!0,enableJSClass:!0,usePrefixes:!0},_q:[],on:function(e,t){var n=this;setTimeout(function(){t(n[e])},0)},addTest:function(e,t,n){o.push({name:e,fn:t,options:n})},addAsyncTest:function(e){o.push({name:null,fn:e})}},n=function(){},s=(n.prototype=e,(n=new n).addTest("cookies",function(){try{d.cookie="cookietest=1";var e=-1!=d.cookie.indexOf("cookietest=");return d.cookie="cookietest=1; expires=Thu, 01-Jan-1970 00:00:01 GMT",e}catch(e){return!1}}),n.addTest("localstorage",function(){var e="modernizr";try{return localStorage.setItem(e,e),localStorage.removeItem(e),!0}catch(e){return!1}}),n.addTest("sessionstorage",function(){var e="modernizr";try{return sessionStorage.setItem(e,e),sessionStorage.removeItem(e),!0}catch(e){return!1}}),n.addTest("cors","XMLHttpRequest"in a&&"withCredentials"in new XMLHttpRequest),n.addTest("history",function(){var e=navigator.userAgent;return(-1===e.indexOf("Android 2.")&&-1===e.indexOf("Android 4.0")||-1===e.indexOf("Mobile Safari")||-1!==e.indexOf("Chrome")||-1!==e.indexOf("Windows Phone")||"file:"===location.protocol)&&(a.history&&"pushState"in a.history)}),e._config.usePrefixes?" -webkit- -moz- -o- -ms- ".split(" "):["",""]),u=(e._prefixes=s,d.documentElement),m="svg"===u.nodeName.toLowerCase();if(!m){var t=void 0!==a?a:this,l=d;function I(e,t){var n=e.createElement("p"),e=e.getElementsByTagName("head")[0]||e.documentElement;return n.innerHTML="x<style>"+t+"</style>",e.insertBefore(n.lastChild,e.firstChild)}function f(){var e=y.elements;return"string"==typeof e?e.split(" "):e}function p(e){var t=X[e[G]];return t||(t={},v++,e[G]=v,X[v]=t),t}function W(e,t,n){return t=t||l,h?t.createElement(e):!(t=(n=n||p(t)).cache[e]?n.cache[e].cloneNode():V.test(e)?(n.cache[e]=n.createElem(e)).cloneNode():n.createElem(e)).canHaveChildren||J.test(e)||t.tagUrn?t:n.frag.appendChild(t)}function i(e){var t,n,r=p(e=e||l);return!y.shivCSS||c||r.hasCSS||(r.hasCSS=!!I(e,"article,aside,dialog,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}mark{background:#FF0;color:#000}template{display:none}")),h||(t=e,(n=r).cache||(n.cache={},n.createElem=t.createElement,n.createFrag=t.createDocumentFragment,n.frag=n.createFrag()),t.createElement=function(e){return y.shivMethods?W(e,t,n):n.createElem(e)},t.createDocumentFragment=Function("h,f","return function(){var n=f.cloneNode(),c=n.createElement;h.shivMethods&&("+f().join().replace(/[\w\-:]+/g,function(e){return n.createElem(e),n.frag.createElement(e),'c("'+e+'")'})+");return n}")(y,n.frag)),e}function H(e){for(var t,n=e.getElementsByTagName("*"),r=n.length,o=RegExp("^(?:"+f().join("|")+")$","i"),i=[];r--;)t=n[r],o.test(t.nodeName)&&i.push(t.applyElement(function(e){for(var t,n=e.attributes,r=n.length,o=e.ownerDocument.createElement(w+":"+e.nodeName);r--;)(t=n[r]).specified&&o.setAttribute(t.nodeName,t.nodeValue);return o.style.cssText=e.style.cssText,o}(t)));return i}function B(s){function l(){clearTimeout(n._removeSheetTimer),c&&c.removeNode(!0),c=null}var c,d,n=p(s),e=s.namespaces,t=s.parentWindow;return!K||s.printShived||(void 0===e[w]&&e.add(w),t.attachEvent("onbeforeprint",function(){l();for(var e,t,n,r=s.styleSheets,o=[],i=r.length,a=Array(i);i--;)a[i]=r[i];for(;n=a.pop();)if(!n.disabled&&Z.test(n.media)){try{t=(e=n.imports).length}catch(e){t=0}for(i=0;i<t;i++)a.push(e[i]);try{o.push(n.cssText)}catch(e){}}o=function(e){for(var t,n=e.split("{"),r=n.length,o=RegExp("(^|[\\s,>+~])("+f().join("|")+")(?=[[\\s,>+~#.:]|$)","gi"),i="$1"+w+"\\:$2";r--;)(t=n[r]=n[r].split("}"))[t.length-1]=t[t.length-1].replace(o,i),n[r]=t.join("}");return n.join("{")}(o.reverse().join("")),d=H(s),c=I(s,o)}),t.attachEvent("onafterprint",function(){for(var e=d,t=e.length;t--;)e[t].removeNode();clearTimeout(n._removeSheetTimer),n._removeSheetTimer=setTimeout(l,500)}),s.printShived=!0),s}var c,h,g=t.html5||{},J=/^<|^(?:button|map|select|textarea|object|iframe|option|optgroup)$/i,V=/^(?:a|b|code|div|fieldset|h1|h2|h3|h4|h5|h6|i|label|li|ol|p|q|span|strong|style|table|tbody|td|th|tr|ul)$/i,G="_html5shiv",v=0,X={};try{var _=l.createElement("a");_.innerHTML="<xyz></xyz>",c="hidden"in _,h=1==_.childNodes.length||(l.createElement("a"),void 0===(O=l.createDocumentFragment()).cloneNode||void 0===O.createDocumentFragment||void 0===O.createElement)}catch(e){h=c=!0}var y={elements:g.elements||"abbr article aside audio bdi canvas data datalist details dialog figcaption figure footer header hgroup main mark meter nav output picture progress section summary template time video",version:"3.7.3",shivCSS:!1!==g.shivCSS,supportsUnknownElements:h,shivMethods:!1!==g.shivMethods,type:"default",shivDocument:i,createElement:W,createDocumentFragment:function(e,t){if(e=e||l,h)return e.createDocumentFragment();for(var n=(t=t||p(e)).frag.cloneNode(),r=0,o=f(),i=o.length;r<i;r++)n.createElement(o[r]);return n},addElements:function(e,t){var n=y.elements;"string"!=typeof n&&(n=n.join(" ")),"string"!=typeof e&&(e=e.join(" ")),y.elements=n+" "+e,i(t)}},Z=(t.html5=y,i(l),/^$|\b(?:all|print)\b/),w="html5shiv",K=!(h||(_=l.documentElement,void 0===l.namespaces||void 0===l.parentWindow||void 0===_.applyElement||void 0===_.removeNode||void 0===t.attachEvent));y.type+=" print",(y.shivPrint=B)(l),"object"==typeof module&&module.exports&&(module.exports=y)}n.addTest("csspositionsticky",function(){var e="position:",t=T("a").style;return t.cssText=e+s.join("sticky;"+e).slice(0,-e.length),-1!==t.position.indexOf("sticky")});function Q(e){var t,n=s.length,r=a.CSSRule;if(void 0===r)return S;if(!e)return!1;if((t=(e=e.replace(/^@/,"")).replace(/-/g,"_").toUpperCase()+"_RULE")in r)return"@"+e;for(var o=0;o<n;o++){var i=s[o];if(i.toUpperCase()+"_"+t in r)return"@-"+i.toLowerCase()+"-"+e}return!1}Y=!("onblur"in d.documentElement);var Y,b,x,M,z,C,N,j,ee,k,A,te=function(e,t){var n;return!!e&&(!(n=(e="on"+e)in(t=t&&"string"!=typeof t?t:T(t||"div")))&&Y&&((t=t.setAttribute?t:T("div")).setAttribute(e,""),n="function"==typeof t[e],t[e]!==S&&(t[e]=S),t.removeAttribute(e)),n)},ne=(e.hasEvent=te,e.testStyles=R),O=(n.addTest("touchevents",function(){var t,e;return"ontouchstart"in a||a.DocumentTouch&&d instanceof DocumentTouch?t=!0:(e=["@media (",s.join("touch-enabled),("),"heartz",")","{#modernizr{top:9px;position:absolute}}"].join(""),ne(e,function(e){t=9===e.offsetTop})),t}),"Moz O ms Webkit"),P=e._config.usePrefixes?O.toLowerCase().split(" "):[],re=(e._domPrefixes=P,n.addTest("pointerevents",function(){for(var e=!1,t=P.length,e=n.hasEvent("pointerdown");t--&&!e;)te(P[t]+"pointerdown")&&(e=!0);return e}),e._config.usePrefixes?O.split(" "):[]),oe=(e._cssomPrefixes=re,e.atRule=Q,{elem:T("modernizr")}),L=(n._q.push(function(){delete oe.elem}),{style:oe.elem.style}),g=(n._q.unshift(function(){delete L.style}),e.testAllProps=r,e.prefixed=function(e,t,n){return 0===e.indexOf("@")?Q(e):(-1!=e.indexOf("-")&&(e=U(e)),t?r(e,t,n):r(e,"pfx"))});for(j in n.addTest("matchmedia",!!g("matchMedia",a)),e.testAllProps=F,n.addTest("flexwrap",F("flexWrap","wrap",!0)),o)if(o.hasOwnProperty(j)){if(b=[],(x=o[j]).name&&(b.push(x.name.toLowerCase()),x.options&&x.options.aliases&&x.options.aliases.length))for(M=0;M<x.options.aliases.length;M++)b.push(x.options.aliases[M].toLowerCase());for(z=E(x.fn,"function")?x.fn():x.fn,C=0;C<b.length;C++)1===(N=b[C].split(".")).length?n[N[0]]=z:(!n[N[0]]||n[N[0]]instanceof Boolean||(n[N[0]]=new Boolean(n[N[0]])),n[N[0]][N[1]]=z),$.push((z?"":"no-")+N.join("-"))}t=$,k=u.className,A=n._config.classPrefix||"",m&&(k=k.baseVal),n._config.enableJSClass&&(ee=new RegExp("(^|\\s)"+A+"no-js(\\s|$)"),k=k.replace(ee,"$1"+A+"js$2")),n._config.enableClasses&&(k+=" "+A+t.join(" "+A),m?u.className.baseVal=k:u.className=k),delete e.addTest,delete e.addAsyncTest;for(var ie=0;ie<n._q.length;ie++)n._q[ie]();a.Modernizr=n}(window,document),Modernizr.viewport_width=Math.max(document.documentElement.clientWidth,window.innerWidth||0),Modernizr.viewport_height=Math.max(document.documentElement.clientHeight,window.innerHeight||0),Modernizr.narrow=Modernizr.viewport_width<=704,Modernizr.constrained=Modernizr.viewport_width<=1200,Modernizr.site_menu=Modernizr.viewport_width<=1020?"button":"nav_bar",Modernizr.touch=Modernizr.touchevents||Modernizr.pointerevents&&(0<navigator.MaxTouchPoints||0<navigator.msMaxTouchPoints),Modernizr.phone=Modernizr.narrow&&Modernizr.touch,Modernizr.tablet=Modernizr.viewport_width<1075&&Modernizr.touch,Modernizr.desktop=!Modernizr.constrained&&!Modernizr.touch,Modernizr.laptop=!(Modernizr.desktop||Modernizr.tablet||Modernizr.phone),new RegExp("hideallads")),sr_html=(Modernizr.adfree=patt.test(window.location.href),document.querySelector("html")),cn=sr_html.className,sr_host_parts=(Modernizr.phone?sr_html.className=cn.concat(" phone"):Modernizr.tablet?sr_html.className=cn.concat(" tablet"):(Modernizr.desktop||Modernizr.laptop)&&(sr_html.className=cn.concat(" desktop")),window.location.hostname.split(".")),cn=sr_html.className,sr_logger=(Modernizr.is_build=Modernizr.is_live=Modernizr.is_dev=!1,"www"===sr_host_parts[0]||"fbref"===sr_host_parts[0]?(Modernizr.is_live=!0,sr_html.className=cn.concat(" is_live")):sr_host_parts[0].startsWith("b")?(Modernizr.is_build=!0,sr_html.className=cn.concat(" is_build")):(sr_host_parts[0].startsWith("d")||sr_host_parts[0].startsWith("r"))&&(Modernizr.is_dev=!0,sr_html.className=cn.concat(" is_dev")),Modernizr.is_stathead=!1,("stathead"===sr_host_parts[1]&&"srdevel"===sr_host_parts[2]||"stathead"===sr_host_parts[0]||"www"===sr_host_parts[0]&&"stathead"===sr_host_parts[1])&&(cn=sr_html.className,sr_html.className=cn.concat(" is_stathead"),Modernizr.is_stathead=!0),function(){var e=null,t={enableLogger:function(){null!=e&&(window.console.log=e)},disableLogger:function(){e=console.log,window.console.log=function(){}}};return t}()),sr_utilities_js_loader=(!document.srdev&&sr_is_production&&sr_logger.disableLogger(),Modernizr.is_modern=1,Modernizr.lang=document.lang||"",Modernizr.srdev=document.srdev,[]);function vjs_readCookie(e){for(var t=e+"=",n=document.cookie.split(";"),r=0;r<n.length;r++){for(var o=n[r];" "===o.charAt(0);)o=o.substring(1,o.length);if(0===o.indexOf(t))return decodeURIComponent(o.substring(t.length,o.length))}return null}function vjs_createCookie(e,t,n){var r,o="",o=n?((r=new Date).setTime(r.getTime()+24*n*60*60*1e3),"; expires="+r.toGMTString()):"",n=encodeURIComponent(e)+"="+encodeURIComponent(t)+o+"; path=/";document.cookie=n}!function(o){function e(e,t){"use strict";var n=o.document.getElementsByTagName("script")[0],r=o.document.createElement("script");return r.src=e,r.async=!0,n.parentNode.insertBefore(r,n),t&&"function"==typeof t&&(r.onload=t),r}"undefined"!=typeof module?module.exports=e:o.loadJS=e}("undefined"!=typeof global?global:this),String.prototype.vjs_isMatch=function(e){return null!==this.match(e)};var sr_time_begin=new Date,sr_perf_startTime=new Date,sr_perf_log="<strong>Performance:</strong>",sr_perf_lastTime=new Date;function vjs_ready(e){"loading"!=document.readyState?e():document.addEventListener("DOMContentLoaded",e)}
+</script>
+<script>
+var _sr_modern_url = ''.concat(document.srdev?'https://cdn.ssref.net/nocdn/dev/'.concat(document.srdev.substring(0, 2)):"https://cdn.ssref.net/req/202211181",
+                               "/js/br", "/sr",document.srdev?"":"-min",   			       ".js");
+loadJS( _sr_modern_url, function() { vjs_ready(sr_fire_js); });
+</script>
+<!-- JS END -->
+
+
+<!-- include:end  ="/inc/klecko_header_full_br.html_f" -->
+
+
+
+    <meta name="revised" content="22:10:54 20-Nov-2022" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="generated-by"     content="build_leagues_standings.pl" />
+
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="no" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="4d383b" />
+    <meta name="msapplication-navbutton-color" content="4d383b" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="4d383b" />
+    
+
+
+
+    <!-- HeaderSeoSocial -->
+    <meta name="keywords" content="">
+    <meta itemprop="url"           content="https://www.baseball-reference.com">
+    <meta itemprop="name"          content="Baseball Reference">
+    <meta itemprop="alternateName" content="BBref">
+    <meta property="fb:app_id"     content="">
+    <meta property="og:url"          content="https://www.baseball-reference.com/leagues/MLB-standings.shtml">
+    <meta property="og:title"        content="2022 Major League Baseball  Standings &amp; Expanded Standings  | Baseball-Reference.com">
+    <meta property="og:site_name"    content="Baseball-Reference.com">
+    <meta property="og:type"         content="    article" />
+    <meta property="og:description"  content="Check out the Major League Baseball Detailed Standings including East, Central and West Division Stats on Baseball-Reference.com">
+    <meta property="og:image"        content="https://cdn.ssref.net/req/202211181/favicons/br/apple-touch-icon-228x228-precomposed.png">
+    <meta name="twitter:card"         content="summary">
+    <meta name="twitter:site"         content="@baseball_ref">
+    <meta name="twitter:creator"      content="@baseball_ref">
+    <meta property="twitter:image"    content="https://cdn.ssref.net/req/202211181/favicons/br/apple-touch-icon-228x228-precomposed.png">
+    <meta name="twitter:domain"       content="Baseball-Reference.com">
+    <meta name="referrer" content="unsafe-url">
+    <!-- HeaderSeoSocial:END -->
+
+    <!-- tiles, touch, favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="180x180" href="https://cdn.ssref.net/req/202211181/favicons/br/apple-touch-icon-180x180-precomposed.png">
+    <link rel="icon"                         sizes="48x48"   href="https://cdn.ssref.net/req/202211181/favicons/br/favicon-48.png">
+    <link rel="shortcut icon"                sizes="228x228" href="https://cdn.ssref.net/req/202211181/favicons/br/apple-touch-icon-228x228-precomposed.png">
+    <link rel="apple-touch-icon"             sizes="228x228" href="https://cdn.ssref.net/req/202211181/favicons/br/apple-touch-icon-228x228-precomposed.png">
+    <link rel="apple-touch-icon"             sizes="195x195" href="https://cdn.ssref.net/req/202211181/favicons/br/apple-touch-icon-195x195-precomposed.png">
+    <link rel="apple-touch-icon"             sizes="180x180" href="https://cdn.ssref.net/req/202211181/favicons/br/apple-touch-icon-180x180-precomposed.png">
+    <link rel="apple-touch-icon"             sizes="152x152" href="https://cdn.ssref.net/req/202211181/favicons/br/apple-touch-icon-152x152-precomposed.png">
+    <link rel="apple-touch-icon"             sizes="144x144" href="https://cdn.ssref.net/req/202211181/favicons/br/apple-touch-icon-144x144-precomposed.png">
+    <link rel="apple-touch-icon"             sizes="128x128" href="https://cdn.ssref.net/req/202211181/favicons/br/apple-touch-icon-128x128-precomposed.png">
+    <link rel="apple-touch-icon"             sizes="120x120" href="https://cdn.ssref.net/req/202211181/favicons/br/apple-touch-icon-120x120-precomposed.png">
+    <link rel="apple-touch-icon"             sizes="114x114" href="https://cdn.ssref.net/req/202211181/favicons/br/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon"             sizes="76x76"   href="https://cdn.ssref.net/req/202211181/favicons/br/apple-touch-icon-76x76-precomposed.png">
+    <link rel="apple-touch-icon"             sizes="72x72"   href="https://cdn.ssref.net/req/202211181/favicons/br/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon"             sizes="57x57"   href="https://cdn.ssref.net/req/202211181/favicons/br/apple-touch-icon-57x57-precomposed.png">
+    <link rel="icon"                         sizes="32x32"   href="https://cdn.ssref.net/req/202211181/favicons/br/favicon-32.png">
+    <!--[if IE]>
+    <link rel="shortcut icon"                                href="https://cdn.ssref.net/req/202211181/favicons/br/favicon.ico"><![endif]-->
+    <meta name="msapplication-TileColor" content="#86081a" />
+    <meta name="msapplication-TileImage" content="https://cdn.ssref.net/req/202211181/favicons/br/ms-tile-144.png" />
+    <link rel=search        type="application/opensearchdescription+xml" href="https://cdn.ssref.net/req/202211181/opensearch/opensearch-br.xml" title=" Player and Team Search">
+    <!-- tiles, touch, favicons:end -->
+
+<!-- ad code: begin -->
+
+
+<script data-ad-client="ca-pub-5319453360923253" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+    var freestar = freestar || {};
+    freestar.config = freestar.config || {};
+    freestar.config.enabled_slots = [ "div-gpt-ad-300x250-ATF","div-gpt-ad-728x90-ATF","div-gpt-ad-728x90-GeneralHeader","div-gpt-ad-728x90-BTF-1","div-gpt-ad-728x90-Footer" ];
+    if (sr_detect_ie || sr_detect_edge || Modernizr.adfree || document.getElementById('sr_suppress_ads') || Modernizr.viewport_width < 1810) {
+    // do not include the rails
+    }
+    else {
+         freestar.config.enabled_slots.push('div-gpt-ad-160x600-1');
+         freestar.config.enabled_slots.push('div-gpt-ad-160x600-2');
+    } 
+
+</script>
+<script data-cfasync="false" type="text/javascript">
+    var fs_debug = window.location.search.indexOf('fsdebug') == -1 ? false : true;
+    freestar.hitTime = Date.now();
+    freestar.queue = freestar.queue || [];
+    freestar.config = freestar.config || {};
+    freestar.queue.push(function() {
+      // Include the line reflecting the area/section of the site you are on
+      googletag.pubads().setTargeting('sr_site_id', 'br');
+    });
+!function(a,b){
+    if (sr_detect_ie || sr_detect_edge || Modernizr.adfree) {
+        return;
+    }  
+    var c=b.getElementsByTagName("script")[0],
+    d=b.createElement("script"),
+    e="https://a.pub.network/baseball-reference";
+    e+=fs_debug?"/qa/pubfig.min.js":"/pubfig.min.js",
+    d.async=!0,
+    d.src=e,
+    c.parentNode.insertBefore(d,c)
+}(window,document);
+</script>
+
+
+<!-- ad code:end -->
+
+
+</head>
+<body class="br">
+<div id="wrap">
+  
+  <div id="header" role="banner">
+  <ul id="subnav" class="notranslate">
+	<li><a href="https://www.sports-reference.com/"><svg height="15px" width="20px"><use xlink:href="#ic-sr-pennant"></use></svg> Sports&nbsp;Reference&#8239;&reg;</a></li>
+	<li class="current"><a href="https://www.baseball-reference.com/">Baseball</a></li>
+	<li><a href="https://www.pro-football-reference.com/">Football</a> <a href="https://www.sports-reference.com/cfb/">(college)</a></li>
+	<li><a href="https://www.basketball-reference.com/">Basketball</a> <a href="https://www.sports-reference.com/cbb/">(college)</a></li>
+	<li><a href="https://www.hockey-reference.com/">Hockey</a></li>
+
+
+	
+	
+	
+	<li><a href="https://fbref.com/es/">Fútbol</a></li>
+
+	<li><a href="https://www.sports-reference.com/blog/">Blog</a></li>
+
+    <li><a href="https://stathead.com/?utm_source=web&amp;utm_medium=br&amp;utm_campaign=sr-nav-bar-top-link">Stathead&#8239;&reg;</a></li>
+
+	<li><a href="https://www.sports-reference.com/feedback/">Questions or Comments?</a></li>
+	<li class="user logged_in">Welcome <span class="username"></span>&nbsp;&#183;&nbsp;<a href="https://stathead.com/profile/?utm_source=web&amp;utm_medium=br&amp;utm_campaign=sr-nav-bar-top-account">Your Account</a></li>
+<li class="user logged_in"><a class="logout" onclick="sr_auth_logout_page_elements();if(!this.href.match('redirect_uri')){this.href += '&redirect_uri='+escape(document.location.href)}" href="https://stathead.com/profile/?do=logout">Logout</a></li>
+<li class="user not_logged_in"><a class="login" onclick="if(!this.href.match('redirect_uri')){this.href += '&redirect_uri='+escape(document.location.href)}" href="https://stathead.com/users/login.cgi?token=1">Login</a></li>
+<li class="user not_logged_in"><a href="https://stathead.com/users/signup.cgi">Create Account</a></li>
+
+</ul>
+
+  <a href="/"><img src="https://cdn.ssref.net/req/202211181/logos/br-logo.svg" onerror="this.src='https://cdn.ssref.net/req/202211181/logos/br-logo.png'; this.onerror = null;" alt="Baseball-Reference.com Logo &amp; Link to home page" /></a>
+<div id="nav_trigger" role="button"><a href="#site_menu_link">MENU</a></div>
+<div id="nav" role="navigation" aria-label="Baseball-Reference.com sections">
+	<ul id="main_nav" class="hoversmooth nohover"><li id="header_players" ><a href="/players">Players</a></li>
+<li id="header_teams" ><a href="/teams/">Teams</a></li>
+<li id="header_leagues" class="current"><a href="/leagues/">Seasons</a></li>
+<li id="header_leaders" ><a href="/leaders/">Leaders</a></li>
+<li id="header_scores" ><a href="/boxes/">Scores</a></li>
+<li id="header_playoffs" class=""><a href="/postseason/">Playoffs</a></li>	
+<li id="header_stathead" class=""><a href="https://stathead.com/sport/baseball/?utm_medium=br&utm_source=top-nav-bar&utm_campaign=baseball" target="_blank">Stathead</a></li>
+<li id="header_newsletter"><a href="https://www.baseball-reference.com/email/">Newsletter</a></li>
+<li><a data-scroll href="#site_menu_link" class="opener">Full Site Menu Below</a></li>
+	</ul>
+	<div class="breadcrumbs">You are here: <div itemscope itemtype="https://schema.org/BreadcrumbList" class="crumbs"><span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="/"><span itemprop="name">BR Home Page</span></a> <meta itemprop="position" content="1" /></span> &gt; <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="/leagues/"><span itemprop="name">Leagues</span></a> <meta itemprop="position" content="2" /></span> &gt; <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="/leagues/majors/"><span itemprop="name">Major League History</span></a> <meta itemprop="position" content="3" /></span> &gt; <a href="/leagues/majors/2022.shtml">2022 MLB</a> | <a href="/leagues/AL/2022.shtml">AL</a> | <a href="/leagues/NL/2022.shtml">NL</a></div></div>
+	<ul class="usertools bullets-inline"><li class="user logged_in">Welcome <span class="username"></span>&nbsp;&#183;&nbsp;<a href="https://stathead.com/profile/?utm_source=web&amp;utm_medium=br&amp;utm_campaign=sr-nav-bar-top-account">Your Account</a></li>
+<li class="user logged_in"><a class="logout" onclick="sr_auth_logout_page_elements();if(!this.href.match('redirect_uri')){this.href += '&redirect_uri='+escape(document.location.href)}" href="https://stathead.com/profile/?do=logout">Logout</a></li>
+<li class="user not_logged_in"><a class="login" onclick="if(!this.href.match('redirect_uri')){this.href += '&redirect_uri='+escape(document.location.href)}" href="https://stathead.com/users/login.cgi?token=1">Login</a></li>
+<li class="user not_logged_in"><a href="https://stathead.com/users/signup.cgi">Create Account</a></li>
+	</ul><!-- ul.user -->
+</div><!-- div#nav -->
+<script>
+function sr_menus_setupMainNav_button_inline () {
+    if (sr_detect_operaMini || !("classList" in document.createElement("_"))) {
+	return false;
+    }
+    var nav_trigger = document.getElementById('nav_trigger');
+    if(!nav_trigger || nav_trigger.triggered) {
+	return false;
+    }
+    nav_trigger.triggered = true;
+    var nav = document.getElementById('nav');
+    var nav_trigger_a = nav_trigger.querySelector('a');
+    if (nav_trigger_a) {
+	nav_trigger_a.setAttribute('href','javascript:void(0)');
+	nav_trigger.onclick = function (event) {
+	    nav.classList.toggle('open');
+	    var is_open = nav.classList.contains('open');
+	    if (is_open) {
+		nav_trigger.classList.add('open');
+	    }
+	    else {
+		nav_trigger.classList.remove('open');
+	    }
+	    event.preventDefault();
+	    try { sr_record_analytics_event('MainNavButtonClick_inline',sr_record_directory(),sr_record_page());}
+	    catch(err) {}
+	};
+    }
+    return true;
+}
+sr_menus_setupMainNav_button_inline();
+</script><div class="search" role="search" aria-label="Site Search for players, teams and sections">
+<form method="get" name="f_big"  action="/search/search.fcgi">
+<div class="ac-outline">
+  <div class="ac-wrapper"><input type="search" tabindex="-1" class="ac-hint" name="hint" placeholder="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" dir="auto" aria-label="Search suggestions based on user search input">
+
+<input tabindex="1" type="search" class="ac-input completely" name="search" placeholder="Enter Person, Team, Section, etc" aria-label="Enter a player, team or section name" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" dir="auto" />
+    <div class="ac-dropdown"></div>
+  </div>
+</div>
+
+<input type="submit" value="Search" tabindex="2" />
+<input type="hidden" name="pid" value="" data-search-id>
+<input type="hidden" name="idx" value="" data-search-idx>
+
+</form>
+</div><!-- div.search -->
+
+</div><!-- div#header -->
+
+  <style>
+  .site_announcement {
+    background-color: #fffea6;
+    text-align: center;
+    padding: .4em 0;
+    width: 100%;
+  }
+  .site_announcement div {
+    margin: 0 .3em;
+  }
+  .site_announcement span {
+    white-space: nowrap;
+  }
+  @media only screen and (max-width: 1000px) {
+    .site_annoucement_extra {
+      display: none;
+    }
+  }
+  </style>
+
+
+
+<div id="info" class="seasons">
+	<div id="meta">
+        
+
+
+	<div class="media-item logo loader">
+		<img class="teamlogo"			src="https://cdn.ssref.net/req/202211181/tlogo/br/MLB-2022.png"
+			alt="2022  Logo">
+		
+			<p><a href="http://www.sportslogos.net/">via Sports Logos.net</a></p>
+			<p><a href="https://www.sports-reference.com/blog/2016/06/redesign-team-and-league-logos-courtesy-sportslogos-net/">About logos</a></p>
+		 
+	</div>
+
+
+
+		<div>
+			<h1>
+				
+				<span>2022</span> <span>Major League Baseball</span> <span class="header_end">Standings</span>
+				
+			</h1>
+			<div class="prevnext">
+  
+  <a href="/leagues/majors/2021-standings.shtml" class="button2 prev">Previous Season</a>
+  
+  
+  
+  
+</div>
+
+			
+			
+			
+			<p><strong>Other Leagues</strong>: <a href="/leagues/AL/2022-standings.shtml">AL</a>, <a href="/leagues/NL/2022-standings.shtml">NL</a></p><p><strong>World Series Champion</strong>: <a href="/teams/HOU/2022.shtml">Houston Astros</a></p>
+			
+			
+			<button id="meta_more_button" class="opener" data-type="hide_after" data-class="open" data-id="info">More league info</button>
+<script>
+// see sr.menus.js:sr_menus_checkInfoCookie to explain
+function sr_menus_checkInfoCookie_inline(browserType) {
+    var el_info = document.getElementById('info');
+    var el_button = document.getElementById('meta_more_button');
+    var bling_len = 0;    
+    if (!el_button || !el_info || !el_info.classList) { console.log('no meta_button'); return; }
+    var el = el_button;
+    var siblingsHidden = 0;
+    while (el = el.previousSibling) { if ((el.nodeType === 1) && (el.offsetWidth <= 0 || el.offsetHeight <= 0)) { siblingsHidden++; } }
+    var button_cookie = false;
+    if (browserType === 'desktop') {  button_cookie = vjs_readCookie('meta_more_button');   }
+    // We allow up to four of bling lines or additional player bio data entries in mobile.
+    if (el_info && el_button && (button_cookie || (siblingsHidden + bling_len <= 4))) {el_button.parentNode.removeChild(el_button);	el_info.classList.add('open');  }
+    else { el_button.classList.add('show');  }
+}
+if (Modernizr.desktop || Modernizr.laptop) { sr_menus_checkInfoCookie_inline('desktop'); } else { sr_menus_checkInfoCookie_inline('mobile'); }
+var sr_menus_checkInfoCookie_run_inline = true;
+</script>
+
+		</div>
+	</div>
+	
+<div class="adblock ad300">
+
+<div><a href="https://stathead.com/?ref=br&amp;utm_source=web&amp;utm_medium=br&amp;utm_campaign=adfree_callouts">Become a Stathead &amp; surf this site ad-free.</a></div><!-- div#fs_fs_300_atf  -->
+<div align="center" id="div-gpt-ad-300x250-ATF">
+    <script data-cfasync="false" type='text/javascript'>
+    if (sr_detect_ie || sr_detect_edge || Modernizr.adfree) {
+    }
+    else {
+        console.log('push ad:div-gpt-ad-300x250-ATF');
+        freestar.queue.push(function() { googletag.display('div-gpt-ad-300x250-ATF'); });
+    }
+    </script>
+</div>
+<!-- /div.#fs_fs_300_atf -->
+
+
+</div>
+
+
+</div>
+<div id="srcom">
+<div class="adblock ad728">
+
+<!-- div#fs_fs_728_atf  -->
+<!-- sf:blank by design for send to news ad -->
+<!-- /div.#fs_fs_728_atf -->
+
+
+</div>
+
+
+</div>
+
+<div id="inner_nav" role="navigation" aria-label="Sections on this page and/or other pages related to this page" class=" inactive">
+	<ul class="hoversmooth">
+		<li			class="index "><a href="/leagues/majors/2022.shtml">2022 MLB Season</a>		</li>
+		<li data-fade-selector="#inpage_nav"			class="condensed hasmore "><span>More 2022 Major League Baseball Pages</span>
+			<div>
+
+					<section>
+						<p><a href="/register/league.cgi?year=2022">Minor Leagues</a></p>
+						
+						<p><a href="/leagues/MLB-standings.shtml">MLB Standings</a></p>
+						
+						<p><a href="/leagues/majors/2022-schedule.shtml">Schedule</a></p>
+						
+						<p><a href="/leagues/majors/2022-standard-fielding.shtml">Fielding</a></p>
+						
+						<p><a href="/leagues/majors/2022-standard-batting.shtml">Batting</a></p>
+						
+						<p><a href="/leagues/majors/2022-standard-pitching.shtml">Pitching</a></p>
+						
+						<p><a href="/leagues/majors/2022-managers.shtml">Managers</a></p>
+						
+					</section>
+
+
+<p class="listhead">Fielding</p>
+					<ul class="">
+						<li><a href="/leagues/majors/2022-standard-fielding.shtml" >Standard Fielding</a></li>
+						<li><a href="/leagues/majors/2022-appearances-fielding.shtml" >Appearances</a></li>
+						<li><a href="/leagues/majors/2022-specialpos_p-fielding.shtml" >Pitcher</a></li>
+						<li><a href="/leagues/majors/2022-specialpos_c-fielding.shtml" >Catcher</a></li>
+						<li><a href="/leagues/majors/2022-specialpos_1b-fielding.shtml" >First Base</a></li>
+						<li><a href="/leagues/majors/2022-specialpos_2b-fielding.shtml" >Second Base</a></li>
+						<li><a href="/leagues/majors/2022-specialpos_3b-fielding.shtml" >Third Base</a></li>
+						<li><a href="/leagues/majors/2022-specialpos_ss-fielding.shtml" >Shortstop</a></li>
+						<li><a href="/leagues/majors/2022-specialpos_lf-fielding.shtml" >Left Field</a></li>
+						<li><a href="/leagues/majors/2022-specialpos_cf-fielding.shtml" >Center Field</a></li>
+						<li><a href="/leagues/majors/2022-specialpos_rf-fielding.shtml" >Right Field</a></li>
+						<li><a href="/leagues/majors/2022-specialpos_of-fielding.shtml" >Outfield</a></li>
+					</ul>
+
+<p class="listhead">Batting</p>
+					<ul class="">
+						<li><a href="/leagues/majors/2022-standard-batting.shtml" >Standard Batting</a></li>
+						<li><a href="/leagues/majors/2022-value-batting.shtml" >Value</a></li>
+						<li><a href="/leagues/majors/2022-advanced-batting.shtml" >Advanced Batting</a></li>
+						<li><a href="/leagues/majors/2022-sabermetric-batting.shtml" >Sabermetric Batting</a></li>
+						<li><a href="/leagues/majors/2022-win_probability-batting.shtml" >Win Probability</a></li>
+						<li>Spring Training</li>
+						<li><a href="/leagues/majors/2022-ratio-batting.shtml" >Batting Ratios</a></li>
+						<li><a href="/leagues/majors/2022-baserunning-batting.shtml" >Baserunning/Misc</a></li>
+						<li><a href="/leagues/majors/2022-situational-batting.shtml" >PH/HR/Situ Hitting</a></li>
+						<li><a href="/leagues/majors/2022-pitches-batting.shtml" >Pitches Batting</a></li>
+						<li><a href="/leagues/majors/2022-cumulative-batting.shtml" >Cumulative Batting</a></li>
+						<li><a href="/leagues/majors/2022-neutral-batting.shtml" >Neutralized Batting</a></li>
+						<li><a href="/leagues/team_compare.cgi?lg=MLB&amp;year=2022" >Team Positional Comparisons</a></li>
+						<li><a href="/leagues/split.cgi?t=b&amp;lg=MLB&amp;year=2022" >League Splits</a></li>
+						<li><a href="/register/leader.cgi?type=bat&amp;year=2022"" >Minors Batting</a></li>
+						<li><a href="/leagues/daily.fcgi?type=b" >Yesterday's Results</a></li>
+					</ul>
+
+<p class="listhead">Pitching</p>
+					<ul class="">
+						<li><a href="/leagues/majors/2022-standard-pitching.shtml" >Standard Pitching</a></li>
+						<li><a href="/leagues/majors/2022-value-pitching.shtml" >Value</a></li>
+						<li><a href="/leagues/majors/2022-advanced-pitching.shtml" >Advanced Pitching</a></li>
+						<li><a href="/leagues/majors/2022-win_probability-pitching.shtml" >Win Probability</a></li>
+						<li>Spring Training</li>
+						<li><a href="/leagues/majors/2022-ratio-pitching.shtml" >Pitching Ratios</a></li>
+						<li><a href="/leagues/majors/2022-basesituation-pitching.shtml" >Baserunning/Situ</a></li>
+						<li><a href="/leagues/majors/2022-starter-pitching.shtml" >Starting Pitching</a></li>
+						<li><a href="/leagues/majors/2022-reliever-pitching.shtml" >Relief Pitching</a></li>
+						<li><a href="/leagues/majors/2022-pitches-pitching.shtml" >Pitching Pitches</a></li>
+						<li><a href="/leagues/majors/2022-batting-pitching.shtml" >Batting Against</a></li>
+						<li><a href="/leagues/majors/2022-cumulative-pitching.shtml" >Cumulative Pitching</a></li>
+						<li><a href="/leagues/majors/2022-neutral-pitching.shtml" >Neutralized Pitching</a></li>
+						<li><a href="/leagues/split.cgi?t=p&amp;lg=MLB&amp;year=2022" >League Splits</a></li>
+						<li><a href="/register/leader.cgi?type=pitch&amp;year=2022"" >Minors Pitching</a></li>
+						<li><a href="/leagues/daily.fcgi?type=p" >Yesterday's Results</a></li>
+					</ul>
+
+<p class="listhead">Leaders &amp; Awards</p>
+					<ul class="">
+						<li><a href="/leagues/majors/2022-batting-leaders.shtml" >Batting</a></li>
+						<li><a href="/leagues/majors/2022-pitching-leaders.shtml" >Pitching</a></li>
+						<li><a href="/leagues/majors/2022-fielding-leaders.shtml" >Fielding</a></li>
+						<li><a href="/leagues/majors/2022-other-leaders.shtml" >Awards, All-Stars, &amp; More</a></li>
+					</ul>
+
+<p class="listhead">Other</p>
+					<ul class="">
+						<li><a href="/leagues/majors/2022-misc.shtml" >Attendance &amp; Misc.</a></li>
+						<li><a href="/leagues/MLB/2022-debuts.shtml" >New Debuts</a></li>
+						<li><a href="/leagues/MLB/2022-rookies.shtml" >Rookie Players</a></li>
+						<li>Retirements</li>
+						<li>Born this Year</li>
+						<li><a href="/leagues/MLB/2022-deaths.shtml" >Died this Year</a></li>
+						<li><a href="/leagues/MLB/2022-uniform-numbers.shtml" >Uniform Numbers</a></li>
+						<li><a href="/leagues/MLB/2022-transactions.shtml" >Transactions</a></li>
+						<li><a href="/draft/?draft_type=junreg&amp;query_type=year_round&amp;draft_round=1&amp;year_ID=2022" >Amateur Draft</a></li>
+						<li><a href="/leagues/majors/2022-free-agents.shtml" >Free Agents</a></li>
+						<li><a href="/leagues/daily.fcgi?type=b&amp;dates=lastndays&amp;lastndays=21" >Last N Days Leaders</a></li>
+						<li><a href="/leagues/MLB/2022-opening-day-rosters.shtml" >Opening Day Lineups</a></li>
+						<li><a href="/leagues/MLB/2022-team-starting-lineups.shtml" >Team Starting Lineups</a></li>
+						<li><a href="/leagues/MLB/2022-team-pitching-staffs.shtml" >Team Pitching Staffs</a></li>
+						<li><a href="/leagues/MLB/2022-projections.shtml" >Marcel Projections</a></li>
+						<li><a href="/leagues/MLB/2022-playoff-odds.shtml" >Playoff Odds</a></li>
+					</ul>
+
+			</div>		</li>
+		<li			class="full "><a href="/register/league.cgi?year=2022">Minor Leagues</a>		</li>
+		<li			class="full current "><a href="/leagues/MLB-standings.shtml">MLB Standings</a>		</li>
+		<li			class="full "><a href="/leagues/majors/2022-schedule.shtml">Schedule</a>		</li>
+		<li data-fade-selector="#inpage_nav"			class="full hasmore "><a href="/leagues/majors/2022-standard-fielding.shtml">Fielding</a>
+			<div>
+
+					<ul class=" in_list">
+						<li><a href="/leagues/majors/2022-standard-fielding.shtml" >Standard Fielding</a></li>
+						<li><a href="/leagues/majors/2022-appearances-fielding.shtml" >Appearances</a></li>
+						<li><a href="/leagues/majors/2022-specialpos_p-fielding.shtml" >Pitcher</a></li>
+						<li><a href="/leagues/majors/2022-specialpos_c-fielding.shtml" >Catcher</a></li>
+						<li><a href="/leagues/majors/2022-specialpos_1b-fielding.shtml" >First Base</a></li>
+						<li><a href="/leagues/majors/2022-specialpos_2b-fielding.shtml" >Second Base</a></li>
+						<li><a href="/leagues/majors/2022-specialpos_3b-fielding.shtml" >Third Base</a></li>
+						<li><a href="/leagues/majors/2022-specialpos_ss-fielding.shtml" >Shortstop</a></li>
+						<li><a href="/leagues/majors/2022-specialpos_lf-fielding.shtml" >Left Field</a></li>
+						<li><a href="/leagues/majors/2022-specialpos_cf-fielding.shtml" >Center Field</a></li>
+						<li><a href="/leagues/majors/2022-specialpos_rf-fielding.shtml" >Right Field</a></li>
+						<li><a href="/leagues/majors/2022-specialpos_of-fielding.shtml" >Outfield</a></li>
+					</ul>
+
+			</div>		</li>
+		<li data-fade-selector="#inpage_nav"			class="full hasmore "><a href="/leagues/majors/2022-standard-batting.shtml">Batting</a>
+			<div>
+
+					<ul class=" in_list">
+						<li><a href="/leagues/majors/2022-standard-batting.shtml" >Standard Batting</a></li>
+						<li><a href="/leagues/majors/2022-value-batting.shtml" >Value</a></li>
+						<li><a href="/leagues/majors/2022-advanced-batting.shtml" >Advanced Batting</a></li>
+						<li><a href="/leagues/majors/2022-sabermetric-batting.shtml" >Sabermetric Batting</a></li>
+						<li><a href="/leagues/majors/2022-win_probability-batting.shtml" >Win Probability</a></li>
+						<li>Spring Training</li>
+						<li><a href="/leagues/majors/2022-ratio-batting.shtml" >Batting Ratios</a></li>
+						<li><a href="/leagues/majors/2022-baserunning-batting.shtml" >Baserunning/Misc</a></li>
+						<li><a href="/leagues/majors/2022-situational-batting.shtml" >PH/HR/Situ Hitting</a></li>
+						<li><a href="/leagues/majors/2022-pitches-batting.shtml" >Pitches Batting</a></li>
+						<li><a href="/leagues/majors/2022-cumulative-batting.shtml" >Cumulative Batting</a></li>
+						<li><a href="/leagues/majors/2022-neutral-batting.shtml" >Neutralized Batting</a></li>
+						<li><a href="/leagues/team_compare.cgi?lg=MLB&amp;year=2022" >Team Positional Comparisons</a></li>
+						<li><a href="/leagues/split.cgi?t=b&amp;lg=MLB&amp;year=2022" >League Splits</a></li>
+						<li><a href="/register/leader.cgi?type=bat&amp;year=2022"" >Minors Batting</a></li>
+						<li><a href="/leagues/daily.fcgi?type=b" >Yesterday's Results</a></li>
+					</ul>
+
+			</div>		</li>
+		<li data-fade-selector="#inpage_nav"			class="full hasmore "><a href="/leagues/majors/2022-standard-pitching.shtml">Pitching</a>
+			<div>
+
+					<ul class=" in_list">
+						<li><a href="/leagues/majors/2022-standard-pitching.shtml" >Standard Pitching</a></li>
+						<li><a href="/leagues/majors/2022-value-pitching.shtml" >Value</a></li>
+						<li><a href="/leagues/majors/2022-advanced-pitching.shtml" >Advanced Pitching</a></li>
+						<li><a href="/leagues/majors/2022-win_probability-pitching.shtml" >Win Probability</a></li>
+						<li>Spring Training</li>
+						<li><a href="/leagues/majors/2022-ratio-pitching.shtml" >Pitching Ratios</a></li>
+						<li><a href="/leagues/majors/2022-basesituation-pitching.shtml" >Baserunning/Situ</a></li>
+						<li><a href="/leagues/majors/2022-starter-pitching.shtml" >Starting Pitching</a></li>
+						<li><a href="/leagues/majors/2022-reliever-pitching.shtml" >Relief Pitching</a></li>
+						<li><a href="/leagues/majors/2022-pitches-pitching.shtml" >Pitching Pitches</a></li>
+						<li><a href="/leagues/majors/2022-batting-pitching.shtml" >Batting Against</a></li>
+						<li><a href="/leagues/majors/2022-cumulative-pitching.shtml" >Cumulative Pitching</a></li>
+						<li><a href="/leagues/majors/2022-neutral-pitching.shtml" >Neutralized Pitching</a></li>
+						<li><a href="/leagues/split.cgi?t=p&amp;lg=MLB&amp;year=2022" >League Splits</a></li>
+						<li><a href="/register/leader.cgi?type=pitch&amp;year=2022"" >Minors Pitching</a></li>
+						<li><a href="/leagues/daily.fcgi?type=p" >Yesterday's Results</a></li>
+					</ul>
+
+			</div>		</li>
+		<li			class="full "><a href="/leagues/majors/2022-managers.shtml">Managers</a>		</li>
+		<li data-fade-selector="#inpage_nav"			class="full hasmore "><span>Leaders &amp; Awards</span>
+			<div>
+
+					<ul class="">
+						<li><a href="/leagues/majors/2022-batting-leaders.shtml" >Batting</a></li>
+						<li><a href="/leagues/majors/2022-pitching-leaders.shtml" >Pitching</a></li>
+						<li><a href="/leagues/majors/2022-fielding-leaders.shtml" >Fielding</a></li>
+						<li><a href="/leagues/majors/2022-other-leaders.shtml" >Awards, All-Stars, &amp; More</a></li>
+					</ul>
+
+			</div>		</li>
+		<li data-fade-selector="#inpage_nav"			class="full hasmore "><span>Other</span>
+			<div>
+
+					<ul class=" in_list">
+						<li><a href="/leagues/majors/2022-misc.shtml" >Attendance &amp; Misc.</a></li>
+						<li><a href="/leagues/MLB/2022-debuts.shtml" >New Debuts</a></li>
+						<li><a href="/leagues/MLB/2022-rookies.shtml" >Rookie Players</a></li>
+						<li>Retirements</li>
+						<li>Born this Year</li>
+						<li><a href="/leagues/MLB/2022-deaths.shtml" >Died this Year</a></li>
+						<li><a href="/leagues/MLB/2022-uniform-numbers.shtml" >Uniform Numbers</a></li>
+						<li><a href="/leagues/MLB/2022-transactions.shtml" >Transactions</a></li>
+						<li><a href="/draft/?draft_type=junreg&amp;query_type=year_round&amp;draft_round=1&amp;year_ID=2022" >Amateur Draft</a></li>
+						<li><a href="/leagues/majors/2022-free-agents.shtml" >Free Agents</a></li>
+						<li><a href="/leagues/daily.fcgi?type=b&amp;dates=lastndays&amp;lastndays=21" >Last N Days Leaders</a></li>
+						<li><a href="/leagues/MLB/2022-opening-day-rosters.shtml" >Opening Day Lineups</a></li>
+						<li><a href="/leagues/MLB/2022-team-starting-lineups.shtml" >Team Starting Lineups</a></li>
+						<li><a href="/leagues/MLB/2022-team-pitching-staffs.shtml" >Team Pitching Staffs</a></li>
+						<li><a href="/leagues/MLB/2022-projections.shtml" >Marcel Projections</a></li>
+						<li><a href="/leagues/MLB/2022-playoff-odds.shtml" >Playoff Odds</a></li>
+					</ul>
+
+			</div>		</li>
+	</ul>
+	    
+    
+        
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                
+                
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        
+    
+        
+        
+        
+    
+        
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                
+                
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+    
+        
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                
+                
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+    
+        
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                
+                
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        
+    
+    
+    
+    
+    
+    
+    
+</div><!-- div#inner_nav -->
+<div id="content" role="main">
+    
+
+
+          
+      
+      
+      
+      
+
+<!-- fs_general_header -->
+<div class="adblock">
+
+
+<!-- div#fs_fs_general_header  -->
+<style>
+    #srcom .adblock.stn,
+    #content .adblock.stn { max-width: 728px; height: auto; margin: auto; }
+.fb #content .adblock.stn { max-width: 400px; }
+</style>
+<script>
+function apiFunction(ApiHandshake)  {
+    const playerDiv = document.querySelector('[data-stn-api="apiFunction"]');
+    const api = ApiHandshake(playerDiv);
+    new IntersectionObserver ( moes => { const bcr = moes.pop().boundingClientRect; api.float = bcr.y <= 0; },
+                                       { threshold: [0.9] }).observe(document.querySelector('[data-stn-api="apiFunction"]'));
+ }
+</script>
+<div class="adblock stn">
+  <div class='s2nPlayer k-qcWBz78w' data-type='float' data-stn-api="apiFunction"></div>
+  <script type='text/javascript' src='//embed.sendtonews.com/player3/embedcode.js?fk=qcWBz78w&cid=13628&offsetx=0&offsety=0&floatwidth=400&floatposition=bottom-right' data-type='s2nScript'></script>
+</div>
+<!-- /div.#fs_fs_general_header -->
+
+
+</div>
+
+
+      
+         
+            
+<div id="all_postseason" class="table_wrapper setup_commented commented">
+
+<div class="section_heading assoc_postseason" id="postseason_sh">
+  <span class="section_anchor" id="postseason_link" data-label="Postseason"></span><h2>Postseason</h2>    <div class="section_heading_text">
+      <ul>
+      </ul>
+    </div>
+    		
+</div><div class="placeholder"></div>
+<!--
+
+<div class="table_container" id="div_postseason">
+    
+    <table class="suppress_all sortable stats_table" id="postseason" data-cols-to-freeze="1,2">
+    <caption>Postseason</caption>
+    
+
+   <colgroup></colgroup>
+   <thead>      </thead>
+<tbody><tr>
+  <td><a href="/postseason/2022_WS.shtml">World Series</a></td>
+  <td>4-2</td>
+  <td><strong><a href="/teams/HOU/2022.shtml">Houston Astros</a></strong> over <a href="/teams/PHI/2022.shtml">Philadelphia Phillies</a></td>
+</tr>
+<tr>
+  <td><a href="/postseason/2022_ALCS.shtml">ALCS</a></td>
+  <td>4-0</td>
+  <td><strong><a href="/teams/HOU/2022.shtml">Houston Astros</a></strong> over <a href="/teams/NYY/2022.shtml">New York Yankees</a></td>
+</tr>
+<tr>
+  <td><a href="/postseason/2022_NLCS.shtml">NLCS</a></td>
+  <td>4-1</td>
+  <td><strong><a href="/teams/PHI/2022.shtml">Philadelphia Phillies</a></strong> over <a href="/teams/SDP/2022.shtml">San Diego Padres</a></td>
+</tr>
+<tr>
+  <td><a href="/postseason/2022_ALDS1.shtml">AL Division Series</a></td>
+  <td>3-2</td>
+  <td><strong><a href="/teams/NYY/2022.shtml">New York Yankees</a></strong> over <a href="/teams/CLE/2022.shtml">Cleveland Guardians</a></td>
+</tr>
+<tr>
+  <td><a href="/postseason/2022_ALDS2.shtml">AL Division Series</a></td>
+  <td>3-0</td>
+  <td><strong><a href="/teams/HOU/2022.shtml">Houston Astros</a></strong> over <a href="/teams/SEA/2022.shtml">Seattle Mariners</a></td>
+</tr>
+<tr>
+  <td><a href="/postseason/2022_NLDS1.shtml">NL Division Series</a></td>
+  <td>3-1</td>
+  <td><strong><a href="/teams/PHI/2022.shtml">Philadelphia Phillies</a></strong> over <a href="/teams/ATL/2022.shtml">Atlanta Braves</a></td>
+</tr>
+<tr>
+  <td><a href="/postseason/2022_NLDS2.shtml">NL Division Series</a></td>
+  <td>3-1</td>
+  <td><strong><a href="/teams/SDP/2022.shtml">San Diego Padres</a></strong> over <a href="/teams/LAD/2022.shtml">Los Angeles Dodgers</a></td>
+</tr>
+<tr>
+  <td><a href="/postseason/2022_ALWC1.shtml">Wild Card Series</a></td>
+  <td>2-0</td>
+  <td><strong><a href="/teams/CLE/2022.shtml">Cleveland Guardians</a></strong> over <a href="/teams/TBR/2022.shtml">Tampa Bay Rays</a></td>
+</tr>
+<tr>
+  <td><a href="/postseason/2022_ALWC2.shtml">Wild Card Series</a></td>
+  <td>2-0</td>
+  <td><strong><a href="/teams/SEA/2022.shtml">Seattle Mariners</a></strong> over <a href="/teams/TOR/2022.shtml">Toronto Blue Jays</a></td>
+</tr>
+<tr>
+  <td><a href="/postseason/2022_NLWC1.shtml">Wild Card Series</a></td>
+  <td>2-1</td>
+  <td><strong><a href="/teams/SDP/2022.shtml">San Diego Padres</a></strong> over <a href="/teams/NYM/2022.shtml">New York Mets</a></td>
+</tr>
+<tr>
+  <td><a href="/postseason/2022_NLWC2.shtml">Wild Card Series</a></td>
+  <td>2-0</td>
+  <td><strong><a href="/teams/PHI/2022.shtml">Philadelphia Phillies</a></strong> over <a href="/teams/STL/2022.shtml">St. Louis Cardinals</a></td>
+</tr>
+
+</table>
+
+
+</div>
+-->
+
+
+</div>
+
+            
+            
+            
+         
+      
+         
+            <p class="callout">Check out the new <a href="/leagues/majors/2022-playoff-odds.shtml">Playoff Odds page</a>!</p>
+
+            
+            
+            
+	       	
+
+<!-- fs_btf_1 -->
+<div class="adblock">
+<!-- div#fs_fs_btf_1  -->
+<div align="center" id="div-gpt-ad-728x90-BTF-1">
+    <script data-cfasync="false" type='text/javascript'>
+    if (sr_detect_ie || sr_detect_edge || Modernizr.adfree) {
+    }
+    else {
+        console.log('push ad:div-gpt-ad-728x90-BTF-1');
+        freestar.queue.push(function() { googletag.display('div-gpt-ad-728x90-BTF-1'); });
+    }
+    </script>
+</div>
+<!-- /div.#fs_fs_btf_1 -->
+
+
+</div>
+
+
+            
+         
+      
+         
+            <div class="section_wrapper" id="all_standings">
+<div class="section_heading assoc_standings" id="standings_sh">
+  <span class="section_anchor" id="standings_link" data-label=""></span>	
+</div>    <div class="section_content" id="div_standings">
+	    
+	<div class="data_grid section_wrapper">
+	
+		
+<div id="all_standings_E" class="table_wrapper">
+
+<div class="section_heading assoc_standings_E" id="standings_E_sh">
+  <span class="section_anchor" id="standings_E_link" data-label="East Division"></span><h2>East Division</h2>    <div class="section_heading_text">
+      <ul>
+      </ul>
+    </div>
+    		
+</div>
+<div class="table_container" id="div_standings_E">
+    
+    <table class="suppress_all sortable stats_table" id="standings_E" data-cols-to-freeze="0">
+    <caption>East Division Table</caption>
+    
+
+   <colgroup><col><col><col><col><col></colgroup>
+   <thead>      
+      <tr>
+         <th aria-label="Tm" data-stat="team_ID" scope="col" class=" poptip sort_default_asc show_partial_when_sorting center" >Tm</th>
+         <th aria-label="Wins" data-stat="W" scope="col" class=" poptip center" data-tip="Wins" >W</th>
+         <th aria-label="Losses" data-stat="L" scope="col" class=" poptip center" data-tip="Losses" >L</th>
+         <th aria-label="Win-Loss %" data-stat="win_loss_perc" scope="col" class=" poptip hide_non_quals center" data-tip="&lt;strong&gt;Win-Loss Percentage&lt;/strong&gt;&lt;br&gt;W / (W + L)&lt;br&gt;For players, leaders need one decision for every ten team games.&lt;br&gt;For managers, minimum to qualify for leading is 320 games." data-filter="1" data-name="Win-Loss %" >W-L%</th>
+         <th aria-label="Games Back" data-stat="games_back" scope="col" class=" poptip sort_default_asc center" data-tip="&lt;strong&gt;Games Back of Division/League Leader&lt;/strong&gt;&lt;br&gt;Computed as games over .500 of leader (W-L) minus games over .500 of team divided by two.&lt;br&gt;Typically computed at the end of play for a particular day.&lt;br&gt;Blank for 1st game of DH." >GB</th>
+      </tr>
+      </thead>
+<tbody><tr ><th scope="row" class="left " data-stat="team_ID" csk="New York Yankees" ><strong><a href="/teams/NYY/2022.shtml" title="New York Yankees">New York Yankees</a></strong></th><td class="right " data-stat="W" ><strong>99</strong></td><td class="right " data-stat="L" ><strong>63</strong></td><td class="right " data-stat="win_loss_perc" ><strong>.611</strong></td><td class="right " data-stat="games_back" ><strong>--</strong></td></tr>
+<tr ><th scope="row" class="left " data-stat="team_ID" csk="Toronto Blue Jays" ><em><a href="/teams/TOR/2022.shtml" title="Toronto Blue Jays">Toronto Blue Jays</a></em></th><td class="right " data-stat="W" ><em>92</em></td><td class="right " data-stat="L" ><em>70</em></td><td class="right " data-stat="win_loss_perc" ><em>.568</em></td><td class="right " data-stat="games_back" ><em>7.0</em></td></tr>
+<tr ><th scope="row" class="left " data-stat="team_ID" csk="Tampa Bay Rays" ><em><a href="/teams/TBR/2022.shtml" title="Tampa Bay Rays">Tampa Bay Rays</a></em></th><td class="right " data-stat="W" ><em>86</em></td><td class="right " data-stat="L" ><em>76</em></td><td class="right " data-stat="win_loss_perc" ><em>.531</em></td><td class="right " data-stat="games_back" ><em>13.0</em></td></tr>
+<tr ><th scope="row" class="left " data-stat="team_ID" csk="Baltimore Orioles" ><a href="/teams/BAL/2022.shtml" title="Baltimore Orioles">Baltimore Orioles</a></th><td class="right " data-stat="W" >83</td><td class="right " data-stat="L" >79</td><td class="right " data-stat="win_loss_perc" >.512</td><td class="right " data-stat="games_back" >16.0</td></tr>
+<tr ><th scope="row" class="left " data-stat="team_ID" csk="Boston Red Sox" ><a href="/teams/BOS/2022.shtml" title="Boston Red Sox">Boston Red Sox</a></th><td class="right " data-stat="W" >78</td><td class="right " data-stat="L" >84</td><td class="right " data-stat="win_loss_perc" >.481</td><td class="right " data-stat="games_back" >21.0</td></tr>
+
+</table>
+
+
+</div>
+
+
+
+</div>
+
+	
+		
+<div id="all_standings_C" class="table_wrapper">
+
+<div class="section_heading assoc_standings_C" id="standings_C_sh">
+  <span class="section_anchor" id="standings_C_link" data-label="Central Division"></span><h2>Central Division</h2>    <div class="section_heading_text">
+      <ul>
+      </ul>
+    </div>
+    		
+</div>
+<div class="table_container" id="div_standings_C">
+    
+    <table class="suppress_all sortable stats_table" id="standings_C" data-cols-to-freeze="0">
+    <caption>Central Division Table</caption>
+    
+
+   <colgroup><col><col><col><col><col></colgroup>
+   <thead>      
+      <tr>
+         <th aria-label="Tm" data-stat="team_ID" scope="col" class=" poptip sort_default_asc show_partial_when_sorting center" >Tm</th>
+         <th aria-label="Wins" data-stat="W" scope="col" class=" poptip center" data-tip="Wins" >W</th>
+         <th aria-label="Losses" data-stat="L" scope="col" class=" poptip center" data-tip="Losses" >L</th>
+         <th aria-label="Win-Loss %" data-stat="win_loss_perc" scope="col" class=" poptip hide_non_quals center" data-tip="&lt;strong&gt;Win-Loss Percentage&lt;/strong&gt;&lt;br&gt;W / (W + L)&lt;br&gt;For players, leaders need one decision for every ten team games.&lt;br&gt;For managers, minimum to qualify for leading is 320 games." data-filter="1" data-name="Win-Loss %" >W-L%</th>
+         <th aria-label="Games Back" data-stat="games_back" scope="col" class=" poptip sort_default_asc center" data-tip="&lt;strong&gt;Games Back of Division/League Leader&lt;/strong&gt;&lt;br&gt;Computed as games over .500 of leader (W-L) minus games over .500 of team divided by two.&lt;br&gt;Typically computed at the end of play for a particular day.&lt;br&gt;Blank for 1st game of DH." >GB</th>
+      </tr>
+      </thead>
+<tbody><tr ><th scope="row" class="left " data-stat="team_ID" csk="Cleveland Guardians" ><strong><a href="/teams/CLE/2022.shtml" title="Cleveland Guardians">Cleveland Guardians</a></strong></th><td class="right " data-stat="W" ><strong>92</strong></td><td class="right " data-stat="L" ><strong>70</strong></td><td class="right " data-stat="win_loss_perc" ><strong>.568</strong></td><td class="right " data-stat="games_back" ><strong>--</strong></td></tr>
+<tr ><th scope="row" class="left " data-stat="team_ID" csk="Chicago White Sox" ><a href="/teams/CHW/2022.shtml" title="Chicago White Sox">Chicago White Sox</a></th><td class="right " data-stat="W" >81</td><td class="right " data-stat="L" >81</td><td class="right " data-stat="win_loss_perc" >.500</td><td class="right " data-stat="games_back" >11.0</td></tr>
+<tr ><th scope="row" class="left " data-stat="team_ID" csk="Minnesota Twins" ><a href="/teams/MIN/2022.shtml" title="Minnesota Twins">Minnesota Twins</a></th><td class="right " data-stat="W" >78</td><td class="right " data-stat="L" >84</td><td class="right " data-stat="win_loss_perc" >.481</td><td class="right " data-stat="games_back" >14.0</td></tr>
+<tr ><th scope="row" class="left " data-stat="team_ID" csk="Detroit Tigers" ><a href="/teams/DET/2022.shtml" title="Detroit Tigers">Detroit Tigers</a></th><td class="right " data-stat="W" >66</td><td class="right " data-stat="L" >96</td><td class="right " data-stat="win_loss_perc" >.407</td><td class="right " data-stat="games_back" >26.0</td></tr>
+<tr ><th scope="row" class="left " data-stat="team_ID" csk="Kansas City Royals" ><a href="/teams/KCR/2022.shtml" title="Kansas City Royals">Kansas City Royals</a></th><td class="right " data-stat="W" >65</td><td class="right " data-stat="L" >97</td><td class="right " data-stat="win_loss_perc" >.401</td><td class="right " data-stat="games_back" >27.0</td></tr>
+
+</table>
+
+
+</div>
+
+
+
+</div>
+
+	
+		
+<div id="all_standings_W" class="table_wrapper">
+
+<div class="section_heading assoc_standings_W" id="standings_W_sh">
+  <span class="section_anchor" id="standings_W_link" data-label="West Division"></span><h2>West Division</h2>    <div class="section_heading_text">
+      <ul>
+      </ul>
+    </div>
+    		
+</div>
+<div class="table_container" id="div_standings_W">
+    
+    <table class="suppress_all sortable stats_table" id="standings_W" data-cols-to-freeze="0">
+    <caption>West Division Table</caption>
+    
+
+   <colgroup><col><col><col><col><col></colgroup>
+   <thead>      
+      <tr>
+         <th aria-label="Tm" data-stat="team_ID" scope="col" class=" poptip sort_default_asc show_partial_when_sorting center" >Tm</th>
+         <th aria-label="Wins" data-stat="W" scope="col" class=" poptip center" data-tip="Wins" >W</th>
+         <th aria-label="Losses" data-stat="L" scope="col" class=" poptip center" data-tip="Losses" >L</th>
+         <th aria-label="Win-Loss %" data-stat="win_loss_perc" scope="col" class=" poptip hide_non_quals center" data-tip="&lt;strong&gt;Win-Loss Percentage&lt;/strong&gt;&lt;br&gt;W / (W + L)&lt;br&gt;For players, leaders need one decision for every ten team games.&lt;br&gt;For managers, minimum to qualify for leading is 320 games." data-filter="1" data-name="Win-Loss %" >W-L%</th>
+         <th aria-label="Games Back" data-stat="games_back" scope="col" class=" poptip sort_default_asc center" data-tip="&lt;strong&gt;Games Back of Division/League Leader&lt;/strong&gt;&lt;br&gt;Computed as games over .500 of leader (W-L) minus games over .500 of team divided by two.&lt;br&gt;Typically computed at the end of play for a particular day.&lt;br&gt;Blank for 1st game of DH." >GB</th>
+      </tr>
+      </thead>
+<tbody><tr ><th scope="row" class="left " data-stat="team_ID" csk="Houston Astros" ><strong><a href="/teams/HOU/2022.shtml" title="Houston Astros">Houston Astros</a></strong></th><td class="right " data-stat="W" ><strong>106</strong></td><td class="right " data-stat="L" ><strong>56</strong></td><td class="right " data-stat="win_loss_perc" ><strong>.654</strong></td><td class="right " data-stat="games_back" ><strong>--</strong></td></tr>
+<tr ><th scope="row" class="left " data-stat="team_ID" csk="Seattle Mariners" ><em><a href="/teams/SEA/2022.shtml" title="Seattle Mariners">Seattle Mariners</a></em></th><td class="right " data-stat="W" ><em>90</em></td><td class="right " data-stat="L" ><em>72</em></td><td class="right " data-stat="win_loss_perc" ><em>.556</em></td><td class="right " data-stat="games_back" ><em>16.0</em></td></tr>
+<tr ><th scope="row" class="left " data-stat="team_ID" csk="Los Angeles Angels" ><a href="/teams/LAA/2022.shtml" title="Los Angeles Angels">Los Angeles Angels</a></th><td class="right " data-stat="W" >73</td><td class="right " data-stat="L" >89</td><td class="right " data-stat="win_loss_perc" >.451</td><td class="right " data-stat="games_back" >33.0</td></tr>
+<tr ><th scope="row" class="left " data-stat="team_ID" csk="Texas Rangers" ><a href="/teams/TEX/2022.shtml" title="Texas Rangers">Texas Rangers</a></th><td class="right " data-stat="W" >68</td><td class="right " data-stat="L" >94</td><td class="right " data-stat="win_loss_perc" >.420</td><td class="right " data-stat="games_back" >38.0</td></tr>
+<tr ><th scope="row" class="left " data-stat="team_ID" csk="Oakland Athletics" ><a href="/teams/OAK/2022.shtml" title="Oakland Athletics">Oakland Athletics</a></th><td class="right " data-stat="W" >60</td><td class="right " data-stat="L" >102</td><td class="right " data-stat="win_loss_perc" >.370</td><td class="right " data-stat="games_back" >46.0</td></tr>
+
+</table>
+
+
+</div>
+
+
+
+</div>
+
+	
+	</div>
+
+		
+    </div>
+
+</div>
+
+
+
+            
+            
+            
+         
+      
+         
+            <div class="section_wrapper" id="all_standings">
+<div class="section_heading assoc_standings" id="standings_sh">
+  <span class="section_anchor" id="standings_link" data-label=""></span>	
+</div>    <div class="section_content" id="div_standings">
+	    
+	<div class="data_grid section_wrapper">
+	
+		
+<div id="all_standings_E" class="table_wrapper">
+
+<div class="section_heading assoc_standings_E" id="standings_E_sh">
+  <span class="section_anchor" id="standings_E_link" data-label="East Division"></span><h2>East Division</h2>    <div class="section_heading_text">
+      <ul>
+      </ul>
+    </div>
+    		
+</div>
+<div class="table_container" id="div_standings_E">
+    
+    <table class="suppress_all sortable stats_table" id="standings_E" data-cols-to-freeze="0">
+    <caption>East Division Table</caption>
+    
+
+   <colgroup><col><col><col><col><col></colgroup>
+   <thead>      
+      <tr>
+         <th aria-label="Tm" data-stat="team_ID" scope="col" class=" poptip sort_default_asc show_partial_when_sorting center" >Tm</th>
+         <th aria-label="Wins" data-stat="W" scope="col" class=" poptip center" data-tip="Wins" >W</th>
+         <th aria-label="Losses" data-stat="L" scope="col" class=" poptip center" data-tip="Losses" >L</th>
+         <th aria-label="Win-Loss %" data-stat="win_loss_perc" scope="col" class=" poptip hide_non_quals center" data-tip="&lt;strong&gt;Win-Loss Percentage&lt;/strong&gt;&lt;br&gt;W / (W + L)&lt;br&gt;For players, leaders need one decision for every ten team games.&lt;br&gt;For managers, minimum to qualify for leading is 320 games." data-filter="1" data-name="Win-Loss %" >W-L%</th>
+         <th aria-label="Games Back" data-stat="games_back" scope="col" class=" poptip sort_default_asc center" data-tip="&lt;strong&gt;Games Back of Division/League Leader&lt;/strong&gt;&lt;br&gt;Computed as games over .500 of leader (W-L) minus games over .500 of team divided by two.&lt;br&gt;Typically computed at the end of play for a particular day.&lt;br&gt;Blank for 1st game of DH." >GB</th>
+      </tr>
+      </thead>
+<tbody><tr ><th scope="row" class="left " data-stat="team_ID" csk="Atlanta Braves" ><strong><a href="/teams/ATL/2022.shtml" title="Atlanta Braves">Atlanta Braves</a></strong></th><td class="right " data-stat="W" ><strong>101</strong></td><td class="right " data-stat="L" ><strong>61</strong></td><td class="right " data-stat="win_loss_perc" ><strong>.623</strong></td><td class="right " data-stat="games_back" ><strong>--</strong></td></tr>
+<tr ><th scope="row" class="left " data-stat="team_ID" csk="New York Mets" ><strong><a href="/teams/NYM/2022.shtml" title="New York Mets">New York Mets</a></strong></th><td class="right " data-stat="W" ><strong>101</strong></td><td class="right " data-stat="L" ><strong>61</strong></td><td class="right " data-stat="win_loss_perc" ><strong>.623</strong></td><td class="right " data-stat="games_back" ><strong>--</strong></td></tr>
+<tr ><th scope="row" class="left " data-stat="team_ID" csk="Philadelphia Phillies" ><em><a href="/teams/PHI/2022.shtml" title="Philadelphia Phillies">Philadelphia Phillies</a></em></th><td class="right " data-stat="W" ><em>87</em></td><td class="right " data-stat="L" ><em>75</em></td><td class="right " data-stat="win_loss_perc" ><em>.537</em></td><td class="right " data-stat="games_back" ><em>14.0</em></td></tr>
+<tr ><th scope="row" class="left " data-stat="team_ID" csk="Miami Marlins" ><a href="/teams/MIA/2022.shtml" title="Miami Marlins">Miami Marlins</a></th><td class="right " data-stat="W" >69</td><td class="right " data-stat="L" >93</td><td class="right " data-stat="win_loss_perc" >.426</td><td class="right " data-stat="games_back" >32.0</td></tr>
+<tr ><th scope="row" class="left " data-stat="team_ID" csk="Washington Nationals" ><a href="/teams/WSN/2022.shtml" title="Washington Nationals">Washington Nationals</a></th><td class="right " data-stat="W" >55</td><td class="right " data-stat="L" >107</td><td class="right " data-stat="win_loss_perc" >.340</td><td class="right " data-stat="games_back" >46.0</td></tr>
+
+</table>
+
+
+</div>
+
+
+
+</div>
+
+	
+		
+<div id="all_standings_C" class="table_wrapper">
+
+<div class="section_heading assoc_standings_C" id="standings_C_sh">
+  <span class="section_anchor" id="standings_C_link" data-label="Central Division"></span><h2>Central Division</h2>    <div class="section_heading_text">
+      <ul>
+      </ul>
+    </div>
+    		
+</div>
+<div class="table_container" id="div_standings_C">
+    
+    <table class="suppress_all sortable stats_table" id="standings_C" data-cols-to-freeze="0">
+    <caption>Central Division Table</caption>
+    
+
+   <colgroup><col><col><col><col><col></colgroup>
+   <thead>      
+      <tr>
+         <th aria-label="Tm" data-stat="team_ID" scope="col" class=" poptip sort_default_asc show_partial_when_sorting center" >Tm</th>
+         <th aria-label="Wins" data-stat="W" scope="col" class=" poptip center" data-tip="Wins" >W</th>
+         <th aria-label="Losses" data-stat="L" scope="col" class=" poptip center" data-tip="Losses" >L</th>
+         <th aria-label="Win-Loss %" data-stat="win_loss_perc" scope="col" class=" poptip hide_non_quals center" data-tip="&lt;strong&gt;Win-Loss Percentage&lt;/strong&gt;&lt;br&gt;W / (W + L)&lt;br&gt;For players, leaders need one decision for every ten team games.&lt;br&gt;For managers, minimum to qualify for leading is 320 games." data-filter="1" data-name="Win-Loss %" >W-L%</th>
+         <th aria-label="Games Back" data-stat="games_back" scope="col" class=" poptip sort_default_asc center" data-tip="&lt;strong&gt;Games Back of Division/League Leader&lt;/strong&gt;&lt;br&gt;Computed as games over .500 of leader (W-L) minus games over .500 of team divided by two.&lt;br&gt;Typically computed at the end of play for a particular day.&lt;br&gt;Blank for 1st game of DH." >GB</th>
+      </tr>
+      </thead>
+<tbody><tr ><th scope="row" class="left " data-stat="team_ID" csk="St. Louis Cardinals" ><strong><a href="/teams/STL/2022.shtml" title="St. Louis Cardinals">St. Louis Cardinals</a></strong></th><td class="right " data-stat="W" ><strong>93</strong></td><td class="right " data-stat="L" ><strong>69</strong></td><td class="right " data-stat="win_loss_perc" ><strong>.574</strong></td><td class="right " data-stat="games_back" ><strong>--</strong></td></tr>
+<tr ><th scope="row" class="left " data-stat="team_ID" csk="Milwaukee Brewers" ><a href="/teams/MIL/2022.shtml" title="Milwaukee Brewers">Milwaukee Brewers</a></th><td class="right " data-stat="W" >86</td><td class="right " data-stat="L" >76</td><td class="right " data-stat="win_loss_perc" >.531</td><td class="right " data-stat="games_back" >7.0</td></tr>
+<tr ><th scope="row" class="left " data-stat="team_ID" csk="Chicago Cubs" ><a href="/teams/CHC/2022.shtml" title="Chicago Cubs">Chicago Cubs</a></th><td class="right " data-stat="W" >74</td><td class="right " data-stat="L" >88</td><td class="right " data-stat="win_loss_perc" >.457</td><td class="right " data-stat="games_back" >19.0</td></tr>
+<tr ><th scope="row" class="left " data-stat="team_ID" csk="Cincinnati Reds" ><a href="/teams/CIN/2022.shtml" title="Cincinnati Reds">Cincinnati Reds</a></th><td class="right " data-stat="W" >62</td><td class="right " data-stat="L" >100</td><td class="right " data-stat="win_loss_perc" >.383</td><td class="right " data-stat="games_back" >31.0</td></tr>
+<tr ><th scope="row" class="left " data-stat="team_ID" csk="Pittsburgh Pirates" ><a href="/teams/PIT/2022.shtml" title="Pittsburgh Pirates">Pittsburgh Pirates</a></th><td class="right " data-stat="W" >62</td><td class="right " data-stat="L" >100</td><td class="right " data-stat="win_loss_perc" >.383</td><td class="right " data-stat="games_back" >31.0</td></tr>
+
+</table>
+
+
+</div>
+
+
+
+</div>
+
+	
+		
+<div id="all_standings_W" class="table_wrapper">
+
+<div class="section_heading assoc_standings_W" id="standings_W_sh">
+  <span class="section_anchor" id="standings_W_link" data-label="West Division"></span><h2>West Division</h2>    <div class="section_heading_text">
+      <ul>
+      </ul>
+    </div>
+    		
+</div>
+<div class="table_container" id="div_standings_W">
+    
+    <table class="suppress_all sortable stats_table" id="standings_W" data-cols-to-freeze="0">
+    <caption>West Division Table</caption>
+    
+
+   <colgroup><col><col><col><col><col></colgroup>
+   <thead>      
+      <tr>
+         <th aria-label="Tm" data-stat="team_ID" scope="col" class=" poptip sort_default_asc show_partial_when_sorting center" >Tm</th>
+         <th aria-label="Wins" data-stat="W" scope="col" class=" poptip center" data-tip="Wins" >W</th>
+         <th aria-label="Losses" data-stat="L" scope="col" class=" poptip center" data-tip="Losses" >L</th>
+         <th aria-label="Win-Loss %" data-stat="win_loss_perc" scope="col" class=" poptip hide_non_quals center" data-tip="&lt;strong&gt;Win-Loss Percentage&lt;/strong&gt;&lt;br&gt;W / (W + L)&lt;br&gt;For players, leaders need one decision for every ten team games.&lt;br&gt;For managers, minimum to qualify for leading is 320 games." data-filter="1" data-name="Win-Loss %" >W-L%</th>
+         <th aria-label="Games Back" data-stat="games_back" scope="col" class=" poptip sort_default_asc center" data-tip="&lt;strong&gt;Games Back of Division/League Leader&lt;/strong&gt;&lt;br&gt;Computed as games over .500 of leader (W-L) minus games over .500 of team divided by two.&lt;br&gt;Typically computed at the end of play for a particular day.&lt;br&gt;Blank for 1st game of DH." >GB</th>
+      </tr>
+      </thead>
+<tbody><tr ><th scope="row" class="left " data-stat="team_ID" csk="Los Angeles Dodgers" ><strong><a href="/teams/LAD/2022.shtml" title="Los Angeles Dodgers">Los Angeles Dodgers</a></strong></th><td class="right " data-stat="W" ><strong>111</strong></td><td class="right " data-stat="L" ><strong>51</strong></td><td class="right " data-stat="win_loss_perc" ><strong>.685</strong></td><td class="right " data-stat="games_back" ><strong>--</strong></td></tr>
+<tr ><th scope="row" class="left " data-stat="team_ID" csk="San Diego Padres" ><em><a href="/teams/SDP/2022.shtml" title="San Diego Padres">San Diego Padres</a></em></th><td class="right " data-stat="W" ><em>89</em></td><td class="right " data-stat="L" ><em>73</em></td><td class="right " data-stat="win_loss_perc" ><em>.549</em></td><td class="right " data-stat="games_back" ><em>22.0</em></td></tr>
+<tr ><th scope="row" class="left " data-stat="team_ID" csk="San Francisco Giants" ><a href="/teams/SFG/2022.shtml" title="San Francisco Giants">San Francisco Giants</a></th><td class="right " data-stat="W" >81</td><td class="right " data-stat="L" >81</td><td class="right " data-stat="win_loss_perc" >.500</td><td class="right " data-stat="games_back" >30.0</td></tr>
+<tr ><th scope="row" class="left " data-stat="team_ID" csk="Arizona Diamondbacks" ><a href="/teams/ARI/2022.shtml" title="Arizona Diamondbacks">Arizona Diamondbacks</a></th><td class="right " data-stat="W" >74</td><td class="right " data-stat="L" >88</td><td class="right " data-stat="win_loss_perc" >.457</td><td class="right " data-stat="games_back" >37.0</td></tr>
+<tr ><th scope="row" class="left " data-stat="team_ID" csk="Colorado Rockies" ><a href="/teams/COL/2022.shtml" title="Colorado Rockies">Colorado Rockies</a></th><td class="right " data-stat="W" >68</td><td class="right " data-stat="L" >94</td><td class="right " data-stat="win_loss_perc" >.420</td><td class="right " data-stat="games_back" >43.0</td></tr>
+
+</table>
+
+
+</div>
+
+
+
+</div>
+
+	
+	</div>
+
+		
+    </div>
+
+</div>
+
+
+
+            
+            
+            
+         
+      
+         
+            
+<div id="all_expanded_standings_overall" class="table_wrapper setup_commented commented">
+
+<div class="section_heading assoc_expanded_standings_overall" id="expanded_standings_overall_sh">
+  <span class="section_anchor" id="expanded_standings_overall_link" data-label="Major League Baseball  Detailed Standings"></span><h2>Major League Baseball  Detailed Standings</h2>    <div class="section_heading_text">
+      <ul><li><a href="https://www.sports-reference.com/blog/2015/03/srs-calculation-details/">Explanation of Simple Rating System (SRS)</a></li>
+      </ul>
+    </div>
+    		
+</div><div class="placeholder"></div>
+<!--
+
+<div class="table_container" id="div_expanded_standings_overall">
+    
+    <table class="sortable stats_table" id="expanded_standings_overall" data-cols-to-freeze=",2">
+    <caption>Major League Baseball  Detailed Standings</caption>
+    
+
+   <colgroup><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col></colgroup>
+   <thead>      
+      <tr>
+         <th aria-label="Rk" data-stat="ranker" scope="col" class="tooltip ranker poptip sort_default_asc show_partial_when_sorting center" data-tip="&lt;strong&gt;Rank&lt;/strong&gt;&lt;br&gt;This is a count of the rows from top to bottom.&lt;br&gt;It is recalculated following the sorting of a column." >Rk</th>
+         <th aria-label="Tm" data-stat="team_name" scope="col" class=" poptip sort_default_asc left" >Tm</th>
+         <th aria-label="Wins" data-stat="W" scope="col" class=" poptip center" data-tip="Wins" >W</th>
+         <th aria-label="Losses" data-stat="L" scope="col" class=" poptip center" data-tip="Losses" >L</th>
+         <th aria-label="Win-Loss %" data-stat="win_loss_perc" scope="col" class=" poptip hide_non_quals center" data-tip="&lt;strong&gt;Win-Loss Percentage&lt;/strong&gt;&lt;br&gt;W / (W + L)&lt;br&gt;For players, leaders need one decision for every ten team games.&lt;br&gt;For managers, minimum to qualify for leading is 320 games." data-filter="1" data-name="Win-Loss %" >W-L%</th>
+         <th aria-label="Strk" data-stat="winning_streak" scope="col" class=" poptip show_partial_when_sorting center" >Strk</th>
+         <th aria-label="Runs Scored" data-stat="R" scope="col" class=" poptip center" data-tip="Runs Scored/Allowed" >R</th>
+         <th aria-label="Runs Allowed" data-stat="RA" scope="col" class=" poptip center" data-tip="Runs Allowed" >RA</th>
+         <th aria-label="Rdiff" data-stat="run_diff" scope="col" class=" poptip center" data-tip="&lt;strong&gt;Run Differential&lt;/strong&gt;&lt;br&gt;Runs Scored - Runs Allowed&lt;br&gt;May be overall or per game" >Rdiff</th>
+         <th aria-label="SOS" data-stat="strength_of_schedule" scope="col" class=" poptip center" data-tip="&lt;strong&gt;Strength of Schedule&lt;/strong&gt;&lt;br&gt;The number of runs per game their opponents are better (or worse) than the average team.&lt;br&gt;Average ML team for years with inter-league play and just their league for other years." >SOS</th>
+         <th aria-label="SRS" data-stat="simple_rating_system" scope="col" class=" poptip center" data-tip="&lt;strong&gt;Simple Rating System&lt;/strong&gt;&lt;br&gt;The number of runs per game they are better (or worse) than the average team.&lt;br&gt;Average ML team for years with inter-league play and just their league for other years.&lt;br&gt;SRS = Run Differential (R_diff) + Strength of Schedule (SOS)" >SRS</th>
+         <th aria-label="pythWL" data-stat="record_pythag" scope="col" class=" poptip show_partial_when_sorting center" data-tip="<strong>Pythagorean Win-Loss</strong><br>Expected Win-Loss record based on the number of runs scored<br>and allowed by the team." >pythWL</th>
+         <th aria-label="Luck" data-stat="luck_pythag" scope="col" class=" poptip show_partial_when_sorting center" data-tip="<strong>Pythagorean Luck</strong><br>The difference between the actual W-L and Pythagorean W-L." >Luck</th>
+         <th aria-label="vEast" data-stat="record_vs_east" scope="col" class=" poptip show_partial_when_sorting center" >vEast</th>
+         <th aria-label="vCent" data-stat="record_vs_central" scope="col" class=" poptip show_partial_when_sorting center" >vCent</th>
+         <th aria-label="vWest" data-stat="record_vs_west" scope="col" class=" poptip show_partial_when_sorting center" >vWest</th>
+         <th aria-label="Inter" data-stat="record_interleague" scope="col" class=" poptip show_partial_when_sorting center" >Inter</th>
+         <th aria-label="Home" data-stat="record_home" scope="col" class=" poptip show_partial_when_sorting center" >Home</th>
+         <th aria-label="Road" data-stat="record_road" scope="col" class=" poptip show_partial_when_sorting center" >Road</th>
+         <th aria-label="ExInn" data-stat="record_xinn" scope="col" class=" poptip show_partial_when_sorting center" >ExInn</th>
+         <th aria-label="1Run" data-stat="record_one_run" scope="col" class=" poptip show_partial_when_sorting center" >1Run</th>
+         <th aria-label="vRHP" data-stat="record_vs_rhp" scope="col" class=" poptip show_partial_when_sorting center" >vRHP</th>
+         <th aria-label="vLHP" data-stat="record_vs_lhp" scope="col" class=" poptip show_partial_when_sorting center" >vLHP</th>
+         <th aria-label="&ge;.500" data-stat="record_vs_over_500" scope="col" class=" poptip show_partial_when_sorting center" >&ge;.500</th>
+         <th aria-label="&lt;.500" data-stat="record_vs_under_500" scope="col" class=" poptip show_partial_when_sorting center" >&lt;.500</th>
+         <th aria-label="last10" data-stat="record_last_10" scope="col" class=" poptip show_partial_when_sorting center" >last10</th>
+         <th aria-label="last20" data-stat="record_last_20" scope="col" class=" poptip show_partial_when_sorting center" >last20</th>
+         <th aria-label="last30" data-stat="record_last_30" scope="col" class=" poptip show_partial_when_sorting center" >last30</th>
+      </tr>
+      </thead>
+<tbody><tr ><th scope="row" class="right " data-stat="ranker" ><strong>1</strong></th><td class="left " data-stat="team_name" ><strong><a href="/teams/LAD/2022.shtml">Los Angeles Dodgers</a></strong></td><td class="right " data-stat="W" ><strong>111</strong></td><td class="right " data-stat="L" ><strong>51</strong></td><td class="right " data-stat="win_loss_perc" ><strong>.685</strong></td><td class="right " data-stat="winning_streak" csk="1.0" ><strong>W 1</strong></td><td class="right " data-stat="R" ><strong>5.2</strong></td><td class="right " data-stat="RA" ><strong>3.2</strong></td><td class="right " data-stat="run_diff" ><strong>2.1</strong></td><td class="right " data-stat="strength_of_schedule" ><strong>-0.2</strong></td><td class="right " data-stat="simple_rating_system" ><strong>1.8</strong></td><td class="right " data-stat="record_pythag" csk="0.716049382716049" ><strong>116-46</strong></td><td class="right " data-stat="luck_pythag" ><strong>-5</strong></td><td class="right " data-stat="record_vs_east" csk="0.575757575757576" ><strong>19-14</strong></td><td class="right " data-stat="record_vs_central" csk="0.696969696969697" ><strong>23-10</strong></td><td class="right " data-stat="record_vs_west" csk="0.710526315789474" ><strong>54-22</strong></td><td class="right " data-stat="record_interleague" csk="0.75" ><strong>15-5</strong></td><td class="right " data-stat="record_home" csk="0.703703703703704" ><strong>57-24</strong></td><td class="right " data-stat="record_road" csk="0.666666666666667" ><strong>54-27</strong></td><td class="right " data-stat="record_xinn" csk="0.4" ><strong>6-9</strong></td><td class="right " data-stat="record_one_run" csk="0.516129032258065" ><strong>16-15</strong></td><td class="right " data-stat="record_vs_rhp" csk="0.692982456140351" ><strong>79-35</strong></td><td class="right " data-stat="record_vs_lhp" csk="0.666666666666667" ><strong>32-16</strong></td><td class="right " data-stat="record_vs_over_500" csk="0.649350649350649" ><strong>50-27</strong></td><td class="right " data-stat="record_vs_under_500" csk="0.717647058823529" ><strong>61-24</strong></td><td class="right " data-stat="record_last_10" csk="0.6" ><strong>6-4</strong></td><td class="right " data-stat="record_last_20" csk="0.65" ><strong>13-7</strong></td><td class="right " data-stat="record_last_30" csk="0.666666666666667" ><strong>20-10</strong></td></tr>
+<tr ><th scope="row" class="right " data-stat="ranker" ><strong>2</strong></th><td class="left " data-stat="team_name" ><strong><a href="/teams/HOU/2022.shtml">Houston Astros</a></strong></td><td class="right " data-stat="W" ><strong>106</strong></td><td class="right " data-stat="L" ><strong>56</strong></td><td class="right " data-stat="win_loss_perc" ><strong>.654</strong></td><td class="right " data-stat="winning_streak" csk="2.0" ><strong>W 2</strong></td><td class="right " data-stat="R" ><strong>4.5</strong></td><td class="right " data-stat="RA" ><strong>3.2</strong></td><td class="right " data-stat="run_diff" ><strong>1.4</strong></td><td class="right " data-stat="strength_of_schedule" ><strong>-0.1</strong></td><td class="right " data-stat="simple_rating_system" ><strong>1.3</strong></td><td class="right " data-stat="record_pythag" csk="0.654320987654321" ><strong>106-56</strong></td><td class="right iz" data-stat="luck_pythag" ><strong>0</strong></td><td class="right " data-stat="record_vs_east" csk="0.53125" ><strong>17-15</strong></td><td class="right " data-stat="record_vs_central" csk="0.764705882352941" ><strong>26-8</strong></td><td class="right " data-stat="record_vs_west" csk="0.671052631578947" ><strong>51-25</strong></td><td class="right " data-stat="record_interleague" csk="0.6" ><strong>12-8</strong></td><td class="right " data-stat="record_home" csk="0.679012345679012" ><strong>55-26</strong></td><td class="right " data-stat="record_road" csk="0.62962962962963" ><strong>51-30</strong></td><td class="right " data-stat="record_xinn" csk="0.454545454545455" ><strong>5-6</strong></td><td class="right " data-stat="record_one_run" csk="0.636363636363636" ><strong>28-16</strong></td><td class="right " data-stat="record_vs_rhp" csk="0.592592592592593" ><strong>64-44</strong></td><td class="right " data-stat="record_vs_lhp" csk="0.777777777777778" ><strong>42-12</strong></td><td class="right " data-stat="record_vs_over_500" csk="0.608695652173913" ><strong>42-27</strong></td><td class="right " data-stat="record_vs_under_500" csk="0.688172043010753" ><strong>64-29</strong></td><td class="right " data-stat="record_last_10" csk="0.7" ><strong>7-3</strong></td><td class="right " data-stat="record_last_20" csk="0.7" ><strong>14-6</strong></td><td class="right " data-stat="record_last_30" csk="0.7" ><strong>21-9</strong></td></tr>
+<tr ><th scope="row" class="right " data-stat="ranker" ><strong>3</strong></th><td class="left " data-stat="team_name" ><strong><a href="/teams/ATL/2022.shtml">Atlanta Braves</a></strong></td><td class="right " data-stat="W" ><strong>101</strong></td><td class="right " data-stat="L" ><strong>61</strong></td><td class="right " data-stat="win_loss_perc" ><strong>.623</strong></td><td class="right " data-stat="winning_streak" csk="-1.0" ><strong>L 1</strong></td><td class="right " data-stat="R" ><strong>4.9</strong></td><td class="right " data-stat="RA" ><strong>3.8</strong></td><td class="right " data-stat="run_diff" ><strong>1.1</strong></td><td class="right " data-stat="strength_of_schedule" ><strong>-0.1</strong></td><td class="right " data-stat="simple_rating_system" ><strong>1.0</strong></td><td class="right " data-stat="record_pythag" csk="0.617283950617284" ><strong>100-62</strong></td><td class="right " data-stat="luck_pythag" ><strong>1</strong></td><td class="right " data-stat="record_vs_east" csk="0.631578947368421" ><strong>48-28</strong></td><td class="right " data-stat="record_vs_central" csk="0.636363636363636" ><strong>21-12</strong></td><td class="right " data-stat="record_vs_west" csk="0.575757575757576" ><strong>19-14</strong></td><td class="right " data-stat="record_interleague" csk="0.65" ><strong>13-7</strong></td><td class="right " data-stat="record_home" csk="0.679012345679012" ><strong>55-26</strong></td><td class="right " data-stat="record_road" csk="0.567901234567901" ><strong>46-35</strong></td><td class="right " data-stat="record_xinn" csk="0.461538461538462" ><strong>6-7</strong></td><td class="right " data-stat="record_one_run" csk="0.590909090909091" ><strong>26-18</strong></td><td class="right " data-stat="record_vs_rhp" csk="0.592592592592593" ><strong>64-44</strong></td><td class="right " data-stat="record_vs_lhp" csk="0.685185185185185" ><strong>37-17</strong></td><td class="right " data-stat="record_vs_over_500" csk="0.519480519480519" ><strong>40-37</strong></td><td class="right " data-stat="record_vs_under_500" csk="0.717647058823529" ><strong>61-24</strong></td><td class="right " data-stat="record_last_10" csk="0.7" ><strong>7-3</strong></td><td class="right " data-stat="record_last_20" csk="0.65" ><strong>13-7</strong></td><td class="right " data-stat="record_last_30" csk="0.666666666666667" ><strong>20-10</strong></td></tr>
+<tr ><th scope="row" class="right " data-stat="ranker" ><strong>4</strong></th><td class="left " data-stat="team_name" ><strong><a href="/teams/NYM/2022.shtml">New York Mets</a></strong></td><td class="right " data-stat="W" ><strong>101</strong></td><td class="right " data-stat="L" ><strong>61</strong></td><td class="right " data-stat="win_loss_perc" ><strong>.623</strong></td><td class="right " data-stat="winning_streak" csk="3.0" ><strong>W 3</strong></td><td class="right " data-stat="R" ><strong>4.8</strong></td><td class="right " data-stat="RA" ><strong>3.7</strong></td><td class="right " data-stat="run_diff" ><strong>1.0</strong></td><td class="right " data-stat="strength_of_schedule" ><strong>-0.1</strong></td><td class="right " data-stat="simple_rating_system" ><strong>1.0</strong></td><td class="right " data-stat="record_pythag" csk="0.611111111111111" ><strong>99-63</strong></td><td class="right " data-stat="luck_pythag" ><strong>2</strong></td><td class="right " data-stat="record_vs_east" csk="0.657894736842105" ><strong>50-26</strong></td><td class="right " data-stat="record_vs_central" csk="0.696969696969697" ><strong>23-10</strong></td><td class="right " data-stat="record_vs_west" csk="0.575757575757576" ><strong>19-14</strong></td><td class="right " data-stat="record_interleague" csk="0.45" ><strong>9-11</strong></td><td class="right " data-stat="record_home" csk="0.666666666666667" ><strong>54-27</strong></td><td class="right " data-stat="record_road" csk="0.580246913580247" ><strong>47-34</strong></td><td class="right " data-stat="record_xinn" csk="0.833333333333333" ><strong>10-2</strong></td><td class="right " data-stat="record_one_run" csk="0.583333333333333" ><strong>21-15</strong></td><td class="right " data-stat="record_vs_rhp" csk="0.644859813084112" ><strong>69-38</strong></td><td class="right " data-stat="record_vs_lhp" csk="0.581818181818182" ><strong>32-23</strong></td><td class="right " data-stat="record_vs_over_500" csk="0.548780487804878" ><strong>45-37</strong></td><td class="right " data-stat="record_vs_under_500" csk="0.7" ><strong>56-24</strong></td><td class="right " data-stat="record_last_10" csk="0.5" ><strong>5-5</strong></td><td class="right " data-stat="record_last_20" csk="0.6" ><strong>12-8</strong></td><td class="right " data-stat="record_last_30" csk="0.566666666666667" ><strong>17-13</strong></td></tr>
+<tr ><th scope="row" class="right " data-stat="ranker" ><strong>5</strong></th><td class="left " data-stat="team_name" ><strong><a href="/teams/NYY/2022.shtml">New York Yankees</a></strong></td><td class="right " data-stat="W" ><strong>99</strong></td><td class="right " data-stat="L" ><strong>63</strong></td><td class="right " data-stat="win_loss_perc" ><strong>.611</strong></td><td class="right " data-stat="winning_streak" csk="-2.0" ><strong>L 2</strong></td><td class="right " data-stat="R" ><strong>5.0</strong></td><td class="right " data-stat="RA" ><strong>3.5</strong></td><td class="right " data-stat="run_diff" ><strong>1.5</strong></td><td class="right iz" data-stat="strength_of_schedule" ><strong>0.0</strong></td><td class="right " data-stat="simple_rating_system" ><strong>1.5</strong></td><td class="right " data-stat="record_pythag" csk="0.654320987654321" ><strong>106-56</strong></td><td class="right " data-stat="luck_pythag" ><strong>-7</strong></td><td class="right " data-stat="record_vs_east" csk="0.618421052631579" ><strong>47-29</strong></td><td class="right " data-stat="record_vs_central" csk="0.757575757575758" ><strong>25-8</strong></td><td class="right " data-stat="record_vs_west" csk="0.515151515151515" ><strong>17-16</strong></td><td class="right " data-stat="record_interleague" csk="0.5" ><strong>10-10</strong></td><td class="right " data-stat="record_home" csk="0.703703703703704" ><strong>57-24</strong></td><td class="right " data-stat="record_road" csk="0.518518518518518" ><strong>42-39</strong></td><td class="right " data-stat="record_xinn" csk="0.555555555555556" ><strong>10-8</strong></td><td class="right " data-stat="record_one_run" csk="0.53448275862069" ><strong>31-27</strong></td><td class="right " data-stat="record_vs_rhp" csk="0.603305785123967" ><strong>73-48</strong></td><td class="right " data-stat="record_vs_lhp" csk="0.634146341463415" ><strong>26-15</strong></td><td class="right " data-stat="record_vs_over_500" csk="0.537634408602151" ><strong>50-43</strong></td><td class="right " data-stat="record_vs_under_500" csk="0.710144927536232" ><strong>49-20</strong></td><td class="right " data-stat="record_last_10" csk="0.5" ><strong>5-5</strong></td><td class="right " data-stat="record_last_20" csk="0.65" ><strong>13-7</strong></td><td class="right " data-stat="record_last_30" csk="0.666666666666667" ><strong>20-10</strong></td></tr>
+<tr ><th scope="row" class="right " data-stat="ranker" ><strong>6</strong></th><td class="left " data-stat="team_name" ><strong><a href="/teams/STL/2022.shtml">St. Louis Cardinals</a></strong></td><td class="right " data-stat="W" ><strong>93</strong></td><td class="right " data-stat="L" ><strong>69</strong></td><td class="right " data-stat="win_loss_perc" ><strong>.574</strong></td><td class="right " data-stat="winning_streak" csk="-1.0" ><strong>L 1</strong></td><td class="right " data-stat="R" ><strong>4.8</strong></td><td class="right " data-stat="RA" ><strong>3.9</strong></td><td class="right " data-stat="run_diff" ><strong>0.8</strong></td><td class="right " data-stat="strength_of_schedule" ><strong>-0.3</strong></td><td class="right " data-stat="simple_rating_system" ><strong>0.6</strong></td><td class="right " data-stat="record_pythag" csk="0.58641975308642" ><strong>95-67</strong></td><td class="right " data-stat="luck_pythag" ><strong>-2</strong></td><td class="right " data-stat="record_vs_east" csk="0.470588235294118" ><strong>16-18</strong></td><td class="right " data-stat="record_vs_central" csk="0.631578947368421" ><strong>48-28</strong></td><td class="right " data-stat="record_vs_west" csk="0.59375" ><strong>19-13</strong></td><td class="right " data-stat="record_interleague" csk="0.5" ><strong>10-10</strong></td><td class="right " data-stat="record_home" csk="0.654320987654321" ><strong>53-28</strong></td><td class="right " data-stat="record_road" csk="0.493827160493827" ><strong>40-41</strong></td><td class="right " data-stat="record_xinn" csk="0.666666666666667" ><strong>8-4</strong></td><td class="right " data-stat="record_one_run" csk="0.604651162790698" ><strong>26-17</strong></td><td class="right " data-stat="record_vs_rhp" csk="0.543307086614173" ><strong>69-58</strong></td><td class="right " data-stat="record_vs_lhp" csk="0.685714285714286" ><strong>24-11</strong></td><td class="right " data-stat="record_vs_over_500" csk="0.472222222222222" ><strong>34-38</strong></td><td class="right " data-stat="record_vs_under_500" csk="0.655555555555556" ><strong>59-31</strong></td><td class="right " data-stat="record_last_10" csk="0.4" ><strong>4-6</strong></td><td class="right " data-stat="record_last_20" csk="0.5" ><strong>10-10</strong></td><td class="right " data-stat="record_last_30" csk="0.533333333333333" ><strong>16-14</strong></td></tr>
+<tr ><th scope="row" class="right " data-stat="ranker" ><strong>7</strong></th><td class="left " data-stat="team_name" ><strong><a href="/teams/CLE/2022.shtml">Cleveland Guardians</a></strong></td><td class="right " data-stat="W" ><strong>92</strong></td><td class="right " data-stat="L" ><strong>70</strong></td><td class="right " data-stat="win_loss_perc" ><strong>.568</strong></td><td class="right " data-stat="winning_streak" csk="2.0" ><strong>W 2</strong></td><td class="right " data-stat="R" ><strong>4.3</strong></td><td class="right " data-stat="RA" ><strong>3.9</strong></td><td class="right " data-stat="run_diff" ><strong>0.4</strong></td><td class="right " data-stat="strength_of_schedule" ><strong>-0.1</strong></td><td class="right " data-stat="simple_rating_system" ><strong>0.2</strong></td><td class="right " data-stat="record_pythag" csk="0.54320987654321" ><strong>88-74</strong></td><td class="right " data-stat="luck_pythag" ><strong>4</strong></td><td class="right " data-stat="record_vs_east" csk="0.46875" ><strong>15-17</strong></td><td class="right " data-stat="record_vs_central" csk="0.618421052631579" ><strong>47-29</strong></td><td class="right " data-stat="record_vs_west" csk="0.529411764705882" ><strong>18-16</strong></td><td class="right " data-stat="record_interleague" csk="0.6" ><strong>12-8</strong></td><td class="right " data-stat="record_home" csk="0.567901234567901" ><strong>46-35</strong></td><td class="right " data-stat="record_road" csk="0.567901234567901" ><strong>46-35</strong></td><td class="right " data-stat="record_xinn" csk="0.684210526315789" ><strong>13-6</strong></td><td class="right " data-stat="record_one_run" csk="0.622222222222222" ><strong>28-17</strong></td><td class="right " data-stat="record_vs_rhp" csk="0.547008547008547" ><strong>64-53</strong></td><td class="right " data-stat="record_vs_lhp" csk="0.622222222222222" ><strong>28-17</strong></td><td class="right " data-stat="record_vs_over_500" csk="0.5" ><strong>34-34</strong></td><td class="right " data-stat="record_vs_under_500" csk="0.617021276595745" ><strong>58-36</strong></td><td class="right " data-stat="record_last_10" csk="0.7" ><strong>7-3</strong></td><td class="right " data-stat="record_last_20" csk="0.8" ><strong>16-4</strong></td><td class="right " data-stat="record_last_30" csk="0.8" ><strong>24-6</strong></td></tr>
+<tr ><th scope="row" class="right " data-stat="ranker" >8</th><td class="left " data-stat="team_name" ><a href="/teams/TOR/2022.shtml">Toronto Blue Jays</a></td><td class="right " data-stat="W" >92</td><td class="right " data-stat="L" >70</td><td class="right " data-stat="win_loss_perc" >.568</td><td class="right " data-stat="winning_streak" csk="1.0" >W 1</td><td class="right " data-stat="R" >4.8</td><td class="right " data-stat="RA" >4.2</td><td class="right " data-stat="run_diff" >0.6</td><td class="right " data-stat="strength_of_schedule" >0.1</td><td class="right " data-stat="simple_rating_system" >0.7</td><td class="right " data-stat="record_pythag" csk="0.561728395061728" >91-71</td><td class="right " data-stat="luck_pythag" >1</td><td class="right " data-stat="record_vs_east" csk="0.565789473684211" >43-33</td><td class="right " data-stat="record_vs_central" csk="0.558823529411765" >19-15</td><td class="right " data-stat="record_vs_west" csk="0.53125" >17-15</td><td class="right " data-stat="record_interleague" csk="0.65" >13-7</td><td class="right " data-stat="record_home" csk="0.580246913580247" >47-34</td><td class="right " data-stat="record_road" csk="0.555555555555556" >45-36</td><td class="right " data-stat="record_xinn" csk="0.533333333333333" >8-7</td><td class="right " data-stat="record_one_run" csk="0.6" >30-20</td><td class="right " data-stat="record_vs_rhp" csk="0.615384615384615" >80-50</td><td class="right " data-stat="record_vs_lhp" csk="0.375" >12-20</td><td class="right " data-stat="record_vs_over_500" csk="0.478723404255319" >45-49</td><td class="right " data-stat="record_vs_under_500" csk="0.691176470588235" >47-21</td><td class="right " data-stat="record_last_10" csk="0.7" >7-3</td><td class="right " data-stat="record_last_20" csk="0.6" >12-8</td><td class="right " data-stat="record_last_30" csk="0.633333333333333" >19-11</td></tr>
+<tr ><th scope="row" class="right " data-stat="ranker" >9</th><td class="left " data-stat="team_name" ><a href="/teams/SEA/2022.shtml">Seattle Mariners</a></td><td class="right " data-stat="W" >90</td><td class="right " data-stat="L" >72</td><td class="right " data-stat="win_loss_perc" >.556</td><td class="right " data-stat="winning_streak" csk="3.0" >W 3</td><td class="right " data-stat="R" >4.3</td><td class="right " data-stat="RA" >3.8</td><td class="right " data-stat="run_diff" >0.4</td><td class="right iz" data-stat="strength_of_schedule" >0.0</td><td class="right " data-stat="simple_rating_system" >0.4</td><td class="right " data-stat="record_pythag" csk="0.549382716049383" >89-73</td><td class="right " data-stat="luck_pythag" >1</td><td class="right " data-stat="record_vs_east" csk="0.484848484848485" >16-17</td><td class="right " data-stat="record_vs_central" csk="0.636363636363636" >21-12</td><td class="right " data-stat="record_vs_west" csk="0.539473684210526" >41-35</td><td class="right " data-stat="record_interleague" csk="0.6" >12-8</td><td class="right " data-stat="record_home" csk="0.567901234567901" >46-35</td><td class="right " data-stat="record_road" csk="0.54320987654321" >44-37</td><td class="right " data-stat="record_xinn" csk="0.6875" >11-5</td><td class="right " data-stat="record_one_run" csk="0.607142857142857" >34-22</td><td class="right " data-stat="record_vs_rhp" csk="0.566666666666667" >68-52</td><td class="right " data-stat="record_vs_lhp" csk="0.523809523809524" >22-20</td><td class="right " data-stat="record_vs_over_500" csk="0.535211267605634" >38-33</td><td class="right " data-stat="record_vs_under_500" csk="0.571428571428571" >52-39</td><td class="right " data-stat="record_last_10" csk="0.7" >7-3</td><td class="right " data-stat="record_last_20" csk="0.5" >10-10</td><td class="right " data-stat="record_last_30" csk="0.533333333333333" >16-14</td></tr>
+<tr ><th scope="row" class="right " data-stat="ranker" >10</th><td class="left " data-stat="team_name" ><a href="/teams/SDP/2022.shtml">San Diego Padres</a></td><td class="right " data-stat="W" >89</td><td class="right " data-stat="L" >73</td><td class="right " data-stat="win_loss_perc" >.549</td><td class="right " data-stat="winning_streak" csk="-1.0" >L 1</td><td class="right " data-stat="R" >4.4</td><td class="right " data-stat="RA" >4.1</td><td class="right " data-stat="run_diff" >0.3</td><td class="right iz" data-stat="strength_of_schedule" >0.0</td><td class="right " data-stat="simple_rating_system" >0.3</td><td class="right " data-stat="record_pythag" csk="0.530864197530864" >86-76</td><td class="right " data-stat="luck_pythag" >3</td><td class="right " data-stat="record_vs_east" csk="0.558823529411765" >19-15</td><td class="right " data-stat="record_vs_central" csk="0.65625" >21-11</td><td class="right " data-stat="record_vs_west" csk="0.539473684210526" >41-35</td><td class="right " data-stat="record_interleague" csk="0.4" >8-12</td><td class="right " data-stat="record_home" csk="0.54320987654321" >44-37</td><td class="right " data-stat="record_road" csk="0.555555555555556" >45-36</td><td class="right " data-stat="record_xinn" csk="0.705882352941177" >12-5</td><td class="right " data-stat="record_one_run" csk="0.638297872340426" >30-17</td><td class="right " data-stat="record_vs_rhp" csk="0.537037037037037" >58-50</td><td class="right " data-stat="record_vs_lhp" csk="0.574074074074074" >31-23</td><td class="right " data-stat="record_vs_over_500" csk="0.463414634146341" >38-44</td><td class="right " data-stat="record_vs_under_500" csk="0.6375" >51-29</td><td class="right " data-stat="record_last_10" csk="0.5" >5-5</td><td class="right " data-stat="record_last_20" csk="0.55" >11-9</td><td class="right " data-stat="record_last_30" csk="0.533333333333333" >16-14</td></tr>
+<tr ><th scope="row" class="right " data-stat="ranker" >11</th><td class="left " data-stat="team_name" ><a href="/teams/PHI/2022.shtml">Philadelphia Phillies</a></td><td class="right " data-stat="W" >87</td><td class="right " data-stat="L" >75</td><td class="right " data-stat="win_loss_perc" >.537</td><td class="right " data-stat="winning_streak" csk="-2.0" >L 2</td><td class="right " data-stat="R" >4.6</td><td class="right " data-stat="RA" >4.2</td><td class="right " data-stat="run_diff" >0.4</td><td class="right iz" data-stat="strength_of_schedule" >0.0</td><td class="right " data-stat="simple_rating_system" >0.4</td><td class="right " data-stat="record_pythag" csk="0.537037037037037" >87-75</td><td class="right iz" data-stat="luck_pythag" >0</td><td class="right " data-stat="record_vs_east" csk="0.539473684210526" >41-35</td><td class="right " data-stat="record_vs_central" csk="0.606060606060606" >20-13</td><td class="right " data-stat="record_vs_west" csk="0.515151515151515" >17-16</td><td class="right " data-stat="record_interleague" csk="0.45" >9-11</td><td class="right " data-stat="record_home" csk="0.580246913580247" >47-34</td><td class="right " data-stat="record_road" csk="0.493827160493827" >40-41</td><td class="right " data-stat="record_xinn" csk="0.571428571428571" >8-6</td><td class="right " data-stat="record_one_run" csk="0.468085106382979" >22-25</td><td class="right " data-stat="record_vs_rhp" csk="0.508620689655172" >59-57</td><td class="right " data-stat="record_vs_lhp" csk="0.608695652173913" >28-18</td><td class="right " data-stat="record_vs_over_500" csk="0.419753086419753" >34-47</td><td class="right " data-stat="record_vs_under_500" csk="0.654320987654321" >53-28</td><td class="right " data-stat="record_last_10" csk="0.4" >4-6</td><td class="right " data-stat="record_last_20" csk="0.35" >7-13</td><td class="right " data-stat="record_last_30" csk="0.466666666666667" >14-16</td></tr>
+<tr ><th scope="row" class="right " data-stat="ranker" >12</th><td class="left " data-stat="team_name" ><a href="/teams/MIL/2022.shtml">Milwaukee Brewers</a></td><td class="right " data-stat="W" >86</td><td class="right " data-stat="L" >76</td><td class="right " data-stat="win_loss_perc" >.531</td><td class="right " data-stat="winning_streak" csk="-1.0" >L 1</td><td class="right " data-stat="R" >4.5</td><td class="right " data-stat="RA" >4.2</td><td class="right " data-stat="run_diff" >0.2</td><td class="right " data-stat="strength_of_schedule" >-0.2</td><td class="right iz" data-stat="simple_rating_system" >0.0</td><td class="right " data-stat="record_pythag" csk="0.524691358024691" >85-77</td><td class="right " data-stat="luck_pythag" >1</td><td class="right " data-stat="record_vs_east" csk="0.419354838709677" >13-18</td><td class="right " data-stat="record_vs_central" csk="0.552631578947368" >42-34</td><td class="right " data-stat="record_vs_west" csk="0.457142857142857" >16-19</td><td class="right " data-stat="record_interleague" csk="0.75" >15-5</td><td class="right " data-stat="record_home" csk="0.567901234567901" >46-35</td><td class="right " data-stat="record_road" csk="0.493827160493827" >40-41</td><td class="right " data-stat="record_xinn" csk="0.5" >9-9</td><td class="right " data-stat="record_one_run" csk="0.549019607843137" >28-23</td><td class="right " data-stat="record_vs_rhp" csk="0.536363636363636" >59-51</td><td class="right " data-stat="record_vs_lhp" csk="0.519230769230769" >27-25</td><td class="right " data-stat="record_vs_over_500" csk="0.492957746478873" >35-36</td><td class="right " data-stat="record_vs_under_500" csk="0.56043956043956" >51-40</td><td class="right " data-stat="record_last_10" csk="0.4" >4-6</td><td class="right " data-stat="record_last_20" csk="0.5" >10-10</td><td class="right " data-stat="record_last_30" csk="0.533333333333333" >16-14</td></tr>
+<tr ><th scope="row" class="right " data-stat="ranker" >13</th><td class="left " data-stat="team_name" ><a href="/teams/TBR/2022.shtml">Tampa Bay Rays</a></td><td class="right " data-stat="W" >86</td><td class="right " data-stat="L" >76</td><td class="right " data-stat="win_loss_perc" >.531</td><td class="right " data-stat="winning_streak" csk="-5.0" >L 5</td><td class="right " data-stat="R" >4.1</td><td class="right " data-stat="RA" >3.8</td><td class="right " data-stat="run_diff" >0.3</td><td class="right " data-stat="strength_of_schedule" >0.1</td><td class="right " data-stat="simple_rating_system" >0.4</td><td class="right " data-stat="record_pythag" csk="0.537037037037037" >87-75</td><td class="right " data-stat="luck_pythag" >-1</td><td class="right " data-stat="record_vs_east" csk="0.526315789473684" >40-36</td><td class="right " data-stat="record_vs_central" csk="0.46875" >15-17</td><td class="right " data-stat="record_vs_west" csk="0.558823529411765" >19-15</td><td class="right " data-stat="record_interleague" csk="0.6" >12-8</td><td class="right " data-stat="record_home" csk="0.62962962962963" >51-30</td><td class="right " data-stat="record_road" csk="0.432098765432099" >35-46</td><td class="right " data-stat="record_xinn" csk="0.523809523809524" >11-10</td><td class="right " data-stat="record_one_run" csk="0.5" >27-27</td><td class="right " data-stat="record_vs_rhp" csk="0.516129032258065" >64-60</td><td class="right " data-stat="record_vs_lhp" csk="0.578947368421053" >22-16</td><td class="right " data-stat="record_vs_over_500" csk="0.460674157303371" >41-48</td><td class="right " data-stat="record_vs_under_500" csk="0.616438356164384" >45-28</td><td class="right " data-stat="record_last_10" csk="0.2" >2-8</td><td class="right " data-stat="record_last_20" csk="0.35" >7-13</td><td class="right " data-stat="record_last_30" csk="0.4" >12-18</td></tr>
+<tr ><th scope="row" class="right " data-stat="ranker" >14</th><td class="left " data-stat="team_name" ><a href="/teams/BAL/2022.shtml">Baltimore Orioles</a></td><td class="right " data-stat="W" >83</td><td class="right " data-stat="L" >79</td><td class="right " data-stat="win_loss_perc" >.512</td><td class="right " data-stat="winning_streak" csk="-1.0" >L 1</td><td class="right " data-stat="R" >4.2</td><td class="right " data-stat="RA" >4.2</td><td class="right " data-stat="run_diff" >-0.1</td><td class="right " data-stat="strength_of_schedule" >0.2</td><td class="right " data-stat="simple_rating_system" >0.1</td><td class="right " data-stat="record_pythag" csk="0.487654320987654" >79-83</td><td class="right " data-stat="luck_pythag" >4</td><td class="right " data-stat="record_vs_east" csk="0.447368421052632" >34-42</td><td class="right " data-stat="record_vs_central" csk="0.484848484848485" >16-17</td><td class="right " data-stat="record_vs_west" csk="0.636363636363636" >21-12</td><td class="right " data-stat="record_interleague" csk="0.6" >12-8</td><td class="right " data-stat="record_home" csk="0.555555555555556" >45-36</td><td class="right " data-stat="record_road" csk="0.469135802469136" >38-43</td><td class="right " data-stat="record_xinn" csk="0.615384615384615" >8-5</td><td class="right " data-stat="record_one_run" csk="0.48936170212766" >23-24</td><td class="right " data-stat="record_vs_rhp" csk="0.5" >56-56</td><td class="right " data-stat="record_vs_lhp" csk="0.54" >27-23</td><td class="right " data-stat="record_vs_over_500" csk="0.471910112359551" >42-47</td><td class="right " data-stat="record_vs_under_500" csk="0.561643835616438" >41-32</td><td class="right " data-stat="record_last_10" csk="0.4" >4-6</td><td class="right " data-stat="record_last_20" csk="0.4" >8-12</td><td class="right " data-stat="record_last_30" csk="0.4" >12-18</td></tr>
+<tr ><th scope="row" class="right " data-stat="ranker" >15</th><td class="left " data-stat="team_name" ><a href="/teams/CHW/2022.shtml">Chicago White Sox</a></td><td class="right " data-stat="W" >81</td><td class="right " data-stat="L" >81</td><td class="right " data-stat="win_loss_perc" >.500</td><td class="right " data-stat="winning_streak" csk="-1.0" >L 1</td><td class="right " data-stat="R" >4.2</td><td class="right " data-stat="RA" >4.4</td><td class="right " data-stat="run_diff" >-0.2</td><td class="right " data-stat="strength_of_schedule" >-0.1</td><td class="right " data-stat="simple_rating_system" >-0.3</td><td class="right " data-stat="record_pythag" csk="0.481481481481481" >78-84</td><td class="right " data-stat="luck_pythag" >3</td><td class="right " data-stat="record_vs_east" csk="0.46875" >15-17</td><td class="right " data-stat="record_vs_central" csk="0.486842105263158" >37-39</td><td class="right " data-stat="record_vs_west" csk="0.529411764705882" >18-16</td><td class="right " data-stat="record_interleague" csk="0.55" >11-9</td><td class="right " data-stat="record_home" csk="0.45679012345679" >37-44</td><td class="right " data-stat="record_road" csk="0.54320987654321" >44-37</td><td class="right " data-stat="record_xinn" csk="0.4" >6-9</td><td class="right " data-stat="record_one_run" csk="0.627906976744186" >27-16</td><td class="right " data-stat="record_vs_rhp" csk="0.512" >64-61</td><td class="right " data-stat="record_vs_lhp" csk="0.459459459459459" >17-20</td><td class="right " data-stat="record_vs_over_500" csk="0.462686567164179" >31-36</td><td class="right " data-stat="record_vs_under_500" csk="0.526315789473684" >50-45</td><td class="right " data-stat="record_last_10" csk="0.5" >5-5</td><td class="right " data-stat="record_last_20" csk="0.4" >8-12</td><td class="right " data-stat="record_last_30" csk="0.5" >15-15</td></tr>
+<tr ><th scope="row" class="right " data-stat="ranker" >16</th><td class="left " data-stat="team_name" ><a href="/teams/SFG/2022.shtml">San Francisco Giants</a></td><td class="right " data-stat="W" >81</td><td class="right " data-stat="L" >81</td><td class="right " data-stat="win_loss_perc" >.500</td><td class="right " data-stat="winning_streak" csk="1.0" >W 1</td><td class="right " data-stat="R" >4.4</td><td class="right " data-stat="RA" >4.3</td><td class="right " data-stat="run_diff" >0.1</td><td class="right iz" data-stat="strength_of_schedule" >0.0</td><td class="right " data-stat="simple_rating_system" >0.1</td><td class="right " data-stat="record_pythag" csk="0.512345679012346" >83-79</td><td class="right " data-stat="luck_pythag" >-2</td><td class="right " data-stat="record_vs_east" csk="0.575757575757576" >19-14</td><td class="right " data-stat="record_vs_central" csk="0.575757575757576" >19-14</td><td class="right " data-stat="record_vs_west" csk="0.434210526315789" >33-43</td><td class="right " data-stat="record_interleague" csk="0.5" >10-10</td><td class="right " data-stat="record_home" csk="0.54320987654321" >44-37</td><td class="right " data-stat="record_road" csk="0.45679012345679" >37-44</td><td class="right " data-stat="record_xinn" csk="0.5" >7-7</td><td class="right " data-stat="record_one_run" csk="0.448979591836735" >22-27</td><td class="right " data-stat="record_vs_rhp" csk="0.485981308411215" >52-55</td><td class="right " data-stat="record_vs_lhp" csk="0.527272727272727" >29-26</td><td class="right " data-stat="record_vs_over_500" csk="0.397435897435897" >31-47</td><td class="right " data-stat="record_vs_under_500" csk="0.595238095238095" >50-34</td><td class="right " data-stat="record_last_10" csk="0.7" >7-3</td><td class="right " data-stat="record_last_20" csk="0.65" >13-7</td><td class="right " data-stat="record_last_30" csk="0.566666666666667" >17-13</td></tr>
+<tr ><th scope="row" class="right " data-stat="ranker" >17</th><td class="left " data-stat="team_name" ><a href="/teams/MIN/2022.shtml">Minnesota Twins</a></td><td class="right " data-stat="W" >78</td><td class="right " data-stat="L" >84</td><td class="right " data-stat="win_loss_perc" >.481</td><td class="right " data-stat="winning_streak" csk="1.0" >W 1</td><td class="right " data-stat="R" >4.3</td><td class="right " data-stat="RA" >4.2</td><td class="right " data-stat="run_diff" >0.1</td><td class="right " data-stat="strength_of_schedule" >-0.1</td><td class="right iz" data-stat="simple_rating_system" >0.0</td><td class="right " data-stat="record_pythag" csk="0.506172839506173" >82-80</td><td class="right " data-stat="luck_pythag" >-4</td><td class="right " data-stat="record_vs_east" csk="0.529411764705882" >18-16</td><td class="right " data-stat="record_vs_central" csk="0.513157894736842" >39-37</td><td class="right " data-stat="record_vs_west" csk="0.40625" >13-19</td><td class="right " data-stat="record_interleague" csk="0.4" >8-12</td><td class="right " data-stat="record_home" csk="0.567901234567901" >46-35</td><td class="right " data-stat="record_road" csk="0.395061728395062" >32-49</td><td class="right " data-stat="record_xinn" csk="0.333333333333333" >5-10</td><td class="right " data-stat="record_one_run" csk="0.416666666666667" >20-28</td><td class="right " data-stat="record_vs_rhp" csk="0.451327433628319" >51-62</td><td class="right " data-stat="record_vs_lhp" csk="0.551020408163265" >27-22</td><td class="right " data-stat="record_vs_over_500" csk="0.423913043478261" >39-53</td><td class="right " data-stat="record_vs_under_500" csk="0.557142857142857" >39-31</td><td class="right " data-stat="record_last_10" csk="0.4" >4-6</td><td class="right " data-stat="record_last_20" csk="0.3" >6-14</td><td class="right " data-stat="record_last_30" csk="0.333333333333333" >10-20</td></tr>
+<tr ><th scope="row" class="right " data-stat="ranker" >18</th><td class="left " data-stat="team_name" ><a href="/teams/BOS/2022.shtml">Boston Red Sox</a></td><td class="right " data-stat="W" >78</td><td class="right " data-stat="L" >84</td><td class="right " data-stat="win_loss_perc" >.481</td><td class="right " data-stat="winning_streak" csk="3.0" >W 3</td><td class="right " data-stat="R" >4.5</td><td class="right " data-stat="RA" >4.9</td><td class="right " data-stat="run_diff" >-0.3</td><td class="right " data-stat="strength_of_schedule" >0.2</td><td class="right " data-stat="simple_rating_system" >-0.1</td><td class="right " data-stat="record_pythag" csk="0.469135802469136" >76-86</td><td class="right " data-stat="luck_pythag" >2</td><td class="right " data-stat="record_vs_east" csk="0.342105263157895" >26-50</td><td class="right " data-stat="record_vs_central" csk="0.545454545454545" >18-15</td><td class="right " data-stat="record_vs_west" csk="0.757575757575758" >25-8</td><td class="right " data-stat="record_interleague" csk="0.45" >9-11</td><td class="right " data-stat="record_home" csk="0.530864197530864" >43-38</td><td class="right " data-stat="record_road" csk="0.432098765432099" >35-46</td><td class="right " data-stat="record_xinn" csk="0.388888888888889" >7-11</td><td class="right " data-stat="record_one_run" csk="0.48" >24-26</td><td class="right " data-stat="record_vs_rhp" csk="0.436507936507937" >55-71</td><td class="right " data-stat="record_vs_lhp" csk="0.638888888888889" >23-13</td><td class="right " data-stat="record_vs_over_500" csk="0.419642857142857" >47-65</td><td class="right " data-stat="record_vs_under_500" csk="0.62" >31-19</td><td class="right " data-stat="record_last_10" csk="0.6" >6-4</td><td class="right " data-stat="record_last_20" csk="0.45" >9-11</td><td class="right " data-stat="record_last_30" csk="0.466666666666667" >14-16</td></tr>
+<tr ><th scope="row" class="right " data-stat="ranker" >19</th><td class="left " data-stat="team_name" ><a href="/teams/CHC/2022.shtml">Chicago Cubs</a></td><td class="right " data-stat="W" >74</td><td class="right " data-stat="L" >88</td><td class="right " data-stat="win_loss_perc" >.457</td><td class="right " data-stat="winning_streak" csk="1.0" >W 1</td><td class="right " data-stat="R" >4.1</td><td class="right " data-stat="RA" >4.5</td><td class="right " data-stat="run_diff" >-0.5</td><td class="right " data-stat="strength_of_schedule" >-0.1</td><td class="right " data-stat="simple_rating_system" >-0.6</td><td class="right " data-stat="record_pythag" csk="0.450617283950617" >73-89</td><td class="right " data-stat="luck_pythag" >1</td><td class="right " data-stat="record_vs_east" csk="0.67741935483871" >21-10</td><td class="right " data-stat="record_vs_central" csk="0.486842105263158" >37-39</td><td class="right " data-stat="record_vs_west" csk="0.285714285714286" >10-25</td><td class="right " data-stat="record_interleague" csk="0.3" >6-14</td><td class="right " data-stat="record_home" csk="0.45679012345679" >37-44</td><td class="right " data-stat="record_road" csk="0.45679012345679" >37-44</td><td class="right " data-stat="record_xinn" csk="0.368421052631579" >7-12</td><td class="right " data-stat="record_one_run" csk="0.490566037735849" >26-27</td><td class="right " data-stat="record_vs_rhp" csk="0.46218487394958" >55-64</td><td class="right " data-stat="record_vs_lhp" csk="0.441860465116279" >19-24</td><td class="right " data-stat="record_vs_over_500" csk="0.389473684210526" >37-58</td><td class="right " data-stat="record_vs_under_500" csk="0.552238805970149" >37-30</td><td class="right " data-stat="record_last_10" csk="0.8" >8-2</td><td class="right " data-stat="record_last_20" csk="0.7" >14-6</td><td class="right " data-stat="record_last_30" csk="0.6" >18-12</td></tr>
+<tr ><th scope="row" class="right " data-stat="ranker" >20</th><td class="left " data-stat="team_name" ><a href="/teams/ARI/2022.shtml">Arizona Diamondbacks</a></td><td class="right " data-stat="W" >74</td><td class="right " data-stat="L" >88</td><td class="right " data-stat="win_loss_perc" >.457</td><td class="right " data-stat="winning_streak" csk="1.0" >W 1</td><td class="right " data-stat="R" >4.3</td><td class="right " data-stat="RA" >4.6</td><td class="right " data-stat="run_diff" >-0.2</td><td class="right iz" data-stat="strength_of_schedule" >0.0</td><td class="right " data-stat="simple_rating_system" >-0.2</td><td class="right " data-stat="record_pythag" csk="0.475308641975309" >77-85</td><td class="right " data-stat="luck_pythag" >-3</td><td class="right " data-stat="record_vs_east" csk="0.516129032258065" >16-15</td><td class="right " data-stat="record_vs_central" csk="0.485714285714286" >17-18</td><td class="right " data-stat="record_vs_west" csk="0.381578947368421" >29-47</td><td class="right " data-stat="record_interleague" csk="0.6" >12-8</td><td class="right " data-stat="record_home" csk="0.493827160493827" >40-41</td><td class="right " data-stat="record_road" csk="0.419753086419753" >34-47</td><td class="right " data-stat="record_xinn" csk="0.416666666666667" >5-7</td><td class="right " data-stat="record_one_run" csk="0.369565217391304" >17-29</td><td class="right " data-stat="record_vs_rhp" csk="0.451327433628319" >51-62</td><td class="right " data-stat="record_vs_lhp" csk="0.469387755102041" >23-26</td><td class="right " data-stat="record_vs_over_500" csk="0.393939393939394" >39-60</td><td class="right " data-stat="record_vs_under_500" csk="0.555555555555556" >35-28</td><td class="right " data-stat="record_last_10" csk="0.4" >4-6</td><td class="right " data-stat="record_last_20" csk="0.35" >7-13</td><td class="right " data-stat="record_last_30" csk="0.366666666666667" >11-19</td></tr>
+<tr ><th scope="row" class="right " data-stat="ranker" >21</th><td class="left " data-stat="team_name" ><a href="/teams/LAA/2022.shtml">Los Angeles Angels</a></td><td class="right " data-stat="W" >73</td><td class="right " data-stat="L" >89</td><td class="right " data-stat="win_loss_perc" >.451</td><td class="right " data-stat="winning_streak" csk="-3.0" >L 3</td><td class="right " data-stat="R" >3.8</td><td class="right " data-stat="RA" >4.1</td><td class="right " data-stat="run_diff" >-0.3</td><td class="right " data-stat="strength_of_schedule" >0.1</td><td class="right " data-stat="simple_rating_system" >-0.1</td><td class="right " data-stat="record_pythag" csk="0.469135802469136" >76-86</td><td class="right " data-stat="luck_pythag" >-3</td><td class="right " data-stat="record_vs_east" csk="0.323529411764706" >11-23</td><td class="right " data-stat="record_vs_central" csk="0.5625" >18-14</td><td class="right " data-stat="record_vs_west" csk="0.486842105263158" >37-39</td><td class="right " data-stat="record_interleague" csk="0.35" >7-13</td><td class="right " data-stat="record_home" csk="0.493827160493827" >40-41</td><td class="right " data-stat="record_road" csk="0.407407407407407" >33-48</td><td class="right " data-stat="record_xinn" csk="0.466666666666667" >7-8</td><td class="right " data-stat="record_one_run" csk="0.391304347826087" >18-28</td><td class="right " data-stat="record_vs_rhp" csk="0.442477876106195" >50-63</td><td class="right " data-stat="record_vs_lhp" csk="0.469387755102041" >23-26</td><td class="right " data-stat="record_vs_over_500" csk="0.369565217391304" >34-58</td><td class="right " data-stat="record_vs_under_500" csk="0.557142857142857" >39-31</td><td class="right " data-stat="record_last_10" csk="0.7" >7-3</td><td class="right " data-stat="record_last_20" csk="0.6" >12-8</td><td class="right " data-stat="record_last_30" csk="0.533333333333333" >16-14</td></tr>
+<tr ><th scope="row" class="right " data-stat="ranker" >22</th><td class="left " data-stat="team_name" ><a href="/teams/MIA/2022.shtml">Miami Marlins</a></td><td class="right " data-stat="W" >69</td><td class="right " data-stat="L" >93</td><td class="right " data-stat="win_loss_perc" >.426</td><td class="right " data-stat="winning_streak" csk="1.0" >W 1</td><td class="right " data-stat="R" >3.6</td><td class="right " data-stat="RA" >4.2</td><td class="right " data-stat="run_diff" >-0.6</td><td class="right " data-stat="strength_of_schedule" >0.1</td><td class="right " data-stat="simple_rating_system" >-0.5</td><td class="right " data-stat="record_pythag" csk="0.432098765432099" >70-92</td><td class="right " data-stat="luck_pythag" >-1</td><td class="right " data-stat="record_vs_east" csk="0.447368421052632" >34-42</td><td class="right " data-stat="record_vs_central" csk="0.454545454545455" >15-18</td><td class="right " data-stat="record_vs_west" csk="0.363636363636364" >12-21</td><td class="right " data-stat="record_interleague" csk="0.4" >8-12</td><td class="right " data-stat="record_home" csk="0.419753086419753" >34-47</td><td class="right " data-stat="record_road" csk="0.432098765432099" >35-46</td><td class="right " data-stat="record_xinn" csk="0.470588235294118" >8-9</td><td class="right " data-stat="record_one_run" csk="0.375" >24-40</td><td class="right " data-stat="record_vs_rhp" csk="0.414634146341463" >51-72</td><td class="right " data-stat="record_vs_lhp" csk="0.461538461538462" >18-21</td><td class="right " data-stat="record_vs_over_500" csk="0.356435643564356" >36-65</td><td class="right " data-stat="record_vs_under_500" csk="0.540983606557377" >33-28</td><td class="right " data-stat="record_last_10" csk="0.6" >6-4</td><td class="right " data-stat="record_last_20" csk="0.55" >11-9</td><td class="right " data-stat="record_last_30" csk="0.466666666666667" >14-16</td></tr>
+<tr ><th scope="row" class="right " data-stat="ranker" >23</th><td class="left " data-stat="team_name" ><a href="/teams/TEX/2022.shtml">Texas Rangers</a></td><td class="right " data-stat="W" >68</td><td class="right " data-stat="L" >94</td><td class="right " data-stat="win_loss_perc" >.420</td><td class="right " data-stat="winning_streak" csk="2.0" >W 2</td><td class="right " data-stat="R" >4.4</td><td class="right " data-stat="RA" >4.6</td><td class="right " data-stat="run_diff" >-0.2</td><td class="right " data-stat="strength_of_schedule" >0.1</td><td class="right " data-stat="simple_rating_system" >-0.1</td><td class="right " data-stat="record_pythag" csk="0.475308641975309" >77-85</td><td class="right " data-stat="luck_pythag" >-9</td><td class="right " data-stat="record_vs_east" csk="0.272727272727273" >9-24</td><td class="right " data-stat="record_vs_central" csk="0.515151515151515" >17-16</td><td class="right " data-stat="record_vs_west" csk="0.407894736842105" >31-45</td><td class="right " data-stat="record_interleague" csk="0.55" >11-9</td><td class="right " data-stat="record_home" csk="0.419753086419753" >34-47</td><td class="right " data-stat="record_road" csk="0.419753086419753" >34-47</td><td class="right " data-stat="record_xinn" csk="0.4" >6-9</td><td class="right " data-stat="record_one_run" csk="0.3" >15-35</td><td class="right " data-stat="record_vs_rhp" csk="0.383177570093458" >41-66</td><td class="right " data-stat="record_vs_lhp" csk="0.490909090909091" >27-28</td><td class="right " data-stat="record_vs_over_500" csk="0.344827586206897" >30-57</td><td class="right " data-stat="record_vs_under_500" csk="0.506666666666667" >38-37</td><td class="right " data-stat="record_last_10" csk="0.3" >3-7</td><td class="right " data-stat="record_last_20" csk="0.3" >6-14</td><td class="right " data-stat="record_last_30" csk="0.333333333333333" >10-20</td></tr>
+<tr ><th scope="row" class="right " data-stat="ranker" >24</th><td class="left " data-stat="team_name" ><a href="/teams/COL/2022.shtml">Colorado Rockies</a></td><td class="right " data-stat="W" >68</td><td class="right " data-stat="L" >94</td><td class="right " data-stat="win_loss_perc" >.420</td><td class="right " data-stat="winning_streak" csk="-1.0" >L 1</td><td class="right " data-stat="R" >4.3</td><td class="right " data-stat="RA" >5.4</td><td class="right " data-stat="run_diff" >-1.1</td><td class="right " data-stat="strength_of_schedule" >0.1</td><td class="right " data-stat="simple_rating_system" >-1.0</td><td class="right " data-stat="record_pythag" csk="0.401234567901235" >65-97</td><td class="right " data-stat="luck_pythag" >3</td><td class="right " data-stat="record_vs_east" csk="0.294117647058824" >10-24</td><td class="right " data-stat="record_vs_central" csk="0.5" >16-16</td><td class="right " data-stat="record_vs_west" csk="0.434210526315789" >33-43</td><td class="right " data-stat="record_interleague" csk="0.45" >9-11</td><td class="right " data-stat="record_home" csk="0.506172839506173" >41-40</td><td class="right " data-stat="record_road" csk="0.333333333333333" >27-54</td><td class="right " data-stat="record_xinn" csk="0.428571428571429" >6-8</td><td class="right " data-stat="record_one_run" csk="0.48936170212766" >23-24</td><td class="right " data-stat="record_vs_rhp" csk="0.386138613861386" >39-62</td><td class="right " data-stat="record_vs_lhp" csk="0.475409836065574" >29-32</td><td class="right " data-stat="record_vs_over_500" csk="0.357142857142857" >35-63</td><td class="right " data-stat="record_vs_under_500" csk="0.515625" >33-31</td><td class="right " data-stat="record_last_10" csk="0.3" >3-7</td><td class="right " data-stat="record_last_20" csk="0.35" >7-13</td><td class="right " data-stat="record_last_30" csk="0.4" >12-18</td></tr>
+<tr ><th scope="row" class="right " data-stat="ranker" >25</th><td class="left " data-stat="team_name" ><a href="/teams/DET/2022.shtml">Detroit Tigers</a></td><td class="right " data-stat="W" >66</td><td class="right " data-stat="L" >96</td><td class="right " data-stat="win_loss_perc" >.407</td><td class="right " data-stat="winning_streak" csk="-3.0" >L 3</td><td class="right " data-stat="R" >3.4</td><td class="right " data-stat="RA" >4.4</td><td class="right " data-stat="run_diff" >-1.0</td><td class="right iz" data-stat="strength_of_schedule" >0.0</td><td class="right " data-stat="simple_rating_system" >-1.0</td><td class="right " data-stat="record_pythag" csk="0.388888888888889" >63-99</td><td class="right " data-stat="luck_pythag" >3</td><td class="right " data-stat="record_vs_east" csk="0.34375" >11-21</td><td class="right " data-stat="record_vs_central" csk="0.447368421052632" >34-42</td><td class="right " data-stat="record_vs_west" csk="0.294117647058824" >10-24</td><td class="right " data-stat="record_interleague" csk="0.55" >11-9</td><td class="right " data-stat="record_home" csk="0.439024390243902" >36-46</td><td class="right " data-stat="record_road" csk="0.375" >30-50</td><td class="right " data-stat="record_xinn" csk="0.3" >3-7</td><td class="right " data-stat="record_one_run" csk="0.523809523809524" >22-20</td><td class="right " data-stat="record_vs_rhp" csk="0.389830508474576" >46-72</td><td class="right " data-stat="record_vs_lhp" csk="0.454545454545455" >20-24</td><td class="right " data-stat="record_vs_over_500" csk="0.363636363636364" >32-56</td><td class="right " data-stat="record_vs_under_500" csk="0.459459459459459" >34-40</td><td class="right " data-stat="record_last_10" csk="0.6" >6-4</td><td class="right " data-stat="record_last_20" csk="0.6" >12-8</td><td class="right " data-stat="record_last_30" csk="0.5" >15-15</td></tr>
+<tr ><th scope="row" class="right " data-stat="ranker" >26</th><td class="left " data-stat="team_name" ><a href="/teams/KCR/2022.shtml">Kansas City Royals</a></td><td class="right " data-stat="W" >65</td><td class="right " data-stat="L" >97</td><td class="right " data-stat="win_loss_perc" >.401</td><td class="right " data-stat="winning_streak" csk="-2.0" >L 2</td><td class="right " data-stat="R" >4.0</td><td class="right " data-stat="RA" >5.0</td><td class="right " data-stat="run_diff" >-1.0</td><td class="right " data-stat="strength_of_schedule" >0.1</td><td class="right " data-stat="simple_rating_system" >-1.0</td><td class="right " data-stat="record_pythag" csk="0.395061728395062" >64-98</td><td class="right " data-stat="luck_pythag" >1</td><td class="right " data-stat="record_vs_east" csk="0.371428571428571" >13-22</td><td class="right " data-stat="record_vs_central" csk="0.434210526315789" >33-43</td><td class="right " data-stat="record_vs_west" csk="0.387096774193548" >12-19</td><td class="right " data-stat="record_interleague" csk="0.35" >7-13</td><td class="right " data-stat="record_home" csk="0.481481481481481" >39-42</td><td class="right " data-stat="record_road" csk="0.320987654320988" >26-55</td><td class="right " data-stat="record_xinn" csk="0.5" >5-5</td><td class="right " data-stat="record_one_run" csk="0.444444444444444" >16-20</td><td class="right " data-stat="record_vs_rhp" csk="0.371900826446281" >45-76</td><td class="right " data-stat="record_vs_lhp" csk="0.48780487804878" >20-21</td><td class="right " data-stat="record_vs_over_500" csk="0.369565217391304" >34-58</td><td class="right " data-stat="record_vs_under_500" csk="0.442857142857143" >31-39</td><td class="right " data-stat="record_last_10" csk="0.3" >3-7</td><td class="right " data-stat="record_last_20" csk="0.4" >8-12</td><td class="right " data-stat="record_last_30" csk="0.4" >12-18</td></tr>
+<tr ><th scope="row" class="right " data-stat="ranker" >27</th><td class="left " data-stat="team_name" ><a href="/teams/PIT/2022.shtml">Pittsburgh Pirates</a></td><td class="right " data-stat="W" >62</td><td class="right " data-stat="L" >100</td><td class="right " data-stat="win_loss_perc" >.383</td><td class="right " data-stat="winning_streak" csk="1.0" >W 1</td><td class="right " data-stat="R" >3.6</td><td class="right " data-stat="RA" >5.0</td><td class="right " data-stat="run_diff" >-1.4</td><td class="right iz" data-stat="strength_of_schedule" >0.0</td><td class="right " data-stat="simple_rating_system" >-1.4</td><td class="right " data-stat="record_pythag" csk="0.358024691358025" >58-104</td><td class="right " data-stat="luck_pythag" >4</td><td class="right " data-stat="record_vs_east" csk="0.257142857142857" >9-26</td><td class="right " data-stat="record_vs_central" csk="0.460526315789474" >35-41</td><td class="right " data-stat="record_vs_west" csk="0.451612903225806" >14-17</td><td class="right " data-stat="record_interleague" csk="0.2" >4-16</td><td class="right " data-stat="record_home" csk="0.419753086419753" >34-47</td><td class="right " data-stat="record_road" csk="0.345679012345679" >28-53</td><td class="right " data-stat="record_xinn" csk="0.307692307692308" >4-9</td><td class="right " data-stat="record_one_run" csk="0.4375" >21-27</td><td class="right " data-stat="record_vs_rhp" csk="0.373831775700935" >40-67</td><td class="right " data-stat="record_vs_lhp" csk="0.4" >22-33</td><td class="right " data-stat="record_vs_over_500" csk="0.288888888888889" >26-64</td><td class="right " data-stat="record_vs_under_500" csk="0.5" >36-36</td><td class="right " data-stat="record_last_10" csk="0.6" >6-4</td><td class="right " data-stat="record_last_20" csk="0.4" >8-12</td><td class="right " data-stat="record_last_30" csk="0.433333333333333" >13-17</td></tr>
+<tr ><th scope="row" class="right " data-stat="ranker" >28</th><td class="left " data-stat="team_name" ><a href="/teams/CIN/2022.shtml">Cincinnati Reds</a></td><td class="right " data-stat="W" >62</td><td class="right " data-stat="L" >100</td><td class="right " data-stat="win_loss_perc" >.383</td><td class="right " data-stat="winning_streak" csk="-1.0" >L 1</td><td class="right " data-stat="R" >4.0</td><td class="right " data-stat="RA" >5.0</td><td class="right " data-stat="run_diff" >-1.0</td><td class="right " data-stat="strength_of_schedule" >-0.1</td><td class="right " data-stat="simple_rating_system" >-1.1</td><td class="right " data-stat="record_pythag" csk="0.395061728395062" >64-98</td><td class="right " data-stat="luck_pythag" >-2</td><td class="right " data-stat="record_vs_east" csk="0.352941176470588" >12-22</td><td class="right " data-stat="record_vs_central" csk="0.368421052631579" >28-48</td><td class="right " data-stat="record_vs_west" csk="0.3125" >10-22</td><td class="right " data-stat="record_interleague" csk="0.6" >12-8</td><td class="right " data-stat="record_home" csk="0.407407407407407" >33-48</td><td class="right " data-stat="record_road" csk="0.358024691358025" >29-52</td><td class="right " data-stat="record_xinn" csk="0.545454545454545" >6-5</td><td class="right " data-stat="record_one_run" csk="0.477272727272727" >21-23</td><td class="right " data-stat="record_vs_rhp" csk="0.387931034482759" >45-71</td><td class="right " data-stat="record_vs_lhp" csk="0.369565217391304" >17-29</td><td class="right " data-stat="record_vs_over_500" csk="0.344086021505376" >32-61</td><td class="right " data-stat="record_vs_under_500" csk="0.434782608695652" >30-39</td><td class="right " data-stat="record_last_10" csk="0.3" >3-7</td><td class="right " data-stat="record_last_20" csk="0.3" >6-14</td><td class="right " data-stat="record_last_30" csk="0.3" >9-21</td></tr>
+<tr ><th scope="row" class="right " data-stat="ranker" >29</th><td class="left " data-stat="team_name" ><a href="/teams/OAK/2022.shtml">Oakland Athletics</a></td><td class="right " data-stat="W" >60</td><td class="right " data-stat="L" >102</td><td class="right " data-stat="win_loss_perc" >.370</td><td class="right " data-stat="winning_streak" csk="4.0" >W 4</td><td class="right " data-stat="R" >3.5</td><td class="right " data-stat="RA" >4.8</td><td class="right " data-stat="run_diff" >-1.2</td><td class="right " data-stat="strength_of_schedule" >0.2</td><td class="right " data-stat="simple_rating_system" >-1.0</td><td class="right " data-stat="record_pythag" csk="0.364197530864198" >59-103</td><td class="right " data-stat="luck_pythag" >1</td><td class="right " data-stat="record_vs_east" csk="0.393939393939394" >13-20</td><td class="right " data-stat="record_vs_central" csk="0.363636363636364" >12-21</td><td class="right " data-stat="record_vs_west" csk="0.394736842105263" >30-46</td><td class="right " data-stat="record_interleague" csk="0.25" >5-15</td><td class="right " data-stat="record_home" csk="0.3625" >29-51</td><td class="right " data-stat="record_road" csk="0.378048780487805" >31-51</td><td class="right " data-stat="record_xinn" csk="0.6" >6-4</td><td class="right " data-stat="record_one_run" csk="0.404761904761905" >17-25</td><td class="right " data-stat="record_vs_rhp" csk="0.369747899159664" >44-75</td><td class="right " data-stat="record_vs_lhp" csk="0.372093023255814" >16-27</td><td class="right " data-stat="record_vs_over_500" csk="0.354838709677419" >33-60</td><td class="right " data-stat="record_vs_under_500" csk="0.391304347826087" >27-42</td><td class="right " data-stat="record_last_10" csk="0.4" >4-6</td><td class="right " data-stat="record_last_20" csk="0.45" >9-11</td><td class="right " data-stat="record_last_30" csk="0.366666666666667" >11-19</td></tr>
+<tr ><th scope="row" class="right " data-stat="ranker" >30</th><td class="left " data-stat="team_name" ><a href="/teams/WSN/2022.shtml">Washington Nationals</a></td><td class="right " data-stat="W" >55</td><td class="right " data-stat="L" >107</td><td class="right " data-stat="win_loss_perc" >.340</td><td class="right " data-stat="winning_streak" csk="-5.0" >L 5</td><td class="right " data-stat="R" >3.7</td><td class="right " data-stat="RA" >5.3</td><td class="right " data-stat="run_diff" >-1.6</td><td class="right " data-stat="strength_of_schedule" >0.1</td><td class="right " data-stat="simple_rating_system" >-1.4</td><td class="right " data-stat="record_pythag" csk="0.345679012345679" >56-106</td><td class="right " data-stat="luck_pythag" >-1</td><td class="right " data-stat="record_vs_east" csk="0.223684210526316" >17-59</td><td class="right " data-stat="record_vs_central" csk="0.454545454545455" >15-18</td><td class="right " data-stat="record_vs_west" csk="0.454545454545455" >15-18</td><td class="right " data-stat="record_interleague" csk="0.4" >8-12</td><td class="right " data-stat="record_home" csk="0.320987654320988" >26-55</td><td class="right " data-stat="record_road" csk="0.358024691358025" >29-52</td><td class="right " data-stat="record_xinn" csk="0.3" >3-7</td><td class="right " data-stat="record_one_run" csk="0.435897435897436" >17-22</td><td class="right " data-stat="record_vs_rhp" csk="0.367924528301887" >39-67</td><td class="right " data-stat="record_vs_lhp" csk="0.285714285714286" >16-40</td><td class="right " data-stat="record_vs_over_500" csk="0.3" >30-70</td><td class="right " data-stat="record_vs_under_500" csk="0.403225806451613" >25-37</td><td class="right " data-stat="record_last_10" csk="0.2" >2-8</td><td class="right " data-stat="record_last_20" csk="0.3" >6-14</td><td class="right " data-stat="record_last_30" csk="0.333333333333333" >10-20</td></tr>
+<tr class="league_average_table" ><th scope="row" class="right iz" data-stat="ranker" csk="31" ></th><td class="left " data-stat="team_name" >Average</td><td class="right " data-stat="W" >81</td><td class="right " data-stat="L" >81</td><td class="right " data-stat="win_loss_perc" >.500</td><td class="right iz" data-stat="winning_streak" ></td><td class="right " data-stat="R" > 4.3</td><td class="right " data-stat="RA" > 4.3</td><td class="right iz" data-stat="run_diff" ></td><td class="right iz" data-stat="strength_of_schedule" ></td><td class="right iz" data-stat="simple_rating_system" ></td><td class="right " data-stat="record_pythag" csk="0.333333333333343" >81-80</td><td class="right iz" data-stat="luck_pythag" ></td><td class="right " data-stat="record_vs_east" csk="-2.53333333333333" >22-24</td><td class="right " data-stat="record_vs_central" csk="3.13333333333333" >25-22</td><td class="right " data-stat="record_vs_west" csk="-0.599999999999998" >23-23</td><td class="right " data-stat="record_interleague" csk="0" >10-10</td><td class="right " data-stat="record_home" csk="5.40000000000001" >43-37</td><td class="right " data-stat="record_road" csk="-5.40000000000001" >37-43</td><td class="right " data-stat="record_xinn" csk="0" >7-7</td><td class="right " data-stat="record_one_run" csk="0" >23-23</td><td class="right " data-stat="record_vs_rhp" csk="-2.26666666666667" >56-58</td><td class="right " data-stat="record_vs_lhp" csk="2.26666666666667" >24-22</td><td class="right " data-stat="record_vs_over_500" csk="-12.1333333333333" >37-49</td><td class="right " data-stat="record_vs_under_500" csk="12.1333333333333" >43-31</td><td class="right " data-stat="record_last_10" csk="0.0666666666666664" >5-4</td><td class="right " data-stat="record_last_20" csk="-0.133333333333333" >9-10</td><td class="right " data-stat="record_last_30" csk="0" >15-15</td></tr>
+
+</table>
+
+
+</div>
+-->
+
+
+</div>
+
+            
+            
+            
+         
+      
+
+<!-- global.nonempty_tables_num: 5, table_count: 5 -->
+   <!-- no Local/Partials/NoteBottom.tt2 -->
+<div id="bottom_nav" class="section_wrapper">
+<div class="section_heading"><span data-no-inpage="1" class="section_anchor" id="inner_nav_bottom_link" data-label="More 2022 Major League Baseball Pages"></span><h2>More 2022 Major League Baseball Pages</h2></div>
+<div class="section_content" id="bottom_nav_container">
+
+  <p><a href="/leagues/majors/2022.shtml">2022 MLB Season</a></p>
+  
+        <section>
+          <p><a href="/register/league.cgi?year=2022">Minor Leagues</a></p>
+          <p><a href="/leagues/MLB-standings.shtml">MLB Standings</a></p>
+          <p><a href="/leagues/majors/2022-schedule.shtml">Schedule</a></p>
+          <p><a href="/leagues/majors/2022-standard-fielding.shtml">Fielding</a></p>
+          <p><a href="/leagues/majors/2022-standard-batting.shtml">Batting</a></p>
+          <p><a href="/leagues/majors/2022-standard-pitching.shtml">Pitching</a></p>
+          <p><a href="/leagues/majors/2022-managers.shtml">Managers</a></p>        </section><p class="listhead">Fielding</p>
+        <ul class="">
+          <li><a href="/leagues/majors/2022-standard-fielding.shtml">Standard Fielding</a></li>
+          <li><a href="/leagues/majors/2022-appearances-fielding.shtml">Appearances</a></li>
+          <li><a href="/leagues/majors/2022-specialpos_p-fielding.shtml">Pitcher</a></li>
+          <li><a href="/leagues/majors/2022-specialpos_c-fielding.shtml">Catcher</a></li>
+          <li><a href="/leagues/majors/2022-specialpos_1b-fielding.shtml">First Base</a></li>
+          <li><a href="/leagues/majors/2022-specialpos_2b-fielding.shtml">Second Base</a></li>
+          <li><a href="/leagues/majors/2022-specialpos_3b-fielding.shtml">Third Base</a></li>
+          <li><a href="/leagues/majors/2022-specialpos_ss-fielding.shtml">Shortstop</a></li>
+          <li><a href="/leagues/majors/2022-specialpos_lf-fielding.shtml">Left Field</a></li>
+          <li><a href="/leagues/majors/2022-specialpos_cf-fielding.shtml">Center Field</a></li>
+          <li><a href="/leagues/majors/2022-specialpos_rf-fielding.shtml">Right Field</a></li>
+          <li><a href="/leagues/majors/2022-specialpos_of-fielding.shtml">Outfield</a></li>
+        </ul><p class="listhead">Batting</p>
+        <ul class="">
+          <li><a href="/leagues/majors/2022-standard-batting.shtml">Standard Batting</a></li>
+          <li><a href="/leagues/majors/2022-value-batting.shtml">Value</a></li>
+          <li><a href="/leagues/majors/2022-advanced-batting.shtml">Advanced Batting</a></li>
+          <li><a href="/leagues/majors/2022-sabermetric-batting.shtml">Sabermetric Batting</a></li>
+          <li><a href="/leagues/majors/2022-win_probability-batting.shtml">Win Probability</a></li>
+          <li>Spring Training</li>
+          <li><a href="/leagues/majors/2022-ratio-batting.shtml">Batting Ratios</a></li>
+          <li><a href="/leagues/majors/2022-baserunning-batting.shtml">Baserunning/Misc</a></li>
+          <li><a href="/leagues/majors/2022-situational-batting.shtml">PH/HR/Situ Hitting</a></li>
+          <li><a href="/leagues/majors/2022-pitches-batting.shtml">Pitches Batting</a></li>
+          <li><a href="/leagues/majors/2022-cumulative-batting.shtml">Cumulative Batting</a></li>
+          <li><a href="/leagues/majors/2022-neutral-batting.shtml">Neutralized Batting</a></li>
+          <li><a href="/leagues/team_compare.cgi?lg=MLB&amp;year=2022">Team Positional Comparisons</a></li>
+          <li><a href="/leagues/split.cgi?t=b&amp;lg=MLB&amp;year=2022">League Splits</a></li>
+          <li><a href="/register/leader.cgi?type=bat&amp;year=2022"">Minors Batting</a></li>
+          <li><a href="/leagues/daily.fcgi?type=b">Yesterday's Results</a></li>
+        </ul><p class="listhead">Pitching</p>
+        <ul class="">
+          <li><a href="/leagues/majors/2022-standard-pitching.shtml">Standard Pitching</a></li>
+          <li><a href="/leagues/majors/2022-value-pitching.shtml">Value</a></li>
+          <li><a href="/leagues/majors/2022-advanced-pitching.shtml">Advanced Pitching</a></li>
+          <li><a href="/leagues/majors/2022-win_probability-pitching.shtml">Win Probability</a></li>
+          <li>Spring Training</li>
+          <li><a href="/leagues/majors/2022-ratio-pitching.shtml">Pitching Ratios</a></li>
+          <li><a href="/leagues/majors/2022-basesituation-pitching.shtml">Baserunning/Situ</a></li>
+          <li><a href="/leagues/majors/2022-starter-pitching.shtml">Starting Pitching</a></li>
+          <li><a href="/leagues/majors/2022-reliever-pitching.shtml">Relief Pitching</a></li>
+          <li><a href="/leagues/majors/2022-pitches-pitching.shtml">Pitching Pitches</a></li>
+          <li><a href="/leagues/majors/2022-batting-pitching.shtml">Batting Against</a></li>
+          <li><a href="/leagues/majors/2022-cumulative-pitching.shtml">Cumulative Pitching</a></li>
+          <li><a href="/leagues/majors/2022-neutral-pitching.shtml">Neutralized Pitching</a></li>
+          <li><a href="/leagues/split.cgi?t=p&amp;lg=MLB&amp;year=2022">League Splits</a></li>
+          <li><a href="/register/leader.cgi?type=pitch&amp;year=2022"">Minors Pitching</a></li>
+          <li><a href="/leagues/daily.fcgi?type=p">Yesterday's Results</a></li>
+        </ul><p class="listhead">Leaders &amp; Awards</p>
+        <ul class="">
+          <li><a href="/leagues/majors/2022-batting-leaders.shtml">Batting</a></li>
+          <li><a href="/leagues/majors/2022-pitching-leaders.shtml">Pitching</a></li>
+          <li><a href="/leagues/majors/2022-fielding-leaders.shtml">Fielding</a></li>
+          <li><a href="/leagues/majors/2022-other-leaders.shtml">Awards, All-Stars, &amp; More</a></li>
+        </ul><p class="listhead">Other</p>
+        <ul class="">
+          <li><a href="/leagues/majors/2022-misc.shtml">Attendance &amp; Misc.</a></li>
+          <li><a href="/leagues/MLB/2022-debuts.shtml">New Debuts</a></li>
+          <li><a href="/leagues/MLB/2022-rookies.shtml">Rookie Players</a></li>
+          <li>Retirements</li>
+          <li>Born this Year</li>
+          <li><a href="/leagues/MLB/2022-deaths.shtml">Died this Year</a></li>
+          <li><a href="/leagues/MLB/2022-uniform-numbers.shtml">Uniform Numbers</a></li>
+          <li><a href="/leagues/MLB/2022-transactions.shtml">Transactions</a></li>
+          <li><a href="/draft/?draft_type=junreg&amp;query_type=year_round&amp;draft_round=1&amp;year_ID=2022">Amateur Draft</a></li>
+          <li><a href="/leagues/majors/2022-free-agents.shtml">Free Agents</a></li>
+          <li><a href="/leagues/daily.fcgi?type=b&amp;dates=lastndays&amp;lastndays=21">Last N Days Leaders</a></li>
+          <li><a href="/leagues/MLB/2022-opening-day-rosters.shtml">Opening Day Lineups</a></li>
+          <li><a href="/leagues/MLB/2022-team-starting-lineups.shtml">Team Starting Lineups</a></li>
+          <li><a href="/leagues/MLB/2022-team-pitching-staffs.shtml">Team Pitching Staffs</a></li>
+          <li><a href="/leagues/MLB/2022-projections.shtml">Marcel Projections</a></li>
+          <li><a href="/leagues/MLB/2022-playoff-odds.shtml">Playoff Odds</a></li>
+        </ul></div></div>
+
+   
+
+
+<!-- fs_footer -->
+<div class="adblock">
+<!-- div#fs_fs_footer  -->
+<div align="center" id="div-gpt-ad-728x90-Footer">
+    <script data-cfasync="false" type='text/javascript'>
+    if (sr_detect_ie || sr_detect_edge || Modernizr.adfree) {
+    }
+    else {
+        console.log('push ad:div-gpt-ad-728x90-Footer');
+        freestar.queue.push(function() { googletag.display('div-gpt-ad-728x90-Footer'); });
+    }
+    </script>
+</div>
+<!-- /div.#fs_fs_footer -->
+
+</div>
+
+
+
+
+</div><!-- div#content -->
+
+
+<div id="footer" role="contentinfo">
+	<div id="footer_header">
+		 <ul class="bullets-inline"><li class="user logged_in">Welcome <span class="username"></span>&nbsp;&#183;&nbsp;<a href="https://stathead.com/profile/?utm_source=web&amp;utm_medium=br&amp;utm_campaign=sr-nav-bar-top-account">Your Account</a></li>
+<li class="user logged_in"><a class="logout" onclick="sr_auth_logout_page_elements();if(!this.href.match('redirect_uri')){this.href += '&redirect_uri='+escape(document.location.href)}" href="https://stathead.com/profile/?do=logout">Logout</a></li>
+<li class="user not_logged_in"><a class="login" onclick="if(!this.href.match('redirect_uri')){this.href += '&redirect_uri='+escape(document.location.href)}" href="https://stathead.com/users/login.cgi?token=1">Login</a></li>
+<li class="user not_logged_in"><a href="https://stathead.com/users/signup.cgi">Create Account</a></li>
+</ul>
+		 <div class="breadcrumbs">You are here: <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="/"><span itemprop="name">BR Home Page</span></a> <meta itemprop="position" content="1" /></span> &gt; <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="/leagues/"><span itemprop="name">Leagues</span></a> <meta itemprop="position" content="2" /></span> &gt; <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="/leagues/majors/"><span itemprop="name">Major League History</span></a> <meta itemprop="position" content="3" /></span> &gt; <a href="/leagues/majors/2022.shtml">2022 MLB</a> | <a href="/leagues/AL/2022.shtml">AL</a> | <a href="/leagues/NL/2022.shtml">NL</a></div>
+	</div><!-- div#footer_header -->
+
+	<div id="footer_general">
+		<div id="site_menu" role="navigation" aria-label="complete site index">
+			
+			
+<div class="section_heading assoc_site_menu" id="site_menu_sh">
+  <span class="section_anchor" id="site_menu_link" data-label="Full Site Menu"></span><h2>Full Site Menu</h2>    <div class="section_heading_text">
+      <ul><li><a data-scroll href="#header">Return to Top</a></li>
+      </ul>
+    </div>
+    		
+</div>
+			
+				<ul>
+	<li><a href="/players/">Major League Players</a>
+	<div>Current Greats: <a href="/players/k/kershcl01.shtml">Clayton Kershaw</a>, 
+<a href="/players/t/troutmi01.shtml">Mike Trout</a>, 
+<a href="/players/b/bettsmo01.shtml">Mookie Betts</a>, 
+<a href="/players/d/degroja01.shtml">Jacob deGrom</a>, 
+<a href="/players/c/cabremi01.shtml">Miguel Cabrera</a>, 
+<a href="/players/g/greinza01.shtml">Zack Greinke</a>, 
+<a href="/players/a/altuvjo01.shtml">Jose Altuve</a>,
+...   </div>
+
+	<div>All-Time Greats:  
+<a href="/players/m/musiast01.shtml">Stan Musial</a>, 
+<a href="/players/b/bondsba01.shtml">Barry Bonds</a>, 
+<a href="/players/r/ruthba01.shtml">Babe Ruth</a>, 
+<a href="/players/j/jeterde01.shtml">Derek Jeter</a>, 
+<a href="/players/c/charlos99.shtml">Oscar Charleston</a>, 
+<a href="/players/g/griffke02.shtml">Ken Griffey Jr</a>, 
+<a href="/players/r/robinja02.shtml">Jackie Robinson</a>, 
+<a href="/players/a/aaronha01.shtml">Hank Aaron</a>, ...</div>
+</li>
+
+
+	 <li><a href="/teams/">Major League Teams</a>
+	 	<div class="division"><strong>NL East</strong>:
+<a href="/teams/ATL/">Atlanta Braves</a>, 
+<a href="/teams/FLA/">Miami Marlins</a>, 
+<a href="/teams/NYM/">New York Mets</a>, 
+<a href="/teams/PHI/">Philadelphia Phillies</a>, 
+<a href="/teams/WSN/">Washington Nationals</a>
+		</div>	
+	 	<div class="division"><strong>NL Central</strong>:
+<a href="/teams/CHC/">Chicago Cubs</a>, 
+<a href="/teams/CIN/">Cincinnati Reds</a>, 
+<a href="/teams/MIL/">Milwaukee Brewers</a>, 
+<a href="/teams/PIT/">Pittsburgh Pirates</a>, 
+<a href="/teams/STL/">St. Louis Cardinals</a>
+		</div>	
+	 	<div class="division"><strong>NL West</strong>:
+<a href="/teams/ARI/">Arizona Diamondbacks</a>, 
+<a href="/teams/COL/">Colorado Rockies</a>, 
+<a href="/teams/LAD/">Los Angeles Dodgers </a>, 
+<a href="/teams/SDP/">San Diego Padres</a>, 
+<a href="/teams/SFG/">San Francisco Giants</a>
+		</div>	
+	 	<div class="division"><strong>AL East</strong>:
+<a href="/teams/BAL/">Baltimore Orioles</a>, 
+<a href="/teams/BOS/">Boston Red Sox</a>, 
+<a href="/teams/NYY/">New York Yankees</a>, 
+<a href="/teams/TBR/">Tampa Bay Rays</a>, 
+<a href="/teams/TOR/">Toronto Blue Jays</a>
+		</div>	
+	 	<div class="division"><strong>AL Central</strong>:
+<a href="/teams/CHW/">Chicago White Sox</a>, 
+<a href="/teams/CLE/">Cleveland Guardians</a>, 
+<a href="/teams/DET/">Detroit Tigers</a>, 
+<a href="/teams/KCR/">Kansas City Royals</a>, 
+<a href="/teams/MIN/">Minnesota Twins</a>
+		</div>	
+	 	<div class="division"><strong>AL West</strong>:
+<a href="/teams/HOU/">Houston Astros</a>, 
+<a href="/teams/LAA/">Los Angeles Angels</a>, 
+<a href="/teams/OAK/">Oakland Athletics</a>, 
+<a href="/teams/SEA/">Seattle Mariners</a>, 
+<a href="/teams/TEX/">Texas Rangers</a>
+		</div>	
+	 </li>
+
+<li><a href="/leagues/">Seasons</a>
+	     <div><a href="/leagues/majors/2022.shtml">2022</a>,
+	     <a href="/leagues/majors/2021.shtml">2021</a>,
+	     <a href="/leagues/majors/2022-standard-pitching.shtml">2022 MLB Pitching</a>,
+	     <a href="/leagues/majors/2022-standard-batting.shtml">2022 MLB Batting</a>,
+	     <a href="/leagues/majors/2022-standings.shtml">2022 MLB Standings</a>,
+	     <a href="/leagues/majors/2022-misc.shtml">2022 MLB Attendance</a>,
+	     <a href="/leagues/majors/2022-rookies.shtml">2022 MLB Rookies</a>,
+	     ...</div>
+</li>
+
+         <li><a href="/leagues/MLB-leaders.shtml">Major League Leaders</a>
+	     <div>
+	     <a href="/leagues/majors/2022-batting-leaders.shtml">2022 MLB Batting</a>,
+	     <a href="/leagues/majors/2022-pitching-leaders.shtml">2022 MLB Pitching</a>,
+	     <a href="/leaders/WAR_career.shtml">Career WAR Leaders</a>,
+	     <a href="/leaders/HR_season.shtml">Single-Season Home Run Leaders</a>,
+	     <a href="/leaders/SO_p_active.shtml">Active Strikeout Leaders</a>,
+	     <a href="/friv/milestones.cgi">Upcoming Player Milestones</a>,
+	     ...</div>
+	 </li>
+
+         <li><a href="/boxes/">MLB Scores</a>
+	     <div><a href="/boxes/">Yesterday's MLB Games</a>,
+	     <a href="/boxes/">Scores from any date in Major League history</a>,
+	     <a href="/previews/">MLB Probable Pitchers</a>,
+	     <a href="/stream-finder.shtml">Baseball-Reference Stream Finder</a>,
+	     ...</div>
+	 </li>
+	 <li><a href="/leagues/MLB-schedule.shtml">MLB Schedule</a></li>
+
+         <li><a href="/leagues/MLB-standings.shtml">MLB Standings</a>
+	     <div>
+	     <a href="/leagues/AL/2022-standings.shtml">AL Standings</a>,
+	     <a href="/leagues/NL/2022-standings.shtml">NL Standings</a>,
+	     <a href="/boxes/">Standings for any date in history</a>,
+	     ...</div>
+	 </li>
+
+         <li><a href="/postseason/">Playoffs</a>
+	     <div>
+	     <a href="/postseason/world-series.shtml">World Series Winners</a>,
+	     <a href="/postseason/2019_WS.shtml">2019 World Series: Astros vs Nationals</a>,
+	     <a href="/postseason/2018_WS.shtml">2018 World Series: Red Sox vs Dodgers</a>,
+	     <a href="/postseason/2017_WS.shtml">2017 World Series: Astros vs Dodgers</a>,
+	     <a href="/postseason/WS_batting.shtml">World Series Batting Leaders</a>,
+	     <a href="/postseason/WS_pitching.shtml">World Series Pitching Leaders</a>,
+	     ...</div>
+	 </li>
+
+         <li><a href="https://stathead.com/?ref=br&utm_medium=br&utm_source=footer&utm_campaign=baseball" target="_blank">Stathead</a>
+	     <div>Player Finders:
+	     <a href="https://stathead.com/baseball/player-batting-season-finder.cgi?utm_medium=br&utm_source=footer&utm_campaign=baseball" target="_blank">Season &amp; Career Finder</a>,
+	     <a href="https://stathead.com/baseball/player-batting-game-finder.cgi?utm_medium=br&utm_source=footer&utm_campaign=baseball" target="_blank">Game Finder</a>,
+	     <a href="https://stathead.com/baseball/player-batting-streak-finder.cgi?utm_medium=br&utm_source=footer&utm_campaign=baseball" target="_blank">Streak Finder</a>,
+	     <a href="https://stathead.com/baseball/span_finder_batter.cgi?utm_medium=br&utm_source=footer&utm_campaign=baseball" target="_blank">Span Finder</a>,
+	     <a href="https://stathead.com/baseball/player-comparison.cgi?utm_medium=br&utm_source=footer&utm_campaign=baseball" target="_blank">Player Comparison Finder</a>,
+	     <a href="https://stathead.com/baseball/neutralized-stats.cgi?utm_medium=br&utm_source=footer&utm_campaign=baseball" target="_blank">Neutralized Stats</a>,
+	     ...</div>
+	     <div>Team Finders:
+	     <a href="https://stathead.com/baseball/team-batting-season-finder.cgi?utm_medium=br&utm_source=footer&utm_campaign=baseball" target="_blank">Season Finder</a>,
+	     <a href="https://stathead.com/baseball/split_finder.cgi?class=team&utm_medium=br&utm_source=footer&utm_campaign=baseball" target="_blank">Split Finder</a>,
+	     <a href="https://stathead.com/baseball/team-batting-game-finder.cgi?utm_medium=br&utm_source=footer&utm_campaign=baseball" target="_blank">Game Finder</a>,
+	     <a href="https://stathead.com/baseball/streak_finder.cgi?class=team&utm_medium=br&utm_source=footer&utm_campaign=baseball" target="_blank">Streak Finder</a>,
+	     <a href="https://stathead.com/baseball/span_finder_tbatter.cgi?class=team&utm_medium=br&utm_source=footer&utm_campaign=baseball" target="_blank">Span Finder</a>,
+	     <a href="https://stathead.com/baseball/event_finder.cgi?class=team&utm_medium=br&utm_source=footer&utm_campaign=baseball" target="_blank">Event Finder</a>,
+	     ...</div>
+	     <div>Other Finders:
+	     <a href="/draft/">Draft Finder</a>,
+	     <a href="https://stathead.com/?ref=br&utm_medium=br&utm_source=footer&utm_campaign=baseball" target="_blank">Game Score &amp; Result Searches</a>,
+	     <a href="/friv/trade-partners.cgi">Team Trade Histories</a>,
+	     <a href="/teams/head2head.cgi">Head-to-Head Records</a>,
+	     ...</div>
+	 </li>
+
+         <li><a href="/managers/">Managers</a>
+	     <div>Active:
+	     <a href="/managers/francte01.shtml">Terry Francona</a>,
+	     <a href="/managers/baldero01.shtml">Rocco Baldelli</a>,
+	     <a href="/managers/roberda07.shtml">Dave Roberts</a>,
+	     ...</div>
+	     <div>Retired:
+	     <a href="/managers/mcgrajo01.shtml">John McGraw</a>,
+	     <a href="/managers/coxbo01.shtml">Bobby Cox</a>,
+	     <a href="/managers/weaveea99.shtml">Earl Weaver</a>,
+	     ...</div>
+	 </li>
+
+         <li><a href="/awards/">Awards</a>
+	     <div>
+	     <a href="/awards/hof.shtml">Baseball Hall of Fame</a>,
+	     <a href="/awards/mvp.shtml">MLB MVP's</a>,
+	     <a href="/awards/cya.shtml">MLB Cy Young Award</a>,
+	     <a href="/awards/roy.shtml">MLB Rookie of the Year</a>,
+	     <a href="/awards/gold_glove_nl.shtml">Rawlings Gold Gloves</a>,
+	     <a href="/awards/hof_2022.shtml">2022 HOF results</a>,
+	     <a href="/awards/hof_2023.shtml">2023 Hall of Fame ballot</a>,
+	     ...</div>
+	 </li>
+
+         <li><a href="/allstar/">All-Star Games</a>
+	     <div>
+	     <a href="/allstar/2023-allstar-game.shtml">2023 All-Star Game</a>,
+	     <a href="/allstar/2022-allstar-game.shtml">2022 All-Star Game</a>,
+	     <a href="/allstar/bat-register.shtml">All-Time All-Star Batters</a>,
+	     <a href="/allstar/pitch-register.shtml">All-Time All-Star Pitchers</a>,
+	     ...</div>
+	 </li>
+
+         <li><a href="/friv/">Frivolities</a> and More
+	     <div>
+	     <a href="/oracle/">Oracle of Baseball</a>,
+	     <a href="/friv/numbers.cgi">Uniform Number Tracker</a>,
+	     <a href="/friv/coffee.shtml">Cups of Coffee</a>,
+	     <a href="/friv/baseball-player-name-pronunciation-guide.shtml">Pronunciation Guide</a>,
+	     <a href="/bio/">Birthplaces</a>,
+	     <a href="/schools/">Players by School Attended</a>,
+	     ....</div>
+	 </li>
+
+         <li><a href="/draft/">MLB Draft</a>
+	     <div>
+	     <a href="/draft/?query_type=year_round&amp;year_ID=2022&amp;draft_round=1&amp;draft_type=junreg&amp;">2022 Draft</a>,
+	     <a href="/draft/?query_type=year_round&amp;year_ID=2021&amp;draft_round=1&amp;draft_type=junreg&amp;">2021 Draft</a>,
+	     <a href="/draft/?query_type=year_round&amp;year_ID=2020&amp;draft_round=1&amp;draft_type=junreg&amp;">2020 Draft</a>,
+	     <a href="/draft/?overall_pick=1&amp;draft_type=junreg&amp;">MLB Number One Picks</a>,
+	     ...</div>
+	 </li>
+
+         <li><a href="/register/">Minor, Foreign, College, &amp; Black Baseball</a>
+	     <div>
+	     <a href="/register/minor-league-stats.shtml">Minor League Stats</a>,
+	     <a href="/register/negro-league-stats.shtml">Black Baseball Stats</a>,
+	     <a href="/register/npb-stats.shtml">Nippon Pro Baseball Stats</a>,
+	     <a href="/register/cuban-league-stats.shtml">Cuban National Series Stats</a>,
+	     <a href="/register/kbo-stats.shtml">Korean Baseball Stats</a>,
+	     <a href="/register/league.cgi?year=2022">2022 Minor Leagues</a>,
+	     <a href="/register/affiliate.cgi?year=2022">2022 Affiliates</a>,
+	     ...</div>
+	 </li>
+
+         <li><a href="/bullpen/">Baseball-Reference Bullpen</a>
+	     <div>
+	     <a href="/bullpen/">100,000+ pages of baseball information</a>,
+	     <a href="/bullpen/How_to_contribute">How to Contribute</a>,
+	     ...</div>
+	 </li>
+
+         <li><a href="/about/">About Baseball Reference</a>
+	     <div>
+	     <a href="/about/bat_glossary.shtml">Batting Glossary</a>,
+	     <a href="/about/pitch_glossary.shtml">Pitching Glossary</a>,
+	     <a href="/about/war_explained.shtml">Wins Above Replacement Explainer</a>,
+	     <a href="/data/">WAR data archive</a>,
+	     <a href="/about/coverage.shtml">BR Data Coverage</a>,
+	     <a href="/about/mlb-baseball-faqs.html">Frequently Asked Questions about MLB and Baseball</a>,
+	     ...</div>
+	 </li>
+
+
+</ul>   
+
+			
+   		        
+
+      <ul>
+       <li></li>      
+       <li><a href="https://www.baseball-reference.com/br-blog/">Baseball-Reference.com Blog and Articles</a></li>
+
+	        </div><!-- div#site_menu -->
+		<div>
+			<div id="social" class="icon_group noload">
+	
+<div class="section_heading assoc_" id="_sh">
+  <span class="section_anchor" id="_link" data-label="We're Social...for Statheads" data-no-inpage="1"></span><h2>We're Social...for Statheads</h2>		
+</div>
+	<a href="tel://888-512-8907" data-tip="Call us on Telephone" data-label="Telephone" aria-label="Telephone" class="poptip"><svg class="icon phone"><use xlink:href="#ic-phone"></use></svg></a>
+	<a href="//www.sports-reference.com/blog/" data-tip="The Sports Reference Blog" data-label="Our Blog" aria-label="Our Blog" class="poptip"><svg class="icon wordpress"><use xlink:href="#ic-wordpress"></use></svg></a>
+	<a href="https://www.sports-reference.com/blog/feed/" data-tip="Our Blog's RSS Feed" data-label="RSS Feed" aria-label="RSS Feed" class="poptip"><svg class="icon rss"><use xlink:href="#ic-rss"></use></svg></a>
+	
+		<a href="https://twitter.com/baseball_ref" data-tip="Baseball-Reference.com at Twitter" data-label="Twitter" aria-label="Twitter" class="poptip"><svg class="icon twitter"><use xlink:href="#ic-twitter"></use></svg></a>
+	
+		<a href="https://www.tiktok.com/@baseball.reference" data-tip="Baseball-Reference.com at TikTok" data-label="TikTok" aria-label="TikTok" class="poptip"><svg class="icon tiktok"><use xlink:href="#ic-tiktok"></use></svg></a>
+	<a href="https://reddit.com/r/SportsReference" data-tip="Reddit/r/SportsReference" data-label="Reddit/r/SR" aria-label="Reddit/r/SR" class="poptip"><svg class="icon reddit"><use xlink:href="#ic-reddit"></use></svg></a>
+	<a href="https://www.youtube.com/user/sportsreference" data-tip="YouTube/SportsReference" data-label="YouTube" aria-label="YouTube" class="poptip"><svg class="icon youtube"><use xlink:href="#ic-youtube"></use></svg></a>
+	<a href="https://www.linkedin.com/company/sports-reference-llc" data-tip="Follow SR on LinkedIn" data-label="LinkedIn" aria-label="LinkedIn" class="poptip"><svg class="icon linkedin"><use xlink:href="#ic-linkedin"></use></svg></a>
+	<a href="https://www.paypal.me/sportsref" data-tip="Send us money via PayPal" data-label="PayPal" aria-label="PayPal" class="poptip"><svg class="icon paypal"><use xlink:href="#ic-paypal"></use></svg></a>
+
+<p>Every <a href="https://www.sports-reference.com/blog/sports-reference-social-media/">Sports Reference Social Media Account</a></p>
+<p><strong>Site Last Updated:</strong> Sunday, November 20, 11:05PM
+</p>
+<p><a href="https://www.sports-reference.com/feedback/" class="button" style="display: block">Question, Comment, Feedback, or Correction?</a></p>
+
+<p><a style="display: block" href="https://www.baseball-reference.com/email" class="button">Subscribe to our Free Email Newsletter</a></p>
+
+<p><a style="background-color:#155ca9; color: #fff;" href="https://www.sports-reference.com/this-month.html?&utm_medium=sr&utm_source=br&utm_campaign=site-footer-twisr" class="button alt">This Month in Sports Reference<br><em>Find out when we add a feature or make a change</em></a></p>
+
+<p><a href="https://www.sports-reference.com/blog/ways-sports-reference-can-help-your-website/?utm_medium=sr&utm_source=br&utm_campaign=site-footer-ways-help">Do you have a sports website? Or write about sports? We have tools and resources that can help you use sports data.  Find out more.</a></p>
+
+
+</div><!-- div#social -->
+
+			<div id="tips_tricks">
+   
+<div class="section_heading assoc_tips" id="tips_sh">
+  <span class="section_anchor" id="tips_link" data-label="FAQs, Tip &amp; Tricks" data-no-inpage="1"></span><h2>FAQs, Tip &amp; Tricks</h2>		
+</div>
+   <ul>
+<li>Learn about the <a href="//www.baseball-reference.com/about/war_explained.shtml">Wins Above Replacement Formula</a></li>
+
+           <li><a href="//www.sports-reference.com/blog/category/tips-and-tricks/">Tips and Tricks from our Blog.</a></li>
+           <li><a href="/linker/">Do you have a blog? Join our linker program.</a></li>
+	   <li><a href="https://www.sports-reference.com/blog/category/stathead-tutorial-series/">Watch our How-To Videos to Become a Stathead</a></li>
+	   <li><a href="//stathead.com/?ref=br">Subscribe to Stathead and get access to more data than you can imagine</a></li>
+   </ul>
+</div><!-- div#tips_tricks -->
+
+			<div id="credits">
+				<p>All logos are the trademark &amp; property of their owners and not Sports Reference LLC.  We present them here for purely educational purposes.
+				<a href="https://www.sports-reference.com/blog/2016/06/redesign-team-and-league-logos-courtesy-sportslogos-net/">Our reasoning for presenting offensive logos.</a></p>
+				<p>
+					
+					Logos were compiled by the amazing <a href="http://sportslogos.net/">SportsLogos.net.</a>
+				</p>
+				
+     
+          <p>Copyright &copy; 2000-2022 <a href="//www.sports-reference.com/">Sports Reference LLC</a>. All rights reserved.</p>
+
+     <p>The SPORTS REFERENCE and STATHEAD trademarks are owned exclusively by Sports Reference LLC. Use without license or authorization is expressly prohibited.
+     <p >Much of the play-by-play, game results, and transaction information both shown and used to create certain data sets was obtained free of charge from and is copyrighted by <a rel="noopener nofollow" href="https://www.retrosheet.org/">RetroSheet</a>.</p>
+     <p>Win Expectancy, Run Expectancy, and Leverage Index calculations provided by Tom Tango of <a rel="noopener nofollow" href="http://www.tangotiger.com/index.php">InsideTheBook.com</a>, and co-author of <a class="italic_text" rel="nofollow" href="">The Book: Playing the Percentages in Baseball</a>.</p>
+     <p>Total Zone Rating and initial framework for Wins above Replacement calculations provided by Sean Smith.</p>
+     <p>Full-year historical Major League statistics provided by Pete Palmer and Gary Gillette of <a rel="noopener nofollow" href="http://www.hiddengamesports.com/">Hidden Game Sports</a>.</p>
+     <p><a rel="noopener nofollow" href="http://www.baseballinfosolutions.com/"><img alt="BaseballInfoSolutions.com logo"  src="https://cdn.ssref.net/req/202211181/images/klecko/bis_logo.png"></a></p>
+     <p>Some defensive statistics Copyright &copy; <a rel="noopener nofollow" href="http://www.baseballinfosolutions.com/">Baseball Info Solutions</a>, 2010-2022.</p>
+     <p>Some high school data is courtesy David McWater.</p>
+     <p>Many historical player head shots courtesy of David Davis. Many thanks to him. All images are property the copyright holder and are displayed here for informational purposes only.</p>
+
+			</div><!-- div#credits -->
+		</div>
+	</div>
+
+	<ul id="site_dirs" class="notranslate bullets-inline">
+	<li><a href="https://www.sports-reference.com/"><svg height="15px" width="20px"><use xlink:href="#ic-sr-pennant"></use></svg> Sports&nbsp;Reference&#8239;&reg;</a></li>
+	<li class="current"><a href="https://www.baseball-reference.com/">Baseball</a></li>
+	<li><a href="https://www.pro-football-reference.com/">Football</a> <a href="https://www.sports-reference.com/cfb/">(college)</a></li>
+	<li><a href="https://www.basketball-reference.com/">Basketball</a> <a href="https://www.sports-reference.com/cbb/">(college)</a></li>
+	<li><a href="https://www.hockey-reference.com/">Hockey</a></li>
+
+
+	
+	
+	
+	<li><a href="https://fbref.com/fr/">Football</a></li>
+
+	<li><a href="https://www.sports-reference.com/blog/">Blog</a></li>
+
+    <li><a href="https://stathead.com/?utm_source=web&amp;utm_medium=br&amp;utm_campaign=sr-nav-bar-top-link">Stathead&#8239;&reg;</a></li>
+
+
+</ul>
+
+	<div id="about">
+  <a href="//www.sports-reference.com/about.html">About</a> &bull;
+  <a href="//www.sports-reference.com/termsofuse.html">Conditions &amp; Terms of Service</a> &bull;
+  <a href="//www.sports-reference.com/advertise.html">Advertise With Us</a>
+ &bull;
+  <a href="//www.sports-reference.com/jobs.html">Jobs at SR</a>
+  <br><br>
+Sports Reference Purpose: We will be the trusted source of information and tools that inspire and empower users to enjoy, understand, and share the sports they love.
+  <br><br>
+  <a href="//www.sports-reference.com/privacy.html">Privacy Policy</a> &bull;
+  <a href="//www.sports-reference.com/gambling-revenue-policy.html">Gambling Revenue Policy</a> &bull;
+  <a href="//www.sports-reference.com/accessibility-policy.html">Accessibility Policy</a> &bull;
+  <a href="//www.sports-reference.com/data_use.html">Use of Data</a>
+  </div>
+  <!-- div#about -->
+</div><!-- div#footer -->
+
+</div><!-- div#wrap -->
+<!-- yes sticky url:  https://www.baseball-reference.com/leagues/MLB-standings.shtml -->
+<div id="fs-select-footer"></div>
+      
+
+
+
+<!-- rails -->
+
+<div class="adblock rails  left"><!-- div#fs_fs_rails_left  -->
+<div align="center" id="div-gpt-ad-160x600-1">
+    <script data-cfasync="false" type='text/javascript'>
+    if (sr_detect_ie || sr_detect_edge || Modernizr.adfree) {
+    }
+    else {
+        console.log('push ad:div-gpt-ad-160x600-1');
+        freestar.queue.push(function() { googletag.display('div-gpt-ad-160x600-1'); });
+    }
+    </script>
+</div>
+<!-- /div.#fs_fs_rails_left -->
+</div>
+<div class="adblock rails right"><!-- div#fs_fs_rails_right  -->
+<div align="center" id="div-gpt-ad-160x600-2">
+    <script data-cfasync="false" type='text/javascript'>
+    if (sr_detect_ie || sr_detect_edge || Modernizr.adfree) {
+    }
+    else {
+        console.log('push ad:div-gpt-ad-160x600-2');
+        freestar.queue.push(function() { googletag.display('div-gpt-ad-160x600-2'); });
+    }
+    </script>
+</div>
+<!-- /div.#fs_fs_rails_right -->
+</div>
+
+
+<!-- sr_gender is used in Templates/Assets/GoogleAnalytics.tt2 -->
+<script>var sr_gender = "";</script>
+<!-- Google Analytics --> <!-- new extra script, apparently we only use one of these, regardless of the number of products... https://developers.google.com/tag-platform/gtagjs/install#google-analytics --> <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1890630-1"></script> <script> var sr_cookie = vjs_readCookie('stathead_user') || ''; var sr_cookie_split = sr_cookie.split("::"); var sr_session_key = (sr_cookie_split.length > 1)?sr_cookie_split[2]:''; var sr_ad_free_key = "2"; var sr_site_id = "br"; var sr_is_subscriber = (sr_ad_free_key && sr_session_key.vjs_isMatch(new RegExp(sr_ad_free_key + "$"))) || sr_session_key.vjs_isMatch(/1$/) || (sr_site_id === 'stathead' && sr_session_key.vjs_isMatch(/[0-7]$/)); var sr_is_user = sr_cookie !== null && sr_cookie !== ''; var sr_seen_modal = vjs_readCookie('modal_ad') !== null; var sr_device = 'unk'; if (Modernizr.phone) { sr_device = 'phone'; } else if (Modernizr.tablet) { sr_device = 'tablet'; } else if (Modernizr.laptop) { sr_device = 'laptop'; } else if (Modernizr.desktop) { sr_device = 'desktop'; } var sr_stathead_site = vjs_readCookie('stathead_site') || ''; var sr_stathead_type = vjs_readCookie('stathead_type') || ''; /* new gtag theres an extra script tag we need to add that I'm not sure how that work for multiple ID's for GA, docs say to ignore it??? https://developers.google.com/tag-platform/gtagjs/install here they have 3 but just use the last one? */ window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); /* OLD, could not find require within reference docs https://developers.google.com/tag-platform/gtagjs/reference ga('require', 'linkid', 'linkid.js'); ga('require', 'ecommerce', 'ecommerce.js'); ga('require', 'displayfeatures'); */ /* new, creates+sends+sets */ /* for fbref we want to allow for tracking of 'men' and 'women' pages for leagues, clubs and players, so we can track the most popular women players easily. In Footer.tt2 there is a place to set sr_gender. */ gtag('config', 'UA-1890630-1', { 'dimension1': sr_is_subscriber, 'dimension2': sr_is_user, 'dimension3': typeof(sr_gender) === 'string'? sr_gender: null, 'dimension4': sr_stathead_type, 'dimension5': sr_stathead_site, 'metric1': Modernizr.viewport_width }); /* all sr-sites together */ /* new, I believe linker works as a parameter here, although there didn\'t seem to be a simple "true" value to set besides this one https://developers.google.com/analytics/devguides/collection/gtagjs/cross-domain */ gtag('config', 'UA-1890630-9', { 'linker': { 'domains' : ['stathead.com'] }, 'dimension1': sr_site_id, 'dimension2': sr_is_subscriber, 'dimension3': sr_is_user, 'dimension4': sr_seen_modal, 'dimension5': sr_device, 'dimension6': 'null', 'metric1': Modernizr.viewport_width, 'dimension8': (typeof sr_test == 'undefined')?'no-test':( sr_test ? 'non-blocking':'blocking') }); /* new, cribbed from: https://www.axllent.org/docs/track-outbound-links-with-gtag-js/ */ function _gaLt(event) { /* if GA is blocked or not loaded, or not main|middle|touch click then don\'t track */ if (typeof gtag == "undefined" || (event.which != 1 && event.which != 2)) { return; } var el = event.srcElement || event.target; /* loop up the DOM tree through parent elements if clicked element is not a link (eg: an image inside a link) */ while ( el && (typeof el.tagName == "undefined" || el.tagName.toLowerCase() != "a" || !el.href) ) { el = el.parentNode; } /* if a link with valid href has been clicked */ if (el && el.href) { var link = el.href; /* only if it is an external link */ if (link.indexOf(location.host) == -1 && !link.match(/^javascript\:/i)) { /* is target set and _(self|parent|top) */ var target = el.target && !el.target.match(/^_(self|parent|top)/i) ? el.target : false; /* assume a target if (ctrl|shift|meta)-click */ if ( event.ctrlKey || event.shiftKey || event.metaKey || event.which == 2 ) { target = "_blank"; } /* tracker has not yet run */ var hbrun = false; /* hitBack to open link in same window after tracker */ var hitBack = function () { /* run once only */ if (hbrun) return; hbrun = true; window.location.href = link; }; if (target) { /* if target opens a new window then just track */ gtag("event", link, { event_category: "Outgoing Links", event_label: document.location.pathname + document.location.search, }); } else { /* Prevent standard click, track then open */ if (event.type == "mousedown") { var blockClick = function (event) { event.preventDefault(); /* remove click event after click */ el.removeEventListener("click", boundClick); }; /* bind the click event */ var boundClick = blockClick.bind(event); /* prevent the click */ el.addEventListener("click", boundClick); } event.preventDefault ? event.preventDefault() : (event.returnValue = !1); /* send event with callback */ gtag("event", link, { event_category: "Outgoing Links", event_label: document.location.pathname + document.location.search, event_callback: hitBack, }); /* Run hitBack again if GA takes longer than 1 second */ setTimeout(hitBack, 1000); } } } } var _w = window; /* Use "click" if touchscreen device, else "mousedown" */ var _gaLtEvt = "ontouchstart" in _w ? "click" : "mousedown"; /* Attach the event to all clicks in the document after page has loaded */ _w.addEventListener( "load", function () { document.body.addEventListener(_gaLtEvt, _gaLt, !1); }, !1 ); </script><!-- End Google Analytics -->
+
+
+<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/20503178.js"></script>
+<!-- End of HubSpot Embed Code -->
+
+</body>
+<!-- SR -->
+</html>
+
+
