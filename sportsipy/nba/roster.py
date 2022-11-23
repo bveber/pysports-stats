@@ -1395,7 +1395,7 @@ class Roster:
         """
         Return the string representation of the class.
         """
-        if self.slim:
+        if self._slim:
             players = [name for id, name in self._players.items()]
         else:
             players = [f'{player.name} ({player.player_id})'.strip()

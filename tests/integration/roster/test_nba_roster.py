@@ -1409,7 +1409,7 @@ None (tuckera01)"""
             .should_receive('_find_year_for_season') \
             .and_return(YEAR)
         roster = Roster('DEN')
-        assert roster.__repr__() == expected  # .encode('ascii', 'replace').decode()
+        assert roster.__repr__() == expected
 
     @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_coach(self, *args, **kwargs):

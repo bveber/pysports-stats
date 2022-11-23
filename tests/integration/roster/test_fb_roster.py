@@ -348,7 +348,7 @@ Serge Aurier (5c2b4f07)
 Harry Kane (21a66f6a)
 Son Heung-min (92e7e919)
 Moussa Sissoko (2acd49b9)
-Davinson S??nchez (da7b447d)
+Davinson Sánchez (da7b447d)
 Harry Winks (2f7acede)
 Lucas Moura (2b622f01)
 Dele Alli (cea4ee8f)
@@ -358,7 +358,7 @@ Paulo Gazzaniga (63d17038)
 Ben Davies (44781702)
 Giovani Lo Celso (d7553721)
 Eric Dier (ac861941)
-??rik Lamela (abe66106)
+Érik Lamela (abe66106)
 Tanguy Ndombele (5cdddffa)
 Christian Eriksen (980522ec)
 Danny Rose (89d10e53)
@@ -371,14 +371,15 @@ Juan Foyth (6c7762c3)
 Gedson Fernandes (e2dde94c)
 Victor Wanyama (e0900238)
 Troy Parrott (4357f557)
-Georges-K??vin N'Koudou (76c131da)
+Georges-Kévin N'Koudou (76c131da)
 Brandon Austin (5e253986)
 Dennis Cirken (307ea3b6)
 Michel Vorm (1bebde9d)
 Harvey White (4d90ce8c)
 Alfie Whiteman (3f2587ee)"""
         # repr encoded to deal with string equality bug with latin letters
-        assert self.roster.__repr__().encode('ascii', 'replace').decode() == expected
+
+        assert self.roster.__repr__() == expected
 
     def test_fb_player_string_representation(self):
         player = self.roster('Harry Kane')
