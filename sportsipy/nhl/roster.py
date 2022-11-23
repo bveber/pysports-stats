@@ -304,8 +304,8 @@ class Player(AbstractPlayer):
         """
         all_stats_dict = {}
 
-        for table_id in ['stats_basic_plus_nhl', 'skaters_advanced',
-                         'stats_misc_plus_nhl', 'stats_goalie_situational']:
+        for table_id in ['skaters_play_by_play_all', 'stats_basic_plus_nhl', 'skaters_advanced_all',
+                         'div_skaters_advanced_rate_all', 'stats_misc_plus_nhl', 'stats_goalie_situational']:
             table_items = utils._get_stats_table(player_info,
                                                  'table#%s' % table_id)
             career_items = utils._get_stats_table(player_info,
