@@ -24,10 +24,10 @@ setup(
         "pyquery >= 1.4.0",
         "requests >= 2.18.4"
     ],
-    classifiers=(
+    classifiers=[
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
         'License :: OSI Approved :: MIT License',
         'Operating System :: POSIX :: Linux',
-    ),
+    ],
 )
