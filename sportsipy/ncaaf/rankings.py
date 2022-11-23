@@ -54,7 +54,10 @@ class Rankings:
             Returns a PyQuery object of the rankings HTML page.
         """
         try:
-            return utils._rate_limit_pq(RANKINGS_URL % year)
+            # The AP poll is commented out in the HTML. I think there is a javascript action to enable
+            # the AP table after scrolling, but it is inaccessible with unaltered html.
+            doc = utils._rate_limit_pq(RANKINGS_URL % year)
+            return pq(utils._remove_html_comment_tags(doc))
         except HTTPError:
             return None
 

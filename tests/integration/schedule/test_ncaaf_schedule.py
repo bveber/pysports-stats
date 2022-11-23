@@ -9,31 +9,21 @@ from sportsipy.constants import HOME, REGULAR_SEASON, WIN
 from sportsipy.ncaaf.boxscore import Boxscore
 from sportsipy.ncaaf.constants import SCHEDULE_URL
 from sportsipy.ncaaf.schedule import Schedule
+from ..utils import read_file
 
 
 MONTH = 9
-YEAR = 2017
+YEAR = 2021
+TEAM = 'PURDUE'
 
 NUM_GAMES_IN_SCHEDULE = 13
 
 
-def read_file(filename):
-    filepath = os.path.join(os.path.dirname(__file__), 'ncaaf', filename)
-    return open('%s' % filepath, 'r', encoding='utf8').read()
-
-
 def mock_pyquery(url):
-    class MockPQ:
-        def __init__(self, html_contents):
-            self.status_code = 200
-            self.html_contents = html_contents
-            self.text = html_contents
-
-        def __call__(self, div):
-            return read_file('table.html' % YEAR)
-
-    schedule = read_file('%s-schedule.html' % YEAR)
-    return MockPQ(schedule)
+    if 'purdue' in url:
+        return read_file('PURDUE-2021-schedule.html', 'ncaaf', 'schedule')
+    else:
+        return None
 
 
 def mock_request(url):
@@ -56,27 +46,27 @@ class MockDateTime:
 
 
 class TestNCAAFSchedule:
-    @mock.patch('requests.get', side_effect=mock_pyquery)
+    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
     def setup_method(self, *args, **kwargs):
         self.results = {
-            'game': 2,
-            'boxscore_index': '2017-09-09-michigan',
-            'date': 'Sep 9, 2017',
-            'time': '12:00 PM',
+            'boxscore_index': '2021-09-11-connecticut',
+            'date': 'Sep 11, 2021',
+            'datetime': datetime(2021, 9, 11, 15, 0),
             'day_of_week': 'Sat',
-            'datetime': datetime(2017, 9, 9, 12, 0),
-            'location': HOME,
-            'rank': 8,
-            'opponent_abbr': 'cincinnati',
-            'opponent_name': 'Cincinnati',
-            'opponent_rank': None,
-            'opponent_conference': 'American',
-            'result': WIN,
-            'points_for': 36,
-            'points_against': 14,
-            'wins': 2,
+            'game': 2,
+            'location': 'Away',
             'losses': 0,
-            'streak': 'W 2'
+            'opponent_abbr': 'connecticut',
+            'opponent_conference': 'Ind',
+            'opponent_name': 'Connecticut',
+            'opponent_rank': None,
+            'points_against': 0,
+            'points_for': 49,
+            'rank': None,
+            'result': 'Win',
+            'streak': 'W 2',
+            'time': '3:00 PM',
+            'wins': 2
         }
         flexmock(utils) \
             .should_receive('_todays_date') \
@@ -88,7 +78,7 @@ class TestNCAAFSchedule:
             .should_receive('dataframe') \
             .and_return(pd.DataFrame([{'key': 'value'}]))
 
-        self.schedule = Schedule('MICHIGAN')
+        self.schedule = Schedule(TEAM)
 
     def test_ncaaf_schedule_returns_correct_number_of_games(self):
         assert len(self.schedule) == NUM_GAMES_IN_SCHEDULE
@@ -100,13 +90,13 @@ class TestNCAAFSchedule:
             assert getattr(match_two, attribute) == value
 
     def test_ncaaf_schedule_returns_requested_match_from_date(self):
-        match_two = self.schedule(datetime(2017, 9, 9))
+        match_two = self.schedule(datetime(2021, 9, 11))
 
         for attribute, value in self.results.items():
             assert getattr(match_two, attribute) == value
 
     def test_ncaaf_schedule_dataframe_returns_dataframe(self):
-        df = pd.DataFrame([self.results], index=['MICHIGAN'])
+        df = pd.DataFrame([self.results], index=[TEAM])
 
         match_two = self.schedule[1]
         # Pandas doesn't natively allow comparisons of DataFrames.
@@ -145,7 +135,8 @@ class TestNCAAFSchedule:
         with pytest.raises(ValueError):
             self.schedule(datetime.now())
 
-    def test_empty_page_return_no_games(self):
+    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    def test_empty_page_return_no_games(self, *args, **kwargs):
         flexmock(utils) \
             .should_receive('_no_data_found') \
             .once()
@@ -153,70 +144,28 @@ class TestNCAAFSchedule:
             .should_receive('_get_stats_table') \
             .and_return(None)
 
-        schedule = Schedule('MICHIGAN')
+        schedule = Schedule(TEAM)
 
         assert len(schedule) == 0
 
     def test_game_string_representation(self):
         game = self.schedule[0]
 
-        assert game.__repr__() == 'Sep 2, 2017 - florida'
+        assert game.__repr__() == 'Sep 4, 2021 - oregon-state'
 
     def test_schedule_string_representation(self):
-        expected = """Sep 2, 2017 - florida
-Sep 9, 2017 - cincinnati
-Sep 16, 2017 - air-force
-Sep 23, 2017 - purdue
-Oct 7, 2017 - michigan-state
-Oct 14, 2017 - indiana
-Oct 21, 2017 - penn-state
-Oct 28, 2017 - rutgers
-Nov 4, 2017 - minnesota
-Nov 11, 2017 - maryland
-Nov 18, 2017 - wisconsin
-Nov 25, 2017 - ohio-state
-Jan 1, 2018 - south-carolina"""
+        expected = """Sep 4, 2021 - oregon-state
+Sep 11, 2021 - connecticut
+Sep 18, 2021 - notre-dame
+Sep 25, 2021 - illinois
+Oct 2, 2021 - minnesota
+Oct 16, 2021 - iowa
+Oct 23, 2021 - wisconsin
+Oct 30, 2021 - nebraska
+Nov 6, 2021 - michigan-state
+Nov 13, 2021 - ohio-state
+Nov 20, 2021 - northwestern
+Nov 27, 2021 - indiana
+Dec 30, 2021 - tennessee"""
 
         assert self.schedule.__repr__() == expected
-
-
-class TestNCAAFScheduleInvalidYear:
-    @mock.patch('requests.get', side_effect=mock_pyquery)
-    @mock.patch('requests.head', side_effect=mock_request)
-    def test_invalid_default_year_reverts_to_previous_year(self,
-                                                           *args,
-                                                           **kwargs):
-        results = {
-            'game': 2,
-            'boxscore_index': '2017-09-09-michigan',
-            'date': 'Sep 9, 2017',
-            'time': '12:00 PM',
-            'day_of_week': 'Sat',
-            'datetime': datetime(2017, 9, 9, 12, 0),
-            'location': HOME,
-            'rank': 8,
-            'opponent_abbr': 'cincinnati',
-            'opponent_name': 'Cincinnati',
-            'opponent_rank': None,
-            'opponent_conference': 'American',
-            'result': WIN,
-            'points_for': 36,
-            'points_against': 14,
-            'wins': 2,
-            'losses': 0,
-            'streak': 'W 2'
-        }
-        flexmock(Boxscore) \
-            .should_receive('_parse_game_data') \
-            .and_return(None)
-        flexmock(Boxscore) \
-            .should_receive('dataframe') \
-            .and_return(pd.DataFrame([{'key': 'value'}]))
-        flexmock(utils) \
-            .should_receive('_find_year_for_season') \
-            .and_return(2018)
-
-        schedule = Schedule('MICHIGAN')
-
-        for attribute, value in results.items():
-            assert getattr(schedule[1], attribute) == value

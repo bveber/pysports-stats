@@ -2,6 +2,8 @@ import pytest
 from mock import patch
 from flexmock import flexmock
 from sportsipy import utils
+import time
+
 
 
 class SeasonStarts:
@@ -64,6 +66,14 @@ def mock_pyquery(url):
 
 
 class TestUtils:
+    @patch('requests.get', side_effect=mock_pyquery)
+    def test__rate_limit_pq(self, *args, **kwargs):
+        start = time.time()
+        url = 'www.test-url.com'
+        result = utils._rate_limit_pq(url)
+        now = time.time()
+        assert now-start > 3
+
     def test__find_year_for_season_returns_correct_year(self):
         season_start_matrix = [
             # MLB Months

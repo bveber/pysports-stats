@@ -4,6 +4,7 @@ from datetime import datetime
 from lxml.etree import ParserError, XMLSyntaxError
 from pyquery import PyQuery as pq
 import time
+from .constants import REQUESTS_PER_MINUTE
 
 
 # {
@@ -24,9 +25,29 @@ SEASON_START_MONTH = {
     'nhl': {'start': 10, 'wrap': True}
 }
 
-def _rate_limit_pq(pq_input, sleep=3.1):
+def _rate_limit_pq(pq_input, requests_per_minute=REQUESTS_PER_MINUTE):
+    """
+    Get a pyquery object
+
+    Creates a pyquery object then waits a specified amount of time before
+    returning. This is done to accomodate the new rate limits sports-reference
+    now enforces (https://www.sports-reference.com/bot-traffic.html)
+
+    Parameters
+    ----------
+    pq_input: string
+        A string that contains a URL used to create a pyquery object. This
+        can also be a path to a document (if needed offline integration testing).
+
+    Returns
+    -------
+    PyQuery object
+        A queryable PyQuery object
+
+    """
+    print('_rate_limit_pq: ', pq_input)
     ret = pq(pq_input)
-    time.sleep(sleep)
+    time.sleep(60/requests_per_minute)
     return ret
 
 
@@ -279,7 +300,7 @@ def _get_stats_table(html_page, div, footer=False):
     stats_html = html_page(div)
     try:
         stats_table = pq(_remove_html_comment_tags(stats_html))
-    except (ParserError, XMLSyntaxError):
+    except (ParserError, XMLSyntaxError) as e:
         return None
     if footer:
         teams_list = stats_table('tfoot tr').items()

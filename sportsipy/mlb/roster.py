@@ -409,7 +409,7 @@ class Player(AbstractPlayer):
         player_info : PyQuery object
             A PyQuery object containing the HTML from the player's stats page.
         """
-        date = player_info('span[itemprop="birthDate"]').attr('data-birth')
+        date = utils._parse_field(PLAYER_SCHEME, player_info, 'birth_date')
         setattr(self, '_birth_date', date)
 
     def _parse_team_name(self, team):

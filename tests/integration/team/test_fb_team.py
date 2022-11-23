@@ -1,65 +1,56 @@
 from mock import patch
 from os import path
 from sportsipy.fb.team import Team
-
-
-def read_file(filename):
-    filepath = path.join(path.dirname(__file__), 'fb_stats', filename)
-    return open('%s' % filepath, 'r', encoding='utf8').read()
+from ..utils import read_file
 
 
 def mock_pyquery(url):
-    class MockPQ:
-        def __init__(self, html_contents):
-            self.status_code = 200
-            self.html_contents = html_contents
-            self.text = html_contents
-
-    contents = read_file('tottenham-hotspur-2019-2020.html')
-    return MockPQ(contents)
+    if '361ca564' in url:
+        return read_file('tottenham-hotspur-2022-2023.html', 'fb', 'team')
+    return None
 
 
 class TestFBTeam:
     def setup_method(self):
         self.results = {
-            'name': 'Tottenham Hotspur',
-            'season': '2019-2020',
-            'record': '11-8-10',
-            'points': 41,
-            'position': 8,
-            'league': 'Premier League',
-            'home_record': '8-2-4',
-            'home_wins': 8,
-            'home_draws': 2,
-            'home_losses': 4,
-            'home_games': 14,
-            'home_points': 26,
-            'away_record': '3-6-6',
+            'away_draws': 2,
+            'away_games': 7,
+            'away_losses': 2,
+            'away_points': 11,
+            'away_record': '3-2-2',
             'away_wins': 3,
-            'away_draws': 6,
-            'away_losses': 6,
-            'away_games': 15,
-            'away_points': 15,
-            'goals_scored': 47,
-            'goals_against': 40,
-            'goal_difference': 7,
-            'expected_goals': 38.5,
-            'expected_goals_against': 42.7,
-            'expected_goal_difference': -4.2,
-            'manager': 'José Mourinho',
             'country': 'England',
-            'gender': 'Male'
+            'expected_goal_difference': 7.6,
+            'expected_goals': 24.1,
+            'expected_goals_against': 16.5,
+            'gender': 'Male',
+            'goal_difference': 10,
+            'goals_against': 21,
+            'goals_scored': 31,
+            'home_draws': 0,
+            'home_games': 8,
+            'home_losses': 2,
+            'home_points': 18,
+            'home_record': '6-0-2',
+            'home_wins': 6,
+            'league': 'Premier League',
+            'manager': 'Antonio Conte',
+            'name': 'Tottenham Hotspur',
+            'points': 29,
+            'position': 4,
+            'record': '9-2-4',
+            'season': '2022-2023'
         }
 
-    @patch('requests.get', side_effect=mock_pyquery)
+    @patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_fb_team_returns_correct_attributes(self, *args, **kwargs):
         tottenham = Team('Tottenham Hotspur')
 
         for attribute, value in self.results.items():
             assert getattr(tottenham, attribute) == value
 
-    @patch('requests.get', side_effect=mock_pyquery)
+    @patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_team_name(self, *args, **kwargs):
         team = Team('Tottenham Hotspur')
 
-        assert team.__repr__() == 'Tottenham Hotspur (361ca564) - 2019-2020'
+        assert team.__repr__() == 'Tottenham Hotspur (361ca564) - 2022-2023'

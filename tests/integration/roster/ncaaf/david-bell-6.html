@@ -1,0 +1,1451 @@
+
+<!DOCTYPE html>
+<html data-version="klecko-" data-root="/home/cfb/build" lang="en" class="no-js" >
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0" />
+    <link rel="dns-prefetch" href="https://cdn.ssref.net/req/202211031" />
+    <!-- Quantcast Choice. Consent Manager Tag v2.0 (for TCF 2.0) -->
+<script type="text/javascript" async=true>
+    (function() {
+	var host = window.location.hostname;
+	var element = document.createElement('script');
+	var firstScript = document.getElementsByTagName('script')[0];
+	var url = 'https://cmp.quantcast.com'
+	    .concat('/choice/', 'XwNYEpNeFfhfr', '/', host, 
+		    '/choice.js?tag_version=V2');
+	var uspTries = 0;
+	var uspTriesLimit = 3;
+	element.async = true;
+	element.type = 'text/javascript';
+	element.src = url;
+	
+	firstScript.parentNode.insertBefore(element, firstScript);
+	
+	function makeStub() {
+	    var TCF_LOCATOR_NAME = '__tcfapiLocator';
+	    var queue = [];
+	    var win = window;
+	    var cmpFrame;
+	    
+	    function addFrame() {
+		var doc = win.document;
+		var otherCMP = !!(win.frames[TCF_LOCATOR_NAME]);
+		
+		if (!otherCMP) {
+		    if (doc.body) {
+			var iframe = doc.createElement('iframe');
+			
+			iframe.style.cssText = 'display:none';
+			iframe.name = TCF_LOCATOR_NAME;
+			doc.body.appendChild(iframe);
+		    } else {
+			setTimeout(addFrame, 5);
+		    }
+		}
+		return !otherCMP;
+	    }
+	    
+	    function tcfAPIHandler() {
+		var gdprApplies;
+		var args = arguments;
+		
+		if (!args.length) {
+		    return queue;
+		} else if (args[0] === 'setGdprApplies') {
+		    if (
+			args.length > 3 &&
+			    args[2] === 2 &&
+			    typeof args[3] === 'boolean'
+		    ) {
+			gdprApplies = args[3];
+			if (typeof args[2] === 'function') {
+			    args[2]('set', true);
+			}
+		    }
+		} else if (args[0] === 'ping') {
+		    var retr = {
+			gdprApplies: gdprApplies,
+			cmpLoaded: false,
+			cmpStatus: 'stub'
+		    };
+		    
+		    if (typeof args[2] === 'function') {
+			args[2](retr);
+		    }
+		} else {
+		    if(args[0] === 'init' && typeof args[3] === 'object') {
+			args[3] = Object.assign(args[3], { tag_version: 'V2' });
+		    }
+		    queue.push(args);
+		}
+	    }
+	    
+	    function postMessageEventHandler(event) {
+		var msgIsString = typeof event.data === 'string';
+		var json = {};
+		
+		try {
+		    if (msgIsString) {
+			json = JSON.parse(event.data);
+		    } else {
+			json = event.data;
+		    }
+		} catch (ignore) {}
+		
+		var payload = json.__tcfapiCall;
+		
+		if (payload) {
+		    window.__tcfapi(
+			payload.command,
+			payload.version,
+			function(retValue, success) {
+			    var returnMsg = {
+				__tcfapiReturn: {
+				    returnValue: retValue,
+				    success: success,
+				    callId: payload.callId
+				}
+			    };
+			    if (msgIsString) {
+				returnMsg = JSON.stringify(returnMsg);
+			    }
+			    if (event && event.source && event.source.postMessage) {
+				event.source.postMessage(returnMsg, '*');
+			    }
+			},
+			payload.parameter
+		    );
+		}
+	    }
+	    
+	    while (win) {
+		try {
+		    if (win.frames[TCF_LOCATOR_NAME]) {
+			cmpFrame = win;
+			break;
+		    }
+		} catch (ignore) {}
+		
+		if (win === window.top) {
+		    break;
+		}
+		win = win.parent;
+	    }
+	    if (!cmpFrame) {
+		addFrame();
+		win.__tcfapi = tcfAPIHandler;
+		win.addEventListener('message', postMessageEventHandler, false);
+	    }
+	};
+	
+	makeStub();
+	
+	var uspStubFunction = function() {
+	    var arg = arguments;
+	    if (typeof window.__uspapi !== uspStubFunction) {
+		setTimeout(function() {
+		    if (typeof window.__uspapi !== 'undefined') {
+			window.__uspapi.apply(window.__uspapi, arg);
+		    }
+		}, 500);
+	    }
+	};
+	
+	var checkIfUspIsReady = function() {
+	    uspTries++;
+	    if (window.__uspapi === uspStubFunction && uspTries < uspTriesLimit) {
+		console.warn('USP is not accessible');
+	    } else {
+		clearInterval(uspInterval);
+	    }
+	};
+	
+	if (typeof window.__uspapi === 'undefined') {
+	    window.__uspapi = uspStubFunction;
+	    var uspInterval = setInterval(checkIfUspIsReady, 6000);
+	}
+    })();
+</script>
+<!-- End Quantcast Choice. Consent Manager Tag v2.0 (for TCF 2.0) -->
+
+
+    <title>David Bell College Stats | College Football at Sports-Reference.com</title>
+
+    
+    
+    <meta name="Description" content="David Bell - Purdue (WR)">
+    <link rel="canonical" href="https://www.sports-reference.com/cfb/players/david-bell-6.html" />
+
+
+<!-- include:start  ="/cfb/inc/klecko_header_full_cfb.html_f" -->
+<!-- yes:cookie regular load the cached css -->
+<script>function gup(n) {n = n.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]'); var r = new RegExp('[\\?&]'+n+'=([^&#]*)'); var re = r.exec(location.search);   return re === null?'':decodeURIComponent(re[1].replace(/\+/g,' '));}; document.srdev = gup('srdev')</script>
+<link rel="preconnect" href="https://cdn.ssref.net" crossorigin>
+<link rel="preconnect" href="https://www.google-analytics.com"  crossorigin>
+<link rel="preconnect" href="https://www.googletagservices.com" crossorigin>
+<link rel="preload"    href="https://cdn.ssref.net/req/202211181/js/cfb/sr-min.js" as="script" crossorigin>
+<link rel="preload"    href="https://cdn.ssref.net/req/202211181/icons/sr_icons-min.svg?cfb" as="fetch" crossorigin>
+<link rel="preload"    href="https://www.sports-reference.com/short/cfb/inc/main_nav_menu.json" as="fetch" crossorigin>
+<link rel="preload"    href="https://cdn.ssref.net/req/201604190/images/chosen-sprite.png" as="image" crossorigin>
+<link rel="preload"    href="https://cdn.ssref.net/req/202211181/css/cfb/sr-min.css" as="style"    crossorigin>
+
+<!-- CSS start -->
+<link rel="stylesheet" href="https://cdn.ssref.net/req/202211181/css/cfb/sr-min.css" type="text/css"
+      onload="if (document.srdev) { this.href = 'https://cdn.ssref.net/nocdn/dev/'.concat(document.srdev.substr(0,2),'/css/cfb/sr.css'); }" />
+<!-- CSS END -->
+
+<!-- JS START -->
+<script class="allowed">var sr_is_production = true;
+function vjs_getUrlParameter(e){e=e.replace(/[\[]/,"\\[").replace(/[\]]/,"\\]");e=new RegExp("[\\?&]"+e+"=([^&#]*)").exec(location.search);return null===e?"":decodeURIComponent(e[1].replace(/\+/g," "))}document.lang="","/es/"===window.location.pathname.substr(0,4)?document.lang="es":"/pt/"===window.location.pathname.substr(0,4)?document.lang="pt":"/fr/"===window.location.pathname.substr(0,4)?document.lang="fr":"/it/"===window.location.pathname.substr(0,4)?document.lang="it":"/de/"===window.location.pathname.substr(0,4)?document.lang="de":(window.location.pathname.substr(0,4),document.lang="en"),vjs_getUrlParameter("lang")&&(document.lang=vjs_getUrlParameter("lang")),document.srdev=null,vjs_getUrlParameter("srdev")&&(document.srdev=vjs_getUrlParameter("srdev"));var el,log_performance=!0,is_new_jscss_version=!1,sr_detect_operaMini=-1<navigator.userAgent.indexOf("Opera Mini"),sr_detect_firefox=(sr_detect_operaMini&&((el=document.querySelector("html")).className=el.className.concat(" operamini")),-1<navigator.userAgent.indexOf("Firefox")),sr_detect_firefoxMobile=(sr_detect_firefox&&((el=document.querySelector("html")).className=el.className.concat(" firefox")),-1<navigator.userAgent.indexOf("Firefox")&&(-1<navigator.userAgent.indexOf("Mobile")||-1<navigator.userAgent.indexOf("Tablet"))),sr_detect_ie=(sr_detect_firefoxMobile&&((el=document.querySelector("html")).className=el.className.concat(" firefox-mobile")),function(){var e=window.navigator.userAgent;if(0<e.indexOf("Trident/7.0"))return 11;if(0<e.indexOf("Trident/6.0"))return 10;if(0<e.indexOf("Trident/5.0"))return 9;for(var t=3,n=document.createElement("div"),r=n.getElementsByTagName("i");n.innerHTML="\x3c!--[if gt IE "+ ++t+"]><i></i><![endif]--\x3e",r[0];);return 4<t&&t}()),sr_detect_edge=!sr_detect_ie&&!!window.StyleMedia,sr_detect_safari=/Safari/.test(navigator.userAgent)&&/Apple Computer/.test(navigator.vendor),className="no-js",patt=((el=document.querySelector("html")).classList?el.classList.remove(className):el.className=el.className.replace(new RegExp("(^|\\b)"+className.split(" ").join("|")+"(\\b|$)","gi")," "),el.className=el.className.concat(" js"),!function(a,d,S){function E(e,t){return typeof e===t}function T(e){return"function"!=typeof d.createElement?d.createElement(e):m?d.createElementNS.call(d,"http://www.w3.org/2000/svg",e):d.createElement.apply(d,arguments)}function R(e,t,n,r){var o,i,a,s,l="modernizr",c=T("div");(s=d.body)||((s=T(m?"svg":"body")).fake=!0);if(parseInt(n,10))for(;n--;)(i=T("div")).id=r?r[n]:l+(n+1),c.appendChild(i);return(o=T("style")).type="text/css",o.id="s"+l,(s.fake?s:c).appendChild(o),s.appendChild(c),o.styleSheet?o.styleSheet.cssText=e:o.appendChild(d.createTextNode(e)),c.id=l,s.fake&&(s.style.background="",s.style.overflow="hidden",a=u.style.overflow,u.style.overflow="hidden",u.appendChild(s)),o=t(c,e),s.fake?(s.parentNode.removeChild(s),u.style.overflow=a,u.offsetHeight):c.parentNode.removeChild(c),!!o}function U(e){return e.replace(/([a-z])-([a-z])/g,function(e,t,n){return t+n.toUpperCase()}).replace(/^-/,"")}function D(e){return e.replace(/([A-Z])/g,function(e,t){return"-"+t.toLowerCase()}).replace(/^ms-/,"-ms-")}function q(e,t){var n=e.length;if("CSS"in a&&"supports"in a.CSS){for(;n--;)if(a.CSS.supports(D(e[n]),t))return!0;return!1}if("CSSSupportsRule"in a){for(var r=[];n--;)r.push("("+D(e[n])+":"+t+")");return R("@supports ("+(r=r.join(" or "))+") { #modernizr { position: absolute; } }",function(e){return"absolute"==(e=e,t=null,n="position","getComputedStyle"in a?(r=getComputedStyle.call(a,e,t),o=a.console,null!==r?n&&(r=r.getPropertyValue(n)):o&&o[o.error?"error":"log"].call(o,"getComputedStyle returning null, its possible modernizr test results are inaccurate")):r=!t&&e.currentStyle&&e.currentStyle[n],r);var t,n,r,o})}return S}function r(e,t,n,r,o){var i,a,s=e.charAt(0).toUpperCase()+e.slice(1),l=(e+" "+re.join(s+" ")+s).split(" ");if(E(t,"string")||void 0===t){var c=l,d=t,u=r,m=o;function f(){p&&(delete L.style,delete L.modElem)}if(m=void 0!==m&&m,void 0!==u){r=q(c,u);if(void 0!==r)return r}for(var p,h,g,v,_,y=["modernizr","tspan","samp"];!L.style&&y.length;)p=!0,L.modElem=T(y.shift()),L.style=L.modElem.style;for(g=c.length,h=0;h<g;h++)if(v=c[h],_=L.style[v],~(""+v).indexOf("-")&&(v=U(v)),L.style[v]!==S){if(m||void 0===u)return f(),"pfx"!=d||v;try{L.style[v]=u}catch(e){}if(L.style[v]!=_)return f(),"pfx"!=d||v}return f(),!1}var w=l=(e+" "+P.join(s+" ")+s).split(" "),b=t,x=n;for(a in w)if(w[a]in b)if(!1===x)return w[a];else{i=b[w[a]];if(E(i,"function")){var M=i;var z=x||b;return function(){return M.apply(z,arguments)};return}else return i}return!1}function F(e,t,n){return r(e,S,S,t,n)}var $=[],o=[],e={_version:"3.6.0",_config:{classPrefix:"",enableClasses:!0,enableJSClass:!0,usePrefixes:!0},_q:[],on:function(e,t){var n=this;setTimeout(function(){t(n[e])},0)},addTest:function(e,t,n){o.push({name:e,fn:t,options:n})},addAsyncTest:function(e){o.push({name:null,fn:e})}},n=function(){},s=(n.prototype=e,(n=new n).addTest("cookies",function(){try{d.cookie="cookietest=1";var e=-1!=d.cookie.indexOf("cookietest=");return d.cookie="cookietest=1; expires=Thu, 01-Jan-1970 00:00:01 GMT",e}catch(e){return!1}}),n.addTest("localstorage",function(){var e="modernizr";try{return localStorage.setItem(e,e),localStorage.removeItem(e),!0}catch(e){return!1}}),n.addTest("sessionstorage",function(){var e="modernizr";try{return sessionStorage.setItem(e,e),sessionStorage.removeItem(e),!0}catch(e){return!1}}),n.addTest("cors","XMLHttpRequest"in a&&"withCredentials"in new XMLHttpRequest),n.addTest("history",function(){var e=navigator.userAgent;return(-1===e.indexOf("Android 2.")&&-1===e.indexOf("Android 4.0")||-1===e.indexOf("Mobile Safari")||-1!==e.indexOf("Chrome")||-1!==e.indexOf("Windows Phone")||"file:"===location.protocol)&&(a.history&&"pushState"in a.history)}),e._config.usePrefixes?" -webkit- -moz- -o- -ms- ".split(" "):["",""]),u=(e._prefixes=s,d.documentElement),m="svg"===u.nodeName.toLowerCase();if(!m){var t=void 0!==a?a:this,l=d;function I(e,t){var n=e.createElement("p"),e=e.getElementsByTagName("head")[0]||e.documentElement;return n.innerHTML="x<style>"+t+"</style>",e.insertBefore(n.lastChild,e.firstChild)}function f(){var e=y.elements;return"string"==typeof e?e.split(" "):e}function p(e){var t=X[e[G]];return t||(t={},v++,e[G]=v,X[v]=t),t}function W(e,t,n){return t=t||l,h?t.createElement(e):!(t=(n=n||p(t)).cache[e]?n.cache[e].cloneNode():V.test(e)?(n.cache[e]=n.createElem(e)).cloneNode():n.createElem(e)).canHaveChildren||J.test(e)||t.tagUrn?t:n.frag.appendChild(t)}function i(e){var t,n,r=p(e=e||l);return!y.shivCSS||c||r.hasCSS||(r.hasCSS=!!I(e,"article,aside,dialog,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}mark{background:#FF0;color:#000}template{display:none}")),h||(t=e,(n=r).cache||(n.cache={},n.createElem=t.createElement,n.createFrag=t.createDocumentFragment,n.frag=n.createFrag()),t.createElement=function(e){return y.shivMethods?W(e,t,n):n.createElem(e)},t.createDocumentFragment=Function("h,f","return function(){var n=f.cloneNode(),c=n.createElement;h.shivMethods&&("+f().join().replace(/[\w\-:]+/g,function(e){return n.createElem(e),n.frag.createElement(e),'c("'+e+'")'})+");return n}")(y,n.frag)),e}function H(e){for(var t,n=e.getElementsByTagName("*"),r=n.length,o=RegExp("^(?:"+f().join("|")+")$","i"),i=[];r--;)t=n[r],o.test(t.nodeName)&&i.push(t.applyElement(function(e){for(var t,n=e.attributes,r=n.length,o=e.ownerDocument.createElement(w+":"+e.nodeName);r--;)(t=n[r]).specified&&o.setAttribute(t.nodeName,t.nodeValue);return o.style.cssText=e.style.cssText,o}(t)));return i}function B(s){function l(){clearTimeout(n._removeSheetTimer),c&&c.removeNode(!0),c=null}var c,d,n=p(s),e=s.namespaces,t=s.parentWindow;return!K||s.printShived||(void 0===e[w]&&e.add(w),t.attachEvent("onbeforeprint",function(){l();for(var e,t,n,r=s.styleSheets,o=[],i=r.length,a=Array(i);i--;)a[i]=r[i];for(;n=a.pop();)if(!n.disabled&&Z.test(n.media)){try{t=(e=n.imports).length}catch(e){t=0}for(i=0;i<t;i++)a.push(e[i]);try{o.push(n.cssText)}catch(e){}}o=function(e){for(var t,n=e.split("{"),r=n.length,o=RegExp("(^|[\\s,>+~])("+f().join("|")+")(?=[[\\s,>+~#.:]|$)","gi"),i="$1"+w+"\\:$2";r--;)(t=n[r]=n[r].split("}"))[t.length-1]=t[t.length-1].replace(o,i),n[r]=t.join("}");return n.join("{")}(o.reverse().join("")),d=H(s),c=I(s,o)}),t.attachEvent("onafterprint",function(){for(var e=d,t=e.length;t--;)e[t].removeNode();clearTimeout(n._removeSheetTimer),n._removeSheetTimer=setTimeout(l,500)}),s.printShived=!0),s}var c,h,g=t.html5||{},J=/^<|^(?:button|map|select|textarea|object|iframe|option|optgroup)$/i,V=/^(?:a|b|code|div|fieldset|h1|h2|h3|h4|h5|h6|i|label|li|ol|p|q|span|strong|style|table|tbody|td|th|tr|ul)$/i,G="_html5shiv",v=0,X={};try{var _=l.createElement("a");_.innerHTML="<xyz></xyz>",c="hidden"in _,h=1==_.childNodes.length||(l.createElement("a"),void 0===(O=l.createDocumentFragment()).cloneNode||void 0===O.createDocumentFragment||void 0===O.createElement)}catch(e){h=c=!0}var y={elements:g.elements||"abbr article aside audio bdi canvas data datalist details dialog figcaption figure footer header hgroup main mark meter nav output picture progress section summary template time video",version:"3.7.3",shivCSS:!1!==g.shivCSS,supportsUnknownElements:h,shivMethods:!1!==g.shivMethods,type:"default",shivDocument:i,createElement:W,createDocumentFragment:function(e,t){if(e=e||l,h)return e.createDocumentFragment();for(var n=(t=t||p(e)).frag.cloneNode(),r=0,o=f(),i=o.length;r<i;r++)n.createElement(o[r]);return n},addElements:function(e,t){var n=y.elements;"string"!=typeof n&&(n=n.join(" ")),"string"!=typeof e&&(e=e.join(" ")),y.elements=n+" "+e,i(t)}},Z=(t.html5=y,i(l),/^$|\b(?:all|print)\b/),w="html5shiv",K=!(h||(_=l.documentElement,void 0===l.namespaces||void 0===l.parentWindow||void 0===_.applyElement||void 0===_.removeNode||void 0===t.attachEvent));y.type+=" print",(y.shivPrint=B)(l),"object"==typeof module&&module.exports&&(module.exports=y)}n.addTest("csspositionsticky",function(){var e="position:",t=T("a").style;return t.cssText=e+s.join("sticky;"+e).slice(0,-e.length),-1!==t.position.indexOf("sticky")});function Q(e){var t,n=s.length,r=a.CSSRule;if(void 0===r)return S;if(!e)return!1;if((t=(e=e.replace(/^@/,"")).replace(/-/g,"_").toUpperCase()+"_RULE")in r)return"@"+e;for(var o=0;o<n;o++){var i=s[o];if(i.toUpperCase()+"_"+t in r)return"@-"+i.toLowerCase()+"-"+e}return!1}Y=!("onblur"in d.documentElement);var Y,b,x,M,z,C,N,j,ee,k,A,te=function(e,t){var n;return!!e&&(!(n=(e="on"+e)in(t=t&&"string"!=typeof t?t:T(t||"div")))&&Y&&((t=t.setAttribute?t:T("div")).setAttribute(e,""),n="function"==typeof t[e],t[e]!==S&&(t[e]=S),t.removeAttribute(e)),n)},ne=(e.hasEvent=te,e.testStyles=R),O=(n.addTest("touchevents",function(){var t,e;return"ontouchstart"in a||a.DocumentTouch&&d instanceof DocumentTouch?t=!0:(e=["@media (",s.join("touch-enabled),("),"heartz",")","{#modernizr{top:9px;position:absolute}}"].join(""),ne(e,function(e){t=9===e.offsetTop})),t}),"Moz O ms Webkit"),P=e._config.usePrefixes?O.toLowerCase().split(" "):[],re=(e._domPrefixes=P,n.addTest("pointerevents",function(){for(var e=!1,t=P.length,e=n.hasEvent("pointerdown");t--&&!e;)te(P[t]+"pointerdown")&&(e=!0);return e}),e._config.usePrefixes?O.split(" "):[]),oe=(e._cssomPrefixes=re,e.atRule=Q,{elem:T("modernizr")}),L=(n._q.push(function(){delete oe.elem}),{style:oe.elem.style}),g=(n._q.unshift(function(){delete L.style}),e.testAllProps=r,e.prefixed=function(e,t,n){return 0===e.indexOf("@")?Q(e):(-1!=e.indexOf("-")&&(e=U(e)),t?r(e,t,n):r(e,"pfx"))});for(j in n.addTest("matchmedia",!!g("matchMedia",a)),e.testAllProps=F,n.addTest("flexwrap",F("flexWrap","wrap",!0)),o)if(o.hasOwnProperty(j)){if(b=[],(x=o[j]).name&&(b.push(x.name.toLowerCase()),x.options&&x.options.aliases&&x.options.aliases.length))for(M=0;M<x.options.aliases.length;M++)b.push(x.options.aliases[M].toLowerCase());for(z=E(x.fn,"function")?x.fn():x.fn,C=0;C<b.length;C++)1===(N=b[C].split(".")).length?n[N[0]]=z:(!n[N[0]]||n[N[0]]instanceof Boolean||(n[N[0]]=new Boolean(n[N[0]])),n[N[0]][N[1]]=z),$.push((z?"":"no-")+N.join("-"))}t=$,k=u.className,A=n._config.classPrefix||"",m&&(k=k.baseVal),n._config.enableJSClass&&(ee=new RegExp("(^|\\s)"+A+"no-js(\\s|$)"),k=k.replace(ee,"$1"+A+"js$2")),n._config.enableClasses&&(k+=" "+A+t.join(" "+A),m?u.className.baseVal=k:u.className=k),delete e.addTest,delete e.addAsyncTest;for(var ie=0;ie<n._q.length;ie++)n._q[ie]();a.Modernizr=n}(window,document),Modernizr.viewport_width=Math.max(document.documentElement.clientWidth,window.innerWidth||0),Modernizr.viewport_height=Math.max(document.documentElement.clientHeight,window.innerHeight||0),Modernizr.narrow=Modernizr.viewport_width<=704,Modernizr.constrained=Modernizr.viewport_width<=1200,Modernizr.site_menu=Modernizr.viewport_width<=1020?"button":"nav_bar",Modernizr.touch=Modernizr.touchevents||Modernizr.pointerevents&&(0<navigator.MaxTouchPoints||0<navigator.msMaxTouchPoints),Modernizr.phone=Modernizr.narrow&&Modernizr.touch,Modernizr.tablet=Modernizr.viewport_width<1075&&Modernizr.touch,Modernizr.desktop=!Modernizr.constrained&&!Modernizr.touch,Modernizr.laptop=!(Modernizr.desktop||Modernizr.tablet||Modernizr.phone),new RegExp("hideallads")),sr_html=(Modernizr.adfree=patt.test(window.location.href),document.querySelector("html")),cn=sr_html.className,sr_host_parts=(Modernizr.phone?sr_html.className=cn.concat(" phone"):Modernizr.tablet?sr_html.className=cn.concat(" tablet"):(Modernizr.desktop||Modernizr.laptop)&&(sr_html.className=cn.concat(" desktop")),window.location.hostname.split(".")),cn=sr_html.className,sr_logger=(Modernizr.is_build=Modernizr.is_live=Modernizr.is_dev=!1,"www"===sr_host_parts[0]||"fbref"===sr_host_parts[0]?(Modernizr.is_live=!0,sr_html.className=cn.concat(" is_live")):sr_host_parts[0].startsWith("b")?(Modernizr.is_build=!0,sr_html.className=cn.concat(" is_build")):(sr_host_parts[0].startsWith("d")||sr_host_parts[0].startsWith("r"))&&(Modernizr.is_dev=!0,sr_html.className=cn.concat(" is_dev")),Modernizr.is_stathead=!1,("stathead"===sr_host_parts[1]&&"srdevel"===sr_host_parts[2]||"stathead"===sr_host_parts[0]||"www"===sr_host_parts[0]&&"stathead"===sr_host_parts[1])&&(cn=sr_html.className,sr_html.className=cn.concat(" is_stathead"),Modernizr.is_stathead=!0),function(){var e=null,t={enableLogger:function(){null!=e&&(window.console.log=e)},disableLogger:function(){e=console.log,window.console.log=function(){}}};return t}()),sr_utilities_js_loader=(!document.srdev&&sr_is_production&&sr_logger.disableLogger(),Modernizr.is_modern=1,Modernizr.lang=document.lang||"",Modernizr.srdev=document.srdev,[]);function vjs_readCookie(e){for(var t=e+"=",n=document.cookie.split(";"),r=0;r<n.length;r++){for(var o=n[r];" "===o.charAt(0);)o=o.substring(1,o.length);if(0===o.indexOf(t))return decodeURIComponent(o.substring(t.length,o.length))}return null}function vjs_createCookie(e,t,n){var r,o="",o=n?((r=new Date).setTime(r.getTime()+24*n*60*60*1e3),"; expires="+r.toGMTString()):"",n=encodeURIComponent(e)+"="+encodeURIComponent(t)+o+"; path=/";document.cookie=n}!function(o){function e(e,t){"use strict";var n=o.document.getElementsByTagName("script")[0],r=o.document.createElement("script");return r.src=e,r.async=!0,n.parentNode.insertBefore(r,n),t&&"function"==typeof t&&(r.onload=t),r}"undefined"!=typeof module?module.exports=e:o.loadJS=e}("undefined"!=typeof global?global:this),String.prototype.vjs_isMatch=function(e){return null!==this.match(e)};var sr_time_begin=new Date,sr_perf_startTime=new Date,sr_perf_log="<strong>Performance:</strong>",sr_perf_lastTime=new Date;function vjs_ready(e){"loading"!=document.readyState?e():document.addEventListener("DOMContentLoaded",e)}
+</script>
+<script>
+var _sr_modern_url = ''.concat(document.srdev?'https://cdn.ssref.net/nocdn/dev/'.concat(document.srdev.substring(0, 2)):"https://cdn.ssref.net/req/202211181",
+                               "/js/cfb", "/sr",document.srdev?"":"-min",   			       ".js");
+loadJS( _sr_modern_url, function() { vjs_ready(sr_fire_js); });
+</script>
+<!-- JS END -->
+
+
+<!-- include:end  ="/cfb/inc/klecko_header_full_cfb.html_f" -->
+
+
+
+    <meta name="revised" content="19:08:45 16-Nov-2022" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="generated-by"     content="build_player_page.pl" />
+
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="no" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#38424d" />
+    <meta name="msapplication-navbutton-color" content="#38424d" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="#38424d" />
+    
+
+
+
+    <!-- HeaderSeoSocial -->
+    <meta name="keywords" content="">
+    <meta itemprop="url"           content="https://www.sports-reference.com/cfb">
+    <meta itemprop="name"          content="College Football Reference">
+    <meta itemprop="alternateName" content="CFBRef">
+    <meta property="fb:app_id"     content="">
+    <meta property="og:url"          content="https://www.sports-reference.com/cfb/players/david-bell-6.html">
+    <meta property="og:title"        content="David Bell College Stats | College Football at Sports-Reference.com">
+    <meta property="og:site_name"    content="College Football at Sports-Reference.com">
+    <meta property="og:type"         content="    Athlete" />
+    <meta property="og:description"  content="David Bell - Purdue (WR)">
+    <meta property="og:image"        content="http://cdn.ssref.net/scripts/image_resize.cgi?min=200&url=https://www.sports-reference.com/req/202007101/cfb/images/players/david-bell-6.jpg">
+    <meta name="twitter:card"         content="summary">
+    <meta name="twitter:site"         content="@collegefb_ref">
+    <meta name="twitter:creator"      content="@collegefb_ref">
+    <meta property="twitter:image"    content="http://cdn.ssref.net/scripts/image_resize.cgi?min=200&url=https://www.sports-reference.com/req/202007101/cfb/images/players/david-bell-6.jpg">
+    <meta name="twitter:domain"       content="College Football at Sports-Reference.com">
+    <meta name="referrer" content="unsafe-url">
+    <!-- HeaderSeoSocial:END -->
+
+    <!-- tiles, touch, favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="180x180" href="https://cdn.ssref.net/req/202211031/favicons/cfb/apple-touch-icon-180x180-precomposed.png">
+    <link rel="icon"                         sizes="48x48"   href="https://cdn.ssref.net/req/202211031/favicons/cfb/favicon-48.png">
+    <link rel="shortcut icon"                sizes="228x228" href="https://cdn.ssref.net/req/202211031/favicons/cfb/apple-touch-icon-228x228-precomposed.png">
+    <link rel="apple-touch-icon"             sizes="228x228" href="https://cdn.ssref.net/req/202211031/favicons/cfb/apple-touch-icon-228x228-precomposed.png">
+    <link rel="apple-touch-icon"             sizes="195x195" href="https://cdn.ssref.net/req/202211031/favicons/cfb/apple-touch-icon-195x195-precomposed.png">
+    <link rel="apple-touch-icon"             sizes="180x180" href="https://cdn.ssref.net/req/202211031/favicons/cfb/apple-touch-icon-180x180-precomposed.png">
+    <link rel="apple-touch-icon"             sizes="152x152" href="https://cdn.ssref.net/req/202211031/favicons/cfb/apple-touch-icon-152x152-precomposed.png">
+    <link rel="apple-touch-icon"             sizes="144x144" href="https://cdn.ssref.net/req/202211031/favicons/cfb/apple-touch-icon-144x144-precomposed.png">
+    <link rel="apple-touch-icon"             sizes="128x128" href="https://cdn.ssref.net/req/202211031/favicons/cfb/apple-touch-icon-128x128-precomposed.png">
+    <link rel="apple-touch-icon"             sizes="120x120" href="https://cdn.ssref.net/req/202211031/favicons/cfb/apple-touch-icon-120x120-precomposed.png">
+    <link rel="apple-touch-icon"             sizes="114x114" href="https://cdn.ssref.net/req/202211031/favicons/cfb/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon"             sizes="76x76"   href="https://cdn.ssref.net/req/202211031/favicons/cfb/apple-touch-icon-76x76-precomposed.png">
+    <link rel="apple-touch-icon"             sizes="72x72"   href="https://cdn.ssref.net/req/202211031/favicons/cfb/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon"             sizes="57x57"   href="https://cdn.ssref.net/req/202211031/favicons/cfb/apple-touch-icon-57x57-precomposed.png">
+    <link rel="icon"                         sizes="32x32"   href="https://cdn.ssref.net/req/202211031/favicons/cfb/favicon-32.png">
+    <!--[if IE]>
+    <link rel="shortcut icon"                                href="https://cdn.ssref.net/req/202211031/favicons/cfb/favicon.ico"><![endif]-->
+    <meta name="msapplication-TileColor" content="#04376c" />
+    <meta name="msapplication-TileImage" content="https://cdn.ssref.net/req/202211031/favicons/cfb/ms-tile-144.png" />
+    <link rel=search        type="application/opensearchdescription+xml" href="https://cdn.ssref.net/req/202211031/opensearch/opensearch-cfb.xml" title=" Player and Team Search">
+    <!-- tiles, touch, favicons:end -->
+
+<!-- ad code: begin -->
+
+
+<script data-ad-client="ca-pub-5319453360923253" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+    var freestar = freestar || {};
+    freestar.config = freestar.config || {};
+    freestar.config.enabled_slots = [ "div-gpt-ad-300x250-ATF","div-gpt-ad-728x90-ATF","div-gpt-ad-728x90-GeneralHeader","div-gpt-ad-728x90-BTF-1","div-gpt-ad-728x90-Footer" ];
+    if (sr_detect_ie || sr_detect_edge || Modernizr.adfree || document.getElementById('sr_suppress_ads') || Modernizr.viewport_width < 1810) {
+    // do not include the rails
+    }
+    else {
+         freestar.config.enabled_slots.push('div-gpt-ad-160x600-1');
+         freestar.config.enabled_slots.push('div-gpt-ad-160x600-2');
+    } 
+
+</script>
+<script data-cfasync="false" type="text/javascript">
+    var fs_debug = window.location.search.indexOf('fsdebug') == -1 ? false : true;
+    freestar.hitTime = Date.now();
+    freestar.queue = freestar.queue || [];
+    freestar.config = freestar.config || {};
+    freestar.queue.push(function() {
+      // Include the line reflecting the area/section of the site you are on
+      googletag.pubads().setTargeting('sr_site_id', 'cfb');
+    });
+!function(a,b){
+    if (sr_detect_ie || sr_detect_edge || Modernizr.adfree) {
+        return;
+    }  
+    var c=b.getElementsByTagName("script")[0],
+    d=b.createElement("script"),
+    e="https://a.pub.network/sports-reference";
+    e+=fs_debug?"/qa/pubfig.min.js":"/pubfig.min.js",
+    d.async=!0,
+    d.src=e,
+    c.parentNode.insertBefore(d,c)
+}(window,document);
+</script>
+
+
+<!-- ad code:end -->
+
+
+</head>
+<body class="cfb">
+<div id="wrap">
+  
+  <div id="header" role="banner">
+  <ul id="subnav" class="notranslate">
+	<li><a href="https://www.sports-reference.com/"><svg height="15px" width="20px"><use xlink:href="#ic-sr-pennant"></use></svg> Sports&nbsp;Reference&#8239;&reg;</a></li>
+	<li><a href="https://www.baseball-reference.com/">Baseball</a></li>
+	<li class="current"><a href="https://www.pro-football-reference.com/">Football</a> <a href="https://www.sports-reference.com/cfb/">(college)</a></li>
+	<li><a href="https://www.basketball-reference.com/">Basketball</a> <a href="https://www.sports-reference.com/cbb/">(college)</a></li>
+	<li><a href="https://www.hockey-reference.com/">Hockey</a></li>
+
+
+	
+	
+	
+	<li><a href="https://fbref.com/fr/">Football</a></li>
+
+	<li><a href="https://www.sports-reference.com/blog/">Blog</a></li>
+
+    <li><a href="https://stathead.com/?utm_source=web&amp;utm_medium=cfb&amp;utm_campaign=sr-nav-bar-top-link">Stathead&#8239;&reg;</a></li>
+
+	<li><a href="https://www.sports-reference.com/feedback/">Questions or Comments?</a></li>
+	<li class="user logged_in">Welcome <span class="username"></span>&nbsp;&#183;&nbsp;<a href="https://stathead.com/profile/?utm_source=web&amp;utm_medium=cfb&amp;utm_campaign=sr-nav-bar-top-account">Your Account</a></li>
+<li class="user logged_in"><a class="logout" onclick="sr_auth_logout_page_elements();if(!this.href.match('redirect_uri')){this.href += '&redirect_uri='+escape(document.location.href)}" href="https://stathead.com/profile/?do=logout">Logout</a></li>
+<li class="user not_logged_in"><a class="login" onclick="if(!this.href.match('redirect_uri')){this.href += '&redirect_uri='+escape(document.location.href)}" href="https://stathead.com/users/login.cgi?token=1">Login</a></li>
+<li class="user not_logged_in"><a href="https://stathead.com/users/signup.cgi">Create Account</a></li>
+
+</ul>
+
+  <a href="/cfb/"><img src="https://cdn.ssref.net/req/202211031/logos/cfb-logo.svg" onerror="this.src='https://cdn.ssref.net/req/202211031/logos/cfb-logo.png'; this.onerror = null;" alt="College Football at Sports-Reference.com Logo &amp; Link to home page" /></a>
+<div id="nav_trigger" role="button"><a href="#site_menu_link">MENU</a></div>
+<div id="nav" role="navigation" aria-label="College Football at Sports-Reference.com sections">
+	<ul id="main_nav" class="hoversmooth nohover">	  <li id="header_players" class="current"><a href="/cfb/players">Players</a></li>
+		<li id="header_schools" ><a href="/cfb/schools/">Schools</a></li>
+		<li id="header_years" ><a href="/cfb/years/">Years</a></li>
+		<li id="header_leaders" ><a href="/cfb/leaders/">Leaders</a></li>
+		<li id="header_scores" ><a href="/cfb/boxscores/">CFB Scores</a></li>
+		<li id="header_bowls" class=""><a href="/cfb/bowls/">Bowls</a></li>	
+		<li id="header_playindex" class=""><a href="/cfb/play-index/">Play Index</a></li>
+		<li><a href="https://www.sports-reference.com/cfb/email/">Newsletter</a></li>
+		
+		<li><a data-scroll href="#site_menu_link" class="opener">Full Site Menu Below</a></li>
+	</ul>
+	<div class="breadcrumbs">You are here: <div itemscope itemtype="https://schema.org/BreadcrumbList" class="crumbs"><span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="/cfb/"><span itemprop="name">CFB Home Page</span></a> <meta itemprop="position" content="1" /></span> &gt; <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="/cfb/players/"><span itemprop="name">Players</span></a> <meta itemprop="position" content="2" /></span> &gt; David Bell</div></div>
+	<ul class="usertools bullets-inline"><li class="user logged_in">Welcome <span class="username"></span>&nbsp;&#183;&nbsp;<a href="https://stathead.com/profile/?utm_source=web&amp;utm_medium=cfb&amp;utm_campaign=sr-nav-bar-top-account">Your Account</a></li>
+<li class="user logged_in"><a class="logout" onclick="sr_auth_logout_page_elements();if(!this.href.match('redirect_uri')){this.href += '&redirect_uri='+escape(document.location.href)}" href="https://stathead.com/profile/?do=logout">Logout</a></li>
+<li class="user not_logged_in"><a class="login" onclick="if(!this.href.match('redirect_uri')){this.href += '&redirect_uri='+escape(document.location.href)}" href="https://stathead.com/users/login.cgi?token=1">Login</a></li>
+<li class="user not_logged_in"><a href="https://stathead.com/users/signup.cgi">Create Account</a></li>
+	</ul><!-- ul.user -->
+</div><!-- div#nav -->
+<script>
+function sr_menus_setupMainNav_button_inline () {
+    if (sr_detect_operaMini || !("classList" in document.createElement("_"))) {
+	return false;
+    }
+    var nav_trigger = document.getElementById('nav_trigger');
+    if(!nav_trigger || nav_trigger.triggered) {
+	return false;
+    }
+    nav_trigger.triggered = true;
+    var nav = document.getElementById('nav');
+    var nav_trigger_a = nav_trigger.querySelector('a');
+    if (nav_trigger_a) {
+	nav_trigger_a.setAttribute('href','javascript:void(0)');
+	nav_trigger.onclick = function (event) {
+	    nav.classList.toggle('open');
+	    var is_open = nav.classList.contains('open');
+	    if (is_open) {
+		nav_trigger.classList.add('open');
+	    }
+	    else {
+		nav_trigger.classList.remove('open');
+	    }
+	    event.preventDefault();
+	    try { sr_record_analytics_event('MainNavButtonClick_inline',sr_record_directory(),sr_record_page());}
+	    catch(err) {}
+	};
+    }
+    return true;
+}
+sr_menus_setupMainNav_button_inline();
+</script><div class="search" role="search" aria-label="Site Search for players, teams and sections">
+<form method="get" name="f_big"  action="/cfb/search/search.fcgi">
+<div class="ac-outline">
+  <div class="ac-wrapper"><input type="search" tabindex="-1" class="ac-hint" name="hint" placeholder="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" dir="auto" aria-label="Search suggestions based on user search input">
+
+<input tabindex="1" type="search" class="ac-input completely" name="search" placeholder="Enter Person, Team, Section, etc" aria-label="Enter a player, team or section name" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" dir="auto" />
+    <div class="ac-dropdown"></div>
+  </div>
+</div>
+
+<input type="submit" value="Search" tabindex="2" />
+<input type="hidden" name="pid" value="" data-search-id>
+<input type="hidden" name="idx" value="" data-search-idx>
+
+</form>
+</div><!-- div.search -->
+
+</div><!-- div#header -->
+
+  <style>
+  .site_announcement {
+    background-color: #fffea6;
+    text-align: center;
+    padding: .4em 0;
+    width: 100%;
+  }
+  .site_announcement div {
+    margin: 0 .3em;
+  }
+  .site_announcement span {
+    white-space: nowrap;
+  }
+  @media only screen and (max-width: 1000px) {
+    .site_annoucement_extra {
+      display: none;
+    }
+  }
+  </style>
+
+
+
+<div id="info" class="players">
+	<div id="meta">
+	
+
+<div class="media-item"><img itemscope="image" src="https://www.sports-reference.com/req/202007101/cfb/images/players/david-bell-6.jpg" alt="Photo of David Bell">
+</div><!-- div.media-item --><div >
+	<h1>
+		<span>David Bell</span>
+			</h1>
+	
+
+
+
+
+
+
+<p><strong>School</strong>: 
+  
+		<a href="/cfb/schools/purdue/">Purdue</a>
+	
+
+
+<p>
+  <strong>Position</strong>: WR
+</p>
+
+<p><span>6-2</span>,&nbsp;<span>205lb</span>&nbsp;(188cm,&nbsp;92kg) </p>
+<p>
+  <span itemprop="birthPlace"></span>
+  
+</p>
+
+
+
+
+	<p><strong>Draft:</strong> 3rd round, 99th overall of the <a href="http://www.pro-football-reference.com/years/2022/draft.htm">2022 NFL draft</a> by the <a href="http://www.pro-football-reference.com/teams/cle/2022.htm">Cleveland Browns</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+<button id="meta_more_button" class="opener" data-type="hide_after" data-class="open" data-id="info">More bio, uniform, draft info</button>
+<script>
+// see sr.menus.js:sr_menus_checkInfoCookie to explain
+function sr_menus_checkInfoCookie_inline(browserType) {
+    var el_info = document.getElementById('info');
+    var el_button = document.getElementById('meta_more_button');
+    var bling_len = 0;    
+    if (!el_button || !el_info || !el_info.classList) { console.log('no meta_button'); return; }
+    var el = el_button;
+    var siblingsHidden = 0;
+    while (el = el.previousSibling) { if ((el.nodeType === 1) && (el.offsetWidth <= 0 || el.offsetHeight <= 0)) { siblingsHidden++; } }
+    var button_cookie = false;
+    if (browserType === 'desktop') {  button_cookie = vjs_readCookie('meta_more_button');   }
+    // We allow up to four of bling lines or additional player bio data entries in mobile.
+    if (el_info && el_button && (button_cookie || (siblingsHidden + bling_len <= 4))) {el_button.parentNode.removeChild(el_button);	el_info.classList.add('open');  }
+    else { el_button.classList.add('show');  }
+}
+if (Modernizr.desktop || Modernizr.laptop) { sr_menus_checkInfoCookie_inline('desktop'); } else { sr_menus_checkInfoCookie_inline('mobile'); }
+var sr_menus_checkInfoCookie_run_inline = true;
+</script>
+
+
+</div>
+</div><!-- div#meta -->
+
+
+			
+	
+		
+	<div class="uni_holder cfb">
+	<a class="poptip default" data-tip="Purdue 2019-2022">
+        <svg viewBox="0,0,50,50" class="square"> <rect x="0" y="0" width="51" height="51" stroke="#000000" stroke-width="1" fill="#000000"></rect> <rect x="6" y="6" width="39" height="39" stroke="#b1946c" stroke-width="1" fill="#b1946c"></rect> <text x="18" y="34" fill="#fff" >3</text> </svg>
+	</a>
+</div>
+		
+	<span id="bling-alt-text" style="display:none;"><!--
+
+Uniforms:
+
+* Number 3 for Purdue 2019-2022
+
+--></span>		
+
+
+
+	
+<div class="adblock ad300">
+
+<!-- div#fs_fs_300_atf  -->
+<div align="center" id="div-gpt-ad-300x250-ATF">
+    <script data-cfasync="false" type='text/javascript'>
+    if (sr_detect_ie || sr_detect_edge || Modernizr.adfree) {
+    }
+    else {
+        console.log('push ad:div-gpt-ad-300x250-ATF');
+        freestar.queue.push(function() { googletag.display('div-gpt-ad-300x250-ATF'); });
+    }
+    </script>
+</div>
+<!-- /div.#fs_fs_300_atf -->
+
+
+</div>
+
+
+		
+</div><!-- div#info -->
+<div id="srcom">
+	
+<div class="adblock ad728">
+
+<!-- div#fs_fs_728_atf  -->
+<!-- sf:blank by design for send to news ad -->
+<!-- /div.#fs_fs_728_atf -->
+
+
+</div>
+
+	
+</div><!-- div#srcom -->
+<div id="inner_nav" role="navigation" aria-label="Sections on this page and/or other pages related to this page" class=" inactive">
+	<ul class="hoversmooth">
+		<li			class="current index "><a href="/cfb/players/david-bell-6.html">David Bell Overview</a>		</li>
+		<li data-fade-selector="#inpage_nav"			class="full hasmore "><span>Game Logs</span>
+			<div>
+
+					<ul class="">
+						<li><a href="/cfb/players/david-bell-6/gamelog/2021/" >2021</a></li>
+						<li><a href="/cfb/players/david-bell-6/gamelog/2020/" >2020</a></li>
+						<li><a href="/cfb/players/david-bell-6/gamelog/2019/" >2019</a></li>
+						<li><a href="/cfb/players/david-bell-6/gamelog/" >Career</a></li>
+					</ul>
+
+			</div>		</li>
+		<li data-fade-selector="#inpage_nav"			class="full hasmore "><span>Splits</span>
+			<div>
+
+					<ul class="">
+						<li><a href="/cfb/players/david-bell-6/splits/2021/" >2021</a></li>
+						<li><a href="/cfb/players/david-bell-6/splits/2020/" >2020</a></li>
+						<li><a href="/cfb/players/david-bell-6/splits/2019/" >2019</a></li>
+						<li><a href="/cfb/players/david-bell-6/splits/" >Career</a></li>
+					</ul>
+
+			</div>		</li>
+		<li data-fade-selector="#inpage_nav"			class="condensed hasmore "><span>More David Bell Pages</span>
+			<div>
+<p class="listhead">Game Logs</p>
+					<ul class="">
+						<li><a href="/cfb/players/david-bell-6/gamelog/2021/" >2021</a></li>
+						<li><a href="/cfb/players/david-bell-6/gamelog/2020/" >2020</a></li>
+						<li><a href="/cfb/players/david-bell-6/gamelog/2019/" >2019</a></li>
+						<li><a href="/cfb/players/david-bell-6/gamelog/" >Career</a></li>
+					</ul>
+
+<p class="listhead">Splits</p>
+					<ul class="">
+						<li><a href="/cfb/players/david-bell-6/splits/2021/" >2021</a></li>
+						<li><a href="/cfb/players/david-bell-6/splits/2020/" >2020</a></li>
+						<li><a href="/cfb/players/david-bell-6/splits/2019/" >2019</a></li>
+						<li><a href="/cfb/players/david-bell-6/splits/" >Career</a></li>
+					</ul>
+
+			</div>		</li>
+	</ul>
+	    
+    
+        
+        
+        
+    
+        
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                
+                
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        
+    
+        
+        
+        
+    
+        
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                
+                
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        
+    
+        
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                
+                
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        
+    
+        
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                
+                
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        
+    
+    
+    
+    
+    
+    
+    
+        <div id="inpage_nav" class="html_built">
+            <p class="listhead inpage">On this page:</p>
+            <ul class="in_list inpage"><li><a href="#all_receiving">Receiving &amp; Rushing</a></li> <li><a href="#all_defense">Defense &amp; Fumbles</a></li> <li><a href="#all_scoring">Scoring</a></li> <li><a href="#all_leaderboard">Leaderboards, Awards, &amp; Honors</a></li> <li><a href="#site_menu_link">Full Site Menu</a></li></ul>
+        </div>
+    
+</div><!-- div#inner_nav -->
+<div id="content" role="main">
+   
+
+
+
+          
+      
+      
+      
+      
+
+<!-- fs_general_header -->
+<div class="adblock">
+
+
+<!-- div#fs_fs_general_header  -->
+<style>
+    #srcom .adblock.stn,
+    #content .adblock.stn { max-width: 728px; height: auto; margin: auto; }
+.fb #content .adblock.stn { max-width: 400px; }
+</style>
+<script>
+function apiFunction(ApiHandshake)  {
+    const playerDiv = document.querySelector('[data-stn-api="apiFunction"]');
+    const api = ApiHandshake(playerDiv);
+    new IntersectionObserver ( moes => { const bcr = moes.pop().boundingClientRect; api.float = bcr.y <= 0; },
+                                       { threshold: [0.9] }).observe(document.querySelector('[data-stn-api="apiFunction"]'));
+ }
+</script>
+<div class="adblock stn">
+  <div class='s2nPlayer k-v68WHLzy' data-type='float' data-stn-api="apiFunction"></div>
+  <script type='text/javascript' src='//embed.sendtonews.com/player3/embedcode.js?fk=v68WHLzy&cid=13694&offsetx=0&offsety=0&floatwidth=400&floatposition=bottom-right' data-type='s2nScript'></script>
+</div>
+<!-- /div.#fs_fs_general_header -->
+
+
+</div>
+
+
+      
+         
+      
+         
+            
+<div id="all_receiving" class="table_wrapper">
+
+<div class="section_heading assoc_receiving" id="receiving_sh">
+  <span class="section_anchor" id="receiving_link" data-label="Receiving &amp; Rushing"></span><h2>Receiving &amp; Rushing</h2>    <div class="section_heading_text">
+      <ul><li>* indicates bowl stats included</li>
+      </ul>
+    </div>
+    		
+</div>
+<div class="table_container" id="div_receiving">
+    
+    <table class="sortable stats_table" id="receiving" data-cols-to-freeze=",1">
+    <caption>Receiving &amp; Rushing Table</caption>
+    
+
+   <colgroup><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col></colgroup>
+   <thead>
+
+      
+      <tr class="over_header">
+         <th aria-label="" data-stat="" colspan="5" class=" over_header center" ></th><th></th>
+         <th aria-label="" data-stat="header_receiving" colspan="4" class=" over_header center" >Receiving</th>
+         <th aria-label="" data-stat="header_rushing" colspan="4" class=" over_header center" >Rushing</th>
+         <th aria-label="" data-stat="header_scrimmage" colspan="4" class=" over_header center" >Scrimmage</th>
+      </tr>
+            
+      <tr>
+         <th aria-label="Year" data-stat="year_id" scope="col" class=" poptip sort_default_asc right" >Year</th>
+         <th aria-label="School" data-stat="school_name" scope="col" class=" poptip sort_default_asc left" data-tip="School Name" >School</th>
+         <th aria-label="Conf" data-stat="conf_abbr" scope="col" class=" poptip sort_default_asc left" >Conf</th>
+         <th aria-label="Class" data-stat="class" scope="col" class=" poptip sort_default_asc center" >Class</th>
+         <th aria-label="Pos" data-stat="pos" scope="col" class=" poptip sort_default_asc center" data-tip="Position" >Pos</th>
+         <th aria-label="Games" data-stat="g" scope="col" class=" poptip right" data-tip="Games" data-over-header="Totals" >G</th>
+         <th aria-label="Receptions" data-stat="rec" scope="col" class=" poptip right" data-tip="Receptions" data-over-header="Receiving" >Rec</th>
+         <th aria-label="Receiving Yards" data-stat="rec_yds" scope="col" class=" poptip right" data-tip="Receiving Yards" data-over-header="Receiving" >Yds</th>
+         <th aria-label="Receiving Yards Per Reception" data-stat="rec_yds_per_rec" scope="col" class=" poptip right" data-tip="Receiving Yards Per Reception" data-over-header="Receiving" data-filter="1" data-name="Receiving Yards Per Reception" >Avg</th>
+         <th aria-label="Receiving Touchdowns" data-stat="rec_td" scope="col" class=" poptip right" data-tip="Receiving Touchdowns" data-over-header="Receiving" >TD</th>
+         <th aria-label="Rush Attempts" data-stat="rush_att" scope="col" class=" poptip right" data-tip="Rush Attempts" data-over-header="Rushing" >Att</th>
+         <th aria-label="Rushing Yards" data-stat="rush_yds" scope="col" class=" poptip right" data-tip="Rushing Yards" data-over-header="Rushing" >Yds</th>
+         <th aria-label="Rushing Yards Per Attempt" data-stat="rush_yds_per_att" scope="col" class=" poptip right" data-tip="Rushing Yards Per Attempt" data-over-header="Rushing" data-filter="1" data-name="Rushing Yards Per Attempt" >Avg</th>
+         <th aria-label="Rushing Touchdowns" data-stat="rush_td" scope="col" class=" poptip right" data-tip="Rushing Touchdowns" data-over-header="Rushing" >TD</th>
+         <th aria-label="Plays From Scrimmage" data-stat="scrim_att" scope="col" class=" poptip right" data-tip="Plays From Scrimmage (Rush Attempts plus Receptions)" data-over-header="Scrimmage" >Plays</th>
+         <th aria-label="Yards From Scrimmage" data-stat="scrim_yds" scope="col" class=" poptip right" data-tip="Yards From Scrimmage (Rushing Yards plus Receiving Yards)" data-over-header="Scrimmage" >Yds</th>
+         <th aria-label="Yards From Scrimmage Per Play" data-stat="scrim_yds_per_att" scope="col" class=" poptip right" data-tip="Yards From Scrimmage Per Play" data-over-header="Scrimmage" data-filter="1" data-name="Yards From Scrimmage Per Play" >Avg</th>
+         <th aria-label="Touchdowns From Scrimmage" data-stat="scrim_td" scope="col" class=" poptip right" data-tip="Touchdowns From Scrimmage (Rushing Touchdowns plus Receiving Touchdowns)" data-over-header="Scrimmage" >TD</th>
+      </tr>
+      </thead>
+<tbody><tr ><th scope="row" class="right " data-stat="year_id" ><a href="/cfb/years/2019.html">2019</a></th><td class="left " data-stat="school_name" csk="Purdue.2019" ><a href="/cfb/schools/purdue/2019.html">Purdue</a></td><td class="left " data-stat="conf_abbr" ><a href="/cfb/conferences/big-ten/2019.html">Big Ten</a></td><td class="center " data-stat="class" >FR</td><td class="center " data-stat="pos" >WR</td><td class="right " data-stat="g" >12</td><td class="right " data-stat="rec" >86</td><td class="right " data-stat="rec_yds" >1035</td><td class="right " data-stat="rec_yds_per_rec" >12.0</td><td class="right " data-stat="rec_td" >7</td><td class="right " data-stat="rush_att" >3</td><td class="right " data-stat="rush_yds" >12</td><td class="right " data-stat="rush_yds_per_att" >4.0</td><td class="right " data-stat="rush_td" >1</td><td class="right " data-stat="scrim_att" >89</td><td class="right " data-stat="scrim_yds" >1047</td><td class="right " data-stat="scrim_yds_per_att" >11.8</td><td class="right " data-stat="scrim_td" >8</td></tr>
+<tr ><th scope="row" class="right " data-stat="year_id" ><a href="/cfb/years/2020.html">2020</a></th><td class="left " data-stat="school_name" csk="Purdue.2020" ><a href="/cfb/schools/purdue/2020.html">Purdue</a></td><td class="left " data-stat="conf_abbr" ><a href="/cfb/conferences/big-ten/2020.html">Big Ten</a></td><td class="center " data-stat="class" >SO</td><td class="center " data-stat="pos" >WR</td><td class="right " data-stat="g" >6</td><td class="right " data-stat="rec" >53</td><td class="right " data-stat="rec_yds" >625</td><td class="right " data-stat="rec_yds_per_rec" >11.8</td><td class="right " data-stat="rec_td" >8</td><td class="right iz" data-stat="rush_att" >0</td><td class="right iz" data-stat="rush_yds" >0</td><td class="right iz" data-stat="rush_yds_per_att" ></td><td class="right iz" data-stat="rush_td" >0</td><td class="right " data-stat="scrim_att" >53</td><td class="right " data-stat="scrim_yds" >625</td><td class="right " data-stat="scrim_yds_per_att" >11.8</td><td class="right " data-stat="scrim_td" >8</td></tr>
+<tr ><th scope="row" class="right " data-stat="year_id" >*<a href="/cfb/years/2021.html">2021</a></th><td class="left " data-stat="school_name" csk="Purdue.2021" ><a href="/cfb/schools/purdue/2021.html">Purdue</a></td><td class="left " data-stat="conf_abbr" ><a href="/cfb/conferences/big-ten/2021.html">Big Ten</a></td><td class="center " data-stat="class" >JR</td><td class="center " data-stat="pos" >WR</td><td class="right " data-stat="g" >11</td><td class="right " data-stat="rec" >93</td><td class="right " data-stat="rec_yds" >1286</td><td class="right " data-stat="rec_yds_per_rec" >13.8</td><td class="right " data-stat="rec_td" >6</td><td class="right " data-stat="rush_att" >3</td><td class="right " data-stat="rush_yds" >39</td><td class="right " data-stat="rush_yds_per_att" >13.0</td><td class="right iz" data-stat="rush_td" >0</td><td class="right " data-stat="scrim_att" >96</td><td class="right " data-stat="scrim_yds" >1325</td><td class="right " data-stat="scrim_yds_per_att" >13.8</td><td class="right " data-stat="scrim_td" >6</td></tr>
+</tbody><tfoot><tr class="bold" ><th scope="row" class="right " data-stat="year_id" >Career</th><td class="left " data-stat="school_name" ><a href="/cfb/schools/purdue/">Purdue</a></td><td class="left iz" data-stat="conf_abbr" ></td><td class="center iz" data-stat="class" ></td><td class="center iz" data-stat="pos" ></td><td class="right iz" data-stat="g" ></td><td class="right " data-stat="rec" >232</td><td class="right " data-stat="rec_yds" >2946</td><td class="right " data-stat="rec_yds_per_rec" >12.7</td><td class="right " data-stat="rec_td" >21</td><td class="right " data-stat="rush_att" >6</td><td class="right " data-stat="rush_yds" >51</td><td class="right " data-stat="rush_yds_per_att" >8.5</td><td class="right " data-stat="rush_td" >1</td><td class="right " data-stat="scrim_att" >238</td><td class="right " data-stat="scrim_yds" >2997</td><td class="right " data-stat="scrim_yds_per_att" >12.6</td><td class="right " data-stat="scrim_td" >22</td></tr>
+
+   </tfoot>
+
+</table>
+
+
+</div>
+
+
+
+</div>
+
+            
+            
+            
+         
+      
+         
+            <div class="section_wrapper setup_commented commented" id="all_5181765215">
+<div class="section_heading assoc_5181765215" id="5181765215_sh">
+  <span class="section_anchor" id="5181765215_link" data-label="Player News"></span><h2>Player News</h2>    <div class="section_heading_text">
+      <ul><li><a href="/cfb/linker/newsfeed.cgi">Add Your Blog Posts Here</a></li><li><a href="/cfb/players/news.fcgi?id=david-bell-6">Player News Archive</a></li><li><a href="/cfb/players/news.fcgi?id=david-bell-6&amp;rss=1">Player News RSS Feed</a></li>
+      </ul>
+    </div>
+    		
+</div><div class="placeholder"></div>
+<!--     <div class="section_content" id="div_5181765215">
+	    <ul class="news_stories">
+<li><strong>9/6</strong> <a rel="nofollow noopener" target="_blank"  href="https://www.profootballrumors.com/2022/09/offseason-in-review-cleveland-browns-4" onclick="sr_record_analytics_event('newsfeed_click','ProFootballRumors.com', sr_record_directory(),'sr_tracker');">ProFootballRumors.com: Offseason In Review: Cleveland Browns</a>:&nbsp;<em>The runaway headline kingpins of the 2022 offseason, the Browns</em>...
+</li><li><strong>8/28</strong> <a rel="nofollow noopener" target="_blank"  href="https://www.profootballrumors.com/2022/08/browns-wr-anthony-schwartz-not-at-risk-of-being-cut" onclick="sr_record_analytics_event('newsfeed_click','ProFootballRumors.com', sr_record_directory(),'sr_tracker');">ProFootballRumors.com: Browns WR Anthony Schwartz Not At Risk Of Being Cut</a>:&nbsp;<em>The Browns are not planning to cut wide receiver Anthony Schwartz.</em>...
+</li><li><strong>8/12</strong> <a rel="nofollow noopener" target="_blank"  href="https://fantasysixpack.net/2022-fantasy-football-adp-risers-and-fallers-wr-te/" onclick="sr_record_analytics_event('newsfeed_click','Fantasy Six Pack', sr_record_directory(),'sr_tracker');">Fantasy Six Pack: 2022 Fantasy Football ADP Risers and Fallers &#8211; WR & TE</a>:&nbsp;<em>Welcome to the 2022 Fantasy Football ADP Risers and Fallers -</em>...
+</li><li><strong>8/9</strong> <a rel="nofollow noopener" target="_blank"  href="https://www.profootballrumors.com/2022/08/browns-fear-torn-achilles-for-wr-jakeem-grant" onclick="sr_record_analytics_event('newsfeed_click','ProFootballRumors.com', sr_record_directory(),'sr_tracker');">ProFootballRumors.com: Browns Fear Torn Achilles For WR Jakeem Grant</a>:&nbsp;<em>The Browns have been dealt a significant blow in their receiving</em>...
+</li><li><strong>8/7</strong> <a rel="nofollow noopener" target="_blank"  href="https://www.profootballrumors.com/2022/08/minor-nfl-transactions-8-6-22" onclick="sr_record_analytics_event('newsfeed_click','ProFootballRumors.com', sr_record_directory(),'sr_tracker');">ProFootballRumors.com: Minor NFL Transactions: 8/6/22</a>:&nbsp;<em>Today&#8217;s minor moves around the league: Chicago Bears Signed:</em>...
+</li></ul>
+		
+    </div>
+-->
+</div>
+
+
+            
+            
+            
+	       	
+
+<!-- fs_btf_1 -->
+<div class="adblock">
+<!-- div#fs_fs_btf_1  -->
+<div align="center" id="div-gpt-ad-728x90-BTF-1">
+    <script data-cfasync="false" type='text/javascript'>
+    if (sr_detect_ie || sr_detect_edge || Modernizr.adfree) {
+    }
+    else {
+        console.log('push ad:div-gpt-ad-728x90-BTF-1');
+        freestar.queue.push(function() { googletag.display('div-gpt-ad-728x90-BTF-1'); });
+    }
+    </script>
+</div>
+<!-- /div.#fs_fs_btf_1 -->
+
+
+</div>
+
+
+            
+         
+      
+         
+            
+<div id="all_defense" class="table_wrapper setup_commented commented">
+
+<div class="section_heading assoc_defense" id="defense_sh">
+  <span class="section_anchor" id="defense_link" data-label="Defense &amp; Fumbles"></span><h2>Defense &amp; Fumbles</h2>    <div class="section_heading_text">
+      <ul><li>* indicates bowl stats included</li>
+      </ul>
+    </div>
+    		
+</div><div class="placeholder"></div>
+<!--
+
+<div class="table_container" id="div_defense">
+    
+    <table class="sortable stats_table" id="defense" data-cols-to-freeze=",1">
+    <caption>Defense &amp; Fumbles Table</caption>
+    
+
+   <colgroup><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col></colgroup>
+   <thead>
+
+      
+      <tr class="over_header">
+         <th aria-label="" data-stat="" colspan="5" class=" over_header center" ></th><th></th>
+         <th aria-label="" data-stat="header_tackles" colspan="5" class=" over_header center" >Tackles</th>
+         <th aria-label="" data-stat="header_def_int" colspan="5" class=" over_header center" >Def Int</th>
+         <th aria-label="" data-stat="header_fumbles" colspan="4" class=" over_header center" >Fumbles</th>
+      </tr>
+            
+      <tr>
+         <th aria-label="Year" data-stat="year_id" scope="col" class=" poptip sort_default_asc right" >Year</th>
+         <th aria-label="School" data-stat="school_name" scope="col" class=" poptip sort_default_asc left" data-tip="School Name" >School</th>
+         <th aria-label="Conf" data-stat="conf_abbr" scope="col" class=" poptip sort_default_asc left" >Conf</th>
+         <th aria-label="Class" data-stat="class" scope="col" class=" poptip sort_default_asc center" >Class</th>
+         <th aria-label="Pos" data-stat="pos" scope="col" class=" poptip sort_default_asc center" data-tip="Position" >Pos</th>
+         <th aria-label="Games" data-stat="g" scope="col" class=" poptip right" data-tip="Games" data-over-header="Totals" >G</th>
+         <th aria-label="Solo Tackles" data-stat="tackles_solo" scope="col" class=" poptip right" data-tip="Solo Tackles" data-over-header="Tackles" >Solo</th>
+         <th aria-label="Assisted Tackles" data-stat="tackles_assists" scope="col" class=" poptip right" data-tip="Assisted Tackles" data-over-header="Tackles" >Ast</th>
+         <th aria-label="Total Tackles" data-stat="tackles_total" scope="col" class=" poptip right" data-tip="Total Tackles" data-over-header="Tackles" >Tot</th>
+         <th aria-label="Tackles for Loss" data-stat="tackles_loss" scope="col" class=" poptip right" data-tip="Tackles for Loss" data-over-header="Tackles" >Loss</th>
+         <th aria-label="Sacks" data-stat="sacks" scope="col" class=" poptip right" data-tip="Sacks" data-over-header="Tackles" data-filter="1" data-name="Sacks" >Sk</th>
+         <th aria-label="Interceptions" data-stat="def_int" scope="col" class=" poptip right" data-tip="Interceptions" data-over-header="Def Int" >Int</th>
+         <th aria-label="Interception Return Yards" data-stat="def_int_yds" scope="col" class=" poptip right" data-tip="Interception Return Yards" data-over-header="Def Int" >Yds</th>
+         <th aria-label="Interception Return Yards Per Interception" data-stat="def_int_yds_per_int" scope="col" class=" poptip right" data-tip="Interception Return Yards Per Interception" data-over-header="Def Int" >Avg</th>
+         <th aria-label="Interception Return Touchdowns" data-stat="def_int_td" scope="col" class=" poptip right" data-tip="Interception Return Touchdowns" data-over-header="Def Int" >TD</th>
+         <th aria-label="Passes Defended" data-stat="pass_defended" scope="col" class=" poptip right" data-tip="Passes Defended" data-over-header="Def Int" >PD</th>
+         <th aria-label="Fumbles Recovered" data-stat="fumbles_rec" scope="col" class=" poptip right" data-tip="Fumbles Recovered" data-over-header="Fumbles" >FR</th>
+         <th aria-label="Fumble Recovery Return Yards" data-stat="fumbles_rec_yds" scope="col" class=" poptip right" data-tip="Fumble Recovery Return Yards" data-over-header="Fumbles" >Yds</th>
+         <th aria-label="Fumble Recovery Return Touchdowns" data-stat="fumbles_rec_td" scope="col" class=" poptip right" data-tip="Fumble Recovery Return Touchdowns (since 2000)" data-over-header="Fumbles" >TD</th>
+         <th aria-label="Fumbles Forced" data-stat="fumbles_forced" scope="col" class=" poptip right" data-tip="Fumbles Forced" data-over-header="Fumbles" >FF</th>
+      </tr>
+      </thead>
+<tbody><tr ><th scope="row" class="right " data-stat="year_id" ><a href="/cfb/years/2019.html">2019</a></th><td class="left " data-stat="school_name" csk="Purdue.2019" ><a href="/cfb/schools/purdue/2019.html">Purdue</a></td><td class="left " data-stat="conf_abbr" ><a href="/cfb/conferences/big-ten/2019.html">Big Ten</a></td><td class="center " data-stat="class" >FR</td><td class="center " data-stat="pos" >WR</td><td class="right " data-stat="g" >12</td><td class="right " data-stat="tackles_solo" >3</td><td class="right iz" data-stat="tackles_assists" >0</td><td class="right " data-stat="tackles_total" >3</td><td class="right iz" data-stat="tackles_loss" >0.0</td><td class="right iz" data-stat="sacks" >0.0</td><td class="right iz" data-stat="def_int" >0</td><td class="right iz" data-stat="def_int_yds" >0</td><td class="right iz" data-stat="def_int_yds_per_int" ></td><td class="right iz" data-stat="def_int_td" >0</td><td class="right iz" data-stat="pass_defended" >0</td><td class="right iz" data-stat="fumbles_rec" >0</td><td class="right iz" data-stat="fumbles_rec_yds" ></td><td class="right iz" data-stat="fumbles_rec_td" ></td><td class="right iz" data-stat="fumbles_forced" >0</td></tr>
+<tr ><th scope="row" class="right " data-stat="year_id" ><a href="/cfb/years/2020.html">2020</a></th><td class="left " data-stat="school_name" csk="Purdue.2020" ><a href="/cfb/schools/purdue/2020.html">Purdue</a></td><td class="left " data-stat="conf_abbr" ><a href="/cfb/conferences/big-ten/2020.html">Big Ten</a></td><td class="center " data-stat="class" >SO</td><td class="center " data-stat="pos" >WR</td><td class="right " data-stat="g" >6</td><td class="right iz" data-stat="tackles_solo" >0</td><td class="right iz" data-stat="tackles_assists" >0</td><td class="right iz" data-stat="tackles_total" >0</td><td class="right iz" data-stat="tackles_loss" >0.0</td><td class="right iz" data-stat="sacks" >0.0</td><td class="right iz" data-stat="def_int" >0</td><td class="right iz" data-stat="def_int_yds" >0</td><td class="right iz" data-stat="def_int_yds_per_int" ></td><td class="right iz" data-stat="def_int_td" >0</td><td class="right iz" data-stat="pass_defended" >0</td><td class="right iz" data-stat="fumbles_rec" >0</td><td class="right iz" data-stat="fumbles_rec_yds" ></td><td class="right iz" data-stat="fumbles_rec_td" ></td><td class="right iz" data-stat="fumbles_forced" >0</td></tr>
+<tr ><th scope="row" class="right " data-stat="year_id" >*<a href="/cfb/years/2021.html">2021</a></th><td class="left " data-stat="school_name" csk="Purdue.2021" ><a href="/cfb/schools/purdue/2021.html">Purdue</a></td><td class="left " data-stat="conf_abbr" ><a href="/cfb/conferences/big-ten/2021.html">Big Ten</a></td><td class="center " data-stat="class" >JR</td><td class="center " data-stat="pos" >WR</td><td class="right " data-stat="g" >11</td><td class="right " data-stat="tackles_solo" >1</td><td class="right iz" data-stat="tackles_assists" >0</td><td class="right " data-stat="tackles_total" >1</td><td class="right iz" data-stat="tackles_loss" >0.0</td><td class="right iz" data-stat="sacks" >0.0</td><td class="right iz" data-stat="def_int" >0</td><td class="right iz" data-stat="def_int_yds" >0</td><td class="right iz" data-stat="def_int_yds_per_int" ></td><td class="right iz" data-stat="def_int_td" >0</td><td class="right iz" data-stat="pass_defended" >0</td><td class="right iz" data-stat="fumbles_rec" >0</td><td class="right iz" data-stat="fumbles_rec_yds" ></td><td class="right iz" data-stat="fumbles_rec_td" ></td><td class="right iz" data-stat="fumbles_forced" >0</td></tr>
+</tbody><tfoot><tr class="bold" ><th scope="row" class="right " data-stat="year_id" >Career</th><td class="left " data-stat="school_name" ><a href="/cfb/schools/purdue/">Purdue</a></td><td class="left iz" data-stat="conf_abbr" ></td><td class="center iz" data-stat="class" ></td><td class="center iz" data-stat="pos" ></td><td class="right iz" data-stat="g" ></td><td class="right " data-stat="tackles_solo" >4</td><td class="right iz" data-stat="tackles_assists" >0</td><td class="right " data-stat="tackles_total" >4</td><td class="right iz" data-stat="tackles_loss" >0.0</td><td class="right iz" data-stat="sacks" >0.0</td><td class="right iz" data-stat="def_int" >0</td><td class="right iz" data-stat="def_int_yds" >0</td><td class="right iz" data-stat="def_int_yds_per_int" ></td><td class="right iz" data-stat="def_int_td" >0</td><td class="right iz" data-stat="pass_defended" >0</td><td class="right iz" data-stat="fumbles_rec" >0</td><td class="right iz" data-stat="fumbles_rec_yds" ></td><td class="right iz" data-stat="fumbles_rec_td" ></td><td class="right iz" data-stat="fumbles_forced" >0</td></tr>
+
+   </tfoot>
+
+</table>
+
+
+</div>
+-->
+
+
+</div>
+
+            
+            
+            
+         
+      
+         
+            
+<div id="all_scoring" class="table_wrapper setup_commented commented">
+
+<div class="section_heading assoc_scoring" id="scoring_sh">
+  <span class="section_anchor" id="scoring_link" data-label="Scoring"></span><h2>Scoring</h2>    <div class="section_heading_text">
+      <ul><li>* indicates bowl stats included</li>
+      </ul>
+    </div>
+    		
+</div><div class="placeholder"></div>
+<!--
+
+<div class="table_container" id="div_scoring">
+    
+    <table class="sortable stats_table" id="scoring" data-cols-to-freeze=",1">
+    <caption>Scoring Table</caption>
+    
+
+   <colgroup><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col></colgroup>
+   <thead>
+
+      
+      <tr class="over_header">
+         <th aria-label="" data-stat="" colspan="5" class=" over_header center" ></th><th></th>
+         <th aria-label="" data-stat="header_td" colspan="8" class=" over_header center" >Touchdowns</th>
+         <th aria-label="" data-stat="header_kicking" colspan="2" class=" over_header center" >Kicking</th>
+         <th aria-label="" data-stat="" colspan="2" class=" over_header center" ></th><th></th>
+      </tr>
+            
+      <tr>
+         <th aria-label="Year" data-stat="year_id" scope="col" class=" poptip sort_default_asc right" >Year</th>
+         <th aria-label="School" data-stat="school_name" scope="col" class=" poptip sort_default_asc left" data-tip="School Name" >School</th>
+         <th aria-label="Conf" data-stat="conf_abbr" scope="col" class=" poptip sort_default_asc left" >Conf</th>
+         <th aria-label="Class" data-stat="class" scope="col" class=" poptip sort_default_asc center" >Class</th>
+         <th aria-label="Pos" data-stat="pos" scope="col" class=" poptip sort_default_asc center" data-tip="Position" >Pos</th>
+         <th aria-label="Games" data-stat="g" scope="col" class=" poptip right" data-tip="Games" data-over-header="Totals" >G</th>
+         <th aria-label="Rush" data-stat="td_rush" scope="col" class=" poptip right" data-tip="Rushing Touchdowns" data-over-header="Touchdowns" >Rush</th>
+         <th aria-label="Rec" data-stat="td_rec" scope="col" class=" poptip right" data-tip="Receiving Touchdowns" data-over-header="Touchdowns" >Rec</th>
+         <th aria-label="Int" data-stat="td_def_int" scope="col" class=" poptip right" data-tip="Interception Return Touchdowns" data-over-header="Touchdowns" >Int</th>
+         <th aria-label="FR" data-stat="td_fumbles_rec" scope="col" class=" poptip right" data-tip="Fumble Recovery Return Touchdowns (since 2000)" data-over-header="Touchdowns" >FR</th>
+         <th aria-label="PR" data-stat="td_punt_ret" scope="col" class=" poptip right" data-tip="Punt Return Touchdowns" data-over-header="Touchdowns" >PR</th>
+         <th aria-label="KR" data-stat="td_kick_ret" scope="col" class=" poptip right" data-tip="Kick Return Touchdowns" data-over-header="Touchdowns" >KR</th>
+         <th aria-label="Oth" data-stat="td_other" scope="col" class=" poptip right" data-tip="Other Touchdowns" data-over-header="Touchdowns" >Oth</th>
+         <th aria-label="Total Touchdowns" data-stat="td_total" scope="col" class=" poptip right" data-tip="Total Touchdowns" data-over-header="Touchdowns" >Tot</th>
+         <th aria-label="Extra Points Made" data-stat="xpm" scope="col" class=" poptip right" data-tip="Extra Points Made" data-over-header="Kicking" >XPM</th>
+         <th aria-label="Field Goals Made" data-stat="fgm" scope="col" class=" poptip right" data-tip="Field Goals Made" data-over-header="Kicking" >FGM</th>
+         <th aria-label="Two-Point Conversions Made" data-stat="two_pt_md" scope="col" class=" poptip right" data-tip="Two-Point Conversions Made" >2PM</th>
+         <th aria-label="Sfty" data-stat="safety_md" scope="col" class=" poptip right" data-tip="Safeties" >Sfty</th>
+         <th aria-label="Points" data-stat="points" scope="col" class=" poptip right" data-tip="Points" data-over-header="Totals" >Pts</th>
+      </tr>
+      </thead>
+<tbody><tr ><th scope="row" class="right " data-stat="year_id" ><a href="/cfb/years/2019.html">2019</a></th><td class="left " data-stat="school_name" csk="Purdue.2019" ><a href="/cfb/schools/purdue/2019.html">Purdue</a></td><td class="left " data-stat="conf_abbr" ><a href="/cfb/conferences/big-ten/2019.html">Big Ten</a></td><td class="center " data-stat="class" >FR</td><td class="center " data-stat="pos" >WR</td><td class="right " data-stat="g" >12</td><td class="right " data-stat="td_rush" >1</td><td class="right " data-stat="td_rec" >7</td><td class="right iz" data-stat="td_def_int" >0</td><td class="right iz" data-stat="td_fumbles_rec" ></td><td class="right iz" data-stat="td_punt_ret" >0</td><td class="right iz" data-stat="td_kick_ret" >0</td><td class="right iz" data-stat="td_other" ></td><td class="right " data-stat="td_total" >8</td><td class="right iz" data-stat="xpm" >0</td><td class="right iz" data-stat="fgm" >0</td><td class="right iz" data-stat="two_pt_md" ></td><td class="right iz" data-stat="safety_md" ></td><td class="right " data-stat="points" >48</td></tr>
+<tr ><th scope="row" class="right " data-stat="year_id" ><a href="/cfb/years/2020.html">2020</a></th><td class="left " data-stat="school_name" csk="Purdue.2020" ><a href="/cfb/schools/purdue/2020.html">Purdue</a></td><td class="left " data-stat="conf_abbr" ><a href="/cfb/conferences/big-ten/2020.html">Big Ten</a></td><td class="center " data-stat="class" >SO</td><td class="center " data-stat="pos" >WR</td><td class="right " data-stat="g" >6</td><td class="right iz" data-stat="td_rush" >0</td><td class="right " data-stat="td_rec" >8</td><td class="right iz" data-stat="td_def_int" >0</td><td class="right iz" data-stat="td_fumbles_rec" ></td><td class="right iz" data-stat="td_punt_ret" >0</td><td class="right iz" data-stat="td_kick_ret" >0</td><td class="right iz" data-stat="td_other" ></td><td class="right " data-stat="td_total" >8</td><td class="right iz" data-stat="xpm" >0</td><td class="right iz" data-stat="fgm" >0</td><td class="right iz" data-stat="two_pt_md" ></td><td class="right iz" data-stat="safety_md" ></td><td class="right " data-stat="points" >48</td></tr>
+<tr ><th scope="row" class="right " data-stat="year_id" >*<a href="/cfb/years/2021.html">2021</a></th><td class="left " data-stat="school_name" csk="Purdue.2021" ><a href="/cfb/schools/purdue/2021.html">Purdue</a></td><td class="left " data-stat="conf_abbr" ><a href="/cfb/conferences/big-ten/2021.html">Big Ten</a></td><td class="center " data-stat="class" >JR</td><td class="center " data-stat="pos" >WR</td><td class="right " data-stat="g" >11</td><td class="right iz" data-stat="td_rush" >0</td><td class="right " data-stat="td_rec" >6</td><td class="right iz" data-stat="td_def_int" >0</td><td class="right iz" data-stat="td_fumbles_rec" ></td><td class="right iz" data-stat="td_punt_ret" >0</td><td class="right iz" data-stat="td_kick_ret" >0</td><td class="right iz" data-stat="td_other" ></td><td class="right " data-stat="td_total" >6</td><td class="right iz" data-stat="xpm" >0</td><td class="right iz" data-stat="fgm" >0</td><td class="right iz" data-stat="two_pt_md" ></td><td class="right iz" data-stat="safety_md" ></td><td class="right " data-stat="points" >36</td></tr>
+</tbody><tfoot><tr class="bold" ><th scope="row" class="right " data-stat="year_id" >Career</th><td class="left " data-stat="school_name" ><a href="/cfb/schools/purdue/">Purdue</a></td><td class="left iz" data-stat="conf_abbr" ></td><td class="center iz" data-stat="class" ></td><td class="center iz" data-stat="pos" ></td><td class="right iz" data-stat="g" ></td><td class="right " data-stat="td_rush" >1</td><td class="right " data-stat="td_rec" >21</td><td class="right iz" data-stat="td_def_int" >0</td><td class="right iz" data-stat="td_fumbles_rec" ></td><td class="right iz" data-stat="td_punt_ret" >0</td><td class="right iz" data-stat="td_kick_ret" >0</td><td class="right iz" data-stat="td_other" ></td><td class="right " data-stat="td_total" >22</td><td class="right iz" data-stat="xpm" >0</td><td class="right iz" data-stat="fgm" >0</td><td class="right iz" data-stat="two_pt_md" ></td><td class="right iz" data-stat="safety_md" ></td><td class="right " data-stat="points" >132</td></tr>
+
+   </tfoot>
+
+</table>
+
+
+</div>
+-->
+
+
+</div>
+
+            
+            
+            
+         
+      
+         
+            
+<div class="leaderboard_wrapper commented" id="all_leaderboard">
+
+<div class="section_heading assoc_leaderboard" id="leaderboard_sh">
+  <span class="section_anchor" id="leaderboard_link" data-label="Leaderboards, Awards, &amp; Honors"></span><h2>Appearances on Leaderboards, Awards, and Honors</h2>    <div class="section_heading_text">
+      <ul>
+      </ul>
+    </div>
+    		
+</div><!-- 	<div class="data_grid" id="div_leaderboard" data-entry-type="Leaderboards">
+<div id="leaderboard_awards" class="data_grid_box">
+	<table class="no_columns">
+		<caption class="poptip" data-tip="">Awards &amp; Honors</caption>		<tr class="only-child">			<td class="single"><a href="/cfb/years/2021.html">2021</a> <a href="/cfb/awards/all-america-2020-2029.html#2021">Consensus All-America</a>
+</td>
+		</tr>
+			</table>
+</div>
+
+<div id="leaderboard_rec" class="data_grid_box">
+	<table class="no_columns">
+		<caption class="poptip" data-tip="Receptions">Receptions</caption>		<tr class="first_place">			<td class="single"><a href="/cfb/years/2019.html">2019</a> 86 (#1) <a href="/cfb/conferences/big-ten/2019-leaders.html">Big Ten</a></td>
+		</tr>
+				<tr class="">			<td class="single"><a href="/cfb/years/2020.html">2020</a> 53 (#2) <a href="/cfb/conferences/big-ten/2020-leaders.html">Big Ten</a></td>
+		</tr>
+				<tr class="">			<td class="single"><a href="/cfb/years/2021.html">2021</a> 93 (#2) <a href="/cfb/conferences/big-ten/2021-leaders.html">Big Ten</a></td>
+		</tr>
+				<tr class="career">			<td class="single">Career 232 (#6) <a href="/cfb/conferences/big-ten/leaders/rec-player-career.html">Big Ten</a>**</td>
+		</tr>
+			</table>
+	<button onclick="vjs_addClass(document.getElementById('leaderboard_rec'),'show_all')">4 Appearances</button><div class="footnote">** Since 1956</div>
+</div>
+
+<div id="leaderboard_rec_yds" class="data_grid_box">
+	<table class="no_columns">
+		<caption class="poptip" data-tip="Receiving Yards">Receiving Yards</caption>		<tr class="">			<td class="single"><a href="/cfb/years/2019.html">2019</a> 1035 (#3) <a href="/cfb/conferences/big-ten/2019-leaders.html">Big Ten</a></td>
+		</tr>
+				<tr class="">			<td class="single"><a href="/cfb/years/2020.html">2020</a> 625 (#6) <a href="/cfb/conferences/big-ten/2020-leaders.html">Big Ten</a></td>
+		</tr>
+				<tr class="">			<td class="single"><a href="/cfb/years/2021.html">2021</a> 1286 (#2) <a href="/cfb/conferences/big-ten/2021-leaders.html">Big Ten</a></td>
+		</tr>
+				<tr class="career">			<td class="single">Career 2946 (#16) <a href="/cfb/conferences/big-ten/leaders/rec-yds-player-career.html">Big Ten</a>**</td>
+		</tr>
+			</table>
+	<button onclick="vjs_addClass(document.getElementById('leaderboard_rec_yds'),'show_all')">4 Appearances</button><div class="footnote">** Since 1956</div>
+</div>
+
+<div id="leaderboard_rec_td" class="data_grid_box">
+	<table class="no_columns">
+		<caption class="poptip" data-tip="Receiving Touchdowns">Receiving Touchdowns</caption>		<tr class="">			<td class="single"><a href="/cfb/years/2019.html">2019</a> 7 (#7) <a href="/cfb/conferences/big-ten/2019-leaders.html">Big Ten</a></td>
+		</tr>
+				<tr class="first_place">			<td class="single"><a href="/cfb/years/2020.html">2020</a> 8 (#1) <a href="/cfb/conferences/big-ten/2020-leaders.html">Big Ten</a></td>
+		</tr>
+				<tr class="">			<td class="single"><a href="/cfb/years/2021.html">2021</a> 6 (#7) <a href="/cfb/conferences/big-ten/2021-leaders.html">Big Ten</a></td>
+		</tr>
+			</table>
+	<button onclick="vjs_addClass(document.getElementById('leaderboard_rec_td'),'show_all')">3 Appearances</button>
+</div>
+
+<div id="leaderboard_scrim_yds" class="data_grid_box">
+	<table class="no_columns">
+		<caption class="poptip" data-tip="Yards From Scrimmage (Rushing Yards plus Receiving Yards)">Yards From Scrimmage</caption>		<tr class="">			<td class="single"><a href="/cfb/years/2019.html">2019</a> 1047 (#8) <a href="/cfb/conferences/big-ten/2019-leaders.html">Big Ten</a></td>
+		</tr>
+				<tr class="">			<td class="single"><a href="/cfb/years/2021.html">2021</a> 1325 (#6) <a href="/cfb/conferences/big-ten/2021-leaders.html">Big Ten</a></td>
+		</tr>
+			</table>
+	<button onclick="vjs_addClass(document.getElementById('leaderboard_scrim_yds'),'show_all')">2 Appearances</button>
+</div>
+
+<div id="leaderboard_scrim_td" class="data_grid_box">
+	<table class="no_columns">
+		<caption class="poptip" data-tip="Touchdowns From Scrimmage (Rushing Touchdowns plus Receiving Touchdowns)">Touchdowns From Scrimmage</caption>		<tr class="only-child">			<td class="single"><a href="/cfb/years/2020.html">2020</a> 8 (#3) <a href="/cfb/conferences/big-ten/2020-leaders.html">Big Ten</a></td>
+		</tr>
+			</table>
+</div>
+
+<div id="leaderboard_td" class="data_grid_box">
+	<table class="no_columns">
+		<caption class="poptip" data-tip="Touchdowns">Touchdowns</caption>		<tr class="only-child">			<td class="single"><a href="/cfb/years/2020.html">2020</a> 8 (#5) <a href="/cfb/conferences/big-ten/2020-leaders.html">Big Ten</a></td>
+		</tr>
+			</table>
+</div>
+
+<div id="leaderboard_points" class="data_grid_box">
+	<table class="no_columns">
+		<caption class="poptip" data-tip="Points">Points</caption>		<tr class="only-child">			<td class="single"><a href="/cfb/years/2020.html">2020</a> 48 (#10) <a href="/cfb/conferences/big-ten/2020-leaders.html">Big Ten</a></td>
+		</tr>
+			</table>
+</div>
+
+	</div>-->
+</div>
+
+            
+            
+            
+         
+      
+
+<!-- global.nonempty_tables_num: 5, table_count: 5 -->
+   <!-- no Local/Partials/NoteBottom.tt2 -->
+<div id="bottom_nav" class="section_wrapper">
+<div class="section_heading"><span data-no-inpage="1" class="section_anchor" id="inner_nav_bottom_link" data-label="More David Bell Pages"></span><h2>More David Bell Pages</h2></div>
+<div class="section_content" id="bottom_nav_container">
+
+  <p><a href="/cfb/players/david-bell-6.html">David Bell Overview</a></p>
+  <p class="listhead">Game Logs</p>
+        <ul class="">
+          <li><a href="/cfb/players/david-bell-6/gamelog/2021/">2021</a></li>
+          <li><a href="/cfb/players/david-bell-6/gamelog/2020/">2020</a></li>
+          <li><a href="/cfb/players/david-bell-6/gamelog/2019/">2019</a></li>
+          <li><a href="/cfb/players/david-bell-6/gamelog/">Career</a></li>
+        </ul><p class="listhead">Splits</p>
+        <ul class="">
+          <li><a href="/cfb/players/david-bell-6/splits/2021/">2021</a></li>
+          <li><a href="/cfb/players/david-bell-6/splits/2020/">2020</a></li>
+          <li><a href="/cfb/players/david-bell-6/splits/2019/">2019</a></li>
+          <li><a href="/cfb/players/david-bell-6/splits/">Career</a></li>
+        </ul></div></div>
+
+   
+
+
+<!-- fs_footer -->
+<div class="adblock">
+<!-- div#fs_fs_footer  -->
+<div align="center" id="div-gpt-ad-728x90-Footer">
+    <script data-cfasync="false" type='text/javascript'>
+    if (sr_detect_ie || sr_detect_edge || Modernizr.adfree) {
+    }
+    else {
+        console.log('push ad:div-gpt-ad-728x90-Footer');
+        freestar.queue.push(function() { googletag.display('div-gpt-ad-728x90-Footer'); });
+    }
+    </script>
+</div>
+<!-- /div.#fs_fs_footer -->
+
+</div>
+
+
+
+
+
+</div><!-- div#content -->
+
+<div id="footer" role="contentinfo">
+	<div id="footer_header">
+		 <ul class="bullets-inline"><li class="user logged_in">Welcome <span class="username"></span>&nbsp;&#183;&nbsp;<a href="https://stathead.com/profile/?utm_source=web&amp;utm_medium=cfb&amp;utm_campaign=sr-nav-bar-top-account">Your Account</a></li>
+<li class="user logged_in"><a class="logout" onclick="sr_auth_logout_page_elements();if(!this.href.match('redirect_uri')){this.href += '&redirect_uri='+escape(document.location.href)}" href="https://stathead.com/profile/?do=logout">Logout</a></li>
+<li class="user not_logged_in"><a class="login" onclick="if(!this.href.match('redirect_uri')){this.href += '&redirect_uri='+escape(document.location.href)}" href="https://stathead.com/users/login.cgi?token=1">Login</a></li>
+<li class="user not_logged_in"><a href="https://stathead.com/users/signup.cgi">Create Account</a></li>
+</ul>
+		 <div class="breadcrumbs">You are here: <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="/cfb/"><span itemprop="name">CFB Home Page</span></a> <meta itemprop="position" content="1" /></span> &gt; <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="/cfb/players/"><span itemprop="name">Players</span></a> <meta itemprop="position" content="2" /></span> &gt; David Bell</div>
+	</div><!-- div#footer_header -->
+
+	<div id="footer_general">
+		<div id="site_menu" role="navigation" aria-label="complete site index">
+			
+			
+<div class="section_heading assoc_site_menu" id="site_menu_sh">
+  <span class="section_anchor" id="site_menu_link" data-label="Full Site Menu"></span><h2>Full Site Menu</h2>    <div class="section_heading_text">
+      <ul><li><a data-scroll href="#header">Return to Top</a></li>
+      </ul>
+    </div>
+    		
+</div>
+			
+				<ul>
+	<li><a href="/cfb/players/">Players</a>
+		<div><strong>Heisman Trophy Winners:</strong> <a href="/cfb/players/derrick-henry-2.html">D. Henry</a>, <a href="/cfb/players/barry-sanders-1.html">B. Sanders</a>, <a href="/cfb/players/ricky-williams-4.html">R. Williams</a>, <a href="/cfb/players/tony-dorsett-1.html">T. Dorsett</a>, <a href="/cfb/players/tim-tebow-1.html">T. Tebow</a> ...</div>
+		<div><strong>All-Americans:</strong> <a href="/cfb/players/amari-cooper-1.html">A. Cooper</a>, <a href="/cfb/players/jadeveon-clowney-1.html">J. Clowney</a>, <a href="/cfb/players/luke-kuechly-1.html">L. Kuechly</a>, <a href="/cfb/players/larry-fitzgerald-1.html">L. Fitzgerald</a>, <a href="/cfb/players/cornelius-bennett-1.html">C. Bennett</a> ... </div>
+		</li>
+
+
+	 <li><a href="/cfb/schools/">Schools</a>
+	 	<div><a href="/cfb/schools/alabama/">Alabama</a>, <a href="/cfb/schools/southern-california/">USC</a>, <a href="/cfb/schools/ohio-state/">Ohio State</a>, <a href="/cfb/schools/stanford/">Stanford</a>, <a href="/cfb/schools/notre-dame/">Notre Dame</a> ...</div>
+	 </li>
+
+   <li><a href="/cfb/years/">Seasons</a>
+	     <div><a href="/cfb/years/2016.html">2016</a>, <a href="/cfb/years/2015.html">2015</a>, <a href="/cfb/years/2014.html">2014</a>, <a href="/cfb/years/2013.html">2013</a>, <a href="/cfb/years/2012.html">2012</a> ... </div>
+	 </li>
+
+         <li><a href="/cfb/leaders/">Leaders</a>
+	     <div><a href="/cfb/leaders/pass-yds-player-career.html">Career Passing Yards</a>, <a href="/cfb/leaders/rush-yds-player-career.html">Career Rushing Yards</a>, <a href="/cfb/leaders/rush-td-player-season.html">Single Season Rushing TD</a>, <a href="/cfb/leaders/rec-yds-player-season.html">Single Season Receiving Yards</a>, ...</div>
+	 </li>
+
+         <li><a href="/cfb/boxscores/">College Football Scores</a>
+	     <div><a href="/cfb/boxscores/">Most Recent Games</a> and <a href="/cfb/boxscores/">Any Score Since 1869</a></div>
+	 </li>
+
+         <li><a href="/cfb/conferences/">Conferences</a>
+	     <div><a href="/cfb/conferences/big-ten/">Big Ten</a>, <a href="/cfb/conferences/sec/">SEC</a>, <a href="/cfb/conferences/acc/">ACC</a>, <a href="/cfb/conferences/big-12/">Big 12</a>, <a href="/cfb/conferences/cusa/">Conference USA</a> ... </div>
+	 </li>
+
+         <li><a href="/cfb/play-index/">Play Index</a>
+	     <div><a href="/cfb/play-index/pgl_finder.cgi">Player Game Finder</a>, <a href="/cfb/play-index/sgl_finder.cgi">School Game Finder</a></div>
+	     <div><a href="/cfb/play-index/streak.cgi">School Streak Finder</a>, <a href="/cfb/play-index/rivals.cgi">Rivalry Finder</a></div>
+	 </li>
+
+         <li><a href="/cfb/coaches/">Coaches</a>
+	     <div><a href="/cfb/coaches/jim-harbaugh-1.html">J. Harbaugh</a>, <a href="/cfb/coaches/woody-hayes-1.html">W. Hayes</a>, <a href="/cfb/coaches/brian-kelly-2.html">B. Kelly</a>, <a href="/cfb/coaches/tom-osborne-1.html">T. Osborne</a>, <a href="/cfb/coaches/pop-warner-1.html">P. Warner</a> ...</div>
+
+	 </li>
+
+         <li><a href="/cfb/awards/">Awards</a>
+	     <div><a href="/cfb/awards/heisman.html">Heisman</a>, <a href="/cfb/awards/bednarik.html">Bednarik</a>, <a href="/cfb/awards/maxwell.html">Maxwell</a>, <a href="/cfb/awards/outland.html">Outland</a>, <a href="/cfb/awards/groza.html">Groza</a> ... </div>
+	 </li>
+
+         <li><a href="/cfb/bowls/">Bowls</a>
+	     <div><a href="/cfb/bowls/rose-bowl.html">Rose Bowl</a>, <a href="/cfb/bowls/college-football-championship.html">CFB Championship</a>, <a href="/cfb/bowls/sugar-bowl.html">Sugar Bowl</a>, <a href="/cfb/bowls/orange-bowl.html">Orange Bowl</a>, <a href="/cfb/bowls/cotton-bowl.html">Cotton Bowl</a>...</div>
+	 </li>
+
+         <li><a href="/cfb/about/">About</a>
+	     <div><a href="/cfb/about/glossary.html">Glossary</a>, <a href="/cfb/about/data-coverage.html">Data Coverage</a>, <a href="/cfb/about/what-is-major.html">What Is Major?</a> ...</div>
+	 </li>
+
+         <li><a href="/cfb/friv/">Frivolities</a>
+	     <div><a href="/cfb/friv/forfeits.html">Forfeits and Vacated Games</a>, <a href="/cfb/rand.fcgi">Random Page</a>, ....</div>
+	 </li>
+         
+
+</ul>   
+
+			
+
+	        </div><!-- div#site_menu -->
+		<div>
+			<div id="social" class="icon_group noload">
+	
+<div class="section_heading assoc_" id="_sh">
+  <span class="section_anchor" id="_link" data-label="We're Social...for Statheads" data-no-inpage="1"></span><h2>We're Social...for Statheads</h2>		
+</div>
+	<a href="tel://888-512-8907" data-tip="Call us on Telephone" data-label="Telephone" aria-label="Telephone" class="poptip"><svg class="icon phone"><use xlink:href="#ic-phone"></use></svg></a>
+	<a href="//www.sports-reference.com/blog/" data-tip="The Sports Reference Blog" data-label="Our Blog" aria-label="Our Blog" class="poptip"><svg class="icon wordpress"><use xlink:href="#ic-wordpress"></use></svg></a>
+	<a href="https://www.sports-reference.com/blog/feed/" data-tip="Our Blog's RSS Feed" data-label="RSS Feed" aria-label="RSS Feed" class="poptip"><svg class="icon rss"><use xlink:href="#ic-rss"></use></svg></a>
+		<a href="https://www.facebook.com/SR.CollegeFootball" data-tip="College Football at Sports-Reference.com at Facebook" data-label="Facebook" aria-label="Facebook" class="poptip"><svg class="icon facebook"><use xlink:href="#ic-facebook"></use></svg></a>
+		<a href="https://twitter.com/collegefb_ref" data-tip="College Football at Sports-Reference.com at Twitter" data-label="Twitter" aria-label="Twitter" class="poptip"><svg class="icon twitter"><use xlink:href="#ic-twitter"></use></svg></a>
+	
+		<a href="https://www.tiktok.com/@collegefb_ref" data-tip="College Football at Sports-Reference.com at TikTok" data-label="TikTok" aria-label="TikTok" class="poptip"><svg class="icon tiktok"><use xlink:href="#ic-tiktok"></use></svg></a>
+	<a href="https://reddit.com/r/SportsReference" data-tip="Reddit/r/SportsReference" data-label="Reddit/r/SR" aria-label="Reddit/r/SR" class="poptip"><svg class="icon reddit"><use xlink:href="#ic-reddit"></use></svg></a>
+	<a href="https://www.youtube.com/user/sportsreference" data-tip="YouTube/SportsReference" data-label="YouTube" aria-label="YouTube" class="poptip"><svg class="icon youtube"><use xlink:href="#ic-youtube"></use></svg></a>
+	<a href="https://www.linkedin.com/company/sports-reference-llc" data-tip="Follow SR on LinkedIn" data-label="LinkedIn" aria-label="LinkedIn" class="poptip"><svg class="icon linkedin"><use xlink:href="#ic-linkedin"></use></svg></a>
+	<a href="https://www.paypal.me/sportsref" data-tip="Send us money via PayPal" data-label="PayPal" aria-label="PayPal" class="poptip"><svg class="icon paypal"><use xlink:href="#ic-paypal"></use></svg></a>
+
+<p>Every <a href="https://www.sports-reference.com/blog/sports-reference-social-media/">Sports Reference Social Media Account</a></p>
+<p><strong>Site Last Updated:</strong> Tuesday, November 22,  6:52AM
+</p>
+<p><a href="https://www.sports-reference.com/feedback/" class="button" style="display: block">Question, Comment, Feedback, or Correction?</a></p>
+
+<p><a style="display: block" href="https://www.sports-reference.com/cfb/email" class="button">Subscribe to our Free Email Newsletter</a></p>
+
+<p><a style="background-color:#155ca9; color: #fff;" href="https://www.sports-reference.com/this-month.html?&utm_medium=sr&utm_source=cfb&utm_campaign=site-footer-twisr" class="button alt">This Month in Sports Reference<br><em>Find out when we add a feature or make a change</em></a></p>
+
+<p><a href="https://www.sports-reference.com/blog/ways-sports-reference-can-help-your-website/?utm_medium=sr&utm_source=cfb&utm_campaign=site-footer-ways-help">Do you have a sports website? Or write about sports? We have tools and resources that can help you use sports data.  Find out more.</a></p>
+
+
+</div><!-- div#social -->
+
+			<div id="tips_tricks">
+   
+<div class="section_heading assoc_tips" id="tips_sh">
+  <span class="section_anchor" id="tips_link" data-label="FAQs, Tip &amp; Tricks" data-no-inpage="1"></span><h2>FAQs, Tip &amp; Tricks</h2>		
+</div>
+   <ul>
+<!-- no Local/FooterTipsTricks.tt2 -->
+           <li><a href="//www.sports-reference.com/blog/category/tips-and-tricks/">Tips and Tricks from our Blog.</a></li>
+           <li><a href="/cfb/linker/">Do you have a blog? Join our linker program.</a></li>
+	   <li><a href="https://www.sports-reference.com/blog/category/stathead-tutorial-series/">Watch our How-To Videos to Become a Stathead</a></li>
+	   <li><a href="//stathead.com/?ref=cfb">Subscribe to Stathead and get access to more data than you can imagine</a></li>
+   </ul>
+</div><!-- div#tips_tricks -->
+
+			<div id="credits">
+				<p>All logos are the trademark &amp; property of their owners and not Sports Reference LLC.  We present them here for purely educational purposes.
+				<a href="https://www.sports-reference.com/blog/2016/06/redesign-team-and-league-logos-courtesy-sportslogos-net/">Our reasoning for presenting offensive logos.</a></p>
+				<p>
+					
+					Logos were compiled by the amazing <a href="http://sportslogos.net/">SportsLogos.net.</a>
+				</p>
+				
+<div class="notice">Official NCAA Data Provided By
+	<a href="https://geniussports.com/" rel="nofollow"><img alt="Genius Sports" border="0" width="150" src="https://cdn.ssref.net/req/202211031/images/klecko/genius.png"></a>
+</div>
+
+     <p>Copyright &copy; 2000-2022 <a href="//www.sports-reference.com/">Sports Reference LLC</a>. All rights reserved.</p>
+
+     <p>The SPORTS REFERENCE and STATHEAD trademarks are owned exclusively by Sports Reference LLC. Use without license or authorization is expressly prohibited.
+<p><em>Some school's results have been altered by retroactive NCAA penalties. As a matter of policy, Sports Reference only reports the results of games as played on the field. See our <a href="/cfb/friv/forfeits.html">list of forfeits and vacated games</a> for more details.</em></p>
+
+			</div><!-- div#credits -->
+		</div>
+	</div>
+
+	<ul id="site_dirs" class="notranslate bullets-inline">
+	<li><a href="https://www.sports-reference.com/"><svg height="15px" width="20px"><use xlink:href="#ic-sr-pennant"></use></svg> Sports&nbsp;Reference&#8239;&reg;</a></li>
+	<li><a href="https://www.baseball-reference.com/">Baseball</a></li>
+	<li class="current"><a href="https://www.pro-football-reference.com/">Football</a> <a href="https://www.sports-reference.com/cfb/">(college)</a></li>
+	<li><a href="https://www.basketball-reference.com/">Basketball</a> <a href="https://www.sports-reference.com/cbb/">(college)</a></li>
+	<li><a href="https://www.hockey-reference.com/">Hockey</a></li>
+
+
+	
+	
+	
+	<li><a href="https://fbref.com/it/">Calcio</a></li>
+
+	<li><a href="https://www.sports-reference.com/blog/">Blog</a></li>
+
+    <li><a href="https://stathead.com/?utm_source=web&amp;utm_medium=cfb&amp;utm_campaign=sr-nav-bar-top-link">Stathead&#8239;&reg;</a></li>
+
+
+</ul>
+
+	<div id="about">
+  <a href="//www.sports-reference.com/about.html">About</a> &bull;
+  <a href="//www.sports-reference.com/termsofuse.html">Conditions &amp; Terms of Service</a> &bull;
+  <a href="//www.sports-reference.com/advertise.html">Advertise With Us</a>
+ &bull;
+  <a href="//www.sports-reference.com/jobs.html">Jobs at SR</a>
+  <br><br>
+Sports Reference Purpose: We will be the trusted source of information and tools that inspire and empower users to enjoy, understand, and share the sports they love.
+  <br><br>
+  <a href="//www.sports-reference.com/privacy.html">Privacy Policy</a> &bull;
+  <a href="//www.sports-reference.com/gambling-revenue-policy.html">Gambling Revenue Policy</a> &bull;
+  <a href="//www.sports-reference.com/accessibility-policy.html">Accessibility Policy</a> &bull;
+  <a href="//www.sports-reference.com/data_use.html">Use of Data</a>
+  </div>
+  <!-- div#about -->
+</div><!-- div#footer -->
+
+</div><!-- div#wrap -->
+<!-- yes sticky url:  https://www.sports-reference.com/cfb/players/david-bell-6.html -->
+<div id="fs-select-footer"></div>
+      
+
+
+
+<!-- rails -->
+
+<div class="adblock rails  left"><!-- div#fs_fs_rails_left  -->
+<div align="center" id="div-gpt-ad-160x600-1">
+    <script data-cfasync="false" type='text/javascript'>
+    if (sr_detect_ie || sr_detect_edge || Modernizr.adfree) {
+    }
+    else {
+        console.log('push ad:div-gpt-ad-160x600-1');
+        freestar.queue.push(function() { googletag.display('div-gpt-ad-160x600-1'); });
+    }
+    </script>
+</div>
+<!-- /div.#fs_fs_rails_left -->
+</div>
+<div class="adblock rails right"><!-- div#fs_fs_rails_right  -->
+<div align="center" id="div-gpt-ad-160x600-2">
+    <script data-cfasync="false" type='text/javascript'>
+    if (sr_detect_ie || sr_detect_edge || Modernizr.adfree) {
+    }
+    else {
+        console.log('push ad:div-gpt-ad-160x600-2');
+        freestar.queue.push(function() { googletag.display('div-gpt-ad-160x600-2'); });
+    }
+    </script>
+</div>
+<!-- /div.#fs_fs_rails_right -->
+</div>
+
+
+<!-- sr_gender is used in Templates/Assets/GoogleAnalytics.tt2 -->
+<script>var sr_gender = "";</script>
+<!-- Google Analytics --> <!-- new extra script, apparently we only use one of these, regardless of the number of products... https://developers.google.com/tag-platform/gtagjs/install#google-analytics --> <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1890630-11"></script> <script> var sr_cookie = vjs_readCookie('stathead_user') || ''; var sr_cookie_split = sr_cookie.split("::"); var sr_session_key = (sr_cookie_split.length > 1)?sr_cookie_split[2]:''; var sr_ad_free_key = "7"; var sr_site_id = "cfb"; var sr_is_subscriber = (sr_ad_free_key && sr_session_key.vjs_isMatch(new RegExp(sr_ad_free_key + "$"))) || sr_session_key.vjs_isMatch(/1$/) || (sr_site_id === 'stathead' && sr_session_key.vjs_isMatch(/[0-7]$/)); var sr_is_user = sr_cookie !== null && sr_cookie !== ''; var sr_seen_modal = vjs_readCookie('modal_ad') !== null; var sr_device = 'unk'; if (Modernizr.phone) { sr_device = 'phone'; } else if (Modernizr.tablet) { sr_device = 'tablet'; } else if (Modernizr.laptop) { sr_device = 'laptop'; } else if (Modernizr.desktop) { sr_device = 'desktop'; } var sr_stathead_site = vjs_readCookie('stathead_site') || ''; var sr_stathead_type = vjs_readCookie('stathead_type') || ''; /* new gtag theres an extra script tag we need to add that I'm not sure how that work for multiple ID's for GA, docs say to ignore it??? https://developers.google.com/tag-platform/gtagjs/install here they have 3 but just use the last one? */ window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); /* OLD, could not find require within reference docs https://developers.google.com/tag-platform/gtagjs/reference ga('require', 'linkid', 'linkid.js'); ga('require', 'ecommerce', 'ecommerce.js'); ga('require', 'displayfeatures'); */ /* new, creates+sends+sets */ /* for fbref we want to allow for tracking of 'men' and 'women' pages for leagues, clubs and players, so we can track the most popular women players easily. In Footer.tt2 there is a place to set sr_gender. */ gtag('config', 'UA-1890630-11', { 'dimension1': sr_is_subscriber, 'dimension2': sr_is_user, 'dimension3': typeof(sr_gender) === 'string'? sr_gender: null, 'dimension4': sr_stathead_type, 'dimension5': sr_stathead_site, 'metric1': Modernizr.viewport_width }); /* all sr-sites together */ /* new, I believe linker works as a parameter here, although there didn\'t seem to be a simple "true" value to set besides this one https://developers.google.com/analytics/devguides/collection/gtagjs/cross-domain */ gtag('config', 'UA-1890630-9', { 'linker': { 'domains' : ['stathead.com'] }, 'dimension1': sr_site_id, 'dimension2': sr_is_subscriber, 'dimension3': sr_is_user, 'dimension4': sr_seen_modal, 'dimension5': sr_device, 'dimension6': 'null', 'metric1': Modernizr.viewport_width, 'dimension8': (typeof sr_test == 'undefined')?'no-test':( sr_test ? 'non-blocking':'blocking') }); /* new, cribbed from: https://www.axllent.org/docs/track-outbound-links-with-gtag-js/ */ function _gaLt(event) { /* if GA is blocked or not loaded, or not main|middle|touch click then don\'t track */ if (typeof gtag == "undefined" || (event.which != 1 && event.which != 2)) { return; } var el = event.srcElement || event.target; /* loop up the DOM tree through parent elements if clicked element is not a link (eg: an image inside a link) */ while ( el && (typeof el.tagName == "undefined" || el.tagName.toLowerCase() != "a" || !el.href) ) { el = el.parentNode; } /* if a link with valid href has been clicked */ if (el && el.href) { var link = el.href; /* only if it is an external link */ if (link.indexOf(location.host) == -1 && !link.match(/^javascript\:/i)) { /* is target set and _(self|parent|top) */ var target = el.target && !el.target.match(/^_(self|parent|top)/i) ? el.target : false; /* assume a target if (ctrl|shift|meta)-click */ if ( event.ctrlKey || event.shiftKey || event.metaKey || event.which == 2 ) { target = "_blank"; } /* tracker has not yet run */ var hbrun = false; /* hitBack to open link in same window after tracker */ var hitBack = function () { /* run once only */ if (hbrun) return; hbrun = true; window.location.href = link; }; if (target) { /* if target opens a new window then just track */ gtag("event", link, { event_category: "Outgoing Links", event_label: document.location.pathname + document.location.search, }); } else { /* Prevent standard click, track then open */ if (event.type == "mousedown") { var blockClick = function (event) { event.preventDefault(); /* remove click event after click */ el.removeEventListener("click", boundClick); }; /* bind the click event */ var boundClick = blockClick.bind(event); /* prevent the click */ el.addEventListener("click", boundClick); } event.preventDefault ? event.preventDefault() : (event.returnValue = !1); /* send event with callback */ gtag("event", link, { event_category: "Outgoing Links", event_label: document.location.pathname + document.location.search, event_callback: hitBack, }); /* Run hitBack again if GA takes longer than 1 second */ setTimeout(hitBack, 1000); } } } } var _w = window; /* Use "click" if touchscreen device, else "mousedown" */ var _gaLtEvt = "ontouchstart" in _w ? "click" : "mousedown"; /* Attach the event to all clicks in the document after page has loaded */ _w.addEventListener( "load", function () { document.body.addEventListener(_gaLtEvt, _gaLt, !1); }, !1 ); </script><!-- End Google Analytics -->
+
+
+<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/20503178.js"></script>
+<!-- End of HubSpot Embed Code -->
+
+</body>
+<!-- SR -->
+</html>
+
+
+
+

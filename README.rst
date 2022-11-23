@@ -27,6 +27,15 @@ the date and time of a game, to the total number of wins a team has secured
 during the season, and many, many more metrics that paint a more detailed
 picture of how a team has performed during a game or throughout a season.
 
+NOTE (2022-11-23): The source website has implemented traffic restrictions that 
+will result in your IP being temporarily blacklisted if you exceed 20 requests 
+per minute. Therefore all outgoing requests are now passed through a utility function
+that ensures you will not surpass the rate limit threshold. This runtime slowdown
+is most noticeable for sports with many teams. If you are trying to bulk gather data
+you will need to schedule a long running job, and its recommended that you cache any 
+historical data you intend to reuse.
+
+
 Installation
 ============
 
@@ -184,3 +193,7 @@ If a test failed, it will show the number of failed and what went wrong within
 the test output. If that's the case, ensure you have the latest version of code
 and are in a supported environment. Otherwise, create an issue on GitHub to
 attempt to get the issue resolved.
+
+NOTE (2022-11-23): Due to traffic restriction on the source webpage the exhaustive
+are unusable. They have been commented out for now, but should be replaced with a more 
+sensible set of tests to validate connectivity.

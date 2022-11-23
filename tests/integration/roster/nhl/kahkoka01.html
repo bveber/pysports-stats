@@ -1,0 +1,2001 @@
+
+<!DOCTYPE html>
+<html data-version="klecko-" data-root="/home/hr/build" lang="en" class="no-js" >
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0" />
+    <link rel="dns-prefetch" href="https://cdn.ssref.net/req/202211181" />
+    <!-- Quantcast Choice. Consent Manager Tag v2.0 (for TCF 2.0) -->
+<script type="text/javascript" async=true>
+    (function() {
+	var host = window.location.hostname;
+	var element = document.createElement('script');
+	var firstScript = document.getElementsByTagName('script')[0];
+	var url = 'https://cmp.quantcast.com'
+	    .concat('/choice/', 'XwNYEpNeFfhfr', '/', host, 
+		    '/choice.js?tag_version=V2');
+	var uspTries = 0;
+	var uspTriesLimit = 3;
+	element.async = true;
+	element.type = 'text/javascript';
+	element.src = url;
+	
+	firstScript.parentNode.insertBefore(element, firstScript);
+	
+	function makeStub() {
+	    var TCF_LOCATOR_NAME = '__tcfapiLocator';
+	    var queue = [];
+	    var win = window;
+	    var cmpFrame;
+	    
+	    function addFrame() {
+		var doc = win.document;
+		var otherCMP = !!(win.frames[TCF_LOCATOR_NAME]);
+		
+		if (!otherCMP) {
+		    if (doc.body) {
+			var iframe = doc.createElement('iframe');
+			
+			iframe.style.cssText = 'display:none';
+			iframe.name = TCF_LOCATOR_NAME;
+			doc.body.appendChild(iframe);
+		    } else {
+			setTimeout(addFrame, 5);
+		    }
+		}
+		return !otherCMP;
+	    }
+	    
+	    function tcfAPIHandler() {
+		var gdprApplies;
+		var args = arguments;
+		
+		if (!args.length) {
+		    return queue;
+		} else if (args[0] === 'setGdprApplies') {
+		    if (
+			args.length > 3 &&
+			    args[2] === 2 &&
+			    typeof args[3] === 'boolean'
+		    ) {
+			gdprApplies = args[3];
+			if (typeof args[2] === 'function') {
+			    args[2]('set', true);
+			}
+		    }
+		} else if (args[0] === 'ping') {
+		    var retr = {
+			gdprApplies: gdprApplies,
+			cmpLoaded: false,
+			cmpStatus: 'stub'
+		    };
+		    
+		    if (typeof args[2] === 'function') {
+			args[2](retr);
+		    }
+		} else {
+		    if(args[0] === 'init' && typeof args[3] === 'object') {
+			args[3] = Object.assign(args[3], { tag_version: 'V2' });
+		    }
+		    queue.push(args);
+		}
+	    }
+	    
+	    function postMessageEventHandler(event) {
+		var msgIsString = typeof event.data === 'string';
+		var json = {};
+		
+		try {
+		    if (msgIsString) {
+			json = JSON.parse(event.data);
+		    } else {
+			json = event.data;
+		    }
+		} catch (ignore) {}
+		
+		var payload = json.__tcfapiCall;
+		
+		if (payload) {
+		    window.__tcfapi(
+			payload.command,
+			payload.version,
+			function(retValue, success) {
+			    var returnMsg = {
+				__tcfapiReturn: {
+				    returnValue: retValue,
+				    success: success,
+				    callId: payload.callId
+				}
+			    };
+			    if (msgIsString) {
+				returnMsg = JSON.stringify(returnMsg);
+			    }
+			    if (event && event.source && event.source.postMessage) {
+				event.source.postMessage(returnMsg, '*');
+			    }
+			},
+			payload.parameter
+		    );
+		}
+	    }
+	    
+	    while (win) {
+		try {
+		    if (win.frames[TCF_LOCATOR_NAME]) {
+			cmpFrame = win;
+			break;
+		    }
+		} catch (ignore) {}
+		
+		if (win === window.top) {
+		    break;
+		}
+		win = win.parent;
+	    }
+	    if (!cmpFrame) {
+		addFrame();
+		win.__tcfapi = tcfAPIHandler;
+		win.addEventListener('message', postMessageEventHandler, false);
+	    }
+	};
+	
+	makeStub();
+	
+	var uspStubFunction = function() {
+	    var arg = arguments;
+	    if (typeof window.__uspapi !== uspStubFunction) {
+		setTimeout(function() {
+		    if (typeof window.__uspapi !== 'undefined') {
+			window.__uspapi.apply(window.__uspapi, arg);
+		    }
+		}, 500);
+	    }
+	};
+	
+	var checkIfUspIsReady = function() {
+	    uspTries++;
+	    if (window.__uspapi === uspStubFunction && uspTries < uspTriesLimit) {
+		console.warn('USP is not accessible');
+	    } else {
+		clearInterval(uspInterval);
+	    }
+	};
+	
+	if (typeof window.__uspapi === 'undefined') {
+	    window.__uspapi = uspStubFunction;
+	    var uspInterval = setInterval(checkIfUspIsReady, 6000);
+	}
+    })();
+</script>
+<!-- End Quantcast Choice. Consent Manager Tag v2.0 (for TCF 2.0) -->
+
+
+    <title>Kaapo Kahkonen Stats, Height, Weight, Position, Salary, Title | Hockey-Reference.com</title>
+
+    
+    
+    <meta name="Description" content="Checkout the latest stats of Kaapo Kahkonen. Get info about his position, age, height, weight, trade, draft, salary and more on Hockey-Reference.com">
+    <link rel="canonical" href="https://www.hockey-reference.com/players/k/kahkoka01.html" />
+
+
+<!-- include:start  ="/inc/klecko_header_full_hr.html_f" -->
+<!-- yes:cookie regular load the cached css -->
+<script>function gup(n) {n = n.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]'); var r = new RegExp('[\\?&]'+n+'=([^&#]*)'); var re = r.exec(location.search);   return re === null?'':decodeURIComponent(re[1].replace(/\+/g,' '));}; document.srdev = gup('srdev')</script>
+<link rel="preconnect" href="https://cdn.ssref.net" crossorigin>
+<link rel="preconnect" href="https://www.google-analytics.com"  crossorigin>
+<link rel="preconnect" href="https://www.googletagservices.com" crossorigin>
+<link rel="preload"    href="https://cdn.ssref.net/req/202211181/js/hr/sr-min.js" as="script" crossorigin>
+<link rel="preload"    href="https://cdn.ssref.net/req/202211181/icons/sr_icons-min.svg?hr" as="fetch" crossorigin>
+<link rel="preload"    href="https://www.hockey-reference.com/short/inc/main_nav_menu.json" as="fetch" crossorigin>
+<link rel="preload"    href="https://cdn.ssref.net/req/201604190/images/chosen-sprite.png" as="image" crossorigin>
+<link rel="preload"    href="https://cdn.ssref.net/req/202211181/css/hr/sr-min.css" as="style"    crossorigin>
+
+<!-- CSS start -->
+<link rel="stylesheet" href="https://cdn.ssref.net/req/202211181/css/hr/sr-min.css" type="text/css"
+      onload="if (document.srdev) { this.href = 'https://cdn.ssref.net/nocdn/dev/'.concat(document.srdev.substr(0,2),'/css/hr/sr.css'); }" />
+<!-- CSS END -->
+
+<!-- JS START -->
+<script class="allowed">var sr_is_production = true;
+function vjs_getUrlParameter(e){e=e.replace(/[\[]/,"\\[").replace(/[\]]/,"\\]");e=new RegExp("[\\?&]"+e+"=([^&#]*)").exec(location.search);return null===e?"":decodeURIComponent(e[1].replace(/\+/g," "))}document.lang="","/es/"===window.location.pathname.substr(0,4)?document.lang="es":"/pt/"===window.location.pathname.substr(0,4)?document.lang="pt":"/fr/"===window.location.pathname.substr(0,4)?document.lang="fr":"/it/"===window.location.pathname.substr(0,4)?document.lang="it":"/de/"===window.location.pathname.substr(0,4)?document.lang="de":(window.location.pathname.substr(0,4),document.lang="en"),vjs_getUrlParameter("lang")&&(document.lang=vjs_getUrlParameter("lang")),document.srdev=null,vjs_getUrlParameter("srdev")&&(document.srdev=vjs_getUrlParameter("srdev"));var el,log_performance=!0,is_new_jscss_version=!1,sr_detect_operaMini=-1<navigator.userAgent.indexOf("Opera Mini"),sr_detect_firefox=(sr_detect_operaMini&&((el=document.querySelector("html")).className=el.className.concat(" operamini")),-1<navigator.userAgent.indexOf("Firefox")),sr_detect_firefoxMobile=(sr_detect_firefox&&((el=document.querySelector("html")).className=el.className.concat(" firefox")),-1<navigator.userAgent.indexOf("Firefox")&&(-1<navigator.userAgent.indexOf("Mobile")||-1<navigator.userAgent.indexOf("Tablet"))),sr_detect_ie=(sr_detect_firefoxMobile&&((el=document.querySelector("html")).className=el.className.concat(" firefox-mobile")),function(){var e=window.navigator.userAgent;if(0<e.indexOf("Trident/7.0"))return 11;if(0<e.indexOf("Trident/6.0"))return 10;if(0<e.indexOf("Trident/5.0"))return 9;for(var t=3,n=document.createElement("div"),r=n.getElementsByTagName("i");n.innerHTML="\x3c!--[if gt IE "+ ++t+"]><i></i><![endif]--\x3e",r[0];);return 4<t&&t}()),sr_detect_edge=!sr_detect_ie&&!!window.StyleMedia,sr_detect_safari=/Safari/.test(navigator.userAgent)&&/Apple Computer/.test(navigator.vendor),className="no-js",patt=((el=document.querySelector("html")).classList?el.classList.remove(className):el.className=el.className.replace(new RegExp("(^|\\b)"+className.split(" ").join("|")+"(\\b|$)","gi")," "),el.className=el.className.concat(" js"),!function(a,d,S){function E(e,t){return typeof e===t}function T(e){return"function"!=typeof d.createElement?d.createElement(e):m?d.createElementNS.call(d,"http://www.w3.org/2000/svg",e):d.createElement.apply(d,arguments)}function R(e,t,n,r){var o,i,a,s,l="modernizr",c=T("div");(s=d.body)||((s=T(m?"svg":"body")).fake=!0);if(parseInt(n,10))for(;n--;)(i=T("div")).id=r?r[n]:l+(n+1),c.appendChild(i);return(o=T("style")).type="text/css",o.id="s"+l,(s.fake?s:c).appendChild(o),s.appendChild(c),o.styleSheet?o.styleSheet.cssText=e:o.appendChild(d.createTextNode(e)),c.id=l,s.fake&&(s.style.background="",s.style.overflow="hidden",a=u.style.overflow,u.style.overflow="hidden",u.appendChild(s)),o=t(c,e),s.fake?(s.parentNode.removeChild(s),u.style.overflow=a,u.offsetHeight):c.parentNode.removeChild(c),!!o}function U(e){return e.replace(/([a-z])-([a-z])/g,function(e,t,n){return t+n.toUpperCase()}).replace(/^-/,"")}function D(e){return e.replace(/([A-Z])/g,function(e,t){return"-"+t.toLowerCase()}).replace(/^ms-/,"-ms-")}function q(e,t){var n=e.length;if("CSS"in a&&"supports"in a.CSS){for(;n--;)if(a.CSS.supports(D(e[n]),t))return!0;return!1}if("CSSSupportsRule"in a){for(var r=[];n--;)r.push("("+D(e[n])+":"+t+")");return R("@supports ("+(r=r.join(" or "))+") { #modernizr { position: absolute; } }",function(e){return"absolute"==(e=e,t=null,n="position","getComputedStyle"in a?(r=getComputedStyle.call(a,e,t),o=a.console,null!==r?n&&(r=r.getPropertyValue(n)):o&&o[o.error?"error":"log"].call(o,"getComputedStyle returning null, its possible modernizr test results are inaccurate")):r=!t&&e.currentStyle&&e.currentStyle[n],r);var t,n,r,o})}return S}function r(e,t,n,r,o){var i,a,s=e.charAt(0).toUpperCase()+e.slice(1),l=(e+" "+re.join(s+" ")+s).split(" ");if(E(t,"string")||void 0===t){var c=l,d=t,u=r,m=o;function f(){p&&(delete L.style,delete L.modElem)}if(m=void 0!==m&&m,void 0!==u){r=q(c,u);if(void 0!==r)return r}for(var p,h,g,v,_,y=["modernizr","tspan","samp"];!L.style&&y.length;)p=!0,L.modElem=T(y.shift()),L.style=L.modElem.style;for(g=c.length,h=0;h<g;h++)if(v=c[h],_=L.style[v],~(""+v).indexOf("-")&&(v=U(v)),L.style[v]!==S){if(m||void 0===u)return f(),"pfx"!=d||v;try{L.style[v]=u}catch(e){}if(L.style[v]!=_)return f(),"pfx"!=d||v}return f(),!1}var w=l=(e+" "+P.join(s+" ")+s).split(" "),b=t,x=n;for(a in w)if(w[a]in b)if(!1===x)return w[a];else{i=b[w[a]];if(E(i,"function")){var M=i;var z=x||b;return function(){return M.apply(z,arguments)};return}else return i}return!1}function F(e,t,n){return r(e,S,S,t,n)}var $=[],o=[],e={_version:"3.6.0",_config:{classPrefix:"",enableClasses:!0,enableJSClass:!0,usePrefixes:!0},_q:[],on:function(e,t){var n=this;setTimeout(function(){t(n[e])},0)},addTest:function(e,t,n){o.push({name:e,fn:t,options:n})},addAsyncTest:function(e){o.push({name:null,fn:e})}},n=function(){},s=(n.prototype=e,(n=new n).addTest("cookies",function(){try{d.cookie="cookietest=1";var e=-1!=d.cookie.indexOf("cookietest=");return d.cookie="cookietest=1; expires=Thu, 01-Jan-1970 00:00:01 GMT",e}catch(e){return!1}}),n.addTest("localstorage",function(){var e="modernizr";try{return localStorage.setItem(e,e),localStorage.removeItem(e),!0}catch(e){return!1}}),n.addTest("sessionstorage",function(){var e="modernizr";try{return sessionStorage.setItem(e,e),sessionStorage.removeItem(e),!0}catch(e){return!1}}),n.addTest("cors","XMLHttpRequest"in a&&"withCredentials"in new XMLHttpRequest),n.addTest("history",function(){var e=navigator.userAgent;return(-1===e.indexOf("Android 2.")&&-1===e.indexOf("Android 4.0")||-1===e.indexOf("Mobile Safari")||-1!==e.indexOf("Chrome")||-1!==e.indexOf("Windows Phone")||"file:"===location.protocol)&&(a.history&&"pushState"in a.history)}),e._config.usePrefixes?" -webkit- -moz- -o- -ms- ".split(" "):["",""]),u=(e._prefixes=s,d.documentElement),m="svg"===u.nodeName.toLowerCase();if(!m){var t=void 0!==a?a:this,l=d;function I(e,t){var n=e.createElement("p"),e=e.getElementsByTagName("head")[0]||e.documentElement;return n.innerHTML="x<style>"+t+"</style>",e.insertBefore(n.lastChild,e.firstChild)}function f(){var e=y.elements;return"string"==typeof e?e.split(" "):e}function p(e){var t=X[e[G]];return t||(t={},v++,e[G]=v,X[v]=t),t}function W(e,t,n){return t=t||l,h?t.createElement(e):!(t=(n=n||p(t)).cache[e]?n.cache[e].cloneNode():V.test(e)?(n.cache[e]=n.createElem(e)).cloneNode():n.createElem(e)).canHaveChildren||J.test(e)||t.tagUrn?t:n.frag.appendChild(t)}function i(e){var t,n,r=p(e=e||l);return!y.shivCSS||c||r.hasCSS||(r.hasCSS=!!I(e,"article,aside,dialog,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}mark{background:#FF0;color:#000}template{display:none}")),h||(t=e,(n=r).cache||(n.cache={},n.createElem=t.createElement,n.createFrag=t.createDocumentFragment,n.frag=n.createFrag()),t.createElement=function(e){return y.shivMethods?W(e,t,n):n.createElem(e)},t.createDocumentFragment=Function("h,f","return function(){var n=f.cloneNode(),c=n.createElement;h.shivMethods&&("+f().join().replace(/[\w\-:]+/g,function(e){return n.createElem(e),n.frag.createElement(e),'c("'+e+'")'})+");return n}")(y,n.frag)),e}function H(e){for(var t,n=e.getElementsByTagName("*"),r=n.length,o=RegExp("^(?:"+f().join("|")+")$","i"),i=[];r--;)t=n[r],o.test(t.nodeName)&&i.push(t.applyElement(function(e){for(var t,n=e.attributes,r=n.length,o=e.ownerDocument.createElement(w+":"+e.nodeName);r--;)(t=n[r]).specified&&o.setAttribute(t.nodeName,t.nodeValue);return o.style.cssText=e.style.cssText,o}(t)));return i}function B(s){function l(){clearTimeout(n._removeSheetTimer),c&&c.removeNode(!0),c=null}var c,d,n=p(s),e=s.namespaces,t=s.parentWindow;return!K||s.printShived||(void 0===e[w]&&e.add(w),t.attachEvent("onbeforeprint",function(){l();for(var e,t,n,r=s.styleSheets,o=[],i=r.length,a=Array(i);i--;)a[i]=r[i];for(;n=a.pop();)if(!n.disabled&&Z.test(n.media)){try{t=(e=n.imports).length}catch(e){t=0}for(i=0;i<t;i++)a.push(e[i]);try{o.push(n.cssText)}catch(e){}}o=function(e){for(var t,n=e.split("{"),r=n.length,o=RegExp("(^|[\\s,>+~])("+f().join("|")+")(?=[[\\s,>+~#.:]|$)","gi"),i="$1"+w+"\\:$2";r--;)(t=n[r]=n[r].split("}"))[t.length-1]=t[t.length-1].replace(o,i),n[r]=t.join("}");return n.join("{")}(o.reverse().join("")),d=H(s),c=I(s,o)}),t.attachEvent("onafterprint",function(){for(var e=d,t=e.length;t--;)e[t].removeNode();clearTimeout(n._removeSheetTimer),n._removeSheetTimer=setTimeout(l,500)}),s.printShived=!0),s}var c,h,g=t.html5||{},J=/^<|^(?:button|map|select|textarea|object|iframe|option|optgroup)$/i,V=/^(?:a|b|code|div|fieldset|h1|h2|h3|h4|h5|h6|i|label|li|ol|p|q|span|strong|style|table|tbody|td|th|tr|ul)$/i,G="_html5shiv",v=0,X={};try{var _=l.createElement("a");_.innerHTML="<xyz></xyz>",c="hidden"in _,h=1==_.childNodes.length||(l.createElement("a"),void 0===(O=l.createDocumentFragment()).cloneNode||void 0===O.createDocumentFragment||void 0===O.createElement)}catch(e){h=c=!0}var y={elements:g.elements||"abbr article aside audio bdi canvas data datalist details dialog figcaption figure footer header hgroup main mark meter nav output picture progress section summary template time video",version:"3.7.3",shivCSS:!1!==g.shivCSS,supportsUnknownElements:h,shivMethods:!1!==g.shivMethods,type:"default",shivDocument:i,createElement:W,createDocumentFragment:function(e,t){if(e=e||l,h)return e.createDocumentFragment();for(var n=(t=t||p(e)).frag.cloneNode(),r=0,o=f(),i=o.length;r<i;r++)n.createElement(o[r]);return n},addElements:function(e,t){var n=y.elements;"string"!=typeof n&&(n=n.join(" ")),"string"!=typeof e&&(e=e.join(" ")),y.elements=n+" "+e,i(t)}},Z=(t.html5=y,i(l),/^$|\b(?:all|print)\b/),w="html5shiv",K=!(h||(_=l.documentElement,void 0===l.namespaces||void 0===l.parentWindow||void 0===_.applyElement||void 0===_.removeNode||void 0===t.attachEvent));y.type+=" print",(y.shivPrint=B)(l),"object"==typeof module&&module.exports&&(module.exports=y)}n.addTest("csspositionsticky",function(){var e="position:",t=T("a").style;return t.cssText=e+s.join("sticky;"+e).slice(0,-e.length),-1!==t.position.indexOf("sticky")});function Q(e){var t,n=s.length,r=a.CSSRule;if(void 0===r)return S;if(!e)return!1;if((t=(e=e.replace(/^@/,"")).replace(/-/g,"_").toUpperCase()+"_RULE")in r)return"@"+e;for(var o=0;o<n;o++){var i=s[o];if(i.toUpperCase()+"_"+t in r)return"@-"+i.toLowerCase()+"-"+e}return!1}Y=!("onblur"in d.documentElement);var Y,b,x,M,z,C,N,j,ee,k,A,te=function(e,t){var n;return!!e&&(!(n=(e="on"+e)in(t=t&&"string"!=typeof t?t:T(t||"div")))&&Y&&((t=t.setAttribute?t:T("div")).setAttribute(e,""),n="function"==typeof t[e],t[e]!==S&&(t[e]=S),t.removeAttribute(e)),n)},ne=(e.hasEvent=te,e.testStyles=R),O=(n.addTest("touchevents",function(){var t,e;return"ontouchstart"in a||a.DocumentTouch&&d instanceof DocumentTouch?t=!0:(e=["@media (",s.join("touch-enabled),("),"heartz",")","{#modernizr{top:9px;position:absolute}}"].join(""),ne(e,function(e){t=9===e.offsetTop})),t}),"Moz O ms Webkit"),P=e._config.usePrefixes?O.toLowerCase().split(" "):[],re=(e._domPrefixes=P,n.addTest("pointerevents",function(){for(var e=!1,t=P.length,e=n.hasEvent("pointerdown");t--&&!e;)te(P[t]+"pointerdown")&&(e=!0);return e}),e._config.usePrefixes?O.split(" "):[]),oe=(e._cssomPrefixes=re,e.atRule=Q,{elem:T("modernizr")}),L=(n._q.push(function(){delete oe.elem}),{style:oe.elem.style}),g=(n._q.unshift(function(){delete L.style}),e.testAllProps=r,e.prefixed=function(e,t,n){return 0===e.indexOf("@")?Q(e):(-1!=e.indexOf("-")&&(e=U(e)),t?r(e,t,n):r(e,"pfx"))});for(j in n.addTest("matchmedia",!!g("matchMedia",a)),e.testAllProps=F,n.addTest("flexwrap",F("flexWrap","wrap",!0)),o)if(o.hasOwnProperty(j)){if(b=[],(x=o[j]).name&&(b.push(x.name.toLowerCase()),x.options&&x.options.aliases&&x.options.aliases.length))for(M=0;M<x.options.aliases.length;M++)b.push(x.options.aliases[M].toLowerCase());for(z=E(x.fn,"function")?x.fn():x.fn,C=0;C<b.length;C++)1===(N=b[C].split(".")).length?n[N[0]]=z:(!n[N[0]]||n[N[0]]instanceof Boolean||(n[N[0]]=new Boolean(n[N[0]])),n[N[0]][N[1]]=z),$.push((z?"":"no-")+N.join("-"))}t=$,k=u.className,A=n._config.classPrefix||"",m&&(k=k.baseVal),n._config.enableJSClass&&(ee=new RegExp("(^|\\s)"+A+"no-js(\\s|$)"),k=k.replace(ee,"$1"+A+"js$2")),n._config.enableClasses&&(k+=" "+A+t.join(" "+A),m?u.className.baseVal=k:u.className=k),delete e.addTest,delete e.addAsyncTest;for(var ie=0;ie<n._q.length;ie++)n._q[ie]();a.Modernizr=n}(window,document),Modernizr.viewport_width=Math.max(document.documentElement.clientWidth,window.innerWidth||0),Modernizr.viewport_height=Math.max(document.documentElement.clientHeight,window.innerHeight||0),Modernizr.narrow=Modernizr.viewport_width<=704,Modernizr.constrained=Modernizr.viewport_width<=1200,Modernizr.site_menu=Modernizr.viewport_width<=1020?"button":"nav_bar",Modernizr.touch=Modernizr.touchevents||Modernizr.pointerevents&&(0<navigator.MaxTouchPoints||0<navigator.msMaxTouchPoints),Modernizr.phone=Modernizr.narrow&&Modernizr.touch,Modernizr.tablet=Modernizr.viewport_width<1075&&Modernizr.touch,Modernizr.desktop=!Modernizr.constrained&&!Modernizr.touch,Modernizr.laptop=!(Modernizr.desktop||Modernizr.tablet||Modernizr.phone),new RegExp("hideallads")),sr_html=(Modernizr.adfree=patt.test(window.location.href),document.querySelector("html")),cn=sr_html.className,sr_host_parts=(Modernizr.phone?sr_html.className=cn.concat(" phone"):Modernizr.tablet?sr_html.className=cn.concat(" tablet"):(Modernizr.desktop||Modernizr.laptop)&&(sr_html.className=cn.concat(" desktop")),window.location.hostname.split(".")),cn=sr_html.className,sr_logger=(Modernizr.is_build=Modernizr.is_live=Modernizr.is_dev=!1,"www"===sr_host_parts[0]||"fbref"===sr_host_parts[0]?(Modernizr.is_live=!0,sr_html.className=cn.concat(" is_live")):sr_host_parts[0].startsWith("b")?(Modernizr.is_build=!0,sr_html.className=cn.concat(" is_build")):(sr_host_parts[0].startsWith("d")||sr_host_parts[0].startsWith("r"))&&(Modernizr.is_dev=!0,sr_html.className=cn.concat(" is_dev")),Modernizr.is_stathead=!1,("stathead"===sr_host_parts[1]&&"srdevel"===sr_host_parts[2]||"stathead"===sr_host_parts[0]||"www"===sr_host_parts[0]&&"stathead"===sr_host_parts[1])&&(cn=sr_html.className,sr_html.className=cn.concat(" is_stathead"),Modernizr.is_stathead=!0),function(){var e=null,t={enableLogger:function(){null!=e&&(window.console.log=e)},disableLogger:function(){e=console.log,window.console.log=function(){}}};return t}()),sr_utilities_js_loader=(!document.srdev&&sr_is_production&&sr_logger.disableLogger(),Modernizr.is_modern=1,Modernizr.lang=document.lang||"",Modernizr.srdev=document.srdev,[]);function vjs_readCookie(e){for(var t=e+"=",n=document.cookie.split(";"),r=0;r<n.length;r++){for(var o=n[r];" "===o.charAt(0);)o=o.substring(1,o.length);if(0===o.indexOf(t))return decodeURIComponent(o.substring(t.length,o.length))}return null}function vjs_createCookie(e,t,n){var r,o="",o=n?((r=new Date).setTime(r.getTime()+24*n*60*60*1e3),"; expires="+r.toGMTString()):"",n=encodeURIComponent(e)+"="+encodeURIComponent(t)+o+"; path=/";document.cookie=n}!function(o){function e(e,t){"use strict";var n=o.document.getElementsByTagName("script")[0],r=o.document.createElement("script");return r.src=e,r.async=!0,n.parentNode.insertBefore(r,n),t&&"function"==typeof t&&(r.onload=t),r}"undefined"!=typeof module?module.exports=e:o.loadJS=e}("undefined"!=typeof global?global:this),String.prototype.vjs_isMatch=function(e){return null!==this.match(e)};var sr_time_begin=new Date,sr_perf_startTime=new Date,sr_perf_log="<strong>Performance:</strong>",sr_perf_lastTime=new Date;function vjs_ready(e){"loading"!=document.readyState?e():document.addEventListener("DOMContentLoaded",e)}
+</script>
+<script>
+var _sr_modern_url = ''.concat(document.srdev?'https://cdn.ssref.net/nocdn/dev/'.concat(document.srdev.substring(0, 2)):"https://cdn.ssref.net/req/202211181",
+                               "/js/hr", "/sr",document.srdev?"":"-min",   			       ".js");
+loadJS( _sr_modern_url, function() { vjs_ready(sr_fire_js); });
+</script>
+<!-- JS END -->
+
+
+<!-- include:end  ="/inc/klecko_header_full_hr.html_f" -->
+
+
+
+    <meta name="revised" content="10:12:15 22-Nov-2022" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="generated-by"     content="build_player_page.pl" />
+
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="no" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#39474d" />
+    <meta name="msapplication-navbutton-color" content="#39474d" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="#39474d" />
+    
+
+<!-- HeaderPersonSchema -->
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Person",
+    "name": "Kaapo Kahkonen",
+    "url": "https://www.hockey-reference.com/players/k/kahkoka01.html",
+    "image": {
+        "@type": "ImageObject",
+        "caption": "Kaapo Kahkonen, San Jose Sharks", 
+        "representativeOfPage": true, 
+        "contentUrl": "https://www.hockey-reference.com/req/202112171/images/headshots/kahkoka01-2020.jpg"
+    },
+    "memberOf": {
+        "@type": "SportsTeam",
+        "name": "San Jose Sharks",
+        "sport": "Hockey"
+    },
+    "birthDate": "1996-08-16"
+    ,
+  "birthPlace": "Helsinki, Finland",
+    "height": { "@type": "QuantitativeValue", "value": "6-2" },
+    "weight": { "@type": "QuantitativeValue", "value": "215 lbs" }
+}
+</script>
+<!-- HeaderPersonSchema:END -->
+
+
+    <!-- HeaderSeoSocial -->
+    <meta name="keywords" content="nhl, wha, hockey, stats, statistics, history">
+    <meta itemprop="url"           content="https://www.hockey-reference.com">
+    <meta itemprop="name"          content="Hockey Reference">
+    <meta itemprop="alternateName" content="HkRef">
+    <meta property="fb:app_id"     content="">
+    <meta property="og:url"          content="https://www.hockey-reference.com/players/k/kahkoka01.html">
+    <meta property="og:title"        content="Kaapo Kahkonen Stats, Height, Weight, Position, Salary, Title | Hockey-Reference.com">
+    <meta property="og:site_name"    content="Hockey-Reference.com">
+    <meta property="og:type"         content="    Athlete" />
+    <meta property="og:description"  content="Checkout the latest stats of Kaapo Kahkonen. Get info about his position, age, height, weight, trade, draft, salary and more on Hockey-Reference.com">
+    <meta property="og:image"        content="http://cdn.ssref.net/scripts/image_resize.cgi?min=200&url=https://www.hockey-reference.com/req/202112171/images/headshots/kahkoka01-2020.jpg">
+    <meta name="twitter:card"         content="summary">
+    <meta name="twitter:site"         content="@hockey_ref">
+    <meta name="twitter:creator"      content="@hockey_ref">
+    <meta property="twitter:image"    content="http://cdn.ssref.net/scripts/image_resize.cgi?min=200&url=https://www.hockey-reference.com/req/202112171/images/headshots/kahkoka01-2020.jpg">
+    <meta name="twitter:domain"       content="Hockey-Reference.com">
+    <meta name="referrer" content="unsafe-url">
+    <!-- HeaderSeoSocial:END -->
+
+    <!-- tiles, touch, favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="180x180" href="https://cdn.ssref.net/req/202211181/favicons/hr/apple-touch-icon-180x180-precomposed.png">
+    <link rel="icon"                         sizes="48x48"   href="https://cdn.ssref.net/req/202211181/favicons/hr/favicon-48.png">
+    <link rel="shortcut icon"                sizes="228x228" href="https://cdn.ssref.net/req/202211181/favicons/hr/apple-touch-icon-228x228-precomposed.png">
+    <link rel="apple-touch-icon"             sizes="228x228" href="https://cdn.ssref.net/req/202211181/favicons/hr/apple-touch-icon-228x228-precomposed.png">
+    <link rel="apple-touch-icon"             sizes="195x195" href="https://cdn.ssref.net/req/202211181/favicons/hr/apple-touch-icon-195x195-precomposed.png">
+    <link rel="apple-touch-icon"             sizes="180x180" href="https://cdn.ssref.net/req/202211181/favicons/hr/apple-touch-icon-180x180-precomposed.png">
+    <link rel="apple-touch-icon"             sizes="152x152" href="https://cdn.ssref.net/req/202211181/favicons/hr/apple-touch-icon-152x152-precomposed.png">
+    <link rel="apple-touch-icon"             sizes="144x144" href="https://cdn.ssref.net/req/202211181/favicons/hr/apple-touch-icon-144x144-precomposed.png">
+    <link rel="apple-touch-icon"             sizes="128x128" href="https://cdn.ssref.net/req/202211181/favicons/hr/apple-touch-icon-128x128-precomposed.png">
+    <link rel="apple-touch-icon"             sizes="120x120" href="https://cdn.ssref.net/req/202211181/favicons/hr/apple-touch-icon-120x120-precomposed.png">
+    <link rel="apple-touch-icon"             sizes="114x114" href="https://cdn.ssref.net/req/202211181/favicons/hr/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon"             sizes="76x76"   href="https://cdn.ssref.net/req/202211181/favicons/hr/apple-touch-icon-76x76-precomposed.png">
+    <link rel="apple-touch-icon"             sizes="72x72"   href="https://cdn.ssref.net/req/202211181/favicons/hr/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon"             sizes="57x57"   href="https://cdn.ssref.net/req/202211181/favicons/hr/apple-touch-icon-57x57-precomposed.png">
+    <link rel="icon"                         sizes="32x32"   href="https://cdn.ssref.net/req/202211181/favicons/hr/favicon-32.png">
+    <!--[if IE]>
+    <link rel="shortcut icon"                                href="https://cdn.ssref.net/req/202211181/favicons/hr/favicon.ico"><![endif]-->
+    <meta name="msapplication-TileColor" content="#0b6186" />
+    <meta name="msapplication-TileImage" content="https://cdn.ssref.net/req/202211181/favicons/hr/ms-tile-144.png" />
+    <link rel=search        type="application/opensearchdescription+xml" href="https://cdn.ssref.net/req/202211181/opensearch/opensearch-hr.xml" title=" Player and Team Search">
+    <!-- tiles, touch, favicons:end -->
+
+<!-- ad code: begin -->
+
+
+<script data-ad-client="ca-pub-5319453360923253" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+    var freestar = freestar || {};
+    freestar.config = freestar.config || {};
+    freestar.config.enabled_slots = [ "div-gpt-ad-300x250-ATF","div-gpt-ad-728x90-ATF","div-gpt-ad-728x90-GeneralHeader","div-gpt-ad-728x90-BTF-1","div-gpt-ad-728x90-BTF-2" ];
+    if (sr_detect_ie || sr_detect_edge || Modernizr.adfree || document.getElementById('sr_suppress_ads') || Modernizr.viewport_width < 1810) {
+    // do not include the rails
+    }
+    else {
+         freestar.config.enabled_slots.push('div-gpt-ad-160x600-1');
+         freestar.config.enabled_slots.push('div-gpt-ad-160x600-2');
+    } 
+
+</script>
+<script data-cfasync="false" type="text/javascript">
+    var fs_debug = window.location.search.indexOf('fsdebug') == -1 ? false : true;
+    freestar.hitTime = Date.now();
+    freestar.queue = freestar.queue || [];
+    freestar.config = freestar.config || {};
+    freestar.queue.push(function() {
+      // Include the line reflecting the area/section of the site you are on
+      googletag.pubads().setTargeting('sr_site_id', 'hr');
+    });
+!function(a,b){
+    if (sr_detect_ie || sr_detect_edge || Modernizr.adfree) {
+        return;
+    }  
+    var c=b.getElementsByTagName("script")[0],
+    d=b.createElement("script"),
+    e="https://a.pub.network/hockey-reference";
+    e+=fs_debug?"/qa/pubfig.min.js":"/pubfig.min.js",
+    d.async=!0,
+    d.src=e,
+    c.parentNode.insertBefore(d,c)
+}(window,document);
+</script>
+
+
+<!-- ad code:end -->
+
+
+</head>
+<body class="hr">
+<div id="wrap">
+  
+  <div id="header" role="banner">
+  <ul id="subnav" class="notranslate">
+	<li><a href="https://www.sports-reference.com/"><svg height="15px" width="20px"><use xlink:href="#ic-sr-pennant"></use></svg> Sports&nbsp;Reference&#8239;&reg;</a></li>
+	<li><a href="https://www.baseball-reference.com/">Baseball</a></li>
+	<li><a href="https://www.pro-football-reference.com/">Football</a> <a href="https://www.sports-reference.com/cfb/">(college)</a></li>
+	<li><a href="https://www.basketball-reference.com/">Basketball</a> <a href="https://www.sports-reference.com/cbb/">(college)</a></li>
+	<li class="current"><a href="https://www.hockey-reference.com/">Hockey</a></li>
+
+
+	
+	
+	
+	<li><a href="https://fbref.com/de/">Fußball</a></li>
+
+	<li><a href="https://www.sports-reference.com/blog/">Blog</a></li>
+
+    <li><a href="https://stathead.com/?utm_source=web&amp;utm_medium=hr&amp;utm_campaign=sr-nav-bar-top-link">Stathead&#8239;&reg;</a></li>
+
+	<li><a href="https://www.sports-reference.com/feedback/">Questions or Comments?</a></li>
+	<li class="user logged_in">Welcome <span class="username"></span>&nbsp;&#183;&nbsp;<a href="https://stathead.com/profile/?utm_source=web&amp;utm_medium=hr&amp;utm_campaign=sr-nav-bar-top-account">Your Account</a></li>
+<li class="user logged_in"><a class="logout" onclick="sr_auth_logout_page_elements();if(!this.href.match('redirect_uri')){this.href += '&redirect_uri='+escape(document.location.href)}" href="https://stathead.com/profile/?do=logout">Logout</a></li>
+<li class="user not_logged_in"><a class="login" onclick="if(!this.href.match('redirect_uri')){this.href += '&redirect_uri='+escape(document.location.href)}" href="https://stathead.com/users/login.cgi?token=1">Login</a></li>
+<li class="user not_logged_in"><a href="https://stathead.com/users/signup.cgi">Create Account</a></li>
+
+</ul>
+
+  <a href="/"><img src="https://cdn.ssref.net/req/202211181/logos/hr-logo.svg" onerror="this.src='https://cdn.ssref.net/req/202211181/logos/hr-logo.png'; this.onerror = null;" alt="Hockey-Reference.com Logo &amp; Link to home page" /></a>
+<div id="nav_trigger" role="button"><a href="#site_menu_link">MENU</a></div>
+<div id="nav" role="navigation" aria-label="Hockey-Reference.com sections">
+	<ul id="main_nav" class="hoversmooth nohover"><li id="header_players" class="current"><a href="/players">Players</a></li>
+<li id="header_teams" ><a href="/teams/">Teams</a></li>
+<li id="header_leagues" ><a href="/leagues/">Seasons</a></li>
+<li id="header_leaders" ><a href="/leaders/">Leaders</a></li>
+<li id="header_scores" ><a href="/boxscores/">NHL Scores</a></li>
+<li id="header_playoffs" class=""><a href="/playoffs/">Playoffs</a></li>	
+<li id="header_stathead" class=""><a href="https://www.stathead.com/sport/hockey/?utm_medium=hr&utm_source=top-nav-bar&utm_campaign=hockey">Stathead</a></li>
+<li><a href="https://www.hockey-reference.com/email/">Newsletter</a></li>
+<li><a data-scroll href="#site_menu_link" class="opener">Full Site Menu Below</a></li>
+	</ul>
+	<div class="breadcrumbs">You are here: <div itemscope itemtype="https://schema.org/BreadcrumbList" class="crumbs"><span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="/"><span itemprop="name">HR Home Page</span></a> <meta itemprop="position" content="1" /></span> &gt; <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="/players/"><span itemprop="name">Players</span></a> <meta itemprop="position" content="2" /></span> &gt; <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="/players/k/"><span itemprop="name">K</span></a> <meta itemprop="position" content="3" /></span> &gt; <a href="/players/k/kahkoka01.html">Kaapo Kahkonen</a></div></div>
+	<ul class="usertools bullets-inline"><li class="user logged_in">Welcome <span class="username"></span>&nbsp;&#183;&nbsp;<a href="https://stathead.com/profile/?utm_source=web&amp;utm_medium=hr&amp;utm_campaign=sr-nav-bar-top-account">Your Account</a></li>
+<li class="user logged_in"><a class="logout" onclick="sr_auth_logout_page_elements();if(!this.href.match('redirect_uri')){this.href += '&redirect_uri='+escape(document.location.href)}" href="https://stathead.com/profile/?do=logout">Logout</a></li>
+<li class="user not_logged_in"><a class="login" onclick="if(!this.href.match('redirect_uri')){this.href += '&redirect_uri='+escape(document.location.href)}" href="https://stathead.com/users/login.cgi?token=1">Login</a></li>
+<li class="user not_logged_in"><a href="https://stathead.com/users/signup.cgi">Create Account</a></li>
+	</ul><!-- ul.user -->
+</div><!-- div#nav -->
+<script>
+function sr_menus_setupMainNav_button_inline () {
+    if (sr_detect_operaMini || !("classList" in document.createElement("_"))) {
+	return false;
+    }
+    var nav_trigger = document.getElementById('nav_trigger');
+    if(!nav_trigger || nav_trigger.triggered) {
+	return false;
+    }
+    nav_trigger.triggered = true;
+    var nav = document.getElementById('nav');
+    var nav_trigger_a = nav_trigger.querySelector('a');
+    if (nav_trigger_a) {
+	nav_trigger_a.setAttribute('href','javascript:void(0)');
+	nav_trigger.onclick = function (event) {
+	    nav.classList.toggle('open');
+	    var is_open = nav.classList.contains('open');
+	    if (is_open) {
+		nav_trigger.classList.add('open');
+	    }
+	    else {
+		nav_trigger.classList.remove('open');
+	    }
+	    event.preventDefault();
+	    try { sr_record_analytics_event('MainNavButtonClick_inline',sr_record_directory(),sr_record_page());}
+	    catch(err) {}
+	};
+    }
+    return true;
+}
+sr_menus_setupMainNav_button_inline();
+</script><div class="search" role="search" aria-label="Site Search for players, teams and sections">
+<form method="get" name="f_big"  action="/search/search.fcgi">
+<div class="ac-outline">
+  <div class="ac-wrapper"><input type="search" tabindex="-1" class="ac-hint" name="hint" placeholder="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" dir="auto" aria-label="Search suggestions based on user search input">
+
+<input tabindex="1" type="search" class="ac-input completely" name="search" placeholder="Enter Person, Team, Section, etc" aria-label="Enter a player, team or section name" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" dir="auto" />
+    <div class="ac-dropdown"></div>
+  </div>
+</div>
+
+<input type="submit" value="Search" tabindex="2" />
+<input type="hidden" name="pid" value="" data-search-id>
+<input type="hidden" name="idx" value="" data-search-idx>
+
+</form>
+</div><!-- div.search -->
+
+</div><!-- div#header -->
+
+  <style>
+  .site_announcement {
+    background-color: #fffea6;
+    text-align: center;
+    padding: .4em 0;
+    width: 100%;
+  }
+  .site_announcement div {
+    margin: 0 .3em;
+  }
+  .site_announcement span {
+    white-space: nowrap;
+  }
+  @media only screen and (max-width: 1000px) {
+    .site_annoucement_extra {
+      display: none;
+    }
+  }
+  </style>
+<!-- Error -->
+
+
+<div id="info" class="players">
+	<div id="meta">
+	
+
+<div class="media-item"> <img itemscope="image" src="https://www.hockey-reference.com/req/202112171/images/headshots/kahkoka01-2020.jpg" alt="Photo of "> 
+</div><!-- div.media-item --><div >
+	<h1>
+		<span>Kaapo Kahkonen</span>
+			</h1>
+	<p><strong>Position</strong>: G&nbsp;&bull;&nbsp;    <strong>Shoots</strong>: Left
+</p>
+
+
+<p><span>6-2</span>,&nbsp;<span>215lb</span>&nbsp;(188cm,&nbsp;97kg) </p>
+<p><strong>Team</strong>: <span><a href="/teams/SJS/">San Jose Sharks</a></span></p>
+
+<p> <strong>Born:</strong> <span id="necro-birth" data-birth="1996-08-16"> <a href="/friv/birthdays.cgi?month=8&amp;day=16">August 16</a>,&nbsp;<a href="/friv/birthyears.cgi?year=1996">1996</a> </span> <span> in&nbsp;Helsinki,&nbsp;<a href="/friv/birthplaces.cgi?country=FI&amp;province=&amp;state=">Finland</a> </span> <span class="f-i f-fi" style="">fi</span> </p>
+
+<p><strong>Draft</strong>: <a href="/teams/MIN/draft.html">Minnesota</a>, 4th round (109th&nbsp;overall), <a href="/draft/NHL_2014_entry.html">2014&nbsp;NHL&nbsp;Entry</a> </p>
+
+
+<p><strong>Current salary</strong>: $2,600,000</p>
+<p><strong>Current cap hit</strong>: $2,750,000</p>
+
+
+
+
+  
+  
+  
+    
+  
+  
+  <p><strong>Pronunciation</strong>: \<a title="Click for all players' pronunciations" href="/friv/pronunciation-guide.cgi">KA-poh kakh-KOH-nihn</a>\</p>
+
+
+
+<button id="meta_more_button" class="opener" data-type="hide_after" data-class="open" data-id="info">More bio, uniform, draft, salary info</button>
+<script>
+// see sr.menus.js:sr_menus_checkInfoCookie to explain
+function sr_menus_checkInfoCookie_inline(browserType) {
+    var el_info = document.getElementById('info');
+    var el_button = document.getElementById('meta_more_button');
+    var bling_len = 0;    
+    if (!el_button || !el_info || !el_info.classList) { console.log('no meta_button'); return; }
+    var el = el_button;
+    var siblingsHidden = 0;
+    while (el = el.previousSibling) { if ((el.nodeType === 1) && (el.offsetWidth <= 0 || el.offsetHeight <= 0)) { siblingsHidden++; } }
+    var button_cookie = false;
+    if (browserType === 'desktop') {  button_cookie = vjs_readCookie('meta_more_button');   }
+    // We allow up to four of bling lines or additional player bio data entries in mobile.
+    if (el_info && el_button && (button_cookie || (siblingsHidden + bling_len <= 4))) {el_button.parentNode.removeChild(el_button);	el_info.classList.add('open');  }
+    else { el_button.classList.add('show');  }
+}
+if (Modernizr.desktop || Modernizr.laptop) { sr_menus_checkInfoCookie_inline('desktop'); } else { sr_menus_checkInfoCookie_inline('mobile'); }
+var sr_menus_checkInfoCookie_run_inline = true;
+</script>
+
+
+</div>
+</div><!-- div#meta -->
+
+
+			
+	
+		
+	<div class="uni_holder hr">
+	<a href="/friv/numbers.cgi?number=31" class="poptip" data-tip="Minnesota Wild, 2019-2020">
+        <svg viewBox="0,0,50,50" class="square"> <rect x="0" y="0" width="51" height="51" stroke="#ff0000" stroke-width="1" fill="#ff0000"></rect> <rect x="6" y="6" width="39" height="39" stroke="#228b22" stroke-width="1" fill="#228b22"></rect> <text x="11" y="34" fill="#fff" >31</text> </svg>
+	</a>
+	<a href="/friv/numbers.cgi?number=34" class="poptip" data-tip="Minnesota Wild, 2020-2022">
+        <svg viewBox="0,0,50,50" class="square"> <rect x="0" y="0" width="51" height="51" stroke="#ff0000" stroke-width="1" fill="#ff0000"></rect> <rect x="6" y="6" width="39" height="39" stroke="#228b22" stroke-width="1" fill="#228b22"></rect> <text x="11" y="34" fill="#fff" >34</text> </svg>
+	</a>
+	<a href="/friv/numbers.cgi?number=34" class="poptip" data-tip="San Jose Sharks, 2021-2022">
+        <svg viewBox="0,0,50,50" class="square"> <rect x="0" y="0" width="51" height="51" stroke="#000000" stroke-width="1" fill="#000000"></rect> <rect x="6" y="6" width="39" height="39" stroke="#008080" stroke-width="1" fill="#008080"></rect> <text x="11" y="34" fill="#fff" >34</text> </svg>
+	</a>
+	<a href="/friv/numbers.cgi?number=36" class="poptip default" data-tip="San Jose Sharks, 2022-2023">
+        <svg viewBox="0,0,50,50" class="square"> <rect x="0" y="0" width="51" height="51" stroke="#000000" stroke-width="1" fill="#000000"></rect> <rect x="6" y="6" width="39" height="39" stroke="#008080" stroke-width="1" fill="#008080"></rect> <text x="11" y="34" fill="#fff" >36</text> </svg>
+	</a>
+	<div class="counter opener" data-class="open" data-id="info" data-control-id="meta_more_button" data-type="hide_after">+3</div>
+</div>
+		
+	<span id="bling-alt-text" style="display:none;"><!--
+
+Uniforms:
+
+* Number 31 for Minnesota Wild, 2019-2020
+* Number 34 for Minnesota Wild, 2020-2022
+* Number 34 for San Jose Sharks, 2021-2022
+* Number 36 for San Jose Sharks, 2022-2023
+
+--></span>		
+
+
+
+	
+<div class="adblock ad300">
+
+<div><a href="https://stathead.com/?ref=hr&amp;utm_source=web&amp;utm_medium=hr&amp;utm_campaign=adfree_callouts">Become a Stathead &amp; surf this site ad-free.</a></div><!-- div#fs_fs_300_atf  -->
+<div align="center" id="div-gpt-ad-300x250-ATF">
+    <script data-cfasync="false" type='text/javascript'>
+    if (sr_detect_ie || sr_detect_edge || Modernizr.adfree) {
+    }
+    else {
+        console.log('push ad:div-gpt-ad-300x250-ATF');
+        freestar.queue.push(function() { googletag.display('div-gpt-ad-300x250-ATF'); });
+    }
+    </script>
+</div>
+<!-- /div.#fs_fs_300_atf -->
+
+
+</div>
+
+
+	
+		
+			<div class="stats_pullout">
+<div><div>
+<span><strong>SUMMARY</strong></span>
+<p><strong></strong></p>
+<p><strong>Career</strong></p>
+</div></div>
+<div class="p1">
+<div class="p2">
+<span class="poptip" data-tip="Games Played"><strong>GP</strong></span><p>7</p>
+<p>72</p></div>
+
+<div>
+<span class="poptip" data-tip="Wins"><strong>W</strong></span><p>2</p>
+<p>35</p></div>
+
+<div>
+<span class="poptip" data-tip="Losses"><strong>L</strong></span><p>4</p>
+<p>27</p></div>
+
+<div>
+<span class="poptip" data-tip="Ties plus Overtime/Shootout Losses"><strong>T</strong></span><p>1</p>
+<p>6</p></div>
+
+<div>
+<span class="poptip" data-tip="Shutouts"><strong>SHO</strong></span><p>0</p>
+<p>2</p></div>
+
+<div class="p2">
+<span class="poptip" data-tip="Point Shares; an estimate of the number of points contributed by a player."><strong>PS</strong></span><p>1.0</p>
+<p>12.0</p></div>
+</div><div class="p1">
+<div class="p2">
+<span class="poptip" data-tip="Minutes"><strong>MIN</strong></span><p>417</p>
+<p>4082</p></div>
+
+<div>
+<span class="poptip" data-tip="Goals Against Average"><strong>GAA</strong></span><p>3.31</p>
+<p>2.92</p></div>
+
+<div>
+<span class="poptip" data-tip="Save Percentage"><strong>SV%</strong></span><p>.894</p>
+<p>.907</p></div>
+</div>
+
+
+</div>
+
+		
+		
+</div><!-- div#info -->
+<div id="srcom">
+	
+<div class="adblock ad728">
+
+<!-- div#fs_fs_728_atf  -->
+<!-- sf:blank by design for send to news ad -->
+<!-- /div.#fs_fs_728_atf -->
+
+
+</div>
+
+	
+</div><!-- div#srcom -->
+<div id="inner_nav" role="navigation" aria-label="Sections on this page and/or other pages related to this page" class="">
+	<ul class="hoversmooth">
+		<li			class="current index "><a href="/players/k/kahkoka01.html">Kaapo Kahkonen Overview</a>		</li>
+		<li data-fade-selector="#inpage_nav"			class="condensed hasmore "><span>More Kahkonen Pages</span>
+			<div>
+<p class="listhead">Additional Pages for this Player</p>
+					<ul class=" in_list">
+						<li><strong>Player Overview &amp; Base Stats</strong></li>
+						<li><a href="https://www.stathead.com/hockey/player-game-finder.cgi?request=1&player_id=kahkoka01&pos=G&utm_medium=hr&utm_source=player-page-links&utm_campaign=hockey" rel="noopener" target="_blank" >Game Finder</a></li>
+						<li><a href="/players/news.fcgi?id=kahkoka01" >News</a></li>
+					</ul>
+
+<p class="listhead"><a href="/players/k/kahkoka01/splits/">Career Splits</a></p>
+					<ul class="">
+						<li><a href="/players/k/kahkoka01/splits/2020" >2019-20</a></li>
+						<li><a href="/players/k/kahkoka01/splits/2021" >2020-21</a></li>
+						<li><a href="/players/k/kahkoka01/splits/2022" >2021-22</a></li>
+						<li><a href="/players/k/kahkoka01/splits/2023" >2022-23</a></li>
+					</ul>
+
+<p class="listhead">Game Logs</p>
+					<ul class="">
+						<li><a href="/players/k/kahkoka01/gamelog/2020" >2019-20</a></li>
+						<li><a href="/players/k/kahkoka01/gamelog/2021" >2020-21</a></li>
+						<li><a href="/players/k/kahkoka01/gamelog/2022" >2021-22</a></li>
+						<li><a href="/players/k/kahkoka01/gamelog/2023" >2022-23</a></li>
+					</ul>
+
+			</div>		</li>
+		<li data-fade-selector="#inpage_nav"			class="full hasmore "><a href="#">Game Logs</a>
+			<div><p class="desc">Game-by-game stat line for the player.</p>
+
+					<ul class="">
+						<li><a href="/players/k/kahkoka01/gamelog/2020" >2019-20</a></li>
+						<li><a href="/players/k/kahkoka01/gamelog/2021" >2020-21</a></li>
+						<li><a href="/players/k/kahkoka01/gamelog/2022" >2021-22</a></li>
+						<li><a href="/players/k/kahkoka01/gamelog/2023" >2022-23</a></li>
+					</ul>
+
+			</div>		</li>
+		<li data-fade-selector="#inpage_nav"			class="full hasmore "><a href="#">Splits</a>
+			<div><p class="desc">Player stats broken down into various categories; i.e. home/away, monthly, etc...</p>
+<p class="listhead"><a href="/players/k/kahkoka01/splits/">Career</a></p>
+					<ul class="">
+						<li><a href="/players/k/kahkoka01/splits/2020" >2019-20</a></li>
+						<li><a href="/players/k/kahkoka01/splits/2021" >2020-21</a></li>
+						<li><a href="/players/k/kahkoka01/splits/2022" >2021-22</a></li>
+						<li><a href="/players/k/kahkoka01/splits/2023" >2022-23</a></li>
+					</ul>
+
+			</div>		</li>
+		<li			class="full "><a href="https://www.stathead.com/hockey/player-game-finder.cgi?request=1&player_id=kahkoka01&pos=G&utm_medium=hr&utm_source=player-page-links&utm_campaign=hockey" rel="noopener" target="_blank">Game Finder</a>		</li>
+		<li data-fade-selector="#inpage_nav"			class="groupstuff hasmore "><span>2022-23 Sharks</span>
+			<div>
+<p class="listhead"><a href="/teams/SJS/2023.html">2022-23 Sharks</a><br><span>(7-11-3, 6th place in <a href="/leagues/NHL_2023.html">NHL</a> Pacific)</span></p>
+					<ul class="">
+					</ul>
+
+
+					<section>
+						<p><strong>Last Game</strong>: <a href="/boxscores/202211210SJS.html">W 5-1 vs. OTT</a></p>
+						
+						<p><strong>Next Game</strong>: Wednesday, Nov. 23 vs. SEA</p>
+						
+						<p><a href="/teams/SJS/2023_games.html">Full Schedule and Results</a></p>
+						
+					</section>
+
+
+
+					<ul class=" grouplist">
+						<li><a href="/players/b/barabal01.html" >F Alexander Barabanov</a></li>
+						<li><a href="/players/b/bennima01.html" >D Matt Benning</a></li>
+						<li><a href="/players/b/boninni01.html" >F Nick Bonino</a></li>
+						<li><a href="/players/c/cicekni01.html" >D Nick Cicek</a></li>
+						<li><a href="/players/c/coutulo01.html" >F Logan Couture</a></li>
+						<li><a href="/players/f/ferrama01.html" >D Mario Ferraro</a></li>
+						<li><a href="/players/g/gadjojo01.html" >F Jonah Gadjovich</a></li>
+						<li><a href="/players/g/gregono01.html" >F Noah Gregor</a></li>
+						<li><a href="/players/h/hertlto01.html" >F Tomas Hertl</a></li>
+						<li><a href="/players/k/karlser01.html" >D Erik Karlsson</a></li><div id="more_grouplist">
+						<li><a href="/players/k/knyzhni01.html" >D Nikolai Knyzhov</a></li>
+						<li><a href="/players/k/kuninlu01.html" >F Luke Kunin</a></li>
+						<li><a href="/players/l/labanke01.html" >F Kevin Labanc</a></li>
+						<li><a href="/players/l/lindbos01.html" >F Oskar Lindblom</a></li>
+						<li><a href="/players/l/lorenst01.html" >F Steven Lorentz</a></li>
+						<li><a href="/players/m/megnaja02.html" >D Jaycob Megna</a></li>
+						<li><a href="/players/m/meierti01.html" >F Timo Meier</a></li>
+						<li><a href="/players/n/nietoma01.html" >F Matt Nieto</a></li>
+						<li><a href="/players/n/nutivma01.html" >D Markus Nutivaara</a></li>
+						<li><a href="/players/r/reimeja01.html" >G James Reimer</a></li>
+						<li><a href="/players/s/simekra01.html" >D Radim Simek</a></li>
+						<li><a href="/players/s/sturmni01.html" >F Nico Sturm</a></li>
+						<li><a href="/players/s/svechev01.html" >F Evgeny Svechnikov</a></li>
+						<li><a href="/players/v/vlasima01.html" >D Marc-Edouard Vlasic</a></li></div>
+					</ul>
+					<p class="opener" data-id="more_grouplist" data-textopen="less" data-textclosed="entire">Show <span>entire</span> roster</p>
+
+			</div>		</li>
+		<li			class="full "><a href="/players/news.fcgi?id=kahkoka01">News</a>		</li>
+	</ul>
+	    
+    
+        
+        
+        
+    
+        
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                
+                
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        
+    
+        
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                
+                
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+    
+        
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                
+                
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        
+    
+        
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                
+                
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        
+    
+        
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                
+                
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        
+    
+        
+        
+        
+    
+        
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                
+                
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        
+    
+        
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                
+                
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        
+    
+    
+    
+    
+    
+    
+    
+        <div id="inpage_nav" class="html_built">
+            <p class="listhead inpage">On this page:</p>
+            <ul class="in_list inpage"><li><a href="#all_last5">Last 5 Games</a></li> <li><a href="#all_stats_basic_plus_nhl">NHL Standard</a></li> <li><a href="#all_stats_goalie_situational">NHL Advanced</a></li> <li><a href="#all_stats_basic_minus_other">Other Standard</a></li> <li><a href="#all_similarity_scores">Similarity Scores</a></li> <li><a href="#all_transactions">Transactions</a></li> <li><a href="#all_other_links">Other Links</a></li> <li><a href="#site_menu_link">Full Site Menu</a></li></ul>
+        </div>
+    
+</div><!-- div#inner_nav -->
+<div id="content" role="main">
+   
+
+
+
+          
+      
+      
+      
+      
+
+<!-- fs_general_header -->
+<div class="adblock">
+
+
+<!-- div#fs_fs_general_header  -->
+<style>
+    #srcom .adblock.stn,
+    #content .adblock.stn { max-width: 728px; height: auto; margin: auto; }
+.fb #content .adblock.stn { max-width: 400px; }
+</style>
+<script>
+function apiFunction(ApiHandshake)  {
+    const playerDiv = document.querySelector('[data-stn-api="apiFunction"]');
+    const api = ApiHandshake(playerDiv);
+    new IntersectionObserver ( moes => { const bcr = moes.pop().boundingClientRect; api.float = bcr.y <= 0; },
+                                       { threshold: [0.9] }).observe(document.querySelector('[data-stn-api="apiFunction"]'));
+ }
+</script>
+<div class="adblock stn">
+  <div class='s2nPlayer k-Nja2nMKA' data-type='float' data-stn-api="apiFunction"></div>
+  <script type='text/javascript' src='//embed.sendtonews.com/player3/embedcode.js?fk=Nja2nMKA&cid=13631&offsetx=0&offsety=0&floatwidth=400&floatposition=bottom-right' data-type='s2nScript'></script>
+</div>
+<!-- /div.#fs_fs_general_header -->
+
+
+</div>
+
+
+      
+         
+      
+         
+            
+<div id="all_last5" class="table_wrapper">
+
+<div class="section_heading assoc_last5" id="last5_sh">
+  <span class="section_anchor" id="last5_link" data-label="Last 5 Games"></span><h2>Last 5 Games</h2>    <div class="section_heading_text">
+      <ul>
+      </ul>
+    </div>
+    		
+</div>
+<div class="table_container" id="div_last5">
+    
+    <table class="sortable stats_table" id="last5" data-cols-to-freeze="2,4,5">
+    <caption>Last 5 Games Table</caption>
+    
+
+   <colgroup><col><col><col><col><col><col><col><col><col><col><col><col><col><col></colgroup>
+   <thead>
+
+      
+      <tr class="over_header">
+         <th aria-label="" data-stat="" colspan="7" class=" over_header center" ></th>
+         <th aria-label="" data-stat="header_goalies" colspan="5" class=" over_header center" >Goalie Stats</th><th></th><th></th>
+      </tr>
+            
+      <tr>
+         <th aria-label="Rk" data-stat="ranker" scope="col" class="ranker poptip sort_default_asc show_partial_when_sorting center" data-tip="Rank" >Rk</th>
+         <th aria-label="Date" data-stat="date_game" scope="col" class=" poptip sort_default_asc left" >Date</th>
+         <th aria-label="Tm" data-stat="team_id" scope="col" class=" poptip sort_default_asc left" >Tm</th>
+         <th aria-label=" " data-stat="game_location" scope="col" class=" poptip left" ></th>
+         <th aria-label="Opp" data-stat="opp_id" scope="col" class=" poptip sort_default_asc left" >Opp</th>
+         <th aria-label=" " data-stat="game_result" scope="col" class=" poptip left" ></th>
+         <th aria-label="DEC" data-stat="decision" scope="col" class=" poptip sort_default_asc center" data-tip="Decision" >DEC</th>
+         <th aria-label="GA" data-stat="goals_against" scope="col" class=" poptip center" data-tip="Goals Against" data-over-header="Goalie Stats" >GA</th>
+         <th aria-label="SA" data-stat="shots_against" scope="col" class=" poptip center" data-tip="Shots Against" data-over-header="Goalie Stats" >SA</th>
+         <th aria-label="SV" data-stat="saves" scope="col" class=" poptip center" data-tip="Saves" data-over-header="Goalie Stats" >SV</th>
+         <th aria-label="SV%" data-stat="save_pct" scope="col" class=" poptip center" data-tip="Save Percentage" data-over-header="Goalie Stats" >SV%</th>
+         <th aria-label="SO" data-stat="shutouts" scope="col" class=" poptip center" data-tip="Shutouts" data-over-header="Goalie Stats" >SO</th>
+         <th aria-label="PIM" data-stat="pen_min" scope="col" class=" poptip center" data-tip="Penalties in Minutes" >PIM</th>
+         <th aria-label="TOI" data-stat="time_on_ice" scope="col" class=" poptip center" data-tip="Time on Ice (in minutes)" data-over-header="Ice Time" >TOI</th>
+      </tr>
+      </thead>
+<tbody><tr ><th scope="row" class="right " data-stat="ranker" csk="1" >1</th><td class="left " data-stat="date_game" ><a href="/boxscores/202211210SJS.html">2022-11-21</a></td><td class="left " data-stat="team_id" ><a href="/teams/SJS/">SJS</a></td><td class="left iz" data-stat="game_location" ></td><td class="left " data-stat="opp_id" ><a href="/teams/OTT/2023.html">OTT</a></td><td class="left " data-stat="game_result" >W</td><td class="center " data-stat="decision" >W</td><td class="right " data-stat="goals_against" >1</td><td class="right " data-stat="shots_against" >38</td><td class="right " data-stat="saves" >37</td><td class="right " data-stat="save_pct" >.974</td><td class="right iz" data-stat="shutouts" >0</td><td class="right iz" data-stat="pen_min" >0</td><td class="right " data-stat="time_on_ice" csk="3600" >60:00</td></tr>
+<tr ><th scope="row" class="right " data-stat="ranker" csk="2" >2</th><td class="left " data-stat="date_game" ><a href="/boxscores/202211100STL.html">2022-11-10</a></td><td class="left " data-stat="team_id" ><a href="/teams/SJS/">SJS</a></td><td class="left " data-stat="game_location" >@</td><td class="left " data-stat="opp_id" ><a href="/teams/STL/2023.html">STL</a></td><td class="left " data-stat="game_result" >L</td><td class="center " data-stat="decision" >L</td><td class="right " data-stat="goals_against" >4</td><td class="right " data-stat="shots_against" >32</td><td class="right " data-stat="saves" >28</td><td class="right " data-stat="save_pct" >.875</td><td class="right iz" data-stat="shutouts" >0</td><td class="right iz" data-stat="pen_min" >0</td><td class="right " data-stat="time_on_ice" csk="3491" >58:11</td></tr>
+<tr ><th scope="row" class="right " data-stat="ranker" csk="3" >3</th><td class="left " data-stat="date_game" ><a href="/boxscores/202211010SJS.html">2022-11-01</a></td><td class="left " data-stat="team_id" ><a href="/teams/SJS/">SJS</a></td><td class="left iz" data-stat="game_location" ></td><td class="left " data-stat="opp_id" ><a href="/teams/ANA/2023.html">ANA</a></td><td class="left " data-stat="game_result" >L-SO</td><td class="center " data-stat="decision" >O</td><td class="right " data-stat="goals_against" >5</td><td class="right " data-stat="shots_against" >44</td><td class="right " data-stat="saves" >39</td><td class="right " data-stat="save_pct" >.886</td><td class="right iz" data-stat="shutouts" >0</td><td class="right iz" data-stat="pen_min" >0</td><td class="right " data-stat="time_on_ice" csk="3842" >64:02</td></tr>
+<tr ><th scope="row" class="right " data-stat="ranker" csk="4" >4</th><td class="left " data-stat="date_game" ><a href="/boxscores/202210270SJS.html">2022-10-27</a></td><td class="left " data-stat="team_id" ><a href="/teams/SJS/">SJS</a></td><td class="left iz" data-stat="game_location" ></td><td class="left " data-stat="opp_id" ><a href="/teams/TOR/2023.html">TOR</a></td><td class="left " data-stat="game_result" >W</td><td class="center " data-stat="decision" >W</td><td class="right " data-stat="goals_against" >3</td><td class="right " data-stat="shots_against" >25</td><td class="right " data-stat="saves" >22</td><td class="right " data-stat="save_pct" >.880</td><td class="right iz" data-stat="shutouts" >0</td><td class="right iz" data-stat="pen_min" >0</td><td class="right " data-stat="time_on_ice" csk="3657" >60:57</td></tr>
+<tr ><th scope="row" class="right " data-stat="ranker" csk="5" >5</th><td class="left " data-stat="date_game" ><a href="/boxscores/202210220NJD.html">2022-10-22</a></td><td class="left " data-stat="team_id" ><a href="/teams/SJS/">SJS</a></td><td class="left " data-stat="game_location" >@</td><td class="left " data-stat="opp_id" ><a href="/teams/NJD/2023.html">NJD</a></td><td class="left " data-stat="game_result" >L</td><td class="center " data-stat="decision" >L</td><td class="right " data-stat="goals_against" >2</td><td class="right " data-stat="shots_against" >36</td><td class="right " data-stat="saves" >34</td><td class="right " data-stat="save_pct" >.944</td><td class="right iz" data-stat="shutouts" >0</td><td class="right iz" data-stat="pen_min" >0</td><td class="right " data-stat="time_on_ice" csk="3396" >56:36</td></tr>
+<tfoot><tr><td colspan="50" class="center">2022-23: <a href="/players/k/kahkoka01/gamelog/2023/">Complete Gamelog</a> | <a href="/players/k/kahkoka01/splits/2023/">Splits</a></td></tr></tfoot>
+</table>
+
+
+</div>
+
+
+
+</div>
+
+            
+            
+               
+                  
+
+<div class="callout light stathead_player_highlight">
+	<div>
+		<a href="https://www.hockey-reference.com/email?&utm_medium=hr&utm_source=hr_player&utm_campaign=hockey&utm_term=kahkoka01" class="sh-cta-button" target="_blank" rel="noopener">
+			<img src="https://cdn.ssref.net/req/202004233/logos/hr-logo.svg" onerror="this.src='https://cdn.ssref.net/req/202004233/logos/hr-logo.png'; this.onerror = null;" alt="Hockey Reference.com Logo">
+		</a>
+    </div>
+	<div class="stathead_player_highlight_content">
+        
+            <div><a href="https://www.hockey-reference.com/email/?utm_medium=hr&utm_source=hr_player&utm_campaign=hockey&utm_term=kahkoka01" target="_blank" class="sh-newsletter-signup" rel="noopener">Sign up</a> for the free <strong>Hockey Reference newsletter</strong> and get scores, news and notes in your inbox every day.</div>
+        
+        
+            <div class="cta">It's also available for football, basketball and baseball.</p></div>
+        
+	</div>
+	<div>
+		<a href="https://www.hockey-reference.com/email?&utm_medium=hr&utm_source=hr_player&utm_campaign=hockey&utm_term=kahkoka01" class="button " target="_blank" rel="noopener">Sign Up For Free</a>
+	</div>
+</div>
+               
+            
+            
+         
+      
+         
+            
+<div id="all_stats_basic_plus_nhl" class="table_wrapper">
+
+<div class="section_heading assoc_stats_basic_plus_nhl" id="stats_basic_plus_nhl_sh">
+  <span class="section_anchor" id="stats_basic_plus_nhl_link" data-label="NHL Standard"></span><h2>NHL Standard</h2>    <div class="section_heading_text">
+      <ul>
+      </ul>
+    </div>
+    		
+</div>
+<div class="table_container" id="div_stats_basic_plus_nhl">
+    
+    <table class="row_summable sortable stats_table" id="stats_basic_plus_nhl" data-cols-to-freeze="1,3">
+    <caption>NHL Standard career statistics</caption>
+    
+
+   <colgroup><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col></colgroup>
+   <thead>
+
+      
+      <tr class="over_header">
+         <th aria-label="" data-stat="" colspan="4" class=" over_header center" ></th>
+         <th aria-label="" data-stat="header_goalies" colspan="17" class=" over_header center" >Goalie Stats</th><th></th><th></th>
+         <th aria-label="" data-stat="header_scoring" colspan="3" class=" over_header center" >Scoring</th>
+         <th aria-label="" data-stat="" colspan="2" class=" over_header center" ></th>
+      </tr>
+            
+      <tr>
+         <th aria-label="Season" data-stat="season" scope="col" class=" poptip sort_default_asc left" >Season</th>
+         <th aria-label="Age" data-stat="age" scope="col" class=" poptip sort_default_asc center" data-tip="As of Jan. 31 of the season in question. Or as of the date of the game listed. Age is Years-Days." >Age</th>
+         <th aria-label="Tm" data-stat="team_id" scope="col" class=" poptip sort_default_asc left" >Tm</th>
+         <th aria-label="Lg" data-stat="lg_id" scope="col" class=" poptip sort_default_asc left" >Lg</th>
+         <th aria-label="GP" data-stat="games_goalie" scope="col" class=" poptip center" data-tip="Games Played" data-over-header="Goalie Stats" >GP</th>
+         <th aria-label="GS" data-stat="starts_goalie" scope="col" class=" poptip center" data-tip="Games Started" data-over-header="Goalie Stats" >GS</th>
+         <th aria-label="W" data-stat="wins_goalie" scope="col" class=" poptip center" data-tip="Wins" data-over-header="Goalie Stats" >W</th>
+         <th aria-label="L" data-stat="losses_goalie" scope="col" class=" poptip center" data-tip="Losses" data-over-header="Goalie Stats" >L</th>
+         <th aria-label="T/O" data-stat="ties_goalie" scope="col" class=" poptip center" data-tip="Ties plus Overtime/Shootout Losses" data-over-header="Goalie Stats" >T/O</th>
+         <th aria-label="GA" data-stat="goals_against" scope="col" class=" poptip center" data-tip="Goals Against" data-over-header="Goalie Stats" >GA</th>
+         <th aria-label="SA" data-stat="shots_against" scope="col" class=" poptip center" data-tip="Shots Against" data-over-header="Goalie Stats" >SA</th>
+         <th aria-label="SV" data-stat="saves" scope="col" class=" poptip center" data-tip="Saves" data-over-header="Goalie Stats" >SV</th>
+         <th aria-label="SV%" data-stat="save_pct" scope="col" class=" poptip center" data-tip="Save Percentage" data-over-header="Goalie Stats" >SV%</th>
+         <th aria-label="GAA" data-stat="goals_against_avg" scope="col" class=" poptip sort_default_asc center" data-tip="Goals Against Average" data-over-header="Goalie Stats" >GAA</th>
+         <th aria-label="SO" data-stat="shutouts" scope="col" class=" poptip center" data-tip="Shutouts" data-over-header="Goalie Stats" >SO</th>
+         <th aria-label="MIN" data-stat="min_goalie" scope="col" class=" poptip center" data-tip="Minutes" data-over-header="Goalie Stats" >MIN</th>
+         <th aria-label="QS" data-stat="quality_starts_goalie" scope="col" class=" poptip center" data-tip="Quality Starts<br/>Starts with SV% &gt; average SV% for the year, or at least 88.5% on nights with 20 or fewer shots against.<br/>Developed by Rob Vollman in the Hockey Abstract." data-over-header="Goalie Stats" >QS</th>
+         <th aria-label="QS%" data-stat="quality_start_goalie_pct" scope="col" class=" poptip center" data-tip="Quality Start Percentage<br/>QS/GS<br/>&gt; 60% Good, &lt; 50% Bad, ~53% League Avg<br/>Developed by Rob Vollman in the Hockey Abstract." data-over-header="Goalie Stats" >QS%</th>
+         <th aria-label="RBS" data-stat="really_bad_starts_goalie" scope="col" class=" poptip center" data-tip="Really Bad Starts<br/>Starts with a SV% below 85%.<br/>Developed by Rob Vollman in the Hockey Abstract" data-over-header="Goalie Stats" >RBS</th>
+         <th aria-label="GA%-" data-stat="ga_pct_minus" scope="col" class=" poptip center" data-tip="GA Pct- is goals allowed % relative to league goals allowed %<br />Lower is better, 100 is exactly average, 0 means you have saved 100% of shots faced. Min. 4 shots faced per team game needed to qualify." data-over-header="Goalie Stats" >GA%-</th>
+         <th aria-label="GSAA" data-stat="gs_above_avg" scope="col" class=" poptip center" data-tip="Goals Saved Above Average, the goals this goalie prevented given his save percentage and shots faced vs. the league average save percentage on the same number of shots. Min. 4 shots faced per team game needed to qualify." data-over-header="Goalie Stats" >GSAA</th>
+         <th aria-label="adjGAA" data-stat="goals_against_avg_adjusted" scope="col" class=" poptip sort_default_asc center" data-tip="Adjusted Goals Against Average" data-over-header="Adjusted" >adjGAA</th>
+         <th aria-label="Goalie Point Shares" data-stat="gps" scope="col" class=" poptip center" data-tip="Goalie Point Shares; an estimate of the number of points contributed by a player due to his play in goal." data-over-header="Point Shares" >GPS</th>
+         <th aria-label="G" data-stat="goals" scope="col" class=" poptip center" data-tip="Goals" data-over-header="Scoring" >G</th>
+         <th aria-label="A" data-stat="assists" scope="col" class=" poptip center" data-tip="Assists" data-over-header="Scoring" >A</th>
+         <th aria-label="PTS" data-stat="points" scope="col" class=" poptip center" data-tip="Points" data-over-header="Scoring" >PTS</th>
+         <th aria-label="PIM" data-stat="pen_min" scope="col" class=" poptip center" data-tip="Penalties in Minutes" >PIM</th>
+         <th aria-label="Awards" data-stat="award_summary" scope="col" class=" poptip sort_default_asc center" data-tip="Summary of awards the player won that year." >Awards</th>
+      </tr>
+      </thead>
+<tbody><tr id="stats_basic_plus_nhl.2020" ><th scope="row" class="left " data-stat="season" >2019-20</th><td class="center " data-stat="age" >23</td><td class="left " data-stat="team_id" ><a href="/teams/MIN/2020.html">MIN</a></td><td class="left " data-stat="lg_id" ><a href="/leagues/NHL_2020.html">NHL</a></td><td class="right " data-stat="games_goalie" >5</td><td class="right " data-stat="starts_goalie" >5</td><td class="right " data-stat="wins_goalie" >3</td><td class="right " data-stat="losses_goalie" >1</td><td class="right " data-stat="ties_goalie" >1</td><td class="right " data-stat="goals_against" >15</td><td class="right " data-stat="shots_against" >172</td><td class="right " data-stat="saves" >157</td><td class="right " data-stat="save_pct" >.913</td><td class="right " data-stat="goals_against_avg" >2.96</td><td class="right iz" data-stat="shutouts" >0</td><td class="right " data-stat="min_goalie" >304</td><td class="right " data-stat="quality_starts_goalie" >3</td><td class="right " data-stat="quality_start_goalie_pct" >.600</td><td class="right " data-stat="really_bad_starts_goalie" >2</td><td class="right iz" data-stat="ga_pct_minus" ></td><td class="right iz" data-stat="gs_above_avg" ></td><td class="right " data-stat="goals_against_avg_adjusted" >3.16</td><td class="right " data-stat="gps" >1.0</td><td class="right iz" data-stat="goals" >0</td><td class="right iz" data-stat="assists" >0</td><td class="right iz" data-stat="points" >0</td><td class="right iz" data-stat="pen_min" >0</td><td class="left iz" data-stat="award_summary" ></td></tr>
+<tr id="stats_basic_plus_nhl.2021" ><th scope="row" class="left " data-stat="season" >2020-21</th><td class="center " data-stat="age" >24</td><td class="left " data-stat="team_id" ><a href="/teams/MIN/2021.html">MIN</a></td><td class="left " data-stat="lg_id" ><a href="/leagues/NHL_2021.html">NHL</a></td><td class="right " data-stat="games_goalie" >24</td><td class="right " data-stat="starts_goalie" >23</td><td class="right " data-stat="wins_goalie" >16</td><td class="right " data-stat="losses_goalie" >8</td><td class="right iz" data-stat="ties_goalie" >0</td><td class="right " data-stat="goals_against" >68</td><td class="right " data-stat="shots_against" >692</td><td class="right " data-stat="saves" >624</td><td class="right " data-stat="save_pct" >.902</td><td class="right " data-stat="goals_against_avg" >2.88</td><td class="right " data-stat="shutouts" >2</td><td class="right " data-stat="min_goalie" >1414</td><td class="right " data-stat="quality_starts_goalie" >10</td><td class="right " data-stat="quality_start_goalie_pct" >.435</td><td class="right " data-stat="really_bad_starts_goalie" >3</td><td class="right " data-stat="ga_pct_minus" >107</td><td class="right " data-stat="gs_above_avg" >-4.3</td><td class="right " data-stat="goals_against_avg_adjusted" >3.18</td><td class="right " data-stat="gps" >3.6</td><td class="right iz" data-stat="goals" >0</td><td class="right iz" data-stat="assists" >0</td><td class="right iz" data-stat="points" >0</td><td class="right " data-stat="pen_min" >2</td><td class="left " data-stat="award_summary" ><a href="/awards/voting-2021.html#calder" title="Calder Memorial Trophy">Calder-15</a></td></tr>
+<tr id="stats_basic_plus_nhl.2022" ><th scope="row" class="left " data-stat="season" >2021-22</th><td class="center " data-stat="age" >25</td><td class="left " data-stat="team_id" >TOT</td><td class="left " data-stat="lg_id" ><a href="/leagues/NHL_2022.html">NHL</a></td><td class="right " data-stat="games_goalie" >36</td><td class="right " data-stat="starts_goalie" >33</td><td class="right " data-stat="wins_goalie" >14</td><td class="right " data-stat="losses_goalie" >14</td><td class="right " data-stat="ties_goalie" >4</td><td class="right " data-stat="goals_against" >93</td><td class="right " data-stat="shots_against" >1056</td><td class="right " data-stat="saves" >963</td><td class="right " data-stat="save_pct" >.912</td><td class="right " data-stat="goals_against_avg" >2.87</td><td class="right iz" data-stat="shutouts" >0</td><td class="right " data-stat="min_goalie" >1947</td><td class="right " data-stat="quality_starts_goalie" >22</td><td class="right " data-stat="quality_start_goalie_pct" >.667</td><td class="right " data-stat="really_bad_starts_goalie" >6</td><td class="right " data-stat="ga_pct_minus" >95</td><td class="right " data-stat="gs_above_avg" >5.2</td><td class="right " data-stat="goals_against_avg_adjusted" >2.96</td><td class="right " data-stat="gps" >6.4</td><td class="right iz" data-stat="goals" >0</td><td class="right " data-stat="assists" >1</td><td class="right " data-stat="points" >1</td><td class="right " data-stat="pen_min" >2</td><td class="left iz" data-stat="award_summary" ></td></tr>
+<tr class="partial_table" ><th scope="row" class="left " data-stat="season" >2021-22</th><td class="center " data-stat="age" >25</td><td class="left " data-stat="team_id" ><a href="/teams/MIN/2022.html">MIN</a></td><td class="left " data-stat="lg_id" ><a href="/leagues/NHL_2022.html">NHL</a></td><td class="right " data-stat="games_goalie" >25</td><td class="right " data-stat="starts_goalie" >23</td><td class="right " data-stat="wins_goalie" >12</td><td class="right " data-stat="losses_goalie" >8</td><td class="right " data-stat="ties_goalie" >3</td><td class="right " data-stat="goals_against" >66</td><td class="right " data-stat="shots_against" >734</td><td class="right " data-stat="saves" >668</td><td class="right " data-stat="save_pct" >.910</td><td class="right " data-stat="goals_against_avg" >2.87</td><td class="right iz" data-stat="shutouts" >0</td><td class="right " data-stat="min_goalie" >1381</td><td class="right " data-stat="quality_starts_goalie" >15</td><td class="right " data-stat="quality_start_goalie_pct" >.652</td><td class="right " data-stat="really_bad_starts_goalie" >5</td><td class="right " data-stat="ga_pct_minus" >97</td><td class="right " data-stat="gs_above_avg" >2.3</td><td class="right " data-stat="goals_against_avg_adjusted" >2.95</td><td class="right " data-stat="gps" >4.3</td><td class="right iz" data-stat="goals" >0</td><td class="right " data-stat="assists" >1</td><td class="right " data-stat="points" >1</td><td class="right " data-stat="pen_min" >2</td><td class="left iz" data-stat="award_summary" ></td></tr>
+<tr class="partial_table" ><th scope="row" class="left " data-stat="season" >2021-22</th><td class="center " data-stat="age" >25</td><td class="left " data-stat="team_id" ><a href="/teams/SJS/2022.html">SJS</a></td><td class="left " data-stat="lg_id" ><a href="/leagues/NHL_2022.html">NHL</a></td><td class="right " data-stat="games_goalie" >11</td><td class="right " data-stat="starts_goalie" >10</td><td class="right " data-stat="wins_goalie" >2</td><td class="right " data-stat="losses_goalie" >6</td><td class="right " data-stat="ties_goalie" >1</td><td class="right " data-stat="goals_against" >27</td><td class="right " data-stat="shots_against" >322</td><td class="right " data-stat="saves" >295</td><td class="right " data-stat="save_pct" >.916</td><td class="right " data-stat="goals_against_avg" >2.86</td><td class="right iz" data-stat="shutouts" >0</td><td class="right " data-stat="min_goalie" >566</td><td class="right " data-stat="quality_starts_goalie" >7</td><td class="right " data-stat="quality_start_goalie_pct" >.700</td><td class="right " data-stat="really_bad_starts_goalie" >1</td><td class="right iz" data-stat="ga_pct_minus" ></td><td class="right iz" data-stat="gs_above_avg" ></td><td class="right " data-stat="goals_against_avg_adjusted" >2.97</td><td class="right " data-stat="gps" >2.1</td><td class="right iz" data-stat="goals" >0</td><td class="right iz" data-stat="assists" >0</td><td class="right iz" data-stat="points" >0</td><td class="right iz" data-stat="pen_min" >0</td><td class="left iz" data-stat="award_summary" ></td></tr>
+<tr id="stats_basic_plus_nhl.2023" ><th scope="row" class="left " data-stat="season" >2022-23</th><td class="center " data-stat="age" >26</td><td class="left " data-stat="team_id" ><a href="/teams/SJS/2023.html">SJS</a></td><td class="left " data-stat="lg_id" ><a href="/leagues/NHL_2023.html">NHL</a></td><td class="right " data-stat="games_goalie" >7</td><td class="right " data-stat="starts_goalie" >7</td><td class="right " data-stat="wins_goalie" >2</td><td class="right " data-stat="losses_goalie" >4</td><td class="right " data-stat="ties_goalie" >1</td><td class="right " data-stat="goals_against" >23</td><td class="right " data-stat="shots_against" >218</td><td class="right " data-stat="saves" >195</td><td class="right " data-stat="save_pct" >.894</td><td class="right " data-stat="goals_against_avg" >3.31</td><td class="right iz" data-stat="shutouts" >0</td><td class="right " data-stat="min_goalie" >417</td><td class="right " data-stat="quality_starts_goalie" >2</td><td class="right " data-stat="quality_start_goalie_pct" >.286</td><td class="right " data-stat="really_bad_starts_goalie" >2</td><td class="right " data-stat="ga_pct_minus" >111</td><td class="right " data-stat="gs_above_avg" >-2.3</td><td class="right " data-stat="goals_against_avg_adjusted" >3.31</td><td class="right " data-stat="gps" >1.0</td><td class="right iz" data-stat="goals" >0</td><td class="right iz" data-stat="assists" >0</td><td class="right iz" data-stat="points" >0</td><td class="right iz" data-stat="pen_min" >0</td><td class="left iz" data-stat="award_summary" ></td></tr>
+</tbody><tfoot><tr ><th scope="row" class="left " data-stat="season" >3 yrs</th><td class="center iz" data-stat="age" ></td><td class="left " data-stat="team_id" >MIN</td><td class="left " data-stat="lg_id" >NHL</td><td class="right " data-stat="games_goalie" >54</td><td class="right " data-stat="starts_goalie" >51</td><td class="right " data-stat="wins_goalie" >31</td><td class="right " data-stat="losses_goalie" >17</td><td class="right " data-stat="ties_goalie" >4</td><td class="right " data-stat="goals_against" >149</td><td class="right " data-stat="shots_against" >1598</td><td class="right " data-stat="saves" >1449</td><td class="right " data-stat="save_pct" >.907</td><td class="right " data-stat="goals_against_avg" >2.88</td><td class="right " data-stat="shutouts" >2</td><td class="right " data-stat="min_goalie" >3099</td><td class="right " data-stat="quality_starts_goalie" >28</td><td class="right " data-stat="quality_start_goalie_pct" >.549</td><td class="right " data-stat="really_bad_starts_goalie" >10</td><td class="right " data-stat="ga_pct_minus" >101</td><td class="right " data-stat="gs_above_avg" >-2.1</td><td class="right " data-stat="goals_against_avg_adjusted" >3.08</td><td class="right " data-stat="gps" >8.9</td><td class="right iz" data-stat="goals" >0</td><td class="right " data-stat="assists" >1</td><td class="right " data-stat="points" >1</td><td class="right " data-stat="pen_min" >4</td><td class="left iz" data-stat="award_summary" ></td></tr>
+<tr ><th scope="row" class="left " data-stat="season" >2 yrs</th><td class="center iz" data-stat="age" ></td><td class="left " data-stat="team_id" >SJS</td><td class="left " data-stat="lg_id" >NHL</td><td class="right " data-stat="games_goalie" >18</td><td class="right " data-stat="starts_goalie" >17</td><td class="right " data-stat="wins_goalie" >4</td><td class="right " data-stat="losses_goalie" >10</td><td class="right " data-stat="ties_goalie" >2</td><td class="right " data-stat="goals_against" >50</td><td class="right " data-stat="shots_against" >540</td><td class="right " data-stat="saves" >490</td><td class="right " data-stat="save_pct" >.907</td><td class="right " data-stat="goals_against_avg" >3.05</td><td class="right iz" data-stat="shutouts" >0</td><td class="right " data-stat="min_goalie" >983</td><td class="right " data-stat="quality_starts_goalie" >9</td><td class="right " data-stat="quality_start_goalie_pct" >.529</td><td class="right " data-stat="really_bad_starts_goalie" >3</td><td class="right " data-stat="ga_pct_minus" >99</td><td class="right " data-stat="gs_above_avg" >0.4</td><td class="right " data-stat="goals_against_avg_adjusted" >3.11</td><td class="right " data-stat="gps" >3.1</td><td class="right iz" data-stat="goals" >0</td><td class="right iz" data-stat="assists" >0</td><td class="right iz" data-stat="points" >0</td><td class="right iz" data-stat="pen_min" >0</td><td class="left iz" data-stat="award_summary" ></td></tr>
+<tr ><th scope="row" class="left " data-stat="season" >Career</th><td class="center iz" data-stat="age" ></td><td class="left " data-stat="team_id" >4 yrs</td><td class="left " data-stat="lg_id" >NHL</td><td class="right " data-stat="games_goalie" >72</td><td class="right " data-stat="starts_goalie" >68</td><td class="right " data-stat="wins_goalie" >35</td><td class="right " data-stat="losses_goalie" >27</td><td class="right " data-stat="ties_goalie" >6</td><td class="right " data-stat="goals_against" >199</td><td class="right " data-stat="shots_against" >2138</td><td class="right " data-stat="saves" >1939</td><td class="right " data-stat="save_pct" >.907</td><td class="right " data-stat="goals_against_avg" >2.92</td><td class="right " data-stat="shutouts" >2</td><td class="right " data-stat="min_goalie" >4082</td><td class="right " data-stat="quality_starts_goalie" >37</td><td class="right " data-stat="quality_start_goalie_pct" >.544</td><td class="right " data-stat="really_bad_starts_goalie" >13</td><td class="right " data-stat="ga_pct_minus" >101</td><td class="right " data-stat="gs_above_avg" >-2.0</td><td class="right " data-stat="goals_against_avg_adjusted" >3.09</td><td class="right " data-stat="gps" >12.0</td><td class="right iz" data-stat="goals" >0</td><td class="right " data-stat="assists" >1</td><td class="right " data-stat="points" >1</td><td class="right " data-stat="pen_min" >4</td><td class="left iz" data-stat="award_summary" ></td></tr>
+
+   </tfoot>
+
+</table>
+
+
+</div>
+
+
+
+</div>
+
+            
+            
+            
+	       	
+
+<!-- fs_btf_1 -->
+<div class="adblock">
+<!-- div#fs_fs_btf_1  -->
+<div align="center" id="div-gpt-ad-728x90-BTF-1">
+    <script data-cfasync="false" type='text/javascript'>
+    if (sr_detect_ie || sr_detect_edge || Modernizr.adfree) {
+    }
+    else {
+        console.log('push ad:div-gpt-ad-728x90-BTF-1');
+        freestar.queue.push(function() { googletag.display('div-gpt-ad-728x90-BTF-1'); });
+    }
+    </script>
+</div>
+<!-- /div.#fs_fs_btf_1 -->
+
+
+</div>
+
+
+            
+         
+      
+         
+            <div class="section_wrapper setup_commented commented" id="all_8851338394">
+<div class="section_heading assoc_8851338394" id="8851338394_sh">
+  <span class="section_anchor" id="8851338394_link" data-label="Player News"></span><h2>Player News</h2>    <div class="section_heading_text">
+      <ul><li><a href="/linker/newsfeed.cgi">Add Your Blog Posts Here</a></li><li><a href="/players/news.fcgi?id=kahkoka01">Player News Archive</a></li><li><a href="/players/news.fcgi?id=kahkoka01&amp;rss=1">Player News RSS Feed</a></li>
+      </ul>
+    </div>
+    		
+</div><div class="placeholder"></div>
+<!--     <div class="section_content" id="div_8851338394">
+	    <ul class="news_stories">
+<li><strong>11/2</strong> <a rel="nofollow noopener" target="_blank"  href="https://ducksnpucks.wordpress.com/2022/11/02/video-ducks-sink-sharks-in-shootout/" onclick="sr_record_analytics_event('newsfeed_click','Ducks N Pucks', sr_record_directory(),'sr_tracker');">Ducks N Pucks: VIDEO: Ducks Sink Sharks In Shootout</a>:&nbsp;<em>By Michael Walters The Anaheim Ducks traveled to NoCal to face</em>...
+</li><li><strong>10/27</strong> <a rel="nofollow noopener" target="_blank"  href="https://www.sportsgamblingpodcast.com/2022/10/27/best-fantasy-hockey-waiver-wire-pickups-oct-27th/" onclick="sr_record_analytics_event('newsfeed_click','SGPN', sr_record_directory(),'sr_tracker');">SGPN: Best Fantasy Hockey Waiver Wire Pickups: Oct 27th</a>:&nbsp;<em>I tied in my points-based fantasy hockey league last week. TIED!</em>...
+</li><li><strong>10/20</strong> <a rel="nofollow noopener" target="_blank"  href="https://www.sportsgamblingpodcast.com/2022/10/20/best-fantasy-hockey-waiver-wire-pickups-oct-20th/" onclick="sr_record_analytics_event('newsfeed_click','SGPN', sr_record_directory(),'sr_tracker');">SGPN: Best Fantasy Hockey Waiver Wire Pickups: Oct 20th</a>:&nbsp;<em>The NHL season may have just started, but it&#8217;s never too</em>...
+</li><li><strong>9/16</strong> <a rel="nofollow noopener" target="_blank"  href="https://zonecoverage.com/2022/wild/the-wild-coaching-staff-can-replace-fialas-production/" onclick="sr_record_analytics_event('newsfeed_click','Zone Coverage', sr_record_directory(),'sr_tracker');">Zone Coverage: The Wild Coaching Staff Can Replace Fiala&#8217;s Production</a>:&nbsp;<em>The Minnesota Wild traded Kevin Fiala to the Los Angeles Kings</em>...
+</li><li><strong>9/3</strong> <a rel="nofollow noopener" target="_blank"  href="https://nhlrumors.com/nhl-rumors-chicago-blackhawks-vancouver-canucks-and-the-san-jose-sharks/2022/09/02/" onclick="sr_record_analytics_event('newsfeed_click','MyNHLTradeRumors.com', sr_record_directory(),'sr_tracker');">MyNHLTradeRumors.com: NHL Rumors: Chicago Blackhawks, Vancouver Canucks, and the San Jose Sharks</a>:&nbsp;<em>Kane and Toews haven't approached Davidson. Two Metro Division</em>...
+</li></ul>
+		
+    </div>
+-->
+</div>
+
+
+            
+            
+            
+         
+      
+         
+      
+         
+      
+         
+            
+<div id="all_stats_goalie_situational" class="table_wrapper setup_commented commented">
+
+<div class="section_heading assoc_stats_goalie_situational" id="stats_goalie_situational_sh">
+  <span class="section_anchor" id="stats_goalie_situational_link" data-label="NHL Advanced"></span><h2>NHL Advanced</h2>    <div class="section_heading_text">
+      <ul>
+      </ul>
+    </div>
+    		
+</div><div class="placeholder"></div>
+<!--
+
+<div class="table_container" id="div_stats_goalie_situational">
+    
+    <table class="row_summable sortable stats_table" id="stats_goalie_situational" data-cols-to-freeze=",1">
+    <caption>NHL Advanced Table</caption>
+    
+
+   <colgroup><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col></colgroup>
+   <thead>
+
+      
+      <tr class="over_header">
+         <th aria-label="" data-stat="" colspan="4" class=" over_header center" ></th>
+         <th aria-label="" data-stat="header_ev" colspan="3" class=" over_header center" >Even Strength</th><th></th>
+         <th aria-label="" data-stat="header_pp" colspan="3" class=" over_header center" >Power Play</th><th></th>
+         <th aria-label="" data-stat="header_sh" colspan="3" class=" over_header center" >Short-handed</th><th></th>
+         <th aria-label="" data-stat="header_sc" colspan="7" class=" over_header center" >Even Strength Scoring Chance Metrics</th>
+      </tr>
+            
+      <tr>
+         <th aria-label="Season" data-stat="season" scope="col" class=" poptip sort_default_asc left" >Season</th>
+         <th aria-label="Age" data-stat="age" scope="col" class=" poptip sort_default_asc center" data-tip="As of Jan. 31 of the season in question. Or as of the date of the game listed. Age is Years-Days." >Age</th>
+         <th aria-label="Tm" data-stat="team_id" scope="col" class=" poptip sort_default_asc left" >Tm</th>
+         <th aria-label="Lg" data-stat="lg_id" scope="col" class=" poptip sort_default_asc left" >Lg</th>
+         <th aria-label="Shots" data-stat="shots_against_ev" scope="col" class=" poptip center" data-tip="Even Strength Shots Faced" data-over-header="Even Strength" >Shots</th>
+         <th aria-label="GA" data-stat="goals_against_ev" scope="col" class=" poptip center" data-tip="Even Strength Goals Allowed" data-over-header="Even Strength" >GA</th>
+         <th aria-label="SV %" data-stat="svpct_ev" scope="col" class=" poptip center" data-tip="Even Strength Save Percentage" data-over-header="Even Strength" >SV %</th>
+         <th aria-label=" " data-stat="spacer" scope="col" class=" poptip center" ></th>
+         <th aria-label="Shots" data-stat="shots_against_pp" scope="col" class=" poptip center" data-tip="Power Play Shots Faced" data-over-header="Power Play" >Shots</th>
+         <th aria-label="GA" data-stat="goals_against_pp" scope="col" class=" poptip center" data-tip="Power Play Goals Allowed" data-over-header="Power Play" >GA</th>
+         <th aria-label="SV %" data-stat="svpct_pp" scope="col" class=" poptip center" data-tip="Power Play Save Percentage" data-over-header="Power Play" >SV %</th>
+         <th aria-label=" " data-stat="spacer" scope="col" class=" poptip center" ></th>
+         <th aria-label="Shots" data-stat="shots_against_sh" scope="col" class=" poptip center" data-tip="Short-handed Shots Faced" data-over-header="Short-handed" >Shots</th>
+         <th aria-label="GA" data-stat="goals_against_sh" scope="col" class=" poptip center" data-tip="Short-handed Goals Allowed" data-over-header="Short-handed" >GA</th>
+         <th aria-label="SV %" data-stat="svpct_sh" scope="col" class=" poptip center" data-tip="Short-handed Save Percentage" data-over-header="Short-handed" >SV %</th>
+         <th aria-label=" " data-stat="spacer" scope="col" class=" poptip center" ></th>
+         <th aria-label="xGA" data-stat="expected_goals_against" scope="col" class=" poptip center" data-tip="Expected GA based on shots faced by location against league average Shooting% from those locations" data-over-header="Even Strength Scoring Chance Metrics" >xGA</th>
+         <th aria-label="scSA" data-stat="sc_shots_against" scope="col" class=" poptip center" data-tip="Good Scoring Chance Shots Against" data-over-header="Even Strength Scoring Chance Metrics" >scSA</th>
+         <th aria-label="scGA" data-stat="sc_goals_against" scope="col" class=" poptip center" data-tip="Good Scoring Chance Goals Against" data-over-header="Even Strength Scoring Chance Metrics" >scGA</th>
+         <th aria-label="sc SV%" data-stat="sc_save_pct" scope="col" class=" poptip center" data-tip="Scoring Chance Save Percentage" data-over-header="Even Strength Scoring Chance Metrics" >sc SV%</th>
+         <th aria-label="HDscSA" data-stat="hdsc_shots_against" scope="col" class=" poptip center" data-tip="High-Danger Scoring Chance Shots Against" data-over-header="Even Strength Scoring Chance Metrics" >HDscSA</th>
+         <th aria-label="HDscGA" data-stat="hdsc_goals_against" scope="col" class=" poptip center" data-tip="High-Danger Scoring Chance Goals Against" data-over-header="Even Strength Scoring Chance Metrics" >HDscGA</th>
+         <th aria-label="HDsc SV%" data-stat="hdsc_save_pct" scope="col" class=" poptip center" data-tip="High-Danger Scoring Chance Save Percentage" data-over-header="Even Strength Scoring Chance Metrics" >HDsc SV%</th>
+      </tr>
+      </thead>
+<tbody><tr ><th scope="row" class="left " data-stat="season" >2019-20</th><td class="center " data-stat="age" >23</td><td class="left " data-stat="team_id" ><a href="/teams/MIN/2020.html" title="Minnesota Wild">MIN</a></td><td class="left " data-stat="lg_id" ><a href="/leagues/NHL_2020.html">NHL</a></td><td class="right " data-stat="shots_against_ev" >141</td><td class="right " data-stat="goals_against_ev" >10</td><td class="right " data-stat="svpct_ev" >.929</td><td class="right iz" data-stat="spacer" ></td><td class="right " data-stat="shots_against_pp" >16</td><td class="right " data-stat="goals_against_pp" >5</td><td class="right " data-stat="svpct_pp" >.688</td><td class="right iz" data-stat="spacer" ></td><td class="right " data-stat="shots_against_sh" >4</td><td class="right iz" data-stat="goals_against_sh" >0</td><td class="right " data-stat="svpct_sh" >1.000</td><td class="right iz" data-stat="spacer" ></td><td class="right " data-stat="expected_goals_against" >9.5</td><td class="right " data-stat="sc_shots_against" >67</td><td class="right " data-stat="sc_goals_against" >10</td><td class="right " data-stat="sc_save_pct" >.851</td><td class="right " data-stat="hdsc_shots_against" >16</td><td class="right " data-stat="hdsc_goals_against" >4</td><td class="right " data-stat="hdsc_save_pct" >.750</td></tr>
+<tr ><th scope="row" class="left " data-stat="season" >2020-21</th><td class="center " data-stat="age" >24</td><td class="left " data-stat="team_id" ><a href="/teams/MIN/2021.html" title="Minnesota Wild">MIN</a></td><td class="left " data-stat="lg_id" ><a href="/leagues/NHL_2021.html">NHL</a></td><td class="right " data-stat="shots_against_ev" >552</td><td class="right " data-stat="goals_against_ev" >52</td><td class="right " data-stat="svpct_ev" >.906</td><td class="right iz" data-stat="spacer" ></td><td class="right " data-stat="shots_against_pp" >101</td><td class="right " data-stat="goals_against_pp" >15</td><td class="right " data-stat="svpct_pp" >.851</td><td class="right iz" data-stat="spacer" ></td><td class="right " data-stat="shots_against_sh" >22</td><td class="right " data-stat="goals_against_sh" >1</td><td class="right " data-stat="svpct_sh" >.955</td><td class="right iz" data-stat="spacer" ></td><td class="right " data-stat="expected_goals_against" >44.8</td><td class="right " data-stat="sc_shots_against" >139</td><td class="right " data-stat="sc_goals_against" >18</td><td class="right " data-stat="sc_save_pct" >.871</td><td class="right " data-stat="hdsc_shots_against" >38</td><td class="right " data-stat="hdsc_goals_against" >8</td><td class="right " data-stat="hdsc_save_pct" >.789</td></tr>
+<tr ><th scope="row" class="left " data-stat="season" >2021-22</th><td class="center " data-stat="age" >25</td><td class="left " data-stat="team_id" >TOT</td><td class="left " data-stat="lg_id" ><a href="/leagues/NHL_2022.html">NHL</a></td><td class="right " data-stat="shots_against_ev" >847</td><td class="right " data-stat="goals_against_ev" >67</td><td class="right " data-stat="svpct_ev" >.921</td><td class="right iz" data-stat="spacer" ></td><td class="right " data-stat="shots_against_pp" >174</td><td class="right " data-stat="goals_against_pp" >24</td><td class="right " data-stat="svpct_pp" >.862</td><td class="right iz" data-stat="spacer" ></td><td class="right " data-stat="shots_against_sh" >31</td><td class="right " data-stat="goals_against_sh" >2</td><td class="right " data-stat="svpct_sh" >.935</td><td class="right iz" data-stat="spacer" ></td><td class="right " data-stat="expected_goals_against" >421.0</td><td class="right " data-stat="sc_shots_against" >36</td><td class="right " data-stat="sc_goals_against" >67</td><td class="right " data-stat="sc_save_pct" >-0.861</td><td class="right " data-stat="hdsc_shots_against" >434</td><td class="right " data-stat="hdsc_goals_against" >52</td><td class="right " data-stat="hdsc_save_pct" >.880</td></tr>
+<tr class="partial_table" ><th scope="row" class="left " data-stat="season" >2021-22</th><td class="center " data-stat="age" >25</td><td class="left " data-stat="team_id" ><a href="/teams/MIN/2022.html" title="Minnesota Wild">MIN</a></td><td class="left " data-stat="lg_id" ><a href="/leagues/NHL_2022.html">NHL</a></td><td class="right " data-stat="shots_against_ev" >575</td><td class="right " data-stat="goals_against_ev" >46</td><td class="right " data-stat="svpct_ev" >.920</td><td class="right iz" data-stat="spacer" ></td><td class="right " data-stat="shots_against_pp" >133</td><td class="right " data-stat="goals_against_pp" >19</td><td class="right " data-stat="svpct_pp" >.857</td><td class="right iz" data-stat="spacer" ></td><td class="right " data-stat="shots_against_sh" >23</td><td class="right " data-stat="goals_against_sh" >1</td><td class="right " data-stat="svpct_sh" >.957</td><td class="right iz" data-stat="spacer" ></td><td class="right " data-stat="expected_goals_against" >44.3</td><td class="right " data-stat="sc_shots_against" >286</td><td class="right " data-stat="sc_goals_against" >36</td><td class="right " data-stat="sc_save_pct" >.874</td><td class="right " data-stat="hdsc_shots_against" >96</td><td class="right " data-stat="hdsc_goals_against" >23</td><td class="right " data-stat="hdsc_save_pct" >.760</td></tr>
+<tr class="partial_table" ><th scope="row" class="left " data-stat="season" >2021-22</th><td class="center " data-stat="age" >25</td><td class="left " data-stat="team_id" ><a href="/teams/SJS/2022.html" title="San Jose Sharks">SJS</a></td><td class="left " data-stat="lg_id" ><a href="/leagues/NHL_2022.html">NHL</a></td><td class="right " data-stat="shots_against_ev" >272</td><td class="right " data-stat="goals_against_ev" >21</td><td class="right " data-stat="svpct_ev" >.923</td><td class="right iz" data-stat="spacer" ></td><td class="right " data-stat="shots_against_pp" >41</td><td class="right " data-stat="goals_against_pp" >5</td><td class="right " data-stat="svpct_pp" >.878</td><td class="right iz" data-stat="spacer" ></td><td class="right " data-stat="shots_against_sh" >8</td><td class="right " data-stat="goals_against_sh" >1</td><td class="right " data-stat="svpct_sh" >.875</td><td class="right iz" data-stat="spacer" ></td><td class="right " data-stat="expected_goals_against" >22.4</td><td class="right " data-stat="sc_shots_against" >148</td><td class="right " data-stat="sc_goals_against" >16</td><td class="right " data-stat="sc_save_pct" >.892</td><td class="right " data-stat="hdsc_shots_against" >48</td><td class="right " data-stat="hdsc_goals_against" >8</td><td class="right " data-stat="hdsc_save_pct" >.833</td></tr>
+<tr ><th scope="row" class="left " data-stat="season" >2022-23</th><td class="center " data-stat="age" >26</td><td class="left " data-stat="team_id" ><a href="/teams/SJS/2023.html" title="San Jose Sharks">SJS</a></td><td class="left " data-stat="lg_id" ><a href="/leagues/NHL_2023.html">NHL</a></td><td class="right " data-stat="shots_against_ev" >180</td><td class="right " data-stat="goals_against_ev" >18</td><td class="right " data-stat="svpct_ev" >.900</td><td class="right iz" data-stat="spacer" ></td><td class="right " data-stat="shots_against_pp" >33</td><td class="right " data-stat="goals_against_pp" >3</td><td class="right " data-stat="svpct_pp" >.909</td><td class="right iz" data-stat="spacer" ></td><td class="right " data-stat="shots_against_sh" >4</td><td class="right " data-stat="goals_against_sh" >2</td><td class="right " data-stat="svpct_sh" >.500</td><td class="right iz" data-stat="spacer" ></td><td class="right " data-stat="expected_goals_against" >13.3</td><td class="right " data-stat="sc_shots_against" >89</td><td class="right " data-stat="sc_goals_against" >12</td><td class="right " data-stat="sc_save_pct" >.865</td><td class="right " data-stat="hdsc_shots_against" >24</td><td class="right " data-stat="hdsc_goals_against" >7</td><td class="right " data-stat="hdsc_save_pct" >.708</td></tr>
+</tbody><tfoot><tr class="stat_total" ><th scope="row" class="left " data-stat="season" >Career</th><td class="center iz" data-stat="age" ></td><td class="left iz" data-stat="team_id" ><a href="/teams/MIN/2020.html" title="Minnesota Wild"></a></td><td class="left " data-stat="lg_id" ><a href="/leagues/NHL_2020.html">NHL</a></td><td class="right " data-stat="shots_against_ev" >1720</td><td class="right " data-stat="goals_against_ev" >147</td><td class="right " data-stat="svpct_ev" >.915</td><td class="right iz" data-stat="spacer" ></td><td class="right " data-stat="shots_against_pp" >324</td><td class="right " data-stat="goals_against_pp" >47</td><td class="right " data-stat="svpct_pp" >.855</td><td class="right iz" data-stat="spacer" ></td><td class="right " data-stat="shots_against_sh" >61</td><td class="right " data-stat="goals_against_sh" >5</td><td class="right " data-stat="svpct_sh" >.918</td><td class="right iz" data-stat="spacer" ></td><td class="right " data-stat="expected_goals_against" >488.7</td><td class="right " data-stat="sc_shots_against" >331</td><td class="right " data-stat="sc_goals_against" >107</td><td class="right " data-stat="sc_save_pct" >.677</td><td class="right " data-stat="hdsc_shots_against" >512</td><td class="right " data-stat="hdsc_goals_against" >71</td><td class="right " data-stat="hdsc_save_pct" >.861</td></tr>
+
+   </tfoot>
+
+</table>
+
+
+</div>
+-->
+
+
+</div>
+
+            
+            
+            
+	       	
+
+<!-- fs_btf_2 -->
+<div class="adblock">
+<!-- div#fs_fs_btf_2  -->
+<div align="center" id="div-gpt-ad-728x90-BTF-2">
+    <script data-cfasync="false" type='text/javascript'>
+    if (sr_detect_ie || sr_detect_edge || Modernizr.adfree) {
+    }
+    else {
+        console.log('push ad:div-gpt-ad-728x90-BTF-2');
+        freestar.queue.push(function() { googletag.display('div-gpt-ad-728x90-BTF-2'); });
+    }
+    </script>
+</div>
+<!-- /div.#fs_fs_btf_2 -->
+
+<div><a href="https://stathead.com/?ref=hr&amp;utm_source=web&amp;utm_medium=hr&amp;utm_campaign=adfree_callouts">Become a Stathead &amp; surf this site ad-free.</a></div>
+</div>
+
+
+            
+         
+      
+         
+            
+<div id="all_stats_basic_minus_other" class="table_wrapper setup_commented commented">
+
+<div class="section_heading assoc_stats_basic_minus_other" id="stats_basic_minus_other_sh">
+  <span class="section_anchor" id="stats_basic_minus_other_link" data-label="Other Standard"></span><h2>Other Standard</h2>    <div class="section_heading_text">
+      <ul>
+      </ul>
+    </div>
+    		
+</div><div class="placeholder"></div>
+<!--
+
+<div class="table_container" id="div_stats_basic_minus_other">
+    
+    <table class="row_summable sortable stats_table" id="stats_basic_minus_other" data-cols-to-freeze=",1">
+    <caption>Other Standard career statistics</caption>
+    
+
+   <colgroup><col><col><col><col><col><col><col><col><col><col></colgroup>
+   <thead>
+
+      
+      <tr class="over_header">
+         <th aria-label="" data-stat="" colspan="4" class=" over_header center" ></th>
+         <th aria-label="" data-stat="header_goalies" colspan="6" class=" over_header center" >Goalie Stats</th>
+      </tr>
+            
+      <tr>
+         <th aria-label="Season" data-stat="season" scope="col" class=" poptip sort_default_asc left" >Season</th>
+         <th aria-label="Age" data-stat="age" scope="col" class=" poptip sort_default_asc center" data-tip="As of Jan. 31 of the season in question. Or as of the date of the game listed. Age is Years-Days." >Age</th>
+         <th aria-label="Tm" data-stat="team_id" scope="col" class=" poptip sort_default_asc left" >Tm</th>
+         <th aria-label="Lg" data-stat="lg_id" scope="col" class=" poptip sort_default_asc left" >Lg</th>
+         <th aria-label="GP" data-stat="games_goalie" scope="col" class=" poptip center" data-tip="Games Played" data-over-header="Goalie Stats" >GP</th>
+         <th aria-label="W" data-stat="wins_goalie" scope="col" class=" poptip center" data-tip="Wins" data-over-header="Goalie Stats" >W</th>
+         <th aria-label="L" data-stat="losses_goalie" scope="col" class=" poptip center" data-tip="Losses" data-over-header="Goalie Stats" >L</th>
+         <th aria-label="T/O" data-stat="ties_goalie" scope="col" class=" poptip center" data-tip="Ties plus Overtime/Shootout Losses" data-over-header="Goalie Stats" >T/O</th>
+         <th aria-label="SV%" data-stat="save_pct" scope="col" class=" poptip center" data-tip="Save Percentage" data-over-header="Goalie Stats" >SV%</th>
+         <th aria-label="GAA" data-stat="goals_against_avg" scope="col" class=" poptip sort_default_asc center" data-tip="Goals Against Average" data-over-header="Goalie Stats" >GAA</th>
+      </tr>
+      </thead>
+<tbody><tr class="partial_table" ><th scope="row" class="left " data-stat="season" >2019-20</th><td class="center " data-stat="age" >23</td><td class="left " data-stat="team_id" >Iowa Wild</td><td class="left " data-stat="lg_id" >AHL</td><td class="right " data-stat="games_goalie" >34</td><td class="right iz" data-stat="wins_goalie" ></td><td class="right iz" data-stat="losses_goalie" ></td><td class="right iz" data-stat="ties_goalie" ></td><td class="right iz" data-stat="save_pct" ></td><td class="right iz" data-stat="goals_against_avg" ></td></tr>
+</tbody><tfoot>
+   </tfoot>
+
+</table>
+
+
+</div>
+-->
+
+
+</div>
+
+            
+            
+            
+         
+      
+         
+            <div class="section_wrapper setup_commented commented" id="all_similarity_scores">
+<div class="section_heading assoc_similarity_scores" id="similarity_scores_sh">
+  <span class="section_anchor" id="similarity_scores_link" data-label="Similarity Scores"></span><h2></h2>		
+</div><div class="placeholder"></div>
+<!--     <div class="section_content" id="div_similarity_scores">
+	    
+<div id="all_sim_thru" class="table_wrapper">
+
+<div class="section_heading assoc_sim_thru" id="sim_thru_sh">
+  <span class="section_anchor" id="sim_thru_link" data-label="Similarity Scores"></span><h2>Similarity Scores</h2>    <div class="section_heading_text">
+      <ul><li><a href="/about/similar.html">Explanation</a></li><li>Players with careers of similar quality and shape (thru 2021-22)</li>
+      </ul>
+    </div>
+    		
+</div>
+<div class="table_container" id="div_sim_thru">
+    
+    <table class="suppress_all sortable stats_table" id="sim_thru" data-cols-to-freeze=",1">
+    <caption>Similarity Scores Table</caption>
+    
+
+   <colgroup><col><col><col><col><col><col><col></colgroup>
+   <thead>
+
+      
+      <tr class="over_header">
+         <th aria-label="" data-stat="header_tmp1" colspan="2" class=" over_header center" >Thru 5 Years</th>
+         <th aria-label="" data-stat="header_tmp2" colspan="5" class=" over_header center" >Adjusted Point Shares (Best to Worst)</th>
+      </tr>
+            
+      <tr>
+         <th aria-label="Player" data-stat="player" scope="col" class=" poptip sort_default_asc left" data-over-header="Thru 5 Years" >Player</th>
+         <th aria-label=" " data-stat="sim_score" scope="col" class=" poptip center" data-over-header="Thru 5 Years" ></th>
+         <th aria-label="1" data-stat="year1" scope="col" class=" poptip right" data-over-header="Adjusted Point Shares (Best to Worst)" >1</th>
+         <th aria-label="2" data-stat="year2" scope="col" class=" poptip right" data-over-header="Adjusted Point Shares (Best to Worst)" >2</th>
+         <th aria-label="3" data-stat="year3" scope="col" class=" poptip right" data-over-header="Adjusted Point Shares (Best to Worst)" >3</th>
+         <th aria-label="4" data-stat="year4" scope="col" class=" poptip right" data-over-header="Adjusted Point Shares (Best to Worst)" >4</th>
+         <th aria-label="5" data-stat="year5" scope="col" class=" poptip right" data-over-header="Adjusted Point Shares (Best to Worst)" >5</th>
+      </tr>
+      </thead>
+<tbody><tr class="stat_total" ><th scope="row" class="left " data-stat="player" >Kaapo Kahkonen</th><td class="right iz" data-stat="sim_score" csk="100" ></td><td class="right " data-stat="year1" >6.4</td><td class="right " data-stat="year2" >5.3</td><td class="right " data-stat="year3" >1.2</td><td class="right iz" data-stat="year4" ></td><td class="right iz" data-stat="year5" ></td></tr>
+<tr ><th scope="row" class="left " data-append-csv="dominlo01" data-stat="player" ><a href="/players/d/dominlo01.html">Louis Domingue</a></th><td class="right " data-stat="sim_score" >91.9</td><td class="right " data-stat="year1" >6.3</td><td class="right " data-stat="year2" >4.6</td><td class="right " data-stat="year3" >0.9</td><td class="right iz" data-stat="year4" ></td><td class="right iz" data-stat="year5" ></td></tr>
+<tr ><th scope="row" class="left " data-append-csv="desmica01" data-stat="player" ><a href="/players/d/desmica01.html">Casey DeSmith</a></th><td class="right " data-stat="sim_score" >88.5</td><td class="right " data-stat="year1" >6.6</td><td class="right " data-stat="year2" >5.0</td><td class="right " data-stat="year3" >2.3</td><td class="right iz" data-stat="year4" ></td><td class="right iz" data-stat="year5" ></td></tr>
+<tr ><th scope="row" class="left " data-append-csv="bouchbr01" data-stat="player" ><a href="/players/b/bouchbr01.html">Brian Boucher</a></th><td class="right " data-stat="sim_score" >87.8</td><td class="right " data-stat="year1" >6.0</td><td class="right " data-stat="year2" >5.7</td><td class="right " data-stat="year3" >2.0</td><td class="right iz" data-stat="year4" ></td><td class="right iz" data-stat="year5" ></td></tr>
+<tr ><th scope="row" class="left " data-append-csv="hirscco01" data-stat="player" ><a href="/players/h/hirscco01.html">Corey Hirsch</a></th><td class="right " data-stat="sim_score" >87.5</td><td class="right " data-stat="year1" >6.8</td><td class="right " data-stat="year2" >4.7</td><td class="right " data-stat="year3" >0.5</td><td class="right iz" data-stat="year4" ></td><td class="right iz" data-stat="year5" ></td></tr>
+<tr ><th scope="row" class="left " data-append-csv="gustajo01" data-stat="player" ><a href="/players/g/gustajo01.html">Jonas Gustavsson</a></th><td class="right " data-stat="sim_score" >87.4</td><td class="right " data-stat="year1" >5.7</td><td class="right " data-stat="year2" >5.4</td><td class="right " data-stat="year3" >2.1</td><td class="right iz" data-stat="year4" ></td><td class="right iz" data-stat="year5" ></td></tr>
+<tr ><th scope="row" class="left " data-append-csv="takkoka01" data-stat="player" ><a href="/players/t/takkoka01.html">Kari Takko</a></th><td class="right " data-stat="sim_score" >87.3</td><td class="right " data-stat="year1" >6.6</td><td class="right " data-stat="year2" >4.8</td><td class="right " data-stat="year3" >0.3</td><td class="right iz" data-stat="year4" ></td><td class="right iz" data-stat="year5" ></td></tr>
+<tr ><th scope="row" class="left " data-append-csv="astroha01" data-stat="player" ><a href="/players/a/astroha01.html">Hardy Astrom</a></th><td class="right " data-stat="sim_score" >87.1</td><td class="right " data-stat="year1" >6.1</td><td class="right " data-stat="year2" >4.6</td><td class="right " data-stat="year3" >0.6</td><td class="right iz" data-stat="year4" ></td><td class="right iz" data-stat="year5" ></td></tr>
+<tr ><th scope="row" class="left " data-append-csv="gibsojo02" data-stat="player" ><a href="/players/g/gibsojo02.html">John Gibson</a></th><td class="right " data-stat="sim_score" >86.5</td><td class="right " data-stat="year1" >6.5</td><td class="right " data-stat="year2" >4.0</td><td class="right " data-stat="year3" >0.9</td><td class="right iz" data-stat="year4" ></td><td class="right iz" data-stat="year5" ></td></tr>
+<tr ><th scope="row" class="left " data-append-csv="simmoga01" data-stat="player" ><a href="/players/s/simmoga01.html">Gary Simmons</a></th><td class="right " data-stat="sim_score" >86.2</td><td class="right " data-stat="year1" >6.7</td><td class="right " data-stat="year2" >4.8</td><td class="right " data-stat="year3" >2.3</td><td class="right iz" data-stat="year4" ></td><td class="right iz" data-stat="year5" ></td></tr>
+<tr ><th scope="row" class="left " data-append-csv="johnsbr02" data-stat="player" ><a href="/players/j/johnsbr02.html">Brent Johnson</a></th><td class="right " data-stat="sim_score" >85.4</td><td class="right " data-stat="year1" >7.1</td><td class="right " data-stat="year2" >4.4</td><td class="right " data-stat="year3" >0.9</td><td class="right iz" data-stat="year4" ></td><td class="right iz" data-stat="year5" ></td></tr>
+
+</table>
+
+
+</div>
+
+
+
+</div>
+
+<div id="all_sim_career" class="table_wrapper">
+
+<div class="section_heading assoc_sim_career" id="sim_career_sh">
+  <span class="section_anchor" id="sim_career_link" data-label="" data-no-inpage="1"></span>	
+</div>
+<div class="table_container" id="div_sim_career">
+    
+    <table class="suppress_all sortable stats_table" id="sim_career" data-cols-to-freeze=",1">
+    <caption> Table</caption>
+    
+
+   <colgroup><col><col><col><col><col><col><col></colgroup>
+   <thead>
+
+      
+      <tr class="over_header">
+         <th aria-label="" data-stat="header_tmp1" colspan="2" class=" over_header center" >Career</th>
+         <th aria-label="" data-stat="header_tmp2" colspan="5" class=" over_header center" >Adjusted Point Shares (Best to Worst)</th>
+      </tr>
+            
+      <tr>
+         <th aria-label="Player" data-stat="player" scope="col" class=" poptip sort_default_asc left" data-over-header="Career" >Player</th>
+         <th aria-label=" " data-stat="sim_score" scope="col" class=" poptip center" data-over-header="Career" ></th>
+         <th aria-label="1" data-stat="year1" scope="col" class=" poptip right" data-over-header="Adjusted Point Shares (Best to Worst)" >1</th>
+         <th aria-label="2" data-stat="year2" scope="col" class=" poptip right" data-over-header="Adjusted Point Shares (Best to Worst)" >2</th>
+         <th aria-label="3" data-stat="year3" scope="col" class=" poptip right" data-over-header="Adjusted Point Shares (Best to Worst)" >3</th>
+         <th aria-label="4" data-stat="year4" scope="col" class=" poptip right" data-over-header="Adjusted Point Shares (Best to Worst)" >4</th>
+         <th aria-label="5" data-stat="year5" scope="col" class=" poptip right" data-over-header="Adjusted Point Shares (Best to Worst)" >5</th>
+      </tr>
+      </thead>
+<tbody><tr class="stat_total" ><th scope="row" class="left " data-stat="player" >Kaapo Kahkonen</th><td class="right iz" data-stat="sim_score" csk="100" ></td><td class="right " data-stat="year1" >6.4</td><td class="right " data-stat="year2" >5.3</td><td class="right " data-stat="year3" >1.2</td><td class="right iz" data-stat="year4" ></td><td class="right iz" data-stat="year5" ></td></tr>
+<tr ><th scope="row" class="left " data-append-csv="astroha01" data-stat="player" ><a href="/players/a/astroha01.html">Hardy Astrom</a></th><td class="right " data-stat="sim_score" >87.1</td><td class="right " data-stat="year1" >6.1</td><td class="right " data-stat="year2" >4.6</td><td class="right " data-stat="year3" >0.6</td><td class="right iz" data-stat="year4" ></td><td class="right iz" data-stat="year5" ></td></tr>
+<tr ><th scope="row" class="left " data-append-csv="hirscco01" data-stat="player" ><a href="/players/h/hirscco01.html">Corey Hirsch</a></th><td class="right " data-stat="sim_score" >84.2</td><td class="right " data-stat="year1" >6.8</td><td class="right " data-stat="year2" >4.7</td><td class="right " data-stat="year3" >1.7</td><td class="right " data-stat="year4" >0.5</td><td class="right " data-stat="year5" >0.2</td></tr>
+<tr ><th scope="row" class="left " data-append-csv="hammoan01" data-stat="player" ><a href="/players/h/hammoan01.html">Andrew Hammond</a></th><td class="right " data-stat="sim_score" >82.7</td><td class="right " data-stat="year1" >6.5</td><td class="right " data-stat="year2" >4.2</td><td class="right " data-stat="year3" >0.8</td><td class="right " data-stat="year4" >0.3</td><td class="right " data-stat="year5" >0.2</td></tr>
+<tr ><th scope="row" class="left " data-append-csv="simmoga01" data-stat="player" ><a href="/players/s/simmoga01.html">Gary Simmons</a></th><td class="right " data-stat="sim_score" >78.3</td><td class="right " data-stat="year1" >6.7</td><td class="right " data-stat="year2" >4.8</td><td class="right " data-stat="year3" >2.3</td><td class="right " data-stat="year4" >1.3</td><td class="right iz" data-stat="year5" ></td></tr>
+<tr ><th scope="row" class="left " data-append-csv="staubro01" data-stat="player" ><a href="/players/s/staubro01.html">Robb Stauber</a></th><td class="right " data-stat="sim_score" >75.3</td><td class="right " data-stat="year1" >5.3</td><td class="right " data-stat="year2" >4.5</td><td class="right " data-stat="year3" >0.4</td><td class="right " data-stat="year4" >-0.2</td><td class="right iz" data-stat="year5" ></td></tr>
+<tr ><th scope="row" class="left " data-append-csv="holmqjo01" data-stat="player" ><a href="/players/h/holmqjo01.html">Johan Holmqvist</a></th><td class="right " data-stat="sim_score" >74.9</td><td class="right " data-stat="year1" >5.4</td><td class="right " data-stat="year2" >4.5</td><td class="right " data-stat="year3" >0.1</td><td class="right " data-stat="year4" >0.1</td><td class="right iz" data-stat="year5" >0.0</td></tr>
+<tr ><th scope="row" class="left " data-append-csv="caronja01" data-stat="player" ><a href="/players/c/caronja01.html">Jacques Caron</a></th><td class="right " data-stat="sim_score" >73.1</td><td class="right " data-stat="year1" >5.8</td><td class="right " data-stat="year2" >3.8</td><td class="right " data-stat="year3" >0.2</td><td class="right " data-stat="year4" >0.1</td><td class="right iz" data-stat="year5" >0.0</td></tr>
+<tr ><th scope="row" class="left " data-append-csv="reddipo01" data-stat="player" ><a href="/players/r/reddipo01.html">Pokey Reddick</a></th><td class="right " data-stat="sim_score" >72.1</td><td class="right " data-stat="year1" >7.2</td><td class="right " data-stat="year2" >5.6</td><td class="right " data-stat="year3" >2.6</td><td class="right " data-stat="year4" >1.8</td><td class="right " data-stat="year5" >0.1</td></tr>
+<tr ><th scope="row" class="left " data-append-csv="bernhti01" data-stat="player" ><a href="/players/b/bernhti01.html">Tim Bernhardt</a></th><td class="right " data-stat="sim_score" >71.1</td><td class="right " data-stat="year1" >6.5</td><td class="right " data-stat="year2" >2.8</td><td class="right " data-stat="year3" >0.5</td><td class="right " data-stat="year4" >-0.1</td><td class="right iz" data-stat="year5" ></td></tr>
+<tr ><th scope="row" class="left " data-append-csv="condomi01" data-stat="player" ><a href="/players/c/condomi01.html">Mike Condon</a></th><td class="right " data-stat="sim_score" >69.8</td><td class="right " data-stat="year1" >6.8</td><td class="right " data-stat="year2" >6.6</td><td class="right " data-stat="year3" >4.0</td><td class="right " data-stat="year4" >-0.2</td><td class="right iz" data-stat="year5" ></td></tr>
+
+</table>
+
+
+</div>
+
+
+
+</div>
+
+		
+    </div>
+-->
+</div>
+
+            
+            
+            
+         
+      
+         
+      
+         
+            <div class="section_wrapper setup_commented commented" id="all_transactions">
+<div class="section_heading assoc_transactions" id="transactions_sh">
+  <span class="section_anchor" id="transactions_link" data-label="Transactions"></span><h2>Transactions</h2>    <div class="section_heading_text">
+      <ul><li>Transaction information may be incomplete.</li>
+      </ul>
+    </div>
+    		
+</div><div class="placeholder"></div>
+<!--     <div class="section_content" id="div_transactions">
+	    <p><strong>March 21, 2022:</strong> Traded by the <a href="/teams/MIN/2022.html">Minnesota Wild</a> with 5th round draft pick in 2022  to the <a href="/teams/SJS/2022.html">San Jose Sharks</a> for <a href="/players/m/middlja01.html">Jacob Middleton</a>.</p>
+		
+    </div>
+-->
+</div>
+
+            
+            
+            
+         
+      
+         
+            <div class="section_wrapper setup_commented commented" id="all_other_links">
+<div class="section_heading assoc_other_links" id="other_links_sh">
+  <span class="section_anchor" id="other_links_link" data-label="Other Links"></span><h2>Other Links</h2>    <div class="section_heading_text">
+      <ul>
+      </ul>
+    </div>
+    		
+</div><div class="placeholder"></div>
+<!--     <div class="section_content" id="div_other_links">
+	    <ul class="inline">
+<li><a href="https://www.sports-reference.com/feedback/">Error?</a></li>
+<li><a href="http://www.google.com/search?q=Kaapo+Kahkonen">Google Search</a></li>
+</ul>
+		
+    </div>
+-->
+</div>
+
+            
+            
+            
+         
+      
+
+<!-- global.nonempty_tables_num: 8, table_count: 8 -->
+   <!-- no Local/Partials/NoteBottom.tt2 -->
+<div id="bottom_nav" class="section_wrapper">
+<div class="section_heading"><span data-no-inpage="1" class="section_anchor" id="inner_nav_bottom_link" data-label="More Kahkonen Pages"></span><h2>More Kahkonen Pages</h2></div>
+<div class="section_content" id="bottom_nav_container">
+
+  <p><a href="/players/k/kahkoka01.html">Kaapo Kahkonen Overview</a></p>
+  <p class="listhead">Additional Pages for this Player</p>
+        <ul class="">
+          <li><strong>Player Overview &amp; Base Stats</strong></li>
+          <li><a href="https://www.stathead.com/hockey/player-game-finder.cgi?request=1&player_id=kahkoka01&pos=G&utm_medium=hr&utm_source=player-page-links&utm_campaign=hockey">Game Finder</a></li>
+          <li><a href="/players/news.fcgi?id=kahkoka01">News</a></li>
+        </ul><p class="listhead"><a href="/players/k/kahkoka01/splits/">Career Splits</a></p>
+        <ul class="">
+          <li><a href="/players/k/kahkoka01/splits/2020">2019-20</a></li>
+          <li><a href="/players/k/kahkoka01/splits/2021">2020-21</a></li>
+          <li><a href="/players/k/kahkoka01/splits/2022">2021-22</a></li>
+          <li><a href="/players/k/kahkoka01/splits/2023">2022-23</a></li>
+        </ul><p class="listhead">Game Logs</p>
+        <ul class="">
+          <li><a href="/players/k/kahkoka01/gamelog/2020">2019-20</a></li>
+          <li><a href="/players/k/kahkoka01/gamelog/2021">2020-21</a></li>
+          <li><a href="/players/k/kahkoka01/gamelog/2022">2021-22</a></li>
+          <li><a href="/players/k/kahkoka01/gamelog/2023">2022-23</a></li>
+        </ul></div></div>
+
+   
+
+
+</div><!-- div#content -->
+
+<div id="footer" role="contentinfo">
+	<div id="footer_header">
+		 <ul class="bullets-inline"><li class="user logged_in">Welcome <span class="username"></span>&nbsp;&#183;&nbsp;<a href="https://stathead.com/profile/?utm_source=web&amp;utm_medium=hr&amp;utm_campaign=sr-nav-bar-top-account">Your Account</a></li>
+<li class="user logged_in"><a class="logout" onclick="sr_auth_logout_page_elements();if(!this.href.match('redirect_uri')){this.href += '&redirect_uri='+escape(document.location.href)}" href="https://stathead.com/profile/?do=logout">Logout</a></li>
+<li class="user not_logged_in"><a class="login" onclick="if(!this.href.match('redirect_uri')){this.href += '&redirect_uri='+escape(document.location.href)}" href="https://stathead.com/users/login.cgi?token=1">Login</a></li>
+<li class="user not_logged_in"><a href="https://stathead.com/users/signup.cgi">Create Account</a></li>
+</ul>
+		 <div class="breadcrumbs">You are here: <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="/"><span itemprop="name">HR Home Page</span></a> <meta itemprop="position" content="1" /></span> &gt; <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="/players/"><span itemprop="name">Players</span></a> <meta itemprop="position" content="2" /></span> &gt; <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="/players/k/"><span itemprop="name">K</span></a> <meta itemprop="position" content="3" /></span> &gt; <a href="/players/k/kahkoka01.html">Kaapo Kahkonen</a></div>
+	</div><!-- div#footer_header -->
+
+	<div id="footer_general">
+		<div id="site_menu" role="navigation" aria-label="complete site index">
+			
+			
+<div class="section_heading assoc_site_menu" id="site_menu_sh">
+  <span class="section_anchor" id="site_menu_link" data-label="Full Site Menu"></span><h2>Full Site Menu</h2>    <div class="section_heading_text">
+      <ul><li><a data-scroll href="#header">Return to Top</a></li>
+      </ul>
+    </div>
+    		
+</div>
+			
+				<ul>
+	<li>
+		<a href="/players/">Players</a>
+		<div>In the News: <a title="Jonathan Toews" href="/players/t/toewsjo01.html">J. Toews</a>, <a title="Duncan Keith" href="/players/k/keithdu01.html">D. Keith</a>, <a title="Jamie Benn" href="/players/b/bennja01.html">J. Benn</a>, <a title="Ryan Getzlaf" href="/players/g/getzlry01.html">R. Getzlaf</a>, <a title="Corey Perry" href="/players/p/perryco01.html">C. Perry</a>, <a title="Alex Ovechkin" href="/players/o/ovechal01.html">A. Ovechkin</a> <a href="/players/">...</a></div>
+		<div>All-Time Greats: <a href="/players/g/gretzwa01.html">W. Gretzky</a>, <a href="/players/b/bourqra01.html">R. Bourque</a>, <a href="/players/h/howego01.html">G. Howe</a>, <a href="/players/l/lidstni01.html">N. Lidstrom</a>, <a href="/players/b/brodema01.html">M. Brodeur</a>, <a href="/players/j/jagrja01.html">J. Jagr</a> <a href="/players/">...</a></div>
+		<div>Active Greats: <a href="/players/o/ovechal01.html">A. Ovechkin</a>, <a href="/players/r/rasktu01.html">T. Rask</a>, <a href="/players/c/crosbsi01.html">S. Crosby</a>, <a href="/players/t/thornjo01.html">J. Thornton</a>, <a href="/players/k/kucheni01.html">N. Kucherov</a>, <a href="/players/l/lundqhe01.html">H. Lundqvist</a> <a href="/players/">...</a></div>
+    </li>
+	<li>
+		<a href="/teams/">Teams</a>
+	 	<div class="division"><strong>Atlantic</strong>:
+			<a href="/teams/BOS/2023.html">Boston</a>,  
+			<a href="/teams/BUF/2023.html">Buffalo</a>,   
+			<a href="/teams/DET/2023.html">Detroit</a>,  
+			<a href="/teams/FLA/2023.html">Florida</a>,  
+			<a href="/teams/MTL/2023.html">Montreal</a>, 
+			<a href="/teams/OTT/2023.html">Ottawa</a>,   
+			<a href="/teams/TBL/2023.html">Tampa Bay</a>, 
+			<a href="/teams/TOR/2023.html">Toronto</a>
+		</div>	
+	 	<div class="division">
+			<strong>Metropolitan</strong>:
+			<a href="/teams/CAR/2023.html">Carolina</a>,
+			<a href="/teams/CBJ/2023.html">Columbus</a>,   
+			<a href="/teams/NJD/2023.html">New Jersey</a>,   
+			<a href="/teams/NYR/2023.html">NY Rangers</a>,   
+			<a href="/teams/NYI/2023.html">NY Islanders</a>, 
+			<a href="/teams/PHI/2023.html">Philadelphia</a>, 
+			<a href="/teams/PIT/2023.html">Pittsburgh</a>,
+			<a href="/teams/WSH/2023.html">Washington</a>
+		</div>	
+	 	<div class="division"><strong>Central</strong>:
+			<a href="/teams/CHI/2023.html">Chicago</a>,  
+			<a href="/teams/COL/2023.html">Colorado</a>,
+			<a href="/teams/DAL/2023.html">Dallas</a>,  
+			<a href="/teams/MIN/2023.html">Minnesota</a>,  
+			<a href="/teams/NSH/2023.html">Nashville</a>, 
+			<a href="/teams/STL/2023.html">St. Louis</a>,   
+			<a href="/teams/WPG/2023.html">Winnipeg</a>
+		</div>	
+	 	<div class="division">
+			<strong>Pacific</strong>:
+			<a href="/teams/ANA/2023.html">Anaheim</a>,
+			<a href="/teams/ARI/2023.html">Arizona</a>, 
+			<a href="/teams/CGY/2023.html">Calgary</a>,   
+			<a href="/teams/EDM/2023.html">Edmonton</a>, 
+			<a href="/teams/LAK/2023.html">Los Angeles</a>,   
+			<a href="/teams/SJS/2023.html">San Jose</a>,   
+			<a href="/teams/VAN/2023.html">Vancouver</a>,
+			<a href="/teams/VEG/2023.html">Vegas</a>
+		</div>	
+	</li>
+	<li>
+		<a href="/leagues/">Seasons</a>
+		<div>
+			<a href="/leagues/NHL_2023.html">Current Summary/Standings</a>, 
+			<a href="/leagues/NHL_2023_games.html">Current Schedule/Results</a>, 
+			<a href="/leagues/NHL_2023_leaders.html">Current Leaders</a>, 
+			<a href="/leagues/NHL_2023_skaters.html">Current Stats</a>
+		</div>
+		<div>
+			
+			
+			
+			
+			<a href="/leagues/NHL_2023.html">2022-23</a>, 
+			
+			
+			
+			<a href="/leagues/NHL_2022.html">2021-22</a>, 
+			
+			
+			
+			<a href="/leagues/NHL_2021.html">2020-21</a>, 
+			
+			
+			
+			<a href="/leagues/NHL_2020.html">2019-20</a>, 
+			
+			
+			<a href="/leagues/">...</a>
+		</div>
+	</li>
+	<li>
+		<a href="/leaders/">NHL Leaders</a>
+		<div><a href="/leaders/goals_career.html">Goals</a>, <a href="/leaders/assists_career.html">Assists</a>, <a href="/leaders/plus_minus_career.html">Plus/Minus</a>, <a href="/leaders/pen_min_career.html">Penalty Minutes</a>, <a href="/leaders/">...</a></div>
+	</li>
+	<li>
+		<a href="/boxscores/">NHL Scores</a>
+		<div>
+		<a href="/boxscores/">Yesterday's Games</a>, 
+		<a href="/boxscores/">Search All Games in History</a>, 
+		<a href="/leagues/NHL_2023_games.html">Season Results</a>
+		</div>
+	</li>
+	<li>
+		<a href="/boxscores/">NHL Schedules</a>
+		<div>
+		<a href="/boxscores/?today=1">Today's Games</a>, 
+		<a href="/leagues/NHL_2023_games.html">Season Schedule</a>
+		</div>
+	</li>
+    <li>
+		<a href="/leagues/NHL_2023_standings.html">NHL Standings</a>
+		<div><a href="/leagues/NHL_2023_standings.html">Today's Standings</a></div>
+	</li>
+	<li>
+		<a href="https://www.stathead.com/hockey/">Stathead</a>
+		<div>Player Finders: <a href="https://www.stathead.com/hockey/player-season-finder.cgi">Season Finder</a>, <a href="https://www.stathead.com/hockey/player-game-finder.cgi">Game Finder</a>, <a href="https://www.stathead.com/hockey/ppbp_finder.cgi">Advanced Stats Finder</a>, <a href="https://www.stathead.com/hockey/pcomp_finder.cgi">Player Comparison Finder</a></div>
+		<div>Team Finders: <a href="https://www.stathead.com/hockey/team-season-finder.cgi">Season Finder</a>, <a href="https://www.stathead.com/hockey/team-game-finder.cgi">Game Finder</a>, <a href="https://www.stathead.com/hockey/tpbp_finder.cgi">Advanced Stats Finder</a></div>
+		<div>Other Finders: <a href="https://www.stathead.com/hockey/draft_finder.cgi">Draft Finder</a></div>
+	</li>
+	<li>
+		<a href="/coaches/">Coaches</a>
+		<div>Active: <a href="/coaches/babcomi99c.html">Mike Babcock</a>, <a href="/coaches/blashje99c.html">Jeff Blashill</a>, <a href="/coaches/coopejo01c.html">Jon Cooper</a></div>
+		<div>Retired: <a href="/coaches/gretzwa01c.html">Wayne Gretzky</a>, <a href="/coaches/keenami99c.html">Mike Keenan</a>, <a href="/coaches/imlacpu01c.html">Punch Imlach</a></div>
+	</li>
+	<li>
+		<a href="/awards/">NHL Awards</a>
+		<div><a href="/awards/hart.html">Hart</a>, <a href="/awards/byng.html">Lady Byng</a>, <a href="/awards/vezina.html">Vezina</a>, <a href="/awards/calder.html">Calder</a>, <a href="/awards/ross.html">Art Ross</a>, <a href="/awards/norris.html">Norris</a>, <a href="/awards/smythe.html">Conn Smythe</a>, <a href="/awards/hhof.html">Hall of Fame</a>, <a href="/awards/">...</a></div>
+	</li>
+	<li>
+		<a href="/playoffs/">NHL Playoffs</a>
+		<div>
+			
+			
+			<a href="/playoffs/NHL_2023.html">2023 Stanley Cup</a>,
+			
+			
+			<a href="/playoffs/NHL_2022.html">2022 Stanley Cup</a>,
+			
+			
+			<a href="/playoffs/NHL_2021.html">2021 Stanley Cup</a>,
+			
+			
+			<a href="/playoffs/NHL_2020.html">2020 Stanley Cup</a>,
+			
+			
+			<a href="/playoffs/overtime-goals.cgi">All Overtime Playoff Goals</a>, <a href="/playoffs/">...</a>
+		</div>
+	</li>
+	<li>
+		<a href="/amateurs/">Amateurs</a>
+	</li>
+	<li>
+		<a href="/analytics/">Analytics</a>
+	</li>
+	<!--
+	<li>
+		<a href="/all-star/">All-Star Games</a>
+		<div><a href="">2015 All-Star Game</a>, <a href="">2014 All-Star Game</a>, <a href="">2013 All-Star Game</a>, <a href="">2012 All-Star Game</a>, ...</div>
+	</li>
+	-->
+	<li>
+		<a href="/friv/">Frivolities</a>
+		<div><a href="/friv/birthdays.cgi">Birthdays</a>, <a href="/friv/numbers.cgi">Uniform Number Tracker</a>, <a href="/friv/">...</a></div>
+	</li>
+	<li>
+		<a href="/draft/">NHL Draft</a>
+		<div>
+			
+			
+			
+			<a href="/draft/NHL_2022_entry.html">2022 Draft</a>,
+			
+			
+			<a href="/draft/NHL_2021_entry.html">2021 Draft</a>,
+			
+			
+			<a href="/draft/NHL_2020_entry.html">2020 Draft</a>,
+			
+			
+			<a href="/draft/NHL_2019_entry.html">2019 Draft</a>,
+			
+			
+			<a href="/draft/">...</a>
+		</div>
+	</li>
+	<li>
+		<a href="/linker/">Linker</a>
+	</li>
+	<li>
+		<a href="/about/">About</a>
+		<div><a href="/about/nhl-hockey-faqs.html">Frequently Asked Questions about the NHL and Hockey</a> ...</div>
+	</li>
+</ul>   
+
+			
+   		        
+
+      <ul>
+       <li></li>      
+       <li><a href="https://www.hockey-reference.com/hr-blog/">Hockey-Reference.com Blog and Articles</a></li>
+
+	        </div><!-- div#site_menu -->
+		<div>
+			<div id="social" class="icon_group noload">
+	
+<div class="section_heading assoc_kahkoka01" id="kahkoka01_sh">
+  <span class="section_anchor" id="kahkoka01_link" data-label="We're Social...for Statheads" data-no-inpage="1"></span><h2>We're Social...for Statheads</h2>		
+</div>
+	<a href="tel://888-512-8907" data-tip="Call us on Telephone" data-label="Telephone" aria-label="Telephone" class="poptip"><svg class="icon phone"><use xlink:href="#ic-phone"></use></svg></a>
+	<a href="//www.sports-reference.com/blog/" data-tip="The Sports Reference Blog" data-label="Our Blog" aria-label="Our Blog" class="poptip"><svg class="icon wordpress"><use xlink:href="#ic-wordpress"></use></svg></a>
+	<a href="https://www.sports-reference.com/blog/feed/" data-tip="Our Blog's RSS Feed" data-label="RSS Feed" aria-label="RSS Feed" class="poptip"><svg class="icon rss"><use xlink:href="#ic-rss"></use></svg></a>
+		<a href="https://www.facebook.com/Hockey.Reference" data-tip="Hockey-Reference.com at Facebook" data-label="Facebook" aria-label="Facebook" class="poptip"><svg class="icon facebook"><use xlink:href="#ic-facebook"></use></svg></a>
+		<a href="https://twitter.com/hockey_ref" data-tip="Hockey-Reference.com at Twitter" data-label="Twitter" aria-label="Twitter" class="poptip"><svg class="icon twitter"><use xlink:href="#ic-twitter"></use></svg></a>
+	
+		<a href="https://www.tiktok.com/@hockeyreference" data-tip="Hockey-Reference.com at TikTok" data-label="TikTok" aria-label="TikTok" class="poptip"><svg class="icon tiktok"><use xlink:href="#ic-tiktok"></use></svg></a>
+	<a href="https://reddit.com/r/SportsReference" data-tip="Reddit/r/SportsReference" data-label="Reddit/r/SR" aria-label="Reddit/r/SR" class="poptip"><svg class="icon reddit"><use xlink:href="#ic-reddit"></use></svg></a>
+	<a href="https://www.youtube.com/user/sportsreference" data-tip="YouTube/SportsReference" data-label="YouTube" aria-label="YouTube" class="poptip"><svg class="icon youtube"><use xlink:href="#ic-youtube"></use></svg></a>
+	<a href="https://www.linkedin.com/company/sports-reference-llc" data-tip="Follow SR on LinkedIn" data-label="LinkedIn" aria-label="LinkedIn" class="poptip"><svg class="icon linkedin"><use xlink:href="#ic-linkedin"></use></svg></a>
+	<a href="https://www.paypal.me/sportsref" data-tip="Send us money via PayPal" data-label="PayPal" aria-label="PayPal" class="poptip"><svg class="icon paypal"><use xlink:href="#ic-paypal"></use></svg></a>
+
+<p>Every <a href="https://www.sports-reference.com/blog/sports-reference-social-media/">Sports Reference Social Media Account</a></p>
+<p><strong>Site Last Updated:</strong> Tuesday, November 22, 10:18AM
+</p>
+<p><a href="https://www.sports-reference.com/feedback/" class="button" style="display: block">Question, Comment, Feedback, or Correction?</a></p>
+
+<p><a style="display: block" href="https://www.hockey-reference.com/email" class="button">Subscribe to our Free Email Newsletter</a></p>
+
+<p><a style="background-color:#155ca9; color: #fff;" href="https://www.sports-reference.com/this-month.html?&utm_medium=sr&utm_source=hr&utm_campaign=site-footer-twisr" class="button alt">This Month in Sports Reference<br><em>Find out when we add a feature or make a change</em></a></p>
+
+<p><a href="https://www.sports-reference.com/blog/ways-sports-reference-can-help-your-website/?utm_medium=sr&utm_source=hr&utm_campaign=site-footer-ways-help">Do you have a sports website? Or write about sports? We have tools and resources that can help you use sports data.  Find out more.</a></p>
+
+
+</div><!-- div#social -->
+
+			<div id="tips_tricks">
+   
+<div class="section_heading assoc_tips" id="tips_sh">
+  <span class="section_anchor" id="tips_link" data-label="FAQs, Tip &amp; Tricks" data-no-inpage="1"></span><h2>FAQs, Tip &amp; Tricks</h2>		
+</div>
+   <ul>
+<!-- -->
+           <li><a href="//www.sports-reference.com/blog/category/tips-and-tricks/">Tips and Tricks from our Blog.</a></li>
+           <li><a href="/linker/">Do you have a blog? Join our linker program.</a></li>
+	   <li><a href="https://www.sports-reference.com/blog/category/stathead-tutorial-series/">Watch our How-To Videos to Become a Stathead</a></li>
+	   <li><a href="//stathead.com/?ref=hr">Subscribe to Stathead and get access to more data than you can imagine</a></li>
+   </ul>
+</div><!-- div#tips_tricks -->
+
+			<div id="credits">
+				<p>All logos are the trademark &amp; property of their owners and not Sports Reference LLC.  We present them here for purely educational purposes.
+				<a href="https://www.sports-reference.com/blog/2016/06/redesign-team-and-league-logos-courtesy-sportslogos-net/">Our reasoning for presenting offensive logos.</a></p>
+				<p>
+					
+					Logos were compiled by the amazing <a href="http://sportslogos.net/">SportsLogos.net.</a>
+				</p>
+				
+<div class="notice">
+<p>Data Provided By
+	<a href="https://www.sportradar.com/" rel="nofollow"><img alt="SportRadar" border=0 width=275 src="https://cdn.ssref.net/req/202211181/images/klecko/sportradar.png"  style="background-color:#666; padding:.5em; border-radius:.25em"></a>
+	the official stats partner of the NHL.</p>
+	<p>Hockey-Reference utilizes <strong>Official NHL data</strong> for current NHL seasons.</p>
+	
+</div>
+
+     <p>Copyright &copy; 2000-2022 <a href="//www.sports-reference.com/">Sports Reference LLC</a>. All rights reserved.</p>
+
+     <p>The SPORTS REFERENCE and STATHEAD trademarks are owned exclusively by Sports Reference LLC. Use without license or authorization is expressly prohibited.
+<p>Most historical data provided by Dan Diamond and Associates.</p>
+<p>WHA hat tricks courtesy Scott Surgent. <a href="https://www.amazon.com/World-Hockey-Association-Fact-Second/dp/1517359171/" target="_blank" rel="noopener">Buy his book</a>.</p>
+
+<p>Some hockey portraits on this site are licensed from <em>Images on Ice</em>, Hockey’s Photo Agency</p>
+<p align="center"><a rel="noopener" target="_blank" rel="noopener" href="http://www.imagesonice.net"><img alt="Images On Ice" border=0 width=275 src="https://cdn.ssref.net/req/202211181/images/hr/imagesonice.gif"></a></p>
+
+			</div><!-- div#credits -->
+		</div>
+	</div>
+
+	<ul id="site_dirs" class="notranslate bullets-inline">
+	<li><a href="https://www.sports-reference.com/"><svg height="15px" width="20px"><use xlink:href="#ic-sr-pennant"></use></svg> Sports&nbsp;Reference&#8239;&reg;</a></li>
+	<li><a href="https://www.baseball-reference.com/">Baseball</a></li>
+	<li><a href="https://www.pro-football-reference.com/">Football</a> <a href="https://www.sports-reference.com/cfb/">(college)</a></li>
+	<li><a href="https://www.basketball-reference.com/">Basketball</a> <a href="https://www.sports-reference.com/cbb/">(college)</a></li>
+	<li class="current"><a href="https://www.hockey-reference.com/">Hockey</a></li>
+
+
+	
+	
+	
+	<li><a href="https://fbref.com/en/">Soccer</a></li>
+
+	<li><a href="https://www.sports-reference.com/blog/">Blog</a></li>
+
+    <li><a href="https://stathead.com/?utm_source=web&amp;utm_medium=hr&amp;utm_campaign=sr-nav-bar-top-link">Stathead&#8239;&reg;</a></li>
+
+
+</ul>
+
+	<div id="about">
+  <a href="//www.sports-reference.com/about.html">About</a> &bull;
+  <a href="//www.sports-reference.com/termsofuse.html">Conditions &amp; Terms of Service</a> &bull;
+  <a href="//www.sports-reference.com/advertise.html">Advertise With Us</a>
+ &bull;
+  <a href="//www.sports-reference.com/jobs.html">Jobs at SR</a>
+  <br><br>
+Sports Reference Purpose: We will be the trusted source of information and tools that inspire and empower users to enjoy, understand, and share the sports they love.
+  <br><br>
+  <a href="//www.sports-reference.com/privacy.html">Privacy Policy</a> &bull;
+  <a href="//www.sports-reference.com/gambling-revenue-policy.html">Gambling Revenue Policy</a> &bull;
+  <a href="//www.sports-reference.com/accessibility-policy.html">Accessibility Policy</a> &bull;
+  <a href="//www.sports-reference.com/data_use.html">Use of Data</a>
+  </div>
+  <!-- div#about -->
+</div><!-- div#footer -->
+
+</div><!-- div#wrap -->
+<!-- yes sticky url:  https://www.hockey-reference.com/players/k/kahkoka01.html -->
+<div id="fs-select-footer"></div>
+      
+
+
+
+<!-- rails -->
+
+<div class="adblock rails  left"><!-- div#fs_fs_rails_left  -->
+<div align="center" id="div-gpt-ad-160x600-1">
+    <script data-cfasync="false" type='text/javascript'>
+    if (sr_detect_ie || sr_detect_edge || Modernizr.adfree) {
+    }
+    else {
+        console.log('push ad:div-gpt-ad-160x600-1');
+        freestar.queue.push(function() { googletag.display('div-gpt-ad-160x600-1'); });
+    }
+    </script>
+</div>
+<!-- /div.#fs_fs_rails_left -->
+</div>
+<div class="adblock rails right"><!-- div#fs_fs_rails_right  -->
+<div align="center" id="div-gpt-ad-160x600-2">
+    <script data-cfasync="false" type='text/javascript'>
+    if (sr_detect_ie || sr_detect_edge || Modernizr.adfree) {
+    }
+    else {
+        console.log('push ad:div-gpt-ad-160x600-2');
+        freestar.queue.push(function() { googletag.display('div-gpt-ad-160x600-2'); });
+    }
+    </script>
+</div>
+<!-- /div.#fs_fs_rails_right -->
+</div>
+
+
+<!-- sr_gender is used in Templates/Assets/GoogleAnalytics.tt2 -->
+<script>var sr_gender = "";</script>
+<!-- Google Analytics --> <!-- new extra script, apparently we only use one of these, regardless of the number of products... https://developers.google.com/tag-platform/gtagjs/install#google-analytics --> <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1890630-5"></script> <script> var sr_cookie = vjs_readCookie('stathead_user') || ''; var sr_cookie_split = sr_cookie.split("::"); var sr_session_key = (sr_cookie_split.length > 1)?sr_cookie_split[2]:''; var sr_ad_free_key = "5"; var sr_site_id = "hr"; var sr_is_subscriber = (sr_ad_free_key && sr_session_key.vjs_isMatch(new RegExp(sr_ad_free_key + "$"))) || sr_session_key.vjs_isMatch(/1$/) || (sr_site_id === 'stathead' && sr_session_key.vjs_isMatch(/[0-7]$/)); var sr_is_user = sr_cookie !== null && sr_cookie !== ''; var sr_seen_modal = vjs_readCookie('modal_ad') !== null; var sr_device = 'unk'; if (Modernizr.phone) { sr_device = 'phone'; } else if (Modernizr.tablet) { sr_device = 'tablet'; } else if (Modernizr.laptop) { sr_device = 'laptop'; } else if (Modernizr.desktop) { sr_device = 'desktop'; } var sr_stathead_site = vjs_readCookie('stathead_site') || ''; var sr_stathead_type = vjs_readCookie('stathead_type') || ''; /* new gtag theres an extra script tag we need to add that I'm not sure how that work for multiple ID's for GA, docs say to ignore it??? https://developers.google.com/tag-platform/gtagjs/install here they have 3 but just use the last one? */ window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); /* OLD, could not find require within reference docs https://developers.google.com/tag-platform/gtagjs/reference ga('require', 'linkid', 'linkid.js'); ga('require', 'ecommerce', 'ecommerce.js'); ga('require', 'displayfeatures'); */ /* new, creates+sends+sets */ /* for fbref we want to allow for tracking of 'men' and 'women' pages for leagues, clubs and players, so we can track the most popular women players easily. In Footer.tt2 there is a place to set sr_gender. */ gtag('config', 'UA-1890630-5', { 'dimension1': sr_is_subscriber, 'dimension2': sr_is_user, 'dimension3': typeof(sr_gender) === 'string'? sr_gender: null, 'dimension4': sr_stathead_type, 'dimension5': sr_stathead_site, 'metric1': Modernizr.viewport_width }); /* all sr-sites together */ /* new, I believe linker works as a parameter here, although there didn\'t seem to be a simple "true" value to set besides this one https://developers.google.com/analytics/devguides/collection/gtagjs/cross-domain */ gtag('config', 'UA-1890630-9', { 'linker': { 'domains' : ['stathead.com'] }, 'dimension1': sr_site_id, 'dimension2': sr_is_subscriber, 'dimension3': sr_is_user, 'dimension4': sr_seen_modal, 'dimension5': sr_device, 'dimension6': 'null', 'metric1': Modernizr.viewport_width, 'dimension8': (typeof sr_test == 'undefined')?'no-test':( sr_test ? 'non-blocking':'blocking') }); /* new, cribbed from: https://www.axllent.org/docs/track-outbound-links-with-gtag-js/ */ function _gaLt(event) { /* if GA is blocked or not loaded, or not main|middle|touch click then don\'t track */ if (typeof gtag == "undefined" || (event.which != 1 && event.which != 2)) { return; } var el = event.srcElement || event.target; /* loop up the DOM tree through parent elements if clicked element is not a link (eg: an image inside a link) */ while ( el && (typeof el.tagName == "undefined" || el.tagName.toLowerCase() != "a" || !el.href) ) { el = el.parentNode; } /* if a link with valid href has been clicked */ if (el && el.href) { var link = el.href; /* only if it is an external link */ if (link.indexOf(location.host) == -1 && !link.match(/^javascript\:/i)) { /* is target set and _(self|parent|top) */ var target = el.target && !el.target.match(/^_(self|parent|top)/i) ? el.target : false; /* assume a target if (ctrl|shift|meta)-click */ if ( event.ctrlKey || event.shiftKey || event.metaKey || event.which == 2 ) { target = "_blank"; } /* tracker has not yet run */ var hbrun = false; /* hitBack to open link in same window after tracker */ var hitBack = function () { /* run once only */ if (hbrun) return; hbrun = true; window.location.href = link; }; if (target) { /* if target opens a new window then just track */ gtag("event", link, { event_category: "Outgoing Links", event_label: document.location.pathname + document.location.search, }); } else { /* Prevent standard click, track then open */ if (event.type == "mousedown") { var blockClick = function (event) { event.preventDefault(); /* remove click event after click */ el.removeEventListener("click", boundClick); }; /* bind the click event */ var boundClick = blockClick.bind(event); /* prevent the click */ el.addEventListener("click", boundClick); } event.preventDefault ? event.preventDefault() : (event.returnValue = !1); /* send event with callback */ gtag("event", link, { event_category: "Outgoing Links", event_label: document.location.pathname + document.location.search, event_callback: hitBack, }); /* Run hitBack again if GA takes longer than 1 second */ setTimeout(hitBack, 1000); } } } } var _w = window; /* Use "click" if touchscreen device, else "mousedown" */ var _gaLtEvt = "ontouchstart" in _w ? "click" : "mousedown"; /* Attach the event to all clicks in the document after page has loaded */ _w.addEventListener( "load", function () { document.body.addEventListener(_gaLtEvt, _gaLt, !1); }, !1 ); </script><!-- End Google Analytics -->
+
+
+<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/20503178.js"></script>
+<!-- End of HubSpot Embed Code -->
+
+</body>
+<!-- SR -->
+</html>
+
+
+
+

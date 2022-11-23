@@ -8,53 +8,45 @@ from pyquery import PyQuery as pq
 from sportsipy import utils
 from sportsipy.constants import AWAY, DRAW
 from sportsipy.fb.schedule import Schedule
+from ..utils import read_file
 
 
-NUM_GAMES_IN_SCHEDULE = 52
-
-
-def read_file(filename):
-    filepath = path.join(path.dirname(__file__), 'fb_stats', filename)
-    return open('%s' % filepath, 'r', encoding='utf8').read()
+NUM_GAMES_IN_SCHEDULE = 47
 
 
 def mock_pyquery(url):
-    class MockPQ:
-        def __init__(self, html_contents):
-            self.status_code = 200
-            self.html_contents = html_contents
-            self.text = html_contents
-
-    contents = read_file('tottenham-hotspur-2019-2020.html')
-    return MockPQ(contents)
+    if '361ca564' in url:
+        return read_file('tottenham-hotspur-2022-2023.html', 'fb', 'schedule')
+    return None
 
 
 class TestFBSchedule:
-    @patch('requests.get', side_effect=mock_pyquery)
+    @patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
     def setup_method(self, *args, **kwargs):
+        self.game_date = datetime(2022,8,14)
         self.results = {
             'competition': 'Premier League',
             'matchweek': 'Matchweek 2',
-            'day': 'Sat',
-            'date': '2019-08-17',
-            'time': '17:30',
-            'datetime': datetime(2019, 8, 17, 17, 30),
-            'venue': AWAY,
-            'result': DRAW,
+            'day': 'Sun',
+            'date': '2022-08-14',
+            'time': None,
+            'datetime': self.game_date,
+            'venue': 'Away',
+            'result': 'Draw',
             'goals_for': 2,
             'goals_against': 2,
             'shootout_scored': None,
             'shootout_against': None,
-            'opponent': 'Manchester City',
-            'opponent_id': 'b8fd03ef',
-            'expected_goals': 0.3,
-            'expected_goals_against': 2.9,
-            'attendance': 54503,
+            'opponent': 'Chelsea',
+            'opponent_id': 'cff3d9bb',
+            'expected_goals': 1.0,
+            'expected_goals_against': 1.6,
+            'attendance': 39946,
             'captain': 'Hugo Lloris',
             'captain_id': '8f62b6ee',
-            'formation': '4-2-3-1',
-            'referee': 'Michael Oliver',
-            'match_report': 'a4ba771e',
+            'formation': '3-4-3',
+            'referee': 'Anthony Taylor',
+            'match_report': '01e57bf5',
             'notes': ''
         }
 
@@ -70,16 +62,17 @@ class TestFBSchedule:
             assert getattr(match_two, attribute) == value
 
     def test_fb_schedule_returns_requested_match_from_date(self):
-        match_two = self.schedule(datetime(2019, 8, 17))
+        match_two = self.schedule(self.game_date)
 
         for attribute, value in self.results.items():
             assert getattr(match_two, attribute) == value
 
     def test_no_games_for_date_raises_value_error(self):
         with pytest.raises(ValueError):
-            self.schedule(datetime(2020, 7, 1))
+            self.schedule(datetime(2022, 7, 1))
 
-    def test_empty_page_return_no_games(self):
+    @patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    def test_empty_page_return_no_games(self, *args, **kwargs):
         flexmock(utils) \
             .should_receive('_no_data_found') \
             .once()
@@ -127,62 +120,57 @@ class TestFBSchedule:
         assert not report
 
     def test_fb_schedule_string_representation(self):
-        expected = """2019-08-10 - Aston Villa
-2019-08-17 - Manchester City
-2019-08-25 - Newcastle Utd
-2019-09-01 - Arsenal
-2019-09-14 - Crystal Palace
-2019-09-18 - gr Olympiacos
-2019-09-21 - Leicester City
-2019-09-24 - Colchester Utd
-2019-09-28 - Southampton
-2019-10-01 - de Bayern Munich
-2019-10-05 - Brighton
-2019-10-19 - Watford
-2019-10-22 - rs Red Star
-2019-10-27 - Liverpool
-2019-11-03 - Everton
-2019-11-06 - rs Red Star
-2019-11-09 - Sheffield Utd
-2019-11-23 - West Ham
-2019-11-26 - gr Olympiacos
-2019-11-30 - Bournemouth
-2019-12-04 - Manchester Utd
-2019-12-07 - Burnley
-2019-12-11 - de Bayern Munich
-2019-12-15 - Wolves
-2019-12-22 - Chelsea
-2019-12-26 - Brighton
-2019-12-28 - Norwich City
-2020-01-01 - Southampton
-2020-01-05 - Middlesbrough
-2020-01-11 - Liverpool
-2020-01-14 - Middlesbrough
-2020-01-18 - Watford
-2020-01-22 - Norwich City
-2020-01-25 - Southampton
-2020-02-02 - Manchester City
-2020-02-05 - Southampton
-2020-02-16 - Aston Villa
-2020-02-19 - de RB Leipzig
-2020-02-22 - Chelsea
-2020-03-01 - Wolves
-2020-03-04 - Norwich City
-2020-03-07 - Burnley
-2020-03-10 - de RB Leipzig
-2020-06-19 - Manchester Utd
-2020-06-23 - West Ham
-2020-07-02 - Sheffield Utd
-2020-07-06 - Everton
-2020-07-09 - Bournemouth
-2020-07-12 - Arsenal
-2020-07-15 - Newcastle Utd
-2020-07-19 - Leicester City
-2020-07-26 - Crystal Palace"""
+        expected = """2022-08-06 - Southampton
+2022-08-14 - Chelsea
+2022-08-20 - Wolves
+2022-08-28 - Nott'ham Forest
+2022-08-31 - West Ham
+2022-09-03 - Fulham
+2022-09-07 - fr Marseille
+2022-09-10 - Manchester City
+2022-09-13 - pt Sporting CP
+2022-09-17 - Leicester City
+2022-10-01 - Arsenal
+2022-10-04 - de Eint Frankfurt
+2022-10-08 - Brighton
+2022-10-12 - de Eint Frankfurt
+2022-10-15 - Everton
+2022-10-19 - Manchester Utd
+2022-10-23 - Newcastle Utd
+2022-10-26 - pt Sporting CP
+2022-10-29 - Bournemouth
+2022-11-01 - fr Marseille
+2022-11-06 - Liverpool
+2022-11-09 - Nott'ham Forest
+2022-11-12 - Leeds United
+2022-12-26 - Brentford
+2023-01-01 - Aston Villa
+2023-01-04 - Crystal Palace
+2023-01-15 - Arsenal
+2023-01-23 - Fulham
+2023-02-04 - Manchester City
+2023-02-11 - Leicester City
+2023-02-14 - it Milan
+2023-02-18 - West Ham
+2023-02-25 - Chelsea
+2023-03-04 - Wolves
+2023-03-08 - it Milan
+2023-03-11 - Nott'ham Forest
+2023-03-18 - Southampton
+2023-04-01 - Everton
+2023-04-08 - Brighton
+2023-04-15 - Bournemouth
+2023-04-22 - Newcastle Utd
+2023-04-25 - Manchester Utd
+2023-04-29 - Liverpool
+2023-05-06 - Crystal Palace
+2023-05-13 - Aston Villa
+2023-05-20 - Brentford
+2023-05-28 - Leeds United"""
 
         assert self.schedule.__repr__() == expected
 
     def test_fb_game_string_representation(self):
         game = self.schedule[0]
 
-        assert game.__repr__() == '2019-08-10 - Aston Villa'
+        assert game.__repr__() == '2022-08-06 - Southampton'

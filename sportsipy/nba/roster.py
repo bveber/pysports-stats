@@ -330,7 +330,7 @@ class Player(AbstractPlayer):
         all_stats_dict = {}
 
         for table_id in ['totals', 'per_poss', 'advanced', 'shooting',
-                         'advanced_pbp', 'all_salaries']:
+                         'advanced_pbp', 'all_salaries', 'pbp']:
             table_items = utils._get_stats_table(player_info,
                                                  'table#%s' % table_id)
             career_items = utils._get_stats_table(player_info,
@@ -1395,8 +1395,11 @@ class Roster:
         """
         Return the string representation of the class.
         """
-        players = [f'{player.name} ({player.player_id})'.strip()
-                   for player in self._players]
+        if self._slim:
+            players = [name for id, name in self._players.items()]
+        else:
+            players = [f'{player.name} ({player.player_id})'.strip()
+                    for player in self._players]
         return '\n'.join(players)
 
     def __repr__(self):
