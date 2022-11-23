@@ -4,38 +4,25 @@ import pandas as pd
 import pytest
 from datetime import datetime
 from flexmock import flexmock
-from sportsipy import utils
-from sportsipy.ncaab.roster import Player, Roster
-from sportsipy.ncaab.teams import Team
+from sports import utils
+from sports.ncaab.roster import Player, Roster
+from sports.ncaab.teams import Team
+from ..utils import read_file
 
 
-YEAR = 2018
-
-
-def read_file(filename):
-    filepath = os.path.join(os.path.dirname(__file__), 'ncaab', filename)
-    return open('%s.html' % filepath, 'r', encoding='utf8').read()
+YEAR = 2022
 
 
 def mock_pyquery(url):
-    class MockPQ:
-        def __init__(self, html_contents, status=200):
-            self.url = url
-            self.reason = 'Bad URL'  # Used when throwing HTTPErrors
-            self.headers = {}  # Used when throwing HTTPErrors
-            self.status_code = status
-            self.html_contents = html_contents
-            self.text = html_contents
-
     if 'purdue' in url:
-        return MockPQ(read_file('2018'))
-    if 'isaac-haas-1' in url:
-        return MockPQ(read_file('isaac-haas-1'))
-    if 'vince-edwards-2' in url:
-        return MockPQ(read_file('vince-edwards-2'))
+        return read_file('2022.html', 'ncaab', 'roster')
+    if 'jaden-ivey-1' in url:
+        return read_file('jaden-ivey-1.html', 'ncaab', 'roster')
+    if 'zach-edey-1' in url:
+        return read_file('zach-edey-1.html', 'ncaab', 'roster')
     if 'bad' in url:
-        return MockPQ(None, 404)
-    return MockPQ(read_file('carsen-edwards-1'))
+        return None
+    return None
 
 
 def mock_request(url):
@@ -52,119 +39,117 @@ def mock_request(url):
 
 
 class TestNCAABPlayer:
-    @mock.patch('requests.get', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def setup_method(self, *args, **kwargs):
         self.results_career = {
-            'assist_percentage': 17.3,
-            'assists': 166,
-            'block_percentage': 0.6,
-            'blocks': 11,
-            'box_plus_minus': 6.1,
+            'assist_percentage': 18.2,
+            'assists': 153,
+            'block_percentage': 2.6,
+            'blocks': 36,
+            'box_plus_minus': 7.1,
             'conference': '',
-            'defensive_box_plus_minus': 1.9,
-            'defensive_rebound_percentage': 11.8,
-            'defensive_rebounds': 206,
-            'defensive_win_shares': 3.5,
-            'effective_field_goal_percentage': 0.515,
-            'field_goal_attempts': 835,
-            'field_goal_percentage': 0.428,
-            'field_goals': 357,
-            'free_throw_attempt_rate': 0.279,
-            'free_throw_attempts': 233,
-            'free_throw_percentage': 0.798,
-            'free_throws': 186,
-            'games_played': 72,
-            'games_started': 58,
-            'height': '6-1',
-            'minutes_played': 1905,
-            'name': 'Carsen Edwards',
-            'offensive_box_plus_minus': 4.2,
-            'offensive_rebound_percentage': 1.8,
-            'offensive_rebounds': 27,
-            'offensive_win_shares': 4.4,
-            'personal_fouls': 133,
-            'player_efficiency_rating': 19.9,
-            'points': 1046,
-            'points_produced': 961,
+            'defensive_box_plus_minus': 1.8,
+            'defensive_rebound_percentage': 14.0,
+            'defensive_rebounds': 209,
+            'defensive_win_shares': 2.2,
+            'effective_field_goal_percentage': 0.507,
+            'field_goal_attempts': 664,
+            'field_goal_percentage': 0.44,
+            'field_goals': 292,
+            'free_throw_attempt_rate': 0.422,
+            'free_throw_attempts': 280,
+            'free_throw_percentage': 0.739,
+            'free_throws': 207,
+            'games_played': 59,
+            'games_started': 46,
+            'height': 'Jaden Ivey',
+            'minutes_played': 1689,
+            'offensive_box_plus_minus': 5.3,
+            'offensive_rebound_percentage': 3.1,
+            'offensive_rebounds': 43,
+            'offensive_win_shares': 4.8,
+            'personal_fouls': 102,
+            'player_efficiency_rating': 21.1,
+            'player_id': 'jaden-ivey-1',
+            'points': 880,
+            'points_produced': 830,
             'position': 'Guard',
-            'season': 'Career',
-            'steal_percentage': 2.4,
-            'steals': 78,
+            'steal_percentage': 1.8,
+            'steals': 50,
             'team_abbreviation': 'purdue',
-            'three_point_attempt_rate': 0.459,
-            'three_point_attempts': 383,
-            'three_point_percentage': 0.381,
-            'three_pointers': 146,
-            'total_rebound_percentage': 7.2,
-            'total_rebounds': 233,
-            'true_shooting_percentage': 0.553,
-            'turnover_percentage': 11.9,
-            'turnovers': 128,
-            'two_point_attempts': 452,
-            'two_point_percentage': 0.467,
-            'two_pointers': 211,
-            'usage_percentage': 28.9,
-            'weight': 190,
-            'win_shares': 8.0,
-            'win_shares_per_40_minutes': 0.167
+            'three_point_attempt_rate': 0.416,
+            'three_point_attempts': 276,
+            'three_point_percentage': 0.322,
+            'three_pointers': 89,
+            'total_rebound_percentage': 8.8,
+            'total_rebounds': 252,
+            'true_shooting_percentage': 0.552,
+            'turnover_percentage': 13.6,
+            'turnovers': 125,
+            'two_point_attempts': 388,
+            'two_point_percentage': 0.523,
+            'two_pointers': 203,
+            'usage_percentage': 28.1,
+            'weight': 200,
+            'win_shares': 7.0,
+            'win_shares_per_40_minutes': 0.166
         }
 
-        self.results_2018 = {
-            'assist_percentage': 19.5,
-            'assists': 104,
-            'block_percentage': 0.8,
-            'blocks': 8,
-            'box_plus_minus': 9.0,
+        self.results_year = {
+            'assist_percentage': 19.2,
+            'assists': 110,
+            'block_percentage': 2.0,
+            'blocks': 20,
+            'box_plus_minus': 7.2,
             'conference': 'big-ten',
-            'defensive_box_plus_minus': 1.5,
-            'defensive_rebound_percentage': 12.9,
-            'defensive_rebounds': 129,
-            'defensive_win_shares': 2.0,
-            'effective_field_goal_percentage': 0.555,
-            'field_goal_attempts': 500,
-            'field_goal_percentage': 0.458,
-            'field_goals': 229,
-            'free_throw_attempt_rate': 0.318,
-            'free_throw_attempts': 159,
-            'free_throw_percentage': 0.824,
-            'free_throws': 131,
-            'games_played': 37,
-            'games_started': 37,
-            'height': '6-1',
-            'minutes_played': 1092,
-            'name': 'Carsen Edwards',
-            'offensive_box_plus_minus': 7.6,
-            'offensive_rebound_percentage': 1.5,
-            'offensive_rebounds': 13,
-            'offensive_win_shares': 4.0,
-            'personal_fouls': 65,
-            'player_efficiency_rating': 25.4,
-            'points': 686,
-            'points_produced': 626,
+            'defensive_box_plus_minus': 1.6,
+            'defensive_rebound_percentage': 15.0,
+            'defensive_rebounds': 152,
+            'defensive_win_shares': 1.4,
+            'effective_field_goal_percentage': 0.533,
+            'field_goal_attempts': 441,
+            'field_goal_percentage': 0.46,
+            'field_goals': 203,
+            'free_throw_attempt_rate': 0.469,
+            'free_throw_attempts': 207,
+            'free_throw_percentage': 0.744,
+            'free_throws': 154,
+            'games_played': 36,
+            'games_started': 34,
+            'height': 'Jaden Ivey',
+            'minutes_played': 1132,
+            'offensive_box_plus_minus': 5.7,
+            'offensive_rebound_percentage': 2.7,
+            'offensive_rebounds': 24,
+            'offensive_win_shares': 3.7,
+            'personal_fouls': 63,
+            'player_efficiency_rating': 22.5,
+            'player_id': 'jaden-ivey-1',
+            'points': 624,
+            'points_produced': 586,
             'position': 'Guard',
-            'season': '2017-18',
-            'steal_percentage': 2.3,
-            'steals': 42,
+            'steal_percentage': 1.7,
+            'steals': 33,
             'team_abbreviation': 'purdue',
-            'three_point_attempt_rate': 0.478,
-            'three_point_attempts': 239,
-            'three_point_percentage': 0.406,
-            'three_pointers': 97,
-            'total_rebound_percentage': 7.7,
-            'total_rebounds': 142,
-            'true_shooting_percentage': 0.596,
-            'turnover_percentage': 10.0,
-            'turnovers': 64,
-            'two_point_attempts': 261,
-            'two_point_percentage': 0.506,
-            'two_pointers': 132,
-            'usage_percentage': 30.5,
-            'weight': 190,
-            'win_shares': 6.1,
-            'win_shares_per_40_minutes': 0.223
+            'three_point_attempt_rate': 0.406,
+            'three_point_attempts': 179,
+            'three_point_percentage': 0.358,
+            'three_pointers': 64,
+            'total_rebound_percentage': 9.3,
+            'total_rebounds': 176,
+            'true_shooting_percentage': 0.579,
+            'turnover_percentage': 14.8,
+            'turnovers': 94,
+            'two_point_attempts': 262,
+            'two_point_percentage': 0.531,
+            'two_pointers': 139,
+            'usage_percentage': 28.7,
+            'weight': 200,
+            'win_shares': 5.1,
+            'win_shares_per_40_minutes': 0.181
         }
 
-        self.player = Player('carsen-edwards-1')
+        self.player = Player('jaden-ivey-1')
 
     def test_ncaab_player_returns_requested_player_career_stats(self):
         # Request the career stats
@@ -174,179 +159,180 @@ class TestNCAABPlayer:
             assert getattr(player, attribute) == value
 
     def test_ncaab_player_returns_requested_player_season_stats(self):
-        # Request the 2017-18 stats
-        player = self.player('2017-18')
+        # Request the 2021-22 stats
+        player = self.player('2021-22')
 
-        for attribute, value in self.results_2018.items():
+        for attribute, value in self.results_year.items():
             assert getattr(player, attribute) == value
 
-    def test_correct_initial_index_found(self):
-        seasons = ['2017-18', 'Career', '2016-17']
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
+    def test_correct_initial_index_found(self, *args):
+        seasons = ['2020-21', '2021-22', 'Career']
         mock_season = mock.PropertyMock(return_value=seasons)
-        player = Player('carsen-edwards-1')
+        player = Player('jaden-ivey-1')
         type(player)._season = mock_season
 
         result = player._find_initial_index()
 
-        assert player._index == 1
+        assert player._index == 2
 
     def test_dataframe_returns_dataframe(self):
         dataframe = [
-            {'assist_percentage': 17.3,
-             'assists': 166,
-             'block_percentage': 0.6,
-             'blocks': 11,
-             'box_plus_minus': 6.1,
-             'conference': '',
-             'defensive_box_plus_minus': 1.9,
-             'defensive_rebound_percentage': 11.8,
-             'defensive_rebounds': 206,
-             'defensive_win_shares': 3.5,
-             'effective_field_goal_percentage': 0.515,
-             'field_goal_attempts': 835,
-             'field_goal_percentage': 0.428,
-             'field_goals': 357,
-             'free_throw_attempt_rate': 0.279,
-             'free_throw_attempts': 233,
-             'free_throw_percentage': 0.798,
-             'free_throws': 186,
-             'games_played': 72,
-             'games_started': 58,
-             'height': '6-1',
-             'minutes_played': 1905,
-             'offensive_box_plus_minus': 4.2,
-             'offensive_rebound_percentage': 1.8,
-             'offensive_rebounds': 27,
-             'offensive_win_shares': 4.4,
-             'personal_fouls': 133,
-             'player_efficiency_rating': 19.9,
-             'player_id': 'carsen-edwards-1',
-             'points': 1046,
-             'points_produced': 961,
-             'position': 'Guard',
-             'steal_percentage': 2.4,
-             'steals': 78,
-             'team_abbreviation': 'purdue',
-             'three_point_attempt_rate': 0.459,
-             'three_point_attempts': 383,
-             'three_point_percentage': 0.381,
-             'three_pointers': 146,
-             'total_rebound_percentage': 7.2,
-             'total_rebounds': 233,
-             'true_shooting_percentage': 0.553,
-             'turnover_percentage': 11.9,
-             'turnovers': 128,
-             'two_point_attempts': 452,
-             'two_point_percentage': 0.467,
-             'two_pointers': 211,
-             'usage_percentage': 28.9,
-             'weight': 190,
-             'win_shares': 8.0,
-             'win_shares_per_40_minutes': 0.167},
-            {'assist_percentage': 14.3,
-             'assists': 62,
-             'block_percentage': 0.4,
-             'blocks': 3,
-             'box_plus_minus': 2.1,
-             'conference': 'big-ten',
-             'defensive_box_plus_minus': 2.4,
-             'defensive_rebound_percentage': 10.4,
-             'defensive_rebounds': 77,
-             'defensive_win_shares': 1.5,
-             'effective_field_goal_percentage': 0.455,
-             'field_goal_attempts': 335,
-             'field_goal_percentage': 0.382,
-             'field_goals': 128,
-             'free_throw_attempt_rate': 0.221,
-             'free_throw_attempts': 74,
-             'free_throw_percentage': 0.743,
-             'free_throws': 55,
-             'games_played': 35,
-             'games_started': 21,
-             'height': '6-1',
-             'minutes_played': 813,
-             'offensive_box_plus_minus': -0.3,
-             'offensive_rebound_percentage': 2.2,
-             'offensive_rebounds': 14,
-             'offensive_win_shares': 0.4,
-             'personal_fouls': 68,
-             'player_efficiency_rating': 12.5,
-             'player_id': 'carsen-edwards-1',
-             'points': 360,
-             'points_produced': 335,
-             'position': 'Guard',
-             'steal_percentage': 2.5,
-             'steals': 36,
-             'team_abbreviation': 'purdue',
-             'three_point_attempt_rate': 0.43,
-             'three_point_attempts': 144,
-             'three_point_percentage': 0.34,
-             'three_pointers': 49,
-             'total_rebound_percentage': 6.6,
-             'total_rebounds': 91,
-             'true_shooting_percentage': 0.486,
-             'turnover_percentage': 14.7,
-             'turnovers': 64,
-             'two_point_attempts': 191,
-             'two_point_percentage': 0.414,
-             'two_pointers': 79,
-             'usage_percentage': 26.8,
-             'weight': 190,
-             'win_shares': 1.9,
-             'win_shares_per_40_minutes': 0.092},
-            {'assist_percentage': 19.5,
-             'assists': 104,
-             'block_percentage': 0.8,
-             'blocks': 8,
-             'box_plus_minus': 9.0,
-             'conference': 'big-ten',
-             'defensive_box_plus_minus': 1.5,
-             'defensive_rebound_percentage': 12.9,
-             'defensive_rebounds': 129,
-             'defensive_win_shares': 2.0,
-             'effective_field_goal_percentage': 0.555,
-             'field_goal_attempts': 500,
-             'field_goal_percentage': 0.458,
-             'field_goals': 229,
-             'free_throw_attempt_rate': 0.318,
-             'free_throw_attempts': 159,
-             'free_throw_percentage': 0.824,
-             'free_throws': 131,
-             'games_played': 37,
-             'games_started': 37,
-             'height': '6-1',
-             'minutes_played': 1092,
-             'offensive_box_plus_minus': 7.6,
-             'offensive_rebound_percentage': 1.5,
-             'offensive_rebounds': 13,
-             'offensive_win_shares': 4.0,
-             'personal_fouls': 65,
-             'player_efficiency_rating': 25.4,
-             'player_id': 'carsen-edwards-1',
-             'points': 686,
-             'points_produced': 626,
-             'position': 'Guard',
-             'steal_percentage': 2.3,
-             'steals': 42,
-             'team_abbreviation': 'purdue',
-             'three_point_attempt_rate': 0.478,
-             'three_point_attempts': 239,
-             'three_point_percentage': 0.406,
-             'three_pointers': 97,
-             'total_rebound_percentage': 7.7,
-             'total_rebounds': 142,
-             'true_shooting_percentage': 0.596,
-             'turnover_percentage': 10.0,
-             'turnovers': 64,
-             'two_point_attempts': 261,
-             'two_point_percentage': 0.506,
-             'two_pointers': 132,
-             'usage_percentage': 30.5,
-             'weight': 190,
-             'win_shares': 6.1,
-             'win_shares_per_40_minutes': 0.223}
+            {'assist_percentage': 16.4,
+            'assists': 43,
+            'block_percentage': 3.8,
+            'blocks': 16,
+            'box_plus_minus': 6.7,
+            'conference': 'big-ten',
+            'defensive_box_plus_minus': 2.3,
+            'defensive_rebound_percentage': 11.8,
+            'defensive_rebounds': 57,
+            'defensive_win_shares': 0.8,
+            'effective_field_goal_percentage': 0.455,
+            'field_goal_attempts': 223,
+            'field_goal_percentage': 0.399,
+            'field_goals': 89,
+            'free_throw_attempt_rate': 0.327,
+            'free_throw_attempts': 73,
+            'free_throw_percentage': 0.726,
+            'free_throws': 53,
+            'games_played': 23,
+            'games_started': 12,
+            'height': 'Jaden Ivey',
+            'minutes_played': 557,
+            'offensive_box_plus_minus': 4.4,
+            'offensive_rebound_percentage': 4.0,
+            'offensive_rebounds': 19,
+            'offensive_win_shares': 1.1,
+            'personal_fouls': 39,
+            'player_efficiency_rating': 18.3,
+            'player_id': 'jaden-ivey-1',
+            'points': 256,
+            'points_produced': 243,
+            'position': 'Guard',
+            'steal_percentage': 1.8,
+            'steals': 17,
+            'team_abbreviation': 'purdue',
+            'three_point_attempt_rate': 0.435,
+            'three_point_attempts': 97,
+            'three_point_percentage': 0.258,
+            'three_pointers': 25,
+            'total_rebound_percentage': 8.0,
+            'total_rebounds': 76,
+            'true_shooting_percentage': 0.497,
+            'turnover_percentage': 10.7,
+            'turnovers': 31,
+            'two_point_attempts': 126,
+            'two_point_percentage': 0.508,
+            'two_pointers': 64,
+            'usage_percentage': 26.8,
+            'weight': 200,
+            'win_shares': 1.9,
+            'win_shares_per_40_minutes': 0.136},
+            {'assist_percentage': 19.2,
+            'assists': 110,
+            'block_percentage': 2.0,
+            'blocks': 20,
+            'box_plus_minus': 7.2,
+            'conference': 'big-ten',
+            'defensive_box_plus_minus': 1.6,
+            'defensive_rebound_percentage': 15.0,
+            'defensive_rebounds': 152,
+            'defensive_win_shares': 1.4,
+            'effective_field_goal_percentage': 0.533,
+            'field_goal_attempts': 441,
+            'field_goal_percentage': 0.46,
+            'field_goals': 203,
+            'free_throw_attempt_rate': 0.469,
+            'free_throw_attempts': 207,
+            'free_throw_percentage': 0.744,
+            'free_throws': 154,
+            'games_played': 36,
+            'games_started': 34,
+            'height': 'Jaden Ivey',
+            'minutes_played': 1132,
+            'offensive_box_plus_minus': 5.7,
+            'offensive_rebound_percentage': 2.7,
+            'offensive_rebounds': 24,
+            'offensive_win_shares': 3.7,
+            'personal_fouls': 63,
+            'player_efficiency_rating': 22.5,
+            'player_id': 'jaden-ivey-1',
+            'points': 624,
+            'points_produced': 586,
+            'position': 'Guard',
+            'steal_percentage': 1.7,
+            'steals': 33,
+            'team_abbreviation': 'purdue',
+            'three_point_attempt_rate': 0.406,
+            'three_point_attempts': 179,
+            'three_point_percentage': 0.358,
+            'three_pointers': 64,
+            'total_rebound_percentage': 9.3,
+            'total_rebounds': 176,
+            'true_shooting_percentage': 0.579,
+            'turnover_percentage': 14.8,
+            'turnovers': 94,
+            'two_point_attempts': 262,
+            'two_point_percentage': 0.531,
+            'two_pointers': 139,
+            'usage_percentage': 28.7,
+            'weight': 200,
+            'win_shares': 5.1,
+            'win_shares_per_40_minutes': 0.181},
+            {'assist_percentage': 18.2,
+            'assists': 153,
+            'block_percentage': 2.6,
+            'blocks': 36,
+            'box_plus_minus': 7.1,
+            'conference': '',
+            'defensive_box_plus_minus': 1.8,
+            'defensive_rebound_percentage': 14.0,
+            'defensive_rebounds': 209,
+            'defensive_win_shares': 2.2,
+            'effective_field_goal_percentage': 0.507,
+            'field_goal_attempts': 664,
+            'field_goal_percentage': 0.44,
+            'field_goals': 292,
+            'free_throw_attempt_rate': 0.422,
+            'free_throw_attempts': 280,
+            'free_throw_percentage': 0.739,
+            'free_throws': 207,
+            'games_played': 59,
+            'games_started': 46,
+            'height': 'Jaden Ivey',
+            'minutes_played': 1689,
+            'offensive_box_plus_minus': 5.3,
+            'offensive_rebound_percentage': 3.1,
+            'offensive_rebounds': 43,
+            'offensive_win_shares': 4.8,
+            'personal_fouls': 102,
+            'player_efficiency_rating': 21.1,
+            'player_id': 'jaden-ivey-1',
+            'points': 880,
+            'points_produced': 830,
+            'position': 'Guard',
+            'steal_percentage': 1.8,
+            'steals': 50,
+            'team_abbreviation': 'purdue',
+            'three_point_attempt_rate': 0.416,
+            'three_point_attempts': 276,
+            'three_point_percentage': 0.322,
+            'three_pointers': 89,
+            'total_rebound_percentage': 8.8,
+            'total_rebounds': 252,
+            'true_shooting_percentage': 0.552,
+            'turnover_percentage': 13.6,
+            'turnovers': 125,
+            'two_point_attempts': 388,
+            'two_point_percentage': 0.523,
+            'two_pointers': 203,
+            'usage_percentage': 28.1,
+            'weight': 200,
+            'win_shares': 7.0,
+            'win_shares_per_40_minutes': 0.166}
         ]
-        indices = ['Career', '2016-17', '2017-18']
+        indices = ['2020-21', '2021-22', 'Career']
 
         df = pd.DataFrame(dataframe, index=indices)
         player = self.player('')
@@ -364,87 +350,93 @@ class TestNCAABPlayer:
         # Request the career stats
         player = self.player('')
 
-        assert player.__repr__() == 'Carsen Edwards (carsen-edwards-1)'
+        assert player.__repr__() == 'Jaden Ivey (jaden-ivey-1)'
 
 
 class TestNCAABRoster:
-    @mock.patch('requests.get', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_roster_class_pulls_all_player_stats(self, *args, **kwargs):
         flexmock(utils) \
             .should_receive('_find_year_for_season') \
-            .and_return('2018')
+            .and_return(YEAR)
         roster = Roster('PURDUE')
 
-        assert len(roster.players) == 3
+        assert len(roster.players) == 14
 
-        for player in roster.players:
-            assert player.name in ['Carsen Edwards', 'Isaac Haas',
-                                   'Vince Edwards']
+        roster_players = [player.name for player in roster.players]
+        for player in ['Jaden Ivey', 'Zach Edey']:
+            assert player in roster_players
 
-    @mock.patch('requests.get', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_bad_url_raises_value_error(self, *args, **kwargs):
         with pytest.raises(ValueError):
             roster = Roster('BAD')
 
-    @mock.patch('requests.get', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_roster_from_team_class(self, *args, **kwargs):
         flexmock(Team) \
             .should_receive('_parse_team_data') \
             .and_return(None)
-        team = Team(None, 1, '2018')
+        team = Team(None, 1, YEAR)
         mock_abbreviation = mock.PropertyMock(return_value='PURDUE')
         type(team)._abbreviation = mock_abbreviation
 
-        assert len(team.roster.players) == 3
+        assert len(team.roster.players) == 14
 
-        for player in team.roster.players:
-            assert player.name in ['Carsen Edwards', 'Isaac Haas',
-                                   'Vince Edwards']
+        roster_players = [player.name for player in team.roster.players]
+        for player in ['Jaden Ivey', 'Zach Edey']:
+            assert player in roster_players
         type(team)._abbreviation = None
 
-    @mock.patch('requests.get', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_roster_class_with_slim_parameter(self, *args, **kwargs):
         flexmock(utils) \
             .should_receive('_find_year_for_season') \
-            .and_return('2018')
+            .and_return(YEAR)
         roster = Roster('PURDUE', slim=True)
 
-        assert len(roster.players) == 3
+        assert len(roster.players) == 14
         assert roster.players == {
-            'carsen-edwards-1': 'Carsen Edwards',
-            'isaac-haas-1': 'Isaac Haas',
-            'vince-edwards-2': 'Vince Edwards'
-        }
+                'jaden-ivey-1': 'Jaden Ivey',
+                'zach-edey-1': 'Zach Edey',
+                'trevion-williams-1': 'Trevion Williams',
+                'sasha-stefanovic-1': 'Sasha Stefanovic',
+                'eric-hunterjr-1': 'Eric Hunter',
+                'mason-gillis-1': 'Mason Gillis',
+                'isaiah-thompson-1': 'Isaiah Thompson',
+                'caleb-furst-1': 'Caleb Furst',
+                'brandon-newman-2': 'Brandon Newman',
+                'ethan-morton-1': 'Ethan Morton',
+                'carson-barrett-1': 'Carson Barrett',
+                'matt-frost-1': 'Matt Frost',
+                'chase-martin-1': 'Chase Martin',
+                'jared-wulbrun-1': 'Jared Wulbrun'
+            }
 
-    @mock.patch('requests.head', side_effect=mock_request)
-    @mock.patch('requests.get', side_effect=mock_pyquery)
-    def test_invalid_default_year_reverts_to_previous_year(self,
-                                                           *args,
-                                                           **kwargs):
-        flexmock(utils) \
-            .should_receive('_find_year_for_season') \
-            .and_return(2019)
-
-        roster = Roster('PURDUE')
-
-        assert len(roster.players) == 3
-
-        for player in roster.players:
-            assert player.name in ['Carsen Edwards', 'Isaac Haas',
-                                   'Vince Edwards']
-
-    @mock.patch('requests.get', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_roster_class_string_representation(self, *args, **kwargs):
-        expected = """Carsen Edwards (carsen-edwards-1)
-Isaac Haas (isaac-haas-1)
-Vince Edwards (vince-edwards-2)"""
+        expected = """Jaden Ivey (jaden-ivey-1)
+Zach Edey (zach-edey-1)
+None (trevion-williams-1)
+None (sasha-stefanovic-1)
+None (eric-hunterjr-1)
+None (mason-gillis-1)
+None (isaiah-thompson-1)
+None (caleb-furst-1)
+None (brandon-newman-2)
+None (ethan-morton-1)
+None (carson-barrett-1)
+None (matt-frost-1)
+None (chase-martin-1)
+None (jared-wulbrun-1)"""
 
         flexmock(utils) \
             .should_receive('_find_year_for_season') \
-            .and_return('2018')
+            .and_return(YEAR)
         roster = Roster('PURDUE')
 
         assert roster.__repr__() == expected
 
-    def test_coach(self):
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
+    def test_coach(self, *args, **kwargs):
         assert "Matt Painter" == Roster('PURDUE', year=YEAR).coach

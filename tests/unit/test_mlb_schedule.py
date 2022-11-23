@@ -2,12 +2,12 @@ import pytest
 from datetime import datetime
 from flexmock import flexmock
 from mock import PropertyMock
-from sportsipy.constants import (AWAY,
+from sports.constants import (AWAY,
                                  HOME,
                                  LOSS,
                                  WIN)
-from sportsipy.mlb.constants import DAY, NIGHT
-from sportsipy.mlb.schedule import Game, Schedule
+from sports.mlb.constants import DAY, NIGHT
+from sports.mlb.schedule import Game, Schedule
 
 
 class TestMLBSchedule:

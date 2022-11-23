@@ -1,0 +1,2028 @@
+
+<!DOCTYPE html>
+<html data-version="klecko-" data-root="/home/cbb/build" lang="en" class="no-js" >
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0" />
+    <link rel="dns-prefetch" href="https://cdn.ssref.net/req/202211031" />
+    <!-- Quantcast Choice. Consent Manager Tag v2.0 (for TCF 2.0) -->
+<script type="text/javascript" async=true>
+    (function() {
+	var host = window.location.hostname;
+	var element = document.createElement('script');
+	var firstScript = document.getElementsByTagName('script')[0];
+	var url = 'https://cmp.quantcast.com'
+	    .concat('/choice/', 'XwNYEpNeFfhfr', '/', host, 
+		    '/choice.js?tag_version=V2');
+	var uspTries = 0;
+	var uspTriesLimit = 3;
+	element.async = true;
+	element.type = 'text/javascript';
+	element.src = url;
+	
+	firstScript.parentNode.insertBefore(element, firstScript);
+	
+	function makeStub() {
+	    var TCF_LOCATOR_NAME = '__tcfapiLocator';
+	    var queue = [];
+	    var win = window;
+	    var cmpFrame;
+	    
+	    function addFrame() {
+		var doc = win.document;
+		var otherCMP = !!(win.frames[TCF_LOCATOR_NAME]);
+		
+		if (!otherCMP) {
+		    if (doc.body) {
+			var iframe = doc.createElement('iframe');
+			
+			iframe.style.cssText = 'display:none';
+			iframe.name = TCF_LOCATOR_NAME;
+			doc.body.appendChild(iframe);
+		    } else {
+			setTimeout(addFrame, 5);
+		    }
+		}
+		return !otherCMP;
+	    }
+	    
+	    function tcfAPIHandler() {
+		var gdprApplies;
+		var args = arguments;
+		
+		if (!args.length) {
+		    return queue;
+		} else if (args[0] === 'setGdprApplies') {
+		    if (
+			args.length > 3 &&
+			    args[2] === 2 &&
+			    typeof args[3] === 'boolean'
+		    ) {
+			gdprApplies = args[3];
+			if (typeof args[2] === 'function') {
+			    args[2]('set', true);
+			}
+		    }
+		} else if (args[0] === 'ping') {
+		    var retr = {
+			gdprApplies: gdprApplies,
+			cmpLoaded: false,
+			cmpStatus: 'stub'
+		    };
+		    
+		    if (typeof args[2] === 'function') {
+			args[2](retr);
+		    }
+		} else {
+		    if(args[0] === 'init' && typeof args[3] === 'object') {
+			args[3] = Object.assign(args[3], { tag_version: 'V2' });
+		    }
+		    queue.push(args);
+		}
+	    }
+	    
+	    function postMessageEventHandler(event) {
+		var msgIsString = typeof event.data === 'string';
+		var json = {};
+		
+		try {
+		    if (msgIsString) {
+			json = JSON.parse(event.data);
+		    } else {
+			json = event.data;
+		    }
+		} catch (ignore) {}
+		
+		var payload = json.__tcfapiCall;
+		
+		if (payload) {
+		    window.__tcfapi(
+			payload.command,
+			payload.version,
+			function(retValue, success) {
+			    var returnMsg = {
+				__tcfapiReturn: {
+				    returnValue: retValue,
+				    success: success,
+				    callId: payload.callId
+				}
+			    };
+			    if (msgIsString) {
+				returnMsg = JSON.stringify(returnMsg);
+			    }
+			    if (event && event.source && event.source.postMessage) {
+				event.source.postMessage(returnMsg, '*');
+			    }
+			},
+			payload.parameter
+		    );
+		}
+	    }
+	    
+	    while (win) {
+		try {
+		    if (win.frames[TCF_LOCATOR_NAME]) {
+			cmpFrame = win;
+			break;
+		    }
+		} catch (ignore) {}
+		
+		if (win === window.top) {
+		    break;
+		}
+		win = win.parent;
+	    }
+	    if (!cmpFrame) {
+		addFrame();
+		win.__tcfapi = tcfAPIHandler;
+		win.addEventListener('message', postMessageEventHandler, false);
+	    }
+	};
+	
+	makeStub();
+	
+	var uspStubFunction = function() {
+	    var arg = arguments;
+	    if (typeof window.__uspapi !== uspStubFunction) {
+		setTimeout(function() {
+		    if (typeof window.__uspapi !== 'undefined') {
+			window.__uspapi.apply(window.__uspapi, arg);
+		    }
+		}, 500);
+	    }
+	};
+	
+	var checkIfUspIsReady = function() {
+	    uspTries++;
+	    if (window.__uspapi === uspStubFunction && uspTries < uspTriesLimit) {
+		console.warn('USP is not accessible');
+	    } else {
+		clearInterval(uspInterval);
+	    }
+	};
+	
+	if (typeof window.__uspapi === 'undefined') {
+	    window.__uspapi = uspStubFunction;
+	    var uspInterval = setInterval(checkIfUspIsReady, 6000);
+	}
+    })();
+</script>
+<!-- End Quantcast Choice. Consent Manager Tag v2.0 (for TCF 2.0) -->
+
+
+    <title>Jaden Ivey College Stats | College Basketball at Sports-Reference.com</title>
+
+    
+    
+    <meta name="Description" content="Jaden Ivey - Stats, Game Logs, Splits, and much more">
+    <link rel="canonical" href="https://www.sports-reference.com/cbb/players/jaden-ivey-1.html" />
+
+
+<!-- include:start  ="/cbb/inc/klecko_header_full_cbb.html_f" -->
+<!-- yes:cookie regular load the cached css -->
+<script>function gup(n) {n = n.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]'); var r = new RegExp('[\\?&]'+n+'=([^&#]*)'); var re = r.exec(location.search);   return re === null?'':decodeURIComponent(re[1].replace(/\+/g,' '));}; document.srdev = gup('srdev')</script>
+<link rel="preconnect" href="https://cdn.ssref.net" crossorigin>
+<link rel="preconnect" href="https://www.google-analytics.com"  crossorigin>
+<link rel="preconnect" href="https://www.googletagservices.com" crossorigin>
+<link rel="preload"    href="https://cdn.ssref.net/req/202211181/js/cbb/sr-min.js" as="script" crossorigin>
+<link rel="preload"    href="https://cdn.ssref.net/req/202211181/icons/sr_icons-min.svg?cbb" as="fetch" crossorigin>
+<link rel="preload"    href="https://www.sports-reference.com/short/cbb/inc/main_nav_menu.json" as="fetch" crossorigin>
+<link rel="preload"    href="https://cdn.ssref.net/req/201604190/images/chosen-sprite.png" as="image" crossorigin>
+<link rel="preload"    href="https://cdn.ssref.net/req/202211181/css/cbb/sr-min.css" as="style"    crossorigin>
+
+<!-- CSS start -->
+<link rel="stylesheet" href="https://cdn.ssref.net/req/202211181/css/cbb/sr-min.css" type="text/css"
+      onload="if (document.srdev) { this.href = 'https://cdn.ssref.net/nocdn/dev/'.concat(document.srdev.substr(0,2),'/css/cbb/sr.css'); }" />
+<!-- CSS END -->
+
+<!-- JS START -->
+<script class="allowed">var sr_is_production = true;
+function vjs_getUrlParameter(e){e=e.replace(/[\[]/,"\\[").replace(/[\]]/,"\\]");e=new RegExp("[\\?&]"+e+"=([^&#]*)").exec(location.search);return null===e?"":decodeURIComponent(e[1].replace(/\+/g," "))}document.lang="","/es/"===window.location.pathname.substr(0,4)?document.lang="es":"/pt/"===window.location.pathname.substr(0,4)?document.lang="pt":"/fr/"===window.location.pathname.substr(0,4)?document.lang="fr":"/it/"===window.location.pathname.substr(0,4)?document.lang="it":"/de/"===window.location.pathname.substr(0,4)?document.lang="de":(window.location.pathname.substr(0,4),document.lang="en"),vjs_getUrlParameter("lang")&&(document.lang=vjs_getUrlParameter("lang")),document.srdev=null,vjs_getUrlParameter("srdev")&&(document.srdev=vjs_getUrlParameter("srdev"));var el,log_performance=!0,is_new_jscss_version=!1,sr_detect_operaMini=-1<navigator.userAgent.indexOf("Opera Mini"),sr_detect_firefox=(sr_detect_operaMini&&((el=document.querySelector("html")).className=el.className.concat(" operamini")),-1<navigator.userAgent.indexOf("Firefox")),sr_detect_firefoxMobile=(sr_detect_firefox&&((el=document.querySelector("html")).className=el.className.concat(" firefox")),-1<navigator.userAgent.indexOf("Firefox")&&(-1<navigator.userAgent.indexOf("Mobile")||-1<navigator.userAgent.indexOf("Tablet"))),sr_detect_ie=(sr_detect_firefoxMobile&&((el=document.querySelector("html")).className=el.className.concat(" firefox-mobile")),function(){var e=window.navigator.userAgent;if(0<e.indexOf("Trident/7.0"))return 11;if(0<e.indexOf("Trident/6.0"))return 10;if(0<e.indexOf("Trident/5.0"))return 9;for(var t=3,n=document.createElement("div"),r=n.getElementsByTagName("i");n.innerHTML="\x3c!--[if gt IE "+ ++t+"]><i></i><![endif]--\x3e",r[0];);return 4<t&&t}()),sr_detect_edge=!sr_detect_ie&&!!window.StyleMedia,sr_detect_safari=/Safari/.test(navigator.userAgent)&&/Apple Computer/.test(navigator.vendor),className="no-js",patt=((el=document.querySelector("html")).classList?el.classList.remove(className):el.className=el.className.replace(new RegExp("(^|\\b)"+className.split(" ").join("|")+"(\\b|$)","gi")," "),el.className=el.className.concat(" js"),!function(a,d,S){function E(e,t){return typeof e===t}function T(e){return"function"!=typeof d.createElement?d.createElement(e):m?d.createElementNS.call(d,"http://www.w3.org/2000/svg",e):d.createElement.apply(d,arguments)}function R(e,t,n,r){var o,i,a,s,l="modernizr",c=T("div");(s=d.body)||((s=T(m?"svg":"body")).fake=!0);if(parseInt(n,10))for(;n--;)(i=T("div")).id=r?r[n]:l+(n+1),c.appendChild(i);return(o=T("style")).type="text/css",o.id="s"+l,(s.fake?s:c).appendChild(o),s.appendChild(c),o.styleSheet?o.styleSheet.cssText=e:o.appendChild(d.createTextNode(e)),c.id=l,s.fake&&(s.style.background="",s.style.overflow="hidden",a=u.style.overflow,u.style.overflow="hidden",u.appendChild(s)),o=t(c,e),s.fake?(s.parentNode.removeChild(s),u.style.overflow=a,u.offsetHeight):c.parentNode.removeChild(c),!!o}function U(e){return e.replace(/([a-z])-([a-z])/g,function(e,t,n){return t+n.toUpperCase()}).replace(/^-/,"")}function D(e){return e.replace(/([A-Z])/g,function(e,t){return"-"+t.toLowerCase()}).replace(/^ms-/,"-ms-")}function q(e,t){var n=e.length;if("CSS"in a&&"supports"in a.CSS){for(;n--;)if(a.CSS.supports(D(e[n]),t))return!0;return!1}if("CSSSupportsRule"in a){for(var r=[];n--;)r.push("("+D(e[n])+":"+t+")");return R("@supports ("+(r=r.join(" or "))+") { #modernizr { position: absolute; } }",function(e){return"absolute"==(e=e,t=null,n="position","getComputedStyle"in a?(r=getComputedStyle.call(a,e,t),o=a.console,null!==r?n&&(r=r.getPropertyValue(n)):o&&o[o.error?"error":"log"].call(o,"getComputedStyle returning null, its possible modernizr test results are inaccurate")):r=!t&&e.currentStyle&&e.currentStyle[n],r);var t,n,r,o})}return S}function r(e,t,n,r,o){var i,a,s=e.charAt(0).toUpperCase()+e.slice(1),l=(e+" "+re.join(s+" ")+s).split(" ");if(E(t,"string")||void 0===t){var c=l,d=t,u=r,m=o;function f(){p&&(delete L.style,delete L.modElem)}if(m=void 0!==m&&m,void 0!==u){r=q(c,u);if(void 0!==r)return r}for(var p,h,g,v,_,y=["modernizr","tspan","samp"];!L.style&&y.length;)p=!0,L.modElem=T(y.shift()),L.style=L.modElem.style;for(g=c.length,h=0;h<g;h++)if(v=c[h],_=L.style[v],~(""+v).indexOf("-")&&(v=U(v)),L.style[v]!==S){if(m||void 0===u)return f(),"pfx"!=d||v;try{L.style[v]=u}catch(e){}if(L.style[v]!=_)return f(),"pfx"!=d||v}return f(),!1}var w=l=(e+" "+P.join(s+" ")+s).split(" "),b=t,x=n;for(a in w)if(w[a]in b)if(!1===x)return w[a];else{i=b[w[a]];if(E(i,"function")){var M=i;var z=x||b;return function(){return M.apply(z,arguments)};return}else return i}return!1}function F(e,t,n){return r(e,S,S,t,n)}var $=[],o=[],e={_version:"3.6.0",_config:{classPrefix:"",enableClasses:!0,enableJSClass:!0,usePrefixes:!0},_q:[],on:function(e,t){var n=this;setTimeout(function(){t(n[e])},0)},addTest:function(e,t,n){o.push({name:e,fn:t,options:n})},addAsyncTest:function(e){o.push({name:null,fn:e})}},n=function(){},s=(n.prototype=e,(n=new n).addTest("cookies",function(){try{d.cookie="cookietest=1";var e=-1!=d.cookie.indexOf("cookietest=");return d.cookie="cookietest=1; expires=Thu, 01-Jan-1970 00:00:01 GMT",e}catch(e){return!1}}),n.addTest("localstorage",function(){var e="modernizr";try{return localStorage.setItem(e,e),localStorage.removeItem(e),!0}catch(e){return!1}}),n.addTest("sessionstorage",function(){var e="modernizr";try{return sessionStorage.setItem(e,e),sessionStorage.removeItem(e),!0}catch(e){return!1}}),n.addTest("cors","XMLHttpRequest"in a&&"withCredentials"in new XMLHttpRequest),n.addTest("history",function(){var e=navigator.userAgent;return(-1===e.indexOf("Android 2.")&&-1===e.indexOf("Android 4.0")||-1===e.indexOf("Mobile Safari")||-1!==e.indexOf("Chrome")||-1!==e.indexOf("Windows Phone")||"file:"===location.protocol)&&(a.history&&"pushState"in a.history)}),e._config.usePrefixes?" -webkit- -moz- -o- -ms- ".split(" "):["",""]),u=(e._prefixes=s,d.documentElement),m="svg"===u.nodeName.toLowerCase();if(!m){var t=void 0!==a?a:this,l=d;function I(e,t){var n=e.createElement("p"),e=e.getElementsByTagName("head")[0]||e.documentElement;return n.innerHTML="x<style>"+t+"</style>",e.insertBefore(n.lastChild,e.firstChild)}function f(){var e=y.elements;return"string"==typeof e?e.split(" "):e}function p(e){var t=X[e[G]];return t||(t={},v++,e[G]=v,X[v]=t),t}function W(e,t,n){return t=t||l,h?t.createElement(e):!(t=(n=n||p(t)).cache[e]?n.cache[e].cloneNode():V.test(e)?(n.cache[e]=n.createElem(e)).cloneNode():n.createElem(e)).canHaveChildren||J.test(e)||t.tagUrn?t:n.frag.appendChild(t)}function i(e){var t,n,r=p(e=e||l);return!y.shivCSS||c||r.hasCSS||(r.hasCSS=!!I(e,"article,aside,dialog,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}mark{background:#FF0;color:#000}template{display:none}")),h||(t=e,(n=r).cache||(n.cache={},n.createElem=t.createElement,n.createFrag=t.createDocumentFragment,n.frag=n.createFrag()),t.createElement=function(e){return y.shivMethods?W(e,t,n):n.createElem(e)},t.createDocumentFragment=Function("h,f","return function(){var n=f.cloneNode(),c=n.createElement;h.shivMethods&&("+f().join().replace(/[\w\-:]+/g,function(e){return n.createElem(e),n.frag.createElement(e),'c("'+e+'")'})+");return n}")(y,n.frag)),e}function H(e){for(var t,n=e.getElementsByTagName("*"),r=n.length,o=RegExp("^(?:"+f().join("|")+")$","i"),i=[];r--;)t=n[r],o.test(t.nodeName)&&i.push(t.applyElement(function(e){for(var t,n=e.attributes,r=n.length,o=e.ownerDocument.createElement(w+":"+e.nodeName);r--;)(t=n[r]).specified&&o.setAttribute(t.nodeName,t.nodeValue);return o.style.cssText=e.style.cssText,o}(t)));return i}function B(s){function l(){clearTimeout(n._removeSheetTimer),c&&c.removeNode(!0),c=null}var c,d,n=p(s),e=s.namespaces,t=s.parentWindow;return!K||s.printShived||(void 0===e[w]&&e.add(w),t.attachEvent("onbeforeprint",function(){l();for(var e,t,n,r=s.styleSheets,o=[],i=r.length,a=Array(i);i--;)a[i]=r[i];for(;n=a.pop();)if(!n.disabled&&Z.test(n.media)){try{t=(e=n.imports).length}catch(e){t=0}for(i=0;i<t;i++)a.push(e[i]);try{o.push(n.cssText)}catch(e){}}o=function(e){for(var t,n=e.split("{"),r=n.length,o=RegExp("(^|[\\s,>+~])("+f().join("|")+")(?=[[\\s,>+~#.:]|$)","gi"),i="$1"+w+"\\:$2";r--;)(t=n[r]=n[r].split("}"))[t.length-1]=t[t.length-1].replace(o,i),n[r]=t.join("}");return n.join("{")}(o.reverse().join("")),d=H(s),c=I(s,o)}),t.attachEvent("onafterprint",function(){for(var e=d,t=e.length;t--;)e[t].removeNode();clearTimeout(n._removeSheetTimer),n._removeSheetTimer=setTimeout(l,500)}),s.printShived=!0),s}var c,h,g=t.html5||{},J=/^<|^(?:button|map|select|textarea|object|iframe|option|optgroup)$/i,V=/^(?:a|b|code|div|fieldset|h1|h2|h3|h4|h5|h6|i|label|li|ol|p|q|span|strong|style|table|tbody|td|th|tr|ul)$/i,G="_html5shiv",v=0,X={};try{var _=l.createElement("a");_.innerHTML="<xyz></xyz>",c="hidden"in _,h=1==_.childNodes.length||(l.createElement("a"),void 0===(O=l.createDocumentFragment()).cloneNode||void 0===O.createDocumentFragment||void 0===O.createElement)}catch(e){h=c=!0}var y={elements:g.elements||"abbr article aside audio bdi canvas data datalist details dialog figcaption figure footer header hgroup main mark meter nav output picture progress section summary template time video",version:"3.7.3",shivCSS:!1!==g.shivCSS,supportsUnknownElements:h,shivMethods:!1!==g.shivMethods,type:"default",shivDocument:i,createElement:W,createDocumentFragment:function(e,t){if(e=e||l,h)return e.createDocumentFragment();for(var n=(t=t||p(e)).frag.cloneNode(),r=0,o=f(),i=o.length;r<i;r++)n.createElement(o[r]);return n},addElements:function(e,t){var n=y.elements;"string"!=typeof n&&(n=n.join(" ")),"string"!=typeof e&&(e=e.join(" ")),y.elements=n+" "+e,i(t)}},Z=(t.html5=y,i(l),/^$|\b(?:all|print)\b/),w="html5shiv",K=!(h||(_=l.documentElement,void 0===l.namespaces||void 0===l.parentWindow||void 0===_.applyElement||void 0===_.removeNode||void 0===t.attachEvent));y.type+=" print",(y.shivPrint=B)(l),"object"==typeof module&&module.exports&&(module.exports=y)}n.addTest("csspositionsticky",function(){var e="position:",t=T("a").style;return t.cssText=e+s.join("sticky;"+e).slice(0,-e.length),-1!==t.position.indexOf("sticky")});function Q(e){var t,n=s.length,r=a.CSSRule;if(void 0===r)return S;if(!e)return!1;if((t=(e=e.replace(/^@/,"")).replace(/-/g,"_").toUpperCase()+"_RULE")in r)return"@"+e;for(var o=0;o<n;o++){var i=s[o];if(i.toUpperCase()+"_"+t in r)return"@-"+i.toLowerCase()+"-"+e}return!1}Y=!("onblur"in d.documentElement);var Y,b,x,M,z,C,N,j,ee,k,A,te=function(e,t){var n;return!!e&&(!(n=(e="on"+e)in(t=t&&"string"!=typeof t?t:T(t||"div")))&&Y&&((t=t.setAttribute?t:T("div")).setAttribute(e,""),n="function"==typeof t[e],t[e]!==S&&(t[e]=S),t.removeAttribute(e)),n)},ne=(e.hasEvent=te,e.testStyles=R),O=(n.addTest("touchevents",function(){var t,e;return"ontouchstart"in a||a.DocumentTouch&&d instanceof DocumentTouch?t=!0:(e=["@media (",s.join("touch-enabled),("),"heartz",")","{#modernizr{top:9px;position:absolute}}"].join(""),ne(e,function(e){t=9===e.offsetTop})),t}),"Moz O ms Webkit"),P=e._config.usePrefixes?O.toLowerCase().split(" "):[],re=(e._domPrefixes=P,n.addTest("pointerevents",function(){for(var e=!1,t=P.length,e=n.hasEvent("pointerdown");t--&&!e;)te(P[t]+"pointerdown")&&(e=!0);return e}),e._config.usePrefixes?O.split(" "):[]),oe=(e._cssomPrefixes=re,e.atRule=Q,{elem:T("modernizr")}),L=(n._q.push(function(){delete oe.elem}),{style:oe.elem.style}),g=(n._q.unshift(function(){delete L.style}),e.testAllProps=r,e.prefixed=function(e,t,n){return 0===e.indexOf("@")?Q(e):(-1!=e.indexOf("-")&&(e=U(e)),t?r(e,t,n):r(e,"pfx"))});for(j in n.addTest("matchmedia",!!g("matchMedia",a)),e.testAllProps=F,n.addTest("flexwrap",F("flexWrap","wrap",!0)),o)if(o.hasOwnProperty(j)){if(b=[],(x=o[j]).name&&(b.push(x.name.toLowerCase()),x.options&&x.options.aliases&&x.options.aliases.length))for(M=0;M<x.options.aliases.length;M++)b.push(x.options.aliases[M].toLowerCase());for(z=E(x.fn,"function")?x.fn():x.fn,C=0;C<b.length;C++)1===(N=b[C].split(".")).length?n[N[0]]=z:(!n[N[0]]||n[N[0]]instanceof Boolean||(n[N[0]]=new Boolean(n[N[0]])),n[N[0]][N[1]]=z),$.push((z?"":"no-")+N.join("-"))}t=$,k=u.className,A=n._config.classPrefix||"",m&&(k=k.baseVal),n._config.enableJSClass&&(ee=new RegExp("(^|\\s)"+A+"no-js(\\s|$)"),k=k.replace(ee,"$1"+A+"js$2")),n._config.enableClasses&&(k+=" "+A+t.join(" "+A),m?u.className.baseVal=k:u.className=k),delete e.addTest,delete e.addAsyncTest;for(var ie=0;ie<n._q.length;ie++)n._q[ie]();a.Modernizr=n}(window,document),Modernizr.viewport_width=Math.max(document.documentElement.clientWidth,window.innerWidth||0),Modernizr.viewport_height=Math.max(document.documentElement.clientHeight,window.innerHeight||0),Modernizr.narrow=Modernizr.viewport_width<=704,Modernizr.constrained=Modernizr.viewport_width<=1200,Modernizr.site_menu=Modernizr.viewport_width<=1020?"button":"nav_bar",Modernizr.touch=Modernizr.touchevents||Modernizr.pointerevents&&(0<navigator.MaxTouchPoints||0<navigator.msMaxTouchPoints),Modernizr.phone=Modernizr.narrow&&Modernizr.touch,Modernizr.tablet=Modernizr.viewport_width<1075&&Modernizr.touch,Modernizr.desktop=!Modernizr.constrained&&!Modernizr.touch,Modernizr.laptop=!(Modernizr.desktop||Modernizr.tablet||Modernizr.phone),new RegExp("hideallads")),sr_html=(Modernizr.adfree=patt.test(window.location.href),document.querySelector("html")),cn=sr_html.className,sr_host_parts=(Modernizr.phone?sr_html.className=cn.concat(" phone"):Modernizr.tablet?sr_html.className=cn.concat(" tablet"):(Modernizr.desktop||Modernizr.laptop)&&(sr_html.className=cn.concat(" desktop")),window.location.hostname.split(".")),cn=sr_html.className,sr_logger=(Modernizr.is_build=Modernizr.is_live=Modernizr.is_dev=!1,"www"===sr_host_parts[0]||"fbref"===sr_host_parts[0]?(Modernizr.is_live=!0,sr_html.className=cn.concat(" is_live")):sr_host_parts[0].startsWith("b")?(Modernizr.is_build=!0,sr_html.className=cn.concat(" is_build")):(sr_host_parts[0].startsWith("d")||sr_host_parts[0].startsWith("r"))&&(Modernizr.is_dev=!0,sr_html.className=cn.concat(" is_dev")),Modernizr.is_stathead=!1,("stathead"===sr_host_parts[1]&&"srdevel"===sr_host_parts[2]||"stathead"===sr_host_parts[0]||"www"===sr_host_parts[0]&&"stathead"===sr_host_parts[1])&&(cn=sr_html.className,sr_html.className=cn.concat(" is_stathead"),Modernizr.is_stathead=!0),function(){var e=null,t={enableLogger:function(){null!=e&&(window.console.log=e)},disableLogger:function(){e=console.log,window.console.log=function(){}}};return t}()),sr_utilities_js_loader=(!document.srdev&&sr_is_production&&sr_logger.disableLogger(),Modernizr.is_modern=1,Modernizr.lang=document.lang||"",Modernizr.srdev=document.srdev,[]);function vjs_readCookie(e){for(var t=e+"=",n=document.cookie.split(";"),r=0;r<n.length;r++){for(var o=n[r];" "===o.charAt(0);)o=o.substring(1,o.length);if(0===o.indexOf(t))return decodeURIComponent(o.substring(t.length,o.length))}return null}function vjs_createCookie(e,t,n){var r,o="",o=n?((r=new Date).setTime(r.getTime()+24*n*60*60*1e3),"; expires="+r.toGMTString()):"",n=encodeURIComponent(e)+"="+encodeURIComponent(t)+o+"; path=/";document.cookie=n}!function(o){function e(e,t){"use strict";var n=o.document.getElementsByTagName("script")[0],r=o.document.createElement("script");return r.src=e,r.async=!0,n.parentNode.insertBefore(r,n),t&&"function"==typeof t&&(r.onload=t),r}"undefined"!=typeof module?module.exports=e:o.loadJS=e}("undefined"!=typeof global?global:this),String.prototype.vjs_isMatch=function(e){return null!==this.match(e)};var sr_time_begin=new Date,sr_perf_startTime=new Date,sr_perf_log="<strong>Performance:</strong>",sr_perf_lastTime=new Date;function vjs_ready(e){"loading"!=document.readyState?e():document.addEventListener("DOMContentLoaded",e)}
+</script>
+<script>
+var _sr_modern_url = ''.concat(document.srdev?'https://cdn.ssref.net/nocdn/dev/'.concat(document.srdev.substring(0, 2)):"https://cdn.ssref.net/req/202211181",
+                               "/js/cbb", "/sr",document.srdev?"":"-min",   			       ".js");
+loadJS( _sr_modern_url, function() { vjs_ready(sr_fire_js); });
+</script>
+<!-- JS END -->
+
+
+<!-- include:end  ="/cbb/inc/klecko_header_full_cbb.html_f" -->
+
+
+
+    <meta name="revised" content="22:41:15 16-Nov-2022" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="generated-by"     content="/home/cbb/build/players/build_player_page.pl" />
+
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="no" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="4d383b" />
+    <meta name="msapplication-navbutton-color" content="4d383b" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="4d383b" />
+    
+
+
+
+    <!-- HeaderSeoSocial -->
+    <meta name="keywords" content="stats, NCAA, college, players, Jaden Ivey, career">
+    <meta itemprop="url"           content="https://www.sports-reference.com/cbb">
+    <meta itemprop="name"          content="College Basketball Reference">
+    <meta itemprop="alternateName" content="CbbRef">
+    <meta property="fb:app_id"     content="">
+    <meta property="og:url"          content="https://www.sports-reference.com/cbb/players/jaden-ivey-1.html">
+    <meta property="og:title"        content="Jaden Ivey College Stats | College Basketball at Sports-Reference.com">
+    <meta property="og:site_name"    content="College Basketball at Sports-Reference.com">
+    <meta property="og:type"         content="    Athlete" />
+    <meta property="og:description"  content="Jaden Ivey - Stats, Game Logs, Splits, and much more">
+    <meta property="og:image"        content="http://cdn.ssref.net/scripts/image_resize.cgi?min=200&url=https://www.sports-reference.com/req/202111231/cbb/images/players/jaden-ivey-1.jpg">
+    <meta name="twitter:card"         content="summary">
+    <meta name="twitter:site"         content="@collegebb_ref">
+    <meta name="twitter:creator"      content="@collegebb_ref">
+    <meta property="twitter:image"    content="http://cdn.ssref.net/scripts/image_resize.cgi?min=200&url=https://www.sports-reference.com/req/202111231/cbb/images/players/jaden-ivey-1.jpg">
+    <meta name="twitter:domain"       content="College Basketball at Sports-Reference.com">
+    <meta name="referrer" content="unsafe-url">
+    <!-- HeaderSeoSocial:END -->
+
+    <!-- tiles, touch, favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="180x180" href="https://cdn.ssref.net/req/202211031/favicons/cbb/apple-touch-icon-180x180-precomposed.png">
+    <link rel="icon"                         sizes="48x48"   href="https://cdn.ssref.net/req/202211031/favicons/cbb/favicon-48.png">
+    <link rel="shortcut icon"                sizes="228x228" href="https://cdn.ssref.net/req/202211031/favicons/cbb/apple-touch-icon-228x228-precomposed.png">
+    <link rel="apple-touch-icon"             sizes="228x228" href="https://cdn.ssref.net/req/202211031/favicons/cbb/apple-touch-icon-228x228-precomposed.png">
+    <link rel="apple-touch-icon"             sizes="195x195" href="https://cdn.ssref.net/req/202211031/favicons/cbb/apple-touch-icon-195x195-precomposed.png">
+    <link rel="apple-touch-icon"             sizes="180x180" href="https://cdn.ssref.net/req/202211031/favicons/cbb/apple-touch-icon-180x180-precomposed.png">
+    <link rel="apple-touch-icon"             sizes="152x152" href="https://cdn.ssref.net/req/202211031/favicons/cbb/apple-touch-icon-152x152-precomposed.png">
+    <link rel="apple-touch-icon"             sizes="144x144" href="https://cdn.ssref.net/req/202211031/favicons/cbb/apple-touch-icon-144x144-precomposed.png">
+    <link rel="apple-touch-icon"             sizes="128x128" href="https://cdn.ssref.net/req/202211031/favicons/cbb/apple-touch-icon-128x128-precomposed.png">
+    <link rel="apple-touch-icon"             sizes="120x120" href="https://cdn.ssref.net/req/202211031/favicons/cbb/apple-touch-icon-120x120-precomposed.png">
+    <link rel="apple-touch-icon"             sizes="114x114" href="https://cdn.ssref.net/req/202211031/favicons/cbb/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon"             sizes="76x76"   href="https://cdn.ssref.net/req/202211031/favicons/cbb/apple-touch-icon-76x76-precomposed.png">
+    <link rel="apple-touch-icon"             sizes="72x72"   href="https://cdn.ssref.net/req/202211031/favicons/cbb/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon"             sizes="57x57"   href="https://cdn.ssref.net/req/202211031/favicons/cbb/apple-touch-icon-57x57-precomposed.png">
+    <link rel="icon"                         sizes="32x32"   href="https://cdn.ssref.net/req/202211031/favicons/cbb/favicon-32.png">
+    <!--[if IE]>
+    <link rel="shortcut icon"                                href="https://cdn.ssref.net/req/202211031/favicons/cbb/favicon.ico"><![endif]-->
+    <meta name="msapplication-TileColor" content="#04376c" />
+    <meta name="msapplication-TileImage" content="https://cdn.ssref.net/req/202211031/favicons/cbb/ms-tile-144.png" />
+    <link rel=search        type="application/opensearchdescription+xml" href="https://cdn.ssref.net/req/202211031/opensearch/opensearch-cbb.xml" title=" Player and Team Search">
+    <!-- tiles, touch, favicons:end -->
+
+<!-- ad code: begin -->
+
+
+<script data-ad-client="ca-pub-5319453360923253" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+    var freestar = freestar || {};
+    freestar.config = freestar.config || {};
+    freestar.config.enabled_slots = [ "div-gpt-ad-300x250-ATF","div-gpt-ad-728x90-ATF","div-gpt-ad-728x90-GeneralHeader","div-gpt-ad-728x90-BTF-1","div-gpt-ad-728x90-BTF-2","div-gpt-ad-728x90-Footer" ];
+    if (sr_detect_ie || sr_detect_edge || Modernizr.adfree || document.getElementById('sr_suppress_ads') || Modernizr.viewport_width < 1810) {
+    // do not include the rails
+    }
+    else {
+         freestar.config.enabled_slots.push('div-gpt-ad-160x600-1');
+         freestar.config.enabled_slots.push('div-gpt-ad-160x600-2');
+    } 
+
+</script>
+<script data-cfasync="false" type="text/javascript">
+    var fs_debug = window.location.search.indexOf('fsdebug') == -1 ? false : true;
+    freestar.hitTime = Date.now();
+    freestar.queue = freestar.queue || [];
+    freestar.config = freestar.config || {};
+    freestar.queue.push(function() {
+      // Include the line reflecting the area/section of the site you are on
+      googletag.pubads().setTargeting('sr_site_id', 'cbb');
+    });
+!function(a,b){
+    if (sr_detect_ie || sr_detect_edge || Modernizr.adfree) {
+        return;
+    }  
+    var c=b.getElementsByTagName("script")[0],
+    d=b.createElement("script"),
+    e="https://a.pub.network/sports-reference";
+    e+=fs_debug?"/qa/pubfig.min.js":"/pubfig.min.js",
+    d.async=!0,
+    d.src=e,
+    c.parentNode.insertBefore(d,c)
+}(window,document);
+</script>
+
+
+<!-- ad code:end -->
+
+
+</head>
+<body class="cbb">
+<div id="wrap">
+  
+  <div id="header" role="banner">
+  <ul id="subnav" class="notranslate">
+	<li><a href="https://www.sports-reference.com/"><svg height="15px" width="20px"><use xlink:href="#ic-sr-pennant"></use></svg> Sports&nbsp;Reference&#8239;&reg;</a></li>
+	<li><a href="https://www.baseball-reference.com/">Baseball</a></li>
+	<li><a href="https://www.pro-football-reference.com/">Football</a> <a href="https://www.sports-reference.com/cfb/">(college)</a></li>
+	<li class="current"><a href="https://www.basketball-reference.com/">Basketball</a> <a href="https://www.sports-reference.com/cbb/">(college)</a></li>
+	<li><a href="https://www.hockey-reference.com/">Hockey</a></li>
+
+
+	
+	
+	
+	<li><a href="https://fbref.com/it/">Calcio</a></li>
+
+	<li><a href="https://www.sports-reference.com/blog/">Blog</a></li>
+
+    <li><a href="https://stathead.com/?utm_source=web&amp;utm_medium=cbb&amp;utm_campaign=sr-nav-bar-top-link">Stathead&#8239;&reg;</a></li>
+
+	<li><a href="https://www.sports-reference.com/feedback/">Questions or Comments?</a></li>
+	<li class="user logged_in">Welcome <span class="username"></span>&nbsp;&#183;&nbsp;<a href="https://stathead.com/profile/?utm_source=web&amp;utm_medium=cbb&amp;utm_campaign=sr-nav-bar-top-account">Your Account</a></li>
+<li class="user logged_in"><a class="logout" onclick="sr_auth_logout_page_elements();if(!this.href.match('redirect_uri')){this.href += '&redirect_uri='+escape(document.location.href)}" href="https://stathead.com/profile/?do=logout">Logout</a></li>
+<li class="user not_logged_in"><a class="login" onclick="if(!this.href.match('redirect_uri')){this.href += '&redirect_uri='+escape(document.location.href)}" href="https://stathead.com/users/login.cgi?token=1">Login</a></li>
+<li class="user not_logged_in"><a href="https://stathead.com/users/signup.cgi">Create Account</a></li>
+
+</ul>
+
+  <a href="/cbb/"><img src="https://cdn.ssref.net/req/202211031/logos/cbb-logo.svg" onerror="this.src='https://cdn.ssref.net/req/202211031/logos/cbb-logo.png'; this.onerror = null;" alt="College Basketball at Sports-Reference.com Logo &amp; Link to home page" /></a>
+<div id="nav_trigger" role="button"><a href="#site_menu_link">MENU</a></div>
+<div id="nav" role="navigation" aria-label="College Basketball at Sports-Reference.com sections">
+	<ul id="main_nav" class="hoversmooth nohover"><li id="header_players" class="current">
+  <a href="/cbb/players">Players</a>
+</li>
+
+<li id="header_schools" >
+  <a href="/cbb/schools/">Schools</a>
+</li>
+
+<li id="header_seasons" >
+  <a href="/cbb/seasons/">Seasons</a>
+</li>
+
+<li id="header_leaders" >
+  <a href="/cbb/leaders/">Leaders</a>
+</li>
+
+<li id="header_scores" >
+  <a href="/cbb/boxscores/">Scores</a>
+</li>
+
+<li id="header_postseason" class="">
+  <a href="/cbb/postseason/">NCAA Tournaments</a>
+</li>	
+
+<li id="header_playindex" class="">
+  <a href="/cbb/play-index/">Play Index</a>
+</li>
+
+<li><a href="https://www.sports-reference.com/cbb/email/">Newsletter</a></li>
+
+<li>
+  <a data-scroll href="#site_menu_link" class="opener">Full Site Menu Below</a>
+</li>
+	</ul>
+	<div class="breadcrumbs">You are here: <div itemscope itemtype="https://schema.org/BreadcrumbList" class="crumbs"><span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="/cbb/"><span itemprop="name">CBB Home Page</span></a> <meta itemprop="position" content="1" /></span> &gt; <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="/cbb/players/"><span itemprop="name">Players</span></a> <meta itemprop="position" content="2" /></span> &gt; <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="/cbb/players/i-index.html"><span itemprop="name">I</span></a> <meta itemprop="position" content="3" /></span> &gt; <strong>Jaden Ivey</strong></div></div>
+	<ul class="usertools bullets-inline"><li class="user logged_in">Welcome <span class="username"></span>&nbsp;&#183;&nbsp;<a href="https://stathead.com/profile/?utm_source=web&amp;utm_medium=cbb&amp;utm_campaign=sr-nav-bar-top-account">Your Account</a></li>
+<li class="user logged_in"><a class="logout" onclick="sr_auth_logout_page_elements();if(!this.href.match('redirect_uri')){this.href += '&redirect_uri='+escape(document.location.href)}" href="https://stathead.com/profile/?do=logout">Logout</a></li>
+<li class="user not_logged_in"><a class="login" onclick="if(!this.href.match('redirect_uri')){this.href += '&redirect_uri='+escape(document.location.href)}" href="https://stathead.com/users/login.cgi?token=1">Login</a></li>
+<li class="user not_logged_in"><a href="https://stathead.com/users/signup.cgi">Create Account</a></li>
+	</ul><!-- ul.user -->
+</div><!-- div#nav -->
+<script>
+function sr_menus_setupMainNav_button_inline () {
+    if (sr_detect_operaMini || !("classList" in document.createElement("_"))) {
+	return false;
+    }
+    var nav_trigger = document.getElementById('nav_trigger');
+    if(!nav_trigger || nav_trigger.triggered) {
+	return false;
+    }
+    nav_trigger.triggered = true;
+    var nav = document.getElementById('nav');
+    var nav_trigger_a = nav_trigger.querySelector('a');
+    if (nav_trigger_a) {
+	nav_trigger_a.setAttribute('href','javascript:void(0)');
+	nav_trigger.onclick = function (event) {
+	    nav.classList.toggle('open');
+	    var is_open = nav.classList.contains('open');
+	    if (is_open) {
+		nav_trigger.classList.add('open');
+	    }
+	    else {
+		nav_trigger.classList.remove('open');
+	    }
+	    event.preventDefault();
+	    try { sr_record_analytics_event('MainNavButtonClick_inline',sr_record_directory(),sr_record_page());}
+	    catch(err) {}
+	};
+    }
+    return true;
+}
+sr_menus_setupMainNav_button_inline();
+</script><div class="search" role="search" aria-label="Site Search for players, teams and sections">
+<form method="get" name="f_big"  action="/cbb/search/search.fcgi">
+<div class="ac-outline">
+  <div class="ac-wrapper"><input type="search" tabindex="-1" class="ac-hint" name="hint" placeholder="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" dir="auto" aria-label="Search suggestions based on user search input">
+
+<input tabindex="1" type="search" class="ac-input completely" name="search" placeholder="Enter Person, Team, Section, etc" aria-label="Enter a player, team or section name" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" dir="auto" />
+    <div class="ac-dropdown"></div>
+  </div>
+</div>
+
+<input type="submit" value="Search" tabindex="2" />
+<input type="hidden" name="pid" value="" data-search-id>
+<input type="hidden" name="idx" value="" data-search-idx>
+
+</form>
+</div><!-- div.search -->
+
+</div><!-- div#header -->
+
+  <style>
+  .site_announcement {
+    background-color: #fffea6;
+    text-align: center;
+    padding: .4em 0;
+    width: 100%;
+  }
+  .site_announcement div {
+    margin: 0 .3em;
+  }
+  .site_announcement span {
+    white-space: nowrap;
+  }
+  @media only screen and (max-width: 1000px) {
+    .site_annoucement_extra {
+      display: none;
+    }
+  }
+  </style>
+
+
+
+<div id="info" class="players">
+	<div id="meta">
+	
+
+<div class="media-item"><img itemscope="image" src="https://www.sports-reference.com/req/202111231/cbb/images/players/jaden-ivey-1.jpg" alt="Jaden Ivey headshot">
+</div><!-- div.media-item --><div >
+	<h1>
+		<span>Jaden Ivey</span>
+			</h1>
+	
+
+  
+
+  
+
+  
+<p>
+  <strong>
+  Position:
+  </strong>
+  Guard
+
+
+
+  <p><span>6-4</span>,&nbsp;<span>200lb</span>&nbsp;(cm,&nbsp;90kg) </p>
+  
+<p>
+  <strong>Hometown:</strong> South Bend, IN
+</p>
+
+
+  
+<p>
+  <strong>High School:</strong> La Lumiere Prep HS
+</p>
+
+
+  <!-- RSCI -->
+  
+    <p><strong>RSCI Top 100:</strong> 87 (<a href='/cbb/awards/rsci-recruit-rankings-2020.html'>2020</a>)</p>
+  
+  
+<p>
+  <strong>School:</strong> <a href="/cbb/schools/purdue/">Purdue</a>
+
+</p>
+
+
+  
+    <p><strong>Draft:</strong> <a href="https://www.basketball-reference.com/teams/DET/2022.htm">Detroit Pistons</a>, 1st round (5th pick, 5th overall), <a href="https://www.basketball-reference.com/draft/NBA_2022.html">2022 NBA draft</a></p>
+  
+
+  <button id="meta_more_button" class="opener" data-type="hide_after" data-class="open" data-id="info">More player info</button>
+<script>
+// see sr.menus.js:sr_menus_checkInfoCookie to explain
+function sr_menus_checkInfoCookie_inline(browserType) {
+    var el_info = document.getElementById('info');
+    var el_button = document.getElementById('meta_more_button');
+    var bling_len = 2;    
+    if (!el_button || !el_info || !el_info.classList) { console.log('no meta_button'); return; }
+    var el = el_button;
+    var siblingsHidden = 0;
+    while (el = el.previousSibling) { if ((el.nodeType === 1) && (el.offsetWidth <= 0 || el.offsetHeight <= 0)) { siblingsHidden++; } }
+    var button_cookie = false;
+    if (browserType === 'desktop') {  button_cookie = vjs_readCookie('meta_more_button');   }
+    // We allow up to four of bling lines or additional player bio data entries in mobile.
+    if (el_info && el_button && (button_cookie || (siblingsHidden + bling_len <= 4))) {el_button.parentNode.removeChild(el_button);	el_info.classList.add('open');  }
+    else { el_button.classList.add('show');  }
+}
+if (Modernizr.desktop || Modernizr.laptop) { sr_menus_checkInfoCookie_inline('desktop'); } else { sr_menus_checkInfoCookie_inline('mobile'); }
+var sr_menus_checkInfoCookie_run_inline = true;
+</script>
+
+
+
+
+</div>
+</div><!-- div#meta -->
+
+
+			
+	
+<ul id="bling">
+
+<li data-tip="Consensus All-American" class=" poptip"><a>Consensus AA</a></li><li class=""><a>2021-22 All-Big Ten</a></li><li class=""><a>2022 All-Big Ten Tourney</a></li><li class=""><a>Big Ten All-Freshman</a></li>
+</ul>
+
+		
+	<div class="uni_holder cbb">
+	<a class="poptip default" data-tip="Purdue, 2021-2022">
+        <svg viewBox="0,0,42,52" class="jersey"> <rect fill="#b1946c" height="52" width="42" y="0" x="0"></rect> <ellipse fill="white" stroke-width="2" stroke="#000000" ry="18" rx="7" cy="5" cx="0"></ellipse> <ellipse fill="white" stroke-width="2" stroke="#000000" ry="18" rx="7" cy="5" cx="42"></ellipse> <ellipse fill="white" stroke-width="2" stroke="#000000" ry="7" rx="7" cy="0" cx="21"></ellipse> <text x="9" y="39" fill="#000000" >23</text> </svg>
+
+	</a>
+</div>
+		
+	<span id="bling-alt-text" style="display:none;"><!--
+
+Recognition:
+
+* Consensus All-American
+* 2021-22 All-Big Ten
+* 2022 All-Big Ten Tourney
+* Big Ten All-Freshman
+
+Uniforms:
+
+* Number 23 for Purdue, 2021-2022
+
+--></span>		
+
+
+
+	
+<div class="adblock ad300">
+
+<!-- div#fs_fs_300_atf  -->
+<div align="center" id="div-gpt-ad-300x250-ATF">
+    <script data-cfasync="false" type='text/javascript'>
+    if (sr_detect_ie || sr_detect_edge || Modernizr.adfree) {
+    }
+    else {
+        console.log('push ad:div-gpt-ad-300x250-ATF');
+        freestar.queue.push(function() { googletag.display('div-gpt-ad-300x250-ATF'); });
+    }
+    </script>
+</div>
+<!-- /div.#fs_fs_300_atf -->
+
+
+</div>
+
+
+	
+		
+			<div class="stats_pullout">
+<div><div>
+<span><strong>SUMMARY</strong></span>
+<p><strong></strong></p>
+<p><strong>Career</strong></p>
+</div></div>
+<div class="p1">
+<div>
+<span class="poptip" data-tip="Games"><strong>G</strong></span><p></p>
+<p>59</p></div>
+
+<div>
+<span class="poptip" data-tip="Points"><strong>PTS</strong></span><p></p>
+<p>14.9</p></div>
+
+<div>
+<span class="poptip" data-tip="Total Rebounds"><strong>TRB</strong></span><p></p>
+<p>4.3</p></div>
+
+<div>
+<span class="poptip" data-tip="Assists"><strong>AST</strong></span><p></p>
+<p>2.6</p></div>
+</div><div class="p2">
+<div>
+<span class="poptip" data-tip="Field Goal Percentage"><strong>FG%</strong></span><p></p>
+<p>44.0</p></div>
+
+<div>
+<span class="poptip" data-tip="3-Point Field Goal Percentage"><strong>FG3%</strong></span><p></p>
+<p>32.2</p></div>
+
+<div>
+<span class="poptip" data-tip="Free Throw Percentage"><strong>FT%</strong></span><p></p>
+<p>73.9</p></div>
+
+<div>
+<span class="poptip" data-tip="Effective Field Goal Percentage; this statistic adjusts for the fact that a 3-point field goal is worth one more point than a 2-point field goal."><strong>eFG%</strong></span><p></p>
+<p>50.7</p></div>
+</div><div class="p3">
+<div>
+<span class="poptip" data-tip="Player Efficiency Rating"><strong>PER</strong></span><p></p>
+<p>21.1</p></div>
+
+<div>
+<span class="poptip" data-tip="Win Shares; an estimate of the number of wins contributed by a player due to his offense and defense."><strong>WS</strong></span><p></p>
+<p>7.0</p></div>
+</div>
+
+
+</div>
+
+		
+		
+</div><!-- div#info -->
+<div id="srcom">
+	
+<div class="adblock ad728">
+
+<!-- div#fs_fs_728_atf  -->
+<!-- sf:blank by design for send to news ad -->
+<!-- /div.#fs_fs_728_atf -->
+
+
+</div>
+
+	
+</div><!-- div#srcom -->
+<div id="inner_nav" role="navigation" aria-label="Sections on this page and/or other pages related to this page" class=" inactive">
+	<ul class="hoversmooth">
+		<li			class="current index "><a href="/cbb/players/jaden-ivey-1.html"><u>Ivey Overview</u></a>		</li>
+		<li data-fade-selector="#inpage_nav"			class="full hasmore "><span>Game Logs</span>
+			<div>
+<p class="listhead">Full Game Logs</p>
+					<ul class="">
+						<li><a href="/cbb/players/jaden-ivey-1/gamelog/2021" >2020-21</a></li>
+						<li><a href="/cbb/players/jaden-ivey-1/gamelog/2022" >2021-22</a></li>
+					</ul>
+
+<p class="listhead"><a href='/cbb/players/jaden-ivey-1/gamelog/'>All Game Logs</a></p>
+					<ul class="">
+					</ul>
+
+			</div>		</li>
+		<li data-fade-selector="#inpage_nav"			class="full hasmore "><span>Splits</span>
+			<div>
+
+					<ul class="">
+						<li><a href="/cbb/players/jaden-ivey-1/splits/2021" >2020-21</a></li>
+						<li><a href="/cbb/players/jaden-ivey-1/splits/2022" >2021-22</a></li>
+						<li><a href="/cbb/players/jaden-ivey-1/splits/" >Career</a></li>
+					</ul>
+
+			</div>		</li>
+		<li data-fade-selector="#inpage_nav"			class="condensed hasmore "><span>More Ivey Pages</span>
+			<div>
+<p class="listhead"><strong>Full Game Logs</strong></p>
+					<ul class="">
+						<li><a href="/cbb/players/jaden-ivey-1/gamelog/2021/" >2020-21</a></li>
+						<li><a href="/cbb/players/jaden-ivey-1/gamelog/2022/" >2021-22</a></li>
+					</ul>
+
+<p class="listhead"><a href='/cbb/players/jaden-ivey-1/gamelog/'>All Game Logs</a></p>
+					<ul class="">
+					</ul>
+
+<p class="listhead"><strong>Splits</strong></p>
+					<ul class="">
+						<li><a href="/cbb/players/jaden-ivey-1/splits/2021/" >2020-21</a></li>
+						<li><a href="/cbb/players/jaden-ivey-1/splits/2022/" >2021-22</a></li>
+						<li><a href="/cbb/players/jaden-ivey-1/splits/" >Career</a></li>
+					</ul>
+
+<p class="listhead">More Ivey pages at Sports Reference</p>
+					<ul class=" in_list">
+						<li><a href="https://www.basketball-reference.com/players/i/iveyja01.html" >Basketball-Reference.com</a></li>
+					</ul>
+
+			</div>		</li>
+		<li data-fade-selector="#inpage_nav"			class="full hasmore "><span>More Ivey Pages</span>
+			<div>
+<p class="listhead">More Ivey pages at Sports Reference</p>
+					<ul class="">
+						<li><a href="https://www.basketball-reference.com/players/i/iveyja01.html" >Basketball-Reference.com</a></li>
+					</ul>
+
+			</div>		</li>
+	</ul>
+	    
+    
+        
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                
+                
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        
+    
+        
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                
+                
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        
+    
+        
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                
+                
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        
+    
+        
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                
+                
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        
+    
+        
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                
+                
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        
+    
+        
+        
+        
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+                
+                
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        
+    
+    
+    
+    
+    
+    
+    
+        <div id="inpage_nav" class="html_built">
+            <p class="listhead inpage">On this page:</p>
+            <ul class="in_list inpage"><li><a href="#all_players_per_game">Per Game</a></li> <li><a href="#all_players_totals">Totals</a></li> <li><a href="#all_players_per_min">Per 40 Minutes</a></li> <li><a href="#all_players_per_poss">Per 100 Poss</a></li> <li><a href="#all_players_advanced">Advanced</a></li> <li><a href="#all_leaderboard">Leaderboards, Awards, &amp; Honors</a></li> <li><a href="#site_menu_link">Full Site Menu</a></li></ul>
+        </div>
+    
+</div><!-- div#inner_nav -->
+<div id="content" role="main">
+   
+
+
+
+          
+      
+      
+      
+      
+
+<!-- fs_general_header -->
+<div class="adblock">
+
+
+<!-- div#fs_fs_general_header  -->
+<style>
+    #srcom .adblock.stn,
+    #content .adblock.stn { max-width: 728px; height: auto; margin: auto; }
+.fb #content .adblock.stn { max-width: 400px; }
+</style>
+<script>
+function apiFunction(ApiHandshake)  {
+    const playerDiv = document.querySelector('[data-stn-api="apiFunction"]');
+    const api = ApiHandshake(playerDiv);
+    new IntersectionObserver ( moes => { const bcr = moes.pop().boundingClientRect; api.float = bcr.y <= 0; },
+                                       { threshold: [0.9] }).observe(document.querySelector('[data-stn-api="apiFunction"]'));
+ }
+</script>
+<div class="adblock stn">
+  <div class='s2nPlayer k-D2USjgES' data-type='float' data-stn-api="apiFunction"></div>
+  <script type='text/javascript' src='//embed.sendtonews.com/player3/embedcode.js?fk=D2USjgES&cid=13693&offsetx=0&offsety=0&floatwidth=400&floatposition=bottom-right' data-type='s2nScript'></script>
+</div>
+<!-- /div.#fs_fs_general_header -->
+
+
+</div>
+
+
+      
+         
+            <div id="all_players_per_game" class="table_wrapper tabbed">
+	
+		<span class="section_anchor" id="players_per_game_link" data-label="Per Game"></span>
+	
+
+<div class="section_heading assoc_players_per_game" id="players_per_game_sh">
+  <span class="section_anchor" id="players_per_game_link" data-label="Per Game" data-no-inpage="1"></span><h2>Per Game</h2>    <div class="section_heading_text">
+      <ul>
+      </ul>
+    </div>
+    		
+</div>
+
+
+<div class="section_heading hidden assoc_players_per_game_conf" id="players_per_game_conf_sh">
+  <span class="section_anchor" id="players_per_game_conf_link" data-label="Per Game" data-no-inpage="1"></span><h2>Per Game</h2>    <div class="section_heading_text">
+      <ul>
+      </ul>
+    </div>
+    		
+</div>
+	
+	
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+	
+	
+<div class="filter switcher" data-controls="#switcher_players_per_game">
+
+<div class=" current">
+	<a class="sr_preset" data-hide="#all_players_per_game .section_heading, #all_players_per_game .topscroll_div" data-show=".assoc_players_per_game">Season</a>
+</div><div class="">
+	<a class="sr_preset" data-hide="#all_players_per_game .section_heading, #all_players_per_game .topscroll_div" data-show=".assoc_players_per_game_conf">Conference</a>
+</div></div>
+
+<div id="switcher_players_per_game">
+<div class="table_container current" id="div_players_per_game">
+		
+		<table class="stats_table sortable row_summable" id="players_per_game" data-cols-to-freeze="1,3"> <caption>Per Game Table</caption> <colgroup><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col></colgroup> <thead> <tr> <th aria-label="Season" data-stat="season" scope="col" class=" poptip sort_default_asc center" >Season</th> <th aria-label="School" data-stat="school_name" scope="col" class=" poptip sort_default_asc center" data-tip="* = NCAA Tournament appearance" >School</th> <th aria-label="Conf" data-stat="conf_abbr" scope="col" class=" poptip sort_default_asc center" data-tip="Conference" >Conf</th> <th aria-label="Games" data-stat="games" scope="col" class=" poptip center" data-tip="Games" >G</th> <th aria-label="GS" data-stat="games_started" scope="col" class=" poptip center" data-tip="Games Started" >GS</th> <th aria-label="Minutes Played Per Game" data-stat="mp_per_g" scope="col" class=" poptip center" data-tip="Minutes Played Per Game" data-filter="1" data-name="Minutes Played Per Game" >MP</th> <th aria-label="Field Goals Per Game" data-stat="fg_per_g" scope="col" class=" poptip center" data-tip="Field Goals Per Game" >FG</th> <th aria-label="Field Goal Attempts Per Game" data-stat="fga_per_g" scope="col" class=" poptip center" data-tip="Field Goal Attempts Per Game" >FGA</th> <th aria-label="Field Goal Percentage" data-stat="fg_pct" scope="col" class=" poptip center" data-tip="Field Goal Percentage" data-filter="1" data-name="Field Goal Percentage" >FG%</th> <th aria-label="2-Point Field Goals Per Game" data-stat="fg2_per_g" scope="col" class=" poptip center" data-tip="2-Point Field Goals Per Game" >2P</th> <th aria-label="2-Point Field Goal Attempts Per Game" data-stat="fg2a_per_g" scope="col" class=" poptip center" data-tip="2-Point Field Goal Attempts Per Game" >2PA</th> <th aria-label="2-Point Field Goal Percentage" data-stat="fg2_pct" scope="col" class=" poptip center" data-tip="2-Point Field Goal Percentage" data-filter="1" data-name="2-Point Field Goal Percentage" >2P%</th> <th aria-label="3-Point Field Goals Per Game" data-stat="fg3_per_g" scope="col" class=" poptip center" data-tip="3-Point Field Goals Per Game" >3P</th> <th aria-label="3-Point Field Goal Attempts Per Game" data-stat="fg3a_per_g" scope="col" class=" poptip center" data-tip="3-Point Field Goal Attempts Per Game" >3PA</th> <th aria-label="3-Point Field Goal Percentage" data-stat="fg3_pct" scope="col" class=" poptip center" data-tip="3-Point Field Goal Percentage" data-filter="1" data-name="3-Point Field Goal Percentage" >3P%</th> <th aria-label="Free Throws Per Game" data-stat="ft_per_g" scope="col" class=" poptip center" data-tip="Free Throws Per Game" >FT</th> <th aria-label="Free Throw Attempts Per Game" data-stat="fta_per_g" scope="col" class=" poptip center" data-tip="Free Throw Attempts Per Game" >FTA</th> <th aria-label="Free Throw Percentage" data-stat="ft_pct" scope="col" class=" poptip center" data-tip="Free Throw Percentage" data-filter="1" data-name="Free Throw Percentage" >FT%</th> <th aria-label="Offensive Rebounds Per Game" data-stat="orb_per_g" scope="col" class=" poptip center" data-tip="Offensive Rebounds Per Game" data-filter="1" data-name="Offensive Rebounds Per Game" >ORB</th> <th aria-label="Defensive Rebounds Per Game" data-stat="drb_per_g" scope="col" class=" poptip center" data-tip="Defensive Rebounds Per Game" data-filter="1" data-name="Defensive Rebounds Per Game" >DRB</th> <th aria-label="Total Rebounds Per Game" data-stat="trb_per_g" scope="col" class=" poptip center" data-tip="Total Rebounds Per Game" data-filter="1" data-name="Total Rebounds Per Game" >TRB</th> <th aria-label="Assists Per Game" data-stat="ast_per_g" scope="col" class=" poptip center" data-tip="Assists Per Game" data-filter="1" data-name="Assists Per Game" >AST</th> <th aria-label="Steals Per Game" data-stat="stl_per_g" scope="col" class=" poptip center" data-tip="Steals Per Game" data-filter="1" data-name="Steals Per Game" >STL</th> <th aria-label="Blocks Per Game" data-stat="blk_per_g" scope="col" class=" poptip center" data-tip="Blocks Per Game" data-filter="1" data-name="Blocks Per Game" >BLK</th> <th aria-label="Turnovers Per Game" data-stat="tov_per_g" scope="col" class=" poptip center" data-tip="Turnovers Per Game" >TOV</th> <th aria-label="Personal Fouls Per Game" data-stat="pf_per_g" scope="col" class=" poptip center" data-tip="Personal Fouls Per Game" >PF</th> <th aria-label="Points Per Game" data-stat="pts_per_g" scope="col" class=" poptip center" data-tip="Points Per Game" data-filter="1" data-name="Points Per Game" >PTS</th> <th aria-label="&nbsp;" data-stat="sos-dum" scope="col" class=" poptip center" >&nbsp;</th> <th aria-label="SOS" data-stat="sos" scope="col" class=" poptip center" data-tip="<strong>Strength of Schedule</strong><br>A rating of strength of schedule. The rating is denominated in points above/below average, where zero is average. Non-Division I games are excluded from the ratings." >SOS</th> </tr> </thead> <tbody> <tr id="players_per_game.2021" ><th scope="row" class="left " data-stat="season" ><a href='/cbb/seasons/2021.html'>2020-21</a></th><td class="left " data-stat="school_name" ><a href='/cbb/schools/purdue/2021.html'>Purdue</a></td><td class="left " data-stat="conf_abbr" ><a href='/cbb/conferences/big-ten/2021.html'>Big Ten</a></td><td class="right " data-stat="games" >23</td><td class="right " data-stat="games_started" >12</td><td class="right " data-stat="mp_per_g" >24.2</td><td class="right " data-stat="fg_per_g" >3.9</td><td class="right " data-stat="fga_per_g" >9.7</td><td class="right " data-stat="fg_pct" >.399</td><td class="right " data-stat="fg2_per_g" >2.8</td><td class="right " data-stat="fg2a_per_g" >5.5</td><td class="right " data-stat="fg2_pct" >.508</td><td class="right " data-stat="fg3_per_g" >1.1</td><td class="right " data-stat="fg3a_per_g" >4.2</td><td class="right " data-stat="fg3_pct" >.258</td><td class="right " data-stat="ft_per_g" >2.3</td><td class="right " data-stat="fta_per_g" >3.2</td><td class="right " data-stat="ft_pct" >.726</td><td class="right " data-stat="orb_per_g" >0.8</td><td class="right " data-stat="drb_per_g" >2.5</td><td class="right " data-stat="trb_per_g" >3.3</td><td class="right " data-stat="ast_per_g" >1.9</td><td class="right " data-stat="stl_per_g" >0.7</td><td class="right " data-stat="blk_per_g" >0.7</td><td class="right " data-stat="tov_per_g" >1.3</td><td class="right " data-stat="pf_per_g" >1.7</td><td class="right " data-stat="pts_per_g" >11.1</td><td class="right iz" data-stat="sos-dum" ></td><td class="right " data-stat="sos" >11.23</td></tr> <tr id="players_per_game.2022" ><th scope="row" class="left " data-stat="season" ><a href='/cbb/seasons/2022.html'>2021-22</a></th><td class="left " data-stat="school_name" ><a href='/cbb/schools/purdue/2022.html'>Purdue</a></td><td class="left " data-stat="conf_abbr" ><a href='/cbb/conferences/big-ten/2022.html'>Big Ten</a></td><td class="right " data-stat="games" >36</td><td class="right " data-stat="games_started" >34</td><td class="right " data-stat="mp_per_g" >31.4</td><td class="right " data-stat="fg_per_g" >5.6</td><td class="right " data-stat="fga_per_g" >12.3</td><td class="right " data-stat="fg_pct" >.460</td><td class="right " data-stat="fg2_per_g" >3.9</td><td class="right " data-stat="fg2a_per_g" >7.3</td><td class="right " data-stat="fg2_pct" >.531</td><td class="right " data-stat="fg3_per_g" >1.8</td><td class="right " data-stat="fg3a_per_g" >5.0</td><td class="right " data-stat="fg3_pct" >.358</td><td class="right " data-stat="ft_per_g" >4.3</td><td class="right " data-stat="fta_per_g" >5.8</td><td class="right " data-stat="ft_pct" >.744</td><td class="right " data-stat="orb_per_g" >0.7</td><td class="right " data-stat="drb_per_g" >4.2</td><td class="right " data-stat="trb_per_g" >4.9</td><td class="right " data-stat="ast_per_g" >3.1</td><td class="right " data-stat="stl_per_g" >0.9</td><td class="right " data-stat="blk_per_g" >0.6</td><td class="right " data-stat="tov_per_g" >2.6</td><td class="right " data-stat="pf_per_g" >1.8</td><td class="right " data-stat="pts_per_g" >17.3</td><td class="right iz" data-stat="sos-dum" ></td><td class="right " data-stat="sos" >8.23</td></tr> </tbody><tfoot><tr ><th scope="row" class="left " data-stat="season" >Career</th><td class="left " data-stat="school_name" >Purdue</td><td class="left iz" data-stat="conf_abbr" ></td><td class="right " data-stat="games" >59</td><td class="right " data-stat="games_started" >46</td><td class="right " data-stat="mp_per_g" >28.6</td><td class="right " data-stat="fg_per_g" >4.9</td><td class="right " data-stat="fga_per_g" >11.3</td><td class="right " data-stat="fg_pct" >.440</td><td class="right " data-stat="fg2_per_g" >3.4</td><td class="right " data-stat="fg2a_per_g" >6.6</td><td class="right " data-stat="fg2_pct" >.523</td><td class="right " data-stat="fg3_per_g" >1.5</td><td class="right " data-stat="fg3a_per_g" >4.7</td><td class="right " data-stat="fg3_pct" >.322</td><td class="right " data-stat="ft_per_g" >3.5</td><td class="right " data-stat="fta_per_g" >4.7</td><td class="right " data-stat="ft_pct" >.739</td><td class="right " data-stat="orb_per_g" >0.7</td><td class="right " data-stat="drb_per_g" >3.5</td><td class="right " data-stat="trb_per_g" >4.3</td><td class="right " data-stat="ast_per_g" >2.6</td><td class="right " data-stat="stl_per_g" >0.8</td><td class="right " data-stat="blk_per_g" >0.6</td><td class="right " data-stat="tov_per_g" >2.1</td><td class="right " data-stat="pf_per_g" >1.7</td><td class="right " data-stat="pts_per_g" >14.9</td><td class="right iz" data-stat="sos-dum" ></td><td class="right " data-stat="sos" >9.73</td></tr> </tfoot> </tbody> </table>
+		
+ 
+	</div><div class="table_container" id="div_players_per_game_conf">
+		
+		<table class="stats_table sortable row_summable" id="players_per_game_conf" data-cols-to-freeze="1,3"> <caption>Per Game Table</caption> <colgroup><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col></colgroup> <thead> <tr> <th aria-label="Season" data-stat="season" scope="col" class=" poptip sort_default_asc center" >Season</th> <th aria-label="School" data-stat="school_name" scope="col" class=" poptip sort_default_asc center" data-tip="* = NCAA Tournament appearance" >School</th> <th aria-label="Conf" data-stat="conf_abbr" scope="col" class=" poptip sort_default_asc center" data-tip="Conference" >Conf</th> <th aria-label="Games" data-stat="games" scope="col" class=" poptip center" data-tip="Games" >G</th> <th aria-label="GS" data-stat="games_started" scope="col" class=" poptip center" data-tip="Games Started" >GS</th> <th aria-label="Minutes Played Per Game" data-stat="mp_per_g" scope="col" class=" poptip center" data-tip="Minutes Played Per Game" data-filter="1" data-name="Minutes Played Per Game" >MP</th> <th aria-label="Field Goals Per Game" data-stat="fg_per_g" scope="col" class=" poptip center" data-tip="Field Goals Per Game" >FG</th> <th aria-label="Field Goal Attempts Per Game" data-stat="fga_per_g" scope="col" class=" poptip center" data-tip="Field Goal Attempts Per Game" >FGA</th> <th aria-label="Field Goal Percentage" data-stat="fg_pct" scope="col" class=" poptip center" data-tip="Field Goal Percentage" data-filter="1" data-name="Field Goal Percentage" >FG%</th> <th aria-label="2-Point Field Goals Per Game" data-stat="fg2_per_g" scope="col" class=" poptip center" data-tip="2-Point Field Goals Per Game" >2P</th> <th aria-label="2-Point Field Goal Attempts Per Game" data-stat="fg2a_per_g" scope="col" class=" poptip center" data-tip="2-Point Field Goal Attempts Per Game" >2PA</th> <th aria-label="2-Point Field Goal Percentage" data-stat="fg2_pct" scope="col" class=" poptip center" data-tip="2-Point Field Goal Percentage" data-filter="1" data-name="2-Point Field Goal Percentage" >2P%</th> <th aria-label="3-Point Field Goals Per Game" data-stat="fg3_per_g" scope="col" class=" poptip center" data-tip="3-Point Field Goals Per Game" >3P</th> <th aria-label="3-Point Field Goal Attempts Per Game" data-stat="fg3a_per_g" scope="col" class=" poptip center" data-tip="3-Point Field Goal Attempts Per Game" >3PA</th> <th aria-label="3-Point Field Goal Percentage" data-stat="fg3_pct" scope="col" class=" poptip center" data-tip="3-Point Field Goal Percentage" data-filter="1" data-name="3-Point Field Goal Percentage" >3P%</th> <th aria-label="Free Throws Per Game" data-stat="ft_per_g" scope="col" class=" poptip center" data-tip="Free Throws Per Game" >FT</th> <th aria-label="Free Throw Attempts Per Game" data-stat="fta_per_g" scope="col" class=" poptip center" data-tip="Free Throw Attempts Per Game" >FTA</th> <th aria-label="Free Throw Percentage" data-stat="ft_pct" scope="col" class=" poptip center" data-tip="Free Throw Percentage" data-filter="1" data-name="Free Throw Percentage" >FT%</th> <th aria-label="Offensive Rebounds Per Game" data-stat="orb_per_g" scope="col" class=" poptip center" data-tip="Offensive Rebounds Per Game" data-filter="1" data-name="Offensive Rebounds Per Game" >ORB</th> <th aria-label="Defensive Rebounds Per Game" data-stat="drb_per_g" scope="col" class=" poptip center" data-tip="Defensive Rebounds Per Game" data-filter="1" data-name="Defensive Rebounds Per Game" >DRB</th> <th aria-label="Total Rebounds Per Game" data-stat="trb_per_g" scope="col" class=" poptip center" data-tip="Total Rebounds Per Game" data-filter="1" data-name="Total Rebounds Per Game" >TRB</th> <th aria-label="Assists Per Game" data-stat="ast_per_g" scope="col" class=" poptip center" data-tip="Assists Per Game" data-filter="1" data-name="Assists Per Game" >AST</th> <th aria-label="Steals Per Game" data-stat="stl_per_g" scope="col" class=" poptip center" data-tip="Steals Per Game" data-filter="1" data-name="Steals Per Game" >STL</th> <th aria-label="Blocks Per Game" data-stat="blk_per_g" scope="col" class=" poptip center" data-tip="Blocks Per Game" data-filter="1" data-name="Blocks Per Game" >BLK</th> <th aria-label="Turnovers Per Game" data-stat="tov_per_g" scope="col" class=" poptip center" data-tip="Turnovers Per Game" >TOV</th> <th aria-label="Personal Fouls Per Game" data-stat="pf_per_g" scope="col" class=" poptip center" data-tip="Personal Fouls Per Game" >PF</th> <th aria-label="Points Per Game" data-stat="pts_per_g" scope="col" class=" poptip center" data-tip="Points Per Game" data-filter="1" data-name="Points Per Game" >PTS</th> </tr> </thead> <tbody> <tr id="players_per_game_conf.2021" ><th scope="row" class="left " data-stat="season" ><a href='/cbb/seasons/2021.html'>2020-21</a></th><td class="left " data-stat="school_name" ><a href='/cbb/schools/purdue/2021.html'>Purdue</a></td><td class="left " data-stat="conf_abbr" ><a href='/cbb/conferences/big-ten/2021.html'>Big Ten</a></td><td class="right " data-stat="games" >19</td><td class="right " data-stat="games_started" >10</td><td class="right " data-stat="mp_per_g" >23.3</td><td class="right " data-stat="fg_per_g" >3.5</td><td class="right " data-stat="fga_per_g" >9.2</td><td class="right " data-stat="fg_pct" >.379</td><td class="right " data-stat="fg2_per_g" >2.6</td><td class="right " data-stat="fg2a_per_g" >5.3</td><td class="right " data-stat="fg2_pct" >.500</td><td class="right " data-stat="fg3_per_g" >0.8</td><td class="right " data-stat="fg3a_per_g" >3.9</td><td class="right " data-stat="fg3_pct" >.216</td><td class="right " data-stat="ft_per_g" >2.5</td><td class="right " data-stat="fta_per_g" >3.3</td><td class="right " data-stat="ft_pct" >.758</td><td class="right " data-stat="orb_per_g" >0.9</td><td class="right " data-stat="drb_per_g" >2.7</td><td class="right " data-stat="trb_per_g" >3.6</td><td class="right " data-stat="ast_per_g" >2.1</td><td class="right " data-stat="stl_per_g" >0.8</td><td class="right " data-stat="blk_per_g" >0.7</td><td class="right " data-stat="tov_per_g" >1.4</td><td class="right " data-stat="pf_per_g" >1.6</td><td class="right " data-stat="pts_per_g" >10.3</td></tr> <tr id="players_per_game_conf.2022" ><th scope="row" class="left " data-stat="season" ><a href='/cbb/seasons/2022.html'>2021-22</a></th><td class="left " data-stat="school_name" ><a href='/cbb/schools/purdue/2022.html'>Purdue</a></td><td class="left " data-stat="conf_abbr" ><a href='/cbb/conferences/big-ten/2022.html'>Big Ten</a></td><td class="right " data-stat="games" >19</td><td class="right " data-stat="games_started" >17</td><td class="right " data-stat="mp_per_g" >32.6</td><td class="right " data-stat="fg_per_g" >5.5</td><td class="right " data-stat="fga_per_g" >12.8</td><td class="right " data-stat="fg_pct" >.426</td><td class="right " data-stat="fg2_per_g" >3.9</td><td class="right " data-stat="fg2a_per_g" >7.9</td><td class="right " data-stat="fg2_pct" >.500</td><td class="right " data-stat="fg3_per_g" >1.5</td><td class="right " data-stat="fg3a_per_g" >4.9</td><td class="right " data-stat="fg3_pct" >.309</td><td class="right " data-stat="ft_per_g" >5.1</td><td class="right " data-stat="fta_per_g" >7.0</td><td class="right " data-stat="ft_pct" >.722</td><td class="right " data-stat="orb_per_g" >0.9</td><td class="right " data-stat="drb_per_g" >3.3</td><td class="right " data-stat="trb_per_g" >4.2</td><td class="right " data-stat="ast_per_g" >2.9</td><td class="right " data-stat="stl_per_g" >0.9</td><td class="right " data-stat="blk_per_g" >0.5</td><td class="right " data-stat="tov_per_g" >2.5</td><td class="right " data-stat="pf_per_g" >1.9</td><td class="right " data-stat="pts_per_g" >17.5</td></tr> </tbody><tfoot><tr ><th scope="row" class="left " data-stat="season" >Career</th><td class="left " data-stat="school_name" >Purdue</td><td class="left iz" data-stat="conf_abbr" ></td><td class="right " data-stat="games" >38</td><td class="right " data-stat="games_started" >27</td><td class="right " data-stat="mp_per_g" >27.9</td><td class="right " data-stat="fg_per_g" >4.5</td><td class="right " data-stat="fga_per_g" >11.0</td><td class="right " data-stat="fg_pct" >.407</td><td class="right " data-stat="fg2_per_g" >3.3</td><td class="right " data-stat="fg2a_per_g" >6.6</td><td class="right " data-stat="fg2_pct" >.500</td><td class="right " data-stat="fg3_per_g" >1.2</td><td class="right " data-stat="fg3a_per_g" >4.4</td><td class="right " data-stat="fg3_pct" >.268</td><td class="right " data-stat="ft_per_g" >3.8</td><td class="right " data-stat="fta_per_g" >5.1</td><td class="right " data-stat="ft_pct" >.733</td><td class="right " data-stat="orb_per_g" >0.9</td><td class="right " data-stat="drb_per_g" >3.0</td><td class="right " data-stat="trb_per_g" >3.9</td><td class="right " data-stat="ast_per_g" >2.5</td><td class="right " data-stat="stl_per_g" >0.9</td><td class="right " data-stat="blk_per_g" >0.6</td><td class="right " data-stat="tov_per_g" >1.9</td><td class="right " data-stat="pf_per_g" >1.8</td><td class="right " data-stat="pts_per_g" >13.9</td></tr> </tfoot> </tbody> </table>
+		
+ 
+	</div></div>
+
+
+</div>
+<div class="section_wrapper setup_commented commented" id="all_9575422227">
+<div class="section_heading assoc_9575422227" id="9575422227_sh">
+  <span class="section_anchor" id="9575422227_link" data-label="Player News"></span><h2>Player News</h2>    <div class="section_heading_text">
+      <ul><li><a href="/cbb/linker/newsfeed.cgi">Add Your Blog Posts Here</a></li><li><a href="/cbb/players/news.fcgi?id=jaden-ivey-1">Player News Archive</a></li><li><a href="/cbb/players/news.fcgi?id=jaden-ivey-1&amp;rss=1">Player News RSS Feed</a></li>
+      </ul>
+    </div>
+    		
+</div><div class="placeholder"></div>
+<!--     <div class="section_content" id="div_9575422227">
+	    <ul class="news_stories">
+<li><strong>9/4</strong> <a rel="nofollow noopener" target="_blank"  href="https://bellyupsports.com/nba-draft-2022-brads-big-board/" onclick="sr_record_analytics_event('newsfeed_click','Belly Up Sports', sr_record_directory(),'sr_tracker');">Belly Up Sports: NBA Draft 2022: Brad&#8217;s Big Board</a>:&nbsp;<em>As the NBA Finals are now a wrap, the NBA Draft is quickly approaching.</em>...
+</li><li><strong>9/4</strong> <a rel="nofollow noopener" target="_blank"  href="https://bellyupsports.com/nba-mock-draft-post-lottery-edition/" onclick="sr_record_analytics_event('newsfeed_click','Belly Up Sports', sr_record_directory(),'sr_tracker');">Belly Up Sports: NBA Mock Draft &#8211; Post Lottery Edition</a>:&nbsp;<em>After the draft lottery, the order is now set. With only a month</em>...
+</li><li><strong>7/22</strong> <a rel="nofollow noopener" target="_blank"  href="https://heatcheckcbb.com/creighton-basketball-ryan-kalkbrenner-is-the-elite-anchor-of-the-big-east-favorite/" onclick="sr_record_analytics_event('newsfeed_click','Heat Check CBB', sr_record_directory(),'sr_tracker');">Heat Check CBB: Creighton Basketball: Ryan Kalkbrenner is the elite anchor of the Big East favorite</a>:&nbsp;<em>Creighton basketball returns an exciting sophomore class, but</em>...
+</li><li><strong>6/23</strong> <a rel="nofollow noopener" target="_blank"  href="https://heatcheckcbb.com/2022-nba-mock-draft-final-projections-for-all-58-picks/" onclick="sr_record_analytics_event('newsfeed_click','Heat Check CBB', sr_record_directory(),'sr_tracker');">Heat Check CBB: 2022 NBA Mock Draft: Final projections for all 58 picks</a>:&nbsp;<em>See who is expected to land where in Heat Check CBB's final projections</em>...
+</li><li><strong>6/22</strong> <a rel="nofollow noopener" target="_blank"  href="https://zonecoverage.com/2022/timberwolves/the-wolves-are-going-to-have-enticing-options-at-19/" onclick="sr_record_analytics_event('newsfeed_click','Zone Coverage', sr_record_directory(),'sr_tracker');">Zone Coverage: The Wolves Are Going To Have Enticing Options At 19</a>:&nbsp;<em>The 2022 NBA Draft is just hours away, and reports of teams looking</em>...
+</li></ul>
+		
+    </div>
+-->
+</div>
+
+
+            
+            
+            
+         
+      
+         
+            <div id="all_players_totals" class="table_wrapper tabbed">
+	
+		<span class="section_anchor" id="players_totals_link" data-label="Totals"></span>
+	
+
+<div class="section_heading assoc_players_totals" id="players_totals_sh">
+  <span class="section_anchor" id="players_totals_link" data-label="Totals" data-no-inpage="1"></span><h2>Totals</h2>    <div class="section_heading_text">
+      <ul>
+      </ul>
+    </div>
+    		
+</div>
+
+
+<div class="section_heading hidden assoc_players_totals_conf" id="players_totals_conf_sh">
+  <span class="section_anchor" id="players_totals_conf_link" data-label="Totals" data-no-inpage="1"></span><h2>Totals</h2>    <div class="section_heading_text">
+      <ul>
+      </ul>
+    </div>
+    		
+</div>
+	
+	
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+	
+	
+<div class="filter switcher" data-controls="#switcher_players_totals">
+
+<div class=" current">
+	<a class="sr_preset" data-hide="#all_players_totals .section_heading, #all_players_totals .topscroll_div" data-show=".assoc_players_totals">Season</a>
+</div><div class="">
+	<a class="sr_preset" data-hide="#all_players_totals .section_heading, #all_players_totals .topscroll_div" data-show=".assoc_players_totals_conf">Conference</a>
+</div></div>
+
+<div id="switcher_players_totals">
+<div class="table_container current" id="div_players_totals">
+		
+		<table class="stats_table sortable row_summable" id="players_totals" data-cols-to-freeze="1,3"> <caption>Totals Table</caption> <colgroup><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col></colgroup> <thead> <tr> <th aria-label="Season" data-stat="season" scope="col" class=" poptip sort_default_asc center" >Season</th> <th aria-label="School" data-stat="school_name" scope="col" class=" poptip sort_default_asc center" data-tip="* = NCAA Tournament appearance" >School</th> <th aria-label="Conf" data-stat="conf_abbr" scope="col" class=" poptip sort_default_asc center" data-tip="Conference" >Conf</th> <th aria-label="Games" data-stat="games" scope="col" class=" poptip center" data-tip="Games" >G</th> <th aria-label="GS" data-stat="games_started" scope="col" class=" poptip center" data-tip="Games Started" >GS</th> <th aria-label="Minutes Played" data-stat="mp" scope="col" class=" poptip center" data-tip="Minutes Played" >MP</th> <th aria-label="Field Goals" data-stat="fg" scope="col" class=" poptip center" data-tip="Field Goals" >FG</th> <th aria-label="Field Goal Attempts" data-stat="fga" scope="col" class=" poptip center" data-tip="Field Goal Attempts" >FGA</th> <th aria-label="Field Goal Percentage" data-stat="fg_pct" scope="col" class=" poptip center" data-tip="Field Goal Percentage" data-filter="1" data-name="Field Goal Percentage" >FG%</th> <th aria-label="2-Point Field Goals" data-stat="fg2" scope="col" class=" poptip center" data-tip="2-Point Field Goals" >2P</th> <th aria-label="2-Point Field Goal Attempts" data-stat="fg2a" scope="col" class=" poptip center" data-tip="2-Point Field Goal Attempts" >2PA</th> <th aria-label="2-Point Field Goal Percentage" data-stat="fg2_pct" scope="col" class=" poptip center" data-tip="2-Point Field Goal Percentage" data-filter="1" data-name="2-Point Field Goal Percentage" >2P%</th> <th aria-label="3-Point Field Goals" data-stat="fg3" scope="col" class=" poptip center" data-tip="3-Point Field Goals" >3P</th> <th aria-label="3-Point Field Goal Attempts" data-stat="fg3a" scope="col" class=" poptip center" data-tip="3-Point Field Goal Attempts" >3PA</th> <th aria-label="3-Point Field Goal Percentage" data-stat="fg3_pct" scope="col" class=" poptip center" data-tip="3-Point Field Goal Percentage" data-filter="1" data-name="3-Point Field Goal Percentage" >3P%</th> <th aria-label="Free Throws" data-stat="ft" scope="col" class=" poptip center" data-tip="Free Throws" >FT</th> <th aria-label="Free Throw Attempts" data-stat="fta" scope="col" class=" poptip center" data-tip="Free Throw Attempts" >FTA</th> <th aria-label="Free Throw Percentage" data-stat="ft_pct" scope="col" class=" poptip center" data-tip="Free Throw Percentage" data-filter="1" data-name="Free Throw Percentage" >FT%</th> <th aria-label="Offensive Rebounds" data-stat="orb" scope="col" class=" poptip center" data-tip="Offensive Rebounds" >ORB</th> <th aria-label="Defensive Rebounds" data-stat="drb" scope="col" class=" poptip center" data-tip="Defensive Rebounds" >DRB</th> <th aria-label="Total Rebounds" data-stat="trb" scope="col" class=" poptip center" data-tip="Total Rebounds" >TRB</th> <th aria-label="Assists" data-stat="ast" scope="col" class=" poptip center" data-tip="Assists" >AST</th> <th aria-label="Steals" data-stat="stl" scope="col" class=" poptip center" data-tip="Steals" >STL</th> <th aria-label="Blocks" data-stat="blk" scope="col" class=" poptip center" data-tip="Blocks" >BLK</th> <th aria-label="Turnovers" data-stat="tov" scope="col" class=" poptip center" data-tip="Turnovers" >TOV</th> <th aria-label="Personal Fouls" data-stat="pf" scope="col" class=" poptip center" data-tip="Personal Fouls" >PF</th> <th aria-label="Points" data-stat="pts" scope="col" class=" poptip center" data-tip="Points" >PTS</th> </tr> </thead> <tbody> <tr id="players_totals.2021" ><th scope="row" class="left " data-stat="season" ><a href='/cbb/seasons/2021.html'>2020-21</a></th><td class="left " data-stat="school_name" ><a href='/cbb/schools/purdue/2021.html'>Purdue</a></td><td class="left " data-stat="conf_abbr" ><a href='/cbb/conferences/big-ten/2021.html'>Big Ten</a></td><td class="right " data-stat="games" >23</td><td class="right " data-stat="games_started" >12</td><td class="right " data-stat="mp" >557</td><td class="right " data-stat="fg" >89</td><td class="right " data-stat="fga" >223</td><td class="right " data-stat="fg_pct" >.399</td><td class="right " data-stat="fg2" >64</td><td class="right " data-stat="fg2a" >126</td><td class="right " data-stat="fg2_pct" >.508</td><td class="right " data-stat="fg3" >25</td><td class="right " data-stat="fg3a" >97</td><td class="right " data-stat="fg3_pct" >.258</td><td class="right " data-stat="ft" >53</td><td class="right " data-stat="fta" >73</td><td class="right " data-stat="ft_pct" >.726</td><td class="right " data-stat="orb" >19</td><td class="right " data-stat="drb" >57</td><td class="right " data-stat="trb" >76</td><td class="right " data-stat="ast" >43</td><td class="right " data-stat="stl" >17</td><td class="right " data-stat="blk" >16</td><td class="right " data-stat="tov" >31</td><td class="right " data-stat="pf" >39</td><td class="right " data-stat="pts" >256</td></tr> <tr id="players_totals.2022" ><th scope="row" class="left " data-stat="season" ><a href='/cbb/seasons/2022.html'>2021-22</a></th><td class="left " data-stat="school_name" ><a href='/cbb/schools/purdue/2022.html'>Purdue</a></td><td class="left " data-stat="conf_abbr" ><a href='/cbb/conferences/big-ten/2022.html'>Big Ten</a></td><td class="right " data-stat="games" >36</td><td class="right " data-stat="games_started" >34</td><td class="right " data-stat="mp" >1132</td><td class="right " data-stat="fg" >203</td><td class="right " data-stat="fga" >441</td><td class="right " data-stat="fg_pct" >.460</td><td class="right " data-stat="fg2" >139</td><td class="right " data-stat="fg2a" >262</td><td class="right " data-stat="fg2_pct" >.531</td><td class="right " data-stat="fg3" >64</td><td class="right " data-stat="fg3a" >179</td><td class="right " data-stat="fg3_pct" >.358</td><td class="right " data-stat="ft" >154</td><td class="right " data-stat="fta" >207</td><td class="right " data-stat="ft_pct" >.744</td><td class="right " data-stat="orb" >24</td><td class="right " data-stat="drb" >152</td><td class="right " data-stat="trb" >176</td><td class="right " data-stat="ast" >110</td><td class="right " data-stat="stl" >33</td><td class="right " data-stat="blk" >20</td><td class="right " data-stat="tov" >94</td><td class="right " data-stat="pf" >63</td><td class="right " data-stat="pts" >624</td></tr> </tbody><tfoot><tr ><th scope="row" class="left " data-stat="season" >Career</th><td class="left " data-stat="school_name" >Purdue</td><td class="left iz" data-stat="conf_abbr" ></td><td class="right " data-stat="games" >59</td><td class="right " data-stat="games_started" >46</td><td class="right " data-stat="mp" >1689</td><td class="right " data-stat="fg" >292</td><td class="right " data-stat="fga" >664</td><td class="right " data-stat="fg_pct" >.440</td><td class="right " data-stat="fg2" >203</td><td class="right " data-stat="fg2a" >388</td><td class="right " data-stat="fg2_pct" >.523</td><td class="right " data-stat="fg3" >89</td><td class="right " data-stat="fg3a" >276</td><td class="right " data-stat="fg3_pct" >.322</td><td class="right " data-stat="ft" >207</td><td class="right " data-stat="fta" >280</td><td class="right " data-stat="ft_pct" >.739</td><td class="right " data-stat="orb" >43</td><td class="right " data-stat="drb" >209</td><td class="right " data-stat="trb" >252</td><td class="right " data-stat="ast" >153</td><td class="right " data-stat="stl" >50</td><td class="right " data-stat="blk" >36</td><td class="right " data-stat="tov" >125</td><td class="right " data-stat="pf" >102</td><td class="right " data-stat="pts" >880</td></tr> </tfoot> </tbody> </table>
+		
+ 
+	</div><div class="table_container" id="div_players_totals_conf">
+		
+		<table class="stats_table sortable row_summable" id="players_totals_conf" data-cols-to-freeze="1,3"> <caption>Totals Table</caption> <colgroup><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col></colgroup> <thead> <tr> <th aria-label="Season" data-stat="season" scope="col" class=" poptip sort_default_asc center" >Season</th> <th aria-label="School" data-stat="school_name" scope="col" class=" poptip sort_default_asc center" data-tip="* = NCAA Tournament appearance" >School</th> <th aria-label="Conf" data-stat="conf_abbr" scope="col" class=" poptip sort_default_asc center" data-tip="Conference" >Conf</th> <th aria-label="Games" data-stat="games" scope="col" class=" poptip center" data-tip="Games" >G</th> <th aria-label="GS" data-stat="games_started" scope="col" class=" poptip center" data-tip="Games Started" >GS</th> <th aria-label="Minutes Played" data-stat="mp" scope="col" class=" poptip center" data-tip="Minutes Played" >MP</th> <th aria-label="Field Goals" data-stat="fg" scope="col" class=" poptip center" data-tip="Field Goals" >FG</th> <th aria-label="Field Goal Attempts" data-stat="fga" scope="col" class=" poptip center" data-tip="Field Goal Attempts" >FGA</th> <th aria-label="Field Goal Percentage" data-stat="fg_pct" scope="col" class=" poptip center" data-tip="Field Goal Percentage" data-filter="1" data-name="Field Goal Percentage" >FG%</th> <th aria-label="2-Point Field Goals" data-stat="fg2" scope="col" class=" poptip center" data-tip="2-Point Field Goals" >2P</th> <th aria-label="2-Point Field Goal Attempts" data-stat="fg2a" scope="col" class=" poptip center" data-tip="2-Point Field Goal Attempts" >2PA</th> <th aria-label="2-Point Field Goal Percentage" data-stat="fg2_pct" scope="col" class=" poptip center" data-tip="2-Point Field Goal Percentage" data-filter="1" data-name="2-Point Field Goal Percentage" >2P%</th> <th aria-label="3-Point Field Goals" data-stat="fg3" scope="col" class=" poptip center" data-tip="3-Point Field Goals" >3P</th> <th aria-label="3-Point Field Goal Attempts" data-stat="fg3a" scope="col" class=" poptip center" data-tip="3-Point Field Goal Attempts" >3PA</th> <th aria-label="3-Point Field Goal Percentage" data-stat="fg3_pct" scope="col" class=" poptip center" data-tip="3-Point Field Goal Percentage" data-filter="1" data-name="3-Point Field Goal Percentage" >3P%</th> <th aria-label="Free Throws" data-stat="ft" scope="col" class=" poptip center" data-tip="Free Throws" >FT</th> <th aria-label="Free Throw Attempts" data-stat="fta" scope="col" class=" poptip center" data-tip="Free Throw Attempts" >FTA</th> <th aria-label="Free Throw Percentage" data-stat="ft_pct" scope="col" class=" poptip center" data-tip="Free Throw Percentage" data-filter="1" data-name="Free Throw Percentage" >FT%</th> <th aria-label="Offensive Rebounds" data-stat="orb" scope="col" class=" poptip center" data-tip="Offensive Rebounds" >ORB</th> <th aria-label="Defensive Rebounds" data-stat="drb" scope="col" class=" poptip center" data-tip="Defensive Rebounds" >DRB</th> <th aria-label="Total Rebounds" data-stat="trb" scope="col" class=" poptip center" data-tip="Total Rebounds" >TRB</th> <th aria-label="Assists" data-stat="ast" scope="col" class=" poptip center" data-tip="Assists" >AST</th> <th aria-label="Steals" data-stat="stl" scope="col" class=" poptip center" data-tip="Steals" >STL</th> <th aria-label="Blocks" data-stat="blk" scope="col" class=" poptip center" data-tip="Blocks" >BLK</th> <th aria-label="Turnovers" data-stat="tov" scope="col" class=" poptip center" data-tip="Turnovers" >TOV</th> <th aria-label="Personal Fouls" data-stat="pf" scope="col" class=" poptip center" data-tip="Personal Fouls" >PF</th> <th aria-label="Points" data-stat="pts" scope="col" class=" poptip center" data-tip="Points" >PTS</th> </tr> </thead> <tbody> <tr id="players_totals_conf.2021" ><th scope="row" class="left " data-stat="season" ><a href='/cbb/seasons/2021.html'>2020-21</a></th><td class="left " data-stat="school_name" ><a href='/cbb/schools/purdue/2021.html'>Purdue</a></td><td class="left " data-stat="conf_abbr" ><a href='/cbb/conferences/big-ten/2021.html'>Big Ten</a></td><td class="right " data-stat="games" >19</td><td class="right " data-stat="games_started" >10</td><td class="right " data-stat="mp" >442</td><td class="right " data-stat="fg" >66</td><td class="right " data-stat="fga" >174</td><td class="right " data-stat="fg_pct" >.379</td><td class="right " data-stat="fg2" >50</td><td class="right " data-stat="fg2a" >100</td><td class="right " data-stat="fg2_pct" >.500</td><td class="right " data-stat="fg3" >16</td><td class="right " data-stat="fg3a" >74</td><td class="right " data-stat="fg3_pct" >.216</td><td class="right " data-stat="ft" >47</td><td class="right " data-stat="fta" >62</td><td class="right " data-stat="ft_pct" >.758</td><td class="right " data-stat="orb" >17</td><td class="right " data-stat="drb" >51</td><td class="right " data-stat="trb" >68</td><td class="right " data-stat="ast" >39</td><td class="right " data-stat="stl" >15</td><td class="right " data-stat="blk" >13</td><td class="right " data-stat="tov" >26</td><td class="right " data-stat="pf" >31</td><td class="right " data-stat="pts" >195</td></tr> <tr id="players_totals_conf.2022" ><th scope="row" class="left " data-stat="season" ><a href='/cbb/seasons/2022.html'>2021-22</a></th><td class="left " data-stat="school_name" ><a href='/cbb/schools/purdue/2022.html'>Purdue</a></td><td class="left " data-stat="conf_abbr" ><a href='/cbb/conferences/big-ten/2022.html'>Big Ten</a></td><td class="right " data-stat="games" >19</td><td class="right " data-stat="games_started" >17</td><td class="right " data-stat="mp" >620</td><td class="right " data-stat="fg" >104</td><td class="right " data-stat="fga" >244</td><td class="right " data-stat="fg_pct" >.426</td><td class="right " data-stat="fg2" >75</td><td class="right " data-stat="fg2a" >150</td><td class="right " data-stat="fg2_pct" >.500</td><td class="right " data-stat="fg3" >29</td><td class="right " data-stat="fg3a" >94</td><td class="right " data-stat="fg3_pct" >.309</td><td class="right " data-stat="ft" >96</td><td class="right " data-stat="fta" >133</td><td class="right " data-stat="ft_pct" >.722</td><td class="right " data-stat="orb" >17</td><td class="right " data-stat="drb" >62</td><td class="right " data-stat="trb" >79</td><td class="right " data-stat="ast" >55</td><td class="right " data-stat="stl" >18</td><td class="right " data-stat="blk" >10</td><td class="right " data-stat="tov" >47</td><td class="right " data-stat="pf" >36</td><td class="right " data-stat="pts" >333</td></tr> </tbody><tfoot><tr ><th scope="row" class="left " data-stat="season" >Career</th><td class="left " data-stat="school_name" >Purdue</td><td class="left iz" data-stat="conf_abbr" ></td><td class="right " data-stat="games" >38</td><td class="right " data-stat="games_started" >27</td><td class="right " data-stat="mp" >1062</td><td class="right " data-stat="fg" >170</td><td class="right " data-stat="fga" >418</td><td class="right " data-stat="fg_pct" >.407</td><td class="right " data-stat="fg2" >125</td><td class="right " data-stat="fg2a" >250</td><td class="right " data-stat="fg2_pct" >.500</td><td class="right " data-stat="fg3" >45</td><td class="right " data-stat="fg3a" >168</td><td class="right " data-stat="fg3_pct" >.268</td><td class="right " data-stat="ft" >143</td><td class="right " data-stat="fta" >195</td><td class="right " data-stat="ft_pct" >.733</td><td class="right " data-stat="orb" >34</td><td class="right " data-stat="drb" >113</td><td class="right " data-stat="trb" >147</td><td class="right " data-stat="ast" >94</td><td class="right " data-stat="stl" >33</td><td class="right " data-stat="blk" >23</td><td class="right " data-stat="tov" >73</td><td class="right " data-stat="pf" >67</td><td class="right " data-stat="pts" >528</td></tr> </tfoot> </tbody> </table>
+		
+ 
+	</div></div>
+
+
+</div>
+
+            
+            
+            
+	       	
+
+<!-- fs_btf_1 -->
+<div class="adblock">
+<!-- div#fs_fs_btf_1  -->
+<div align="center" id="div-gpt-ad-728x90-BTF-1">
+    <script data-cfasync="false" type='text/javascript'>
+    if (sr_detect_ie || sr_detect_edge || Modernizr.adfree) {
+    }
+    else {
+        console.log('push ad:div-gpt-ad-728x90-BTF-1');
+        freestar.queue.push(function() { googletag.display('div-gpt-ad-728x90-BTF-1'); });
+    }
+    </script>
+</div>
+<!-- /div.#fs_fs_btf_1 -->
+
+
+</div>
+
+
+            
+         
+      
+         
+            <div id="all_players_per_min" class="table_wrapper tabbed">
+	
+		<span class="section_anchor" id="players_per_min_link" data-label="Per 40 Minutes"></span>
+	
+
+<div class="section_heading assoc_players_per_min" id="players_per_min_sh">
+  <span class="section_anchor" id="players_per_min_link" data-label="Per 40 Minutes" data-no-inpage="1"></span><h2>Per 40 Minutes</h2>    <div class="section_heading_text">
+      <ul>
+      </ul>
+    </div>
+    		
+</div>
+
+
+<div class="section_heading hidden assoc_players_per_min_conf" id="players_per_min_conf_sh">
+  <span class="section_anchor" id="players_per_min_conf_link" data-label="Per 40 Minutes" data-no-inpage="1"></span><h2>Per 40 Minutes</h2>    <div class="section_heading_text">
+      <ul>
+      </ul>
+    </div>
+    		
+</div>
+	
+	
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+	
+	
+<div class="filter switcher" data-controls="#switcher_players_per_min">
+
+<div class=" current">
+	<a class="sr_preset" data-hide="#all_players_per_min .section_heading, #all_players_per_min .topscroll_div" data-show=".assoc_players_per_min">Season</a>
+</div><div class="">
+	<a class="sr_preset" data-hide="#all_players_per_min .section_heading, #all_players_per_min .topscroll_div" data-show=".assoc_players_per_min_conf">Conference</a>
+</div></div>
+
+<div id="switcher_players_per_min">
+<div class="table_container current" id="div_players_per_min">
+		
+		<table class="stats_table sortable row_summable" id="players_per_min" data-cols-to-freeze="1,3"> <caption>Per 40 Minutes Table</caption> <colgroup><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col></colgroup> <thead> <tr> <th aria-label="Season" data-stat="season" scope="col" class=" poptip sort_default_asc center" >Season</th> <th aria-label="School" data-stat="school_name" scope="col" class=" poptip sort_default_asc center" data-tip="* = NCAA Tournament appearance" >School</th> <th aria-label="Conf" data-stat="conf_abbr" scope="col" class=" poptip sort_default_asc center" data-tip="Conference" >Conf</th> <th aria-label="Games" data-stat="games" scope="col" class=" poptip center" data-tip="Games" >G</th> <th aria-label="GS" data-stat="games_started" scope="col" class=" poptip center" data-tip="Games Started" >GS</th> <th aria-label="Minutes Played" data-stat="mp" scope="col" class=" poptip center" data-tip="Minutes Played" >MP</th> <th aria-label="Field Goals Per 40 Minutes" data-stat="fg_per_min" scope="col" class=" poptip center" data-tip="Field Goals Per 40 Minutes" >FG</th> <th aria-label="Field Goal Attempts Per 40 Minutes" data-stat="fga_per_min" scope="col" class=" poptip center" data-tip="Field Goal Attempts Per 40 Minutes" >FGA</th> <th aria-label="Field Goal Percentage" data-stat="fg_pct" scope="col" class=" poptip center" data-tip="Field Goal Percentage" data-filter="1" data-name="Field Goal Percentage" >FG%</th> <th aria-label="2-Point Field Goals Per 40 Minutes" data-stat="fg2_per_min" scope="col" class=" poptip center" data-tip="2-Point Field Goals Per 40 Minutes" >2P</th> <th aria-label="2-Point Field Goal Attempts Per 40 Minutes" data-stat="fg2a_per_min" scope="col" class=" poptip center" data-tip="2-Point Field Goal Attempts Per 40 Minutes" >2PA</th> <th aria-label="2-Point Field Goal Percentage" data-stat="fg2_pct" scope="col" class=" poptip center" data-tip="2-Point Field Goal Percentage" data-filter="1" data-name="2-Point Field Goal Percentage" >2P%</th> <th aria-label="3-Point Field Goals Per 40 Minutes" data-stat="fg3_per_min" scope="col" class=" poptip center" data-tip="3-Point Field Goals Per 40 Minutes" >3P</th> <th aria-label="3-Point Field Goal Attempts Per 40 Minutes" data-stat="fg3a_per_min" scope="col" class=" poptip center" data-tip="3-Point Field Goal Attempts Per 40 Minutes" >3PA</th> <th aria-label="3-Point Field Goal Percentage" data-stat="fg3_pct" scope="col" class=" poptip center" data-tip="3-Point Field Goal Percentage" data-filter="1" data-name="3-Point Field Goal Percentage" >3P%</th> <th aria-label="Free Throws Per 40 Minutes" data-stat="ft_per_min" scope="col" class=" poptip center" data-tip="Free Throws Per 40 Minutes" >FT</th> <th aria-label="Free Throw Attempts Per 40 Minutes" data-stat="fta_per_min" scope="col" class=" poptip center" data-tip="Free Throw Attempts Per 40 Minutes" >FTA</th> <th aria-label="Free Throw Percentage" data-stat="ft_pct" scope="col" class=" poptip center" data-tip="Free Throw Percentage" data-filter="1" data-name="Free Throw Percentage" >FT%</th> <th aria-label="Total Rebounds Per 40 Minutes" data-stat="trb_per_min" scope="col" class=" poptip center" data-tip="Total Rebounds Per 40 Minutes" data-filter="1" data-name="Total Rebounds Per 40 Minutes" >TRB</th> <th aria-label="Assists Per 40 Minutes" data-stat="ast_per_min" scope="col" class=" poptip center" data-tip="Assists Per 40 Minutes" data-filter="1" data-name="Assists Per 40 Minutes" >AST</th> <th aria-label="Steals Per 40 Minutes" data-stat="stl_per_min" scope="col" class=" poptip center" data-tip="Steals Per 40 Minutes" data-filter="1" data-name="Steals Per 40 Minutes" >STL</th> <th aria-label="Blocks Per 40 Minutes" data-stat="blk_per_min" scope="col" class=" poptip center" data-tip="Blocks Per 40 Minutes" data-filter="1" data-name="Blocks Per 40 Minutes" >BLK</th> <th aria-label="Turnovers Per 40 Minutes" data-stat="tov_per_min" scope="col" class=" poptip center" data-tip="Turnovers Per 40 Minutes" >TOV</th> <th aria-label="Personal Fouls Per 40 Minutes" data-stat="pf_per_min" scope="col" class=" poptip center" data-tip="Personal Fouls Per 40 Minutes" >PF</th> <th aria-label="Points Per 40 Minutes" data-stat="pts_per_min" scope="col" class=" poptip center" data-tip="Points Per 40 Minutes" >PTS</th> </tr> </thead> <tbody> <tr id="players_per_min.2021" ><th scope="row" class="left " data-stat="season" ><a href='/cbb/seasons/2021.html'>2020-21</a></th><td class="left " data-stat="school_name" ><a href='/cbb/schools/purdue/2021.html'>Purdue</a></td><td class="left " data-stat="conf_abbr" ><a href='/cbb/conferences/big-ten/2021.html'>Big Ten</a></td><td class="right " data-stat="games" >23</td><td class="right " data-stat="games_started" >12</td><td class="right " data-stat="mp" >557</td><td class="right " data-stat="fg_per_min" >6.4</td><td class="right " data-stat="fga_per_min" >16.0</td><td class="right " data-stat="fg_pct" >.399</td><td class="right " data-stat="fg2_per_min" >4.6</td><td class="right " data-stat="fg2a_per_min" >9.0</td><td class="right " data-stat="fg2_pct" >.508</td><td class="right " data-stat="fg3_per_min" >1.8</td><td class="right " data-stat="fg3a_per_min" >7.0</td><td class="right " data-stat="fg3_pct" >.258</td><td class="right " data-stat="ft_per_min" >3.8</td><td class="right " data-stat="fta_per_min" >5.2</td><td class="right " data-stat="ft_pct" >.726</td><td class="right " data-stat="trb_per_min" >5.5</td><td class="right " data-stat="ast_per_min" >3.1</td><td class="right " data-stat="stl_per_min" >1.2</td><td class="right " data-stat="blk_per_min" >1.1</td><td class="right " data-stat="tov_per_min" >2.2</td><td class="right " data-stat="pf_per_min" >2.8</td><td class="right " data-stat="pts_per_min" >18.4</td></tr> <tr id="players_per_min.2022" ><th scope="row" class="left " data-stat="season" ><a href='/cbb/seasons/2022.html'>2021-22</a></th><td class="left " data-stat="school_name" ><a href='/cbb/schools/purdue/2022.html'>Purdue</a></td><td class="left " data-stat="conf_abbr" ><a href='/cbb/conferences/big-ten/2022.html'>Big Ten</a></td><td class="right " data-stat="games" >36</td><td class="right " data-stat="games_started" >34</td><td class="right " data-stat="mp" >1132</td><td class="right " data-stat="fg_per_min" >7.2</td><td class="right " data-stat="fga_per_min" >15.6</td><td class="right " data-stat="fg_pct" >.460</td><td class="right " data-stat="fg2_per_min" >4.9</td><td class="right " data-stat="fg2a_per_min" >9.3</td><td class="right " data-stat="fg2_pct" >.531</td><td class="right " data-stat="fg3_per_min" >2.3</td><td class="right " data-stat="fg3a_per_min" >6.3</td><td class="right " data-stat="fg3_pct" >.358</td><td class="right " data-stat="ft_per_min" >5.4</td><td class="right " data-stat="fta_per_min" >7.3</td><td class="right " data-stat="ft_pct" >.744</td><td class="right " data-stat="trb_per_min" >6.2</td><td class="right " data-stat="ast_per_min" >3.9</td><td class="right " data-stat="stl_per_min" >1.2</td><td class="right " data-stat="blk_per_min" >0.7</td><td class="right " data-stat="tov_per_min" >3.3</td><td class="right " data-stat="pf_per_min" >2.2</td><td class="right " data-stat="pts_per_min" >22.0</td></tr> </tbody><tfoot><tr ><th scope="row" class="left " data-stat="season" >Career</th><td class="left " data-stat="school_name" >Purdue</td><td class="left iz" data-stat="conf_abbr" ></td><td class="right " data-stat="games" >59</td><td class="right " data-stat="games_started" >46</td><td class="right " data-stat="mp" >1689</td><td class="right " data-stat="fg_per_min" >6.9</td><td class="right " data-stat="fga_per_min" >15.7</td><td class="right " data-stat="fg_pct" >.440</td><td class="right " data-stat="fg2_per_min" >4.8</td><td class="right " data-stat="fg2a_per_min" >9.2</td><td class="right " data-stat="fg2_pct" >.523</td><td class="right " data-stat="fg3_per_min" >2.1</td><td class="right " data-stat="fg3a_per_min" >6.5</td><td class="right " data-stat="fg3_pct" >.322</td><td class="right " data-stat="ft_per_min" >4.9</td><td class="right " data-stat="fta_per_min" >6.6</td><td class="right " data-stat="ft_pct" >.739</td><td class="right " data-stat="trb_per_min" >6.0</td><td class="right " data-stat="ast_per_min" >3.6</td><td class="right " data-stat="stl_per_min" >1.2</td><td class="right " data-stat="blk_per_min" >0.9</td><td class="right " data-stat="tov_per_min" >3.0</td><td class="right " data-stat="pf_per_min" >2.4</td><td class="right " data-stat="pts_per_min" >20.8</td></tr> </tfoot> </tbody> </table>
+		
+ 
+	</div><div class="table_container" id="div_players_per_min_conf">
+		
+		<table class="stats_table sortable row_summable" id="players_per_min_conf" data-cols-to-freeze="1,3"> <caption>Per 40 Minutes Table</caption> <colgroup><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col></colgroup> <thead> <tr> <th aria-label="Season" data-stat="season" scope="col" class=" poptip sort_default_asc center" >Season</th> <th aria-label="School" data-stat="school_name" scope="col" class=" poptip sort_default_asc center" data-tip="* = NCAA Tournament appearance" >School</th> <th aria-label="Conf" data-stat="conf_abbr" scope="col" class=" poptip sort_default_asc center" data-tip="Conference" >Conf</th> <th aria-label="Games" data-stat="games" scope="col" class=" poptip center" data-tip="Games" >G</th> <th aria-label="GS" data-stat="games_started" scope="col" class=" poptip center" data-tip="Games Started" >GS</th> <th aria-label="Minutes Played" data-stat="mp" scope="col" class=" poptip center" data-tip="Minutes Played" >MP</th> <th aria-label="Field Goals Per 40 Minutes" data-stat="fg_per_min" scope="col" class=" poptip center" data-tip="Field Goals Per 40 Minutes" >FG</th> <th aria-label="Field Goal Attempts Per 40 Minutes" data-stat="fga_per_min" scope="col" class=" poptip center" data-tip="Field Goal Attempts Per 40 Minutes" >FGA</th> <th aria-label="Field Goal Percentage" data-stat="fg_pct" scope="col" class=" poptip center" data-tip="Field Goal Percentage" data-filter="1" data-name="Field Goal Percentage" >FG%</th> <th aria-label="2-Point Field Goals Per 40 Minutes" data-stat="fg2_per_min" scope="col" class=" poptip center" data-tip="2-Point Field Goals Per 40 Minutes" >2P</th> <th aria-label="2-Point Field Goal Attempts Per 40 Minutes" data-stat="fg2a_per_min" scope="col" class=" poptip center" data-tip="2-Point Field Goal Attempts Per 40 Minutes" >2PA</th> <th aria-label="2-Point Field Goal Percentage" data-stat="fg2_pct" scope="col" class=" poptip center" data-tip="2-Point Field Goal Percentage" data-filter="1" data-name="2-Point Field Goal Percentage" >2P%</th> <th aria-label="3-Point Field Goals Per 40 Minutes" data-stat="fg3_per_min" scope="col" class=" poptip center" data-tip="3-Point Field Goals Per 40 Minutes" >3P</th> <th aria-label="3-Point Field Goal Attempts Per 40 Minutes" data-stat="fg3a_per_min" scope="col" class=" poptip center" data-tip="3-Point Field Goal Attempts Per 40 Minutes" >3PA</th> <th aria-label="3-Point Field Goal Percentage" data-stat="fg3_pct" scope="col" class=" poptip center" data-tip="3-Point Field Goal Percentage" data-filter="1" data-name="3-Point Field Goal Percentage" >3P%</th> <th aria-label="Free Throws Per 40 Minutes" data-stat="ft_per_min" scope="col" class=" poptip center" data-tip="Free Throws Per 40 Minutes" >FT</th> <th aria-label="Free Throw Attempts Per 40 Minutes" data-stat="fta_per_min" scope="col" class=" poptip center" data-tip="Free Throw Attempts Per 40 Minutes" >FTA</th> <th aria-label="Free Throw Percentage" data-stat="ft_pct" scope="col" class=" poptip center" data-tip="Free Throw Percentage" data-filter="1" data-name="Free Throw Percentage" >FT%</th> <th aria-label="Total Rebounds Per 40 Minutes" data-stat="trb_per_min" scope="col" class=" poptip center" data-tip="Total Rebounds Per 40 Minutes" data-filter="1" data-name="Total Rebounds Per 40 Minutes" >TRB</th> <th aria-label="Assists Per 40 Minutes" data-stat="ast_per_min" scope="col" class=" poptip center" data-tip="Assists Per 40 Minutes" data-filter="1" data-name="Assists Per 40 Minutes" >AST</th> <th aria-label="Steals Per 40 Minutes" data-stat="stl_per_min" scope="col" class=" poptip center" data-tip="Steals Per 40 Minutes" data-filter="1" data-name="Steals Per 40 Minutes" >STL</th> <th aria-label="Blocks Per 40 Minutes" data-stat="blk_per_min" scope="col" class=" poptip center" data-tip="Blocks Per 40 Minutes" data-filter="1" data-name="Blocks Per 40 Minutes" >BLK</th> <th aria-label="Turnovers Per 40 Minutes" data-stat="tov_per_min" scope="col" class=" poptip center" data-tip="Turnovers Per 40 Minutes" >TOV</th> <th aria-label="Personal Fouls Per 40 Minutes" data-stat="pf_per_min" scope="col" class=" poptip center" data-tip="Personal Fouls Per 40 Minutes" >PF</th> <th aria-label="Points Per 40 Minutes" data-stat="pts_per_min" scope="col" class=" poptip center" data-tip="Points Per 40 Minutes" >PTS</th> </tr> </thead> <tbody> <tr id="players_per_min_conf.2021" ><th scope="row" class="left " data-stat="season" ><a href='/cbb/seasons/2021.html'>2020-21</a></th><td class="left " data-stat="school_name" ><a href='/cbb/schools/purdue/2021.html'>Purdue</a></td><td class="left " data-stat="conf_abbr" ><a href='/cbb/conferences/big-ten/2021.html'>Big Ten</a></td><td class="right " data-stat="games" >19</td><td class="right " data-stat="games_started" >10</td><td class="right " data-stat="mp" >442</td><td class="right " data-stat="fg_per_min" >6.0</td><td class="right " data-stat="fga_per_min" >15.7</td><td class="right " data-stat="fg_pct" >.379</td><td class="right " data-stat="fg2_per_min" >4.5</td><td class="right " data-stat="fg2a_per_min" >9.0</td><td class="right " data-stat="fg2_pct" >.500</td><td class="right " data-stat="fg3_per_min" >1.4</td><td class="right " data-stat="fg3a_per_min" >6.7</td><td class="right " data-stat="fg3_pct" >.216</td><td class="right " data-stat="ft_per_min" >4.3</td><td class="right " data-stat="fta_per_min" >5.6</td><td class="right " data-stat="ft_pct" >.758</td><td class="right " data-stat="trb_per_min" >6.2</td><td class="right " data-stat="ast_per_min" >3.5</td><td class="right " data-stat="stl_per_min" >1.4</td><td class="right " data-stat="blk_per_min" >1.2</td><td class="right " data-stat="tov_per_min" >2.4</td><td class="right " data-stat="pf_per_min" >2.8</td><td class="right " data-stat="pts_per_min" >17.6</td></tr> <tr id="players_per_min_conf.2022" ><th scope="row" class="left " data-stat="season" ><a href='/cbb/seasons/2022.html'>2021-22</a></th><td class="left " data-stat="school_name" ><a href='/cbb/schools/purdue/2022.html'>Purdue</a></td><td class="left " data-stat="conf_abbr" ><a href='/cbb/conferences/big-ten/2022.html'>Big Ten</a></td><td class="right " data-stat="games" >19</td><td class="right " data-stat="games_started" >17</td><td class="right " data-stat="mp" >620</td><td class="right " data-stat="fg_per_min" >6.7</td><td class="right " data-stat="fga_per_min" >15.7</td><td class="right " data-stat="fg_pct" >.426</td><td class="right " data-stat="fg2_per_min" >4.8</td><td class="right " data-stat="fg2a_per_min" >9.7</td><td class="right " data-stat="fg2_pct" >.500</td><td class="right " data-stat="fg3_per_min" >1.9</td><td class="right " data-stat="fg3a_per_min" >6.1</td><td class="right " data-stat="fg3_pct" >.309</td><td class="right " data-stat="ft_per_min" >6.2</td><td class="right " data-stat="fta_per_min" >8.6</td><td class="right " data-stat="ft_pct" >.722</td><td class="right " data-stat="trb_per_min" >5.1</td><td class="right " data-stat="ast_per_min" >3.5</td><td class="right " data-stat="stl_per_min" >1.2</td><td class="right " data-stat="blk_per_min" >0.6</td><td class="right " data-stat="tov_per_min" >3.0</td><td class="right " data-stat="pf_per_min" >2.3</td><td class="right " data-stat="pts_per_min" >21.5</td></tr> </tbody><tfoot><tr ><th scope="row" class="left " data-stat="season" >Career</th><td class="left " data-stat="school_name" >Purdue</td><td class="left iz" data-stat="conf_abbr" ></td><td class="right " data-stat="games" >38</td><td class="right " data-stat="games_started" >27</td><td class="right " data-stat="mp" >1062</td><td class="right " data-stat="fg_per_min" >6.4</td><td class="right " data-stat="fga_per_min" >15.7</td><td class="right " data-stat="fg_pct" >.407</td><td class="right " data-stat="fg2_per_min" >4.7</td><td class="right " data-stat="fg2a_per_min" >9.4</td><td class="right " data-stat="fg2_pct" >.500</td><td class="right " data-stat="fg3_per_min" >1.7</td><td class="right " data-stat="fg3a_per_min" >6.3</td><td class="right " data-stat="fg3_pct" >.268</td><td class="right " data-stat="ft_per_min" >5.4</td><td class="right " data-stat="fta_per_min" >7.3</td><td class="right " data-stat="ft_pct" >.733</td><td class="right " data-stat="trb_per_min" >5.5</td><td class="right " data-stat="ast_per_min" >3.5</td><td class="right " data-stat="stl_per_min" >1.2</td><td class="right " data-stat="blk_per_min" >0.9</td><td class="right " data-stat="tov_per_min" >2.7</td><td class="right " data-stat="pf_per_min" >2.5</td><td class="right " data-stat="pts_per_min" >19.9</td></tr> </tfoot> </tbody> </table>
+		
+ 
+	</div></div>
+
+
+</div>
+
+            
+            
+            
+         
+      
+         
+            <div id="all_players_per_poss" class="table_wrapper tabbed">
+	
+		<span class="section_anchor" id="players_per_poss_link" data-label="Per 100 Poss"></span>
+	
+
+<div class="section_heading assoc_players_per_poss" id="players_per_poss_sh">
+  <span class="section_anchor" id="players_per_poss_link" data-label="Per 100 Poss" data-no-inpage="1"></span><h2>Per 100 Poss</h2>    <div class="section_heading_text">
+      <ul>
+      </ul>
+    </div>
+    		
+</div>
+
+
+<div class="section_heading hidden assoc_players_per_poss_conf" id="players_per_poss_conf_sh">
+  <span class="section_anchor" id="players_per_poss_conf_link" data-label="Per 100 Poss" data-no-inpage="1"></span><h2>Per 100 Poss</h2>    <div class="section_heading_text">
+      <ul>
+      </ul>
+    </div>
+    		
+</div>
+	
+	
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+	
+	
+<div class="filter switcher" data-controls="#switcher_players_per_poss">
+
+<div class=" current">
+	<a class="sr_preset" data-hide="#all_players_per_poss .section_heading, #all_players_per_poss .topscroll_div" data-show=".assoc_players_per_poss">Season</a>
+</div><div class="">
+	<a class="sr_preset" data-hide="#all_players_per_poss .section_heading, #all_players_per_poss .topscroll_div" data-show=".assoc_players_per_poss_conf">Conference</a>
+</div></div>
+
+<div id="switcher_players_per_poss">
+<div class="table_container current" id="div_players_per_poss">
+		
+		<table class="stats_table sortable row_summable" id="players_per_poss" data-cols-to-freeze="1,3"> <caption>Per 100 Poss Table</caption> <colgroup><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col></colgroup> <thead> <tr> <th aria-label="Season" data-stat="season" scope="col" class=" poptip sort_default_asc center" >Season</th> <th aria-label="School" data-stat="school_name" scope="col" class=" poptip sort_default_asc center" data-tip="* = NCAA Tournament appearance" >School</th> <th aria-label="Conf" data-stat="conf_abbr" scope="col" class=" poptip sort_default_asc center" data-tip="Conference" >Conf</th> <th aria-label="Games" data-stat="games" scope="col" class=" poptip center" data-tip="Games" >G</th> <th aria-label="GS" data-stat="games_started" scope="col" class=" poptip center" data-tip="Games Started" >GS</th> <th aria-label="Minutes Played" data-stat="mp" scope="col" class=" poptip center" data-tip="Minutes Played" >MP</th> <th aria-label="Field Goals Per 100 Possessions" data-stat="fg_per_poss" scope="col" class=" poptip center" data-tip="Field Goals Per 100 Possessions" >FG</th> <th aria-label="Field Goal Attempts Per 100 Possessions" data-stat="fga_per_poss" scope="col" class=" poptip center" data-tip="Field Goal Attempts Per 100 Possessions" >FGA</th> <th aria-label="Field Goal Percentage" data-stat="fg_pct" scope="col" class=" poptip center" data-tip="Field Goal Percentage" data-filter="1" data-name="Field Goal Percentage" >FG%</th> <th aria-label="2-Point Field Goals Per 100 Possessions" data-stat="fg2_per_poss" scope="col" class=" poptip center" data-tip="2-Point Field Goals Per 100 Possessions" >2P</th> <th aria-label="2-Point Field Goal Attempts Per 100 Possessions" data-stat="fg2a_per_poss" scope="col" class=" poptip center" data-tip="2-Point Field Goal Attempts Per 100 Possessions" >2PA</th> <th aria-label="2-Point Field Goal Percentage" data-stat="fg2_pct" scope="col" class=" poptip center" data-tip="2-Point Field Goal Percentage" data-filter="1" data-name="2-Point Field Goal Percentage" >2P%</th> <th aria-label="3-Point Field Goals Per 100 Possessions" data-stat="fg3_per_poss" scope="col" class=" poptip center" data-tip="3-Point Field Goals Per 100 Possessions" >3P</th> <th aria-label="3-Point Field Goal Attempts Per 100 Possessions" data-stat="fg3a_per_poss" scope="col" class=" poptip center" data-tip="3-Point Field Goal Attempts Per 100 Possessions" >3PA</th> <th aria-label="3-Point Field Goal Percentage" data-stat="fg3_pct" scope="col" class=" poptip center" data-tip="3-Point Field Goal Percentage" data-filter="1" data-name="3-Point Field Goal Percentage" >3P%</th> <th aria-label="Free Throws Per 100 Possessions" data-stat="ft_per_poss" scope="col" class=" poptip center" data-tip="Free Throws Per 100 Possessions" >FT</th> <th aria-label="Free Throw Attempts Per 100 Possessions" data-stat="fta_per_poss" scope="col" class=" poptip center" data-tip="Free Throw Attempts Per 100 Possessions" >FTA</th> <th aria-label="Free Throw Percentage" data-stat="ft_pct" scope="col" class=" poptip center" data-tip="Free Throw Percentage" data-filter="1" data-name="Free Throw Percentage" >FT%</th> <th aria-label="Total Rebounds Per 100 Possessions" data-stat="trb_per_poss" scope="col" class=" poptip center" data-tip="Total Rebounds Per 100 Possessions" data-filter="1" data-name="Total Rebounds Per 100 Possessions" >TRB</th> <th aria-label="Assists Per 100 Possessions" data-stat="ast_per_poss" scope="col" class=" poptip center" data-tip="Assists Per 100 Possessions" data-filter="1" data-name="Assists Per 100 Possessions" >AST</th> <th aria-label="Steals Per 100 Possessions" data-stat="stl_per_poss" scope="col" class=" poptip center" data-tip="Steals Per 100 Possessions" data-filter="1" data-name="Steals Per 100 Possessions" >STL</th> <th aria-label="Blocks Per 100 Possessions" data-stat="blk_per_poss" scope="col" class=" poptip center" data-tip="Blocks Per 100 Possessions" data-filter="1" data-name="Blocks Per 100 Possessions" >BLK</th> <th aria-label="Turnovers Per 100 Possessions" data-stat="tov_per_poss" scope="col" class=" poptip center" data-tip="Turnovers Per 100 Possessions" >TOV</th> <th aria-label="Personal Fouls Per 100 Possessions" data-stat="pf_per_poss" scope="col" class=" poptip center" data-tip="Personal Fouls Per 100 Possessions" >PF</th> <th aria-label="Points Per 100 Possessions" data-stat="pts_per_poss" scope="col" class=" poptip center" data-tip="Points Per 100 Possessions" >PTS</th> <th aria-label="&nbsp;" data-stat="poss-dum" scope="col" class=" poptip center" >&nbsp;</th> <th aria-label="Offensive Rating" data-stat="off_rtg" scope="col" class=" poptip center" data-tip="<strong>Offensive Rating</strong><br>An estimate of points scored (for teams) or points produced (for players) per 100 possessions." data-filter="1" data-name="Offensive Rating" >ORtg</th> <th aria-label="Defensive Rating" data-stat="def_rtg" scope="col" class=" poptip sort_default_asc center" data-tip="Defensive Rating; an estimate of points allowed per 100 possessions." data-filter="1" data-name="Defensive Rating" >DRtg</th> </tr> </thead> <tbody> <tr id="players_per_poss.2021" ><th scope="row" class="left " data-stat="season" ><a href='/cbb/seasons/2021.html'>2020-21</a></th><td class="left " data-stat="school_name" ><a href='/cbb/schools/purdue/2021.html'>Purdue</a></td><td class="left " data-stat="conf_abbr" ><a href='/cbb/conferences/big-ten/2021.html'>Big Ten</a></td><td class="right " data-stat="games" >23</td><td class="right " data-stat="games_started" >12</td><td class="right " data-stat="mp" >557</td><td class="right " data-stat="fg_per_poss" >9.6</td><td class="right " data-stat="fga_per_poss" >24.1</td><td class="right " data-stat="fg_pct" >.399</td><td class="right " data-stat="fg2_per_poss" >6.9</td><td class="right " data-stat="fg2a_per_poss" >13.6</td><td class="right " data-stat="fg2_pct" >.508</td><td class="right " data-stat="fg3_per_poss" >2.7</td><td class="right " data-stat="fg3a_per_poss" >10.5</td><td class="right " data-stat="fg3_pct" >.258</td><td class="right " data-stat="ft_per_poss" >5.7</td><td class="right " data-stat="fta_per_poss" >7.9</td><td class="right " data-stat="ft_pct" >.726</td><td class="right " data-stat="trb_per_poss" >8.2</td><td class="right " data-stat="ast_per_poss" >4.6</td><td class="right " data-stat="stl_per_poss" >1.8</td><td class="right " data-stat="blk_per_poss" >1.7</td><td class="right " data-stat="tov_per_poss" >3.3</td><td class="right " data-stat="pf_per_poss" >4.2</td><td class="right " data-stat="pts_per_poss" >27.6</td><td class="right iz" data-stat="poss-dum" ></td><td class="right " data-stat="off_rtg" >105.4</td><td class="right " data-stat="def_rtg" >100.6</td></tr> <tr id="players_per_poss.2022" ><th scope="row" class="left " data-stat="season" ><a href='/cbb/seasons/2022.html'>2021-22</a></th><td class="left " data-stat="school_name" ><a href='/cbb/schools/purdue/2022.html'>Purdue</a></td><td class="left " data-stat="conf_abbr" ><a href='/cbb/conferences/big-ten/2022.html'>Big Ten</a></td><td class="right " data-stat="games" >36</td><td class="right " data-stat="games_started" >34</td><td class="right " data-stat="mp" >1132</td><td class="right " data-stat="fg_per_poss" >10.8</td><td class="right " data-stat="fga_per_poss" >23.4</td><td class="right " data-stat="fg_pct" >.460</td><td class="right " data-stat="fg2_per_poss" >7.4</td><td class="right " data-stat="fg2a_per_poss" >13.9</td><td class="right " data-stat="fg2_pct" >.531</td><td class="right " data-stat="fg3_per_poss" >3.4</td><td class="right " data-stat="fg3a_per_poss" >9.5</td><td class="right " data-stat="fg3_pct" >.358</td><td class="right " data-stat="ft_per_poss" >8.2</td><td class="right " data-stat="fta_per_poss" >11.0</td><td class="right " data-stat="ft_pct" >.744</td><td class="right " data-stat="trb_per_poss" >9.3</td><td class="right " data-stat="ast_per_poss" >5.8</td><td class="right " data-stat="stl_per_poss" >1.7</td><td class="right " data-stat="blk_per_poss" >1.1</td><td class="right " data-stat="tov_per_poss" >5.0</td><td class="right " data-stat="pf_per_poss" >3.3</td><td class="right " data-stat="pts_per_poss" >33.1</td><td class="right iz" data-stat="poss-dum" ></td><td class="right " data-stat="off_rtg" >114.7</td><td class="right " data-stat="def_rtg" >102.5</td></tr> </tbody><tfoot><tr ><th scope="row" class="left " data-stat="season" >Career</th><td class="left " data-stat="school_name" >Purdue</td><td class="left iz" data-stat="conf_abbr" ></td><td class="right " data-stat="games" >59</td><td class="right " data-stat="games_started" >46</td><td class="right " data-stat="mp" >1689</td><td class="right " data-stat="fg_per_poss" >10.4</td><td class="right " data-stat="fga_per_poss" >23.6</td><td class="right " data-stat="fg_pct" >.440</td><td class="right " data-stat="fg2_per_poss" >7.2</td><td class="right " data-stat="fg2a_per_poss" >13.8</td><td class="right " data-stat="fg2_pct" >.523</td><td class="right " data-stat="fg3_per_poss" >3.2</td><td class="right " data-stat="fg3a_per_poss" >9.8</td><td class="right " data-stat="fg3_pct" >.322</td><td class="right " data-stat="ft_per_poss" >7.4</td><td class="right " data-stat="fta_per_poss" >10.0</td><td class="right " data-stat="ft_pct" >.739</td><td class="right " data-stat="trb_per_poss" >9.0</td><td class="right " data-stat="ast_per_poss" >5.4</td><td class="right " data-stat="stl_per_poss" >1.8</td><td class="right " data-stat="blk_per_poss" >1.3</td><td class="right " data-stat="tov_per_poss" >4.4</td><td class="right " data-stat="pf_per_poss" >3.6</td><td class="right " data-stat="pts_per_poss" >31.3</td><td class="right iz" data-stat="poss-dum" ></td><td class="right " data-stat="off_rtg" >111.8</td><td class="right " data-stat="def_rtg" >101.9</td></tr> </tfoot> </tbody> </table>
+		
+ 
+	</div><div class="table_container" id="div_players_per_poss_conf">
+		
+		<table class="stats_table sortable row_summable" id="players_per_poss_conf" data-cols-to-freeze="1,3"> <caption>Per 100 Poss Table</caption> <colgroup><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col></colgroup> <thead> <tr> <th aria-label="Season" data-stat="season" scope="col" class=" poptip sort_default_asc center" >Season</th> <th aria-label="School" data-stat="school_name" scope="col" class=" poptip sort_default_asc center" data-tip="* = NCAA Tournament appearance" >School</th> <th aria-label="Conf" data-stat="conf_abbr" scope="col" class=" poptip sort_default_asc center" data-tip="Conference" >Conf</th> <th aria-label="Games" data-stat="games" scope="col" class=" poptip center" data-tip="Games" >G</th> <th aria-label="GS" data-stat="games_started" scope="col" class=" poptip center" data-tip="Games Started" >GS</th> <th aria-label="Minutes Played" data-stat="mp" scope="col" class=" poptip center" data-tip="Minutes Played" >MP</th> <th aria-label="Field Goals Per 100 Possessions" data-stat="fg_per_poss" scope="col" class=" poptip center" data-tip="Field Goals Per 100 Possessions" >FG</th> <th aria-label="Field Goal Attempts Per 100 Possessions" data-stat="fga_per_poss" scope="col" class=" poptip center" data-tip="Field Goal Attempts Per 100 Possessions" >FGA</th> <th aria-label="Field Goal Percentage" data-stat="fg_pct" scope="col" class=" poptip center" data-tip="Field Goal Percentage" data-filter="1" data-name="Field Goal Percentage" >FG%</th> <th aria-label="2-Point Field Goals Per 100 Possessions" data-stat="fg2_per_poss" scope="col" class=" poptip center" data-tip="2-Point Field Goals Per 100 Possessions" >2P</th> <th aria-label="2-Point Field Goal Attempts Per 100 Possessions" data-stat="fg2a_per_poss" scope="col" class=" poptip center" data-tip="2-Point Field Goal Attempts Per 100 Possessions" >2PA</th> <th aria-label="2-Point Field Goal Percentage" data-stat="fg2_pct" scope="col" class=" poptip center" data-tip="2-Point Field Goal Percentage" data-filter="1" data-name="2-Point Field Goal Percentage" >2P%</th> <th aria-label="3-Point Field Goals Per 100 Possessions" data-stat="fg3_per_poss" scope="col" class=" poptip center" data-tip="3-Point Field Goals Per 100 Possessions" >3P</th> <th aria-label="3-Point Field Goal Attempts Per 100 Possessions" data-stat="fg3a_per_poss" scope="col" class=" poptip center" data-tip="3-Point Field Goal Attempts Per 100 Possessions" >3PA</th> <th aria-label="3-Point Field Goal Percentage" data-stat="fg3_pct" scope="col" class=" poptip center" data-tip="3-Point Field Goal Percentage" data-filter="1" data-name="3-Point Field Goal Percentage" >3P%</th> <th aria-label="Free Throws Per 100 Possessions" data-stat="ft_per_poss" scope="col" class=" poptip center" data-tip="Free Throws Per 100 Possessions" >FT</th> <th aria-label="Free Throw Attempts Per 100 Possessions" data-stat="fta_per_poss" scope="col" class=" poptip center" data-tip="Free Throw Attempts Per 100 Possessions" >FTA</th> <th aria-label="Free Throw Percentage" data-stat="ft_pct" scope="col" class=" poptip center" data-tip="Free Throw Percentage" data-filter="1" data-name="Free Throw Percentage" >FT%</th> <th aria-label="Total Rebounds Per 100 Possessions" data-stat="trb_per_poss" scope="col" class=" poptip center" data-tip="Total Rebounds Per 100 Possessions" data-filter="1" data-name="Total Rebounds Per 100 Possessions" >TRB</th> <th aria-label="Assists Per 100 Possessions" data-stat="ast_per_poss" scope="col" class=" poptip center" data-tip="Assists Per 100 Possessions" data-filter="1" data-name="Assists Per 100 Possessions" >AST</th> <th aria-label="Steals Per 100 Possessions" data-stat="stl_per_poss" scope="col" class=" poptip center" data-tip="Steals Per 100 Possessions" data-filter="1" data-name="Steals Per 100 Possessions" >STL</th> <th aria-label="Blocks Per 100 Possessions" data-stat="blk_per_poss" scope="col" class=" poptip center" data-tip="Blocks Per 100 Possessions" data-filter="1" data-name="Blocks Per 100 Possessions" >BLK</th> <th aria-label="Turnovers Per 100 Possessions" data-stat="tov_per_poss" scope="col" class=" poptip center" data-tip="Turnovers Per 100 Possessions" >TOV</th> <th aria-label="Personal Fouls Per 100 Possessions" data-stat="pf_per_poss" scope="col" class=" poptip center" data-tip="Personal Fouls Per 100 Possessions" >PF</th> <th aria-label="Points Per 100 Possessions" data-stat="pts_per_poss" scope="col" class=" poptip center" data-tip="Points Per 100 Possessions" >PTS</th> <th aria-label="&nbsp;" data-stat="poss-dum" scope="col" class=" poptip center" >&nbsp;</th> <th aria-label="Offensive Rating" data-stat="off_rtg" scope="col" class=" poptip center" data-tip="<strong>Offensive Rating</strong><br>An estimate of points scored (for teams) or points produced (for players) per 100 possessions." data-filter="1" data-name="Offensive Rating" >ORtg</th> <th aria-label="Defensive Rating" data-stat="def_rtg" scope="col" class=" poptip sort_default_asc center" data-tip="Defensive Rating; an estimate of points allowed per 100 possessions." data-filter="1" data-name="Defensive Rating" >DRtg</th> </tr> </thead> <tbody> <tr id="players_per_poss_conf.2021" ><th scope="row" class="left " data-stat="season" ><a href='/cbb/seasons/2021.html'>2020-21</a></th><td class="left " data-stat="school_name" ><a href='/cbb/schools/purdue/2021.html'>Purdue</a></td><td class="left " data-stat="conf_abbr" ><a href='/cbb/conferences/big-ten/2021.html'>Big Ten</a></td><td class="right " data-stat="games" >19</td><td class="right " data-stat="games_started" >10</td><td class="right " data-stat="mp" >442</td><td class="right iz" data-stat="fg_per_poss" ></td><td class="right iz" data-stat="fga_per_poss" ></td><td class="right " data-stat="fg_pct" >.379</td><td class="right iz" data-stat="fg2_per_poss" ></td><td class="right iz" data-stat="fg2a_per_poss" ></td><td class="right " data-stat="fg2_pct" >.500</td><td class="right iz" data-stat="fg3_per_poss" ></td><td class="right iz" data-stat="fg3a_per_poss" ></td><td class="right " data-stat="fg3_pct" >.216</td><td class="right iz" data-stat="ft_per_poss" ></td><td class="right iz" data-stat="fta_per_poss" ></td><td class="right " data-stat="ft_pct" >.758</td><td class="right iz" data-stat="trb_per_poss" ></td><td class="right iz" data-stat="ast_per_poss" ></td><td class="right iz" data-stat="stl_per_poss" ></td><td class="right iz" data-stat="blk_per_poss" ></td><td class="right iz" data-stat="tov_per_poss" ></td><td class="right iz" data-stat="pf_per_poss" ></td><td class="right iz" data-stat="pts_per_poss" ></td><td class="right iz" data-stat="poss-dum" ></td><td class="right iz" data-stat="off_rtg" ></td><td class="right iz" data-stat="def_rtg" ></td></tr> <tr id="players_per_poss_conf.2022" ><th scope="row" class="left " data-stat="season" ><a href='/cbb/seasons/2022.html'>2021-22</a></th><td class="left " data-stat="school_name" ><a href='/cbb/schools/purdue/2022.html'>Purdue</a></td><td class="left " data-stat="conf_abbr" ><a href='/cbb/conferences/big-ten/2022.html'>Big Ten</a></td><td class="right " data-stat="games" >19</td><td class="right " data-stat="games_started" >17</td><td class="right " data-stat="mp" >620</td><td class="right iz" data-stat="fg_per_poss" ></td><td class="right iz" data-stat="fga_per_poss" ></td><td class="right " data-stat="fg_pct" >.426</td><td class="right iz" data-stat="fg2_per_poss" ></td><td class="right iz" data-stat="fg2a_per_poss" ></td><td class="right " data-stat="fg2_pct" >.500</td><td class="right iz" data-stat="fg3_per_poss" ></td><td class="right iz" data-stat="fg3a_per_poss" ></td><td class="right " data-stat="fg3_pct" >.309</td><td class="right iz" data-stat="ft_per_poss" ></td><td class="right iz" data-stat="fta_per_poss" ></td><td class="right " data-stat="ft_pct" >.722</td><td class="right iz" data-stat="trb_per_poss" ></td><td class="right iz" data-stat="ast_per_poss" ></td><td class="right iz" data-stat="stl_per_poss" ></td><td class="right iz" data-stat="blk_per_poss" ></td><td class="right iz" data-stat="tov_per_poss" ></td><td class="right iz" data-stat="pf_per_poss" ></td><td class="right iz" data-stat="pts_per_poss" ></td><td class="right iz" data-stat="poss-dum" ></td><td class="right iz" data-stat="off_rtg" ></td><td class="right iz" data-stat="def_rtg" ></td></tr> </tbody><tfoot><tr ><th scope="row" class="left " data-stat="season" >Career</th><td class="left " data-stat="school_name" >Purdue</td><td class="left iz" data-stat="conf_abbr" ></td><td class="right " data-stat="games" >38</td><td class="right " data-stat="games_started" >27</td><td class="right " data-stat="mp" >1062</td><td class="right iz" data-stat="fg_per_poss" ></td><td class="right iz" data-stat="fga_per_poss" ></td><td class="right " data-stat="fg_pct" >.407</td><td class="right iz" data-stat="fg2_per_poss" ></td><td class="right iz" data-stat="fg2a_per_poss" ></td><td class="right " data-stat="fg2_pct" >.500</td><td class="right iz" data-stat="fg3_per_poss" ></td><td class="right iz" data-stat="fg3a_per_poss" ></td><td class="right " data-stat="fg3_pct" >.268</td><td class="right iz" data-stat="ft_per_poss" ></td><td class="right iz" data-stat="fta_per_poss" ></td><td class="right " data-stat="ft_pct" >.733</td><td class="right iz" data-stat="trb_per_poss" ></td><td class="right iz" data-stat="ast_per_poss" ></td><td class="right iz" data-stat="stl_per_poss" ></td><td class="right iz" data-stat="blk_per_poss" ></td><td class="right iz" data-stat="tov_per_poss" ></td><td class="right iz" data-stat="pf_per_poss" ></td><td class="right iz" data-stat="pts_per_poss" ></td><td class="right iz" data-stat="poss-dum" ></td><td class="right iz" data-stat="off_rtg" ></td><td class="right iz" data-stat="def_rtg" ></td></tr> </tfoot> </tbody> </table>
+		
+ 
+	</div></div>
+
+
+</div>
+
+            
+            
+            
+	       	
+
+<!-- fs_btf_2 -->
+<div class="adblock">
+<!-- div#fs_fs_btf_2  -->
+<div align="center" id="div-gpt-ad-728x90-BTF-2">
+    <script data-cfasync="false" type='text/javascript'>
+    if (sr_detect_ie || sr_detect_edge || Modernizr.adfree) {
+    }
+    else {
+        console.log('push ad:div-gpt-ad-728x90-BTF-2');
+        freestar.queue.push(function() { googletag.display('div-gpt-ad-728x90-BTF-2'); });
+    }
+    </script>
+</div>
+<!-- /div.#fs_fs_btf_2 -->
+
+
+</div>
+
+
+            
+         
+      
+         
+            <div id="all_players_advanced" class="table_wrapper tabbed">
+	
+		<span class="section_anchor" id="players_advanced_link" data-label="Advanced"></span>
+	
+
+<div class="section_heading assoc_players_advanced" id="players_advanced_sh">
+  <span class="section_anchor" id="players_advanced_link" data-label="Advanced" data-no-inpage="1"></span><h2>Advanced</h2>    <div class="section_heading_text">
+      <ul>
+      </ul>
+    </div>
+    		
+</div>
+
+
+<div class="section_heading hidden assoc_players_advanced_conf" id="players_advanced_conf_sh">
+  <span class="section_anchor" id="players_advanced_conf_link" data-label="Advanced" data-no-inpage="1"></span><h2>Advanced</h2>    <div class="section_heading_text">
+      <ul>
+      </ul>
+    </div>
+    		
+</div>
+	
+	
+		
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+	
+	
+<div class="filter switcher" data-controls="#switcher_players_advanced">
+
+<div class=" current">
+	<a class="sr_preset" data-hide="#all_players_advanced .section_heading, #all_players_advanced .topscroll_div" data-show=".assoc_players_advanced">Season</a>
+</div><div class="">
+	<a class="sr_preset" data-hide="#all_players_advanced .section_heading, #all_players_advanced .topscroll_div" data-show=".assoc_players_advanced_conf">Conference</a>
+</div></div>
+
+<div id="switcher_players_advanced">
+<div class="table_container current" id="div_players_advanced">
+		
+		<table class="stats_table sortable row_summable" id="players_advanced" data-cols-to-freeze="1,3"> <caption>Advanced Table</caption> <colgroup><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col></colgroup> <thead> <tr> <th aria-label="Season" data-stat="season" scope="col" class=" poptip sort_default_asc center" >Season</th> <th aria-label="School" data-stat="school_name" scope="col" class=" poptip sort_default_asc center" data-tip="* = NCAA Tournament appearance" >School</th> <th aria-label="Conf" data-stat="conf_abbr" scope="col" class=" poptip sort_default_asc center" data-tip="Conference" >Conf</th> <th aria-label="Games" data-stat="games" scope="col" class=" poptip center" data-tip="Games" >G</th> <th aria-label="GS" data-stat="games_started" scope="col" class=" poptip center" data-tip="Games Started" >GS</th> <th aria-label="Minutes Played" data-stat="mp" scope="col" class=" poptip center" data-tip="Minutes Played" >MP</th> <th aria-label="Player Efficiency Rating" data-stat="per" scope="col" class=" poptip center" data-tip="Player Efficiency Rating" data-filter="1" data-name="Player Efficiency Rating" >PER</th> <th aria-label="True Shooting Percentage" data-stat="ts_pct" scope="col" class=" poptip center" data-tip="<strong>True Shooting Percentage</strong><br>A measure of shooting efficiency that takes into account 2-point field goals, 3-point field goals, and free throws." data-filter="1" data-name="True Shooting Percentage" >TS%</th> <th aria-label="Effective Field Goal Percentage" data-stat="efg_pct" scope="col" class=" poptip center" data-tip="Effective Field Goal Percentage; this statistic adjusts for the fact that a 3-point field goal is worth one more point than a 2-point field goal." data-filter="1" data-name="Effective Field Goal Percentage" >eFG%</th> <th aria-label="3-Point Attempt Rate" data-stat="fg3a_per_fga_pct" scope="col" class=" poptip center" data-tip="<strong>3-Point Attempt Rate</strong><br>Percentage of FG Attempts from 3-Point Range" >3PAr</th> <th aria-label="Free Throw Attempt Rate" data-stat="fta_per_fga_pct" scope="col" class=" poptip center" data-tip="<strong>Free Throw Attempt Rate</strong><br>Number of FT Attempts Per FG Attempt" >FTr</th> <th aria-label="Points Produced" data-stat="pprod" scope="col" class=" poptip center" data-tip="Points Produced; an estimate of the player's offensive points produced." >PProd</th> <th aria-label="Offensive Rebound Percentage" data-stat="orb_pct" scope="col" class=" poptip center" data-tip="Offensive Rebound Percentage; an estimate of the percentage of available offensive rebounds a player grabbed while he was on the floor." data-filter="1" data-name="Offensive Rebound Percentage" >ORB%</th> <th aria-label="Defensive Rebound Percentage" data-stat="drb_pct" scope="col" class=" poptip center" data-tip="Defensive Rebound Percentage; an estimate of the percentage of available defensive rebounds a player grabbed while he was on the floor." data-filter="1" data-name="Defensive Rebound Percentage" >DRB%</th> <th aria-label="Total Rebound Percentage" data-stat="trb_pct" scope="col" class=" poptip center" data-tip="<strong>Total Rebound Percentage</strong><br>An estimate of the percentage of available rebounds a player grabbed while he was on the floor." data-filter="1" data-name="Total Rebound Percentage" >TRB%</th> <th aria-label="Assist Percentage" data-stat="ast_pct" scope="col" class=" poptip center" data-tip="<strong>Assist Percentage</strong><br>An estimate of the percentage of teammate field goals a player assisted while he was on the floor." data-filter="1" data-name="Assist Percentage" >AST%</th> <th aria-label="Steal Percentage" data-stat="stl_pct" scope="col" class=" poptip center" data-tip="<strong>Steal Percentage</strong><br>An estimate of the percentage of opponent possessions that end with a steal by the player while he was on the floor." data-filter="1" data-name="Steal Percentage" >STL%</th> <th aria-label="Block Percentage" data-stat="blk_pct" scope="col" class=" poptip center" data-tip="<strong>Block Percentage</strong><br>An estimate of the percentage of opponent two-point field goal attempts blocked by the player while he was on the floor." data-filter="1" data-name="Block Percentage" >BLK%</th> <th aria-label="Turnover Percentage" data-stat="tov_pct" scope="col" class=" poptip sort_default_asc center" data-tip="Turnover Percentage; an estimate of turnovers per 100 plays." data-filter="1" data-name="Turnover Percentage" >TOV%</th> <th aria-label="Usage Percentage" data-stat="usg_pct" scope="col" class=" poptip center" data-tip="Usage Percentage; an estimate of the percentage of team plays used by a player while he was on the floor." data-filter="1" data-name="Usage Percentage" >USG%</th> <th aria-label="&nbsp;" data-stat="ws-dum" scope="col" class=" poptip center" >&nbsp;</th> <th aria-label="Offensive Win Shares" data-stat="ows" scope="col" class=" poptip center" data-tip="Offensive Win Shares; an estimate of the number of wins contributed by a player due to his offense." data-filter="1" data-name="Offensive Win Shares" >OWS</th> <th aria-label="Defensive Win Shares" data-stat="dws" scope="col" class=" poptip center" data-tip="Defensive Win Shares; an estimate of the number of wins contributed by a player due to his defense." data-filter="1" data-name="Defensive Win Shares" >DWS</th> <th aria-label="Win Shares" data-stat="ws" scope="col" class=" poptip center" data-tip="Win Shares; an estimate of the number of wins contributed by a player due to his offense and defense." data-filter="1" data-name="Win Shares" >WS</th> <th aria-label="Win Shares Per 40 Minutes" data-stat="ws_per_40" scope="col" class=" poptip center" data-tip="Win Shares Per 40 Minutes; an estimate of the number of wins contributed by a player per 40 minutes (average is approximately .100)." data-filter="1" data-name="Win Shares Per 40 Minutes" >WS/40</th> <th aria-label="&nbsp;" data-stat="bpm-dum" scope="col" class=" poptip center" >&nbsp;</th> <th aria-label="Offensive Box Plus/Minus" data-stat="obpm" scope="col" class=" poptip center" data-tip="<b>Offensive Box Plus/Minus</b><br>A box score estimate of the offensive points per 100 possessions a player contributed above a league-average player, translated to an average team." data-filter="1" data-name="Offensive Box Plus/Minus" >OBPM</th> <th aria-label="Defensive Box Plus/Minus" data-stat="dbpm" scope="col" class=" poptip center" data-tip="<b>Defensive Box Plus/Minus</b><br>A box score estimate of the defensive points per 100 possessions a player contributed above a league-average player, translated to an average team." data-filter="1" data-name="Defensive Box Plus/Minus" >DBPM</th> <th aria-label="Box Plus/Minus" data-stat="bpm" scope="col" class=" poptip center" data-tip="<b>Box Plus/Minus</b><br>A box score estimate of the points per 100 possessions a player contributed above a league-average player, translated to an average team." data-filter="1" data-name="Box Plus/Minus" >BPM</th> </tr> </thead> <tbody> <tr id="players_advanced.2021" ><th scope="row" class="left " data-stat="season" ><a href='/cbb/seasons/2021.html'>2020-21</a></th><td class="left " data-stat="school_name" ><a href='/cbb/schools/purdue/2021.html'>Purdue</a></td><td class="left " data-stat="conf_abbr" ><a href='/cbb/conferences/big-ten/2021.html'>Big Ten</a></td><td class="right " data-stat="games" >23</td><td class="right " data-stat="games_started" >12</td><td class="right " data-stat="mp" >557</td><td class="right " data-stat="per" >18.3</td><td class="right " data-stat="ts_pct" >.497</td><td class="right " data-stat="efg_pct" >.455</td><td class="right " data-stat="fg3a_per_fga_pct" >.435</td><td class="right " data-stat="fta_per_fga_pct" >.327</td><td class="right " data-stat="pprod" >243</td><td class="right " data-stat="orb_pct" >4.0</td><td class="right " data-stat="drb_pct" >11.8</td><td class="right " data-stat="trb_pct" >8.0</td><td class="right " data-stat="ast_pct" >16.4</td><td class="right " data-stat="stl_pct" >1.8</td><td class="right " data-stat="blk_pct" >3.8</td><td class="right " data-stat="tov_pct" >10.7</td><td class="right " data-stat="usg_pct" >26.8</td><td class="right iz" data-stat="ws-dum" ></td><td class="right " data-stat="ows" >1.1</td><td class="right " data-stat="dws" >0.8</td><td class="right " data-stat="ws" >1.9</td><td class="right " data-stat="ws_per_40" >.136</td><td class="right iz" data-stat="bpm-dum" ></td><td class="right " data-stat="obpm" >4.4</td><td class="right " data-stat="dbpm" >2.3</td><td class="right " data-stat="bpm" >6.7</td></tr> <tr id="players_advanced.2022" ><th scope="row" class="left " data-stat="season" ><a href='/cbb/seasons/2022.html'>2021-22</a></th><td class="left " data-stat="school_name" ><a href='/cbb/schools/purdue/2022.html'>Purdue</a></td><td class="left " data-stat="conf_abbr" ><a href='/cbb/conferences/big-ten/2022.html'>Big Ten</a></td><td class="right " data-stat="games" >36</td><td class="right " data-stat="games_started" >34</td><td class="right " data-stat="mp" >1132</td><td class="right " data-stat="per" >22.5</td><td class="right " data-stat="ts_pct" >.579</td><td class="right " data-stat="efg_pct" >.533</td><td class="right " data-stat="fg3a_per_fga_pct" >.406</td><td class="right " data-stat="fta_per_fga_pct" >.469</td><td class="right " data-stat="pprod" >586</td><td class="right " data-stat="orb_pct" >2.7</td><td class="right " data-stat="drb_pct" >15.0</td><td class="right " data-stat="trb_pct" >9.3</td><td class="right " data-stat="ast_pct" >19.2</td><td class="right " data-stat="stl_pct" >1.7</td><td class="right " data-stat="blk_pct" >2.0</td><td class="right " data-stat="tov_pct" >14.8</td><td class="right " data-stat="usg_pct" >28.7</td><td class="right iz" data-stat="ws-dum" ></td><td class="right " data-stat="ows" >3.7</td><td class="right " data-stat="dws" >1.4</td><td class="right " data-stat="ws" >5.1</td><td class="right " data-stat="ws_per_40" >.181</td><td class="right iz" data-stat="bpm-dum" ></td><td class="right " data-stat="obpm" >5.7</td><td class="right " data-stat="dbpm" >1.6</td><td class="right " data-stat="bpm" >7.2</td></tr> </tbody><tfoot><tr ><th scope="row" class="left " data-stat="season" >Career</th><td class="left " data-stat="school_name" >Purdue</td><td class="left iz" data-stat="conf_abbr" ></td><td class="right " data-stat="games" >59</td><td class="right " data-stat="games_started" >46</td><td class="right " data-stat="mp" >1689</td><td class="right " data-stat="per" >21.1</td><td class="right " data-stat="ts_pct" >.552</td><td class="right " data-stat="efg_pct" >.507</td><td class="right " data-stat="fg3a_per_fga_pct" >.416</td><td class="right " data-stat="fta_per_fga_pct" >.422</td><td class="right " data-stat="pprod" >830</td><td class="right " data-stat="orb_pct" >3.1</td><td class="right " data-stat="drb_pct" >14.0</td><td class="right " data-stat="trb_pct" >8.8</td><td class="right " data-stat="ast_pct" >18.2</td><td class="right " data-stat="stl_pct" >1.8</td><td class="right " data-stat="blk_pct" >2.6</td><td class="right " data-stat="tov_pct" >13.6</td><td class="right " data-stat="usg_pct" >28.1</td><td class="right iz" data-stat="ws-dum" ></td><td class="right " data-stat="ows" >4.8</td><td class="right " data-stat="dws" >2.2</td><td class="right " data-stat="ws" >7.0</td><td class="right " data-stat="ws_per_40" >.166</td><td class="right iz" data-stat="bpm-dum" ></td><td class="right " data-stat="obpm" >5.3</td><td class="right " data-stat="dbpm" >1.8</td><td class="right " data-stat="bpm" >7.1</td></tr> </tfoot> </tbody> </table>
+		
+ 
+	</div><div class="table_container" id="div_players_advanced_conf">
+		
+		<table class="stats_table sortable row_summable" id="players_advanced_conf" data-cols-to-freeze="1,3"> <caption>Advanced Table</caption> <colgroup><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col><col></colgroup> <thead> <tr> <th aria-label="Season" data-stat="season" scope="col" class=" poptip sort_default_asc center" >Season</th> <th aria-label="School" data-stat="school_name" scope="col" class=" poptip sort_default_asc center" data-tip="* = NCAA Tournament appearance" >School</th> <th aria-label="Conf" data-stat="conf_abbr" scope="col" class=" poptip sort_default_asc center" data-tip="Conference" >Conf</th> <th aria-label="Games" data-stat="games" scope="col" class=" poptip center" data-tip="Games" >G</th> <th aria-label="GS" data-stat="games_started" scope="col" class=" poptip center" data-tip="Games Started" >GS</th> <th aria-label="Minutes Played" data-stat="mp" scope="col" class=" poptip center" data-tip="Minutes Played" >MP</th> <th aria-label="Player Efficiency Rating" data-stat="per" scope="col" class=" poptip center" data-tip="Player Efficiency Rating" data-filter="1" data-name="Player Efficiency Rating" >PER</th> <th aria-label="True Shooting Percentage" data-stat="ts_pct" scope="col" class=" poptip center" data-tip="<strong>True Shooting Percentage</strong><br>A measure of shooting efficiency that takes into account 2-point field goals, 3-point field goals, and free throws." data-filter="1" data-name="True Shooting Percentage" >TS%</th> <th aria-label="Effective Field Goal Percentage" data-stat="efg_pct" scope="col" class=" poptip center" data-tip="Effective Field Goal Percentage; this statistic adjusts for the fact that a 3-point field goal is worth one more point than a 2-point field goal." data-filter="1" data-name="Effective Field Goal Percentage" >eFG%</th> <th aria-label="3-Point Attempt Rate" data-stat="fg3a_per_fga_pct" scope="col" class=" poptip center" data-tip="<strong>3-Point Attempt Rate</strong><br>Percentage of FG Attempts from 3-Point Range" >3PAr</th> <th aria-label="Free Throw Attempt Rate" data-stat="fta_per_fga_pct" scope="col" class=" poptip center" data-tip="<strong>Free Throw Attempt Rate</strong><br>Number of FT Attempts Per FG Attempt" >FTr</th> <th aria-label="Points Produced" data-stat="pprod" scope="col" class=" poptip center" data-tip="Points Produced; an estimate of the player's offensive points produced." >PProd</th> <th aria-label="Offensive Rebound Percentage" data-stat="orb_pct" scope="col" class=" poptip center" data-tip="Offensive Rebound Percentage; an estimate of the percentage of available offensive rebounds a player grabbed while he was on the floor." data-filter="1" data-name="Offensive Rebound Percentage" >ORB%</th> <th aria-label="Defensive Rebound Percentage" data-stat="drb_pct" scope="col" class=" poptip center" data-tip="Defensive Rebound Percentage; an estimate of the percentage of available defensive rebounds a player grabbed while he was on the floor." data-filter="1" data-name="Defensive Rebound Percentage" >DRB%</th> <th aria-label="Total Rebound Percentage" data-stat="trb_pct" scope="col" class=" poptip center" data-tip="<strong>Total Rebound Percentage</strong><br>An estimate of the percentage of available rebounds a player grabbed while he was on the floor." data-filter="1" data-name="Total Rebound Percentage" >TRB%</th> <th aria-label="Assist Percentage" data-stat="ast_pct" scope="col" class=" poptip center" data-tip="<strong>Assist Percentage</strong><br>An estimate of the percentage of teammate field goals a player assisted while he was on the floor." data-filter="1" data-name="Assist Percentage" >AST%</th> <th aria-label="Steal Percentage" data-stat="stl_pct" scope="col" class=" poptip center" data-tip="<strong>Steal Percentage</strong><br>An estimate of the percentage of opponent possessions that end with a steal by the player while he was on the floor." data-filter="1" data-name="Steal Percentage" >STL%</th> <th aria-label="Block Percentage" data-stat="blk_pct" scope="col" class=" poptip center" data-tip="<strong>Block Percentage</strong><br>An estimate of the percentage of opponent two-point field goal attempts blocked by the player while he was on the floor." data-filter="1" data-name="Block Percentage" >BLK%</th> <th aria-label="Turnover Percentage" data-stat="tov_pct" scope="col" class=" poptip sort_default_asc center" data-tip="Turnover Percentage; an estimate of turnovers per 100 plays." data-filter="1" data-name="Turnover Percentage" >TOV%</th> <th aria-label="Usage Percentage" data-stat="usg_pct" scope="col" class=" poptip center" data-tip="Usage Percentage; an estimate of the percentage of team plays used by a player while he was on the floor." data-filter="1" data-name="Usage Percentage" >USG%</th> <th aria-label="&nbsp;" data-stat="ws-dum" scope="col" class=" poptip center" >&nbsp;</th> <th aria-label="Offensive Win Shares" data-stat="ows" scope="col" class=" poptip center" data-tip="Offensive Win Shares; an estimate of the number of wins contributed by a player due to his offense." data-filter="1" data-name="Offensive Win Shares" >OWS</th> <th aria-label="Defensive Win Shares" data-stat="dws" scope="col" class=" poptip center" data-tip="Defensive Win Shares; an estimate of the number of wins contributed by a player due to his defense." data-filter="1" data-name="Defensive Win Shares" >DWS</th> <th aria-label="Win Shares" data-stat="ws" scope="col" class=" poptip center" data-tip="Win Shares; an estimate of the number of wins contributed by a player due to his offense and defense." data-filter="1" data-name="Win Shares" >WS</th> <th aria-label="Win Shares Per 40 Minutes" data-stat="ws_per_40" scope="col" class=" poptip center" data-tip="Win Shares Per 40 Minutes; an estimate of the number of wins contributed by a player per 40 minutes (average is approximately .100)." data-filter="1" data-name="Win Shares Per 40 Minutes" >WS/40</th> <th aria-label="&nbsp;" data-stat="bpm-dum" scope="col" class=" poptip center" >&nbsp;</th> <th aria-label="Offensive Box Plus/Minus" data-stat="obpm" scope="col" class=" poptip center" data-tip="<b>Offensive Box Plus/Minus</b><br>A box score estimate of the offensive points per 100 possessions a player contributed above a league-average player, translated to an average team." data-filter="1" data-name="Offensive Box Plus/Minus" >OBPM</th> <th aria-label="Defensive Box Plus/Minus" data-stat="dbpm" scope="col" class=" poptip center" data-tip="<b>Defensive Box Plus/Minus</b><br>A box score estimate of the defensive points per 100 possessions a player contributed above a league-average player, translated to an average team." data-filter="1" data-name="Defensive Box Plus/Minus" >DBPM</th> <th aria-label="Box Plus/Minus" data-stat="bpm" scope="col" class=" poptip center" data-tip="<b>Box Plus/Minus</b><br>A box score estimate of the points per 100 possessions a player contributed above a league-average player, translated to an average team." data-filter="1" data-name="Box Plus/Minus" >BPM</th> </tr> </thead> <tbody> <tr id="players_advanced_conf.2021" ><th scope="row" class="left " data-stat="season" ><a href='/cbb/seasons/2021.html'>2020-21</a></th><td class="left " data-stat="school_name" ><a href='/cbb/schools/purdue/2021.html'>Purdue</a></td><td class="left " data-stat="conf_abbr" ><a href='/cbb/conferences/big-ten/2021.html'>Big Ten</a></td><td class="right " data-stat="games" >19</td><td class="right " data-stat="games_started" >10</td><td class="right " data-stat="mp" >442</td><td class="right iz" data-stat="per" ></td><td class="right " data-stat="ts_pct" >.479</td><td class="right " data-stat="efg_pct" >.425</td><td class="right " data-stat="fg3a_per_fga_pct" >.425</td><td class="right " data-stat="fta_per_fga_pct" >.356</td><td class="right iz" data-stat="pprod" ></td><td class="right iz" data-stat="orb_pct" ></td><td class="right iz" data-stat="drb_pct" ></td><td class="right iz" data-stat="trb_pct" ></td><td class="right iz" data-stat="ast_pct" ></td><td class="right iz" data-stat="stl_pct" ></td><td class="right iz" data-stat="blk_pct" ></td><td class="right iz" data-stat="tov_pct" ></td><td class="right iz" data-stat="usg_pct" ></td><td class="right iz" data-stat="ws-dum" ></td><td class="right iz" data-stat="ows" ></td><td class="right iz" data-stat="dws" ></td><td class="right iz" data-stat="ws" ></td><td class="right iz" data-stat="ws_per_40" ></td><td class="right iz" data-stat="bpm-dum" ></td><td class="right iz" data-stat="obpm" ></td><td class="right iz" data-stat="dbpm" ></td><td class="right iz" data-stat="bpm" ></td></tr> <tr id="players_advanced_conf.2022" ><th scope="row" class="left " data-stat="season" ><a href='/cbb/seasons/2022.html'>2021-22</a></th><td class="left " data-stat="school_name" ><a href='/cbb/schools/purdue/2022.html'>Purdue</a></td><td class="left " data-stat="conf_abbr" ><a href='/cbb/conferences/big-ten/2022.html'>Big Ten</a></td><td class="right " data-stat="games" >19</td><td class="right " data-stat="games_started" >17</td><td class="right " data-stat="mp" >620</td><td class="right iz" data-stat="per" ></td><td class="right " data-stat="ts_pct" >.542</td><td class="right " data-stat="efg_pct" >.486</td><td class="right " data-stat="fg3a_per_fga_pct" >.385</td><td class="right " data-stat="fta_per_fga_pct" >.545</td><td class="right iz" data-stat="pprod" ></td><td class="right iz" data-stat="orb_pct" ></td><td class="right iz" data-stat="drb_pct" ></td><td class="right iz" data-stat="trb_pct" ></td><td class="right iz" data-stat="ast_pct" ></td><td class="right iz" data-stat="stl_pct" ></td><td class="right iz" data-stat="blk_pct" ></td><td class="right iz" data-stat="tov_pct" ></td><td class="right iz" data-stat="usg_pct" ></td><td class="right iz" data-stat="ws-dum" ></td><td class="right iz" data-stat="ows" ></td><td class="right iz" data-stat="dws" ></td><td class="right iz" data-stat="ws" ></td><td class="right iz" data-stat="ws_per_40" ></td><td class="right iz" data-stat="bpm-dum" ></td><td class="right iz" data-stat="obpm" ></td><td class="right iz" data-stat="dbpm" ></td><td class="right iz" data-stat="bpm" ></td></tr> </tbody><tfoot><tr ><th scope="row" class="left " data-stat="season" >Career</th><td class="left " data-stat="school_name" >Purdue</td><td class="left iz" data-stat="conf_abbr" ></td><td class="right " data-stat="games" >38</td><td class="right " data-stat="games_started" >27</td><td class="right " data-stat="mp" >1062</td><td class="right incomplete iz" data-stat="per" ></td><td class="right " data-stat="ts_pct" >.517</td><td class="right " data-stat="efg_pct" >.461</td><td class="right " data-stat="fg3a_per_fga_pct" >.402</td><td class="right " data-stat="fta_per_fga_pct" >.467</td><td class="right incomplete iz" data-stat="pprod" ></td><td class="right incomplete iz" data-stat="orb_pct" ></td><td class="right incomplete iz" data-stat="drb_pct" ></td><td class="right incomplete iz" data-stat="trb_pct" ></td><td class="right incomplete iz" data-stat="ast_pct" ></td><td class="right incomplete iz" data-stat="stl_pct" ></td><td class="right incomplete iz" data-stat="blk_pct" ></td><td class="right incomplete" data-stat="tov_pct" >12.5</td><td class="right incomplete iz" data-stat="usg_pct" ></td><td class="right iz" data-stat="ws-dum" ></td><td class="right incomplete iz" data-stat="ows" ></td><td class="right incomplete iz" data-stat="dws" ></td><td class="right incomplete iz" data-stat="ws" ></td><td class="right iz" data-stat="ws_per_40" ></td><td class="right iz" data-stat="bpm-dum" ></td><td class="right incomplete iz" data-stat="obpm" ></td><td class="right incomplete iz" data-stat="dbpm" ></td><td class="right incomplete iz" data-stat="bpm" ></td></tr> </tfoot> </tbody> </table>
+		
+ 
+	</div></div>
+
+
+</div>
+
+            
+            
+            
+         
+      
+         
+            
+<div class="leaderboard_wrapper commented" id="all_leaderboard">
+
+<div class="section_heading assoc_leaderboard" id="leaderboard_sh">
+  <span class="section_anchor" id="leaderboard_link" data-label="Leaderboards, Awards, &amp; Honors"></span><h2>Appearances on Leaderboards, Awards, and Honors</h2>    <div class="section_heading_text">
+      <ul><li><a href='/cbb/leaders/'>Full leaderboard section</a>
+&nbsp;&nbsp;&#183; &nbsp;
+<a href='/cbb/leaders/requirements.html'>Minimum stat requirements</a>
+</li>
+      </ul>
+    </div>
+    		
+</div><!-- 	<div class="data_grid" id="div_leaderboard" data-entry-type="Leaderboards">
+<div id="leaderboard_awards" class="data_grid_box">
+	<table class="no_columns">
+		<caption class="poptip" data-tip="">Awards</caption>		<tr class="">			<td class="single"><a href='/cbb/awards/big-ten-all-frosh.html'>2020-21</a>&nbsp;<a href='/cbb/awards/big-ten-all-frosh.html'>Big Ten All-Freshman</a>&nbsp;<small>- 1st Team</small></td>
+		</tr>
+				<tr class="">			<td class="single"><a href='/cbb/awards/all-big-ten.html'>2021-22</a>&nbsp;<a href='/cbb/awards/all-big-ten.html'>All-Big Ten</a>&nbsp;<small>- 1st Team</small></td>
+		</tr>
+				<tr class="">			<td class="single"><a href='/cbb/awards/all-america-2020-2029.html'>2021-22</a>&nbsp;<a href='/cbb/awards/all-america-2020-2029.html'>Consensus All-America</a>&nbsp;<small>- 2nd Team</small></td>
+		</tr>
+				<tr class="">			<td class="single"><a href='/cbb/awards/wooden-late.html'>2021-22</a>&nbsp;<a href='/cbb/awards/wooden-late.html'>Wooden Award - Late Season</a></td>
+		</tr>
+				<tr class="">			<td class="single"><a href='/cbb/awards/wooden-mid.html'>2021-22</a>&nbsp;<a href='/cbb/awards/wooden-mid.html'>Wooden Award - Midseason</a></td>
+		</tr>
+				<tr class="">			<td class="single"><a href='/cbb/awards/wooden-ballot.html'>2021-22</a>&nbsp;<a href='/cbb/awards/wooden-ballot.html'>Wooden Award - National Ballot</a></td>
+		</tr>
+				<tr class="">			<td class="single"><a href='/cbb/awards/wooden-pre.html'>2021-22</a>&nbsp;<a href='/cbb/awards/wooden-pre.html'>Wooden Award - Preseason</a></td>
+		</tr>
+				<tr class="">			<td class="single"><a href='/cbb/awards/all-big-ten-tourney.html'>2022</a>&nbsp;<a href='/cbb/awards/all-big-ten-tourney.html'>All-Big Ten Tournament</a></td>
+		</tr>
+			</table>
+	<button onclick="vjs_addClass(document.getElementById('leaderboard_awards'),'show_all')">8 Awards and Honors</button>
+</div>
+
+<div id="leaderboard_pts" class="data_grid_box">
+	<table class="no_columns">
+		<caption class="poptip" data-tip="Points">Points</caption>		<tr class="only-child">			<td class="single"><a href='/cbb/conferences/big-ten/2022-leaders.html'>2021-22</a> <a href='/cbb/conferences/big-ten/2022-leaders.html'>Big Ten</a> 624 (3rd)</td>
+		</tr>
+			</table>
+</div>
+
+<div id="leaderboard_pts_per_g" class="data_grid_box">
+	<table class="no_columns">
+		<caption class="poptip" data-tip="Points Per Game">Points Per Game</caption>		<tr class="only-child">			<td class="single"><a href='/cbb/conferences/big-ten/2022-leaders.html'>2021-22</a> <a href='/cbb/conferences/big-ten/2022-leaders.html'>Big Ten</a> 17.3 (8th)</td>
+		</tr>
+			</table>
+</div>
+
+<div id="leaderboard_drb" class="data_grid_box">
+	<table class="no_columns">
+		<caption class="poptip" data-tip="Defensive Rebounds">Defensive Rebounds</caption>		<tr class="only-child">			<td class="single"><a href='/cbb/conferences/big-ten/2022-leaders.html'>2021-22</a> <a href='/cbb/conferences/big-ten/2022-leaders.html'>Big Ten</a> 152 (15th)</td>
+		</tr>
+			</table>
+</div>
+
+<div id="leaderboard_ast" class="data_grid_box">
+	<table class="no_columns">
+		<caption class="poptip" data-tip="Assists">Assists</caption>		<tr class="only-child">			<td class="single"><a href='/cbb/conferences/big-ten/2022-leaders.html'>2021-22</a> <a href='/cbb/conferences/big-ten/2022-leaders.html'>Big Ten</a> 110 (15th)</td>
+		</tr>
+			</table>
+</div>
+
+<div id="leaderboard_ast_per_g" class="data_grid_box">
+	<table class="no_columns">
+		<caption class="poptip" data-tip="Assists Per Game">Assists Per Game</caption>		<tr class="only-child">			<td class="single"><a href='/cbb/conferences/big-ten/2022-leaders.html'>2021-22</a> <a href='/cbb/conferences/big-ten/2022-leaders.html'>Big Ten</a> 3.1 (14th)</td>
+		</tr>
+			</table>
+</div>
+
+<div id="leaderboard_fg_pct" class="data_grid_box">
+	<table class="no_columns">
+		<caption class="poptip" data-tip="Field Goal Percentage">Field Goal Percentage</caption>		<tr class="only-child">			<td class="single"><a href='/cbb/conferences/big-ten/2022-leaders.html'>2021-22</a> <a href='/cbb/conferences/big-ten/2022-leaders.html'>Big Ten</a> .460 (11th)</td>
+		</tr>
+			</table>
+</div>
+
+<div id="leaderboard_ft_pct" class="data_grid_box">
+	<table class="no_columns">
+		<caption class="poptip" data-tip="Free Throw Percentage">Free Throw Percentage</caption>		<tr class="only-child">			<td class="single"><a href='/cbb/conferences/big-ten/2022-leaders.html'>2021-22</a> <a href='/cbb/conferences/big-ten/2022-leaders.html'>Big Ten</a> .744 (13th)</td>
+		</tr>
+			</table>
+</div>
+
+<div id="leaderboard_efg_pct" class="data_grid_box">
+	<table class="no_columns">
+		<caption class="poptip" data-tip="Effective Field Goal Percentage; this statistic adjusts for the fact that a 3-point field goal is worth one more point than a 2-point field goal.">Effective Field Goal Percentage</caption>		<tr class="only-child">			<td class="single"><a href='/cbb/conferences/big-ten/2022-leaders.html'>2021-22</a> <a href='/cbb/conferences/big-ten/2022-leaders.html'>Big Ten</a> .533 (12th)</td>
+		</tr>
+			</table>
+</div>
+
+<div id="leaderboard_ts_pct" class="data_grid_box">
+	<table class="no_columns">
+		<caption class="poptip" data-tip="<strong>True Shooting Percentage</strong><br>A measure of shooting efficiency that takes into account 2-point field goals, 3-point field goals, and free throws.">True Shooting Percentage</caption>		<tr class="only-child">			<td class="single"><a href='/cbb/conferences/big-ten/2022-leaders.html'>2021-22</a> <a href='/cbb/conferences/big-ten/2022-leaders.html'>Big Ten</a> .579 (15th)</td>
+		</tr>
+			</table>
+</div>
+
+<div id="leaderboard_fg" class="data_grid_box">
+	<table class="no_columns">
+		<caption class="poptip" data-tip="Field Goals">Field Goals</caption>		<tr class="only-child">			<td class="single"><a href='/cbb/conferences/big-ten/2022-leaders.html'>2021-22</a> <a href='/cbb/conferences/big-ten/2022-leaders.html'>Big Ten</a> 203 (7th)</td>
+		</tr>
+			</table>
+</div>
+
+<div id="leaderboard_fga" class="data_grid_box">
+	<table class="no_columns">
+		<caption class="poptip" data-tip="Field Goal Attempts">Field Goal Attempts</caption>		<tr class="only-child">			<td class="single"><a href='/cbb/conferences/big-ten/2022-leaders.html'>2021-22</a> <a href='/cbb/conferences/big-ten/2022-leaders.html'>Big Ten</a> 441 (3rd)</td>
+		</tr>
+			</table>
+</div>
+
+<div id="leaderboard_fg2" class="data_grid_box">
+	<table class="no_columns">
+		<caption class="poptip" data-tip="2-Point Field Goals">2-Point Field Goals</caption>		<tr class="only-child">			<td class="single"><a href='/cbb/conferences/big-ten/2022-leaders.html'>2021-22</a> <a href='/cbb/conferences/big-ten/2022-leaders.html'>Big Ten</a> 139 (12th)</td>
+		</tr>
+			</table>
+</div>
+
+<div id="leaderboard_fg2a" class="data_grid_box">
+	<table class="no_columns">
+		<caption class="poptip" data-tip="2-Point Field Goal Attempts">2-Point Field Goal Attempts</caption>		<tr class="only-child">			<td class="single"><a href='/cbb/conferences/big-ten/2022-leaders.html'>2021-22</a> <a href='/cbb/conferences/big-ten/2022-leaders.html'>Big Ten</a> 262 (10th)</td>
+		</tr>
+			</table>
+</div>
+
+<div id="leaderboard_fg3" class="data_grid_box">
+	<table class="no_columns">
+		<caption class="poptip" data-tip="3-Point Field Goals">3-Point Field Goals</caption>		<tr class="only-child">			<td class="single"><a href='/cbb/conferences/big-ten/2022-leaders.html'>2021-22</a> <a href='/cbb/conferences/big-ten/2022-leaders.html'>Big Ten</a> 64 (11th)</td>
+		</tr>
+			</table>
+</div>
+
+<div id="leaderboard_fg3a" class="data_grid_box">
+	<table class="no_columns">
+		<caption class="poptip" data-tip="3-Point Field Goal Attempts">3-Point Field Goal Attempts</caption>		<tr class="only-child">			<td class="single"><a href='/cbb/conferences/big-ten/2022-leaders.html'>2021-22</a> <a href='/cbb/conferences/big-ten/2022-leaders.html'>Big Ten</a> 179 (11th)</td>
+		</tr>
+			</table>
+</div>
+
+<div id="leaderboard_ft" class="data_grid_box">
+	<table class="no_columns">
+		<caption class="poptip" data-tip="Free Throws">Free Throws</caption>		<tr class="only-child">			<td class="single"><a href='/cbb/conferences/big-ten/2022-leaders.html'>2021-22</a> <a href='/cbb/conferences/big-ten/2022-leaders.html'>Big Ten</a> 154 (4th)</td>
+		</tr>
+			</table>
+</div>
+
+<div id="leaderboard_fta" class="data_grid_box">
+	<table class="no_columns">
+		<caption class="poptip" data-tip="Free Throw Attempts">Free Throw Attempts</caption>		<tr class="">			<td class="single"><a href='/cbb/seasons/2022-leaders.html'>2021-22</a> <a href='/cbb/seasons/2022-leaders.html'>NCAA</a> 207 (17th)</td>
+		</tr>
+				<tr class="">			<td class="single"><a href='/cbb/conferences/big-ten/2022-leaders.html'>2021-22</a> <a href='/cbb/conferences/big-ten/2022-leaders.html'>Big Ten</a> 207 (3rd)</td>
+		</tr>
+			</table>
+	<button onclick="vjs_addClass(document.getElementById('leaderboard_fta'),'show_all')">2 Seasons in Top 20</button>
+</div>
+
+<div id="leaderboard_g" class="data_grid_box">
+	<table class="no_columns">
+		<caption class="poptip" data-tip="Games">Games</caption>		<tr class="only-child">			<td class="single"><a href='/cbb/conferences/big-ten/2022-leaders.html'>2021-22</a> <a href='/cbb/conferences/big-ten/2022-leaders.html'>Big Ten</a> 36 (7th)</td>
+		</tr>
+			</table>
+</div>
+
+<div id="leaderboard_mp" class="data_grid_box">
+	<table class="no_columns">
+		<caption class="poptip" data-tip="Minutes Played">Minutes Played</caption>		<tr class="only-child">			<td class="single"><a href='/cbb/conferences/big-ten/2022-leaders.html'>2021-22</a> <a href='/cbb/conferences/big-ten/2022-leaders.html'>Big Ten</a> 1132 (4th)</td>
+		</tr>
+			</table>
+</div>
+
+<div id="leaderboard_tov" class="data_grid_box">
+	<table class="no_columns">
+		<caption class="poptip" data-tip="Turnovers">Turnovers</caption>		<tr class="only-child">			<td class="single"><a href='/cbb/conferences/big-ten/2022-leaders.html'>2021-22</a> <a href='/cbb/conferences/big-ten/2022-leaders.html'>Big Ten</a> 94 (2nd)</td>
+		</tr>
+			</table>
+</div>
+
+<div id="leaderboard_per" class="data_grid_box">
+	<table class="no_columns">
+		<caption class="poptip" data-tip="Player Efficiency Rating">Player Efficiency Rating</caption>		<tr class="only-child">			<td class="single"><a href='/cbb/conferences/big-ten/2022-leaders.html'>2021-22</a> <a href='/cbb/conferences/big-ten/2022-leaders.html'>Big Ten</a> 22.5 (11th)</td>
+		</tr>
+			</table>
+</div>
+
+<div id="leaderboard_ws" class="data_grid_box">
+	<table class="no_columns">
+		<caption class="poptip" data-tip="Win Shares; an estimate of the number of wins contributed by a player due to his offense and defense.">Win Shares</caption>		<tr class="only-child">			<td class="single"><a href='/cbb/conferences/big-ten/2022-leaders.html'>2021-22</a> <a href='/cbb/conferences/big-ten/2022-leaders.html'>Big Ten</a> 5.1 (7th)</td>
+		</tr>
+			</table>
+</div>
+
+<div id="leaderboard_ows" class="data_grid_box">
+	<table class="no_columns">
+		<caption class="poptip" data-tip="Offensive Win Shares; an estimate of the number of wins contributed by a player due to his offense.">Offensive Win Shares</caption>		<tr class="only-child">			<td class="single"><a href='/cbb/conferences/big-ten/2022-leaders.html'>2021-22</a> <a href='/cbb/conferences/big-ten/2022-leaders.html'>Big Ten</a> 3.7 (6th)</td>
+		</tr>
+			</table>
+</div>
+
+<div id="leaderboard_dws" class="data_grid_box">
+	<table class="no_columns">
+		<caption class="poptip" data-tip="Defensive Win Shares; an estimate of the number of wins contributed by a player due to his defense.">Defensive Win Shares</caption>		<tr class="only-child">			<td class="single"><a href='/cbb/conferences/big-ten/2022-leaders.html'>2021-22</a> <a href='/cbb/conferences/big-ten/2022-leaders.html'>Big Ten</a> 1.4 (16th)</td>
+		</tr>
+			</table>
+</div>
+
+<div id="leaderboard_ws_per_40" class="data_grid_box">
+	<table class="no_columns">
+		<caption class="poptip" data-tip="Win Shares Per 40 Minutes; an estimate of the number of wins contributed by a player per 40 minutes (average is approximately .100).">Win Shares Per 40 Minutes</caption>		<tr class="only-child">			<td class="single"><a href='/cbb/conferences/big-ten/2022-leaders.html'>2021-22</a> <a href='/cbb/conferences/big-ten/2022-leaders.html'>Big Ten</a> .181 (9th)</td>
+		</tr>
+			</table>
+</div>
+
+<div id="leaderboard_bpm" class="data_grid_box">
+	<table class="no_columns">
+		<caption class="poptip" data-tip="<b>Box Plus/Minus</b><br>A box score estimate of the points per 100 possessions a player contributed above a league-average player, translated to an average team.">Box Plus/Minus</caption>		<tr class="only-child">			<td class="single"><a href='/cbb/conferences/big-ten/2022-leaders.html'>2021-22</a> <a href='/cbb/conferences/big-ten/2022-leaders.html'>Big Ten</a> 7.2 (10th)</td>
+		</tr>
+			</table>
+</div>
+
+<div id="leaderboard_obpm" class="data_grid_box">
+	<table class="no_columns">
+		<caption class="poptip" data-tip="<b>Offensive Box Plus/Minus</b><br>A box score estimate of the offensive points per 100 possessions a player contributed above a league-average player, translated to an average team.">Offensive Box Plus/Minus</caption>		<tr class="only-child">			<td class="single"><a href='/cbb/conferences/big-ten/2022-leaders.html'>2021-22</a> <a href='/cbb/conferences/big-ten/2022-leaders.html'>Big Ten</a> 5.7 (10th)</td>
+		</tr>
+			</table>
+</div>
+
+<div id="leaderboard_off_rtg" class="data_grid_box">
+	<table class="no_columns">
+		<caption class="poptip" data-tip="<strong>Offensive Rating</strong><br>An estimate of points scored (for teams) or points produced (for players) per 100 possessions.">Offensive Rating</caption>		<tr class="only-child">			<td class="single"><a href='/cbb/conferences/big-ten/2022-leaders.html'>2021-22</a> <a href='/cbb/conferences/big-ten/2022-leaders.html'>Big Ten</a> 114.7 (17th)</td>
+		</tr>
+			</table>
+</div>
+
+<div id="leaderboard_usg_pct" class="data_grid_box">
+	<table class="no_columns">
+		<caption class="poptip" data-tip="Usage Percentage; an estimate of the percentage of team plays used by a player while he was on the floor.">Usage Percentage</caption>		<tr class="">			<td class="single"><a href='/cbb/conferences/big-ten/2021-leaders.html'>2020-21</a> <a href='/cbb/conferences/big-ten/2021-leaders.html'>Big Ten</a> 26.8 (15th)</td>
+		</tr>
+				<tr class="">			<td class="single"><a href='/cbb/conferences/big-ten/2022-leaders.html'>2021-22</a> <a href='/cbb/conferences/big-ten/2022-leaders.html'>Big Ten</a> 28.7 (7th)</td>
+		</tr>
+				<tr class="career">			<td class="single">Career <a href='/cbb/conferences/big-ten/leaders/usg-pct-player-career.html'>Big Ten</a> 28.1 (18th)</td>
+		</tr>
+			</table>
+	<button onclick="vjs_addClass(document.getElementById('leaderboard_usg_pct'),'show_all')">2 Seasons in Top 20</button>
+</div>
+
+<div id="leaderboard_ast_pct" class="data_grid_box">
+	<table class="no_columns">
+		<caption class="poptip" data-tip="<strong>Assist Percentage</strong><br>An estimate of the percentage of teammate field goals a player assisted while he was on the floor.">Assist Percentage</caption>		<tr class="only-child">			<td class="single"><a href='/cbb/conferences/big-ten/2022-leaders.html'>2021-22</a> <a href='/cbb/conferences/big-ten/2022-leaders.html'>Big Ten</a> 19.2 (16th)</td>
+		</tr>
+			</table>
+</div>
+
+<div id="leaderboard_blk_pct" class="data_grid_box">
+	<table class="no_columns">
+		<caption class="poptip" data-tip="<strong>Block Percentage</strong><br>An estimate of the percentage of opponent two-point field goal attempts blocked by the player while he was on the floor.">Block Percentage</caption>		<tr class="only-child">			<td class="single"><a href='/cbb/conferences/big-ten/2021-leaders.html'>2020-21</a> <a href='/cbb/conferences/big-ten/2021-leaders.html'>Big Ten</a> 3.8 (12th)</td>
+		</tr>
+			</table>
+</div>
+
+<div id="leaderboard_tov_pct" class="data_grid_box">
+	<table class="no_columns">
+		<caption class="poptip" data-tip="Turnover Percentage; an estimate of turnovers per 100 plays.">Turnover Percentage</caption>		<tr class="only-child">			<td class="single"><a href='/cbb/conferences/big-ten/2021-leaders.html'>2020-21</a> <a href='/cbb/conferences/big-ten/2021-leaders.html'>Big Ten</a> 10.7 (19th)</td>
+		</tr>
+			</table>
+</div>
+
+<div id="leaderboard_pprod" class="data_grid_box">
+	<table class="no_columns">
+		<caption class="poptip" data-tip="Points Produced; an estimate of the player's offensive points produced.">Points Produced</caption>		<tr class="only-child">			<td class="single"><a href='/cbb/conferences/big-ten/2022-leaders.html'>2021-22</a> <a href='/cbb/conferences/big-ten/2022-leaders.html'>Big Ten</a> 586 (4th)</td>
+		</tr>
+			</table>
+</div>
+
+<div id="leaderboard_pprod_per_g" class="data_grid_box">
+	<table class="no_columns">
+		<caption class="poptip" data-tip="Points Produced Per Game; an estimate of the player's offensive points produced per game">Points Produced Per Game</caption>		<tr class="only-child">			<td class="single"><a href='/cbb/conferences/big-ten/2022-leaders.html'>2021-22</a> <a href='/cbb/conferences/big-ten/2022-leaders.html'>Big Ten</a> 16.3 (7th)</td>
+		</tr>
+			</table>
+</div>
+
+	</div>-->
+</div>
+
+            
+            
+            
+         
+      
+
+<!-- global.nonempty_tables_num: 6, table_count: 6 -->
+   <!-- no Local/Partials/NoteBottom.tt2 -->
+<div id="bottom_nav" class="section_wrapper">
+<div class="section_heading"><span data-no-inpage="1" class="section_anchor" id="inner_nav_bottom_link" data-label="More Ivey Pages"></span><h2>More Ivey Pages</h2></div>
+<div class="section_content" id="bottom_nav_container">
+
+  <p><a href="/cbb/players/jaden-ivey-1.html"><u>Ivey Overview</u></a></p>
+  <p class="listhead"><strong>Full Game Logs</strong></p>
+        <ul class="">
+          <li><a href="/cbb/players/jaden-ivey-1/gamelog/2021/">2020-21</a></li>
+          <li><a href="/cbb/players/jaden-ivey-1/gamelog/2022/">2021-22</a></li>
+        </ul><p class="listhead"><a href='/cbb/players/jaden-ivey-1/gamelog/'>All Game Logs</a></p>
+        <ul class="">
+        </ul><p class="listhead"><strong>Splits</strong></p>
+        <ul class="">
+          <li><a href="/cbb/players/jaden-ivey-1/splits/2021/">2020-21</a></li>
+          <li><a href="/cbb/players/jaden-ivey-1/splits/2022/">2021-22</a></li>
+          <li><a href="/cbb/players/jaden-ivey-1/splits/">Career</a></li>
+        </ul><p class="listhead">More Ivey pages at Sports Reference</p>
+        <ul class="">
+          <li><a href="https://www.basketball-reference.com/players/i/iveyja01.html">Basketball-Reference.com</a></li>
+        </ul></div></div>
+
+   
+
+
+<!-- fs_footer -->
+<div class="adblock">
+<!-- div#fs_fs_footer  -->
+<div align="center" id="div-gpt-ad-728x90-Footer">
+    <script data-cfasync="false" type='text/javascript'>
+    if (sr_detect_ie || sr_detect_edge || Modernizr.adfree) {
+    }
+    else {
+        console.log('push ad:div-gpt-ad-728x90-Footer');
+        freestar.queue.push(function() { googletag.display('div-gpt-ad-728x90-Footer'); });
+    }
+    </script>
+</div>
+<!-- /div.#fs_fs_footer -->
+
+</div>
+
+
+
+
+
+</div><!-- div#content -->
+
+<div id="footer" role="contentinfo">
+	<div id="footer_header">
+		 <ul class="bullets-inline"><li class="user logged_in">Welcome <span class="username"></span>&nbsp;&#183;&nbsp;<a href="https://stathead.com/profile/?utm_source=web&amp;utm_medium=cbb&amp;utm_campaign=sr-nav-bar-top-account">Your Account</a></li>
+<li class="user logged_in"><a class="logout" onclick="sr_auth_logout_page_elements();if(!this.href.match('redirect_uri')){this.href += '&redirect_uri='+escape(document.location.href)}" href="https://stathead.com/profile/?do=logout">Logout</a></li>
+<li class="user not_logged_in"><a class="login" onclick="if(!this.href.match('redirect_uri')){this.href += '&redirect_uri='+escape(document.location.href)}" href="https://stathead.com/users/login.cgi?token=1">Login</a></li>
+<li class="user not_logged_in"><a href="https://stathead.com/users/signup.cgi">Create Account</a></li>
+</ul>
+		 <div class="breadcrumbs">You are here: <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="/cbb/"><span itemprop="name">CBB Home Page</span></a> <meta itemprop="position" content="1" /></span> &gt; <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="/cbb/players/"><span itemprop="name">Players</span></a> <meta itemprop="position" content="2" /></span> &gt; <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a itemprop="item" href="/cbb/players/i-index.html"><span itemprop="name">I</span></a> <meta itemprop="position" content="3" /></span> &gt; <strong>Jaden Ivey</strong></div>
+	</div><!-- div#footer_header -->
+
+	<div id="footer_general">
+		<div id="site_menu" role="navigation" aria-label="complete site index">
+			
+			
+<div class="section_heading assoc_site_menu" id="site_menu_sh">
+  <span class="section_anchor" id="site_menu_link" data-label="Full Site Menu"></span><h2>Full Site Menu</h2>    <div class="section_heading_text">
+      <ul><li><a data-scroll href="#header">Return to Top</a></li>
+      </ul>
+    </div>
+    		
+</div>
+			
+				<ul>
+  <li>
+    <a href='/cbb/players/'>Players</a>
+    <div>
+      <a href='/cbb/players/danny-vranes-1.html'>Danny Vranes</a>, 
+      <a href='/cbb/players/marvin-barnes-1.html'>Marvin Barnes</a>, 
+      <a href='/cbb/players/bobby-hurley-1.html'>Bobby Hurley</a>, 
+      <a href='/cbb/players/james-worthy-1.html'>James Worthy</a>, 
+      <a href='/cbb/players/tayshaun-prince-1.html'>Tayshaun Prince</a>
+    </div>
+  </li>
+
+  <li>
+    <a href='/cbb/schools/'>Schools</a>
+    <div>
+      <a href='/cbb/schools/boston-university/'>Boston University</a>, 
+      <a href='/cbb/schools/montana/'>Montana</a>, 
+      <a href='/cbb/schools/houston/'>Houston</a>, 
+      <a href='/cbb/schools/texas/'>Texas</a>, 
+      <a href='/cbb/schools/northwestern/'>Northwestern</a>, 
+      <a href='/cbb/schools/duke/2001.html'>Stats</a>, 
+      <a href='/cbb/schools/kansas/2008-schedule.html'>Schedules</a>
+    </div>
+  </li>
+
+  <li>
+    <a href='/cbb/seasons/'>Seasons</a>
+    <div>
+      <a href='/cbb/seasons/1971.html'>1970-71</a>, 
+      <a href='/cbb/seasons/1959.html'>1958-59</a>, 
+      <a href='/cbb/seasons/1953.html'>1952-53</a>, 
+      <a href='/cbb/seasons/1976.html'>1975-76</a>, 
+      <a href='/cbb/seasons/1962.html'>1961-62</a>, 
+      <a href='/cbb/seasons/1992-polls.html'>Polls</a>, 
+      <a href='/cbb/seasons/2002-leaders.html'>Leaders</a>
+    </div>
+  </li>
+
+  <li>
+    <a href="/cbb/leaders/">Leaders and Records</a>
+    <div>
+      <a href='/cbb/leaders/pts-player-season.html'>Season Points</a>, 
+      <a href='/cbb/leaders/trb-player-career.html'>Career Rebounds</a>, 
+      <a href='/cbb/leaders/ast-player-yearly.html'>Yearly Assists</a>, 
+      <a href='/cbb/leaders/wins-coach-season.html'>Season Wins</a>, 
+      <a href='/cbb/leaders/win-loss-pct-coach-career.html'>Career W-L%</a>
+    </div>
+  </li>
+
+  <li>
+    <a href="/cbb/boxscores/">College Basketball Scores</a>
+    <div>
+      <a href='/cbb/boxscores/1991-03-30-duke.html'>UNLV 77, Duke 79</a>, 
+      <a href='/cbb/boxscores/1992-03-28-duke.html'>Kentucky 103, Duke 104</a>, 
+      <a href='/cbb/boxscores/1957-03-23-kansas.html'>UNC 54, Kansas 53</a>, 
+      <a href='/cbb/boxscores/1983-04-04-houston.html'>NC State 54, Houston 52</a>
+    </div>
+  </li>
+
+  <li>
+    <a href="/cbb/postseason/">NCAA Tournament</a>
+    <div>
+      <a href='/cbb/postseason/1988-ncaa.html'>1988 NCAA</a>, 
+      <a href='/cbb/postseason/1976-ncaa.html'>1976 NCAA</a>, 
+      <a href="/cbb/postseason/1940-ncaa.html">1940 NCAA</a>, 
+      <a href="/cbb/postseason/1950-ncaa.html">1950 NCAA</a>, 
+      <a href="/cbb/postseason/1981-ncaa.html">1981 NCAA</a>
+    </div>
+  </li>
+
+  <li>
+    <a href='/cbb/play-index/'>Play Index</a>
+    <div>
+      <a href='/cbb/play-index/psl_finder.cgi'>Player Season Finder</a>,
+      <a href='/cbb/play-index/pgl_finder.cgi'>Player Game Finder</a>,
+      <a href='/cbb/play-index/tourney_pgl_finder.cgi'>NCAA Tournament Player Game Finder</a>,
+      <a href='/cbb/play-index/matchup_finder.cgi'>Matchup Finder</a>,
+      <a href='/cbb/play-index/tourney.cgi'>NCAA Tournament Matchup Finder</a>
+    </div>
+  </li>
+
+  <li>
+    <a href='/cbb/awards/'>Awards and Honors</a>
+    <div>
+      <a href='/cbb/awards/all-america-2010-2019.html'>All-America Teams</a>, 
+      <a href='/cbb/awards/wooden.html'>Wooden Award</a>, 
+      <a href='/cbb/awards/ncaa-mop.html'>NCAA Tournament MOP</a>
+    </div>
+  </li>
+
+  <li>
+    <a href='/cbb/coaches/'>Coaches</a>
+    <div>
+      <a href='/cbb/coaches/leonard-hamilton-1.html'>Leonard Hamilton</a>, 
+      <a href='/cbb/coaches/jay-wright-1.html'>Jay Wright</a>, 
+      <a href='/cbb/coaches/johnny-orr-1.html'>Johnny Orr</a>, 
+      <a href='/cbb/coaches/danny-nee-1.html'>Danny Nee</a>, 
+      <a href='/cbb/coaches/fran-dunphy-1.html'>Fran Dunphy</a>
+    </div>
+  </li>
+
+  <li>
+    <a href='/cbb/conferences/'>Conferences</a>
+    <div>
+      <a href='/cbb/conferences/mvc/'>Missouri Valley</a>, 
+      <a href='/cbb/conferences/big-west/'>Big West</a>, 
+      <a href='/cbb/conferences/big-sky/'>Big Sky</a>, 
+      <a href='/cbb/conferences/summit/'>Summit</a>, 
+      <a href='/cbb/conferences/big-east/'>Big East</a>, 
+      <a href='/cbb/conferences/big-ten/2007.html'>Standings</a>, 
+      <a href='/cbb/conferences/acc/2009-schedule.html'>Schedules</a>, 
+      <a href='/cbb/conferences/big-12/2008-leaders.html'>Leaders</a>
+    </div>
+  </li>
+
+
+  <li>
+    <a href='/cbb/friv/'>Frivolities</a>
+    <div>
+      <a href='/cbb/friv/dailyleaders.cgi'>Daily Leaders</a>, 
+      <a href='/cbb/friv/forfeits.cgi'>Forfeits and Vacated Games</a>, 
+      <a href='/cbb/friv/ap1_losses.html'>Historical AP #1 Losses</a>, 
+      <a href='/cbb/friv/player_milestones.cgi'>Player Milestone Watch</a>
+    </div>
+  </li>
+
+  <li>
+    <a href='/cbb/about/'>About</a>
+    <div>
+      <a href='/cbb/about/contact.html'>Contact and Media Information</a>, 
+      <a href='/cbb/about/sources.html'>Contributors and Sources</a>, 
+      <a href='/cbb/about/glossary.html'>Glossary</a>, 
+      <a href='/cbb/about/ws.html'>Calculating Win Shares</a>
+    </div>
+  </li>
+
+  <li>
+    <div>Other: 
+      <a href='/blog/'>Blog</a>, 
+      <a href='/cbb/feedback/'>Feedback</a>, 
+      <a href='/cbb/friv/forfeits.cgi'>Forfeits and Vacated Games</a>, 
+      <a href='/cbb/about/glossary.html'>Glossary</a>, 
+      <a href='/cbb/rand.fcgi'>Random Page</a>, 
+      <a href='/cbb/linker/'>Linker Tool</a>
+    </div>
+  </li>
+
+</ul>   
+
+
+			
+   		        
+
+      <ul>
+       <li></li>      
+       <li><a href="https://www.sports-reference.com/cbb/cbb-blog/">College Basketball at Sports-Reference.com Blog and Articles</a></li>
+
+	        </div><!-- div#site_menu -->
+		<div>
+			<div id="social" class="icon_group noload">
+	
+<div class="section_heading assoc_" id="_sh">
+  <span class="section_anchor" id="_link" data-label="We're Social...for Statheads" data-no-inpage="1"></span><h2>We're Social...for Statheads</h2>		
+</div>
+	<a href="tel://888-512-8907" data-tip="Call us on Telephone" data-label="Telephone" aria-label="Telephone" class="poptip"><svg class="icon phone"><use xlink:href="#ic-phone"></use></svg></a>
+	<a href="//www.sports-reference.com/blog/" data-tip="The Sports Reference Blog" data-label="Our Blog" aria-label="Our Blog" class="poptip"><svg class="icon wordpress"><use xlink:href="#ic-wordpress"></use></svg></a>
+	<a href="https://www.sports-reference.com/blog/feed/" data-tip="Our Blog's RSS Feed" data-label="RSS Feed" aria-label="RSS Feed" class="poptip"><svg class="icon rss"><use xlink:href="#ic-rss"></use></svg></a>
+	
+		<a href="https://twitter.com/collegebb_ref" data-tip="College Basketball at Sports-Reference.com at Twitter" data-label="Twitter" aria-label="Twitter" class="poptip"><svg class="icon twitter"><use xlink:href="#ic-twitter"></use></svg></a>
+	
+		<a href="https://www.tiktok.com/@collegebb_ref" data-tip="College Basketball at Sports-Reference.com at TikTok" data-label="TikTok" aria-label="TikTok" class="poptip"><svg class="icon tiktok"><use xlink:href="#ic-tiktok"></use></svg></a>
+	<a href="https://reddit.com/r/SportsReference" data-tip="Reddit/r/SportsReference" data-label="Reddit/r/SR" aria-label="Reddit/r/SR" class="poptip"><svg class="icon reddit"><use xlink:href="#ic-reddit"></use></svg></a>
+	<a href="https://www.youtube.com/user/sportsreference" data-tip="YouTube/SportsReference" data-label="YouTube" aria-label="YouTube" class="poptip"><svg class="icon youtube"><use xlink:href="#ic-youtube"></use></svg></a>
+	<a href="https://www.linkedin.com/company/sports-reference-llc" data-tip="Follow SR on LinkedIn" data-label="LinkedIn" aria-label="LinkedIn" class="poptip"><svg class="icon linkedin"><use xlink:href="#ic-linkedin"></use></svg></a>
+	<a href="https://www.paypal.me/sportsref" data-tip="Send us money via PayPal" data-label="PayPal" aria-label="PayPal" class="poptip"><svg class="icon paypal"><use xlink:href="#ic-paypal"></use></svg></a>
+
+<p>Every <a href="https://www.sports-reference.com/blog/sports-reference-social-media/">Sports Reference Social Media Account</a></p>
+<p><strong>Site Last Updated:</strong> Monday, November 21,  7:47AM
+</p>
+<p><a href="https://www.sports-reference.com/feedback/" class="button" style="display: block">Question, Comment, Feedback, or Correction?</a></p>
+
+<p><a style="display: block" href="https://www.sports-reference.com/cbb/email" class="button">Subscribe to our Free Email Newsletter</a></p>
+
+<p><a style="background-color:#155ca9; color: #fff;" href="https://www.sports-reference.com/this-month.html?&utm_medium=sr&utm_source=cbb&utm_campaign=site-footer-twisr" class="button alt">This Month in Sports Reference<br><em>Find out when we add a feature or make a change</em></a></p>
+
+<p><a href="https://www.sports-reference.com/blog/ways-sports-reference-can-help-your-website/?utm_medium=sr&utm_source=cbb&utm_campaign=site-footer-ways-help">Do you have a sports website? Or write about sports? We have tools and resources that can help you use sports data.  Find out more.</a></p>
+
+
+</div><!-- div#social -->
+
+			<div id="tips_tricks">
+   
+<div class="section_heading assoc_tips" id="tips_sh">
+  <span class="section_anchor" id="tips_link" data-label="FAQs, Tip &amp; Tricks" data-no-inpage="1"></span><h2>FAQs, Tip &amp; Tricks</h2>		
+</div>
+   <ul>
+<!-- no Local/FooterTipsTricks.tt2 -->
+           <li><a href="//www.sports-reference.com/blog/category/tips-and-tricks/">Tips and Tricks from our Blog.</a></li>
+           <li><a href="/cbb/linker/">Do you have a blog? Join our linker program.</a></li>
+	   <li><a href="https://www.sports-reference.com/blog/category/stathead-tutorial-series/">Watch our How-To Videos to Become a Stathead</a></li>
+	   <li><a href="//stathead.com/?ref=cbb">Subscribe to Stathead and get access to more data than you can imagine</a></li>
+   </ul>
+</div><!-- div#tips_tricks -->
+
+			<div id="credits">
+				<p>All logos are the trademark &amp; property of their owners and not Sports Reference LLC.  We present them here for purely educational purposes.
+				<a href="https://www.sports-reference.com/blog/2016/06/redesign-team-and-league-logos-courtesy-sportslogos-net/">Our reasoning for presenting offensive logos.</a></p>
+				<p>
+					
+					Logos were compiled by the amazing <a href="http://sportslogos.net/">SportsLogos.net.</a>
+				</p>
+				
+<div class="notice">Official NCAA Data Provided By
+	<a href="https://geniussports.com/" rel="nofollow"><img alt="Genius Sports" border="0" width="150" src="https://cdn.ssref.net/req/202211031/images/klecko/genius.png"></a>
+</div>
+
+     <p>Copyright &copy; 2000-2022 <a href="//www.sports-reference.com/">Sports Reference LLC</a>. All rights reserved.</p>
+
+     <p>The SPORTS REFERENCE and STATHEAD trademarks are owned exclusively by Sports Reference LLC. Use without license or authorization is expressly prohibited.
+
+			</div><!-- div#credits -->
+		</div>
+	</div>
+
+	<ul id="site_dirs" class="notranslate bullets-inline">
+	<li><a href="https://www.sports-reference.com/"><svg height="15px" width="20px"><use xlink:href="#ic-sr-pennant"></use></svg> Sports&nbsp;Reference&#8239;&reg;</a></li>
+	<li><a href="https://www.baseball-reference.com/">Baseball</a></li>
+	<li><a href="https://www.pro-football-reference.com/">Football</a> <a href="https://www.sports-reference.com/cfb/">(college)</a></li>
+	<li class="current"><a href="https://www.basketball-reference.com/">Basketball</a> <a href="https://www.sports-reference.com/cbb/">(college)</a></li>
+	<li><a href="https://www.hockey-reference.com/">Hockey</a></li>
+
+
+	
+	
+	
+	<li><a href="https://fbref.com/es/">Fútbol</a></li>
+
+	<li><a href="https://www.sports-reference.com/blog/">Blog</a></li>
+
+    <li><a href="https://stathead.com/?utm_source=web&amp;utm_medium=cbb&amp;utm_campaign=sr-nav-bar-top-link">Stathead&#8239;&reg;</a></li>
+
+
+</ul>
+
+	<div id="about">
+  <a href="//www.sports-reference.com/about.html">About</a> &bull;
+  <a href="//www.sports-reference.com/termsofuse.html">Conditions &amp; Terms of Service</a> &bull;
+  <a href="//www.sports-reference.com/advertise.html">Advertise With Us</a>
+ &bull;
+  <a href="//www.sports-reference.com/jobs.html">Jobs at SR</a>
+  <br><br>
+Sports Reference Purpose: We will be the trusted source of information and tools that inspire and empower users to enjoy, understand, and share the sports they love.
+  <br><br>
+  <a href="//www.sports-reference.com/privacy.html">Privacy Policy</a> &bull;
+  <a href="//www.sports-reference.com/gambling-revenue-policy.html">Gambling Revenue Policy</a> &bull;
+  <a href="//www.sports-reference.com/accessibility-policy.html">Accessibility Policy</a> &bull;
+  <a href="//www.sports-reference.com/data_use.html">Use of Data</a>
+  </div>
+  <!-- div#about -->
+</div><!-- div#footer -->
+
+</div><!-- div#wrap -->
+<!-- yes sticky url:  https://www.sports-reference.com/cbb/players/jaden-ivey-1.html -->
+<div id="fs-select-footer"></div>
+      
+
+
+
+<!-- rails -->
+
+<div class="adblock rails  left"><!-- div#fs_fs_rails_left  -->
+<div align="center" id="div-gpt-ad-160x600-1">
+    <script data-cfasync="false" type='text/javascript'>
+    if (sr_detect_ie || sr_detect_edge || Modernizr.adfree) {
+    }
+    else {
+        console.log('push ad:div-gpt-ad-160x600-1');
+        freestar.queue.push(function() { googletag.display('div-gpt-ad-160x600-1'); });
+    }
+    </script>
+</div>
+<!-- /div.#fs_fs_rails_left -->
+</div>
+<div class="adblock rails right"><!-- div#fs_fs_rails_right  -->
+<div align="center" id="div-gpt-ad-160x600-2">
+    <script data-cfasync="false" type='text/javascript'>
+    if (sr_detect_ie || sr_detect_edge || Modernizr.adfree) {
+    }
+    else {
+        console.log('push ad:div-gpt-ad-160x600-2');
+        freestar.queue.push(function() { googletag.display('div-gpt-ad-160x600-2'); });
+    }
+    </script>
+</div>
+<!-- /div.#fs_fs_rails_right -->
+</div>
+
+
+<!-- sr_gender is used in Templates/Assets/GoogleAnalytics.tt2 -->
+<script>var sr_gender = "";</script>
+<!-- Google Analytics --> <!-- new extra script, apparently we only use one of these, regardless of the number of products... https://developers.google.com/tag-platform/gtagjs/install#google-analytics --> <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1890630-8"></script> <script> var sr_cookie = vjs_readCookie('stathead_user') || ''; var sr_cookie_split = sr_cookie.split("::"); var sr_session_key = (sr_cookie_split.length > 1)?sr_cookie_split[2]:''; var sr_ad_free_key = "7"; var sr_site_id = "cbb"; var sr_is_subscriber = (sr_ad_free_key && sr_session_key.vjs_isMatch(new RegExp(sr_ad_free_key + "$"))) || sr_session_key.vjs_isMatch(/1$/) || (sr_site_id === 'stathead' && sr_session_key.vjs_isMatch(/[0-7]$/)); var sr_is_user = sr_cookie !== null && sr_cookie !== ''; var sr_seen_modal = vjs_readCookie('modal_ad') !== null; var sr_device = 'unk'; if (Modernizr.phone) { sr_device = 'phone'; } else if (Modernizr.tablet) { sr_device = 'tablet'; } else if (Modernizr.laptop) { sr_device = 'laptop'; } else if (Modernizr.desktop) { sr_device = 'desktop'; } var sr_stathead_site = vjs_readCookie('stathead_site') || ''; var sr_stathead_type = vjs_readCookie('stathead_type') || ''; /* new gtag theres an extra script tag we need to add that I'm not sure how that work for multiple ID's for GA, docs say to ignore it??? https://developers.google.com/tag-platform/gtagjs/install here they have 3 but just use the last one? */ window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); /* OLD, could not find require within reference docs https://developers.google.com/tag-platform/gtagjs/reference ga('require', 'linkid', 'linkid.js'); ga('require', 'ecommerce', 'ecommerce.js'); ga('require', 'displayfeatures'); */ /* new, creates+sends+sets */ /* for fbref we want to allow for tracking of 'men' and 'women' pages for leagues, clubs and players, so we can track the most popular women players easily. In Footer.tt2 there is a place to set sr_gender. */ gtag('config', 'UA-1890630-8', { 'dimension1': sr_is_subscriber, 'dimension2': sr_is_user, 'dimension3': typeof(sr_gender) === 'string'? sr_gender: null, 'dimension4': sr_stathead_type, 'dimension5': sr_stathead_site, 'metric1': Modernizr.viewport_width }); /* all sr-sites together */ /* new, I believe linker works as a parameter here, although there didn\'t seem to be a simple "true" value to set besides this one https://developers.google.com/analytics/devguides/collection/gtagjs/cross-domain */ gtag('config', 'UA-1890630-9', { 'linker': { 'domains' : ['stathead.com'] }, 'dimension1': sr_site_id, 'dimension2': sr_is_subscriber, 'dimension3': sr_is_user, 'dimension4': sr_seen_modal, 'dimension5': sr_device, 'dimension6': 'null', 'metric1': Modernizr.viewport_width, 'dimension8': (typeof sr_test == 'undefined')?'no-test':( sr_test ? 'non-blocking':'blocking') }); /* new, cribbed from: https://www.axllent.org/docs/track-outbound-links-with-gtag-js/ */ function _gaLt(event) { /* if GA is blocked or not loaded, or not main|middle|touch click then don\'t track */ if (typeof gtag == "undefined" || (event.which != 1 && event.which != 2)) { return; } var el = event.srcElement || event.target; /* loop up the DOM tree through parent elements if clicked element is not a link (eg: an image inside a link) */ while ( el && (typeof el.tagName == "undefined" || el.tagName.toLowerCase() != "a" || !el.href) ) { el = el.parentNode; } /* if a link with valid href has been clicked */ if (el && el.href) { var link = el.href; /* only if it is an external link */ if (link.indexOf(location.host) == -1 && !link.match(/^javascript\:/i)) { /* is target set and _(self|parent|top) */ var target = el.target && !el.target.match(/^_(self|parent|top)/i) ? el.target : false; /* assume a target if (ctrl|shift|meta)-click */ if ( event.ctrlKey || event.shiftKey || event.metaKey || event.which == 2 ) { target = "_blank"; } /* tracker has not yet run */ var hbrun = false; /* hitBack to open link in same window after tracker */ var hitBack = function () { /* run once only */ if (hbrun) return; hbrun = true; window.location.href = link; }; if (target) { /* if target opens a new window then just track */ gtag("event", link, { event_category: "Outgoing Links", event_label: document.location.pathname + document.location.search, }); } else { /* Prevent standard click, track then open */ if (event.type == "mousedown") { var blockClick = function (event) { event.preventDefault(); /* remove click event after click */ el.removeEventListener("click", boundClick); }; /* bind the click event */ var boundClick = blockClick.bind(event); /* prevent the click */ el.addEventListener("click", boundClick); } event.preventDefault ? event.preventDefault() : (event.returnValue = !1); /* send event with callback */ gtag("event", link, { event_category: "Outgoing Links", event_label: document.location.pathname + document.location.search, event_callback: hitBack, }); /* Run hitBack again if GA takes longer than 1 second */ setTimeout(hitBack, 1000); } } } } var _w = window; /* Use "click" if touchscreen device, else "mousedown" */ var _gaLtEvt = "ontouchstart" in _w ? "click" : "mousedown"; /* Attach the event to all clicks in the document after page has loaded */ _w.addEventListener( "load", function () { document.body.addEventListener(_gaLtEvt, _gaLt, !1); }, !1 ); </script><!-- End Google Analytics -->
+
+
+<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/20503178.js"></script>
+<!-- End of HubSpot Embed Code -->
+
+</body>
+<!-- SR -->
+</html>
+
+
+
+

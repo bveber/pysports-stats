@@ -1,6 +1,6 @@
 from flexmock import flexmock
-from sportsipy.nfl.schedule import Schedule
-from sportsipy.nfl.teams import Team
+from sports.nfl.schedule import Schedule
+from sports.nfl.teams import Team
 
 
 class TestNFLTeams:

@@ -1,8 +1,8 @@
 from flexmock import flexmock
 from mock import patch, PropertyMock
-from sportsipy.ncaab.player import (AbstractPlayer,
+from sports.ncaab.player import (AbstractPlayer,
                                     _cleanup as _cleanup_player)
-from sportsipy.ncaab.roster import _cleanup, Player
+from sports.ncaab.roster import _cleanup, Player
 
 
 def mock_pyquery(url):

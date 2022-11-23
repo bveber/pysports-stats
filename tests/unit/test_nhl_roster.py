@@ -1,7 +1,7 @@
 from flexmock import flexmock
 from mock import patch, PropertyMock
-from sportsipy.nhl.player import AbstractPlayer
-from sportsipy.nhl.roster import Player
+from sports.nhl.player import AbstractPlayer
+from sports.nhl.roster import Player
 
 
 def mock_pyquery(url):

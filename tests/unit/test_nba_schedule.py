@@ -1,10 +1,10 @@
 from flexmock import flexmock
 from mock import PropertyMock
-from sportsipy.constants import (AWAY,
+from sports.constants import (AWAY,
                                  HOME,
                                  LOSS,
                                  WIN)
-from sportsipy.nba.schedule import Game, Schedule
+from sports.nba.schedule import Game, Schedule
 
 
 class TestNBASchedule:

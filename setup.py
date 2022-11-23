@@ -7,17 +7,17 @@ with open('VERSION', 'r') as f:
     version = f.read()
 
 setup(
-    name='sportsipy',
+    name='pysports-stats',
     version=version,
-    author='Robert Clark',
-    author_email='robdclark@outlook.com',
+    author='Brandon Veber',
+    author_email='veber.brandon@gmail.com',
     description='A free sports API written for python',
     long_description=long_description,
     license='MIT',
-    url='https://github.com/roclark/sportsipy',
+    url='https://github.com/bveber/pysports-stats',
     packages=find_packages(),
     python_requires='>=3.7',
-    keywords='stats sports api sportsipy machine learning',
+    keywords='stats sports api sports machine learning',
     install_requires=[
         "numpy >= 1.19.5",
         "pandas >= 0.24.1",

@@ -8,7 +8,7 @@
 # Building files
 build*
 dist*
-sportsipy.egg-info*
+pysports_stats.egg-info*
 
 # VirtualEnv
 bin/*
@@ -17,3 +17,5 @@ lib/*
 man/*
 pip-selfcheck.json
 env/*
+.ipynb_checkpoints/*
+*.ipynb
