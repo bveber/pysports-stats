@@ -3,9 +3,9 @@ import os
 import pandas as pd
 import pytest
 from flexmock import flexmock
-from sportsipy import utils
-from sportsipy.ncaaf.roster import Player, Roster
-from sportsipy.ncaaf.teams import Team
+from sports import utils
+from sports.ncaaf.roster import Player, Roster
+from sports.ncaaf.teams import Team
 from ..utils import read_file
 
 
@@ -43,7 +43,7 @@ def mock_request(url):
 
 
 class TestNCAAFPlayer:
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def setup_method(self, *args, **kwargs):
         self.results_career = {
             'adjusted_yards_per_attempt': 7.4,
@@ -483,7 +483,7 @@ class TestNCAAFPlayer:
         frames = [df, player.dataframe]
         df1 = pd.concat(frames).drop_duplicates(keep=False)
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_ncaaf_offensive_skills_skips_passing_without_errors(self, *args,
                                                           **kwargs):
         player = Player('david-bell-6')
@@ -491,7 +491,7 @@ class TestNCAAFPlayer:
         assert player.name == 'David Bell'
         assert player.dataframe is not None
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_ncaaf_kicker_returns_expected_kicking_stats(self, *args,
                                                          **kwargs):
         stats = {
@@ -509,7 +509,7 @@ class TestNCAAFPlayer:
         for attribute, value in stats.items():
             assert getattr(player, attribute) == value
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_ncaaf_404_returns_none_with_no_errors(self, *args, **kwargs):
         player = Player('bad')
 
@@ -524,7 +524,7 @@ class TestNCAAFPlayer:
 
 
 class TestNCAAFRoster:
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def setup_method(self, *args, **kwargs):
         self.roster = Roster(TEAM, year=YEAR)
         self.len_roster = 116
@@ -539,12 +539,12 @@ class TestNCAAFRoster:
                                 'Mitchell Fineran']:
             assert player in roster_players
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_bad_url_raises_value_error(self, *args, **kwargs):
         with pytest.raises(ValueError):
             roster = Roster('BAD')
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_roster_from_team_class(self, *args, **kwargs):
         flexmock(Team) \
             .should_receive('_parse_team_data') \
@@ -561,7 +561,7 @@ class TestNCAAFRoster:
             assert player in roster_players
         type(team)._abbreviation = None
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_roster_class_with_slim_parameter(self, *args, **kwargs):
         roster = Roster(TEAM, year=YEAR, slim=True)
 

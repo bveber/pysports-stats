@@ -4,11 +4,11 @@ import pandas as pd
 import pytest
 from datetime import datetime
 from flexmock import flexmock
-from sportsipy import utils
-from sportsipy.constants import HOME, REGULAR_SEASON, WIN
-from sportsipy.ncaaf.boxscore import Boxscore
-from sportsipy.ncaaf.constants import SCHEDULE_URL
-from sportsipy.ncaaf.schedule import Schedule
+from sports import utils
+from sports.constants import HOME, REGULAR_SEASON, WIN
+from sports.ncaaf.boxscore import Boxscore
+from sports.ncaaf.constants import SCHEDULE_URL
+from sports.ncaaf.schedule import Schedule
 from ..utils import read_file
 
 
@@ -46,7 +46,7 @@ class MockDateTime:
 
 
 class TestNCAAFSchedule:
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def setup_method(self, *args, **kwargs):
         self.results = {
             'boxscore_index': '2021-09-11-connecticut',
@@ -135,7 +135,7 @@ class TestNCAAFSchedule:
         with pytest.raises(ValueError):
             self.schedule(datetime.now())
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_empty_page_return_no_games(self, *args, **kwargs):
         flexmock(utils) \
             .should_receive('_no_data_found') \

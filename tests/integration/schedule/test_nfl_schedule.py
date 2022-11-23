@@ -4,11 +4,11 @@ import pandas as pd
 import pytest
 from datetime import datetime
 from flexmock import flexmock
-from sportsipy import utils
-from sportsipy.constants import AWAY, REGULAR_SEASON, WIN
-from sportsipy.nfl.boxscore import Boxscore
-from sportsipy.nfl.constants import SCHEDULE_URL
-from sportsipy.nfl.schedule import Schedule
+from sports import utils
+from sports.constants import AWAY, REGULAR_SEASON, WIN
+from sports.nfl.boxscore import Boxscore
+from sports.nfl.constants import SCHEDULE_URL
+from sports.nfl.schedule import Schedule
 from ..utils import read_file
 
 
@@ -42,7 +42,7 @@ class MockDateTime:
 
 
 class TestNFLSchedule:
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def setup_method(self, *args, **kwargs):
         self.results = {
             'week': 2,
@@ -151,7 +151,7 @@ class TestNFLSchedule:
         with pytest.raises(ValueError):
             self.schedule(datetime.now())
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_empty_page_return_no_games(self, *args, **kwargs):
         flexmock(utils) \
             .should_receive('_no_data_found') \
@@ -194,7 +194,7 @@ February 4 - PHI"""
 
 
 class TestNFLScheduleInvalidYear:
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     @mock.patch('requests.head', side_effect=mock_request)
     def test_invalid_default_year_reverts_to_previous_year(self,
                                                            *args,

@@ -1,6 +1,6 @@
 from mock import patch
 from os import path
-from sportsipy.fb.team import Team
+from sports.fb.team import Team
 from ..utils import read_file
 
 
@@ -42,14 +42,14 @@ class TestFBTeam:
             'season': '2022-2023'
         }
 
-    @patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_fb_team_returns_correct_attributes(self, *args, **kwargs):
         tottenham = Team('Tottenham Hotspur')
 
         for attribute, value in self.results.items():
             assert getattr(tottenham, attribute) == value
 
-    @patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_team_name(self, *args, **kwargs):
         team = Team('Tottenham Hotspur')
 

@@ -3,9 +3,9 @@ import os
 import pandas as pd
 import pytest
 from flexmock import flexmock
-from sportsipy import utils
-from sportsipy.mlb.constants import STANDINGS_URL, TEAM_STATS_URL
-from sportsipy.mlb.teams import Team, Teams
+from sports import utils
+from sports.mlb.constants import STANDINGS_URL, TEAM_STATS_URL
+from sports.mlb.teams import Team, Teams
 from ..utils import read_file
 
 
@@ -50,7 +50,7 @@ class MockDateTime:
 
 
 class TestMLBIntegration:
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def setup_method(self, *args, **kwargs):
         self.results = {
             'abbreviation': 'HOU',
@@ -194,14 +194,14 @@ class TestMLBIntegration:
             .should_receive('_todays_date') \
             .and_return(MockDateTime(YEAR, MONTH))
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_mlb_integration_returns_correct_number_of_teams(self, *args,
                                                              **kwargs):
         teams = Teams(YEAR)
 
         assert len(teams) == len(self.abbreviations)
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_mlb_integration_returns_correct_attributes_for_team(self,
                                                                  *args,
                                                                  **kwargs):
@@ -212,7 +212,7 @@ class TestMLBIntegration:
         for attribute, value in self.results.items():
             assert getattr(team, attribute) == value
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_mlb_integration_returns_correct_team_abbreviations(self,
                                                                 *args,
                                                                 **kwargs):
@@ -221,7 +221,7 @@ class TestMLBIntegration:
         for team in teams:
             assert team.abbreviation in self.abbreviations
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_mlb_integration_dataframe_returns_dataframe(self, *args,
                                                          **kwargs):
         teams = Teams(YEAR)
@@ -239,7 +239,7 @@ class TestMLBIntegration:
 
         assert df1.empty
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_mlb_integration_all_teams_dataframe_returns_dataframe(self,
                                                                    *args,
                                                                    **kwargs):
@@ -249,21 +249,21 @@ class TestMLBIntegration:
         assert len(result) == len(self.abbreviations)
         assert set(result.columns.values) == set(self.results.keys())
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_pulling_team_directly(self, *args, **kwargs):
         hou = Team(TEAM)
 
         for attribute, value in self.results.items():
             assert getattr(hou, attribute) == value
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_mlb_invalid_team_name_raises_value_error(self, *args, **kwargs):
         teams = Teams(YEAR)
 
         with pytest.raises(ValueError):
             teams('INVALID_NAME')
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_mlb_empty_page_returns_no_teams(self, *args, **kwargs):
         flexmock(utils) \
             .should_receive('_no_data_found') \
@@ -276,13 +276,13 @@ class TestMLBIntegration:
 
         assert len(teams) == 0
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_mlb_team_string_representation(self, *args, **kwargs):
         hou = Team(TEAM)
 
         assert hou.__repr__() == 'Houston Astros (HOU) - 2022'
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_mlb_teams_string_representation(self, *args, **kwargs):
         expected = """Los Angeles Dodgers (LAD)
 Houston Astros (HOU)

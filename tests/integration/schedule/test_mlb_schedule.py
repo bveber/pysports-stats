@@ -4,11 +4,11 @@ import pandas as pd
 import pytest
 from datetime import datetime
 from flexmock import flexmock
-from sportsipy import utils
-from sportsipy.constants import AWAY, HOME, LOSS, WIN
-from sportsipy.mlb.boxscore import Boxscore
-from sportsipy.mlb.constants import DAY, NIGHT, SCHEDULE_URL
-from sportsipy.mlb.schedule import Schedule
+from sports import utils
+from sports.constants import AWAY, HOME, LOSS, WIN
+from sports.mlb.boxscore import Boxscore
+from sports.mlb.constants import DAY, NIGHT, SCHEDULE_URL
+from sports.mlb.schedule import Schedule
 from ..utils import read_file
 
 
@@ -45,7 +45,7 @@ class MockDateTime:
 
 
 class TestMLBSchedule:
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def setup_method(self, *args, **kwargs):
         self.results = {
             'attendance': 42719,
@@ -152,7 +152,7 @@ class TestMLBSchedule:
 
         assert df1.empty
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_mlb_schedule_all_dataframe_returns_dataframe(self, *args, **kwargs):
         result = self.schedule.dataframe.drop_duplicates(keep=False)
 
@@ -168,7 +168,7 @@ class TestMLBSchedule:
         with pytest.raises(ValueError):
             self.schedule(datetime.now())
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_empty_page_return_no_games(self, *args, **kwargs):
         flexmock(utils) \
             .should_receive('_no_data_found') \

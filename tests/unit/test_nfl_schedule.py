@@ -1,6 +1,6 @@
 from flexmock import flexmock
 from mock import PropertyMock
-from sportsipy.constants import (AWAY,
+from sports.constants import (AWAY,
                                  HOME,
                                  LOSS,
                                  TIE,
@@ -8,11 +8,11 @@ from sportsipy.constants import (AWAY,
                                  POST_SEASON,
                                  REGULAR_SEASON,
                                  WIN)
-from sportsipy.nfl.constants import (CONF_CHAMPIONSHIP,
+from sports.nfl.constants import (CONF_CHAMPIONSHIP,
                                      DIVISION,
                                      SUPER_BOWL,
                                      WILD_CARD)
-from sportsipy.nfl.schedule import Game, Schedule
+from sports.nfl.schedule import Game, Schedule
 
 
 YEAR = 2017

@@ -5,8 +5,8 @@ from .constants import (SCHEDULE_SCHEME,
                         SCHEDULE_URL)
 from datetime import datetime
 from pyquery import PyQuery as pq
-from sportsipy import utils
-from sportsipy.constants import (WIN,
+from sports import utils
+from sports.constants import (WIN,
                                  LOSS,
                                  TIE,
                                  HOME,
@@ -15,8 +15,8 @@ from sportsipy.constants import (WIN,
                                  POST_SEASON,
                                  REGULAR_SEASON,
                                  CONFERENCE_TOURNAMENT)
-from sportsipy.nfl.boxscore import Boxscore
-from sportsipy.nfl.constants import (CONF_CHAMPIONSHIP,
+from sports.nfl.boxscore import Boxscore
+from sports.nfl.constants import (CONF_CHAMPIONSHIP,
                                      DIVISION,
                                      SUPER_BOWL,
                                      WILD_CARD)

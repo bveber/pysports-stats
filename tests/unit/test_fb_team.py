@@ -1,9 +1,9 @@
 import mock
 import pytest
 from flexmock import flexmock
-from sportsipy.fb.roster import Roster
-from sportsipy.fb.schedule import Schedule
-from sportsipy.fb.team import Team
+from sports.fb.roster import Roster
+from sports.fb.schedule import Schedule
+from sports.fb.team import Team
 from urllib.error import HTTPError
 
 

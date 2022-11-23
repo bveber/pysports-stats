@@ -1,4 +1,4 @@
-name: Sportsipy push tests
+name: sports push tests
 
 on: [push, pull_request]
 
@@ -24,10 +24,10 @@ jobs:
         pip install coverage flexmock mock pycodestyle pytest pytest-cov pytest-xdist
     - name: Run unit and integration tests with pytest
       run: |
-        pytest -n 4 --cov=sportsipy --cov-report term-missing --cov-report xml tests/integration/ tests/unit/
+        pytest -n 4 --cov=sports --cov-report term-missing --cov-report xml tests/integration/ tests/unit/
     - name: Lint with pycodestyle
       run: |
-        pycodestyle sportsipy/ tests/integration/ tests/unit/
+        pycodestyle sports/ tests/integration/ tests/unit/
     - name: Upload coverage to Codecov
       if: matrix.operating-system == 'ubuntu-latest' && matrix.python-version == '3.8'
       uses: codecov/codecov-action@v1.0.13

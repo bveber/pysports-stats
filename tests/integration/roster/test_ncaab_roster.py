@@ -4,9 +4,9 @@ import pandas as pd
 import pytest
 from datetime import datetime
 from flexmock import flexmock
-from sportsipy import utils
-from sportsipy.ncaab.roster import Player, Roster
-from sportsipy.ncaab.teams import Team
+from sports import utils
+from sports.ncaab.roster import Player, Roster
+from sports.ncaab.teams import Team
 from ..utils import read_file
 
 
@@ -39,7 +39,7 @@ def mock_request(url):
 
 
 class TestNCAABPlayer:
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def setup_method(self, *args, **kwargs):
         self.results_career = {
             'assist_percentage': 18.2,
@@ -165,7 +165,7 @@ class TestNCAABPlayer:
         for attribute, value in self.results_year.items():
             assert getattr(player, attribute) == value
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_correct_initial_index_found(self, *args):
         seasons = ['2020-21', '2021-22', 'Career']
         mock_season = mock.PropertyMock(return_value=seasons)
@@ -354,7 +354,7 @@ class TestNCAABPlayer:
 
 
 class TestNCAABRoster:
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_roster_class_pulls_all_player_stats(self, *args, **kwargs):
         flexmock(utils) \
             .should_receive('_find_year_for_season') \
@@ -367,12 +367,12 @@ class TestNCAABRoster:
         for player in ['Jaden Ivey', 'Zach Edey']:
             assert player in roster_players
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_bad_url_raises_value_error(self, *args, **kwargs):
         with pytest.raises(ValueError):
             roster = Roster('BAD')
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_roster_from_team_class(self, *args, **kwargs):
         flexmock(Team) \
             .should_receive('_parse_team_data') \
@@ -388,7 +388,7 @@ class TestNCAABRoster:
             assert player in roster_players
         type(team)._abbreviation = None
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_roster_class_with_slim_parameter(self, *args, **kwargs):
         flexmock(utils) \
             .should_receive('_find_year_for_season') \
@@ -413,7 +413,7 @@ class TestNCAABRoster:
                 'jared-wulbrun-1': 'Jared Wulbrun'
             }
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_roster_class_string_representation(self, *args, **kwargs):
         expected = """Jaden Ivey (jaden-ivey-1)
 Zach Edey (zach-edey-1)
@@ -437,6 +437,6 @@ None (jared-wulbrun-1)"""
 
         assert roster.__repr__() == expected
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_coach(self, *args, **kwargs):
         assert "Matt Painter" == Roster('PURDUE', year=YEAR).coach

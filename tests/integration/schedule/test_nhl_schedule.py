@@ -4,11 +4,11 @@ import pandas as pd
 import pytest
 from datetime import datetime
 from flexmock import flexmock
-from sportsipy import utils
-from sportsipy.constants import AWAY, LOSS
-from sportsipy.nhl.boxscore import Boxscore
-from sportsipy.nhl.constants import SCHEDULE_URL
-from sportsipy.nhl.schedule import Schedule
+from sports import utils
+from sports.constants import AWAY, LOSS
+from sports.nhl.boxscore import Boxscore
+from sports.nhl.constants import SCHEDULE_URL
+from sports.nhl.schedule import Schedule
 from ..utils import read_file
 
 
@@ -45,7 +45,7 @@ class MockDateTime:
 
 
 class TestNHLSchedule:
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def setup_method(self, *args, **kwargs):
         self.game_datetime = datetime(2021,10,16)
         self.results = {
@@ -150,7 +150,7 @@ class TestNHLSchedule:
         with pytest.raises(ValueError):
             self.schedule(datetime.now())
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_empty_page_return_no_games(self, *args, **kwargs):
         flexmock(utils) \
             .should_receive('_no_data_found') \
@@ -163,7 +163,7 @@ class TestNHLSchedule:
 
         assert len(schedule) == 0
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_game_string_representation(self, *args, **kwargs):
         game = self.schedule[0]
 

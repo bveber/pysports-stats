@@ -5,9 +5,9 @@ from flexmock import flexmock
 from mock import patch
 from os import path
 from pyquery import PyQuery as pq
-from sportsipy import utils
-from sportsipy.constants import AWAY, DRAW
-from sportsipy.fb.schedule import Schedule
+from sports import utils
+from sports.constants import AWAY, DRAW
+from sports.fb.schedule import Schedule
 from ..utils import read_file
 
 
@@ -21,7 +21,7 @@ def mock_pyquery(url):
 
 
 class TestFBSchedule:
-    @patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def setup_method(self, *args, **kwargs):
         self.game_date = datetime(2022,8,14)
         self.results = {
@@ -71,7 +71,7 @@ class TestFBSchedule:
         with pytest.raises(ValueError):
             self.schedule(datetime(2022, 7, 1))
 
-    @patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_empty_page_return_no_games(self, *args, **kwargs):
         flexmock(utils) \
             .should_receive('_no_data_found') \

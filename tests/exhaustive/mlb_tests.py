@@ -1,6 +1,6 @@
 import sys, os
 sys.path.append(os.path.dirname(os.path.dirname(sys.path[0])))
-from sportsipy.mlb.teams import Teams
+from sports.mlb.teams import Teams
 
 # for team in Teams():
 #     print(team.name)

@@ -3,15 +3,15 @@ from datetime import datetime
 from flexmock import flexmock
 from mock import PropertyMock
 from pyquery import PyQuery as pq
-from sportsipy import utils
-from sportsipy.constants import (AWAY,
+from sports import utils
+from sports.constants import (AWAY,
                                  HOME,
                                  LOSS,
                                  NEUTRAL,
                                  NON_DI,
                                  REGULAR_SEASON,
                                  WIN)
-from sportsipy.ncaaf.schedule import Game, Schedule
+from sports.ncaaf.schedule import Game, Schedule
 
 
 class TestNCAAFSchedule:

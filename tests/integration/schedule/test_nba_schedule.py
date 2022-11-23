@@ -4,11 +4,11 @@ import pandas as pd
 import pytest
 from datetime import datetime
 from flexmock import flexmock
-from sportsipy import utils
-from sportsipy.constants import AWAY, WIN
-from sportsipy.nba.boxscore import Boxscore
-from sportsipy.nba.constants import SCHEDULE_URL
-from sportsipy.nba.schedule import Schedule
+from sports import utils
+from sports.constants import AWAY, WIN
+from sports.nba.boxscore import Boxscore
+from sports.nba.constants import SCHEDULE_URL
+from sports.nba.schedule import Schedule
 from ..utils import read_file
 
 
@@ -45,7 +45,7 @@ class MockDateTime:
 
 
 class TestNBASchedule:
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def setup_method(self, *args, **kwargs):
         self.results = {
             'boxscore_index': '202110220DEN',
@@ -131,7 +131,7 @@ class TestNBASchedule:
         with pytest.raises(ValueError):
             self.schedule(datetime.now())
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_empty_page_return_no_games(self, *args, **kwargs):
         flexmock(utils) \
             .should_receive('_no_data_found') \
@@ -242,7 +242,7 @@ Wed, Apr 27, 2022 - GSW"""
 
 
 class TestNBAScheduleInvalidError:
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     @mock.patch('requests.head', side_effect=mock_request)
     def test_invalid_default_year_reverts_to_previous_year(self,
                                                            *args,

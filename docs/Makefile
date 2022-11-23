@@ -4,7 +4,7 @@
 # You can set these variables from the command line.
 SPHINXOPTS    =
 SPHINXBUILD   = sphinx-build
-SPHINXPROJ    = sportsipy
+SPHINXPROJ    = sports
 SOURCEDIR     = .
 BUILDDIR      = _build
 

@@ -1,7 +1,7 @@
 import pytest
 from mock import patch
 from flexmock import flexmock
-from sportsipy import utils
+from sports import utils
 import time
 
 
