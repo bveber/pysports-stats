@@ -103,7 +103,6 @@ class TestNFLSchedule:
         match_two = self.schedule[1]
 
         for attribute, value in self.results.items():
-            print(attribute, getattr(match_two, attribute), value)
             assert getattr(match_two, attribute) == value
 
     def test_nfl_schedule_returns_requested_match_from_date(self):
@@ -152,7 +151,8 @@ class TestNFLSchedule:
         with pytest.raises(ValueError):
             self.schedule(datetime.now())
 
-    def test_empty_page_return_no_games(self):
+    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    def test_empty_page_return_no_games(self, *args, **kwargs):
         flexmock(utils) \
             .should_receive('_no_data_found') \
             .once()

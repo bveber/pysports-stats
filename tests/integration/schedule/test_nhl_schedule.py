@@ -20,7 +20,6 @@ NUM_GAMES_IN_SCHEDULE = 82
 
 
 def mock_pyquery(url):
-    print('mock pyquery: ', url)
     if 'MIN/2022_gamelog' in url:
         return read_file('MIN-2022_gamelog.html', 'nhl', 'schedule')
     return None
@@ -254,5 +253,4 @@ class TestNHLSchedule:
 2022-04-28 - CGY
 2022-04-29 - COL"""
 
-        print(self.schedule.__repr__())
         assert self.schedule.__repr__() == expected
