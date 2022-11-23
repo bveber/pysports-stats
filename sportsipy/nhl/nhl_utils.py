@@ -1,6 +1,41 @@
 from pyquery import PyQuery as pq
 from sportsipy import utils
-from .constants import SEASON_PAGE_URL
+from .constants import SEASON_PAGE_URL, PARSING_SCHEME
+
+
+def _add_stats_data(teams_list, team_data_dict):
+    """
+    Add a team's stats row to a dictionary.
+
+    Pass table contents and a stats dictionary of all teams to accumulate all
+    stats for each team in a single variable.
+
+    Parameters
+    ----------
+    teams_list : generator
+        A generator of all row items in a given table.
+    team_data_dict : {str: {'data': str, 'rank': int}} dictionary
+        A dictionary where every key is the team's abbreviation and every value
+        is another dictionary with a 'data' key which contains the string
+        version of the row data for the matched team, and a 'rank' key which is
+        the rank of the team.
+
+    Returns
+    -------
+    dictionary
+        An updated version of the team_data_dict with the passed table row
+        information included.
+    """
+    # Teams are listed in terms of rank with the first team being #1
+    rank = 1
+    for team_data in teams_list:
+        abbr = utils._parse_field(PARSING_SCHEME, team_data, 'abbreviation')
+        try:
+            team_data_dict[abbr]['data'] += team_data
+        except KeyError:
+            team_data_dict[abbr] = {'data': team_data, 'rank': rank}
+        rank += 1
+    return team_data_dict
 
 
 def _retrieve_all_teams(year, season_page=None):
@@ -29,6 +64,8 @@ def _retrieve_all_teams(year, season_page=None):
         teams_list is the PyQuery data for every team in the given season, and
         the year is the request year for the season.
     """
+    team_data_dict = {}
+
     if not year:
         year = utils._find_year_for_season('nhl')
         # If stats for the requested season do not exist yet (as is the case
@@ -38,8 +75,11 @@ def _retrieve_all_teams(year, season_page=None):
            utils._url_exists(SEASON_PAGE_URL % str(int(year) - 1)):
             year = str(int(year) - 1)
     doc = utils._pull_page(SEASON_PAGE_URL % year, season_page)
-    teams_list = utils._get_stats_table(doc, 'div#all_stats')
-    if not teams_list:
+    stats = utils._get_stats_table(doc, 'div#all_stats')
+    advanced_stats = utils._get_stats_table(doc, 'div#all_stats_adv')
+    if not stats and not advanced_stats:
         utils._no_data_found()
         return None, None
-    return teams_list, year
+    for stats_list in [stats, advanced_stats]:
+        team_data_dict = _add_stats_data(stats_list, team_data_dict)
+    return team_data_dict, year
