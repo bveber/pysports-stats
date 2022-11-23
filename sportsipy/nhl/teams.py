@@ -114,14 +114,6 @@ class Team:
         team_data = teams_list[team_name]['data']
         self._rank = teams_list[team_name]['rank']
         return team_data
-        # for team_data in teams_list:
-        #     name = utils._parse_field(PARSING_SCHEME,
-        #                               team_data,
-        #                               'abbreviation')
-        #     if name == team_name:
-        #         self._rank = rank
-        #         return team_data
-        #     rank += 1
 
     def _parse_team_data(self, team_data):
         """
