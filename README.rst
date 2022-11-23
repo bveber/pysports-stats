@@ -39,6 +39,9 @@ historical data you intend to reuse.
 Installation
 ============
 
+TODO: This has not been released to Pypi yet, so standard pip install will not work.
+But I'm keepin the documentation as a template for now. 
+
 The easiest way to install `pysports-stats` is by downloading the latest
 released binary from PyPI using PIP. For instructions on installing PIP, visit
 `PyPA.io <https://pip.pypa.io/en/stable/installing/>`_ for detailed steps on
@@ -172,6 +175,7 @@ of code for proper functionality. To run the test suite against your
 environment, ensure all of the requirements are installed by running::
 
     pip install -r requirements.txt
+    pip install coverage flexmock mock pycodestyle pytest pytest-cov pytest-xdist
 
 Next, start the tests by running py.test while optionally including coverage
 flags which identify the amount of production code covered by the testing
