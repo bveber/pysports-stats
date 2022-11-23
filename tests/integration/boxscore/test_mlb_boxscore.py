@@ -3,10 +3,10 @@ import os
 import pandas as pd
 from datetime import datetime
 from flexmock import flexmock
-from sportsipy import utils
-from sportsipy.constants import HOME
-from sportsipy.mlb.constants import BOXSCORE_URL, BOXSCORES_URL, NIGHT
-from sportsipy.mlb.boxscore import Boxscore, Boxscores
+from sports import utils
+from sports.constants import HOME
+from sports.mlb.constants import BOXSCORE_URL, BOXSCORES_URL, NIGHT
+from sports.mlb.boxscore import Boxscore, Boxscores
 from pyquery import PyQuery as pq
 from ..utils import read_file
 
@@ -34,7 +34,7 @@ class MockDateTime:
 
 
 class TestMLBBoxscore:
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def setup_method(self, *args, **kwargs):
         self.results = {
             'date': 'Monday, August 17, 2020',
@@ -171,7 +171,7 @@ class TestMLBBoxscore:
         for player in boxscore.away_players:
             assert not player.dataframe.empty
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_mlb_boxscore_string_representation(self, *args, **kwargs):
         expected = ('Boxscore for San Francisco Giants at '
                     'Los Angeles Angels (Monday, August 17, 2020)')
@@ -180,7 +180,7 @@ class TestMLBBoxscore:
 
 
 class TestMLBBoxscores:
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def setup_method(self, *args, **kwargs):
         self.expected = {
             '8-17-2020': [
@@ -341,19 +341,19 @@ class TestMLBBoxscores:
             ]
         }
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_boxscores_search(self, *args, **kwargs):
         result = Boxscores(datetime(2020, 8, 17)).games
 
         assert result == self.expected
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_boxscores_search_invalid_end(self, *args, **kwargs):
         result = Boxscores(datetime(2020, 8, 17), datetime(2020, 8, 16)).games
 
         assert result == self.expected
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_boxscores_search_multiple_days(self, *args, **kwargs):
         expected = {
             '8-17-2020': [
@@ -672,7 +672,7 @@ class TestMLBBoxscores:
 
         assert result == expected
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_boxscores_search_string_representation(self, *args, **kwargs):
         result = Boxscores(datetime(2020, 8, 17))
 

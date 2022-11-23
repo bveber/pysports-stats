@@ -3,9 +3,9 @@ import os
 import pandas as pd
 import pytest
 from flexmock import flexmock
-from sportsipy import utils
-from sportsipy.nhl.constants import SEASON_PAGE_URL
-from sportsipy.nhl.teams import Team, Teams
+from sports import utils
+from sports.nhl.constants import SEASON_PAGE_URL
+from sports.nhl.teams import Team, Teams
 from ..utils import read_file
 
 
@@ -39,7 +39,7 @@ class MockDateTime:
 
 
 class TestNHLIntegration:
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def setup_method(self, *args, **kwargs):
         self.results = {
             'abbreviation': 'MIN',
@@ -150,7 +150,7 @@ class TestNHLIntegration:
         with pytest.raises(ValueError):
             self.teams('INVALID_NAME')
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_nhl_empty_page_returns_no_teams(self, *args, **kwargs):
         flexmock(utils) \
             .should_receive('_no_data_found') \
@@ -163,20 +163,20 @@ class TestNHLIntegration:
 
         assert len(teams) == 0
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_pulling_team_directly(self, *args, **kwargs):
         team = Team(TEAM)
 
         for attribute, value in self.results.items():
             assert getattr(team, attribute) == value
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_team_string_representation(self, *args, **kwargs):
         team = Team(TEAM)
 
         assert team.__repr__() == 'Minnesota Wild (MIN) - 2022'
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_teams_string_representation(self, *args, **kwargs):
         expected = """Florida Panthers (FLA)
 Colorado Avalanche (COL)

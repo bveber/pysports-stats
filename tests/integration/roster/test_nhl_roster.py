@@ -3,9 +3,9 @@ import os
 import pandas as pd
 import pytest
 from flexmock import flexmock
-from sportsipy import utils
-from sportsipy.nhl.roster import Player, Roster
-from sportsipy.nhl.teams import Team
+from sports import utils
+from sports.nhl.roster import Player, Roster
+from sports.nhl.teams import Team
 from ..utils import read_file
 
 
@@ -416,7 +416,7 @@ class TestNHLPlayer:
             'wins': 14
         }
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_nhl_skater_returns_requested_career_stats(self, *args, **kwargs):
         # Request the career stats
         player = Player('kapriki01')
@@ -425,7 +425,7 @@ class TestNHLPlayer:
         for attribute, value in self.skater_results_career.items():
             assert getattr(player, attribute) == value
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_nhl_skater_returns_player_season_stats(self, *args, **kwargs):
         # Request the 2017 stats
         player = Player('kapriki01')
@@ -434,7 +434,7 @@ class TestNHLPlayer:
         for attribute, value in self.skater_results_year.items():
             assert getattr(player, attribute) == value
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_nhl_goalie_returns_requested_career_stats(self, *args, **kwargs):
         # Request the career stats
         player = Player('kahkoka01')
@@ -443,7 +443,7 @@ class TestNHLPlayer:
         for attribute, value in self.goalie_results_career.items():
             assert getattr(player, attribute) == value
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_nhl_goalie_returns_player_season_stats(self, *args, **kwargs):
         # Request the 2017 stats
         player = Player('kahkoka01')
@@ -452,7 +452,7 @@ class TestNHLPlayer:
         for attribute, value in self.goalie_results_year.items():
             assert getattr(player, attribute) == value
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_dataframe_returns_dataframe(self, *args, **kwargs):
         dataframe = [
             {'adjusted_assists': 36,
@@ -834,21 +834,21 @@ class TestNHLPlayer:
         frames = [df, player.dataframe]
         df1 = pd.concat(frames).drop_duplicates(keep=False)
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_nhl_404_returns_none_with_no_errors(self, *args, **kwargs):
         player = Player('bad')
 
         assert player.name is None
         assert player.dataframe is None
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_nhl_404_returns_none_for_different_season(self, *args, **kwargs):
         player = Player('bad')
 
         assert player.name is None
         assert player.dataframe is None
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_nhl_player_string_representation(self, *args, **kwargs):
         player = Player('kapriki01')
 
@@ -856,7 +856,7 @@ class TestNHLPlayer:
 
 
 class TestNHLRoster:
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_roster_class_pulls_all_player_stats(self, *args, **kwargs):
         flexmock(utils) \
             .should_receive('_find_year_for_season') \
@@ -869,12 +869,12 @@ class TestNHLRoster:
         for player in ['Kirill Kaprizov', 'Kaapo Kahkonen']:
             assert player in roster_players
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_bad_url_raises_value_error(self, *args, **kwargs):
         with pytest.raises(ValueError):
             roster = Roster('bad')
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_roster_from_team_class(self, *args, **kwargs):
         flexmock(Team) \
             .should_receive('_parse_team_data') \
@@ -890,7 +890,7 @@ class TestNHLRoster:
             assert player in roster_players
         type(team)._abbreviation = None
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_roster_class_with_slim_parameter(self, *args, **kwargs):
         flexmock(utils) \
             .should_receive('_find_year_for_season') \
@@ -939,7 +939,7 @@ class TestNHLRoster:
             'zuccama01': 'Mats Zuccarello'
         }
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_roster_class_string_representation(self, *args, **kwargs):
         expected = """None (addisca01)
 None (beckmad01)
@@ -986,6 +986,6 @@ None (zuccama01)"""
 
         assert roster.__repr__() == expected
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_coach(self, *args, **kwargs):
         assert "Dean Evason" == Roster(TEAM, year=ROSTER_YEAR).coach

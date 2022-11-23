@@ -3,7 +3,7 @@ import pandas as pd
 from flexmock import flexmock
 from os import path
 from pyquery import PyQuery as pq
-from sportsipy.fb.roster import Roster
+from sports.fb.roster import Roster
 from ..utils import read_file
 
 
@@ -17,7 +17,7 @@ def mock_pyquery(url):
 
 
 class TestFBRoster:
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def setup_method(self, *args, **kwargs):
         self.results = {
             'name': 'Harry Kane',
@@ -336,7 +336,7 @@ class TestFBRoster:
 
         assert df1.empty
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_fb_invalid_tables_returns_nothing(self, *args, **kwargs):
         roster = Roster('Tottenham Hotspur')
         stats = roster._pull_stats(pq('<div></div>'))

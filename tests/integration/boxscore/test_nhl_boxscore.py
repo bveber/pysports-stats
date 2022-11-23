@@ -3,10 +3,10 @@ import os
 import pandas as pd
 from datetime import datetime
 from flexmock import flexmock
-from sportsipy import utils
-from sportsipy.constants import AWAY
-from sportsipy.nhl.constants import BOXSCORE_URL, BOXSCORES_URL
-from sportsipy.nhl.boxscore import Boxscore, Boxscores
+from sports import utils
+from sports.constants import AWAY
+from sports.nhl.constants import BOXSCORE_URL, BOXSCORES_URL
+from sports.nhl.boxscore import Boxscore, Boxscores
 from ..utils import read_file
 
 
@@ -32,7 +32,7 @@ class MockDateTime:
 
 
 class TestNHLBoxscore:
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def setup_method(self, *args, **kwargs):
         self.results = {
             'date': 'March 4, 2020',
@@ -184,19 +184,19 @@ class TestNHLBoxscores:
             ]
         }
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_boxscores_search(self, *args, **kwargs):
         result = Boxscores(datetime(2020, 3, 4)).games
 
         assert result == self.expected
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_boxscores_search_invalid_end(self, *args, **kwargs):
         result = Boxscores(datetime(2020, 3, 4), datetime(2020, 3, 3)).games
 
         assert result == self.expected
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_boxscores_search_multiple_days(self, *args, **kwargs):
         expected = {
             '3-4-2020': [
@@ -362,7 +362,7 @@ class TestNHLBoxscores:
 
         assert result == expected
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_boxscores_search_string_representation(self, *args, **kwargs):
         result = Boxscores(datetime(2020, 3, 4))
 

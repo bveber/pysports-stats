@@ -2,8 +2,8 @@ import mock
 import pytest
 from flexmock import flexmock
 from os.path import join, dirname
-from sportsipy import utils
-from sportsipy.ncaaf.conferences import Conference, Conferences
+from sports import utils
+from sports.ncaaf.conferences import Conference, Conferences
 from ..utils import read_file
 
 
@@ -114,7 +114,7 @@ class TestNCAAFConferences:
         self.team_conference = team_conference
         self.conferences_result = conferences_result
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_conferences_integration(self, *args, **kwargs):
         flexmock(utils) \
             .should_receive('_find_year_for_season') \
@@ -125,17 +125,17 @@ class TestNCAAFConferences:
         assert conferences.team_conference == self.team_conference
         assert conferences.conferences == self.conferences_result
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_conferences_integration_bad_url(self, *args, **kwargs):
         with pytest.raises(ValueError):
             conferences = Conferences('BAD')
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_conference_integration_bad_url(self, *args, **kwargs):
         with pytest.raises(ValueError):
             conference = Conference('BAD')
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_conference_with_no_names_is_empty(self, *args, **kwargs):
         flexmock(Conference) \
             .should_receive('_get_team_abbreviation') \
@@ -145,7 +145,7 @@ class TestNCAAFConferences:
 
         assert len(conference._teams) == 0
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     @mock.patch('requests.head', side_effect=mock_request)
     def test_invalid_default_year_reverts_to_previous_year(self,
                                                            *args,
@@ -159,7 +159,7 @@ class TestNCAAFConferences:
         assert conferences.team_conference == self.team_conference
         assert conferences.conferences == self.conferences_result
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     @mock.patch('requests.head', side_effect=mock_request)
     def test_invalid_conference_year_reverts_to_previous_year(self,
                                                               *args,
@@ -172,18 +172,18 @@ class TestNCAAFConferences:
 
         assert len(conference._teams) == 14
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     @mock.patch('requests.head', side_effect=mock_request)
     def test_invalid_conference_page_skips_error(self, *args, **kwargs):
         conference = Conference('BAD', ignore_missing=True)
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_conferences_string_representation(self, *args, **kwargs):
         conferences = Conferences()
 
         assert conferences.__repr__() == 'NCAAF Conferences'
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_conference_string_representation(self, *args, **kwargs):
         conference = Conference('acc')
 

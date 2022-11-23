@@ -5,8 +5,8 @@ from datetime import datetime
 from ..decorators import float_property_decorator, int_property_decorator
 from .fb_utils import _lookup_team
 from pyquery import PyQuery as pq
-from sportsipy import utils
-from sportsipy.constants import (AWAY,
+from sports import utils
+from sports.constants import (AWAY,
                                  DRAW,
                                  HOME,
                                  LOSS,

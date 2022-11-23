@@ -5,8 +5,8 @@ from ..decorators import float_property_decorator, int_property_decorator
 from .fb_utils import _lookup_team
 from .league_ids import LEAGUE_IDS
 from pyquery import PyQuery as pq
-from sportsipy import utils
-from sportsipy.utils import (_get_stats_table,
+from sports import utils
+from sports.utils import (_get_stats_table,
                              _parse_field,
                              _remove_html_comment_tags,
                              _rate_limit_pq)

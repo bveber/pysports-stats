@@ -2,7 +2,7 @@ import mock
 import pytest
 from flexmock import flexmock
 from pyquery import PyQuery as pq
-from sportsipy.fb.roster import SquadPlayer, Roster
+from sports.fb.roster import SquadPlayer, Roster
 from urllib.error import HTTPError
 
 

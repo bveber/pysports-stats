@@ -8,7 +8,7 @@
 # Building files
 build*
 dist*
-sportsipy.egg-info*
+pysports_stats.egg-info*
 
 # VirtualEnv
 bin/*

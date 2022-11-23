@@ -2,8 +2,8 @@ import mock
 import pytest
 from flexmock import flexmock
 from os.path import join, dirname
-from sportsipy import utils
-from sportsipy.ncaab.rankings import Rankings
+from sports import utils
+from sports.ncaab.rankings import Rankings
 from ..utils import read_file
 from .utils import (
     NCAAB_RESULTS_COMPLETE, 
@@ -42,7 +42,7 @@ class TestNCAABRankings:
         self.current = NCAAB_CURRENT
         self.complete = NCAAB_RESULTS_COMPLETE
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_rankings_integration(self, *args, **kwargs):
         flexmock(utils) \
             .should_receive('_find_year_for_season') \
@@ -54,12 +54,12 @@ class TestNCAABRankings:
         assert rankings.current == self.current
         assert rankings.complete == self.complete
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_rankings_integration_bad_url(self, *args, **kwargs):
         with pytest.raises(ValueError):
             rankings = Rankings('BAD')
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     @mock.patch('requests.head', side_effect=mock_request)
     def test_invalid_default_year_reverts_to_previous_year(self,
                                                            *args,
@@ -74,7 +74,7 @@ class TestNCAABRankings:
         assert rankings.current == self.current
         assert rankings.complete == self.complete
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_rankings_string_representation(self, *args, **kwargs):
         rankings = Rankings()
 

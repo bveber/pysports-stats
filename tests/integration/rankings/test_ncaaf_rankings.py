@@ -2,8 +2,8 @@ import mock
 import pytest
 from flexmock import flexmock
 from os.path import join, dirname
-from sportsipy import utils
-from sportsipy.ncaaf.rankings import CFPRankings, Rankings
+from sports import utils
+from sports.ncaaf.rankings import CFPRankings, Rankings
 from ..utils import read_file
 from .utils import (
     NCAAF_AP_RESULTS_COMPLETE, 
@@ -45,7 +45,7 @@ class TestNCAAFRankings:
         self.current = NCAAF_AP_CURRENT
         self.complete = NCAAF_AP_RESULTS_COMPLETE
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_rankings_integration(self, *args, **kwargs):
         flexmock(utils) \
             .should_receive('_find_year_for_season') \
@@ -57,12 +57,12 @@ class TestNCAAFRankings:
         assert rankings.current == self.current
         assert rankings.complete == self.complete
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_rankings_integration_bad_url(self, *args, **kwargs):
         with pytest.raises(ValueError):
             rankings = Rankings('BAD')
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     @mock.patch('requests.head', side_effect=mock_request)
     def test_invalid_default_year_reverts_to_previous_year(self,
                                                            *args,
@@ -84,7 +84,7 @@ class TestCFPNCAAFRankings:
         self.current = NCAAF_CFP_CURRENT
         self.complete = NCAAF_CFP_RESULTS_COMPLETE
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_rankings_integration(self, *args, **kwargs):
         flexmock(utils) \
             .should_receive('_find_year_for_season') \
@@ -96,12 +96,12 @@ class TestCFPNCAAFRankings:
         assert rankings.current == self.current
         assert rankings.complete == self.complete
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_rankings_integration_bad_url(self, *args, **kwargs):
         with pytest.raises(ValueError):
             rankings = CFPRankings('BAD')
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     @mock.patch('requests.head', side_effect=mock_request)
     def test_invalid_default_year_reverts_to_previous_year(self,
                                                            *args,
@@ -116,7 +116,7 @@ class TestCFPNCAAFRankings:
         assert rankings.current == self.current
         assert rankings.complete == self.complete
 
-    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_rankings_string_representation(self, *args, **kwargs):
         rankings = Rankings()
 

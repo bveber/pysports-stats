@@ -5,16 +5,16 @@ from .constants import (SCHEDULE_SCHEME,
                         SCHEDULE_URL)
 from datetime import datetime
 from pyquery import PyQuery as pq
-from sportsipy import utils
-from sportsipy.constants import (WIN,
+from sports import utils
+from sports.constants import (WIN,
                                  LOSS,
                                  HOME,
                                  AWAY,
                                  NEUTRAL,
                                  REGULAR_SEASON,
                                  CONFERENCE_TOURNAMENT)
-from sportsipy.nhl.boxscore import Boxscore
-from sportsipy.nhl.constants import OVERTIME_LOSS, SHOOTOUT
+from sports.nhl.boxscore import Boxscore
+from sports.nhl.constants import OVERTIME_LOSS, SHOOTOUT
 
 
 class Game:
