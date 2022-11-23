@@ -151,7 +151,10 @@ Find the number of goals a football team has scored
 Documentation
 =============
 
-Two blog posts detailing the creation and basic usage of `pysports-stats` can
+This repository is based on `sportsipy`. I am incredibly grateful for
+the work done by Robert Clark in creating this code base. Some internal components
+have been changed, but the basic interface remains the same.
+Two blog posts detailing the creation and basic usage of `sportsipy` can
 be found on The Medium at the following links:
 
 - `Part 1: Creating a public sports API <https://medium.com/clarktech-sports/python-sports-analytics-made-simple-part-1-14569d6e9a86>`_
@@ -159,7 +162,7 @@ be found on The Medium at the following links:
 
 The second post in particular is a great guide for getting started with
 `pysports-stats` and is highly recommended for anyone who is new to the
-package.
+package. 
 
 Testing
 =======
@@ -179,7 +182,7 @@ framework::
 If the tests were successful, it will return a green line will show a message at
 the end of the output similar to the following::
 
-    ======================= 380 passed in 245.56 seconds =======================
+    ======================= 750 passed in 245.56 seconds =======================
 
 If a test failed, it will show the number of failed and what went wrong within
 the test output. If that's the case, ensure you have the latest version of code
