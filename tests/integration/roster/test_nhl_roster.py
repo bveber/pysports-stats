@@ -10,7 +10,7 @@ from ..utils import read_file
 
 
 PLAYER_YEAR_INDEX = '2021-22'
-ROSTER_YEAR = '2021'
+ROSTER_YEAR = '2022'
 TEAM = 'MIN'
 
 def mock_pyquery(url):
@@ -20,8 +20,8 @@ def mock_pyquery(url):
         return read_file('kapriki01.html', 'nhl', 'roster')
     if 'kahkoka01' in url:
         return read_file('kahkoka01.html', 'nhl', 'roster')
-    if 'MN/2021' in url:
-        return read_file('MIN-2021.html', 'nhl', 'roster')
+    if 'MIN' in url:
+        return read_file('MIN-2022.html', 'nhl', 'roster')
     return None
 
 
@@ -863,7 +863,7 @@ class TestNHLRoster:
             .and_return(ROSTER_YEAR)
         roster = Roster(TEAM)
 
-        assert len(roster.players) == 31
+        assert len(roster.players) == 37
 
         roster_players = [player.name for player in roster.players]
         for player in ['Kirill Kaprizov', 'Kaapo Kahkonen']:
@@ -883,7 +883,7 @@ class TestNHLRoster:
         mock_abbreviation = mock.PropertyMock(return_value=TEAM)
         type(team)._abbreviation = mock_abbreviation
 
-        assert len(team.roster.players) == 31
+        assert len(team.roster.players) == 37
 
         roster_players = [player.name for player in team.roster.players]
         for player in ['Kirill Kaprizov', 'Kaapo Kahkonen']:
@@ -897,38 +897,44 @@ class TestNHLRoster:
             .and_return(ROSTER_YEAR)
         roster = Roster(TEAM, slim=True)
 
-        assert len(roster.players) == 31
+        assert len(roster.players) == 37
 
         assert roster.players == {
             'addisca01': 'Calen Addison',
-            'bartkma01': 'Matt Bartkowski',
-            'belpelo01': 'Louis Belpedio',
+            'beckmad01': 'Adam Beckman',
+            'bennjo01': 'Jordie Benn',
             'bjugsni01': 'Nick Bjugstad',
-            'boninni01': 'Nick Bonino',
+            'boldyma01': 'Matt Boldy',
             'brodijo01': 'Jonas Brodin',
-            'coleia01': 'Ian Cole',
+            'chaffmi01': 'Mitchell Chaffee',
             'cramajo01': 'Joseph Cramarossa',
+            'deslani01': 'Nicolas Deslauriers',
+            'dewarco01': 'Connor Dewar',
+            'duhaibr01': 'Brandon Duhaime',
             'dumbama01': 'Mathew Dumba',
             'eriksjo02': 'Joel Eriksson Ek',
             'fialake01': 'Kevin Fiala',
+            'fleurma01': 'Marc-Andre Fleury',
             'foligma01': 'Marcus Foligno',
+            'gaudrfr01': 'Frederick Gaudreau',
+            'goligal01': 'Alex Goligoski',
             'greenjo02': 'Jordan Greenway',
             'hartmry01': 'Ryan Hartman',
-            'huntbr01': 'Brad Hunt',
-            'johanma03': 'Marcus Johansson',
-            'johnslu01': 'Luke Johnson',
+            'jostty01': 'Tyson Jost',
             'kahkoka01': 'Kaapo Kahkonen',
             'kapriki01': 'Kirill Kaprizov',
-            'mayhege01': 'Gerald Mayhew',
+            'kulikdm01': 'Dmitry Kulikov',
+            'lizotjo01': 'Jon Lizotte',
             'mermida01': 'Dakota Mermis',
-            'parisza01': 'Zach Parise',
-            'patergr01': 'Greg Pateryn',
+            'merrijo01': 'Jonathon Merrill',
+            'middlja01': 'Jacob Middleton',
+            'pitlire01': 'Rem Pitlick',
             'raskvi01': 'Victor Rask',
             'rauky01': 'Kyle Rau',
-            'soucyca01': 'Carson Soucy',
+            'rossima01': 'Marco Rossi',
+            'shawma01': 'Mason Shaw',
             'spurgja01': 'Jared Spurgeon',
             'sturmni01': 'Nico Sturm',
-            'suterry01': 'Ryan Suter',
             'talboca01': 'Cam Talbot',
             'zuccama01': 'Mats Zuccarello'
         }
@@ -936,34 +942,40 @@ class TestNHLRoster:
     @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_roster_class_string_representation(self, *args, **kwargs):
         expected = """None (addisca01)
-None (bartkma01)
-None (belpelo01)
+None (beckmad01)
+None (bennjo01)
 None (bjugsni01)
-None (boninni01)
+None (boldyma01)
 None (brodijo01)
-None (coleia01)
+None (chaffmi01)
 None (cramajo01)
+None (deslani01)
+None (dewarco01)
+None (duhaibr01)
 None (dumbama01)
 None (eriksjo02)
 None (fialake01)
+None (fleurma01)
 None (foligma01)
+None (gaudrfr01)
+None (goligal01)
 None (greenjo02)
 None (hartmry01)
-None (huntbr01)
-None (johanma03)
-None (johnslu01)
+None (jostty01)
 Kaapo Kahkonen (kahkoka01)
 Kirill Kaprizov (kapriki01)
-None (mayhege01)
+None (kulikdm01)
+None (lizotjo01)
 None (mermida01)
-None (parisza01)
-None (patergr01)
+None (merrijo01)
+None (middlja01)
+None (pitlire01)
 None (raskvi01)
 None (rauky01)
-None (soucyca01)
+None (rossima01)
+None (shawma01)
 None (spurgja01)
 None (sturmni01)
-None (suterry01)
 None (talboca01)
 None (zuccama01)"""
 
@@ -971,7 +983,7 @@ None (zuccama01)"""
             .should_receive('_find_year_for_season') \
             .and_return(ROSTER_YEAR)
         roster = Roster(TEAM)
-        
+
         assert roster.__repr__() == expected
 
     @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
