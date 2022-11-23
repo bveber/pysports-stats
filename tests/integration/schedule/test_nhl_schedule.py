@@ -9,31 +9,21 @@ from sportsipy.constants import AWAY, LOSS
 from sportsipy.nhl.boxscore import Boxscore
 from sportsipy.nhl.constants import SCHEDULE_URL
 from sportsipy.nhl.schedule import Schedule
+from ..utils import read_file
 
 
 MONTH = 1
-YEAR = 2017
+YEAR = 2022
+TEAM = 'MIN'
 
 NUM_GAMES_IN_SCHEDULE = 82
 
 
-def read_file(filename):
-    filepath = os.path.join(os.path.dirname(__file__), 'nhl', filename)
-    return open('%s' % filepath, 'r', encoding='utf8').read()
-
-
 def mock_pyquery(url):
-    class MockPQ:
-        def __init__(self, html_contents):
-            self.status_code = 200
-            self.html_contents = html_contents
-            self.text = html_contents
-
-        def __call__(self, div):
-            return read_file('table.html')
-
-    schedule = read_file('%s_gamelog.html' % YEAR)
-    return MockPQ(schedule)
+    print('mock pyquery: ', url)
+    if 'MIN/2022_gamelog' in url:
+        return read_file('MIN-2022_gamelog.html', 'nhl', 'schedule')
+    return None
 
 
 def mock_request(url):
@@ -56,41 +46,42 @@ class MockDateTime:
 
 
 class TestNHLSchedule:
-    @mock.patch('requests.get', side_effect=mock_pyquery)
+    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
     def setup_method(self, *args, **kwargs):
+        self.game_datetime = datetime(2021,10,16)
         self.results = {
+            'boxscore_index': '202110160LAK',
+            'date': '2021-10-16',
+            'datetime': self.game_datetime,
             'game': 2,
-            'boxscore_index': '201610150STL',
-            'date': '2016-10-15',
-            'datetime': datetime(2016, 10, 15),
-            'location': AWAY,
-            'opponent_abbr': 'STL',
-            'opponent_name': 'St. Louis Blues',
-            'goals_scored': 2,
-            'goals_allowed': 3,
-            'result': LOSS,
+            'goals_allowed': 2,
+            'goals_scored': 3,
+            'location': 'Away',
+            'opponent_abbr': 'LAK',
+            'opponent_name': 'Los Angeles Kings',
             'overtime': 0,
-            'shots_on_goal': 35,
-            'penalties_in_minutes': 8,
+            'penalties_in_minutes': 10,
             'power_play_goals': 0,
-            'power_play_opportunities': 2,
+            'power_play_opportunities': 1,
+            'result': 'Win',
             'short_handed_goals': 0,
-            'opp_shots_on_goal': 18,
+            'shots_on_goal': 30,
+            'opp_shots_on_goal': 31,
             'opp_penalties_in_minutes': 4,
             'opp_power_play_goals': 1,
-            'opp_power_play_opportunities': 5,
+            'opp_power_play_opportunities': 4,
             'opp_short_handed_goals': 0,
-            'corsi_for': 54,
-            'corsi_against': 23,
-            'corsi_for_percentage': 70.1,
-            'fenwick_for': 41,
-            'fenwick_against': 18,
-            'fenwick_for_percentage': 69.5,
-            'faceoff_wins': 29,
-            'faceoff_losses': 18,
-            'faceoff_win_percentage': 61.7,
-            'offensive_zone_start_percentage': 55.2,
-            'pdo': 92.4
+            'corsi_for': 39,
+            'corsi_against': 49,
+            'corsi_for_percentage': 44.3,
+            'fenwick_for': 34,
+            'fenwick_against': 36,
+            'fenwick_for_percentage': 48.6,
+            'faceoff_wins': 17,
+            'faceoff_losses': 22,
+            'faceoff_win_percentage': 43.6,
+            'offensive_zone_start_percentage': 44.0,
+            'pdo': 107.3
         }
         flexmock(utils) \
             .should_receive('_todays_date') \
@@ -102,7 +93,8 @@ class TestNHLSchedule:
             .should_receive('dataframe') \
             .and_return(pd.DataFrame([{'key': 'value'}]))
 
-        self.schedule = Schedule('NYR')
+        
+        self.schedule = Schedule(TEAM, year=YEAR)
 
     def test_nhl_schedule_returns_correct_number_of_games(self):
         assert len(self.schedule) == NUM_GAMES_IN_SCHEDULE
@@ -114,13 +106,13 @@ class TestNHLSchedule:
             assert getattr(match_two, attribute) == value
 
     def test_nhl_schedule_returns_requested_match_from_date(self):
-        match_two = self.schedule(datetime(2016, 10, 15))
+        match_two = self.schedule(self.game_datetime)
 
         for attribute, value in self.results.items():
             assert getattr(match_two, attribute) == value
 
     def test_nhl_schedule_dataframe_returns_dataframe(self):
-        df = pd.DataFrame([self.results], index=['NYR'])
+        df = pd.DataFrame([self.results], index=[TEAM])
 
         match_two = self.schedule[1]
         # Pandas doesn't natively allow comparisons of DataFrames.
@@ -159,7 +151,8 @@ class TestNHLSchedule:
         with pytest.raises(ValueError):
             self.schedule(datetime.now())
 
-    def test_empty_page_return_no_games(self):
+    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    def test_empty_page_return_no_games(self, *args, **kwargs):
         flexmock(utils) \
             .should_receive('_no_data_found') \
             .once()
@@ -167,152 +160,99 @@ class TestNHLSchedule:
             .should_receive('_get_stats_table') \
             .and_return(None)
 
-        schedule = Schedule('NYR')
+        schedule = Schedule(TEAM)
 
         assert len(schedule) == 0
 
-    def test_game_string_representation(self):
+    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    def test_game_string_representation(self, *args, **kwargs):
         game = self.schedule[0]
 
-        assert game.__repr__() == '2016-10-13 - NYI'
+        assert game.__repr__() == '2021-10-15 - ANA'
 
     def test_schedule_string_representation(self):
-        expected = """2016-10-13 - NYI
-2016-10-15 - STL
-2016-10-17 - SJS
-2016-10-19 - DET
-2016-10-22 - WSH
-2016-10-23 - ARI
-2016-10-26 - BOS
-2016-10-28 - CAR
-2016-10-30 - TBL
-2016-11-01 - STL
-2016-11-03 - EDM
-2016-11-05 - BOS
-2016-11-06 - WPG
-2016-11-08 - VAN
-2016-11-12 - CGY
-2016-11-13 - EDM
-2016-11-15 - VAN
-2016-11-18 - CBJ
-2016-11-20 - FLA
-2016-11-21 - PIT
-2016-11-23 - PIT
-2016-11-25 - PHI
-2016-11-27 - OTT
-2016-11-29 - CAR
-2016-12-01 - BUF
-2016-12-03 - CAR
-2016-12-06 - NYI
-2016-12-08 - WPG
-2016-12-09 - CHI
-2016-12-11 - NJD
-2016-12-13 - CHI
-2016-12-15 - DAL
-2016-12-17 - NSH
-2016-12-18 - NJD
-2016-12-20 - PIT
-2016-12-23 - MIN
-2016-12-27 - OTT
-2016-12-29 - ARI
-2016-12-31 - COL
-2017-01-03 - BUF
-2017-01-04 - PHI
-2017-01-07 - CBJ
-2017-01-13 - TOR
-2017-01-14 - MTL
-2017-01-17 - DAL
-2017-01-19 - TOR
-2017-01-22 - DET
-2017-01-23 - LAK
-2017-01-25 - PHI
-2017-01-31 - CBJ
-2017-02-02 - BUF
-2017-02-05 - CGY
-2017-02-07 - ANA
-2017-02-09 - NSH
-2017-02-11 - COL
-2017-02-13 - CBJ
-2017-02-16 - NYI
-2017-02-19 - WSH
-2017-02-21 - MTL
-2017-02-23 - TOR
-2017-02-25 - NJD
-2017-02-26 - CBJ
-2017-02-28 - WSH
-2017-03-02 - BOS
-2017-03-04 - MTL
-2017-03-06 - TBL
-2017-03-07 - FLA
-2017-03-09 - CAR
-2017-03-12 - DET
-2017-03-13 - TBL
-2017-03-17 - FLA
-2017-03-18 - MIN
-2017-03-21 - NJD
-2017-03-22 - NYI
-2017-03-25 - LAK
-2017-03-26 - ANA
-2017-03-28 - SJS
-2017-03-31 - PIT
-2017-04-02 - PHI
-2017-04-05 - WSH
-2017-04-08 - OTT
-2017-04-09 - PIT"""
+        expected = """2021-10-15 - ANA
+2021-10-16 - LAK
+2021-10-19 - WPG
+2021-10-23 - ANA
+2021-10-24 - NSH
+2021-10-26 - VAN
+2021-10-28 - SEA
+2021-10-30 - COL
+2021-11-02 - OTT
+2021-11-06 - PIT
+2021-11-07 - NYI
+2021-11-10 - ARI
+2021-11-11 - VEG
+2021-11-13 - SEA
+2021-11-16 - SJS
+2021-11-18 - DAL
+2021-11-20 - FLA
+2021-11-21 - TBL
+2021-11-24 - NJD
+2021-11-26 - WPG
+2021-11-28 - TBL
+2021-11-30 - ARI
+2021-12-02 - NJD
+2021-12-04 - TOR
+2021-12-07 - EDM
+2021-12-09 - SJS
+2021-12-11 - LAK
+2021-12-12 - VEG
+2021-12-16 - BUF
+2021-12-20 - DAL
+2022-01-01 - STL
+2022-01-06 - BOS
+2022-01-08 - WSH
+2022-01-14 - ANA
+2022-01-17 - COL
+2022-01-21 - CHI
+2022-01-22 - CHI
+2022-01-24 - MTL
+2022-01-28 - NYR
+2022-01-30 - NYI
+2022-02-02 - CHI
+2022-02-08 - WPG
+2022-02-12 - CAR
+2022-02-14 - DET
+2022-02-16 - WPG
+2022-02-18 - FLA
+2022-02-20 - EDM
+2022-02-22 - OTT
+2022-02-24 - TOR
+2022-02-26 - CGY
+2022-03-01 - CGY
+2022-03-03 - PHI
+2022-03-04 - BUF
+2022-03-06 - DAL
+2022-03-08 - NYR
+2022-03-10 - DET
+2022-03-11 - CBJ
+2022-03-13 - NSH
+2022-03-16 - BOS
+2022-03-19 - CHI
+2022-03-21 - VEG
+2022-03-24 - VAN
+2022-03-26 - CBJ
+2022-03-27 - COL
+2022-03-29 - PHI
+2022-03-31 - PIT
+2022-04-02 - CAR
+2022-04-03 - WSH
+2022-04-05 - NSH
+2022-04-08 - STL
+2022-04-10 - LAK
+2022-04-12 - EDM
+2022-04-14 - DAL
+2022-04-16 - STL
+2022-04-17 - SJS
+2022-04-19 - MTL
+2022-04-21 - VAN
+2022-04-22 - SEA
+2022-04-24 - NSH
+2022-04-26 - ARI
+2022-04-28 - CGY
+2022-04-29 - COL"""
 
+        print(self.schedule.__repr__())
         assert self.schedule.__repr__() == expected
-
-
-class TestNHLScheduleInvalidYear:
-    @mock.patch('requests.get', side_effect=mock_pyquery)
-    @mock.patch('requests.head', side_effect=mock_request)
-    def test_invalid_default_year_reverts_to_previous_year(self,
-                                                           *args,
-                                                           **kwargs):
-        results = {
-            'game': 2,
-            'boxscore_index': '201610150STL',
-            'date': '2016-10-15',
-            'datetime': datetime(2016, 10, 15),
-            'location': AWAY,
-            'opponent_abbr': 'STL',
-            'opponent_name': 'St. Louis Blues',
-            'goals_scored': 2,
-            'goals_allowed': 3,
-            'result': LOSS,
-            'overtime': 0,
-            'shots_on_goal': 35,
-            'penalties_in_minutes': 8,
-            'power_play_goals': 0,
-            'power_play_opportunities': 2,
-            'short_handed_goals': 0,
-            'opp_shots_on_goal': 18,
-            'opp_penalties_in_minutes': 4,
-            'opp_power_play_goals': 1,
-            'opp_power_play_opportunities': 5,
-            'opp_short_handed_goals': 0,
-            'corsi_for': 54,
-            'corsi_against': 23,
-            'corsi_for_percentage': 70.1,
-            'fenwick_for': 41,
-            'fenwick_against': 18,
-            'fenwick_for_percentage': 69.5,
-            'faceoff_wins': 29,
-            'faceoff_losses': 18,
-            'faceoff_win_percentage': 61.7,
-            'offensive_zone_start_percentage': 55.2,
-            'pdo': 92.4
-        }
-        flexmock(utils) \
-            .should_receive('_find_year_for_season') \
-            .and_return(2018)
-        flexmock(Boxscore) \
-            .should_receive('_parse_game_data') \
-            .and_return(None)
-        flexmock(Boxscore) \
-            .should_receive('dataframe') \
-            .and_return(pd.DataFrame([{'key': 'value'}]))
-        schedule = Schedule('NYR')
-
-        for attribute, value in results.items():
-            assert getattr(schedule[1], attribute) == value
