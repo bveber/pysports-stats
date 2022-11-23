@@ -9,31 +9,20 @@ from sportsipy.constants import AWAY, HOME, LOSS, WIN
 from sportsipy.mlb.boxscore import Boxscore
 from sportsipy.mlb.constants import DAY, NIGHT, SCHEDULE_URL
 from sportsipy.mlb.schedule import Schedule
+from ..utils import read_file
 
 
 MONTH = 4
-YEAR = 2017
+YEAR = 2022
 
 NUM_GAMES_IN_SCHEDULE = 162
-
-
-def read_file(filename):
-    filepath = os.path.join(os.path.dirname(__file__), 'mlb', filename)
-    return open('%s' % filepath, 'r', encoding='utf8').read()
+TEAM = 'HOU'
 
 
 def mock_pyquery(url):
-    class MockPQ:
-        def __init__(self, html_contents):
-            self.status_code = 200
-            self.html_contents = html_contents
-            self.text = html_contents
-
-        def __call__(self, div):
-            return read_file('table.html')
-
-    schedule = read_file('%s-schedule-scores.html' % YEAR)
-    return MockPQ(schedule)
+    if 'HOU/2022' in url:
+        return read_file('HOU-2022-schedule.shtml', 'mlb', 'schedule')
+    return None
 
 
 def mock_request(url):
@@ -56,30 +45,30 @@ class MockDateTime:
 
 
 class TestMLBSchedule:
-    @mock.patch('requests.get', side_effect=mock_pyquery)
+    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
     def setup_method(self, *args, **kwargs):
         self.results = {
-            'game': 2,
-            'boxscore_index': 'TBA/TBA201704040',
-            'date': 'Tuesday, Apr 4',
-            'datetime': datetime(2017, 4, 4),
+            'attendance': 42719,
+            'boxscore_index': 'ANA/ANA202204080',
+            'date': 'Friday, Apr 8',
+            'datetime': datetime(2022,4,8),
             'game_number_for_day': 1,
-            'location': AWAY,
-            'opponent_abbr': 'TBR',
-            'result': WIN,
-            'runs_scored': 5,
-            'runs_allowed': 0,
+            'day_or_night': 'Night',
+            'game': 2,
+            'game_duration': '3:44',
+            'games_behind': -0.5,
             'innings': 9,
-            'record': '1-1',
-            'rank': 3,
-            'games_behind': 0.5,
-            'winner': 'Sabathia',
-            'loser': 'Odorizzi',
+            'location': 'Away',
+            'loser': 'Ortega',
+            'opponent_abbr': 'LAA',
+            'rank': 1,
+            'record': '2-0',
+            'result': 'Win',
+            'runs_allowed': 6,
+            'runs_scored': 13,
             'save': None,
-            'game_duration': '3:07',
-            'day_or_night': NIGHT,
-            'attendance': 19366,
-            'streak': '+'
+            'streak': '++',
+            'winner': 'Montero'
         }
         flexmock(Boxscore) \
             .should_receive('_parse_game_data') \
@@ -91,7 +80,7 @@ class TestMLBSchedule:
             .should_receive('_todays_date') \
             .and_return(MockDateTime(YEAR, MONTH))
 
-        self.schedule = Schedule('NYY')
+        self.schedule = Schedule(TEAM)
 
     def test_mlb_schedule_returns_correct_number_of_games(self):
         assert len(self.schedule) == NUM_GAMES_IN_SCHEDULE
@@ -103,34 +92,36 @@ class TestMLBSchedule:
             assert getattr(match_two, attribute) == value
 
     def test_mlb_schedule_returns_requested_match_from_date(self):
-        match_two = self.schedule(datetime(2017, 4, 4))
+        match_two = self.schedule(datetime(2022, 4, 8))
 
         for attribute, value in self.results.items():
             assert getattr(match_two, attribute) == value
 
     def test_mlb_schedule_returns_second_game_in_double_header(self):
-        match_two = self.schedule(datetime(2017, 5, 14), 2)
+        date_of_game = datetime(2022, 7, 21)
+        match_two = self.schedule(date_of_game, 2)
         results = {
-            'game': 35,
-            'date': 'Sunday, May 14 (2)',
-            'datetime': datetime(2017, 5, 14),
+            'attendance': 39342,
+            'boxscore_index': 'HOU/HOU202207212',
+            'date': 'Thursday, Jul 21 (2)',
+            'datetime': datetime(2022,7,21),
             'game_number_for_day': 2,
-            'location': HOME,
-            'opponent_abbr': 'HOU',
-            'result': LOSS,
-            'runs_scored': 7,
-            'runs_allowed': 10,
+            'day_or_night': 'Night',
+            'game': 93,
+            'game_duration': '3:11',
+            'games_behind': -10.0,
             'innings': 9,
-            'record': '22-13',
+            'location': 'Home',
+            'loser': 'German',
+            'opponent_abbr': 'NYY',
             'rank': 1,
-            'games_behind': -0.5,
-            'winner': 'Morton',
-            'loser': 'Tanaka',
-            'save': None,
-            'game_duration': '3:49',
-            'day_or_night': NIGHT,
-            'attendance': 47883,
-            'streak': '-'
+            'record': '61-32',
+            'result': 'Win',
+            'runs_allowed': 5,
+            'runs_scored': 7,
+            'save': 'Montero',
+            'streak': '++',
+            'winner': 'Garcia'
         }
 
         for attribute, value in results.items():
@@ -161,7 +152,8 @@ class TestMLBSchedule:
 
         assert df1.empty
 
-    def test_mlb_schedule_all_dataframe_returns_dataframe(self):
+    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    def test_mlb_schedule_all_dataframe_returns_dataframe(self, *args, **kwargs):
         result = self.schedule.dataframe.drop_duplicates(keep=False)
 
         assert len(result) == NUM_GAMES_IN_SCHEDULE
@@ -176,7 +168,8 @@ class TestMLBSchedule:
         with pytest.raises(ValueError):
             self.schedule(datetime.now())
 
-    def test_empty_page_return_no_games(self):
+    @mock.patch('sportsipy.utils._rate_limit_pq', side_effect=mock_pyquery)
+    def test_empty_page_return_no_games(self, *args, **kwargs):
         flexmock(utils) \
             .should_receive('_no_data_found') \
             .once()
@@ -184,222 +177,177 @@ class TestMLBSchedule:
             .should_receive('_get_stats_table') \
             .and_return(None)
 
-        schedule = Schedule('NYY')
+        schedule = Schedule(TEAM)
 
         assert len(schedule) == 0
 
     def test_game_string_representation(self):
         game = self.schedule[0]
 
-        assert game.__repr__() == 'Sunday, Apr 2 - TBR'
+        assert game.__repr__() == 'Thursday, Apr 7 - LAA'
 
     def test_schedule_string_representation(self):
-        expected = """Sunday, Apr 2 - TBR
-Tuesday, Apr 4 - TBR
-Wednesday, Apr 5 - TBR
-Friday, Apr 7 - BAL
-Saturday, Apr 8 - BAL
-Sunday, Apr 9 - BAL
-Monday, Apr 10 - TBR
-Wednesday, Apr 12 - TBR
-Thursday, Apr 13 - TBR
-Friday, Apr 14 - STL
-Saturday, Apr 15 - STL
-Sunday, Apr 16 - STL
-Monday, Apr 17 - CHW
-Tuesday, Apr 18 - CHW
-Wednesday, Apr 19 - CHW
-Friday, Apr 21 - PIT
-Saturday, Apr 22 - PIT
-Sunday, Apr 23 - PIT
-Wednesday, Apr 26 - BOS
-Thursday, Apr 27 - BOS
-Friday, Apr 28 - BAL
-Saturday, Apr 29 - BAL
-Sunday, Apr 30 - BAL
-Monday, May 1 - TOR
-Tuesday, May 2 - TOR
-Wednesday, May 3 - TOR
-Friday, May 5 - CHC
-Saturday, May 6 - CHC
-Sunday, May 7 - CHC
-Monday, May 8 - CIN
-Tuesday, May 9 - CIN
-Thursday, May 11 - HOU
-Friday, May 12 - HOU
-Sunday, May 14 (1) - HOU
-Sunday, May 14 (2) - HOU
-Tuesday, May 16 - KCR
-Wednesday, May 17 - KCR
-Thursday, May 18 - KCR
-Friday, May 19 - TBR
-Saturday, May 20 - TBR
-Sunday, May 21 - TBR
-Monday, May 22 - KCR
-Tuesday, May 23 - KCR
-Wednesday, May 24 - KCR
-Friday, May 26 - OAK
-Saturday, May 27 - OAK
-Sunday, May 28 - OAK
-Monday, May 29 - BAL
-Tuesday, May 30 - BAL
-Wednesday, May 31 - BAL
-Thursday, Jun 1 - TOR
-Friday, Jun 2 - TOR
-Saturday, Jun 3 - TOR
-Sunday, Jun 4 - TOR
-Tuesday, Jun 6 - BOS
-Wednesday, Jun 7 - BOS
-Thursday, Jun 8 - BOS
-Friday, Jun 9 - BAL
-Saturday, Jun 10 - BAL
-Sunday, Jun 11 - BAL
-Monday, Jun 12 - LAA
-Tuesday, Jun 13 - LAA
-Wednesday, Jun 14 - LAA
-Thursday, Jun 15 - OAK
-Friday, Jun 16 - OAK
-Saturday, Jun 17 - OAK
-Sunday, Jun 18 - OAK
-Tuesday, Jun 20 - LAA
-Wednesday, Jun 21 - LAA
-Thursday, Jun 22 - LAA
-Friday, Jun 23 - TEX
-Saturday, Jun 24 - TEX
-Sunday, Jun 25 - TEX
-Monday, Jun 26 - CHW
-Tuesday, Jun 27 - CHW
-Wednesday, Jun 28 - CHW
-Thursday, Jun 29 - CHW
-Friday, Jun 30 - HOU
-Saturday, Jul 1 - HOU
-Sunday, Jul 2 - HOU
-Monday, Jul 3 - TOR
-Tuesday, Jul 4 - TOR
-Wednesday, Jul 5 - TOR
-Friday, Jul 7 - MIL
-Saturday, Jul 8 - MIL
-Sunday, Jul 9 - MIL
-Friday, Jul 14 - BOS
-Saturday, Jul 15 - BOS
-Sunday, Jul 16 (1) - BOS
-Sunday, Jul 16 (2) - BOS
-Monday, Jul 17 - MIN
-Tuesday, Jul 18 - MIN
-Wednesday, Jul 19 - MIN
-Thursday, Jul 20 - SEA
-Friday, Jul 21 - SEA
-Saturday, Jul 22 - SEA
-Sunday, Jul 23 - SEA
-Tuesday, Jul 25 - CIN
-Wednesday, Jul 26 - CIN
-Thursday, Jul 27 - TBR
-Friday, Jul 28 - TBR
-Saturday, Jul 29 - TBR
-Sunday, Jul 30 - TBR
-Monday, Jul 31 - DET
-Tuesday, Aug 1 - DET
-Wednesday, Aug 2 - DET
-Thursday, Aug 3 - CLE
-Friday, Aug 4 - CLE
-Saturday, Aug 5 - CLE
-Sunday, Aug 6 - CLE
-Tuesday, Aug 8 - TOR
-Wednesday, Aug 9 - TOR
-Thursday, Aug 10 - TOR
-Friday, Aug 11 - BOS
-Saturday, Aug 12 - BOS
-Sunday, Aug 13 - BOS
-Monday, Aug 14 - NYM
-Tuesday, Aug 15 - NYM
-Wednesday, Aug 16 - NYM
-Thursday, Aug 17 - NYM
-Friday, Aug 18 - BOS
-Saturday, Aug 19 - BOS
-Sunday, Aug 20 - BOS
-Tuesday, Aug 22 - DET
-Wednesday, Aug 23 - DET
-Thursday, Aug 24 - DET
-Friday, Aug 25 - SEA
-Saturday, Aug 26 - SEA
-Sunday, Aug 27 - SEA
-Monday, Aug 28 - CLE
-Wednesday, Aug 30 (1) - CLE
-Wednesday, Aug 30 (2) - CLE
-Thursday, Aug 31 - BOS
-Friday, Sep 1 - BOS
-Saturday, Sep 2 - BOS
-Sunday, Sep 3 - BOS
-Monday, Sep 4 - BAL
-Tuesday, Sep 5 - BAL
-Thursday, Sep 7 - BAL
-Friday, Sep 8 - TEX
-Saturday, Sep 9 - TEX
-Sunday, Sep 10 - TEX
-Monday, Sep 11 - TBR
-Tuesday, Sep 12 - TBR
-Wednesday, Sep 13 - TBR
-Thursday, Sep 14 - BAL
-Friday, Sep 15 - BAL
-Saturday, Sep 16 - BAL
-Sunday, Sep 17 - BAL
-Monday, Sep 18 - MIN
-Tuesday, Sep 19 - MIN
-Wednesday, Sep 20 - MIN
-Friday, Sep 22 - TOR
-Saturday, Sep 23 - TOR
-Sunday, Sep 24 - TOR
-Monday, Sep 25 - KCR
-Tuesday, Sep 26 - TBR
-Wednesday, Sep 27 - TBR
-Thursday, Sep 28 - TBR
-Friday, Sep 29 - TOR
-Saturday, Sep 30 - TOR
-Sunday, Oct 1 - TOR"""
+        expected = """Thursday, Apr 7 - LAA
+Friday, Apr 8 - LAA
+Saturday, Apr 9 - LAA
+Sunday, Apr 10 - LAA
+Tuesday, Apr 12 - ARI
+Wednesday, Apr 13 - ARI
+Friday, Apr 15 - SEA
+Saturday, Apr 16 - SEA
+Sunday, Apr 17 - SEA
+Monday, Apr 18 - LAA
+Tuesday, Apr 19 - LAA
+Wednesday, Apr 20 - LAA
+Friday, Apr 22 - TOR
+Saturday, Apr 23 - TOR
+Sunday, Apr 24 - TOR
+Monday, Apr 25 - TEX
+Tuesday, Apr 26 - TEX
+Wednesday, Apr 27 - TEX
+Thursday, Apr 28 - TEX
+Friday, Apr 29 - TOR
+Saturday, Apr 30 - TOR
+Sunday, May 1 - TOR
+Monday, May 2 - SEA
+Tuesday, May 3 - SEA
+Wednesday, May 4 - SEA
+Thursday, May 5 - DET
+Friday, May 6 - DET
+Saturday, May 7 - DET
+Sunday, May 8 - DET
+Tuesday, May 10 - MIN
+Wednesday, May 11 - MIN
+Thursday, May 12 - MIN
+Friday, May 13 - WSN
+Saturday, May 14 - WSN
+Sunday, May 15 - WSN
+Monday, May 16 - BOS
+Tuesday, May 17 - BOS
+Wednesday, May 18 - BOS
+Thursday, May 19 - TEX
+Friday, May 20 - TEX
+Saturday, May 21 - TEX
+Sunday, May 22 - TEX
+Monday, May 23 - CLE
+Tuesday, May 24 - CLE
+Wednesday, May 25 - CLE
+Friday, May 27 - SEA
+Saturday, May 28 - SEA
+Sunday, May 29 - SEA
+Monday, May 30 - OAK
+Tuesday, May 31 - OAK
+Wednesday, Jun 1 - OAK
+Friday, Jun 3 - KCR
+Saturday, Jun 4 - KCR
+Sunday, Jun 5 - KCR
+Monday, Jun 6 - SEA
+Tuesday, Jun 7 - SEA
+Wednesday, Jun 8 - SEA
+Friday, Jun 10 - MIA
+Saturday, Jun 11 - MIA
+Sunday, Jun 12 - MIA
+Monday, Jun 13 - TEX
+Tuesday, Jun 14 - TEX
+Wednesday, Jun 15 - TEX
+Friday, Jun 17 - CHW
+Saturday, Jun 18 - CHW
+Sunday, Jun 19 - CHW
+Tuesday, Jun 21 - NYM
+Wednesday, Jun 22 - NYM
+Thursday, Jun 23 - NYY
+Friday, Jun 24 - NYY
+Saturday, Jun 25 - NYY
+Sunday, Jun 26 - NYY
+Tuesday, Jun 28 - NYM
+Wednesday, Jun 29 - NYM
+Thursday, Jun 30 - NYY
+Friday, Jul 1 - LAA
+Saturday, Jul 2 - LAA
+Sunday, Jul 3 - LAA
+Monday, Jul 4 - KCR
+Tuesday, Jul 5 - KCR
+Wednesday, Jul 6 - KCR
+Thursday, Jul 7 - KCR
+Friday, Jul 8 - OAK
+Saturday, Jul 9 - OAK
+Sunday, Jul 10 - OAK
+Tuesday, Jul 12 - LAA
+Wednesday, Jul 13 - LAA
+Thursday, Jul 14 - LAA
+Friday, Jul 15 - OAK
+Saturday, Jul 16 - OAK
+Sunday, Jul 17 - OAK
+Thursday, Jul 21 (1) - NYY
+Thursday, Jul 21 (2) - NYY
+Friday, Jul 22 - SEA
+Saturday, Jul 23 - SEA
+Sunday, Jul 24 - SEA
+Monday, Jul 25 - OAK
+Tuesday, Jul 26 - OAK
+Wednesday, Jul 27 - OAK
+Thursday, Jul 28 - SEA
+Friday, Jul 29 - SEA
+Saturday, Jul 30 - SEA
+Sunday, Jul 31 - SEA
+Monday, Aug 1 - BOS
+Tuesday, Aug 2 - BOS
+Wednesday, Aug 3 - BOS
+Thursday, Aug 4 - CLE
+Friday, Aug 5 - CLE
+Saturday, Aug 6 - CLE
+Sunday, Aug 7 - CLE
+Tuesday, Aug 9 - TEX
+Wednesday, Aug 10 - TEX
+Thursday, Aug 11 - TEX
+Friday, Aug 12 - OAK
+Saturday, Aug 13 - OAK
+Sunday, Aug 14 - OAK
+Monday, Aug 15 - CHW
+Tuesday, Aug 16 - CHW
+Wednesday, Aug 17 - CHW
+Thursday, Aug 18 - CHW
+Friday, Aug 19 - ATL
+Saturday, Aug 20 - ATL
+Sunday, Aug 21 - ATL
+Tuesday, Aug 23 - MIN
+Wednesday, Aug 24 - MIN
+Thursday, Aug 25 - MIN
+Friday, Aug 26 - BAL
+Saturday, Aug 27 - BAL
+Sunday, Aug 28 - BAL
+Tuesday, Aug 30 - TEX
+Wednesday, Aug 31 - TEX
+Friday, Sep 2 - LAA
+Saturday, Sep 3 - LAA
+Sunday, Sep 4 - LAA
+Monday, Sep 5 - TEX
+Tuesday, Sep 6 - TEX
+Wednesday, Sep 7 - TEX
+Friday, Sep 9 - LAA
+Saturday, Sep 10 - LAA
+Sunday, Sep 11 - LAA
+Monday, Sep 12 - DET
+Tuesday, Sep 13 - DET
+Wednesday, Sep 14 - DET
+Thursday, Sep 15 - OAK
+Friday, Sep 16 - OAK
+Saturday, Sep 17 - OAK
+Sunday, Sep 18 - OAK
+Monday, Sep 19 - TBR
+Tuesday, Sep 20 - TBR
+Wednesday, Sep 21 - TBR
+Thursday, Sep 22 - BAL
+Friday, Sep 23 - BAL
+Saturday, Sep 24 - BAL
+Sunday, Sep 25 - BAL
+Tuesday, Sep 27 - ARI
+Wednesday, Sep 28 - ARI
+Friday, Sep 30 - TBR
+Saturday, Oct 1 - TBR
+Sunday, Oct 2 - TBR
+Monday, Oct 3 - PHI
+Tuesday, Oct 4 - PHI
+Wednesday, Oct 5 - PHI"""
 
         assert self.schedule.__repr__() == expected
-
-
-class TestMLBScheduleInvalidYear:
-    @mock.patch('requests.get', side_effect=mock_pyquery)
-    @mock.patch('requests.head', side_effect=mock_request)
-    def test_mlb_invalid_default_year_reverts_to_previous_year(self,
-                                                               *args,
-                                                               **kwargs):
-        results = {
-            'game': 2,
-            'boxscore_index': 'TBA/TBA201704040',
-            'date': 'Tuesday, Apr 4',
-            'datetime': datetime(2017, 4, 4),
-            'game_number_for_day': 1,
-            'location': AWAY,
-            'opponent_abbr': 'TBR',
-            'result': WIN,
-            'runs_scored': 5,
-            'runs_allowed': 0,
-            'innings': 9,
-            'record': '1-1',
-            'rank': 3,
-            'games_behind': 0.5,
-            'winner': 'Sabathia',
-            'loser': 'Odorizzi',
-            'save': None,
-            'game_duration': '3:07',
-            'day_or_night': NIGHT,
-            'attendance': 19366,
-            'streak': '+'
-        }
-        flexmock(Boxscore) \
-            .should_receive('_parse_game_data') \
-            .and_return(None)
-        flexmock(Boxscore) \
-            .should_receive('dataframe') \
-            .and_return(pd.DataFrame([{'key': 'value'}]))
-        flexmock(utils) \
-            .should_receive('_find_year_for_season') \
-            .and_return(2018)
-
-        schedule = Schedule('NYY')
-
-        for attribute, value in results.items():
-            assert getattr(schedule[1], attribute) == value
