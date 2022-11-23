@@ -7,11 +7,13 @@ from sportsipy.fb.roster import Roster
 from ..utils import read_file
 
 
-EXPECTED_NUM_PLAYERS = 34
+EXPECTED_NUM_PLAYERS = 25
 
 
 def mock_pyquery(url):
-    return read_file('tottenham-hotspur-2019-2020.html', 'fb', 'roster')
+    if '361ca564' in url:
+        return read_file('tottenham-hotspur-2022-2023.html', 'fb', 'roster')
+    return None
 
 
 class TestFBRoster:
@@ -22,29 +24,29 @@ class TestFBRoster:
             'player_id': '21a66f6a',
             'nationality': 'England',
             'position': 'FW',
-            'age': 26,
-            'matches_played': 29,
-            'starts': 29,
-            'minutes': 2587,
-            'goals': 18,
-            'assists': 2,
+            'age': 29,
+            'matches_played': 15,
+            'starts': 15,
+            'minutes': 1335,
+            'goals': 12,
+            'assists': 1,
             'penalty_kicks': 2,
-            'penalty_kick_attempts': 2,
+            'penalty_kick_attempts': 3,
             'yellow_cards': 4,
             'red_cards': 0,
-            'goals_per_90': 0.63,
+            'goals_per_90': 0.81,
             'assists_per_90': 0.07,
-            'goals_and_assists_per_90': 0.70,
-            'goals_non_penalty_per_90': 0.56,
-            'goals_and_assists_non_penalty_per_90': 0.63,
-            'expected_goals': 12.5,
-            'expected_goals_non_penalty': 10.9,
-            'expected_assists': 3.3,
-            'expected_goals_per_90': 0.43,
-            'expected_assists_per_90': 0.11,
-            'expected_goals_and_assists_per_90': 0.55,
-            'expected_goals_non_penalty_per_90': 0.38,
-            'expected_goals_and_assists_non_penalty_per_90': 0.49,
+            'goals_and_assists_per_90': 0.88,
+            'goals_non_penalty_per_90': 0.67,
+            'goals_and_assists_non_penalty_per_90': 0.74,
+            'expected_goals': 9.4,
+            'expected_goals_non_penalty': 7.1,
+            'expected_assists': 2.4,
+            'expected_goals_per_90': 0.64,
+            'expected_assists_per_90': 0.16,
+            'expected_goals_and_assists_per_90': 0.8,
+            'expected_goals_non_penalty_per_90': 0.48,
+            'expected_goals_and_assists_non_penalty_per_90': 0.64,
             'own_goals': 0,
             'goals_against': None,
             'own_goals_against': None,
@@ -82,86 +84,86 @@ class TestFBRoster:
             'keeper_actions_outside_penalty_area': None,
             'keeper_actions_outside_penalty_area_per_90': None,
             'average_keeper_action_outside_penalty_distance': None,
-            'shots': 79,
-            'shots_on_target': 35,
-            'free_kick_shots': 7,
-            'shots_on_target_percentage': 44.3,
-            'shots_per_90': 2.75,
-            'shots_on_target_per_90': 1.22,
-            'goals_per_shot': 0.20,
-            'goals_per_shot_on_target': 0.46,
+            'shots': 52,
+            'shots_on_target': 24,
+            'free_kick_shots': 0,
+            'shots_on_target_percentage': 46.2,
+            'shots_per_90': 3.51,
+            'shots_on_target_per_90': 1.62,
+            'goals_per_shot': 0.19,
+            'goals_per_shot_on_target': 0.42,
             'expected_goals_non_penalty_per_shot': 0.14,
-            'goals_minus_expected': 5.5,
-            'non_penalty_minus_expected_non_penalty': 5.1,
-            'assists_minus_expected': -1.3,
-            'key_passes': 27,
-            'passes_completed': 380,
-            'passes_attempted': 581,
-            'pass_completion': 65.4,
-            'short_passes_completed': 221,
-            'short_passes_attempted': 300,
-            'short_pass_completion': 73.7,
-            'medium_passes_completed': 102,
-            'medium_passes_attempted': 150,
-            'medium_pass_completion': 68.0,
-            'long_passes_completed': 37,
-            'long_passes_attempted':76,
-            'long_pass_completion': 48.7,
+            'goals_minus_expected': 2.6,
+            'non_penalty_minus_expected_non_penalty': 2.9,
+            'assists_minus_expected': -1.4,
+            'key_passes': 28,
+            'passes_completed': 258,
+            'passes_attempted': 366,
+            'pass_completion': 70.5,
+            'short_passes_completed': 124,
+            'short_passes_attempted': 156,
+            'short_pass_completion': 79.5,
+            'medium_passes_completed': 88,
+            'medium_passes_attempted': 117,
+            'medium_pass_completion': 75.2,
+            'long_passes_completed': 39,
+            'long_passes_attempted': 57,
+            'long_pass_completion': 68.4,
             'left_foot_passes': None,
             'right_foot_passes': None,
             'free_kick_passes': 5,
-            'through_balls': 13,
+            'through_balls': 3,
             'corner_kicks': 0,
-            'throw_ins': 7,
-            'final_third_passes': 52,
-            'penalty_area_passes': 18,
-            'penalty_area_crosses': 2,
+            'throw_ins': 13,
+            'final_third_passes': 41,
+            'penalty_area_passes': 22,
+            'penalty_area_crosses': 4,
             'minutes_per_match': 89,
-            'minutes_played_percentage': 75.6,
-            'nineties_played': 28.7,
+            'minutes_played_percentage': 98.9,
+            'nineties_played': 14.8,
             'minutes_per_start': 89,
             'subs': 0,
             'minutes_per_sub': None,
             'unused_sub': 0,
-            'points_per_match': 1.62,
-            'goals_scored_on_pitch': 49,
-            'goals_against_on_pitch': 36,
-            'goal_difference_on_pitch': 13,
-            'goal_difference_on_pitch_per_90': 0.45,
-            'net_difference_on_pitch_per_90': 0.34,
-            'expected_goals_on_pitch': 35.1,
-            'expected_goals_against_on_pitch': 36.1,
-            'expected_goal_difference': -0.9,
-            'expected_goal_difference_per_90': -0.03,
-            'net_expected_goal_difference_per_90': 0.55,
+            'points_per_match': 1.93,
+            'goals_scored_on_pitch': 31,
+            'goals_against_on_pitch': 20,
+            'goal_difference_on_pitch': 11,
+            'goal_difference_on_pitch_per_90': 0.74,
+            'net_difference_on_pitch_per_90': 6.74,
+            'expected_goals_on_pitch': 23.9,
+            'expected_goals_against_on_pitch': 16.3,
+            'expected_goal_difference': 7.6,
+            'expected_goal_difference_per_90': 0.51,
+            'net_expected_goal_difference_per_90': 0.81,
             'soft_reds': 0,
-            'fouls_committed': 37,
-            'fouls_drawn': 44,
-            'offsides': 20,
+            'fouls_committed': 10,
+            'fouls_drawn': 21,
+            'offsides': 3,
             'crosses': 19,
-            'tackles_won': 12,
-            'interceptions': 6,
+            'tackles_won': 4,
+            'interceptions': 1,
             'penalty_kicks_won': 1,
             'penalty_kicks_conceded': 0,
-            'successful_dribbles': 28,
-            'attempted_dribbles': 55,
-            'dribble_success_rate': 50.9,
+            'successful_dribbles': 13,
+            'attempted_dribbles': 44,
+            'dribble_success_rate': 29.5,
             'players_dribbled_past': None,
             'nutmegs': None,
-            'dribblers_tackled': 4,
-            'dribblers_contested': 17,
-            'tackle_percentage': 23.5,
-            'times_dribbled_past': 13
+            'dribblers_tackled': 1,
+            'dribblers_contested': 5,
+            'tackle_percentage': 20.0,
+            'times_dribbled_past': 4
         }
         self.keeper = {
             'name': 'Hugo Lloris',
             'player_id': '8f62b6ee',
             'nationality': 'France',
             'position': 'GK',
-            'age': 32,
-            'matches_played': 21,
-            'starts': 21,
-            'minutes': 1807,
+            'age': 35,
+            'matches_played': 15,
+            'starts': 15,
+            'minutes': 1350,
             'goals': 0,
             'assists': 0,
             'penalty_kicks': 0,
@@ -183,42 +185,41 @@ class TestFBRoster:
             'expected_goals_and_assists_non_penalty_per_90': 0.0,
             'own_goals': 0,
             'goals_against': 21,
-            'own_goals_against': 1,
-            'goals_against_per_90': 1.05,
-            'shots_on_target_against': 99,
-            'saves': 78,
-            'save_percentage': 80.8,
-            'wins': 11,
-            'draws': 6,
-            'losses': 3,
-            'clean_sheets': 6,
-            'clean_sheet_percentage': 28.6,
-            'penalty_kicks_attempted': 3,
-            'penalty_kicks_allowed': 2,
-            'penalty_kicks_saved': 1,
+            'own_goals_against': 0,
+            'goals_against_per_90': 1.4,
+            'shots_on_target_against': 66,
+            'saves': 45,
+            'save_percentage': 69.7,
+            'wins': 9,
+            'draws': 2,
+            'losses': 4,
+            'clean_sheets': 4,
+            'clean_sheet_percentage': 26.7,
+            'penalty_kicks_attempted': 1,
+            'penalty_kicks_allowed': 1,
+            'penalty_kicks_saved': 0,
             'penalty_kicks_missed': 0,
             'free_kick_goals_against': 0,
             'corner_kick_goals_against': 2,
-            'post_shot_expected_goals': 30.4,
-            'post_shot_expected_goals_per_shot': 0.28,
-            'post_shot_expected_goals_minus_allowed': 10.4,
-            'post_shot_expected_goals_minus_allowed_per_90': 0.52,
-            'launches_completed': 105,
-            'launches_attempted': 252,
-            'launch_completion_percentage': 41.7,
-            'keeper_passes_attempted': 421,
-            'throws_attempted': 97,
-            'launch_percentage': 42.0,
-            'average_keeper_pass_length': 35.3,
-            'goal_kicks_attempted': 150,
-            'goal_kick_launch_percentage': 50.0,
-            'average_goal_kick_length': 35.2,
-            'opponent_cross_attempts': 312,
-            'opponent_cross_stops': 16,
-            'opponent_cross_stop_percentage': 5.1,
-            'keeper_actions_outside_penalty_area': 8,
-            'keeper_actions_outside_penalty_area_per_90': 0.40,
-            'average_keeper_action_outside_penalty_distance': 10.2,
+            'post_shot_expected_goals': 18.1,
+            'post_shot_expected_goals_per_shot': 0.26,
+            'post_shot_expected_goals_minus_allowed': -2.9,
+            'launches_completed': 49,
+            'launches_attempted': 123,
+            'launch_completion_percentage': 39.8,
+            'keeper_passes_attempted': 323,
+            'throws_attempted': 65,
+            'launch_percentage': 30.3,
+            'average_keeper_pass_length': 31.1,
+            'goal_kicks_attempted': 119,
+            'goal_kick_launch_percentage': 21.0,
+            'average_goal_kick_length': 24.3,
+            'opponent_cross_attempts': 186,
+            'opponent_cross_stops': 12,
+            'opponent_cross_stop_percentage': 6.5,
+            'keeper_actions_outside_penalty_area': 20,
+            'keeper_actions_outside_penalty_area_per_90': 1.33,
+            'average_keeper_action_outside_penalty_distance': 14.4,
             'shots': 0,
             'shots_on_target': 0,
             'free_kick_shots': 0,
@@ -232,52 +233,52 @@ class TestFBRoster:
             'non_penalty_minus_expected_non_penalty': 0.0,
             'assists_minus_expected': 0.0,
             'key_passes': 0,
-            'passes_completed': 414,
-            'passes_attempted': 573,
-            'pass_completion': 72.3,
-            'short_passes_completed': 106,
-            'short_passes_attempted': 108,
-            'short_pass_completion': 98.1,
-            'medium_passes_completed': 153,
-            'medium_passes_attempted': 155,
-            'medium_pass_completion': 98.7,
-            'long_passes_completed': 149,
-            'long_passes_attempted': 302,
-            'long_pass_completion': 49.3,
+            'passes_completed': 356,
+            'passes_attempted': 444,
+            'pass_completion': 80.2,
+            'short_passes_completed': 108,
+            'short_passes_attempted': 110,
+            'short_pass_completion': 98.2,
+            'medium_passes_completed': 150,
+            'medium_passes_attempted': 150,
+            'medium_pass_completion': 100.0,
+            'long_passes_completed': 98,
+            'long_passes_attempted': 181,
+            'long_pass_completion': 54.1,
             'left_foot_passes': None,
             'right_foot_passes': None,
-            'free_kick_passes': 35,
+            'free_kick_passes': 9,
             'through_balls': 0,
             'corner_kicks': 0,
             'throw_ins': 0,
-            'final_third_passes': 5,
+            'final_third_passes': 7,
             'penalty_area_passes': 0,
             'penalty_area_crosses': 0,
-            'minutes_per_match': 86,
-            'minutes_played_percentage': 52.8,
-            'nineties_played': 20.1,
-            'minutes_per_start': 86,
+            'minutes_per_match': 90,
+            'minutes_played_percentage': 100.0,
+            'nineties_played': 15.0,
+            'minutes_per_start': 90,
             'subs': 0,
             'minutes_per_sub': None,
             'unused_sub': 0,
-            'points_per_match': 1.86,
-            'goals_scored_on_pitch': 36,
+            'points_per_match': 1.93,
+            'goals_scored_on_pitch': 31,
             'goals_against_on_pitch': 21,
-            'goal_difference_on_pitch': 15,
-            'goal_difference_on_pitch_per_90': 0.75,
-            'net_difference_on_pitch_per_90': 0.80,
-            'expected_goals_on_pitch': 24.2,
-            'expected_goals_against_on_pitch': 31.0,
-            'expected_goal_difference': -6.7,
-            'expected_goal_difference_per_90': -0.34,
-            'net_expected_goal_difference_per_90': -0.36,
+            'goal_difference_on_pitch': 10,
+            'goal_difference_on_pitch_per_90': 0.67,
+            'net_difference_on_pitch_per_90': None,
+            'expected_goals_on_pitch': 24.1,
+            'expected_goals_against_on_pitch': 16.5,
+            'expected_goal_difference': 7.6,
+            'expected_goal_difference_per_90': 0.5,
+            'net_expected_goal_difference_per_90': None,
             'soft_reds': 0,
             'fouls_committed': 0,
-            'fouls_drawn': 1,
+            'fouls_drawn': 2,
             'offsides': 0,
             'crosses': 0,
-            'tackles_won': 0,
-            'interceptions': 1,
+            'tackles_won': 1,
+            'interceptions': 0,
             'penalty_kicks_won': 0,
             'penalty_kicks_conceded': 0,
             'successful_dribbles': 0,
@@ -285,9 +286,9 @@ class TestFBRoster:
             'dribble_success_rate': None,
             'players_dribbled_past': None,
             'nutmegs': None,
-            'dribblers_tackled': 0,
-            'dribblers_contested': 0,
-            'tackle_percentage': None,
+            'dribblers_tackled': 1,
+            'dribblers_contested': 1,
+            'tackle_percentage': 100.0,
             'times_dribbled_past': 0
         }
 
@@ -343,40 +344,31 @@ class TestFBRoster:
         assert stats == {}
 
     def test_fb_roster_string_representation(self):
-        expected = """Toby Alderweireld (f7d50789)
-Serge Aurier (5c2b4f07)
+        expected = """Hugo Lloris (8f62b6ee)
 Harry Kane (21a66f6a)
-Son Heung-min (92e7e919)
-Moussa Sissoko (2acd49b9)
-Davinson Sánchez (da7b447d)
-Harry Winks (2f7acede)
-Lucas Moura (2b622f01)
-Dele Alli (cea4ee8f)
-Hugo Lloris (8f62b6ee)
-Jan Vertonghen (ba23a904)
-Paulo Gazzaniga (63d17038)
-Ben Davies (44781702)
-Giovani Lo Celso (d7553721)
 Eric Dier (ac861941)
-Érik Lamela (abe66106)
-Tanguy Ndombele (5cdddffa)
-Christian Eriksen (980522ec)
-Danny Rose (89d10e53)
-Steven Bergwijn (a29b1131)
-Japhet Tanganga (e9971f2d)
+Pierre Højbjerg (8b04d6c1)
+Rodrigo Bentancur (3b8674e6)
+Son Heung-min (92e7e919)
+Ben Davies (44781702)
+Emerson (df8b52a5)
+Ivan Perišić (6fe90922)
 Ryan Sessegnon (6aa3e78b)
-Kyle Walker-Peters (984a5a64)
+Cristian Romero (a3d94a58)
+Dejan Kulusevski (df3cda47)
+Clément Lenglet (4f28a6ff)
+Yves Bissouma (6c203af0)
+Davinson Sánchez (da7b447d)
+Richarlison (fa031b34)
+Matt Doherty (d557d734)
 Oliver Skipp (6250083a)
-Juan Foyth (6c7762c3)
-Gedson Fernandes (e2dde94c)
-Victor Wanyama (e0900238)
-Troy Parrott (4357f557)
-Georges-Kévin N'Koudou (76c131da)
-Brandon Austin (5e253986)
-Dennis Cirken (307ea3b6)
-Michel Vorm (1bebde9d)
-Harvey White (4d90ce8c)
-Alfie Whiteman (3f2587ee)"""
+Lucas Moura (2b622f01)
+Bryan (7b5ab7f2)
+Djed Spence (9bc9a519)
+Fraser Forster (c3e39f12)
+Pape Matar Sarr (feb5d972)
+Japhet Tanganga (e9971f2d)
+Harvey White (4d90ce8c)"""
         # repr encoded to deal with string equality bug with latin letters
 
         assert self.roster.__repr__() == expected

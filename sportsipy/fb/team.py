@@ -92,8 +92,8 @@ class Team:
         doc : PyQuery object
             A PyQuery object of the squad's entire HTML page.
         """
-        name = doc('h1[itemprop="name"]')
-        name = name('span').text()
+        name = doc('div#info')
+        name = name('span:first').text()
         # Name is in format "YYYY-YYYY Team Name Stats"
         # or "YYYY Team Name Stats"
         # ie. "2019-2020 Tottenham Hotspur Stats"
@@ -131,13 +131,13 @@ class Team:
         home_points, away_points = None, None
         records = record_line.lower().replace('home record: ', '')
         records = records.replace('away record: ', '')
-        match_records = re.findall(r'\(.*?\)', records)
+        match_records = re.findall(r'\d+-\d+-\d+', records)
         p = re.compile(r'[\(\)]')
         if len(match_records) == 2:
             home_record, away_record = [p.sub(' ', x).strip()
                                         for x in match_records]
         points = re.sub(r'\(.*?\)', '', records)
-        points = re.findall(r'\d+', points)
+        points = re.findall(r'\d+ ', points)
         if len(points) == 2:
             home_points, away_points = [int(p) for p in points]
         return home_record, away_record, home_points, away_points
@@ -196,6 +196,7 @@ class Team:
             Returns a ``tuple`` of the teams goals in the following format:
             (goals scored, goals against, goal difference).
         """
+
         goals = re.sub(r'\(.*?\)', '', goals_line.lower())
         goals = re.findall(r'\d+', goals)
         if len(goals) != 3:

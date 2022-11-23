@@ -616,7 +616,7 @@ class Schedule:
                 doc = utils._rate_limit_pq(SQUAD_URL % squad_id)
             except HTTPError:
                 return
-        schedule = utils._get_stats_table(doc, 'table#matchlogs_all')
+        schedule = utils._get_stats_table(doc, 'table#matchlogs_for')
 
         if not schedule:
             utils._no_data_found()
