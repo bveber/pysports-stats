@@ -13,7 +13,7 @@ class TestNCAABTeams:
             .should_receive('_pull_schedule') \
             .and_return(None)
 
-        team = Team(None, 1)
+        team = Team(None, team_conference='big-ten')
 
         assert len(team.schedule) == 0
 
@@ -25,7 +25,7 @@ class TestNCAABTeams:
             .should_receive('_pull_schedule') \
             .and_return(None)
 
-        team = Team(None, 1)
+        team = Team(None, team_conference='big-ten')
         mock_field_goals = PropertyMock(return_value=0)
         type(team).two_point_field_goals = mock_field_goals
         type(team).two_point_field_goal_attempts = mock_field_goals
@@ -42,7 +42,7 @@ class TestNCAABTeams:
             .should_receive('_pull_schedule') \
             .and_return(None)
 
-        team = Team(None, 1)
+        team = Team(None, team_conference='big-ten')
         mock_field_goals = PropertyMock(return_value=0)
         type(team).opp_two_point_field_goals = mock_field_goals
         type(team).opp_two_point_field_goal_attempts = mock_field_goals
@@ -59,7 +59,7 @@ class TestNCAABTeams:
             .should_receive('_pull_schedule') \
             .and_return(None)
 
-        team = Team(None, 1)
+        team = Team(None, team_conference='big-ten')
         mock_offensive_rebounds = PropertyMock(return_value=None)
         type(team).offensive_rebounds = mock_offensive_rebounds
 
@@ -75,7 +75,7 @@ class TestNCAABTeams:
             .should_receive('_pull_schedule') \
             .and_return(None)
 
-        team = Team(None, 1)
+        team = Team(None, team_conference='big-ten')
         mock_offensive_rebounds = PropertyMock(return_value=None)
         type(team).opp_offensive_rebounds = mock_offensive_rebounds
 
@@ -91,7 +91,7 @@ class TestNCAABTeams:
             .should_receive('_pull_schedule') \
             .and_return(None)
 
-        team = Team(None, 1)
+        team = Team(None, team_conference='big-ten')
         mock_offensive_rating = PropertyMock(return_value=None)
         type(team).offensive_rating = mock_offensive_rating
 

@@ -11,6 +11,7 @@ from ..utils import read_file
 
 
 YEAR = 2022
+TEAM = 'PURDUE'
 
 
 def mock_pyquery(url):
@@ -359,7 +360,7 @@ class TestNCAABRoster:
         flexmock(utils) \
             .should_receive('_find_year_for_season') \
             .and_return(YEAR)
-        roster = Roster('PURDUE')
+        roster = Roster(TEAM)
 
         assert len(roster.players) == 14
 
@@ -378,7 +379,7 @@ class TestNCAABRoster:
             .should_receive('_parse_team_data') \
             .and_return(None)
         team = Team(None, 1, YEAR)
-        mock_abbreviation = mock.PropertyMock(return_value='PURDUE')
+        mock_abbreviation = mock.PropertyMock(return_value=TEAM)
         type(team)._abbreviation = mock_abbreviation
 
         assert len(team.roster.players) == 14
@@ -393,7 +394,7 @@ class TestNCAABRoster:
         flexmock(utils) \
             .should_receive('_find_year_for_season') \
             .and_return(YEAR)
-        roster = Roster('PURDUE', slim=True)
+        roster = Roster(TEAM, slim=True)
 
         assert len(roster.players) == 14
         assert roster.players == {
@@ -433,10 +434,10 @@ None (jared-wulbrun-1)"""
         flexmock(utils) \
             .should_receive('_find_year_for_season') \
             .and_return(YEAR)
-        roster = Roster('PURDUE')
+        roster = Roster(TEAM)
 
         assert roster.__repr__() == expected
 
     @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_coach(self, *args, **kwargs):
-        assert "Matt Painter" == Roster('PURDUE', year=YEAR).coach
+        assert "Matt Painter" == Roster(TEAM, year=YEAR).coach
