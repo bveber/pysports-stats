@@ -7,7 +7,7 @@ from sports import utils
 from sports.ncaaf.conferences import Conferences
 from sports.ncaaf.constants import (OFFENSIVE_STATS_URL,
                                        DEFENSIVE_STATS_URL,
-                                       SEASON_PAGE_URL)
+                                       SEASON_PAGE_URL, CONFERENCE_DICT)
 from sports.ncaaf.teams import Team, Teams
 from ..utils import read_file
 
@@ -44,6 +44,26 @@ class MockDateTime:
     def __init__(self, year, month):
         self.year = year
         self.month = month
+
+@pytest.fixture(scope='session')
+@mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
+def teams(*args, **kwargs):
+
+    flexmock(utils) \
+    .should_receive('_todays_date') \
+    .and_return(MockDateTime(YEAR, MONTH))
+
+    return Teams(YEAR)
+
+@pytest.fixture(scope='session')
+@mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
+def team(*args, **kwargs):
+
+    flexmock(utils) \
+    .should_receive('_todays_date') \
+    .and_return(MockDateTime(YEAR, MONTH))
+
+    return Team(TEAM)
 
 
 class TestNCAAFIntegration:
@@ -240,169 +260,22 @@ class TestNCAAFIntegration:
             'Arkansas State'
         ]
 
-        team_conference = {
-            'michigan': 'big-ten',
-            'ohio-state': 'big-ten',
-            'michigan-state': 'big-ten',
-            'penn-state': 'big-ten',
-            'maryland': 'big-ten',
-            'rutgers': 'big-ten',
-            'indiana': 'big-ten',
-            'iowa': 'big-ten',
-            'minnesota': 'big-ten',
-            'purdue': 'big-ten',
-            'wisconsin': 'big-ten',
-            'illinois': 'big-ten',
-            'nebraska': 'big-ten',
-            'northwestern': 'big-ten',
-            'georgia': 'sec',
-            'kentucky': 'sec',
-            'tennessee': 'sec',
-            'south-carolina': 'sec',
-            'missouri': 'sec',
-            'florida': 'sec',
-            'vanderbilt': 'sec',
-            'alabama': 'sec',
-            'mississippi': 'sec',
-            'arkansas': 'sec',
-            'texas-am': 'sec',
-            'mississippi-state': 'sec',
-            'auburn': 'sec',
-            'louisiana-state': 'sec',
-            'baylor': 'big-12',
-            'oklahoma-state': 'big-12',
-            'oklahoma': 'big-12',
-            'iowa-state': 'big-12',
-            'kansas-state': 'big-12',
-            'west-virginia': 'big-12',
-            'texas-tech': 'big-12',
-            'texas': 'big-12',
-            'texas-christian': 'big-12',
-            'kansas': 'big-12',
-            'wake-forest': 'acc',
-            'clemson': 'acc',
-            'north-carolina-state': 'acc',
-            'louisville': 'acc',
-            'florida-state': 'acc',
-            'boston-college': 'acc',
-            'syracuse': 'acc',
-            'pittsburgh': 'acc',
-            'miami-fl': 'acc',
-            'virginia': 'acc',
-            'virginia-tech': 'acc',
-            'north-carolina': 'acc',
-            'georgia-tech': 'acc',
-            'duke': 'acc',
-            'oregon': 'pac-12',
-            'washington-state': 'pac-12',
-            'oregon-state': 'pac-12',
-            'california': 'pac-12',
-            'washington': 'pac-12',
-            'stanford': 'pac-12',
-            'utah': 'pac-12',
-            'ucla': 'pac-12',
-            'arizona-state': 'pac-12',
-            'colorado': 'pac-12',
-            'southern-california': 'pac-12',
-            'arizona': 'pac-12',
-            'cincinnati': 'american',
-            'houston': 'american',
-            'central-florida': 'american',
-            'east-carolina': 'american',
-            'tulsa': 'american',
-            'southern-methodist': 'american',
-            'memphis': 'american',
-            'navy': 'american',
-            'temple': 'american',
-            'south-florida': 'american',
-            'tulane': 'american',
-            'utah-state': 'mwc',
-            'air-force': 'mwc',
-            'boise-state': 'mwc',
-            'wyoming': 'mwc',
-            'colorado-state': 'mwc',
-            'new-mexico': 'mwc',
-            'san-diego-state': 'mwc',
-            'fresno-state': 'mwc',
-            'nevada': 'mwc',
-            'hawaii': 'mwc',
-            'san-jose-state': 'mwc',
-            'nevada-las-vegas': 'mwc',
-            'notre-dame': 'independent',
-            'new-mexico-state': 'independent',
-            'liberty': 'independent',
-            'massachusetts': 'independent',
-            'connecticut': 'independent',
-            'army': 'independent',
-            'brigham-young': 'independent',
-            'appalachian-state': 'sun-belt',
-            'coastal-carolina': 'sun-belt',
-            'georgia-state': 'sun-belt',
-            'troy': 'sun-belt',
-            'georgia-southern': 'sun-belt',
-            'louisiana-lafayette': 'sun-belt',
-            'texas-state': 'sun-belt',
-            'south-alabama': 'sun-belt',
-            'louisiana-monroe': 'sun-belt',
-            'arkansas-state': 'sun-belt',
-            'western-kentucky': 'cusa',
-            'marshall': 'cusa',
-            'old-dominion': 'cusa',
-            'middle-tennessee-state': 'cusa',
-            'charlotte': 'cusa',
-            'florida-atlantic': 'cusa',
-            'florida-international': 'cusa',
-            'texas-san-antonio': 'cusa',
-            'alabama-birmingham': 'cusa',
-            'north-texas': 'cusa',
-            'texas-el-paso': 'cusa',
-            'rice': 'cusa',
-            'louisiana-tech': 'cusa',
-            'southern-mississippi': 'cusa',
-            'kent-state': 'mac',
-            'miami-oh': 'mac',
-            'ohio': 'mac',
-            'bowling-green-state': 'mac',
-            'buffalo': 'mac',
-            'akron': 'mac',
-            'northern-illinois': 'mac',
-            'central-michigan': 'mac',
-            'toledo': 'mac',
-            'western-michigan': 'mac',
-            'eastern-michigan': 'mac',
-            'ball-state': 'mac'
-        }
-        self.team_conference = team_conference
+    def test_ncaaf_integration_returns_correct_number_of_teams(self, teams):
+        assert len(teams) == len(self.schools)
 
-        flexmock(utils) \
-            .should_receive('_todays_date') \
-            .and_return(MockDateTime(YEAR, MONTH))
-        flexmock(Conferences) \
-            .should_receive('_find_conferences') \
-            .and_return(None)
-        flexmock(Conferences) \
-            .should_receive('team_conference') \
-            .and_return(team_conference)
-
-        self.teams = Teams(YEAR)
-
-    def test_ncaaf_integration_returns_correct_number_of_teams(self):
-        assert len(self.teams) == len(self.schools)
-
-    def test_ncaaf_integration_returns_correct_attributes_for_team(self):
-        team = self.teams(TEAM)
+    def test_ncaaf_integration_returns_correct_attributes_for_team(self, teams):
+        team = teams(TEAM)
 
         for attribute, value in self.results.items():
             assert getattr(team, attribute) == value
 
-    def test_ncaaf_integration_returns_correct_team_abbreviations(self):
-        for team in self.teams:
+    def test_ncaaf_integration_returns_correct_team_abbreviations(self, teams):
+        for team in teams:
             assert team.name in self.schools
 
-    def test_ncaaf_integration_dataframe_returns_dataframe(self):
+    def test_ncaaf_integration_dataframe_returns_dataframe(self, team):
         df = pd.DataFrame([self.results], index=[TEAM])
 
-        team = self.teams(TEAM)
         # Pandas doesn't natively allow comparisons of DataFrames.
         # Concatenating the two DataFrames (the one generated during the test
         # and the expected one above) and dropping duplicate rows leaves only
@@ -414,15 +287,15 @@ class TestNCAAFIntegration:
 
         assert df1.empty
 
-    def test_ncaaf_integration_all_teams_dataframe_returns_dataframe(self):
-        result = self.teams.dataframes.drop_duplicates(keep=False)
+    def test_ncaaf_integration_all_teams_dataframe_returns_dataframe(self, teams):
+        result = teams.dataframes.drop_duplicates(keep=False)
 
         assert len(result) == len(self.schools)
         assert set(result.columns.values) == set(self.results.keys())
 
-    def test_ncaaf_invalid_team_name_raises_value_error(self):
+    def test_ncaaf_invalid_team_name_raises_value_error(self, teams):
         with pytest.raises(ValueError):
-            self.teams('INVALID_NAME')
+            teams('INVALID_NAME')
 
     @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_ncaaf_empty_page_returns_no_teams(self, *args, **kwargs):
@@ -438,20 +311,34 @@ class TestNCAAFIntegration:
         assert len(teams) == 0
 
     @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
-    def test_pulling_team_directly(self, *args, **kwargs):
-        purdue = Team('PURDUE')
+    def test_ncaab_no_conference_info_skips_team(self, *args, **kwargs):
+        flexmock(utils) \
+            .should_receive('_todays_date') \
+            .and_return(MockDateTime(YEAR, MONTH))
+        flexmock(Conferences) \
+            .should_receive('team_conference') \
+            .and_return({})
+        flexmock(Conferences) \
+            .should_receive('_find_conferences') \
+            .and_return(None)
+
+        teams = Teams(recompute_conferences=True)
+
+        assert len(teams) == 0
+
+    def test_use_conferences_from_constants(self, teams):
+        assert teams._conferences_dict == CONFERENCE_DICT
+
+    def test_pulling_team_directly(self, team):
 
         for attribute, value in self.results.items():
-            assert getattr(purdue, attribute) == value
+            assert getattr(team, attribute) == value
 
-    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
-    def test_team_string_representation(self, *args, **kwargs):
-        purdue = Team('PURDUE')
+    def test_team_string_representation(self, team):
 
-        assert purdue.__repr__() == 'Purdue (PURDUE) - 2021'
+        assert team.__repr__() == 'Purdue (PURDUE) - 2021'
 
-    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
-    def test_teams_string_representation(self, *args, **kwargs):
+    def test_teams_string_representation(self, teams):
         expected = """Wake Forest (WAKE-FOREST)
 Clemson (CLEMSON)
 North Carolina State (NORTH-CAROLINA-STATE)
@@ -583,150 +470,4 @@ South Alabama (SOUTH-ALABAMA)
 Louisiana-Monroe (LOUISIANA-MONROE)
 Arkansas State (ARKANSAS-STATE)"""
 
-        teams = Teams()
-
         assert teams.__repr__() == expected
-
-
-class TestNCAAFIntegrationInvalidConference:
-    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
-    @mock.patch('requests.head', side_effect=mock_request)
-    def test_invalid_conference_returns_none(self, *args, **kwargs):
-        team_conference = {
-            'georgia': 'sec',
-            'kentucky': 'sec',
-            'tennessee': 'sec',
-            'south-carolina': 'sec',
-            'missouri': 'sec',
-            'florida': 'sec',
-            'vanderbilt': 'sec',
-            'alabama': 'sec',
-            'mississippi': 'sec',
-            'arkansas': 'sec',
-            'texas-am': 'sec',
-            'mississippi-state': 'sec',
-            'auburn': 'sec',
-            'louisiana-state': 'sec',
-            'baylor': 'big-12',
-            'oklahoma-state': 'big-12',
-            'oklahoma': 'big-12',
-            'iowa-state': 'big-12',
-            'kansas-state': 'big-12',
-            'west-virginia': 'big-12',
-            'texas-tech': 'big-12',
-            'texas': 'big-12',
-            'texas-christian': 'big-12',
-            'kansas': 'big-12',
-            'wake-forest': 'acc',
-            'clemson': 'acc',
-            'north-carolina-state': 'acc',
-            'louisville': 'acc',
-            'florida-state': 'acc',
-            'boston-college': 'acc',
-            'syracuse': 'acc',
-            'pittsburgh': 'acc',
-            'miami-fl': 'acc',
-            'virginia': 'acc',
-            'virginia-tech': 'acc',
-            'north-carolina': 'acc',
-            'georgia-tech': 'acc',
-            'duke': 'acc',
-            'oregon': 'pac-12',
-            'washington-state': 'pac-12',
-            'oregon-state': 'pac-12',
-            'california': 'pac-12',
-            'washington': 'pac-12',
-            'stanford': 'pac-12',
-            'utah': 'pac-12',
-            'ucla': 'pac-12',
-            'arizona-state': 'pac-12',
-            'colorado': 'pac-12',
-            'southern-california': 'pac-12',
-            'arizona': 'pac-12',
-            'cincinnati': 'american',
-            'houston': 'american',
-            'central-florida': 'american',
-            'east-carolina': 'american',
-            'tulsa': 'american',
-            'southern-methodist': 'american',
-            'memphis': 'american',
-            'navy': 'american',
-            'temple': 'american',
-            'south-florida': 'american',
-            'tulane': 'american',
-            'utah-state': 'mwc',
-            'air-force': 'mwc',
-            'boise-state': 'mwc',
-            'wyoming': 'mwc',
-            'colorado-state': 'mwc',
-            'new-mexico': 'mwc',
-            'san-diego-state': 'mwc',
-            'fresno-state': 'mwc',
-            'nevada': 'mwc',
-            'hawaii': 'mwc',
-            'san-jose-state': 'mwc',
-            'nevada-las-vegas': 'mwc',
-            'notre-dame': 'independent',
-            'new-mexico-state': 'independent',
-            'liberty': 'independent',
-            'massachusetts': 'independent',
-            'connecticut': 'independent',
-            'army': 'independent',
-            'brigham-young': 'independent',
-            'appalachian-state': 'sun-belt',
-            'coastal-carolina': 'sun-belt',
-            'georgia-state': 'sun-belt',
-            'troy': 'sun-belt',
-            'georgia-southern': 'sun-belt',
-            'louisiana-lafayette': 'sun-belt',
-            'texas-state': 'sun-belt',
-            'south-alabama': 'sun-belt',
-            'louisiana-monroe': 'sun-belt',
-            'arkansas-state': 'sun-belt',
-            'western-kentucky': 'cusa',
-            'marshall': 'cusa',
-            'old-dominion': 'cusa',
-            'middle-tennessee-state': 'cusa',
-            'charlotte': 'cusa',
-            'florida-atlantic': 'cusa',
-            'florida-international': 'cusa',
-            'texas-san-antonio': 'cusa',
-            'alabama-birmingham': 'cusa',
-            'north-texas': 'cusa',
-            'texas-el-paso': 'cusa',
-            'rice': 'cusa',
-            'louisiana-tech': 'cusa',
-            'southern-mississippi': 'cusa',
-            'kent-state': 'mac',
-            'miami-oh': 'mac',
-            'ohio': 'mac',
-            'bowling-green-state': 'mac',
-            'buffalo': 'mac',
-            'akron': 'mac',
-            'northern-illinois': 'mac',
-            'central-michigan': 'mac',
-            'toledo': 'mac',
-            'western-michigan': 'mac',
-            'eastern-michigan': 'mac',
-            'ball-state': 'mac'
-        }
-
-        flexmock(utils) \
-            .should_receive('_todays_date') \
-            .and_return(MockDateTime(YEAR, MONTH))
-        flexmock(Conferences) \
-            .should_receive('_find_conferences') \
-            .and_return(None)
-        flexmock(Conferences) \
-            .should_receive('team_conference') \
-            .and_return(team_conference)
-
-        big_ten_schools = ['indiana', 'maryland', 'michigan-state',
-                           'ohio-state', 'penn-state', 'rutgers', 'michigan',
-                           'northwestern', 'purdue', 'illinois', 'iowa',
-                           'minnesota', 'wisconsin', 'nebraska']
-
-        teams = Teams()
-
-        for team in big_ten_schools:
-            assert teams(team).conference is None

@@ -8,13 +8,15 @@ from sports.ncaab.conferences import Conferences
 from sports.ncaab.constants import (ADVANCED_OPPONENT_STATS_URL,
                                        ADVANCED_STATS_URL,
                                        BASIC_OPPONENT_STATS_URL,
-                                       BASIC_STATS_URL)
+                                       BASIC_STATS_URL, CONFERENCE_URL, CONFERENCE_DICT)
 from sports.ncaab.teams import Team, Teams
 from ..utils import read_file
 
 
 MONTH = 1
 YEAR = 2022
+MOCK_CONFERENCE_DICT = {'purdue': 'big-ten'}
+TEAM = 'PURDUE'
 
 
 def mock_pyquery(url):
@@ -48,6 +50,25 @@ class MockDateTime:
     def __init__(self, year, month):
         self.year = year
         self.month = month
+
+@pytest.fixture(scope='session')
+@mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
+def teams(*args, **kwargs):
+    flexmock(utils) \
+    .should_receive('_todays_date') \
+    .and_return(MockDateTime(YEAR, MONTH))
+
+    return Teams(YEAR)
+
+@pytest.fixture(scope='session')
+@mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
+def team(*args, **kwargs):
+
+    flexmock(utils) \
+    .should_receive('_todays_date') \
+    .and_return(MockDateTime(YEAR, MONTH))
+
+    return Team(TEAM)
 
 
 class TestNCAABIntegration:
@@ -500,421 +521,44 @@ class TestNCAABIntegration:
             'YOUNGSTOWN-STATE'
         ]
 
-        team_conference = {
-            'auburn': 'sec',
-            'tennessee': 'sec',
-            'kentucky': 'sec',
-            'arkansas': 'sec',
-            'texas-am': 'sec',
-            'louisiana-state': 'sec',
-            'florida': 'sec',
-            'south-carolina': 'sec',
-            'alabama': 'sec',
-            'mississippi-state': 'sec',
-            'vanderbilt': 'sec',
-            'missouri': 'sec',
-            'mississippi': 'sec',
-            'georgia': 'sec',
-            'wisconsin': 'big-ten',
-            'illinois': 'big-ten',
-            'purdue': 'big-ten',
-            'iowa': 'big-ten',
-            'ohio-state': 'big-ten',
-            'rutgers': 'big-ten',
-            'michigan-state': 'big-ten',
-            'michigan': 'big-ten',
-            'indiana': 'big-ten',
-            'northwestern': 'big-ten',
-            'maryland': 'big-ten',
-            'penn-state': 'big-ten',
-            'minnesota': 'big-ten',
-            'nebraska': 'big-ten',
-            'davidson': 'atlantic-10',
-            'virginia-commonwealth': 'atlantic-10',
-            'dayton': 'atlantic-10',
-            'st-bonaventure': 'atlantic-10',
-            'saint-louis': 'atlantic-10',
-            'richmond': 'atlantic-10',
-            'george-washington': 'atlantic-10',
-            'fordham': 'atlantic-10',
-            'george-mason': 'atlantic-10',
-            'massachusetts': 'atlantic-10',
-            'rhode-island': 'atlantic-10',
-            'la-salle': 'atlantic-10',
-            'saint-josephs': 'atlantic-10',
-            'duquesne': 'atlantic-10',
-            'kansas': 'big-12',
-            'baylor': 'big-12',
-            'texas-tech': 'big-12',
-            'texas': 'big-12',
-            'texas-christian': 'big-12',
-            'oklahoma-state': 'big-12',
-            'iowa-state': 'big-12',
-            'oklahoma': 'big-12',
-            'kansas-state': 'big-12',
-            'west-virginia': 'big-12',
-            'duke': 'acc',
-            'north-carolina': 'acc',
-            'notre-dame': 'acc',
-            'miami-fl': 'acc',
-            'wake-forest': 'acc',
-            'virginia': 'acc',
-            'virginia-tech': 'acc',
-            'florida-state': 'acc',
-            'syracuse': 'acc',
-            'clemson': 'acc',
-            'louisville': 'acc',
-            'boston-college': 'acc',
-            'pittsburgh': 'acc',
-            'georgia-tech': 'acc',
-            'north-carolina-state': 'acc',
-            'gonzaga': 'wcc',
-            'saint-marys-ca': 'wcc',
-            'santa-clara': 'wcc',
-            'san-francisco': 'wcc',
-            'brigham-young': 'wcc',
-            'portland': 'wcc',
-            'san-diego': 'wcc',
-            'pacific': 'wcc',
-            'loyola-marymount': 'wcc',
-            'pepperdine': 'wcc',
-            'arizona': 'pac-12',
-            'ucla': 'pac-12',
-            'southern-california': 'pac-12',
-            'colorado': 'pac-12',
-            'washington-state': 'pac-12',
-            'oregon': 'pac-12',
-            'washington': 'pac-12',
-            'arizona-state': 'pac-12',
-            'stanford': 'pac-12',
-            'california': 'pac-12',
-            'utah': 'pac-12',
-            'oregon-state': 'pac-12',
-            'northern-iowa': 'mvc',
-            'loyola-il': 'mvc',
-            'drake': 'mvc',
-            'missouri-state': 'mvc',
-            'bradley': 'mvc',
-            'southern-illinois': 'mvc',
-            'valparaiso': 'mvc',
-            'illinois-state': 'mvc',
-            'indiana-state': 'mvc',
-            'evansville': 'mvc',
-            'chattanooga': 'southern',
-            'furman': 'southern',
-            'samford': 'southern',
-            'wofford': 'southern',
-            'north-carolina-greensboro': 'southern',
-            'virginia-military-institute': 'southern',
-            'mercer': 'southern',
-            'east-tennessee-state': 'southern',
-            'citadel': 'southern',
-            'western-carolina': 'southern',
-            'iona': 'maac',
-            'saint-peters': 'maac',
-            'siena': 'maac',
-            'monmouth': 'maac',
-            'marist': 'maac',
-            'niagara': 'maac',
-            'manhattan': 'maac',
-            'fairfield': 'maac',
-            'rider': 'maac',
-            'quinnipiac': 'maac',
-            'canisius': 'maac',
-            'seattle': 'wac',
-            'stephen-f-austin': 'wac',
-            'new-mexico-state': 'wac',
-            'sam-houston-state': 'wac',
-            'grand-canyon': 'wac',
-            'abilene-christian': 'wac',
-            'utah-valley': 'wac',
-            'tarleton-state': 'wac',
-            'california-baptist': 'wac',
-            'dixie-state': 'wac',
-            'texas-pan-american': 'wac',
-            'chicago-state': 'wac',
-            'lamar': 'wac',
-            'liberty': 'atlantic-sun',
-            'jacksonville': 'atlantic-sun',
-            'florida-gulf-coast': 'atlantic-sun',
-            'kennesaw-state': 'atlantic-sun',
-            'north-florida': 'atlantic-sun',
-            'stetson': 'atlantic-sun',
-            'jacksonville-state': 'atlantic-sun',
-            'bellarmine': 'atlantic-sun',
-            'central-arkansas': 'atlantic-sun',
-            'lipscomb': 'atlantic-sun',
-            'eastern-kentucky': 'atlantic-sun',
-            'north-alabama': 'atlantic-sun',
-            'providence': 'big-east',
-            'villanova': 'big-east',
-            'connecticut': 'big-east',
-            'creighton': 'big-east',
-            'seton-hall': 'big-east',
-            'marquette': 'big-east',
-            'xavier': 'big-east',
-            'st-johns-ny': 'big-east',
-            'depaul': 'big-east',
-            'butler': 'big-east',
-            'georgetown': 'big-east',
-            'houston': 'aac',
-            'southern-methodist': 'aac',
-            'memphis': 'aac',
-            'temple': 'aac',
-            'tulane': 'aac',
-            'central-florida': 'aac',
-            'wichita-state': 'aac',
-            'cincinnati': 'aac',
-            'east-carolina': 'aac',
-            'tulsa': 'aac',
-            'south-florida': 'aac',
-            'north-carolina-wilmington': 'colonial',
-            'towson': 'colonial',
-            'hofstra': 'colonial',
-            'delaware': 'colonial',
-            'drexel': 'colonial',
-            'college-of-charleston': 'colonial',
-            'elon': 'colonial',
-            'james-madison': 'colonial',
-            'william-mary': 'colonial',
-            'northeastern': 'colonial',
-            'long-beach-state': 'big-west',
-            'cal-state-fullerton': 'big-west',
-            'hawaii': 'big-west',
-            'california-irvine': 'big-west',
-            'california-santa-barbara': 'big-west',
-            'california-riverside': 'big-west',
-            'california-davis': 'big-west',
-            'california-san-diego': 'big-west',
-            'cal-poly': 'big-west',
-            'cal-state-northridge': 'big-west',
-            'cal-state-bakersfield': 'big-west',
-            'princeton': 'ivy',
-            'yale': 'ivy',
-            'pennsylvania': 'ivy',
-            'cornell': 'ivy',
-            'dartmouth': 'ivy',
-            'harvard': 'ivy',
-            'brown': 'ivy',
-            'columbia': 'ivy',
-            'south-dakota-state': 'summit',
-            'north-dakota-state': 'summit',
-            'missouri-kansas-city': 'summit',
-            'oral-roberts': 'summit',
-            'south-dakota': 'summit',
-            'western-illinois': 'summit',
-            'denver': 'summit',
-            'st-thomas-mn': 'summit',
-            'nebraska-omaha': 'summit',
-            'north-dakota': 'summit',
-            'montana-state': 'big-sky',
-            'southern-utah': 'big-sky',
-            'weber-state': 'big-sky',
-            'northern-colorado': 'big-sky',
-            'montana': 'big-sky',
-            'eastern-washington': 'big-sky',
-            'portland-state': 'big-sky',
-            'sacramento-state': 'big-sky',
-            'idaho': 'big-sky',
-            'northern-arizona': 'big-sky',
-            'idaho-state': 'big-sky',
-            'texas-state': 'sun-belt',
-            'appalachian-state': 'sun-belt',
-            'georgia-state': 'sun-belt',
-            'troy': 'sun-belt',
-            'south-alabama': 'sun-belt',
-            'arkansas-state': 'sun-belt',
-            'coastal-carolina': 'sun-belt',
-            'louisiana-lafayette': 'sun-belt',
-            'texas-arlington': 'sun-belt',
-            'georgia-southern': 'sun-belt',
-            'louisiana-monroe': 'sun-belt',
-            'arkansas-little-rock': 'sun-belt',
-            'alcorn-state': 'swac',
-            'texas-southern': 'swac',
-            'southern': 'swac',
-            'florida-am': 'swac',
-            'alabama-am': 'swac',
-            'jackson-state': 'swac',
-            'prairie-view': 'swac',
-            'grambling': 'swac',
-            'alabama-state': 'swac',
-            'bethune-cookman': 'swac',
-            'arkansas-pine-bluff': 'swac',
-            'mississippi-valley-state': 'swac',
-            'middle-tennessee': 'cusa',
-            'western-kentucky': 'cusa',
-            'florida-atlantic': 'cusa',
-            'charlotte': 'cusa',
-            'old-dominion': 'cusa',
-            'florida-international': 'cusa',
-            'marshall': 'cusa',
-            'north-texas': 'cusa',
-            'alabama-birmingham': 'cusa',
-            'louisiana-tech': 'cusa',
-            'texas-el-paso': 'cusa',
-            'rice': 'cusa',
-            'texas-san-antonio': 'cusa',
-            'southern-mississippi': 'cusa',
-            'boise-state': 'mwc',
-            'colorado-state': 'mwc',
-            'san-diego-state': 'mwc',
-            'wyoming': 'mwc',
-            'nevada-las-vegas': 'mwc',
-            'fresno-state': 'mwc',
-            'utah-state': 'mwc',
-            'nevada': 'mwc',
-            'new-mexico': 'mwc',
-            'air-force': 'mwc',
-            'san-jose-state': 'mwc',
-            'toledo': 'mac',
-            'kent-state': 'mac',
-            'ohio': 'mac',
-            'akron': 'mac',
-            'ball-state': 'mac',
-            'central-michigan': 'mac',
-            'buffalo': 'mac',
-            'northern-illinois': 'mac',
-            'miami-oh': 'mac',
-            'eastern-michigan': 'mac',
-            'bowling-green-state': 'mac',
-            'western-michigan': 'mac',
-            'murray-state': 'ovc',
-            'belmont': 'ovc',
-            'morehead-state': 'ovc',
-            'southeast-missouri-state': 'ovc',
-            'tennessee-state': 'ovc',
-            'austin-peay': 'ovc',
-            'tennessee-tech': 'ovc',
-            'southern-illinois-edwardsville': 'ovc',
-            'tennessee-martin': 'ovc',
-            'eastern-illinois': 'ovc',
-            'cleveland-state': 'horizon',
-            'ipfw': 'horizon',
-            'northern-kentucky': 'horizon',
-            'wright-state': 'horizon',
-            'oakland': 'horizon',
-            'detroit-mercy': 'horizon',
-            'youngstown-state': 'horizon',
-            'illinois-chicago': 'horizon',
-            'milwaukee': 'horizon',
-            'robert-morris': 'horizon',
-            'green-bay': 'horizon',
-            'iupui': 'horizon',
-            'norfolk-state': 'meac',
-            'howard': 'meac',
-            'north-carolina-central': 'meac',
-            'morgan-state': 'meac',
-            'south-carolina-state': 'meac',
-            'maryland-eastern-shore': 'meac',
-            'coppin-state': 'meac',
-            'delaware-state': 'meac',
-            'bryant': 'northeast',
-            'wagner': 'northeast',
-            'long-island-university': 'northeast',
-            'mount-st-marys': 'northeast',
-            'merrimack': 'northeast',
-            'st-francis-ny': 'northeast',
-            'sacred-heart': 'northeast',
-            'saint-francis-pa': 'northeast',
-            'fairleigh-dickinson': 'northeast',
-            'central-connecticut-state': 'northeast',
-            'colgate': 'patriot',
-            'navy': 'patriot',
-            'boston-university': 'patriot',
-            'lehigh': 'patriot',
-            'army': 'patriot',
-            'loyola-md': 'patriot',
-            'lafayette': 'patriot',
-            'holy-cross': 'patriot',
-            'american': 'patriot',
-            'bucknell': 'patriot',
-            'nicholls-state': 'southland',
-            'new-orleans': 'southland',
-            'southeastern-louisiana': 'southland',
-            'texas-am-corpus-christi': 'southland',
-            'houston-baptist': 'southland',
-            'northwestern-state': 'southland',
-            'mcneese-state': 'southland',
-            'incarnate-word': 'southland',
-            'longwood': 'big-south',
-            'campbell': 'big-south',
-            'high-point': 'big-south',
-            'radford': 'big-south',
-            'north-carolina-at': 'big-south',
-            'hampton': 'big-south',
-            'winthrop': 'big-south',
-            'gardner-webb': 'big-south',
-            'south-carolina-upstate': 'big-south',
-            'north-carolina-asheville': 'big-south',
-            'presbyterian': 'big-south',
-            'charleston-southern': 'big-south',
-            'vermont': 'america-east',
-            'maryland-baltimore-county': 'america-east',
-            'stony-brook': 'america-east',
-            'new-hampshire': 'america-east',
-            'albany-ny': 'america-east',
-            'hartford': 'america-east',
-            'binghamton': 'america-east',
-            'massachusetts-lowell': 'america-east',
-            'njit': 'america-east',
-            'maine': 'america-east'
-        }
-        flexmock(utils) \
-            .should_receive('_todays_date') \
-            .and_return(MockDateTime(YEAR, MONTH))
 
-        flexmock(Conferences) \
-            .should_receive('_find_conferences') \
-            .and_return(None)
-        flexmock(Conferences) \
-            .should_receive('team_conference') \
-            .and_return(team_conference)
+    def test_ncaab_integration_returns_correct_number_of_teams(self, teams):
+        assert len(teams) == len(self.abbreviations)
 
-        self.teams = Teams(YEAR)
-
-    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
-    def test_ncaab_integration_returns_correct_number_of_teams(self, *args, **kwargs):
-        assert len(self.teams) == len(self.abbreviations)
-
-    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
-    def test_ncaab_integration_returns_correct_attributes_for_team(self, *args, **kwargs):
-        purdue = self.teams('PURDUE')
+    def test_ncaab_integration_returns_correct_attributes_for_team(self, teams):
+        team = teams(TEAM)
 
         for attribute, value in self.results.items():
-            assert getattr(purdue, attribute) == value
+            assert getattr(team, attribute) == value
 
-    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
-    def test_ncaab_integration_returns_correct_team_abbreviations(self, *args, **kwargs):
-        for team in self.teams:
+    def test_ncaab_integration_returns_correct_team_abbreviations(self, teams):
+        for team in teams:
             assert team.abbreviation in self.abbreviations
 
-    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
-    def test_ncaab_integration_dataframe_returns_dataframe(self, *args, **kwargs):
-        df = pd.DataFrame([self.results], index=['PURDUE'])
+    def test_ncaab_integration_dataframe_returns_dataframe(self, teams):
+        df = pd.DataFrame([self.results], index=[TEAM])
 
-        purdue = self.teams('PURDUE')
+        team = teams(TEAM)
         # Pandas doesn't natively allow comparisons of DataFrames.
         # Concatenating the two DataFrames (the one generated during the test
         # and the expected one above) and dropping duplicate rows leaves only
         # the rows that are unique between the two frames. This allows a quick
         # check of the DataFrame to see if it is empty - if so, all rows are
         # duplicates, and they are equal.
-        frames = [df, purdue.dataframe]
+        frames = [df, team.dataframe]
         df1 = pd.concat(frames).drop_duplicates(keep=False)
 
         assert df1.empty
 
-    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
-    def test_ncaab_integration_all_teams_dataframe_returns_dataframe(self, *args, **kwargs):
-        result = self.teams.dataframes.drop_duplicates(keep=False)
+    def test_ncaab_integration_all_teams_dataframe_returns_dataframe(self, teams):
+        result = teams.dataframes.drop_duplicates(keep=False)
 
         assert len(result) == len(self.abbreviations)
         assert set(result.columns.values) == set(self.results.keys())
 
-    def test_ncaab_invalid_team_name_raises_value_error(self):
+    def test_ncaab_invalid_team_name_raises_value_error(self, teams):
         with pytest.raises(ValueError):
-            self.teams('INVALID_NAME')
+            teams('INVALID_NAME')
 
     @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_ncaab_empty_page_returns_no_teams(self, *args, **kwargs):
@@ -941,25 +585,23 @@ class TestNCAABIntegration:
             .should_receive('_find_conferences') \
             .and_return(None)
 
-        teams = Teams()
+        teams = Teams(recompute_conferences=True)
 
         assert len(teams) == 0
 
-    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
-    def test_pulling_team_directly(self, *args, **kwargs):
-        purdue = Team('PURDUE')
+    def test_use_conferences_from_constants(self, teams):
+        assert teams._conferences_dict == CONFERENCE_DICT
+
+    def test_pulling_team_directly(self, team):
 
         for attribute, value in self.results.items():
-            assert getattr(purdue, attribute) == value
+            assert getattr(team, attribute) == value
 
-    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
-    def test_team_string_representation(self, *args, **kwargs):
-        purdue = Team('PURDUE')
+    def test_team_string_representation(self, team):
 
-        assert purdue.__repr__() == 'Purdue (PURDUE) - 2022'
+        assert team.__repr__() == 'Purdue (PURDUE) - 2022'
 
-    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
-    def test_teams_string_representation(self, *args, **kwargs):
+    def test_teams_string_representation(self, teams):
         expected = """Abilene Christian (ABILENE-CHRISTIAN)
 Air Force (AIR-FORCE)
 Akron (AKRON)
@@ -1318,7 +960,5 @@ Wyoming (WYOMING)
 Xavier (XAVIER)
 Yale (YALE)
 Youngstown State (YOUNGSTOWN-STATE)"""
-
-        teams = Teams()
 
         assert teams.__repr__() == expected

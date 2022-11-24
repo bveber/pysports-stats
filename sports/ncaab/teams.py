@@ -1,6 +1,6 @@
 import pandas as pd
 import re
-from .constants import PARSING_SCHEME
+from .constants import PARSING_SCHEME, CONFERENCE_DICT
 from ..decorators import float_property_decorator, int_property_decorator
 from .. import utils
 from .conferences import Conferences
@@ -51,7 +51,7 @@ class Team:
     """
     def __init__(self, team_name=None, team_data=None, team_conference=None,
                  year=None, basic_stats=None, basic_opp_stats=None,
-                 adv_stats=None, adv_opp_stats=None):
+                 adv_stats=None, adv_opp_stats=None, recompute_conferences=False):
         self._team_conference = team_conference
         self._year = year
         self._abbreviation = None
@@ -141,8 +141,15 @@ class Team:
             team_data = self._retrieve_team_data(year, team_name, basic_stats,
                                                  basic_opp_stats, adv_stats,
                                                  adv_opp_stats)
+        if team_conference:
+            self._team_conference = team_conference
+        elif recompute_conferences:
             conferences_dict = Conferences(year).team_conference
             self._team_conference = conferences_dict[team_name.lower()]
+        else:
+            conferences_dict = CONFERENCE_DICT
+            self._team_conference = conferences_dict[team_name.lower()]
+            
         self._parse_team_data(team_data)
 
     def __str__(self):
@@ -1093,9 +1100,12 @@ class Teams:
         be of the Advanced Opponent Stats page for the designated year.
     """
     def __init__(self, year=None, basic_stats=None, basic_opp_stats=None,
-                 adv_stats=None, adv_opp_stats=None):
+                 adv_stats=None, adv_opp_stats=None, recompute_conferences=False):
         self._teams = []
-        self._conferences_dict = Conferences(year).team_conference
+        if recompute_conferences:
+            self._conferences_dict = Conferences(year).team_conference
+        else:
+            self._conferences_dict = CONFERENCE_DICT
 
         team_data_dict, year = _retrieve_all_teams(year, basic_stats,
                                                    basic_opp_stats, adv_stats,
