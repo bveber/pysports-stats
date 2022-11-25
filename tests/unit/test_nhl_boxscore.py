@@ -33,7 +33,7 @@ class MockName:
         return self._name
 
 
-def mock_pyquery(url):
+def mock_pyquery(url, *args, **kwargs):
     class MockPQ:
         def __init__(self, html_contents):
             self.status_code = 404

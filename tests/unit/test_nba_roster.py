@@ -18,7 +18,7 @@ class MockInfo:
         return [MockItem()]
 
 
-def mock_pyquery(url):
+def mock_pyquery(url, *args, **kwargs):
     class MockPQ:
         def __init__(self, html_contents):
             self.url = url
