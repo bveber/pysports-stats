@@ -1,6 +1,6 @@
 import pandas as pd
 import re
-from .constants import PARSING_SCHEME
+from .constants import PARSING_SCHEME, CONFERENCE_DICT
 from ..decorators import float_property_decorator, int_property_decorator
 from .. import utils
 from .conferences import Conferences
@@ -47,7 +47,7 @@ class Team:
     """
     def __init__(self, team_name=None, team_data=None, team_conference=None,
                  year=None, season_page=None, offensive_stats=None,
-                 defensive_stats=None):
+                 defensive_stats=None, recompute_conferences=False):
         self._team_conference = team_conference
         self._year = year
         self._abbreviation = None
@@ -110,8 +110,15 @@ class Team:
             team_data = self._retrieve_team_data(year, team_name, season_page,
                                                  offensive_stats,
                                                  defensive_stats)
+        if team_conference:
+            self._team_conference = team_conference
+        elif recompute_conferences:
             conferences_dict = Conferences(year).team_conference
             self._team_conference = conferences_dict[team_name.lower()]
+        else:
+            conferences_dict = CONFERENCE_DICT
+            self._team_conference = conferences_dict[team_name.lower()]
+                    
         self._parse_team_data(team_data)
 
     def __str__(self):
@@ -756,9 +763,13 @@ class Teams:
         of the Defensive Stats page for the designated year.
     """
     def __init__(self, year=None, season_page=None, offensive_stats=None,
-                 defensive_stats=None):
+                 defensive_stats=None, recompute_conferences=False):
         self._teams = []
-        self._conferences_dict = Conferences(year, True).team_conference
+        if recompute_conferences:
+            self._conferences_dict = Conferences(year).team_conference
+        else:
+            self._conferences_dict = CONFERENCE_DICT
+        # self._conferences_dict = Conferences(year, True).team_conference
 
         team_data_dict, year = _retrieve_all_teams(year, season_page,
                                                    offensive_stats,
@@ -854,8 +865,11 @@ class Teams:
         if not team_data_dict:
             return
         for team_name, team_data in team_data_dict.items():
+            # Skip any teams that don't have a valid team page, which is likely
+            # any school that doesn't compete in D-I, but is still in the stats
+            # list.
             if team_name.lower() not in self._conferences_dict:
-                conference = None
+                continue
             else:
                 conference = self._conferences_dict[team_name.lower()]
             team = Team(team_data=team_data['data'],

@@ -10,7 +10,7 @@ class TestNCAAFTeams:
             .should_receive('_parse_team_data') \
             .and_return(None)
 
-        self.team = Team(None)
+        self.team = Team(None, team_conference='big-ten')
 
     def test_no_conference_wins_data_returns_default(self):
         fake_conference_wins = PropertyMock(return_value='')
@@ -35,6 +35,6 @@ class TestNCAAFTeams:
             .should_receive('_pull_schedule') \
             .and_return(None)
 
-        team = Team(None, 1)
+        team = Team(None, team_conference='big-ten')
 
         assert len(team.schedule) == 0

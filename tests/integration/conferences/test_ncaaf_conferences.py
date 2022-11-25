@@ -173,9 +173,9 @@ class TestNCAAFConferences:
         assert len(conference._teams) == 14
 
     @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
-    @mock.patch('requests.head', side_effect=mock_request)
-    def test_invalid_conference_page_skips_error(self, *args, **kwargs):
-        conference = Conference('BAD', ignore_missing=True)
+    def test_conference_integration_bad_url(self, *args, **kwargs):
+        with pytest.raises(ValueError):
+            conference = Conference('BAD')
 
     @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_conferences_string_representation(self, *args, **kwargs):
