@@ -273,9 +273,18 @@ queried to easily grab all stats for all games.
         # a season.
         df = team.schedule.dataframe_extended
 
-Lastly, each Team instance also contains a link to the ``Roster`` class which
+Each Team instance also contains a link to the ``Roster`` class which
 enables players from the team to be easily queried. Each Roster instance
 contains detailed stats and information for each player on the team.
+
+Occassionaly a Division-I team plays against a small school without any available data.
+In order to remove teams without a valid team page, the team name is validated against
+a list of teams who belong to valid Division-I coferences. By default, the team names are
+validated against a constant list in ncaaf/constants.py and the plan is to create a new
+release whenever that list changes, however if you notice an issue with missing teams you can
+use the parameter ``recompute_conferences`` to dynamically generate the list with the most
+up to date information. However, this will require several requests to the source page
+resulting in slower than normal performance.
 
 .. code-block:: python
 
