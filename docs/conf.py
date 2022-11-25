@@ -20,13 +20,13 @@ sys.path.insert(0, u'../')
 # -- Project information -----------------------------------------------------
 
 project = u'sports'
-copyright = u'2018, Robert Clark'
-author = u'Robert Clark'
+copyright = u'2023, Brandon Veber'
+author = u'Brandon Veber'
 
 # The short X.Y version
-version = u'0.1'
+version = u'0.0'
 # The full version, including alpha/beta/rc tags
-release = u'0.1.0'
+release = u'0.0.0'
 
 
 # -- General configuration ---------------------------------------------------

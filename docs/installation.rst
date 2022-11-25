@@ -17,7 +17,7 @@ installed and can begin using it following the examples!
 If the bleeding-edge version of `sports` is desired, clone this
 repository using git and install all of the package requirements with PIP::
 
-    git clone https://github.com/roclark/sports
+    git clone https://github.com/bveber/pysports-stats
     cd sports
     pip install -r requirements.txt
 
