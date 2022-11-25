@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "pysports-stats"
+version = "0.1.0"
+description = "A free sports API written for python"
+authors = ["Brandon Veber"]
+license = "MIT"
+readme = "README.rst"
+packages = [{include = "sports"}]
+classifiers=[
+    'Programming Language :: Python :: 3.8',
+    'Programming Language :: Python :: 3.9',
+    'License :: OSI Approved :: MIT License',
+    'Operating System :: POSIX :: Linux',
+]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+numpy = "^1.21.3"
+pandas = ">=0.24.1"
+pyquery = ">=1.4.0"
+requests = ">=2.18.4"
+
+[tool.poetry.group.dev.dependencies]
+flexmock = ">=0.11.3"
+mock = ">=4.0.3"
+pytest = ">= 7.2.0"
+pytest-xdist = ">=3.0.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

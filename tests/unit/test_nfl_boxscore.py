@@ -40,7 +40,7 @@ def read_file(filename):
     return open(filepath, 'r').read()
 
 
-def mock_pyquery(url, status_code=404):
+def mock_pyquery(url, status_code=404, *args, **kwargs):
     class MockPQ:
         def __init__(self, html_contents, status_code=404):
             self.url = url

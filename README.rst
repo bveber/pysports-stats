@@ -4,8 +4,8 @@ sports: A free sports API written for python
 opening a pull request for any new features or bug fixes to be reviewed and
 merged.**
 
-.. image:: https://github.com/roclark/sports/workflows/sports%20push%20tests/badge.svg
-    :target: https://github.com/roclark/sports/actions
+.. image:: https://github.com/bveber/sports/workflows/sports%20push%20tests/badge.svg
+    :target: https://github.com/bveber/sports/actions
 .. image:: https://readthedocs.org/projects/sports/badge/?version=latest
     :target: https://sports.readthedocs.io/en/latest/?badge=latest
     :alt: Documentation Status
@@ -60,7 +60,7 @@ repository using git and install all of the package requirements with PIP::
 
     git clone https://github.com/bveber/pysports-stats
     cd pysports-stats
-    pip install -r requirements.txt
+    poetry install
 
 Once complete, create a Python wheel for your default version of Python by
 running the following command::
@@ -186,7 +186,7 @@ framework::
 If the tests were successful, it will return a green line will show a message at
 the end of the output similar to the following::
 
-    ======================= 750 passed in 245.56 seconds =======================
+    ======================= 751 passed, 72 warnings in 110.67 seconds =======================
 
 If a test failed, it will show the number of failed and what went wrong within
 the test output. If that's the case, ensure you have the latest version of code

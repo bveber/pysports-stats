@@ -51,7 +51,7 @@ class MockHtml:
         return Html(self.html_string, self.item_list)
 
 
-def mock_pyquery(url):
+def mock_pyquery(url, *args, **kwargs):
     class MockPQ:
         def __init__(self, html_contents, status_code=200):
             self.status_code = status_code
@@ -308,7 +308,7 @@ class TestUtils:
             utils._pull_page()
 
     def test_pulling_local_file(self, *args, **kwargs):
-        output = utils._pull_page(local_file='VERSION')
+        output = utils._pull_page(local_file='README.rst')
 
         assert output
 
