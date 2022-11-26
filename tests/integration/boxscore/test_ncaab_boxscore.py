@@ -661,7 +661,12 @@ class TestNCAABBoxscores:
     @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_ncaab_boxscore_dataframe_returns_dataframe_of_all_values(self, *args, **kwargs):
         result = Boxscores(datetime(2020, 1, 5))
-        df = pd.DataFrame(list(self.expected.values())[0])
+        day_games = []
+        for k, v in result.games.items():
+            for game in v:
+                game['date'] = pd.to_datetime(k)
+                day_games.append(game)
+        df = pd.DataFrame(day_games)
 
         # Pandas doesn't natively allow comparisons of DataFrames.
         # Concatenating the two DataFrames (the one generated during the test

@@ -2022,6 +2022,7 @@ class Boxscores:
         """
         fields_to_include = [
             'boxscore',
+            'date',
             'away_name',
             'away_abbr',
             'away_score',
@@ -2037,4 +2038,9 @@ class Boxscores:
             'losing_name',
             'losing_abbr'
         ]
-        return pd.DataFrame(list(self.games.values())[0])
+        day_games = []
+        for k, v in self.games.items():
+            for game in v:
+                game['date'] = pd.to_datetime(k)
+                day_games.append(game)
+        return pd.DataFrame(day_games)[fields_to_include]
