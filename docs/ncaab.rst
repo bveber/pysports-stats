@@ -36,6 +36,7 @@ abbreviations for each matchup as well as the boxscore link if applicable.
 
     games_today = Boxscores(datetime.today())
     print(games_today.games)  # Prints a dictionary of all matchups for today
+    games_today.dataframe # Returns a Pandas DataFrame of simple boxscore details for every game
 
 The ``Boxscores`` class also allows the ability to query over a range of dates
 using a second optional parameter during instantiation of the class. To query a
