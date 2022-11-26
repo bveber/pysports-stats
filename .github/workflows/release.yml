@@ -59,6 +59,9 @@ jobs:
         run: |
           poetry config virtualenvs.in-project true
           poetry install --no-interaction
+      - name: Lint with pycodestyle
+        run: |
+          pycodestyle sports/ tests/integration/ tests/unit/
       - name: Run tests
         run: poetry run pytest -v tests
       - name: Build
