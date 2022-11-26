@@ -16,7 +16,7 @@ framework::
 If the tests were successful, it will return a green line will show a message at
 the end of the output similar to the following::
 
-    ======================= 750 passed in 245.56 seconds =======================
+    ======================= 752 passed in 158.03s (0:02:38) =======================
 
 If a test failed, it will show the number of failed and what went wrong within
 the test output. If that's the case, ensure you have the latest version of code

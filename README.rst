@@ -4,7 +4,7 @@ sports: A free sports API written for python
 opening a pull request for any new features or bug fixes to be reviewed and
 merged.**
 
-.. image:: https://github.com/bveber/sports/workflows/sports%20push%20tests/badge.svg
+.. image:: https://github.com/bveber/pysports-stats/actions/workflows/build.yml/badge.svg
     :target: https://github.com/bveber/sports/actions
 .. image:: https://readthedocs.org/projects/pysports-stats/badge/?version=latest
     :target: https://pysports-stats.readthedocs.io/en/latest/?badge=latest
@@ -186,7 +186,7 @@ framework::
 If the tests were successful, it will return a green line will show a message at
 the end of the output similar to the following::
 
-    ======================= 751 passed, 72 warnings in 110.67 seconds =======================
+    ======================= 752 passed in 158.03s (0:02:38) =======================
 
 If a test failed, it will show the number of failed and what went wrong within
 the test output. If that's the case, ensure you have the latest version of code
