@@ -11,11 +11,12 @@ from ..utils import read_file
 
 MONTH = 1
 YEAR = 2022
-TEAM = 'MIN'
+TEAM = "MIN"
+
 
 def mock_pyquery(url):
-    if 'NHL_%s.html' % YEAR in url:
-        return read_file('NHL_%s.html' % YEAR, 'nhl', 'teams')
+    if "NHL_%s.html" % YEAR in url:
+        return read_file("NHL_%s.html" % YEAR, "nhl", "teams")
     return None
 
 
@@ -27,9 +28,9 @@ def mock_request(url):
             self.text = html_contents
 
     if str(YEAR) in url:
-        return MockRequest('good')
+        return MockRequest("good")
     else:
-        return MockRequest('bad', status_code=404)
+        return MockRequest("bad", status_code=404)
 
 
 class MockDateTime:
@@ -39,76 +40,76 @@ class MockDateTime:
 
 
 class TestNHLIntegration:
-    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch("sports.utils._rate_limit_pq", side_effect=mock_pyquery)
     def setup_method(self, *args, **kwargs):
         self.results = {
-            'abbreviation': 'MIN',
-            'average_age': 29.4,
-            'games_played': 82,
-            'goals_against': 249,
-            'goals_for': 305,
-            'losses': 22,
-            'name': 'Minnesota Wild',
-            'overtime_losses': 7,
-            'pdo_at_even_strength': 101.9,
-            'penalty_killing_percentage': 76.14,
-            'points': 113,
-            'points_percentage': 0.689,
-            'power_play_goals': 53,
-            'power_play_goals_against': 63,
-            'power_play_opportunities': 258,
-            'power_play_opportunities_against': 264,
-            'power_play_percentage': 20.54,
-            'rank': 5,
-            'save_percentage': 0.903,
-            'shooting_percentage': 11.4,
-            'short_handed_goals': 2,
-            'short_handed_goals_against': 5,
-            'shots_against': 2577,
-            'shots_on_goal': 2666,
-            'simple_rating_system': 0.68,
-            'strength_of_schedule': -0.02,
-            'total_goals_per_game': 3.72,
-            'wins': 53
+            "abbreviation": "MIN",
+            "average_age": 29.4,
+            "games_played": 82,
+            "goals_against": 249,
+            "goals_for": 305,
+            "losses": 22,
+            "name": "Minnesota Wild",
+            "overtime_losses": 7,
+            "pdo_at_even_strength": 101.9,
+            "penalty_killing_percentage": 76.14,
+            "points": 113,
+            "points_percentage": 0.689,
+            "power_play_goals": 53,
+            "power_play_goals_against": 63,
+            "power_play_opportunities": 258,
+            "power_play_opportunities_against": 264,
+            "power_play_percentage": 20.54,
+            "rank": 5,
+            "save_percentage": 0.903,
+            "shooting_percentage": 11.4,
+            "short_handed_goals": 2,
+            "short_handed_goals_against": 5,
+            "shots_against": 2577,
+            "shots_on_goal": 2666,
+            "simple_rating_system": 0.68,
+            "strength_of_schedule": -0.02,
+            "total_goals_per_game": 3.72,
+            "wins": 53,
         }
         self.abbreviations = [
-            'FLA',
-            'COL',
-            'CAR',
-            'TOR',
-            'MIN',
-            'CGY',
-            'TBL',
-            'NYR',
-            'STL',
-            'BOS',
-            'EDM',
-            'PIT',
-            'WSH',
-            'LAK',
-            'DAL',
-            'NSH',
-            'VEG',
-            'VAN',
-            'WPG',
-            'NYI',
-            'CBJ',
-            'SJS',
-            'ANA',
-            'BUF',
-            'DET',
-            'OTT',
-            'CHI',
-            'NJD',
-            'PHI',
-            'SEA',
-            'ARI',
-            'MTL'
+            "FLA",
+            "COL",
+            "CAR",
+            "TOR",
+            "MIN",
+            "CGY",
+            "TBL",
+            "NYR",
+            "STL",
+            "BOS",
+            "EDM",
+            "PIT",
+            "WSH",
+            "LAK",
+            "DAL",
+            "NSH",
+            "VEG",
+            "VAN",
+            "WPG",
+            "NYI",
+            "CBJ",
+            "SJS",
+            "ANA",
+            "BUF",
+            "DET",
+            "OTT",
+            "CHI",
+            "NJD",
+            "PHI",
+            "SEA",
+            "ARI",
+            "MTL",
         ]
 
-        flexmock(utils) \
-            .should_receive('_todays_date') \
-            .and_return(MockDateTime(YEAR, MONTH))
+        flexmock(utils).should_receive("_todays_date").and_return(
+            MockDateTime(YEAR, MONTH)
+        )
 
         self.teams = Teams()
 
@@ -148,35 +149,31 @@ class TestNHLIntegration:
 
     def test_nhl_invalid_team_name_raises_value_error(self):
         with pytest.raises(ValueError):
-            self.teams('INVALID_NAME')
+            self.teams("INVALID_NAME")
 
-    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch("sports.utils._rate_limit_pq", side_effect=mock_pyquery)
     def test_nhl_empty_page_returns_no_teams(self, *args, **kwargs):
-        flexmock(utils) \
-            .should_receive('_no_data_found') \
-            .once()
-        flexmock(utils) \
-            .should_receive('_get_stats_table') \
-            .and_return(None)
+        flexmock(utils).should_receive("_no_data_found").once()
+        flexmock(utils).should_receive("_get_stats_table").and_return(None)
 
         teams = Teams()
 
         assert len(teams) == 0
 
-    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch("sports.utils._rate_limit_pq", side_effect=mock_pyquery)
     def test_pulling_team_directly(self, *args, **kwargs):
         team = Team(TEAM)
 
         for attribute, value in self.results.items():
             assert getattr(team, attribute) == value
 
-    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch("sports.utils._rate_limit_pq", side_effect=mock_pyquery)
     def test_team_string_representation(self, *args, **kwargs):
         team = Team(TEAM)
 
-        assert team.__repr__() == 'Minnesota Wild (MIN) - 2022'
+        assert team.__repr__() == "Minnesota Wild (MIN) - 2022"
 
-    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch("sports.utils._rate_limit_pq", side_effect=mock_pyquery)
     def test_teams_string_representation(self, *args, **kwargs):
         expected = """Florida Panthers (FLA)
 Colorado Avalanche (COL)

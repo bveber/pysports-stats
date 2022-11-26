@@ -19,8 +19,8 @@ NUM_GAMES_IN_SCHEDULE = 37
 
 
 def mock_pyquery(url):
-    if 'purdue' in url:
-        return read_file('PURDUE-2022-schedule.html', 'ncaab', 'schedule')
+    if "purdue" in url:
+        return read_file("PURDUE-2022-schedule.html", "ncaab", "schedule")
     else:
         return None
 
@@ -33,9 +33,9 @@ def mock_request(url):
             self.text = html_contents
 
     if str(YEAR) in url:
-        return MockRequest('good')
+        return MockRequest("good")
     else:
-        return MockRequest('bad', status_code=404)
+        return MockRequest("bad", status_code=404)
 
 
 class MockDateTime:
@@ -45,40 +45,38 @@ class MockDateTime:
 
 
 class TestNCAABSchedule:
-    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch("sports.utils._rate_limit_pq", side_effect=mock_pyquery)
     def setup_method(self, *args, **kwargs):
         self.results = {
-            'arena': '',
-            'boxscore_index': '2021-11-12-20-purdue',
-            'date': 'Fri, Nov 12, 2021',
-            'datetime': datetime(2021, 11, 12, 20, 30),
-            'game': 2,
-            'location': 'Home',
-            'opponent_abbr': 'indiana-state',
-            'opponent_conference': 'MVC',
-            'opponent_name': 'Indiana State',
-            'opponent_rank': None,
-            'overtimes': 0,
-            'points_against': 67,
-            'points_for': 92,
-            'result': 'Win',
-            'season_losses': 0,
-            'season_wins': 2,
-            'streak': 'W 2',
-            'time': '8:30p',
-            'type': 'Reg'
+            "arena": "",
+            "boxscore_index": "2021-11-12-20-purdue",
+            "date": "Fri, Nov 12, 2021",
+            "datetime": datetime(2021, 11, 12, 20, 30),
+            "game": 2,
+            "location": "Home",
+            "opponent_abbr": "indiana-state",
+            "opponent_conference": "MVC",
+            "opponent_name": "Indiana State",
+            "opponent_rank": None,
+            "overtimes": 0,
+            "points_against": 67,
+            "points_for": 92,
+            "result": "Win",
+            "season_losses": 0,
+            "season_wins": 2,
+            "streak": "W 2",
+            "time": "8:30p",
+            "type": "Reg",
         }
-        flexmock(utils) \
-            .should_receive('_todays_date') \
-            .and_return(MockDateTime(YEAR, MONTH))
-        flexmock(Boxscore) \
-            .should_receive('_parse_game_data') \
-            .and_return(None)
-        flexmock(Boxscore) \
-            .should_receive('dataframe') \
-            .and_return(pd.DataFrame([{'key': 'value'}]))
+        flexmock(utils).should_receive("_todays_date").and_return(
+            MockDateTime(YEAR, MONTH)
+        )
+        flexmock(Boxscore).should_receive("_parse_game_data").and_return(None)
+        flexmock(Boxscore).should_receive("dataframe").and_return(
+            pd.DataFrame([{"key": "value"}])
+        )
 
-        self.schedule = Schedule('PURDUE')
+        self.schedule = Schedule("PURDUE")
 
     def test_ncaab_schedule_returns_correct_number_of_games(self):
         assert len(self.schedule) == NUM_GAMES_IN_SCHEDULE
@@ -96,7 +94,7 @@ class TestNCAABSchedule:
             assert getattr(match_two, attribute) == value
 
     def test_ncaab_schedule_dataframe_returns_dataframe(self):
-        df = pd.DataFrame([self.results], index=['PURDUE'])
+        df = pd.DataFrame([self.results], index=["PURDUE"])
 
         match_two = self.schedule[1]
         # Pandas doesn't natively allow comparisons of DataFrames.
@@ -111,7 +109,7 @@ class TestNCAABSchedule:
         assert df1.empty
 
     def test_ncaab_schedule_dataframe_extended_returns_dataframe(self):
-        df = pd.DataFrame([{'key': 'value'}])
+        df = pd.DataFrame([{"key": "value"}])
 
         result = self.schedule[1].dataframe_extended
 
@@ -136,23 +134,19 @@ class TestNCAABSchedule:
         with pytest.raises(ValueError):
             self.schedule(datetime.now())
 
-    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch("sports.utils._rate_limit_pq", side_effect=mock_pyquery)
     def test_empty_page_return_no_games(self, *args, **kwargs):
-        flexmock(utils) \
-            .should_receive('_no_data_found') \
-            .once()
-        flexmock(utils) \
-            .should_receive('_get_stats_table') \
-            .and_return(None)
+        flexmock(utils).should_receive("_no_data_found").once()
+        flexmock(utils).should_receive("_get_stats_table").and_return(None)
 
-        schedule = Schedule('PURDUE')
+        schedule = Schedule("PURDUE")
 
         assert len(schedule) == 0
 
     def test_game_string_representation(self):
         game = self.schedule[0]
 
-        assert game.__repr__() == 'Tue, Nov 9, 2021 - bellarmine'
+        assert game.__repr__() == "Tue, Nov 9, 2021 - bellarmine"
 
     def test_schedule_string_representation(self):
         expected = """Tue, Nov 9, 2021 - bellarmine

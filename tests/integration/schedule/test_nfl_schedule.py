@@ -19,7 +19,7 @@ NUM_GAMES_IN_SCHEDULE = 19
 
 
 def mock_pyquery(url):
-    return read_file('nwe_gamelog.html', 'nfl', 'schedule')
+    return read_file("nwe_gamelog.html", "nfl", "schedule")
 
 
 def mock_request(url):
@@ -30,9 +30,9 @@ def mock_request(url):
             self.text = html_contents
 
     if str(YEAR) in url:
-        return MockRequest('good')
+        return MockRequest("good")
     else:
-        return MockRequest('bad', status_code=404)
+        return MockRequest("bad", status_code=404)
 
 
 class MockDateTime:
@@ -42,59 +42,57 @@ class MockDateTime:
 
 
 class TestNFLSchedule:
-    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch("sports.utils._rate_limit_pq", side_effect=mock_pyquery)
     def setup_method(self, *args, **kwargs):
         self.results = {
-            'week': 2,
-            'boxscore_index': '201709170nor',
-            'day': 'Sun',
-            'date': 'September 17',
-            'type': REGULAR_SEASON,
-            'datetime': datetime(2017, 9, 17, 0, 0),
-            'result': WIN,
-            'overtime': 0,
-            'location': AWAY,
-            'opponent_abbr': 'NOR',
-            'opponent_name': 'New Orleans Saints',
-            'points_scored': 36,
-            'points_allowed': 20,
-            'pass_completions': 30,
-            'pass_attempts': 39,
-            'pass_yards': 436,
-            'pass_touchdowns': 3,
-            'interceptions': 0,
-            'times_sacked': 2,
-            'yards_lost_from_sacks': 11,
-            'pass_yards_per_attempt': 11.5,
-            'pass_completion_rate': 76.9,
-            'quarterback_rating': 138.4,
-            'rush_attempts': 31,
-            'rush_yards': 119,
-            'rush_yards_per_attempt': 3.8,
-            'rush_touchdowns': 1,
-            'field_goals_made': 3,
-            'field_goals_attempted': 3,
-            'extra_points_made': 3,
-            'extra_points_attempted': 4,
-            'punts': 3,
-            'punt_yards': 111,
-            'third_down_conversions': 6,
-            'third_down_attempts': 12,
-            'fourth_down_conversions': 0,
-            'fourth_down_attempts': 0,
-            'time_of_possession': '35:06'
+            "week": 2,
+            "boxscore_index": "201709170nor",
+            "day": "Sun",
+            "date": "September 17",
+            "type": REGULAR_SEASON,
+            "datetime": datetime(2017, 9, 17, 0, 0),
+            "result": WIN,
+            "overtime": 0,
+            "location": AWAY,
+            "opponent_abbr": "NOR",
+            "opponent_name": "New Orleans Saints",
+            "points_scored": 36,
+            "points_allowed": 20,
+            "pass_completions": 30,
+            "pass_attempts": 39,
+            "pass_yards": 436,
+            "pass_touchdowns": 3,
+            "interceptions": 0,
+            "times_sacked": 2,
+            "yards_lost_from_sacks": 11,
+            "pass_yards_per_attempt": 11.5,
+            "pass_completion_rate": 76.9,
+            "quarterback_rating": 138.4,
+            "rush_attempts": 31,
+            "rush_yards": 119,
+            "rush_yards_per_attempt": 3.8,
+            "rush_touchdowns": 1,
+            "field_goals_made": 3,
+            "field_goals_attempted": 3,
+            "extra_points_made": 3,
+            "extra_points_attempted": 4,
+            "punts": 3,
+            "punt_yards": 111,
+            "third_down_conversions": 6,
+            "third_down_attempts": 12,
+            "fourth_down_conversions": 0,
+            "fourth_down_attempts": 0,
+            "time_of_possession": "35:06",
         }
-        flexmock(utils) \
-            .should_receive('_todays_date') \
-            .and_return(MockDateTime(YEAR, MONTH))
-        flexmock(Boxscore) \
-            .should_receive('_parse_game_data') \
-            .and_return(None)
-        flexmock(Boxscore) \
-            .should_receive('dataframe') \
-            .and_return(pd.DataFrame([{'key': 'value'}]))
+        flexmock(utils).should_receive("_todays_date").and_return(
+            MockDateTime(YEAR, MONTH)
+        )
+        flexmock(Boxscore).should_receive("_parse_game_data").and_return(None)
+        flexmock(Boxscore).should_receive("dataframe").and_return(
+            pd.DataFrame([{"key": "value"}])
+        )
 
-        self.schedule = Schedule('NWE')
+        self.schedule = Schedule("NWE")
 
     def test_nfl_schedule_returns_correct_number_of_games(self):
         assert len(self.schedule) == NUM_GAMES_IN_SCHEDULE
@@ -112,7 +110,7 @@ class TestNFLSchedule:
             assert getattr(match_two, attribute) == value
 
     def test_nfl_schedule_dataframe_returns_dataframe(self):
-        df = pd.DataFrame([self.results], index=['NWE'])
+        df = pd.DataFrame([self.results], index=["NWE"])
 
         match_two = self.schedule[1]
         # Pandas doesn't natively allow comparisons of DataFrames.
@@ -127,7 +125,7 @@ class TestNFLSchedule:
         assert df1.empty
 
     def test_nfl_schedule_dataframe_extended_returns_dataframe(self):
-        df = pd.DataFrame([{'key': 'value'}])
+        df = pd.DataFrame([{"key": "value"}])
 
         result = self.schedule[1].dataframe_extended
 
@@ -151,23 +149,19 @@ class TestNFLSchedule:
         with pytest.raises(ValueError):
             self.schedule(datetime.now())
 
-    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch("sports.utils._rate_limit_pq", side_effect=mock_pyquery)
     def test_empty_page_return_no_games(self, *args, **kwargs):
-        flexmock(utils) \
-            .should_receive('_no_data_found') \
-            .once()
-        flexmock(utils) \
-            .should_receive('_get_stats_table') \
-            .and_return(None)
+        flexmock(utils).should_receive("_no_data_found").once()
+        flexmock(utils).should_receive("_get_stats_table").and_return(None)
 
-        schedule = Schedule('NWE')
+        schedule = Schedule("NWE")
 
         assert len(schedule) == 0
 
     def test_game_string_representation(self):
         game = self.schedule[0]
 
-        assert game.__repr__() == 'September 7 - KAN'
+        assert game.__repr__() == "September 7 - KAN"
 
     def test_schedule_string_representation(self):
         expected = """September 7 - KAN
@@ -194,62 +188,56 @@ February 4 - PHI"""
 
 
 class TestNFLScheduleInvalidYear:
-    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
-    @mock.patch('requests.head', side_effect=mock_request)
-    def test_invalid_default_year_reverts_to_previous_year(self,
-                                                           *args,
-                                                           **kwargs):
+    @mock.patch("sports.utils._rate_limit_pq", side_effect=mock_pyquery)
+    @mock.patch("requests.head", side_effect=mock_request)
+    def test_invalid_default_year_reverts_to_previous_year(self, *args, **kwargs):
         results = {
-            'week': 2,
-            'boxscore_index': '201709170nor',
-            'day': 'Sun',
-            'date': 'September 17',
-            'type': REGULAR_SEASON,
-            'datetime': datetime(2017, 9, 17, 0, 0),
-            'result': WIN,
-            'overtime': 0,
-            'location': AWAY,
-            'opponent_abbr': 'NOR',
-            'opponent_name': 'New Orleans Saints',
-            'points_scored': 36,
-            'points_allowed': 20,
-            'pass_completions': 30,
-            'pass_attempts': 39,
-            'pass_yards': 436,
-            'pass_touchdowns': 3,
-            'interceptions': 0,
-            'times_sacked': 2,
-            'yards_lost_from_sacks': 11,
-            'pass_yards_per_attempt': 11.5,
-            'pass_completion_rate': 76.9,
-            'quarterback_rating': 138.4,
-            'rush_attempts': 31,
-            'rush_yards': 119,
-            'rush_yards_per_attempt': 3.8,
-            'rush_touchdowns': 1,
-            'field_goals_made': 3,
-            'field_goals_attempted': 3,
-            'extra_points_made': 3,
-            'extra_points_attempted': 4,
-            'punts': 3,
-            'punt_yards': 111,
-            'third_down_conversions': 6,
-            'third_down_attempts': 12,
-            'fourth_down_conversions': 0,
-            'fourth_down_attempts': 0,
-            'time_of_possession': '35:06'
+            "week": 2,
+            "boxscore_index": "201709170nor",
+            "day": "Sun",
+            "date": "September 17",
+            "type": REGULAR_SEASON,
+            "datetime": datetime(2017, 9, 17, 0, 0),
+            "result": WIN,
+            "overtime": 0,
+            "location": AWAY,
+            "opponent_abbr": "NOR",
+            "opponent_name": "New Orleans Saints",
+            "points_scored": 36,
+            "points_allowed": 20,
+            "pass_completions": 30,
+            "pass_attempts": 39,
+            "pass_yards": 436,
+            "pass_touchdowns": 3,
+            "interceptions": 0,
+            "times_sacked": 2,
+            "yards_lost_from_sacks": 11,
+            "pass_yards_per_attempt": 11.5,
+            "pass_completion_rate": 76.9,
+            "quarterback_rating": 138.4,
+            "rush_attempts": 31,
+            "rush_yards": 119,
+            "rush_yards_per_attempt": 3.8,
+            "rush_touchdowns": 1,
+            "field_goals_made": 3,
+            "field_goals_attempted": 3,
+            "extra_points_made": 3,
+            "extra_points_attempted": 4,
+            "punts": 3,
+            "punt_yards": 111,
+            "third_down_conversions": 6,
+            "third_down_attempts": 12,
+            "fourth_down_conversions": 0,
+            "fourth_down_attempts": 0,
+            "time_of_possession": "35:06",
         }
-        flexmock(utils) \
-            .should_receive('_find_year_for_season') \
-            .and_return(2018)
-        flexmock(Boxscore) \
-            .should_receive('_parse_game_data') \
-            .and_return(None)
-        flexmock(Boxscore) \
-            .should_receive('dataframe') \
-            .and_return(pd.DataFrame([{'key': 'value'}]))
+        flexmock(utils).should_receive("_find_year_for_season").and_return(2018)
+        flexmock(Boxscore).should_receive("_parse_game_data").and_return(None)
+        flexmock(Boxscore).should_receive("dataframe").and_return(
+            pd.DataFrame([{"key": "value"}])
+        )
 
-        schedule = Schedule('NWE')
+        schedule = Schedule("NWE")
 
         for attribute, value in results.items():
             assert getattr(schedule[1], attribute) == value

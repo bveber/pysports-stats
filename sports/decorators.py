@@ -11,7 +11,7 @@ def int_property_decorator(func):
                 # fbref started providing ages in the format %y-%d
                 # if "-" in string grab just the first number to get
                 # age in years
-                return int(value.replace('+', '').split('-')[0])
+                return int(value.replace("+", "").split("-")[0])
             else:
                 return int(value)
         except (TypeError, ValueError):
@@ -23,6 +23,7 @@ def int_property_decorator(func):
             # or an average/median for the category) or keep it empty depending
             # on their use-case.
             return None
+
     return wrapper
 
 
@@ -33,7 +34,7 @@ def float_property_decorator(func):
         value = func(*args)
         try:
             if type(value) == str:
-                return float(value.replace('%', ''))
+                return float(value.replace("%", ""))
             else:
                 return float(value)
         except (TypeError, ValueError) as e:
@@ -45,4 +46,5 @@ def float_property_decorator(func):
             # or an average/median for the category) or keep it empty depending
             # on their use-case.
             return None
+
     return wrapper
