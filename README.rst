@@ -6,11 +6,11 @@ merged.**
 
 .. image:: https://github.com/bveber/sports/workflows/sports%20push%20tests/badge.svg
     :target: https://github.com/bveber/sports/actions
-.. image:: https://readthedocs.org/projects/sports/badge/?version=latest
-    :target: https://sports.readthedocs.io/en/latest/?badge=latest
+.. image:: https://readthedocs.org/projects/pysports-stats/badge/?version=latest
+    :target: https://pysports-stats.readthedocs.io/en/latest/?badge=latest
     :alt: Documentation Status
-.. image:: https://img.shields.io/pypi/v/sports.svg
-    :target: https://pypi.org/project/sports
+.. image:: https://img.shields.io/pypi/v/pysports-stats.svg
+    :target: https://pypi.org/project/pysports-stats
 
 .. contents::
 

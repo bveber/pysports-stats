@@ -6,7 +6,7 @@
 *coverage*
 
 # Building files
-build*
+build/
 dist*
 pysports_stats.egg-info*
 
@@ -19,3 +19,6 @@ pip-selfcheck.json
 env/*
 .ipynb_checkpoints/*
 *.ipynb
+
+# Editor
+.vscode/
