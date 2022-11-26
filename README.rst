@@ -65,7 +65,7 @@ repository using git and install all of the package requirements with PIP::
 Once complete, create a Python wheel for your default version of Python by
 running the following command::
 
-    python setup.py sdist bdist_wheel
+    poetry build
 
 This will create a `.whl` file in the `dist` directory which can be installed
 with the following command::
