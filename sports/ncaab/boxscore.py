@@ -2013,3 +2013,28 @@ class Boxscores:
                                       date_step.year)
             self._boxscores[timestamp] = boxscores
             date_step += timedelta(days=1)
+
+    @property
+    def dataframe(self):
+        """
+        Returns a ``pandas DataFrame`` containing all other relevant class
+        properties and values for the specified game.
+        """
+        fields_to_include = [
+            'boxscore',
+            'away_name',
+            'away_abbr',
+            'away_score',
+            'away_rank',
+            'home_name',
+            'home_abbr',
+            'home_score',
+            'home_rank',
+            'non_di',
+            'top_25',
+            'winning_name',
+            'winning_abbr',
+            'losing_name',
+            'losing_abbr'
+        ]
+        return pd.DataFrame(list(self.games.values())[0])

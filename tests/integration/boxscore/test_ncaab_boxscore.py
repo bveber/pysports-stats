@@ -659,6 +659,22 @@ class TestNCAABBoxscores:
         assert result == self.expected
 
     @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
+    def test_ncaab_boxscore_dataframe_returns_dataframe_of_all_values(self, *args, **kwargs):
+        result = Boxscores(datetime(2020, 1, 5))
+        df = pd.DataFrame(list(self.expected.values())[0])
+
+        # Pandas doesn't natively allow comparisons of DataFrames.
+        # Concatenating the two DataFrames (the one generated during the test
+        # and the expected one above) and dropping duplicate rows leaves only
+        # the rows that are unique between the two frames. This allows a quick
+        # check of the DataFrame to see if it is empty - if so, all rows are
+        # duplicates, and they are equal.
+        frames = [df, result.dataframe]
+        df1 = pd.concat(frames).drop_duplicates(keep=False)
+
+        assert df1.empty
+
+    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
     def test_boxscores_search_invalid_end(self, *args, **kwargs):
         result = Boxscores(datetime(2020, 1, 5),
                            datetime(2020, 1, 4)).games
