@@ -39,10 +39,8 @@ jobs:
           path: ~/.poetry
           key: ${{ matrix.os }}-poetry
       # Only runs when key from caching step changes
-      - name: Install latest version of Poetry
-        if: steps.cache-poetry.outputs.cache-hit != 'true'
-        run: |
-          curl -sSL https://install.python-poetry.org | python3 -
+      - name: Install Poetry
+        uses: snok/install-poetry@v1
       # Poetry still needs to be re-prepended to the PATH on each run, since
       # PATH does not persist between runs.
       - name: Add Poetry to $PATH
