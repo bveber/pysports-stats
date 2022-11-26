@@ -16,12 +16,12 @@ MONTH = 4
 YEAR = 2022
 
 NUM_GAMES_IN_SCHEDULE = 162
-TEAM = 'HOU'
+TEAM = "HOU"
 
 
 def mock_pyquery(url):
-    if 'HOU/2022' in url:
-        return read_file('HOU-2022-schedule.shtml', 'mlb', 'schedule')
+    if "HOU/2022" in url:
+        return read_file("HOU-2022-schedule.shtml", "mlb", "schedule")
     return None
 
 
@@ -33,9 +33,9 @@ def mock_request(url):
             self.text = html_contents
 
     if str(YEAR) in url:
-        return MockRequest('good')
+        return MockRequest("good")
     else:
-        return MockRequest('bad', status_code=404)
+        return MockRequest("bad", status_code=404)
 
 
 class MockDateTime:
@@ -45,40 +45,38 @@ class MockDateTime:
 
 
 class TestMLBSchedule:
-    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch("sports.utils._rate_limit_pq", side_effect=mock_pyquery)
     def setup_method(self, *args, **kwargs):
         self.results = {
-            'attendance': 42719,
-            'boxscore_index': 'ANA/ANA202204080',
-            'date': 'Friday, Apr 8',
-            'datetime': datetime(2022,4,8),
-            'game_number_for_day': 1,
-            'day_or_night': 'Night',
-            'game': 2,
-            'game_duration': '3:44',
-            'games_behind': -0.5,
-            'innings': 9,
-            'location': 'Away',
-            'loser': 'Ortega',
-            'opponent_abbr': 'LAA',
-            'rank': 1,
-            'record': '2-0',
-            'result': 'Win',
-            'runs_allowed': 6,
-            'runs_scored': 13,
-            'save': None,
-            'streak': '++',
-            'winner': 'Montero'
+            "attendance": 42719,
+            "boxscore_index": "ANA/ANA202204080",
+            "date": "Friday, Apr 8",
+            "datetime": datetime(2022, 4, 8),
+            "game_number_for_day": 1,
+            "day_or_night": "Night",
+            "game": 2,
+            "game_duration": "3:44",
+            "games_behind": -0.5,
+            "innings": 9,
+            "location": "Away",
+            "loser": "Ortega",
+            "opponent_abbr": "LAA",
+            "rank": 1,
+            "record": "2-0",
+            "result": "Win",
+            "runs_allowed": 6,
+            "runs_scored": 13,
+            "save": None,
+            "streak": "++",
+            "winner": "Montero",
         }
-        flexmock(Boxscore) \
-            .should_receive('_parse_game_data') \
-            .and_return(None)
-        flexmock(Boxscore) \
-            .should_receive('dataframe') \
-            .and_return(pd.DataFrame([{'key': 'value'}]))
-        flexmock(utils) \
-            .should_receive('_todays_date') \
-            .and_return(MockDateTime(YEAR, MONTH))
+        flexmock(Boxscore).should_receive("_parse_game_data").and_return(None)
+        flexmock(Boxscore).should_receive("dataframe").and_return(
+            pd.DataFrame([{"key": "value"}])
+        )
+        flexmock(utils).should_receive("_todays_date").and_return(
+            MockDateTime(YEAR, MONTH)
+        )
 
         self.schedule = Schedule(TEAM)
 
@@ -101,34 +99,34 @@ class TestMLBSchedule:
         date_of_game = datetime(2022, 7, 21)
         match_two = self.schedule(date_of_game, 2)
         results = {
-            'attendance': 39342,
-            'boxscore_index': 'HOU/HOU202207212',
-            'date': 'Thursday, Jul 21 (2)',
-            'datetime': datetime(2022,7,21),
-            'game_number_for_day': 2,
-            'day_or_night': 'Night',
-            'game': 93,
-            'game_duration': '3:11',
-            'games_behind': -10.0,
-            'innings': 9,
-            'location': 'Home',
-            'loser': 'German',
-            'opponent_abbr': 'NYY',
-            'rank': 1,
-            'record': '61-32',
-            'result': 'Win',
-            'runs_allowed': 5,
-            'runs_scored': 7,
-            'save': 'Montero',
-            'streak': '++',
-            'winner': 'Garcia'
+            "attendance": 39342,
+            "boxscore_index": "HOU/HOU202207212",
+            "date": "Thursday, Jul 21 (2)",
+            "datetime": datetime(2022, 7, 21),
+            "game_number_for_day": 2,
+            "day_or_night": "Night",
+            "game": 93,
+            "game_duration": "3:11",
+            "games_behind": -10.0,
+            "innings": 9,
+            "location": "Home",
+            "loser": "German",
+            "opponent_abbr": "NYY",
+            "rank": 1,
+            "record": "61-32",
+            "result": "Win",
+            "runs_allowed": 5,
+            "runs_scored": 7,
+            "save": "Montero",
+            "streak": "++",
+            "winner": "Garcia",
         }
 
         for attribute, value in results.items():
             assert getattr(match_two, attribute) == value
 
     def test_mlb_schedule_dataframe_returns_dataframe(self):
-        df = pd.DataFrame([self.results], index=['NYY'])
+        df = pd.DataFrame([self.results], index=["NYY"])
 
         match_two = self.schedule[1]
         # Pandas doesn't natively allow comparisons of DataFrames.
@@ -143,7 +141,7 @@ class TestMLBSchedule:
         assert df1.empty
 
     def test_mlb_schedule_dataframe_extended_returns_dataframe(self):
-        df = pd.DataFrame([{'key': 'value'}])
+        df = pd.DataFrame([{"key": "value"}])
 
         result = self.schedule[1].dataframe_extended
 
@@ -152,7 +150,7 @@ class TestMLBSchedule:
 
         assert df1.empty
 
-    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch("sports.utils._rate_limit_pq", side_effect=mock_pyquery)
     def test_mlb_schedule_all_dataframe_returns_dataframe(self, *args, **kwargs):
         result = self.schedule.dataframe.drop_duplicates(keep=False)
 
@@ -168,14 +166,10 @@ class TestMLBSchedule:
         with pytest.raises(ValueError):
             self.schedule(datetime.now())
 
-    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch("sports.utils._rate_limit_pq", side_effect=mock_pyquery)
     def test_empty_page_return_no_games(self, *args, **kwargs):
-        flexmock(utils) \
-            .should_receive('_no_data_found') \
-            .once()
-        flexmock(utils) \
-            .should_receive('_get_stats_table') \
-            .and_return(None)
+        flexmock(utils).should_receive("_no_data_found").once()
+        flexmock(utils).should_receive("_get_stats_table").and_return(None)
 
         schedule = Schedule(TEAM)
 
@@ -184,7 +178,7 @@ class TestMLBSchedule:
     def test_game_string_representation(self):
         game = self.schedule[0]
 
-        assert game.__repr__() == 'Thursday, Apr 7 - LAA'
+        assert game.__repr__() == "Thursday, Apr 7 - LAA"
 
     def test_schedule_string_representation(self):
         expected = """Thursday, Apr 7 - LAA

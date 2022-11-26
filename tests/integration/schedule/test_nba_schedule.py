@@ -19,8 +19,8 @@ NUM_GAMES_IN_SCHEDULE = 87
 
 
 def mock_pyquery(url):
-    if '2022' in url:
-        return read_file('%s_games.html' % YEAR, 'nba', 'schedule')
+    if "2022" in url:
+        return read_file("%s_games.html" % YEAR, "nba", "schedule")
     else:
         return None
 
@@ -33,9 +33,9 @@ def mock_request(url):
             self.text = html_contents
 
     if str(YEAR) in url:
-        return MockRequest('good')
+        return MockRequest("good")
     else:
-        return MockRequest('bad', status_code=404)
+        return MockRequest("bad", status_code=404)
 
 
 class MockDateTime:
@@ -45,36 +45,34 @@ class MockDateTime:
 
 
 class TestNBASchedule:
-    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch("sports.utils._rate_limit_pq", side_effect=mock_pyquery)
     def setup_method(self, *args, **kwargs):
         self.results = {
-            'boxscore_index': '202110220DEN',
-            'date': 'Fri, Oct 22, 2021',
-            'datetime': datetime(2021, 10, 22, 0, 0),
-            'game': 2,
-            'location': 'Home',
-            'losses': 0,
-            'opponent_abbr': 'SAS',
-            'opponent_name': 'San Antonio Spurs',
-            'playoffs': False,
-            'points_allowed': 96,
-            'points_scored': 102,
-            'result': 'Win',
-            'streak': 'W 2',
-            'time': '9:00p',
-            'wins': 2
+            "boxscore_index": "202110220DEN",
+            "date": "Fri, Oct 22, 2021",
+            "datetime": datetime(2021, 10, 22, 0, 0),
+            "game": 2,
+            "location": "Home",
+            "losses": 0,
+            "opponent_abbr": "SAS",
+            "opponent_name": "San Antonio Spurs",
+            "playoffs": False,
+            "points_allowed": 96,
+            "points_scored": 102,
+            "result": "Win",
+            "streak": "W 2",
+            "time": "9:00p",
+            "wins": 2,
         }
-        flexmock(Boxscore) \
-            .should_receive('_parse_game_data') \
-            .and_return(None)
-        flexmock(Boxscore) \
-            .should_receive('dataframe') \
-            .and_return(pd.DataFrame([{'key': 'value'}]))
-        flexmock(utils) \
-            .should_receive('_todays_date') \
-            .and_return(MockDateTime(YEAR, MONTH))
+        flexmock(Boxscore).should_receive("_parse_game_data").and_return(None)
+        flexmock(Boxscore).should_receive("dataframe").and_return(
+            pd.DataFrame([{"key": "value"}])
+        )
+        flexmock(utils).should_receive("_todays_date").and_return(
+            MockDateTime(YEAR, MONTH)
+        )
 
-        self.schedule = Schedule('DEN')
+        self.schedule = Schedule("DEN")
 
     def test_nba_schedule_returns_correct_number_of_games(self):
         assert len(self.schedule) == NUM_GAMES_IN_SCHEDULE
@@ -92,7 +90,7 @@ class TestNBASchedule:
             assert getattr(match_two, attribute) == value
 
     def test_nba_schedule_dataframe_returns_dataframe(self):
-        df = pd.DataFrame([self.results], index=['PHO'])
+        df = pd.DataFrame([self.results], index=["PHO"])
 
         match_two = self.schedule[1]
         # Pandas doesn't natively allow comparisons of DataFrames.
@@ -107,7 +105,7 @@ class TestNBASchedule:
         assert df1.empty
 
     def test_nba_schedule_dataframe_extended_returns_dataframe(self):
-        df = pd.DataFrame([{'key': 'value'}])
+        df = pd.DataFrame([{"key": "value"}])
 
         result = self.schedule[1].dataframe_extended
 
@@ -131,23 +129,19 @@ class TestNBASchedule:
         with pytest.raises(ValueError):
             self.schedule(datetime.now())
 
-    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @mock.patch("sports.utils._rate_limit_pq", side_effect=mock_pyquery)
     def test_empty_page_return_no_games(self, *args, **kwargs):
-        flexmock(utils) \
-            .should_receive('_no_data_found') \
-            .once()
-        flexmock(utils) \
-            .should_receive('_get_stats_table') \
-            .and_return(None)
+        flexmock(utils).should_receive("_no_data_found").once()
+        flexmock(utils).should_receive("_get_stats_table").and_return(None)
 
-        schedule = Schedule('DEN')
+        schedule = Schedule("DEN")
 
         assert len(schedule) == 0
 
     def test_game_string_representation(self):
         game = self.schedule[0]
 
-        assert game.__repr__() == 'Wed, Oct 20, 2021 - PHO'
+        assert game.__repr__() == "Wed, Oct 20, 2021 - PHO"
 
     def test_schedule_string_representation(self):
         expected = """Wed, Oct 20, 2021 - PHO
@@ -242,39 +236,33 @@ Wed, Apr 27, 2022 - GSW"""
 
 
 class TestNBAScheduleInvalidError:
-    @mock.patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
-    @mock.patch('requests.head', side_effect=mock_request)
-    def test_invalid_default_year_reverts_to_previous_year(self,
-                                                           *args,
-                                                           **kwargs):
+    @mock.patch("sports.utils._rate_limit_pq", side_effect=mock_pyquery)
+    @mock.patch("requests.head", side_effect=mock_request)
+    def test_invalid_default_year_reverts_to_previous_year(self, *args, **kwargs):
         results = {
-            'boxscore_index': '202110220DEN',
-            'date': 'Fri, Oct 22, 2021',
-            'datetime': datetime(2021, 10, 22, 0, 0),
-            'game': 2,
-            'location': 'Home',
-            'losses': 0,
-            'opponent_abbr': 'SAS',
-            'opponent_name': 'San Antonio Spurs',
-            'playoffs': False,
-            'points_allowed': 96,
-            'points_scored': 102,
-            'result': 'Win',
-            'streak': 'W 2',
-            'time': '9:00p',
-            'wins': 2
+            "boxscore_index": "202110220DEN",
+            "date": "Fri, Oct 22, 2021",
+            "datetime": datetime(2021, 10, 22, 0, 0),
+            "game": 2,
+            "location": "Home",
+            "losses": 0,
+            "opponent_abbr": "SAS",
+            "opponent_name": "San Antonio Spurs",
+            "playoffs": False,
+            "points_allowed": 96,
+            "points_scored": 102,
+            "result": "Win",
+            "streak": "W 2",
+            "time": "9:00p",
+            "wins": 2,
         }
-        flexmock(Boxscore) \
-            .should_receive('_parse_game_data') \
-            .and_return(None)
-        flexmock(Boxscore) \
-            .should_receive('dataframe') \
-            .and_return(pd.DataFrame([{'key': 'value'}]))
-        flexmock(utils) \
-            .should_receive('_find_year_for_season') \
-            .and_return(YEAR)
+        flexmock(Boxscore).should_receive("_parse_game_data").and_return(None)
+        flexmock(Boxscore).should_receive("dataframe").and_return(
+            pd.DataFrame([{"key": "value"}])
+        )
+        flexmock(utils).should_receive("_find_year_for_season").and_return(YEAR)
 
-        schedule = Schedule('DEN')
+        schedule = Schedule("DEN")
 
         for attribute, value in results.items():
             assert getattr(schedule[1], attribute) == value

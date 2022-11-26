@@ -15,42 +15,42 @@ NUM_GAMES_IN_SCHEDULE = 47
 
 
 def mock_pyquery(url):
-    if '361ca564' in url:
-        return read_file('tottenham-hotspur-2022-2023.html', 'fb', 'schedule')
+    if "361ca564" in url:
+        return read_file("tottenham-hotspur-2022-2023.html", "fb", "schedule")
     return None
 
 
 class TestFBSchedule:
-    @patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @patch("sports.utils._rate_limit_pq", side_effect=mock_pyquery)
     def setup_method(self, *args, **kwargs):
-        self.game_date = datetime(2022,8,14)
+        self.game_date = datetime(2022, 8, 14)
         self.results = {
-            'competition': 'Premier League',
-            'matchweek': 'Matchweek 2',
-            'day': 'Sun',
-            'date': '2022-08-14',
-            'time': None,
-            'datetime': self.game_date,
-            'venue': 'Away',
-            'result': 'Draw',
-            'goals_for': 2,
-            'goals_against': 2,
-            'shootout_scored': None,
-            'shootout_against': None,
-            'opponent': 'Chelsea',
-            'opponent_id': 'cff3d9bb',
-            'expected_goals': 1.0,
-            'expected_goals_against': 1.6,
-            'attendance': 39946,
-            'captain': 'Hugo Lloris',
-            'captain_id': '8f62b6ee',
-            'formation': '3-4-3',
-            'referee': 'Anthony Taylor',
-            'match_report': '01e57bf5',
-            'notes': ''
+            "competition": "Premier League",
+            "matchweek": "Matchweek 2",
+            "day": "Sun",
+            "date": "2022-08-14",
+            "time": None,
+            "datetime": self.game_date,
+            "venue": "Away",
+            "result": "Draw",
+            "goals_for": 2,
+            "goals_against": 2,
+            "shootout_scored": None,
+            "shootout_against": None,
+            "opponent": "Chelsea",
+            "opponent_id": "cff3d9bb",
+            "expected_goals": 1.0,
+            "expected_goals_against": 1.6,
+            "attendance": 39946,
+            "captain": "Hugo Lloris",
+            "captain_id": "8f62b6ee",
+            "formation": "3-4-3",
+            "referee": "Anthony Taylor",
+            "match_report": "01e57bf5",
+            "notes": "",
         }
 
-        self.schedule = Schedule('Tottenham Hotspur')
+        self.schedule = Schedule("Tottenham Hotspur")
 
     def test_fb_schedule_returns_correct_number_of_games(self):
         assert len(self.schedule) == NUM_GAMES_IN_SCHEDULE
@@ -71,16 +71,12 @@ class TestFBSchedule:
         with pytest.raises(ValueError):
             self.schedule(datetime(2022, 7, 1))
 
-    @patch('sports.utils._rate_limit_pq', side_effect=mock_pyquery)
+    @patch("sports.utils._rate_limit_pq", side_effect=mock_pyquery)
     def test_empty_page_return_no_games(self, *args, **kwargs):
-        flexmock(utils) \
-            .should_receive('_no_data_found') \
-            .once()
-        flexmock(utils) \
-            .should_receive('_get_stats_table') \
-            .and_return(None)
+        flexmock(utils).should_receive("_no_data_found").once()
+        flexmock(utils).should_receive("_get_stats_table").and_return(None)
 
-        schedule = Schedule('Tottenham Hotspur')
+        schedule = Schedule("Tottenham Hotspur")
 
         assert len(schedule) == 0
 
@@ -91,7 +87,7 @@ class TestFBSchedule:
         assert count + 1 == NUM_GAMES_IN_SCHEDULE
 
     def test_fb_schedule_dataframe_returns_dataframe(self):
-        df = pd.DataFrame([self.results], index=['a4ba771e'])
+        df = pd.DataFrame([self.results], index=["a4ba771e"])
 
         match_two = self.schedule[1]
         # Pandas doesn't natively allow comparisons of DataFrames.
@@ -173,4 +169,4 @@ class TestFBSchedule:
     def test_fb_game_string_representation(self):
         game = self.schedule[0]
 
-        assert game.__repr__() == '2022-08-06 - Southampton'
+        assert game.__repr__() == "2022-08-06 - Southampton"

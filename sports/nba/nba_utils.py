@@ -30,11 +30,11 @@ def _add_stats_data(teams_list, team_data_dict):
     # Teams are listed in terms of rank with the first team being #1
     rank = 1
     for team_data in teams_list:
-        abbr = utils._parse_field(PARSING_SCHEME, team_data, 'abbreviation')
+        abbr = utils._parse_field(PARSING_SCHEME, team_data, "abbreviation")
         try:
-            team_data_dict[abbr]['data'] += team_data
+            team_data_dict[abbr]["data"] += team_data
         except KeyError:
-            team_data_dict[abbr] = {'data': team_data, 'rank': rank}
+            team_data_dict[abbr] = {"data": team_data, "rank": rank}
         rank += 1
     return team_data_dict
 
@@ -65,7 +65,7 @@ def _retrieve_all_teams(year, season_file=None):
     team_data_dict = {}
 
     if not year:
-        year = utils._find_year_for_season('nba')
+        year = utils._find_year_for_season("nba")
         # Given the delays to the NBA season in 2020, the default season
         # selection logic is no longer valid after the original season should
         # have concluded. In this case, the previous season should be pulled
@@ -78,12 +78,13 @@ def _retrieve_all_teams(year, season_file=None):
         # If stats for the requested season do not exist yet (as is the case
         # right before a new season begins), attempt to pull the previous
         # year's stats. If it exists, use the previous year instead.
-        if not utils._url_exists(SEASON_PAGE_URL % year) and \
-           utils._url_exists(SEASON_PAGE_URL % str(int(year) - 1)):
+        if not utils._url_exists(SEASON_PAGE_URL % year) and utils._url_exists(
+            SEASON_PAGE_URL % str(int(year) - 1)
+        ):
             year = str(int(year) - 1)
     doc = utils._pull_page(SEASON_PAGE_URL % year, season_file)
-    teams_list = utils._get_stats_table(doc, 'div#div_totals-team')
-    opp_teams_list = utils._get_stats_table(doc, 'div#div_totals-opponent')
+    teams_list = utils._get_stats_table(doc, "div#div_totals-team")
+    opp_teams_list = utils._get_stats_table(doc, "div#div_totals-opponent")
 
     if not teams_list and not opp_teams_list:
         utils._no_data_found()

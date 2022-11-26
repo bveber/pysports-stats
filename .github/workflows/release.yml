@@ -61,7 +61,7 @@ jobs:
         run: |
           poetry run pycodestyle sports/ tests/integration/ tests/unit/
       - name: Run tests
-        run: poetry run pytest -v tests
+        run: poetry run pytest -n auto -v tests
       - name: Build
         run: poetry build
       - name: Release Notes

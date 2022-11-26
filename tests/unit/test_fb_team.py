@@ -22,54 +22,48 @@ def mock_httperror(url, *args, **kwargs):
 
 class TestFBTeam:
     def setup_method(self):
-        flexmock(Team) \
-            .should_receive('_pull_team_page') \
-            .and_return(None)
-        flexmock(Schedule) \
-            .should_receive('_pull_schedule') \
-            .and_return(None)
-        flexmock(Roster) \
-            .should_receive('_pull_stats') \
-            .and_return(None)
-        self.team = Team('Tottenham Hotspur')
+        flexmock(Team).should_receive("_pull_team_page").and_return(None)
+        flexmock(Schedule).should_receive("_pull_schedule").and_return(None)
+        flexmock(Roster).should_receive("_pull_stats").and_return(None)
+        self.team = Team("Tottenham Hotspur")
 
     def test_location_record_missing_result(self):
-        html = 'Home Record: (5-0-0)'
+        html = "Home Record: (5-0-0)"
 
         output = self.team._location_records(html)
 
         assert output == (None, None, None, None)
 
     def test_location_record_missing_points(self):
-        html = 'Home Record: 15 points (5-0-0)'
+        html = "Home Record: 15 points (5-0-0)"
 
         output = self.team._location_records(html)
 
         assert output == (None, None, None, None)
 
     def test_records_missing_result(self):
-        html = 'Record: 5-0-0, 15 points (3.0 per game)'
+        html = "Record: 5-0-0, 15 points (3.0 per game)"
 
         output = self.team._records(html)
 
         assert output == (None, None, None, None)
 
     def test_records_missing_position(self):
-        html = 'Record: 5-0-0, 15 points (3.0 per game),  Premier League'
+        html = "Record: 5-0-0, 15 points (3.0 per game),  Premier League"
 
         output = self.team._records(html)
 
-        assert output == ('5-0-0', '15', None, 'Premier League')
+        assert output == ("5-0-0", "15", None, "Premier League")
 
     def test_goals_missing(self):
-        html = 'Goals: 20 (2.5 per game), Goals Against: 11 (1.38 per game)'
+        html = "Goals: 20 (2.5 per game), Goals Against: 11 (1.38 per game)"
 
         output = self.team._goals(html)
 
         assert output == (None, None, None)
 
     def test_expected_goals(self):
-        html = 'xG: 19.3, xGA: 12.1'
+        html = "xG: 19.3, xGA: 12.1"
 
         output = self.team._parse_expected_goals(html)
 
@@ -86,35 +80,35 @@ class TestFBTeam:
         assert not output
 
     def test_invalid_home_wins_returns_none(self):
-        self.team._home_record = 'a-0-0'
+        self.team._home_record = "a-0-0"
 
         output = self.team.home_wins
 
         assert not output
 
     def test_invalid_home_draws_returns_none(self):
-        self.team._home_record = '5-a-0'
+        self.team._home_record = "5-a-0"
 
         output = self.team.home_draws
 
         assert not output
 
     def test_missing_home_draws_returns_none(self):
-        self.team._home_record = '5'
+        self.team._home_record = "5"
 
         output = self.team.home_draws
 
         assert not output
 
     def test_invalid_home_losses_returns_none(self):
-        self.team._home_record = '5-0-a'
+        self.team._home_record = "5-0-a"
 
         output = self.team.home_losses
 
         assert not output
 
     def test_missing_home_losses_returns_none(self):
-        self.team._home_record = '5-0'
+        self.team._home_record = "5-0"
 
         output = self.team.home_losses
 
@@ -128,35 +122,35 @@ class TestFBTeam:
         assert not output
 
     def test_invalid_away_wins_returns_none(self):
-        self.team._away_record = 'a-0-0'
+        self.team._away_record = "a-0-0"
 
         output = self.team.away_wins
 
         assert not output
 
     def test_missing_away_draws_returns_none(self):
-        self.team._away_record = '5'
+        self.team._away_record = "5"
 
         output = self.team.away_draws
 
         assert not output
 
     def test_invalid_away_draws_returns_none(self):
-        self.team._away_record = '5-a-0'
+        self.team._away_record = "5-a-0"
 
         output = self.team.away_draws
 
         assert not output
 
     def test_missing_away_losses_returns_none(self):
-        self.team._away_record = '5-0'
+        self.team._away_record = "5-0"
 
         output = self.team.away_losses
 
         assert not output
 
     def test_invalid_away_losses_returns_none(self):
-        self.team._away_record = '5-0-a'
+        self.team._away_record = "5-0-a"
 
         output = self.team.away_losses
 
@@ -175,12 +169,10 @@ class TestFBTeam:
         assert len(self.team.schedule) == 0
 
     def test_fb_no_doc_returns_schedule(self):
-        flexmock(Team) \
-            .should_receive('__init__') \
-            .and_return(None)
+        flexmock(Team).should_receive("__init__").and_return(None)
 
-        team = Team('Tottenham Hotspur')
-        team._squad_id = '361ca564'
+        team = Team("Tottenham Hotspur")
+        team._squad_id = "361ca564"
 
         assert len(team.schedule) == 0
 
@@ -190,24 +182,20 @@ class TestFBTeam:
         assert len(self.team.roster) == 0
 
     def test_fb_no_doc_returns_roster(self):
-        flexmock(Team) \
-            .should_receive('__init__') \
-            .and_return(None)
+        flexmock(Team).should_receive("__init__").and_return(None)
 
-        team = Team('Tottenham Hotspur')
-        team._squad_id = '361ca564'
+        team = Team("Tottenham Hotspur")
+        team._squad_id = "361ca564"
 
         assert len(team.roster) == 0
 
 
 class TestFBTeamInvalidPage:
-    @mock.patch('requests.get', side_effect=mock_httperror)
+    @mock.patch("requests.get", side_effect=mock_httperror)
     def test_invalid_http_page_error(self, *args, **kwargs):
-        flexmock(Team) \
-            .should_receive('__init__') \
-            .and_return(None)
+        flexmock(Team).should_receive("__init__").and_return(None)
         team = Team(None)
-        team._squad_id = ''
+        team._squad_id = ""
 
         output = team._pull_team_page()
 

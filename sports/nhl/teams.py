@@ -40,8 +40,10 @@ class Team:
         instead of downloading from sports-reference.com. This file should be
         of the Season page for the designated year.
     """
-    def __init__(self, team_name=None, team_data=None, rank=None, year=None,
-                 season_page=None):
+
+    def __init__(
+        self, team_name=None, team_data=None, rank=None, year=None, season_page=None
+    ):
         self._year = year
         self._rank = rank
         self._abbreviation = None
@@ -80,7 +82,7 @@ class Team:
         """
         Return the string representation of the class.
         """
-        return f'{self.name} ({self.abbreviation}) - {self._year}'
+        return f"{self.name} ({self.abbreviation}) - {self._year}"
 
     def __repr__(self):
         """
@@ -111,8 +113,8 @@ class Team:
         teams_list, year = _retrieve_all_teams(year, season_page)
         self._year = year
         # Teams are listed in terms of rank with the first team being #1
-        team_data = teams_list[team_name]['data']
-        self._rank = teams_list[team_name]['rank']
+        team_data = teams_list[team_name]["data"]
+        self._rank = teams_list[team_name]["rank"]
         return team_data
 
     def _parse_team_data(self, team_data):
@@ -137,11 +139,9 @@ class Team:
         for field in self.__dict__:
             # The rank attribute is passed directly to the class during
             # instantiation.
-            if field  in ['_rank', '_year']: 
+            if field in ["_rank", "_year"]:
                 continue
-            value = utils._parse_field(PARSING_SCHEME,
-                                       team_data,
-                                       str(field)[1:])
+            value = utils._parse_field(PARSING_SCHEME, team_data, str(field)[1:])
             setattr(self, field, value)
 
     @property
@@ -152,35 +152,34 @@ class Team:
         team, such as 'DET'.
         """
         fields_to_include = {
-            'abbreviation': self.abbreviation,
-            'average_age': self.average_age,
-            'games_played': self.games_played,
-            'goals_against': self.goals_against,
-            'goals_for': self.goals_for,
-            'losses': self.losses,
-            'name': self.name,
-            'overtime_losses': self.overtime_losses,
-            'pdo_at_even_strength': self.pdo_at_even_strength,
-            'penalty_killing_percentage': self.penalty_killing_percentage,
-            'points': self.points,
-            'points_percentage': self.points_percentage,
-            'power_play_goals': self.power_play_goals,
-            'power_play_goals_against': self.power_play_goals_against,
-            'power_play_opportunities': self.power_play_opportunities,
-            'power_play_opportunities_against':
-            self.power_play_opportunities_against,
-            'power_play_percentage': self.power_play_percentage,
-            'rank': self.rank,
-            'save_percentage': self.save_percentage,
-            'shooting_percentage': self.shooting_percentage,
-            'short_handed_goals': self.short_handed_goals,
-            'short_handed_goals_against': self.short_handed_goals_against,
-            'shots_against': self.shots_against,
-            'shots_on_goal': self.shots_on_goal,
-            'simple_rating_system': self.simple_rating_system,
-            'strength_of_schedule': self.strength_of_schedule,
-            'total_goals_per_game': self.total_goals_per_game,
-            'wins': self.wins
+            "abbreviation": self.abbreviation,
+            "average_age": self.average_age,
+            "games_played": self.games_played,
+            "goals_against": self.goals_against,
+            "goals_for": self.goals_for,
+            "losses": self.losses,
+            "name": self.name,
+            "overtime_losses": self.overtime_losses,
+            "pdo_at_even_strength": self.pdo_at_even_strength,
+            "penalty_killing_percentage": self.penalty_killing_percentage,
+            "points": self.points,
+            "points_percentage": self.points_percentage,
+            "power_play_goals": self.power_play_goals,
+            "power_play_goals_against": self.power_play_goals_against,
+            "power_play_opportunities": self.power_play_opportunities,
+            "power_play_opportunities_against": self.power_play_opportunities_against,
+            "power_play_percentage": self.power_play_percentage,
+            "rank": self.rank,
+            "save_percentage": self.save_percentage,
+            "shooting_percentage": self.shooting_percentage,
+            "short_handed_goals": self.short_handed_goals,
+            "short_handed_goals_against": self.short_handed_goals_against,
+            "shots_against": self.shots_against,
+            "shots_on_goal": self.shots_on_goal,
+            "simple_rating_system": self.simple_rating_system,
+            "strength_of_schedule": self.strength_of_schedule,
+            "total_goals_per_game": self.total_goals_per_game,
+            "wins": self.wins,
         }
         return pd.DataFrame([fields_to_include], index=[self._abbreviation])
 
@@ -445,6 +444,7 @@ class Teams:
         instead of downloading from sports-reference.com. This file should be
         of the Season page for the designated year.
     """
+
     def __init__(self, year=None, season_page=None):
         self._teams = []
 
@@ -477,7 +477,7 @@ class Teams:
         for team in self._teams:
             if team.abbreviation.upper() == abbreviation.upper():
                 return team
-        raise ValueError('Team abbreviation %s not found' % abbreviation)
+        raise ValueError("Team abbreviation %s not found" % abbreviation)
 
     def __call__(self, abbreviation):
         """
@@ -503,9 +503,8 @@ class Teams:
         """
         Return the string representation of the class.
         """
-        teams = [f'{team.name} ({team.abbreviation})'.strip()
-                 for team in self._teams]
-        return '\n'.join(teams)
+        teams = [f"{team.name} ({team.abbreviation})".strip() for team in self._teams]
+        return "\n".join(teams)
 
     def __repr__(self):
         """
@@ -540,9 +539,7 @@ class Teams:
         if not teams_list:
             return
         for team_name in teams_list:
-            team = Team(team_data=teams_list[team_name]['data'],
-                        rank=rank,
-                        year=year)
+            team = Team(team_data=teams_list[team_name]["data"], rank=rank, year=year)
             self._teams.append(team)
             rank += 1
 

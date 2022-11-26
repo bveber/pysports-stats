@@ -29,11 +29,11 @@ def _add_stats_data(teams_list, team_data_dict):
     # Teams are listed in terms of rank with the first team being #1
     rank = 1
     for team_data in teams_list:
-        abbr = utils._parse_field(PARSING_SCHEME, team_data, 'abbreviation')
+        abbr = utils._parse_field(PARSING_SCHEME, team_data, "abbreviation")
         try:
-            team_data_dict[abbr]['data'] += team_data
+            team_data_dict[abbr]["data"] += team_data
         except KeyError:
-            team_data_dict[abbr] = {'data': team_data, 'rank': rank}
+            team_data_dict[abbr] = {"data": team_data, "rank": rank}
         rank += 1
     return team_data_dict
 
@@ -67,16 +67,17 @@ def _retrieve_all_teams(year, season_page=None):
     team_data_dict = {}
 
     if not year:
-        year = utils._find_year_for_season('nhl')
+        year = utils._find_year_for_season("nhl")
         # If stats for the requested season do not exist yet (as is the case
         # right before a new season begins), attempt to pull the previous
         # year's stats. If it exists, use the previous year instead.
-        if not utils._url_exists(SEASON_PAGE_URL % year) and \
-           utils._url_exists(SEASON_PAGE_URL % str(int(year) - 1)):
+        if not utils._url_exists(SEASON_PAGE_URL % year) and utils._url_exists(
+            SEASON_PAGE_URL % str(int(year) - 1)
+        ):
             year = str(int(year) - 1)
     doc = utils._pull_page(SEASON_PAGE_URL % year, season_page)
-    stats = utils._get_stats_table(doc, 'div#all_stats')
-    advanced_stats = utils._get_stats_table(doc, 'div#all_stats_adv')
+    stats = utils._get_stats_table(doc, "div#all_stats")
+    advanced_stats = utils._get_stats_table(doc, "div#all_stats_adv")
     if not stats and not advanced_stats:
         utils._no_data_found()
         return None, None
