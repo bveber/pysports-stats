@@ -292,8 +292,6 @@ use the parameter ``recompute_conferences`` to dynamically generate the list wit
 up to date information. However, this will require several requests to the source page
 resulting in slower than normal performance.
 
-Available data starts i
-
 .. code-block:: python
 
     from sports.ncaab.teams import Teams
