@@ -62,6 +62,8 @@ class Team:
         adv_opp_stats=None,
         recompute_conferences=False,
     ):
+        if year and int(year) < 1993:
+            raise ValueError("No data available prior to 1993")
         self._team_conference = team_conference
         self._year = year
         self._abbreviation = None
@@ -546,7 +548,10 @@ class Team:
         Returns an ``int`` of the total number of two point field goals made
         during the season.
         """
-        return self.field_goals - self.three_point_field_goals
+        try:
+            return self.field_goals - self.three_point_field_goals
+        except TypeError:
+            return None
 
     @int_property_decorator
     def two_point_field_goal_attempts(self):
@@ -554,7 +559,10 @@ class Team:
         Returns an ``int`` of the total number of two point field goal attempts
         during the season.
         """
-        return self.field_goal_attempts - self.three_point_field_goal_attempts
+        try:
+            return self.field_goal_attempts - self.three_point_field_goal_attempts
+        except TypeError:
+            return None
 
     @float_property_decorator
     def two_point_field_goal_percentage(self):
@@ -570,6 +578,8 @@ class Team:
             return round(result, 3)
         except ZeroDivisionError:
             return 0.0
+        except TypeError:
+            return None
 
     @int_property_decorator
     def three_point_field_goals(self):
@@ -713,7 +723,10 @@ class Team:
         Returns an ``int`` of the total number of two point field goals made
         during the season by opponents.
         """
-        return self.opp_field_goals - self.opp_three_point_field_goals
+        try:
+            return self.opp_field_goals - self.opp_three_point_field_goals
+        except TypeError:
+            return None
 
     @int_property_decorator
     def opp_two_point_field_goal_attempts(self):
@@ -721,7 +734,12 @@ class Team:
         Returns an ``int`` of the total number of two point field goal attempts
         during the season by opponents.
         """
-        return self.opp_field_goal_attempts - self.opp_three_point_field_goal_attempts
+        try:
+            return (
+                self.opp_field_goal_attempts - self.opp_three_point_field_goal_attempts
+            )
+        except TypeError:
+            return None
 
     @float_property_decorator
     def opp_two_point_field_goal_percentage(self):
@@ -737,6 +755,8 @@ class Team:
             return round(result, 3)
         except ZeroDivisionError:
             return 0.0
+        except TypeError:
+            return None
 
     @int_property_decorator
     def opp_three_point_field_goals(self):
@@ -1114,6 +1134,8 @@ class Teams:
         adv_opp_stats=None,
         recompute_conferences=False,
     ):
+        if year and int(year) < 1993:
+            raise ValueError("No data available prior to 1993")
         self._teams = []
         if recompute_conferences:
             self._conferences_dict = Conferences(year).team_conference

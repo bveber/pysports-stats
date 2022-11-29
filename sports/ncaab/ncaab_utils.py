@@ -91,15 +91,19 @@ def _retrieve_all_teams(
             year = str(int(year) - 1)
     doc = utils._pull_page(BASIC_STATS_URL % year, basic_stats)
     teams_list = utils._get_stats_table(doc, "table#basic_school_stats")
-    doc = utils._pull_page(BASIC_OPPONENT_STATS_URL % year, basic_opp_stats)
-    opp_list = utils._get_stats_table(doc, "table#basic_opp_stats")
     doc = utils._pull_page(ADVANCED_STATS_URL % year, adv_stats)
     adv_teams_list = utils._get_stats_table(doc, "table#adv_school_stats")
-    doc = utils._pull_page(ADVANCED_OPPONENT_STATS_URL % year, adv_opp_stats)
-    adv_opp_list = utils._get_stats_table(doc, "table#adv_opp_stats")
+    stats_lists = [teams_list, adv_teams_list]
+    if int(year) >= 2010:
+        doc = utils._pull_page(BASIC_OPPONENT_STATS_URL % year, basic_opp_stats)
+        opp_list = utils._get_stats_table(doc, "table#basic_opp_stats")
+        doc = utils._pull_page(ADVANCED_OPPONENT_STATS_URL % year, adv_opp_stats)
+        adv_opp_list = utils._get_stats_table(doc, "table#adv_opp_stats")
+        stats_lists += [opp_list, adv_opp_list]
+
     if not teams_list and not opp_list and not adv_teams_list and not adv_opp_list:
         utils._no_data_found()
         return None, None
-    for stats_list in [teams_list, opp_list, adv_teams_list, adv_opp_list]:
+    for stats_list in stats_lists:
         team_data_dict = _add_stats_data(stats_list, team_data_dict)
     return team_data_dict, year
