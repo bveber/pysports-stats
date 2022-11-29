@@ -278,6 +278,11 @@ Each Team instance also contains a link to the ``Roster`` class which
 enables players from the team to be easily queried. Each Roster instance
 contains detailed stats and information for each player on the team.
 
+Extra Considerations:
+
+Data is unavailable prior to the 1992-1993 season and opponent data is unavailable
+prior to the 2009-2010 season.
+
 Occassionaly a Division-I team plays against a small school without any available data.
 In order to remove teams without a valid team page, the team name is validated against
 a list of teams who belong to valid Division-I coferences. By default, the team names are

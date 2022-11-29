@@ -24,16 +24,16 @@ TEAM = "PURDUE"
 
 
 def mock_pyquery(url):
-    if "2022-school-stats" in url:
+    if "-advanced-school-stats" in url:
+        return read_file("2022-advanced-school-stats.html", "ncaab", "teams")
+    if "-school-stats" in url:
         return read_file("2022-school-stats.html", "ncaab", "teams")
+    if "-advanced-opponent-stats" in url:
+        return read_file("2022-advanced-opponent-stats.html", "ncaab", "teams")
+    if "-opponent-stats" in url:
+        return read_file("2022-opponent-stats.html", "ncaab", "teams")
     if "purdue" in url:
         return read_file("2022-purdue.html", "ncaab", "teams")
-    if "2022-opponent-stats" in url:
-        return read_file("2022-opponent-stats.html", "ncaab", "teams")
-    if "2022-advanced-school-stats" in url:
-        return read_file("2022-advanced-school-stats.html", "ncaab", "teams")
-    if "2022-advanced-opponent-stats" in url:
-        return read_file("2022-advanced-opponent-stats.html", "ncaab", "teams")
     return None
 
 
@@ -955,3 +955,19 @@ Yale (YALE)
 Youngstown State (YOUNGSTOWN-STATE)"""
 
         assert teams.__repr__() == expected
+
+    @mock.patch("sports.utils._rate_limit_pq", side_effect=mock_pyquery)
+    def test_teams_before_1993_raises_value_error(self, *args, **kwargs):
+        with pytest.raises(ValueError):
+            Teams("1992")
+
+    @mock.patch("sports.utils._rate_limit_pq", side_effect=mock_pyquery)
+    def test_teams_no_opponent_data_before_2010(self, mock_pq, **kwargs):
+        year = "2009"
+        teams = Teams(year)
+        mock_pq.assert_called_with(ADVANCED_STATS_URL % year)
+
+    @mock.patch("sports.utils._rate_limit_pq", side_effect=mock_pyquery)
+    def test_teams_all_data_before_2010(self, mock_pq, **kwargs):
+        teams = Teams(YEAR)
+        mock_pq.assert_called_with(ADVANCED_OPPONENT_STATS_URL % YEAR)
